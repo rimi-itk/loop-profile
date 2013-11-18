@@ -80,6 +80,9 @@ projects[og][version] = "2.3"
 projects[page_title][subdir] = "contrib"
 projects[page_title][version] = "2.7"
 
+projects[panels][subdir] = "contrib"
+projects[panels][version] = "3.3"
+
 projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = "1.2"
 
