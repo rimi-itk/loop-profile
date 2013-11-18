@@ -60,7 +60,7 @@ projects[module_filter][subdir] = "contrib"
 projects[module_filter][version] = "1.8"
 
 projects[notifications][subdir] = "contrib"
-projects[notifications][version] = "2.3"
+projects[notifications][version] = "1.0-alpha2"
 
 projects[og][subdir] = "contrib"
 projects[og][version] = "2.3"
