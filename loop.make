@@ -7,7 +7,7 @@ projects[drupal][type] = "core"
 ; Install profile.
 projects[loopdk][type] = "profile"
 projects[loopdk][download][type] = "git"
-projects[loopdk][download][url] = "https://github.com/loopdk/profiile"
+projects[loopdk][download][url] = "http://github.com/loopdk/profiile"
 projects[loopdk][branch] = "master"
 
 ; Modules
