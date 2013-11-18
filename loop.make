@@ -14,9 +14,6 @@ projects[loopdk][branch] = "master"
 projects[apachesolr][subdir] = "contrib"
 projects[apachesolr][version] = "1.6"
 
-projects[context][subdir] = "contrib"
-projects[context][version] = "3.1"
-
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.3"
 
@@ -73,9 +70,6 @@ projects[metatag][version] = "1.0-beta7"
 
 projects[module_filter][subdir] = "contrib"
 projects[module_filter][version] = "1.8"
-
-projects[nodespotbox][subdir] = "contrib"
-projects[nodespotbox][version] = "1.7"
 
 projects[notifications][subdir] = "contrib"
 projects[notifications][version] = "1.0-alpha2"
