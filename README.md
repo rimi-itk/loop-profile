@@ -1,0 +1,4 @@
+profile
+=======
+
+Installation profile.
