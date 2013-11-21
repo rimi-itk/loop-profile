@@ -63,7 +63,7 @@ function loopdk_import_translation(&$install_state) {
 
   // Enable danish language.
   include_once DRUPAL_ROOT . '/includes/locale.inc';
-  locale_add_language('da', NULL, NULL, NULL, '', NULL, TRUE, FALSE);
+  locale_add_language('da', NULL, NULL, NULL, '', NULL, TRUE, TRUE);
 
   // Build batch with l10n_update module.
   $history = l10n_update_get_history();
