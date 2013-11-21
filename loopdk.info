@@ -10,6 +10,7 @@ dependencies[] = apachesolr
 dependencies[] = apachesolr_search
 dependencies[] = block
 dependencies[] = comment
+dependencies[] = contextual
 dependencies[] = ctools
 dependencies[] = entity
 dependencies[] = diff
