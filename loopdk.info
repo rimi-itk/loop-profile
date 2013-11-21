@@ -31,6 +31,7 @@ dependencies[] = metatag
 dependencies[] = module_filter
 dependencies[] = notifications
 dependencies[] = og
+dependencies[] = panels
 dependencies[] = page_title
 dependencies[] = pathauto
 dependencies[] = redirect
