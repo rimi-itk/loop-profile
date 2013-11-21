@@ -8,9 +8,9 @@ projects[drupal][type] = "core"
 projects[loopdk][type] = "profile"
 projects[loopdk][download][type] = "git"
 projects[loopdk][download][url] = "git@github.com:loopdk/profile.git"
-projects[loopdk][branch] = "master"
+projects[loopdk][branch] = "development"
 
-; Modules
+; Contrib modules
 projects[apachesolr][subdir] = "contrib"
 projects[apachesolr][version] = "1.6"
 
@@ -28,7 +28,6 @@ projects[entity][version] = "1.2"
 
 projects[entityreference][subdir] = "contrib"
 projects[entityreference][version] = "1.1"
-
 
 projects[facetapi][subdir] = "contrib"
 projects[facetapi][version] = "1.3"
@@ -119,6 +118,12 @@ projects[views_bulk_operations][version] = "3.1"
 
 projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][version] = "2.2"
+
+; LOOP modules
+projects[loop_content][type] = "module"
+projects[loop_content][download][type] = "git"
+projects[loop_content][download][url] = "git@github.com:loopdk/loop_content.git"
+projects[loop_content][branch] = "development"
 
 ; Libraries
 libraries[ckeditor][download][type] = "get"
