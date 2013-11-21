@@ -89,6 +89,9 @@ projects[pathauto][version] = "1.2"
 projects[redirect][subdir] = "contrib"
 projects[redirect][version] = "1.0-rc1"
 
+projects[secure_permissions][subdir] = "contrib"
+projects[secure_permissions][version] = "1.5"
+
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
 

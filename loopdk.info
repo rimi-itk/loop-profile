@@ -35,6 +35,7 @@ dependencies[] = page_title
 dependencies[] = pathauto
 dependencies[] = redirect
 dependencies[] = rules
+dependencies[] = secure_permissions
 dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = token
