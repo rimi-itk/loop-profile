@@ -7,5 +7,13 @@
 * Perform actions to set up the site for this profile.
 */
 function loopdk_install() {
+// Set default variables.
+  $default_theme = 'bartik';
+  $admin_theme = 'seven';
 
+  // Enable themes.
+  theme_enable(array($default_theme, $admin_theme));
+
+  // Enable $default_theme.
+  variable_set('theme_default', $default_theme);
 }
