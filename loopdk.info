@@ -8,6 +8,7 @@ exclusive = TRUE
 
 dependencies[] = apachesolr
 dependencies[] = apachesolr_search
+dependencies[] = block
 dependencies[] = comment
 dependencies[] = ctools
 dependencies[] = entity
