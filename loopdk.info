@@ -6,6 +6,7 @@ core = 7.x
 php_memory_limit = 128M
 exclusive = TRUE
 
+; Default dependencies
 dependencies[] = apachesolr
 dependencies[] = apachesolr_search
 dependencies[] = block
@@ -49,3 +50,6 @@ dependencies[] = transliteration
 dependencies[] = views
 dependencies[] = views_bulk_operations
 dependencies[] = wysiwyg
+
+; LOOP features
+dependencies[] = loop_content
