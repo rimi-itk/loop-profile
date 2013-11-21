@@ -24,7 +24,6 @@ dependencies[] = l10n_update
 dependencies[] = libraries
 dependencies[] = link
 dependencies[] = html5_tools
-dependencies[] = memcache
 dependencies[] = menu_block
 dependencies[] = messaging
 dependencies[] = metatag
