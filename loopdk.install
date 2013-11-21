@@ -16,4 +16,10 @@ function loopdk_install() {
 
   // Enable $default_theme.
   variable_set('theme_default', $default_theme);
+
+  // Ignore any other install messages.
+  drupal_get_messages();
+
+  // Clear caches.
+  drupal_flush_all_caches();
 }
