@@ -1,0 +1,31 @@
+<?php
+// $Id$
+
+/**
+* Implements hook_install().
+*
+* Perform actions to set up the site for this profile.
+*/
+function loopdk_install() {
+// Set default variables.
+  $default_theme = 'bartik';
+  $admin_theme = 'seven';
+
+  // Enable themes.
+  theme_enable(array($default_theme, $admin_theme));
+
+  // Enable $default_theme.
+  variable_set('theme_default', $default_theme);
+
+  // Enable $admin_theme.
+  variable_set('admin_theme', $admin_theme);
+
+  // Activate admin theme when editing a node.
+  variable_set('node_admin_theme', '1');
+
+  // Ignore any other install messages.
+  drupal_get_messages();
+
+  // Clear caches.
+  drupal_flush_all_caches();
+}
