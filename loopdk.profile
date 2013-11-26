@@ -42,6 +42,12 @@ function loopdk_install_tasks(&$install_state) {
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
       'type' => 'batch',
     ),
+    'loopdk_setup_filter_and_wysiwyg' => array(
+      'display_name' => st('Setup filter and WYSIWIG'),
+      'display' => TRUE,
+      'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+      'type' => 'batch'
+    ),
   );
   return $ret;
 }
@@ -57,7 +63,7 @@ function loopdk_install_tasks(&$install_state) {
  * @return array
  *   List of batches.
  */
-function loopdk_import_translation(&$install_state) {
+function loopdk_import_translation() {
   // Enable danish language.
   include_once DRUPAL_ROOT . '/includes/locale.inc';
   locale_add_language('da', NULL, NULL, NULL, '', NULL, TRUE, TRUE);
@@ -73,4 +79,86 @@ function loopdk_import_translation(&$install_state) {
   $updates = _l10n_update_prepare_updates($updates, NULL, array());
   $batch = l10n_update_batch_multiple($updates, LOCALE_IMPORT_KEEP);
   return $batch;
+}
+
+/**
+ * Setup text filter and WYSIWYG.
+ */
+function loopdk_setup_filter_and_wysiwyg() {
+  $format = new Stdclass();
+  $format->format = 'editor';
+  $format->name = 'Editor';
+  $format->status = 1;
+  $format->weight = 0;
+  $format->filters = array(
+    'filter_url' => array(
+      'weight' => -49,
+      'status' => 1,
+      'settings' => array(
+        'filter_url_length' => 72,
+      ),
+    ),
+    'filter_html' => array(
+      'weight' => -48,
+      'status' => 1,
+      'settings' => array(
+        'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd>',
+        'filter_html_help' => 1,
+        'filter_html_nofollow' => 0,
+      ),
+    ),
+    'filter_autop' => array(
+      'weight' => -46,
+      'status' => 1,
+      'settings' => array(),
+    ),
+    'filter_htmlcorrector' => array(
+      'weight' => -45,
+      'status' => 1,
+      'settings' => array(),
+    ),
+  );
+
+  filter_format_save($format);
+
+  $settings = array(
+    'default' => 1,
+    'user_choose' => 0,
+    'show_toggle' => 1,
+    'theme' => 'advanced',
+    'language' => 'en',
+    'buttons' => array(
+      'default' => array(
+        'Bold' => 1,
+        'Italic' => 1,
+        'Underline' => 1,
+        'BulletedList' => 1,
+        'NumberedList' => 1,
+        'Link' => 1,
+        'PasteText' => 1,
+      ),
+    ),
+    'toolbar_loc' => 'top',
+    'toolbar_align' => 'left',
+    'path_loc' => 'bottom',
+    'resizing' => 1,
+    'verify_html' => 1,
+    'preformatted' => 0,
+    'convert_fonts_to_spans' => 1,
+    'remove_linebreaks' => 1,
+    'apply_source_formatting' => 0,
+    'paste_auto_cleanup_on_paste' => 0,
+    'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
+    'css_setting' => 'theme',
+    'css_path' => '',
+    'css_classes' => '',
+  );
+
+  db_merge('wysiwyg')
+    ->key(array('format' => $format->format))
+    ->fields(array(
+      'editor' => 'ckeditor',
+      'settings' => serialize($settings),
+    ))
+    ->execute();
 }
