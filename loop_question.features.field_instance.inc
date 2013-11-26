@@ -15,7 +15,7 @@ function loop_question_field_default_field_instances() {
     'bundle' => 'question',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Type in keyword(s).',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -55,7 +55,7 @@ function loop_question_field_default_field_instances() {
     'bundle' => 'question',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Select a subject.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -90,7 +90,9 @@ function loop_question_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Keyword');
+  t('Select a subject.');
   t('Subject');
+  t('Type in keyword(s).');
 
   return $field_instances;
 }
