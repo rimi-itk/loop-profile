@@ -1,0 +1,60 @@
+/**
+ * Debugging
+ *
+ * Contains debugging stuff, should only be used in development
+ *
+ * @author magnify
+ */
+
+
+
+/* Breakpoints
+   ========================================================================== */
+
+%breakpoint {
+  display: none;
+
+  margin: 1em;
+
+  background-color: $black;
+  color: $white;
+  text-align: center;
+
+  @include border-radius(2em)
+}
+
+.breakpoint-1 {
+  @extend %breakpoint;
+
+  @include breakpoint(1) {
+    display: block;
+    width: $breakpoint-1;
+  }
+}
+
+.breakpoint-2 {
+  @extend %breakpoint;
+
+  @include breakpoint(2) {
+    display: block;
+    width: $breakpoint-2;
+  }
+}
+
+.breakpoint-3 {
+  @extend %breakpoint;
+
+  @include breakpoint(3) {
+    display: block;
+    width: $breakpoint-3;
+  }
+}
+
+.breakpoint-4 {
+  @extend %breakpoint;
+
+  @include breakpoint(4) {
+    display: block;
+    width: $breakpoint-4;
+  }
+}
