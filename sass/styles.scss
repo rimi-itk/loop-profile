@@ -6,12 +6,15 @@
 
 
 
-/* Add compass */
+/* Compass */
 @import "compass/css3";
 
 
 
-/* Add Zen Grids - http://zengrids.com */
+/* Zen Grids - http://zengrids.com */
+$zen-column-count: 12;
+$zen-gutter-width: 30px;
+
 @import "zen";
 
 
@@ -23,6 +26,7 @@
 @import "base/_base";
 @import "base/_forms";
 @import "base/_buttons";
+
 
 
 // Misc/optional

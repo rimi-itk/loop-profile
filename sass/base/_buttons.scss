@@ -22,17 +22,17 @@
   }
 
   @include border-radius($border-radius);
-  @include text-shadow(.025em .025em .1em lighten($green, 0%));
+  @include text-shadow(.025em .025em .1em lighten($gray-darker, 5%));
 }
 
 .button--action {
   @extend %button;
 
-  background-color: $green-light;
-  border: 1px solid $green;
+  background-color: $gray-darker;
+  border: 1px solid $gray-darkest;
   color: $white;
 
   &:hover {
-    background-color: $green;
+    background-color: $gray-darkest;
   }
 }

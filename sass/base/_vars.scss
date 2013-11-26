@@ -6,14 +6,6 @@
 
 
 
-/* Zen grid
-   ========================================================================== */
-
-$zen-column-count: 12;
-$zen-gutter-width: 30px;
-
-
-
 /* Layout
    ========================================================================== */
 
@@ -26,9 +18,6 @@ $border-radius:    .6em;
 
 $black:            #000;
 $white:            #fff;
-$green:            #41ab51;
-$green-light:      lighten($green, 10%);
-$red:              #ff6138;
 $gray:             lighten($black, 85%);
 $gray-light:       lighten($black, 95%);
 $gray-dark:        lighten($black, 75%);
@@ -46,7 +35,7 @@ $font:             1em/1.5 "Source Sans Pro", "Helvetica Neue", Helvetica, Arial
 /* Link colors
    ========================================================================== */
 
-$link-color:       #04bfbf;
+$link-color:       blue;
 
 
 
