@@ -7,7 +7,7 @@
  */
 
 
-%center-layout-container {
+%example-center-layout-container {
   margin-right: auto;
   margin-left: auto;
   max-width: 75em;
@@ -31,14 +31,14 @@
 }
 
 .example-header--inner {
-  @extend %center-layout-container;
+  @extend %example-center-layout-container;
 }
 
 
 /* Example layout */
 
 .example-layout {
-  @extend %center-layout-container;
+  @extend %example-center-layout-container;
 }
 
 
