@@ -31,10 +31,6 @@ h6 {
 
   /* Voodoo to enable ligatures and kerning */
   text-rendering: optimizeLegibility;
-
-  @include breakpoint($breakpoint-2) {
-
-  }
 }
 
 

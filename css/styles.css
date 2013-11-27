@@ -397,51 +397,51 @@ h6 {
   text-rendering: optimizeLegibility;
 }
 
-/* line 41, ../sass/base/_base.scss */
+/* line 37, ../sass/base/_base.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 46, ../sass/base/_base.scss */
+/* line 42, ../sass/base/_base.scss */
 em {
   font-style: italic;
 }
-/* line 49, ../sass/base/_base.scss */
+/* line 45, ../sass/base/_base.scss */
 em strong {
   font-weight: bold;
 }
 
 /* Links
    ================================================================================================================== */
-/* line 60, ../sass/base/_base.scss */
+/* line 56, ../sass/base/_base.scss */
 a:link {
   color: blue;
   text-decoration: underline;
 }
-/* line 65, ../sass/base/_base.scss */
+/* line 61, ../sass/base/_base.scss */
 a:visited {
   color: #0000e6;
 }
-/* line 69, ../sass/base/_base.scss */
+/* line 65, ../sass/base/_base.scss */
 a:hover {
   color: #0000cc;
   text-decoration: none;
 }
-/* line 74, ../sass/base/_base.scss */
+/* line 70, ../sass/base/_base.scss */
 a:focus {
   color: #0000cc;
 }
 
 /* Paragraph
    ================================================================================================================== */
-/* line 83, ../sass/base/_base.scss */
+/* line 79, ../sass/base/_base.scss */
 p {
   margin-top: 0;
 }
 
 /* Image
    ================================================================================================================== */
-/* line 91, ../sass/base/_base.scss */
+/* line 87, ../sass/base/_base.scss */
 img {
   display: inline;
   height: auto;
@@ -474,12 +474,12 @@ input[type="tel"],
 input[type="time"],
 input[type="url"],
 textarea {
-  border: 1px solid #cccccc;
+  border: 1px solid #b3b3b3;
   display: block;
   min-height: 1.25em;
   min-width: 100%;
   padding: .75em;
-  color: gray;
+  color: #666666;
   background-color: white;
   -webkit-border-radius: 0.6em;
   -moz-border-radius: 0.6em;
@@ -502,8 +502,8 @@ input[type="tel"]:focus,
 input[type="time"]:focus,
 input[type="url"]:focus,
 textarea:focus {
-  border: 1px solid #999999;
-  color: #666666;
+  border: 1px solid gray;
+  color: #4d4d4d;
 }
 /* line 43, ../sass/base/_forms.scss */
 input[type="text"][disabled],
@@ -520,8 +520,8 @@ textarea[disabled] {
   -webkit-box-shadow: 0 0 0;
   -moz-box-shadow: 0 0 0;
   box-shadow: 0 0 0;
-  border: 1px solid #b3b3b3;
-  background-color: #bfbfbf;
+  border: 1px solid #999999;
+  background-color: #a6a6a6;
 }
 
 /* Labels
@@ -533,7 +533,7 @@ textarea[disabled] {
   /* Move labels so they align better with fields when using rounded corners */
   /* Remove this if you fields don't have rounded corners */
   margin-left: .3em;
-  color: gray;
+  color: #666666;
 }
 
 /**
@@ -555,7 +555,7 @@ textarea[disabled] {
   -ms-border-radius: 0.6em;
   -o-border-radius: 0.6em;
   border-radius: 0.6em;
-  text-shadow: 0.025em 0.025em 0.1em #8c8c8c;
+  text-shadow: 0.025em 0.025em 0.1em #737373;
 }
 /* line 20, ../sass/base/_buttons.scss */
 .button:focus, .button:hover, .button:active {
@@ -564,15 +564,45 @@ textarea[disabled] {
 
 /* line 28, ../sass/base/_buttons.scss */
 .button {
-  background-color: gray;
+  background-color: #666666;
   border: 0;
   color: white;
 }
 /* line 35, ../sass/base/_buttons.scss */
 .button:hover {
-  background-color: #666666;
+  background-color: #4d4d4d;
 }
 
+/**
+ * Layouts
+ *
+ * This is an example file
+ *
+ * @author magnify
+ */
+/* line 10, ../sass/examples/_layout.scss */
+.example-header--inner, .example-layout {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 75em;
+}
+
+/* Example logo */
+/* line 19, ../sass/examples/_layout.scss */
+.example-logo {
+  font-size: 200%;
+}
+
+/* Example header */
+/* line 25, ../sass/examples/_layout.scss */
+.example-header {
+  margin-bottom: 1.5em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background-color: #b3b3b3;
+}
+
+/* Example layout */
 /**
  * Debugging
  *
@@ -582,7 +612,6 @@ textarea[disabled] {
  */
 /* line 11, ../sass/misc/_debug.scss */
 .debug {
-  margin-bottom: 2em;
   padding-top: 2em;
   padding-bottom: 2em;
   background-color: yellowgreen;
@@ -590,7 +619,7 @@ textarea[disabled] {
 
 /* Breakpoints
    ================================================================================================================== */
-/* line 24, ../sass/misc/_debug.scss */
+/* line 23, ../sass/misc/_debug.scss */
 .breakpoint-1, .breakpoint-2, .breakpoint-3 {
   display: none;
   margin-top: 1em;
@@ -601,7 +630,7 @@ textarea[disabled] {
 }
 
 @media only screen and (min-width: 18.75em) {
-  /* line 35, ../sass/misc/_debug.scss */
+  /* line 34, ../sass/misc/_debug.scss */
   .breakpoint-1 {
     display: block;
     width: 18.75em;
@@ -609,7 +638,7 @@ textarea[disabled] {
 }
 
 @media only screen and (min-width: 22.5em) {
-  /* line 44, ../sass/misc/_debug.scss */
+  /* line 43, ../sass/misc/_debug.scss */
   .breakpoint-2 {
     display: block;
     width: 22.5em;
@@ -617,7 +646,7 @@ textarea[disabled] {
 }
 
 @media only screen and (min-width: 28em) {
-  /* line 53, ../sass/misc/_debug.scss */
+  /* line 52, ../sass/misc/_debug.scss */
   .breakpoint-3 {
     display: block;
     width: 28em;

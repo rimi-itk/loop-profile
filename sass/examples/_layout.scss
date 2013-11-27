@@ -1,0 +1,42 @@
+/**
+ * Layouts
+ *
+ * This is an example file
+ *
+ * @author magnify
+ */
+
+
+%center-layout-container {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 75em;
+}
+
+
+/* Example logo */
+
+.example-logo {
+  font-size: 200%;
+}
+
+/* Example header */
+
+.example-header {
+  margin-bottom: $margin-bottom;
+  padding-top: 2em;
+  padding-bottom: 2em;
+
+  background-color: $gray;
+}
+
+.example-header--inner {
+  @extend %center-layout-container;
+}
+
+
+/* Example layout */
+
+.example-layout {
+  @extend %center-layout-container;
+}
