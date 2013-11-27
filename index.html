@@ -6,34 +6,33 @@
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="/css/styles.css">
 </head>
+
 <!-- Debug: Remove this in production -->
-<div class="breakpoint-1">1 breakpoint active</div>
-<div class="breakpoint-2">2 breakpoint active</div>
-<div class="breakpoint-3">3 breakpoint active</div>
-<div class="breakpoint-4">4 breakpoint active</div>
+<div class="debug">
+  <div class="breakpoint-1">1st breakpoint active</div>
+  <div class="breakpoint-2">2nd breakpoint active</div>
+  <div class="breakpoint-3">3rd breakpoint active</div>
+</div>
 <!-- / Debug -->
+
 <header class="header" role="banner">
   <div class="header--inner">
-    <a href="/" class="logo--link"><img src="logo.png" alt="" class="logo--image"></a>
+    <h1><a href="/" class="logo">AAKB Boilerplate</a></h1>
     <nav class="nav">
-      <a href="#" title="Min konto" class="nav--link">
-        <i class="icon-user"></i>
-        <span class="nav--text">Min konto</span>
-      </a>
+      <a href="#" title="Min konto" class="nav--link">Min konto</a>
       <a href="#" title="Notifikationer" class="nav--link-mail">
-        <i class="icon-mail"></i>
         <span class="nav--text">Notifikationer</span>
         <span class="notification">3</span>
       </a>
       <a href="#" title="Menu" class="nav--link-menu">
-        <i class="icon-menu"></i>
         <span class="nav--text">Menu</span>
       </a>
     </nav>
   </div>
 </header>
 <form>
-  <input type="text" placeholder="Skriv f.eks. &quot;Hvordan dokumenteres delvis aktindsigt&quot;" class="search--field">
+  <label>This is a label</label>
+  <input type="text" placeholder="Placeholder">
   <input type="submit" class="button" value="Søg">
 </form>
 </body>

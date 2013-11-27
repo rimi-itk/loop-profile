@@ -8,19 +8,28 @@
 
 
 
+.debug {
+  margin-bottom: 2em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+
+  background-color: yellowgreen;
+}
+
+
+
 /* Breakpoints
    ========================================================================== */
 
 %breakpoint {
   display: none;
 
-  margin: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 
   background-color: $black;
   color: $white;
   text-align: center;
-
-  @include border-radius(2em)
 }
 
 .breakpoint-1 {

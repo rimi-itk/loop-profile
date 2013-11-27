@@ -25,11 +25,11 @@
   @include text-shadow(.025em .025em .1em lighten($gray-darker, 5%));
 }
 
-.button--action {
+.button {
   @extend %button;
 
   background-color: $gray-darker;
-  border: 1px solid $gray-darkest;
+  border: 0;
   color: $white;
 
   &:hover {

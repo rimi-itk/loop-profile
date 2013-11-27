@@ -429,7 +429,7 @@ table {
 /**
  * Breakpoints
  *
- * Contains breakpoints and media queries
+ * Should contain breakpoint variables and breakpoints related mixins
  *
  * @author magnify
  */
@@ -545,7 +545,7 @@ input[type="tel"],
 input[type="time"],
 input[type="url"],
 textarea {
-  border: 1px solid #d9d9d9;
+  border: 1px solid #cccccc;
   display: block;
   min-height: 1.25em;
   min-width: 100%;
@@ -573,8 +573,8 @@ input[type="tel"]:focus,
 input[type="time"]:focus,
 input[type="url"]:focus,
 textarea:focus {
-  border: 1px solid #bfbfbf;
-  color: #1a1a1a;
+  border: 1px solid #999999;
+  color: #666666;
 }
 /* line 43, ../sass/base/_forms.scss */
 input[type="text"][disabled],
@@ -591,8 +591,8 @@ textarea[disabled] {
   -webkit-box-shadow: 0 0 0;
   -moz-box-shadow: 0 0 0;
   box-shadow: 0 0 0;
-  border: 1px solid #f2f2f2;
-  background-color: white;
+  border: 1px solid #b3b3b3;
+  background-color: #bfbfbf;
 }
 
 /* Labels
@@ -613,7 +613,7 @@ textarea[disabled] {
  * @author magnify
  */
 /* line 8, ../sass/base/_buttons.scss */
-.button--action {
+.button {
   display: inline-block;
   font-size: 125%;
   padding: .5em 1.5em;
@@ -629,19 +629,19 @@ textarea[disabled] {
   text-shadow: 0.025em 0.025em 0.1em #8c8c8c;
 }
 /* line 20, ../sass/base/_buttons.scss */
-.button--action:focus, .button--action:hover, .button--action:active {
+.button:focus, .button:hover, .button:active {
   text-decoration: none;
 }
 
 /* line 28, ../sass/base/_buttons.scss */
-.button--action {
+.button {
   background-color: gray;
-  border: 1px solid #1a1a1a;
+  border: 0;
   color: white;
 }
 /* line 35, ../sass/base/_buttons.scss */
-.button--action:hover {
-  background-color: #1a1a1a;
+.button:hover {
+  background-color: #666666;
 }
 
 /**
@@ -651,24 +651,28 @@ textarea[disabled] {
  *
  * @author magnify
  */
+/* line 11, ../sass/misc/_debug.scss */
+.debug {
+  margin-bottom: 2em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  background-color: yellowgreen;
+}
+
 /* Breakpoints
    ========================================================================== */
-/* line 14, ../sass/misc/_debug.scss */
+/* line 24, ../sass/misc/_debug.scss */
 .breakpoint-1, .breakpoint-2, .breakpoint-3 {
   display: none;
-  margin: 1em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   background-color: black;
   color: white;
   text-align: center;
-  -webkit-border-radius: 2em;
-  -moz-border-radius: 2em;
-  -ms-border-radius: 2em;
-  -o-border-radius: 2em;
-  border-radius: 2em;
 }
 
 @media only screen and (min-width: 18.75em) {
-  /* line 26, ../sass/misc/_debug.scss */
+  /* line 35, ../sass/misc/_debug.scss */
   .breakpoint-1 {
     display: block;
     width: 18.75em;
@@ -676,7 +680,7 @@ textarea[disabled] {
 }
 
 @media only screen and (min-width: 22.5em) {
-  /* line 35, ../sass/misc/_debug.scss */
+  /* line 44, ../sass/misc/_debug.scss */
   .breakpoint-2 {
     display: block;
     width: 22.5em;
@@ -684,7 +688,7 @@ textarea[disabled] {
 }
 
 @media only screen and (min-width: 28em) {
-  /* line 44, ../sass/misc/_debug.scss */
+  /* line 53, ../sass/misc/_debug.scss */
   .breakpoint-3 {
     display: block;
     width: 28em;
