@@ -26,7 +26,7 @@
 .breakpoint-1 {
   @extend %breakpoint;
 
-  @include breakpoint(1) {
+  @include breakpoint($breakpoint-1) {
     display: block;
     width: $breakpoint-1;
   }
@@ -35,7 +35,7 @@
 .breakpoint-2 {
   @extend %breakpoint;
 
-  @include breakpoint(2) {
+  @include breakpoint($breakpoint-2) {
     display: block;
     width: $breakpoint-2;
   }
@@ -44,17 +44,8 @@
 .breakpoint-3 {
   @extend %breakpoint;
 
-  @include breakpoint(3) {
+  @include breakpoint($breakpoint-3) {
     display: block;
     width: $breakpoint-3;
-  }
-}
-
-.breakpoint-4 {
-  @extend %breakpoint;
-
-  @include breakpoint(4) {
-    display: block;
-    width: $breakpoint-4;
   }
 }

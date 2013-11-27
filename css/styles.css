@@ -435,7 +435,7 @@ table {
  */
 /* Breakpoints
    ========================================================================== */
-/* Media queries
+/* Mixins
    ========================================================================== */
 /**
  * Base
@@ -468,51 +468,51 @@ h6 {
   text-rendering: optimizeLegibility;
 }
 
-/* line 37, ../sass/base/_base.scss */
+/* line 41, ../sass/base/_base.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 42, ../sass/base/_base.scss */
+/* line 46, ../sass/base/_base.scss */
 em {
   font-style: italic;
 }
-/* line 45, ../sass/base/_base.scss */
+/* line 49, ../sass/base/_base.scss */
 em strong {
   font-weight: bold;
 }
 
 /* Links
    ========================================================================== */
-/* line 56, ../sass/base/_base.scss */
+/* line 60, ../sass/base/_base.scss */
 a:link {
   color: blue;
   text-decoration: underline;
 }
-/* line 61, ../sass/base/_base.scss */
+/* line 65, ../sass/base/_base.scss */
 a:visited {
   color: #0000e6;
 }
-/* line 65, ../sass/base/_base.scss */
+/* line 69, ../sass/base/_base.scss */
 a:hover {
   color: #0000cc;
   text-decoration: none;
 }
-/* line 70, ../sass/base/_base.scss */
+/* line 74, ../sass/base/_base.scss */
 a:focus {
   color: #0000cc;
 }
 
 /* Paragraph
    ========================================================================== */
-/* line 79, ../sass/base/_base.scss */
+/* line 83, ../sass/base/_base.scss */
 p {
   margin-top: 0;
 }
 
 /* Image
    ========================================================================== */
-/* line 87, ../sass/base/_base.scss */
+/* line 91, ../sass/base/_base.scss */
 img {
   display: inline;
   height: auto;
@@ -654,7 +654,7 @@ textarea[disabled] {
 /* Breakpoints
    ========================================================================== */
 /* line 14, ../sass/misc/_debug.scss */
-.breakpoint-1, .breakpoint-2, .breakpoint-3, .breakpoint-4 {
+.breakpoint-1, .breakpoint-2, .breakpoint-3 {
   display: none;
   margin: 1em;
   background-color: black;
@@ -688,13 +688,5 @@ textarea[disabled] {
   .breakpoint-3 {
     display: block;
     width: 28em;
-  }
-}
-
-@media only screen and (min-width: 43em) {
-  /* line 53, ../sass/misc/_debug.scss */
-  .breakpoint-4 {
-    display: block;
-    width: 43em;
   }
 }
