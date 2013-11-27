@@ -434,9 +434,17 @@ table {
  * @author magnify
  */
 /* Breakpoints
-   ========================================================================== */
+   *
+   * These are only examples, change/add/remove so they match your needs
+   *
+   ================================================================================================================== */
 /* Mixins
-   ========================================================================== */
+   *
+   * Use this mixin to change styling for your rulesets depending on a breakpoint (width)
+   *
+   * Usage example: @include breakpoint($breakpoint-x)
+   *
+   ================================================================================================================== */
 /**
  * Base
  *
