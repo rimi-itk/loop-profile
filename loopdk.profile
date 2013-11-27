@@ -48,6 +48,12 @@ function loopdk_install_tasks(&$install_state) {
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
       'type' => 'batch'
     ),
+    'loopdk_setup_apache_solr' => array(
+      'display_name' => st('Setup Apache Solr'),
+      'display' => TRUE,
+      'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+      'type' => 'batch'
+    ),
   );
   return $ret;
 }
@@ -161,4 +167,11 @@ function loopdk_setup_filter_and_wysiwyg() {
       'settings' => serialize($settings),
     ))
     ->execute();
+}
+
+/**
+ * Setup Apache Solr.
+ */
+function loopdk_setup_apache_solr() {
+  db_query("UPDATE apachesolr_environment SET name='LOOP', url='http://localhost:8983/solr/stg'");
 }
