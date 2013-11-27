@@ -474,7 +474,7 @@ input[type="tel"],
 input[type="time"],
 input[type="url"],
 textarea {
-  border: 1px solid #b3b3b3;
+  border: 1px solid #999999;
   display: block;
   min-height: 1.25em;
   min-width: 100%;
@@ -520,8 +520,8 @@ textarea[disabled] {
   -webkit-box-shadow: 0 0 0;
   -moz-box-shadow: 0 0 0;
   box-shadow: 0 0 0;
-  border: 1px solid #999999;
-  background-color: #a6a6a6;
+  border: 1px solid #b3b3b3;
+  background-color: #bfbfbf;
 }
 
 /* Labels
@@ -599,10 +599,24 @@ textarea[disabled] {
   margin-bottom: 1.5em;
   padding-top: 2em;
   padding-bottom: 2em;
-  background-color: #b3b3b3;
+  background-color: #cccccc;
 }
 
 /* Example layout */
+/* Example section */
+/* line 47, ../sass/examples/_layout.scss */
+.example-section {
+  margin-bottom: 1.5em;
+  padding: 2em;
+  background-color: #e6e6e6;
+}
+
+/* Example form */
+/* line 58, ../sass/examples/_layout.scss */
+.example-form .example-form--input {
+  margin-bottom: 1.5em;
+}
+
 /**
  * Debugging
  *

@@ -27,7 +27,7 @@
   padding-top: 2em;
   padding-bottom: 2em;
 
-  background-color: $gray;
+  background-color: $gray-lighter;
 }
 
 .example-header--inner {
@@ -39,4 +39,23 @@
 
 .example-layout {
   @extend %center-layout-container;
+}
+
+
+/* Example section */
+
+.example-section {
+  margin-bottom: $margin-bottom;
+  padding: 2em;
+
+  background-color: $gray-lightest;
+}
+
+
+/* Example form */
+
+.example-form {
+  .example-form--input {
+    margin-bottom: $margin-bottom;
+  }
 }
