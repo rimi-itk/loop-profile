@@ -477,7 +477,7 @@ textarea {
   border: 1px solid #999999;
   display: block;
   min-height: 1.25em;
-  min-width: 100%;
+  width: 100%;
   padding: .75em;
   color: #666666;
   background-color: white;
