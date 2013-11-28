@@ -16,3 +16,6 @@ run this command instead.
 ```sh
   ~$ drush make --working-copy https://raw.github.com/loopdk/profile/master/drupal.make loop
 ```
+
+## Apache Solr
+If you have an Apache Solr on your local dev environment you should name the core: _loop_stg_ for seamless integration.
