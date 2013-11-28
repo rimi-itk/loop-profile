@@ -30,7 +30,8 @@ Okay, here's what you need to do:
 1. [Fork](fork) the repository to your project
 2. Create a new branch: _git checkout -b boilerplate-pr_
 3. Track remote branch: _git remote add aakb-boilerplate git@github.com:aakb/frontend-boilerplate.git_
-4. Use the new branch to send pull requests
+4. Push new branch: _git push -u origin boilerplate-pr_
+5. Use the new branch to send pull requests
 
 <a name="pull-request"></a>
 Creating a pull request
