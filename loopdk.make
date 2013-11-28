@@ -2,6 +2,9 @@ api = 2
 core = 7.x
 
 ; Contrib modules
+projects[active_tags][subdir] = "contrib"
+projects[active_tags][version] = "2.0-dev"
+
 projects[apachesolr][subdir] = "contrib"
 projects[apachesolr][version] = "1.6"
 
