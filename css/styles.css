@@ -477,7 +477,6 @@ textarea {
   border: 1px solid #999999;
   display: block;
   min-height: 1.25em;
-  /* Trying to force a pull request */
   width: 100%;
   padding: .75em;
   color: #666666;
@@ -491,7 +490,7 @@ textarea {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 39, ../sass/base/_forms.scss */
+/* line 37, ../sass/base/_forms.scss */
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="date"]:focus,
@@ -506,7 +505,7 @@ textarea:focus {
   border: 1px solid gray;
   color: #4d4d4d;
 }
-/* line 45, ../sass/base/_forms.scss */
+/* line 43, ../sass/base/_forms.scss */
 input[type="text"][disabled],
 input[type="password"][disabled],
 input[type="date"][disabled],
@@ -527,7 +526,7 @@ textarea[disabled] {
 
 /* Labels
    ================================================================================================================== */
-/* line 61, ../sass/base/_forms.scss */
+/* line 59, ../sass/base/_forms.scss */
 .form-label {
   display: block;
   margin-bottom: .25em;
