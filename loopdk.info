@@ -52,7 +52,6 @@ dependencies[] = views_bulk_operations
 dependencies[] = wysiwyg
 
 ; LOOP features
-dependencies[] = loop_question
 dependencies[] = loop_post
 
 ; LOOP themes

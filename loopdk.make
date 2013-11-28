@@ -137,10 +137,10 @@ projects[loop_taxonomy][download][url] = "git@github.com:loopdk/loop_taxonomy.gi
 projects[loop_taxonomy][branch] = "development"
 
 ; LOOP themes
-projects[ddbasic][type] = "theme"
-projects[ddbasic][download][type] = "git"
-projects[ddbasic][download][url] = "git@github.com:loopdk/loop.git"
-projects[ddbasic][download][branch] = "development"
+projects[loop][type] = "theme"
+projects[loop][download][type] = "git"
+projects[loop][download][url] = "git@github.com:loopdk/loop.git"
+projects[loop][download][branch] = "development"
 
 
 ; Libraries
