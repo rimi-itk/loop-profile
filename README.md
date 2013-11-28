@@ -38,7 +38,7 @@ Creating a pull request
 
 This is the tricky part!
 
-1. Checkout you pull request branch: _git checkout boilerplate-pr_
+1. Checkout pull request branch: _git checkout boilerplate-pr_
 2. Pull changes from aakb-boilerplate: _git pull aakb-boilerplate development_
 3. Cherry pick your changes: _git cherry-pick <SHA1>_
 4. Push your changes: _git push origin boilerplate-pr_
