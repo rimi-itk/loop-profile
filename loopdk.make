@@ -124,11 +124,11 @@ projects[loop_content][download][url] = "git@github.com:loopdk/loop_content.git"
 projects[loop_content][branch] = "development"
 
 ; LOOP features
-projects[loop_question][type] = "module"
-projects[loop_question][subdir] = "features"
-projects[loop_question][download][type] = "git"
-projects[loop_question][download][url] = "git@github.com:loopdk/loop_question.git"
-projects[loop_question][branch] = "development";
+projects[loop_post][type] = "module"
+projects[loop_post][subdir] = "features"
+projects[loop_post][download][type] = "git"
+projects[loop_post][download][url] = "git@github.com:loopdk/loop_post.git"
+projects[loop_post][branch] = "development";
 
 projects[loop_taxonomy][type] = "module"
 projects[loop_taxonomy][subdir] = "features"
