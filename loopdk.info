@@ -53,6 +53,7 @@ dependencies[] = wysiwyg
 
 ; LOOP features
 dependencies[] = loop_question
+dependencies[] = loop_post
 
 ; LOOP themes
 dependencies[] = loop
