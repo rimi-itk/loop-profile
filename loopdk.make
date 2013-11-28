@@ -8,6 +8,9 @@ projects[apachesolr][version] = "1.6"
 projects[apachesolr_autocomplete][subdir] = "contrib"
 projects[apachesolr_autocomplete][version] = "1.3"
 
+projects[auto_nodetitle][subdir] = "contrib"
+projects[auto_nodetitle][version] = "1.0"
+
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.3"
 
