@@ -18,12 +18,12 @@ function loop_post_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function loop_post_node_info() {
   $items = array(
-    'question' => array(
-      'name' => t('Post'),
+    'post' => array(
+      'name' => t('Indlæg'),
       'base' => 'node_content',
-      'description' => t('Et indlæg, spørgsmål eller observation, hvortil der kan svares.'),
+      'description' => t('A post, question or observation, which can be answered.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
   );
