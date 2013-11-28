@@ -1,0 +1,12 @@
+name = loop
+version = VERSION
+core = 7.x
+
+regions[header] = Header
+regions[content] = Content
+regions[footer] = Footer
+
+stylesheets[all][] = css/styles.css
+
+; Disable stylesheets
+stylesheets[all][] = system.theme.css
