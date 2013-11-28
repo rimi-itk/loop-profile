@@ -36,7 +36,7 @@ Okay, here's what you need to do:
 Creating a pull request
 ----------
 
-This is the tricky part, pay close attention!
+This is the tricky part!
 
 1. Checkout you pull request branch: _git checkout boilerplate-pr_
 2. Pull changes from aakb-boilerplate: _git pull aakb-boilerplate development_
