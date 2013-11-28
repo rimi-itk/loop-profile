@@ -174,4 +174,6 @@ function loopdk_setup_filter_and_wysiwyg() {
  */
 function loopdk_setup_apache_solr() {
   db_query("UPDATE apachesolr_environment SET name='LOOP', url='http://localhost:8983/solr/loop_stg'");
+
+  variable_set('search_default_module', 'apachesolr_search');
 }
