@@ -133,6 +133,12 @@ projects[loop_taxonomy][download][type] = "git"
 projects[loop_taxonomy][download][url] = "git@github.com:loopdk/loop_taxonomy.git"
 projects[loop_taxonomy][branch] = "development"
 
+; LOOP themes
+projects[ddbasic][type] = "theme"
+projects[ddbasic][download][type] = "git"
+projects[ddbasic][download][url] = "git@github.com:loopdk/loop.git"
+projects[ddbasic][download][branch] = "development"
+
 
 ; Libraries
 libraries[ckeditor][download][type] = "get"

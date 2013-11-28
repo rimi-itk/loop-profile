@@ -8,7 +8,7 @@
 */
 function loopdk_install() {
 // Set default variables.
-  $default_theme = 'bartik';
+  $default_theme = 'loop';
   $admin_theme = 'seven';
 
   // Enable themes.
