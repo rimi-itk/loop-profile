@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Loop Post feature.
+ */
+
+include_once 'loop_post.features.inc';
