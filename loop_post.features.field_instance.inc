@@ -10,9 +10,9 @@
 function loop_post_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-question-field_keyword'
-  $field_instances['node-question-field_keyword'] = array(
-    'bundle' => 'question',
+  // Exported field_instance: 'node-post-field_keyword'
+  $field_instances['node-post-field_keyword'] = array(
+    'bundle' => 'post',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Type in keyword(s).',
@@ -50,9 +50,9 @@ function loop_post_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-question-field_subject'
-  $field_instances['node-question-field_subject'] = array(
-    'bundle' => 'question',
+  // Exported field_instance: 'node-post-field_subject'
+  $field_instances['node-post-field_subject'] = array(
+    'bundle' => 'post',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'Select a subject.',

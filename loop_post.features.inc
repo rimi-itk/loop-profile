@@ -19,11 +19,11 @@ function loop_post_ctools_plugin_api($module = NULL, $api = NULL) {
 function loop_post_node_info() {
   $items = array(
     'question' => array(
-      'name' => t('Question'),
+      'name' => t('Post'),
       'base' => 'node_content',
       'description' => t('Et indlæg, spørgsmål eller observation, hvortil der kan svares.'),
       'has_title' => '1',
-      'title_label' => t('Question'),
+      'title_label' => t('Title'),
       'help' => '',
     ),
   );
