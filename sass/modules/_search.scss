@@ -5,14 +5,17 @@
  */
 
 
+
+/* Search field
+   ========================================================================== */
+
 .search {
   @include zen-grid-item(12, 1);
 }
 
 .search--inner {
   @extend %set-max-width-and-center-element;
-
-  padding-top: 2em;
+  @extend %basic-element-styling;
 }
 
 .search--field-wrapper {
@@ -28,11 +31,15 @@
   }
 
   .search--field {
-    margin-bottom: $margin-bottom;
+    padding-top: 1.25em;
+    padding-right: 1.25em;
+    padding-bottom: 1.25em;
     padding-left: 3em;
+
+    background-color: $white;
   }
 
-  @include breakpoint(3) {
+  @include breakpoint($breakpoint-3) {
     .search--field {
       min-width: 87%;
     }
@@ -44,7 +51,7 @@
 
   width: 100%;
 
-  @include breakpoint(3) {
+  @include breakpoint($breakpoint-3) {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -57,4 +64,21 @@
 
     @include border-radius(0 $border-radius $border-radius 0);
   }
+}
+
+
+
+/* Search result
+   ========================================================================== */
+
+.search-result {
+  @extend %set-max-width-and-center-element;
+  @extend %basic-element-styling;
+}
+
+.search-result--question {
+  margin-bottom: $margin-bottom;
+  padding-bottom: $padding-bottom;
+
+  border-bottom: .2em dotted $gray;
 }

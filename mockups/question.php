@@ -30,7 +30,7 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
 </header>
 <div class="search">
   <div class="search--inner">
-    <form action="search-question.php">
+    <form>
       <label class="form-label">Søg efter svar</label>
       <div class="search--field-wrapper">
         <i class="search--icon icon-search"></i>
@@ -38,6 +38,19 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
         <input type="submit" class="search--button" value="Søg">
       </div>
     </form>
+  </div>
+</div>
+<div class="question">
+  <div class="question--inner">
+    <h1><strong>Spørgsmål:</strong> Hvordan dokumenteres delvis aktindsigt? Og findes der en vejledning i dokumentation af aktindsigt?</h1>
+    <ul class="content-list">
+      <li class="content-list--item">
+        <span class="question--answer">Bedste svar:</span> Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
+      </li>
+      <li class="content-list--item is-last">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+      </li>
+    </ul>
   </div>
 </div>
 </body>

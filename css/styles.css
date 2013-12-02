@@ -27,6 +27,8 @@
  *
  * @author magnify
  */
+/* Colors
+   ================================================================================================================== */
 /**
  * Normalize
  *
@@ -355,47 +357,6 @@ table {
 }
 
 /**
- * Breakpoints
- *
- * Should contain breakpoint variables and breakpoints related mixins
- *
- * @author magnify
- */
-/* Breakpoints
-   *
-   * These are only examples, change/add/remove so they match your needs
-   *
-   ================================================================================================================== */
-/* Mixins
-   *
-   * Use this mixin to change styling for your rulesets depending on a breakpoint (width)
-   *
-   * Usage example: @include breakpoint($breakpoint-x)
-   *
-   ================================================================================================================== */
-/**
- * Placeholders
- *
- * This contains placeholders used with @extend in rulesets
- *
- * @author magnify
- */
-/* Layout placeholders
-   ========================================================================== */
-/* line 13, ../sass/base/_placeholders.scss */
-.header--inner, .search--inner {
-  max-width: 31.25em;
-  margin-right: auto;
-  margin-left: auto;
-}
-@media only screen and (min-width: 1) {
-  /* line 13, ../sass/base/_placeholders.scss */
-  .header--inner, .search--inner {
-    max-width: 48em;
-  }
-}
-
-/**
  * Base
  *
  * Contains styling and reset of basic elements
@@ -466,7 +427,7 @@ a:focus {
 /* line 79, ../sass/base/_base.scss */
 p {
   margin-top: 0;
-  margin-bottom: 1.25em;
+  margin-bottom: 1.5em;
 }
 
 /* Image
@@ -487,6 +448,64 @@ img {
 }
 
 /**
+ * Breakpoints
+ *
+ * Should contain breakpoint variables and breakpoints related mixins
+ *
+ * @author magnify
+ */
+/* Breakpoints
+   *
+   * These are only examples, change/add/remove so they match your needs
+   *
+   ================================================================================================================== */
+/* Mixins
+   *
+   * Use this mixin to change styling for your rulesets depending on a breakpoint (width)
+   *
+   * Usage example: @include breakpoint($breakpoint-x)
+   *
+   ================================================================================================================== */
+/**
+ * Placeholders
+ *
+ * This contains placeholders used with @extend in rulesets
+ *
+ * @author magnify
+ */
+/* Layout placeholders
+   ========================================================================== */
+/* Used for centering a section */
+/* line 14, ../sass/theme/_placeholders.scss */
+.header--inner, .search--inner, .search-result, .question--inner {
+  max-width: 31.25em;
+  margin-right: auto;
+  margin-left: auto;
+  clear: both;
+}
+@media only screen and (min-width: 18.75em) {
+  /* line 14, ../sass/theme/_placeholders.scss */
+  .header--inner, .search--inner, .search-result, .question--inner {
+    max-width: 48em;
+  }
+}
+
+/* line 27, ../sass/theme/_placeholders.scss */
+.search--inner, .search-result, .question--inner, .content-list--item {
+  margin-bottom: 1.5em;
+  padding: 1.5em;
+  background-color: #b3b3b3;
+  -webkit-border-radius: 0.6em;
+  -moz-border-radius: 0.6em;
+  -ms-border-radius: 0.6em;
+  -o-border-radius: 0.6em;
+  border-radius: 0.6em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/**
  * Forms
  *
  * This is an example file
@@ -495,13 +514,13 @@ img {
  */
 /* Basic styling
    ================================================================================================================== */
-/* line 15, ../sass/examples/_forms.scss */
+/* line 15, ../sass/theme/_forms.scss */
 input,
 textarea {
   font: 1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 29, ../sass/examples/_forms.scss */
+/* line 29, ../sass/theme/_forms.scss */
 input[type="text"],
 input[type="password"],
 input[type="date"],
@@ -529,7 +548,7 @@ textarea {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 39, ../sass/examples/_forms.scss */
+/* line 39, ../sass/theme/_forms.scss */
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="date"]:focus,
@@ -544,7 +563,7 @@ textarea:focus {
   border: 1px solid gray;
   color: #4d4d4d;
 }
-/* line 45, ../sass/examples/_forms.scss */
+/* line 45, ../sass/theme/_forms.scss */
 input[type="text"][disabled],
 input[type="password"][disabled],
 input[type="date"][disabled],
@@ -565,7 +584,7 @@ textarea[disabled] {
 
 /* Labels
    ================================================================================================================== */
-/* line 61, ../sass/examples/_forms.scss */
+/* line 61, ../sass/theme/_forms.scss */
 label {
   display: block;
   margin-bottom: .25em;
@@ -577,12 +596,10 @@ label {
 /**
  * Buttons
  *
- * This is an example file
- *
  * @author magnify
  */
-/* line 10, ../sass/examples/_buttons.scss */
-.button {
+/* line 8, ../sass/theme/_buttons.scss */
+.button--action, .search--button {
   display: inline-block;
   font-size: 125%;
   padding: .5em 1.5em;
@@ -595,22 +612,22 @@ label {
   -ms-border-radius: 0.6em;
   -o-border-radius: 0.6em;
   border-radius: 0.6em;
-  text-shadow: 0.025em 0.025em 0.1em #737373;
+  text-shadow: 0.025em 0.025em 0.1em #33863f;
 }
-/* line 22, ../sass/examples/_buttons.scss */
-.button:focus, .button:hover, .button:active {
+/* line 20, ../sass/theme/_buttons.scss */
+.button--action:focus, .search--button:focus, .button--action:hover, .search--button:hover, .button--action:active, .search--button:active {
   text-decoration: none;
 }
 
-/* line 30, ../sass/examples/_buttons.scss */
-.button {
-  background-color: #666666;
-  border: 0;
+/* line 28, ../sass/theme/_buttons.scss */
+.button--action, .search--button {
+  background-color: #5dc26d;
+  border: 1px solid #41ab51;
   color: white;
 }
-/* line 37, ../sass/examples/_buttons.scss */
-.button:hover {
-  background-color: #4d4d4d;
+/* line 35, ../sass/theme/_buttons.scss */
+.button--action:hover, .search--button:hover {
+  background-color: #41ab51;
 }
 
 /**
@@ -622,9 +639,10 @@ label {
  */
 /* Header
    ========================================================================== */
-/* line 13, ../sass/layout/_layout.scss */
+/* line 13, ../sass/theme/_layout.scss */
 .header {
-  background-color: #79a60b;
+  margin-bottom: 1.5em;
+  background-color: #41ab51;
   *position: relative;
   *zoom: 1;
 }
@@ -638,7 +656,7 @@ label {
   clear: both;
 }
 
-/* line 19, ../sass/layout/_layout.scss */
+/* line 21, ../sass/theme/_layout.scss */
 .header--inner {
   min-height: 5em;
   padding-right: 1em;
@@ -647,7 +665,7 @@ label {
 
 /* Logo
    ========================================================================== */
-/* line 31, ../sass/layout/_layout.scss */
+/* line 34, ../sass/theme/_layout.scss */
 .logo--link {
   display: inline-block;
   max-width: 100%;
@@ -655,20 +673,20 @@ label {
   text-align: center;
 }
 @media only screen and (min-width: 18.75em) {
-  /* line 31, ../sass/layout/_layout.scss */
+  /* line 34, ../sass/theme/_layout.scss */
   .logo--link {
     max-width: 5.625em;
   }
 }
 
-/* line 43, ../sass/layout/_layout.scss */
+/* line 46, ../sass/theme/_layout.scss */
 .logo--image {
   max-width: 75%;
   margin-right: auto;
   margin-left: auto;
 }
 @media only screen and (min-width: 18.75em) {
-  /* line 43, ../sass/layout/_layout.scss */
+  /* line 46, ../sass/theme/_layout.scss */
   .logo--image {
     max-width: 100%;
   }
@@ -676,12 +694,12 @@ label {
 
 /* Navigation
    ========================================================================== */
-/* line 58, ../sass/layout/_layout.scss */
+/* line 61, ../sass/theme/_layout.scss */
 .nav {
   text-align: center;
 }
 @media only screen and (min-width: 18.75em) {
-  /* line 58, ../sass/layout/_layout.scss */
+  /* line 61, ../sass/theme/_layout.scss */
   .nav {
     padding-top: 1em;
     padding-bottom: 1em;
@@ -707,7 +725,7 @@ label {
 }
 
 /* Using a variable so we only have to set the size once */
-/* line 77, ../sass/layout/_layout.scss */
+/* line 80, ../sass/theme/_layout.scss */
 .nav--link, .nav--link-mail, .nav--link-menu {
   display: block;
   position: relative;
@@ -727,21 +745,21 @@ label {
   -o-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 93, ../sass/layout/_layout.scss */
+/* line 96, ../sass/theme/_layout.scss */
 .nav--link:link, .nav--link-mail:link, .nav--link-menu:link, .nav--link:visited, .nav--link-mail:visited, .nav--link-menu:visited {
   color: white;
   text-decoration: none;
 }
-/* line 98, ../sass/layout/_layout.scss */
+/* line 101, ../sass/theme/_layout.scss */
 .nav--link:hover, .nav--link-mail:hover, .nav--link-menu:hover {
   background-color: rgba(255, 255, 255, 0.5);
 }
-/* line 102, ../sass/layout/_layout.scss */
+/* line 105, ../sass/theme/_layout.scss */
 .nav--link i[class^="icon-"], .nav--link-mail i[class^="icon-"], .nav--link-menu i[class^="icon-"] {
   vertical-align: bottom;
 }
 @media only screen and (min-width: 18.75em) {
-  /* line 77, ../sass/layout/_layout.scss */
+  /* line 80, ../sass/theme/_layout.scss */
   .nav--link, .nav--link-mail, .nav--link-menu {
     display: inline-block;
     margin-bottom: 0;
@@ -749,13 +767,13 @@ label {
   }
 }
 @media only screen and (min-width: 22.5em) {
-  /* line 77, ../sass/layout/_layout.scss */
+  /* line 80, ../sass/theme/_layout.scss */
   .nav--link, .nav--link-mail, .nav--link-menu {
     margin-left: 1em;
   }
 }
 @media only screen and (min-width: 43em) {
-  /* line 77, ../sass/layout/_layout.scss */
+  /* line 80, ../sass/theme/_layout.scss */
   .nav--link, .nav--link-mail, .nav--link-menu {
     padding-right: .75em;
     padding-left: .75em;
@@ -768,12 +786,12 @@ label {
   }
 }
 
-/* line 127, ../sass/layout/_layout.scss */
+/* line 130, ../sass/theme/_layout.scss */
 .nav--text {
   display: none;
 }
-@media only screen and (min-width: 28em) {
-  /* line 127, ../sass/layout/_layout.scss */
+@media only screen and (min-width: 43em) {
+  /* line 130, ../sass/theme/_layout.scss */
   .nav--text {
     display: inline;
     font-size: 85%;
@@ -781,44 +799,17 @@ label {
 }
 
 /* Make the mail icon bigger */
-/* line 141, ../sass/layout/_layout.scss */
+/* line 144, ../sass/theme/_layout.scss */
 .nav--link-mail i[class^="icon-"] {
   font-size: 125%;
   line-height: 190%;
 }
 
 /* Make the menu icon bigger */
-/* line 154, ../sass/layout/_layout.scss */
+/* line 157, ../sass/theme/_layout.scss */
 .nav--link-menu i[class^="icon-"] {
   font-size: 150%;
   line-height: 160%;
-}
-
-/* Notifications
-   ========================================================================== */
-/* line 166, ../sass/layout/_layout.scss */
-.notification {
-  display: inline-block;
-  position: absolute;
-  top: -.5em;
-  right: -.5em;
-  height: 2em;
-  width: 2em;
-  background-color: #ff6138;
-  font-size: 65%;
-  text-decoration: none;
-  line-height: 2em;
-  text-align: center;
-  vertical-align: middle;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  -ms-border-radius: 100%;
-  -o-border-radius: 100%;
-  border-radius: 100%;
-}
-/* line 182, ../sass/layout/_layout.scss */
-.notification:link, .notification:visited {
-  text-decoration: none;
 }
 
 /**
@@ -842,7 +833,7 @@ body {
   bottom: 0;
   width: 100%;
   z-index: 99;
-  background-color: yellowgreen;
+  background-color: #41ab51;
 }
 
 /* line 27, ../sass/misc/_debug.scss */
@@ -888,11 +879,43 @@ body {
 }
 
 /**
+ * Notifications
+ *
+ * @author magnify
+ */
+/* line 10, ../sass/modules/_notifications.scss */
+.notification {
+  display: inline-block;
+  position: absolute;
+  top: -.5em;
+  right: -.5em;
+  height: 2em;
+  width: 2em;
+  background-color: #ff6138;
+  font-size: 65%;
+  text-decoration: none;
+  line-height: 2em;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+}
+/* line 26, ../sass/modules/_notifications.scss */
+.notification:link, .notification:visited {
+  text-decoration: none;
+}
+
+/**
  * Search module
  *
  * @author magnify
  */
-/* line 8, ../sass/modules/_search.scss */
+/* Search field
+   ========================================================================== */
+/* line 12, ../sass/modules/_search.scss */
 .search {
   float: left;
   width: 100%;
@@ -910,16 +933,11 @@ body {
   _overflow-y: visible;
 }
 
-/* line 12, ../sass/modules/_search.scss */
-.search--inner {
-  padding-top: 2em;
-}
-
-/* line 18, ../sass/modules/_search.scss */
+/* line 21, ../sass/modules/_search.scss */
 .search--field-wrapper {
   position: relative;
 }
-/* line 21, ../sass/modules/_search.scss */
+/* line 24, ../sass/modules/_search.scss */
 .search--field-wrapper .search--icon {
   position: absolute;
   top: .25em;
@@ -927,24 +945,27 @@ body {
   color: #999999;
   font-size: 200%;
 }
-/* line 30, ../sass/modules/_search.scss */
+/* line 33, ../sass/modules/_search.scss */
 .search--field-wrapper .search--field {
-  margin-bottom: 1.25em;
+  padding-top: 1.25em;
+  padding-right: 1.25em;
+  padding-bottom: 1.25em;
   padding-left: 3em;
+  background-color: white;
 }
-@media only screen and (min-width: 3) {
-  /* line 36, ../sass/modules/_search.scss */
+@media only screen and (min-width: 28em) {
+  /* line 43, ../sass/modules/_search.scss */
   .search--field-wrapper .search--field {
     min-width: 87%;
   }
 }
 
-/* line 42, ../sass/modules/_search.scss */
+/* line 49, ../sass/modules/_search.scss */
 .search--button {
   width: 100%;
 }
-@media only screen and (min-width: 3) {
-  /* line 42, ../sass/modules/_search.scss */
+@media only screen and (min-width: 28em) {
+  /* line 49, ../sass/modules/_search.scss */
   .search--button {
     position: absolute;
     bottom: 0;
@@ -959,4 +980,45 @@ body {
     -o-border-radius: 0 0.6em 0.6em 0;
     border-radius: 0 0.6em 0.6em 0;
   }
+}
+
+/* Search result
+   ========================================================================== */
+/* line 79, ../sass/modules/_search.scss */
+.search-result--question {
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+  border-bottom: 0.2em dotted #999999;
+}
+
+/**
+ * Question module
+ *
+ * @author magnify
+ */
+/* line 14, ../sass/modules/_question.scss */
+.question--answer {
+  color: #41ab51;
+  font-weight: bold;
+}
+
+/**
+ * Lists
+ *
+ * @author magnify
+ */
+/* line 7, ../sass/modules/_lists.scss */
+.content-list {
+  padding-left: 0;
+  color: #666666;
+  list-style: none;
+}
+
+/* line 14, ../sass/modules/_lists.scss */
+.content-list--item {
+  background-color: #ababab;
+}
+/* line 19, ../sass/modules/_lists.scss */
+.content-list--item.is-last {
+  margin-bottom: 0;
 }

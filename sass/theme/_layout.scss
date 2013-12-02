@@ -11,6 +11,8 @@
    ========================================================================== */
 
 .header {
+  margin-bottom: $margin-bottom;
+
   background-color: $green;
 
   @include zen-grid-container();
@@ -20,6 +22,7 @@
   @extend %set-max-width-and-center-element;
 
   min-height: 5em;
+
   padding-right: 1em;
   padding-left: 1em;
 }
@@ -127,7 +130,7 @@ $nav-link-dimensions: 2.5em;
 .nav--text {
   display: none;
 
-  @include breakpoint($breakpoint-3) {
+  @include breakpoint($breakpoint-4) {
     display: inline;
 
     font-size: 85%;
@@ -155,33 +158,4 @@ $nav-link-dimensions: 2.5em;
     font-size: 150%;
     line-height: 160%;
   }
-}
-
-
-/* Notifications
-   ========================================================================== */
-
-$notification-dimensions: 2em;
-
-.notification {
-  display: inline-block;
-  position: absolute;
-  top: -.5em;
-  right: -.5em;
-  height: $notification-dimensions;
-  width: $notification-dimensions;
-
-  background-color: $red;
-  font-size: 65%;
-  text-decoration: none;
-  line-height: $notification-dimensions;
-  text-align: center;
-  vertical-align: middle;
-
-  &:link,
-  &:visited {
-    text-decoration: none;
-  }
-
-  @include border-radius(100%);
 }
