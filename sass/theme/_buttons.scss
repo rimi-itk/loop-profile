@@ -1,8 +1,6 @@
 /**
  * Buttons
  *
- * This is an example file
- *
  * @author magnify
  */
 
@@ -24,17 +22,17 @@
   }
 
   @include border-radius($border-radius);
-  @include text-shadow(.025em .025em .1em lighten($gray-darker, 5%));
+  @include text-shadow(.025em .025em .1em darken($green, 10%));
 }
 
-.button {
+.button--action {
   @extend %button;
 
-  background-color: $gray-darker;
-  border: 0;
+  background-color: $green-light;
+  border: 1px solid $green;
   color: $white;
 
   &:hover {
-    background-color: $gray-darkest;
+    background-color: $green;
   }
 }

@@ -78,6 +78,7 @@ a {
 
 p {
   margin-top: 0;
+  margin-bottom: $margin-bottom;
 }
 
 
@@ -90,3 +91,12 @@ img {
   max-width: 100%;
   vertical-align: bottom;
 }
+
+
+/* States
+   ========================================================================== */
+
+.is-hidden {
+  display: none;
+}
+

@@ -25,23 +25,32 @@ $zen-gutter-width: 30px;
 
 
 // Override with theme vars
-@import "examples/_theme-vars";
+@import "theme/theme-vars";
 
 
 
 // Include base
 @import "base/_normalize";
-@import "base/_breakpoints";
 @import "base/_base";
 
 
 
-// Examples
-@import "examples/_forms";
-@import "examples/_buttons";
-@import "examples/_layout";
+// Theme
+@import "theme/breakpoints";
+@import "theme/placeholders";
+@import "theme/forms";
+@import "theme/buttons";
+@import "theme/layout";
 
 
 
 // Misc
 @import "misc/_debug";
+
+
+
+// Modules
+@import "modules/_notifications";
+@import "modules/_search";
+@import "modules/_question";
+@import "modules/_lists";
