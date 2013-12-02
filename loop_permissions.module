@@ -137,6 +137,7 @@ function loop_permissions_secure_permissions($role) {
       'administer filters',
       'administer flags',
       'administer google analytics',
+      'administer google analytics counter',
       'administer group',
       'administer image styles',
       'administer languages',
