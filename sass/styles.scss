@@ -19,18 +19,27 @@ $zen-gutter-width: 30px;
 
 
 
-// Include base
+// Include base vars
 @import "base/_vars";
+
+
+
+// Override with theme vars
+@import "examples/_theme-vars";
+
+
+
+// Include base
 @import "base/_normalize";
-@import "base/breakpoints";
+@import "base/_breakpoints";
 @import "base/_base";
-@import "base/_forms";
-@import "base/_buttons";
 
 
 
 // Examples
-@import "examples/layout";
+@import "examples/_forms";
+@import "examples/_buttons";
+@import "examples/_layout";
 
 
 

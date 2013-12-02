@@ -9,41 +9,41 @@
 /* Layout
    ================================================================================================================== */
 
-$border-radius:    .6em;
+$border-radius:    .6em !default;
 
 
 
 /* Colors
    ================================================================================================================== */
 
-$black:            #000;
-$white:            #fff;
-$gray-lightest:    lighten($black, 90%);
-$gray-lighter:     lighten($black, 80%);
-$gray-light:       lighten($black, 70%);
-$gray:             lighten($black, 60%);
-$gray-dark:        lighten($black, 50%);
-$gray-darker:      lighten($black, 40%);
-$gray-darkest:     lighten($black, 30%);
+$black:            #000 !default;
+$white:            #fff !default;
+$gray-lightest:    lighten($black, 90%) !default;
+$gray-lighter:     lighten($black, 80%) !default;
+$gray-light:       lighten($black, 70%) !default;
+$gray:             lighten($black, 60%) !default;
+$gray-dark:        lighten($black, 50%) !default;
+$gray-darker:      lighten($black, 40%) !default;
+$gray-darkest:     lighten($black, 30%) !default;
 
 
 
 /* Typograhy
    ================================================================================================================== */
 
-$font:             1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font:             1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
 
 
 /* Link colors
    ================================================================================================================== */
 
-$link-color:       blue;
+$link-color:       blue !default;
 
 
 
 /* Spacing
    ================================================================================================================== */
 
-$margin-bottom:    1.5em;
-$padding-bottom:   1.5em;
+$margin-bottom:    1.5em !default;
+$padding-bottom:   1.5em !default;
