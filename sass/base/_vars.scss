@@ -18,6 +18,9 @@ $border-radius:    .6em !default;
 
 $black:            #000 !default;
 $white:            #fff !default;
+$green:            #79a60b;
+$green-light:      #8ebe18;
+$red:              #ff6138;
 $gray-lightest:    lighten($black, 90%) !default;
 $gray-lighter:     lighten($black, 80%) !default;
 $gray-light:       lighten($black, 70%) !default;
@@ -38,12 +41,12 @@ $font:             1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif !defau
 /* Link colors
    ================================================================================================================== */
 
-$link-color:       blue !default;
+$link-color:       #04bfbf !default;
 
 
 
 /* Spacing
    ================================================================================================================== */
 
-$margin-bottom:    1.5em !default;
-$padding-bottom:   1.5em !default;
+$margin-bottom:    1.25em !default;
+$padding-bottom:   1.25em !default;

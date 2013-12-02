@@ -21,6 +21,13 @@
 /* Spacing
    ================================================================================================================== */
 /**
+ * Theme variables
+ *
+ * This is an example file
+ *
+ * @author magnify
+ */
+/**
  * Normalize
  *
  * Normalize.css v2.1.2 | MIT License | git.io/normalize
@@ -367,6 +374,28 @@ table {
    *
    ================================================================================================================== */
 /**
+ * Placeholders
+ *
+ * This contains placeholders used with @extend in rulesets
+ *
+ * @author magnify
+ */
+/* Layout placeholders
+   ========================================================================== */
+/* line 13, ../sass/base/_placeholders.scss */
+.header--inner, .search--inner {
+  max-width: 31.25em;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media only screen and (min-width: 1) {
+  /* line 13, ../sass/base/_placeholders.scss */
+  .header--inner, .search--inner {
+    max-width: 48em;
+  }
+}
+
+/**
  * Base
  *
  * Contains styling and reset of basic elements
@@ -415,21 +444,21 @@ em strong {
    ================================================================================================================== */
 /* line 56, ../sass/base/_base.scss */
 a:link {
-  color: blue;
+  color: #04bfbf;
   text-decoration: underline;
 }
 /* line 61, ../sass/base/_base.scss */
 a:visited {
-  color: #0000e6;
+  color: #03a6a6;
 }
 /* line 65, ../sass/base/_base.scss */
 a:hover {
-  color: #0000cc;
+  color: #038d8d;
   text-decoration: none;
 }
 /* line 70, ../sass/base/_base.scss */
 a:focus {
-  color: #0000cc;
+  color: #038d8d;
 }
 
 /* Paragraph
@@ -437,11 +466,12 @@ a:focus {
 /* line 79, ../sass/base/_base.scss */
 p {
   margin-top: 0;
+  margin-bottom: 1.25em;
 }
 
 /* Image
    ================================================================================================================== */
-/* line 87, ../sass/base/_base.scss */
+/* line 88, ../sass/base/_base.scss */
 img {
   display: inline;
   height: auto;
@@ -449,20 +479,29 @@ img {
   vertical-align: bottom;
 }
 
+/* States
+   ========================================================================== */
+/* line 99, ../sass/base/_base.scss */
+.is-hidden {
+  display: none;
+}
+
 /**
  * Forms
+ *
+ * This is an example file
  *
  * @author magnify
  */
 /* Basic styling
    ================================================================================================================== */
-/* line 13, ../sass/base/_forms.scss */
+/* line 15, ../sass/examples/_forms.scss */
 input,
 textarea {
   font: 1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 27, ../sass/base/_forms.scss */
+/* line 29, ../sass/examples/_forms.scss */
 input[type="text"],
 input[type="password"],
 input[type="date"],
@@ -474,7 +513,7 @@ input[type="tel"],
 input[type="time"],
 input[type="url"],
 textarea {
-  border: 1px solid #999999;
+  border: 1px solid #cccccc;
   display: block;
   min-height: 1.25em;
   width: 100%;
@@ -490,7 +529,7 @@ textarea {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 37, ../sass/base/_forms.scss */
+/* line 39, ../sass/examples/_forms.scss */
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="date"]:focus,
@@ -505,7 +544,7 @@ textarea:focus {
   border: 1px solid gray;
   color: #4d4d4d;
 }
-/* line 43, ../sass/base/_forms.scss */
+/* line 45, ../sass/examples/_forms.scss */
 input[type="text"][disabled],
 input[type="password"][disabled],
 input[type="date"][disabled],
@@ -526,12 +565,11 @@ textarea[disabled] {
 
 /* Labels
    ================================================================================================================== */
-/* line 59, ../sass/base/_forms.scss */
-.form-label {
+/* line 61, ../sass/examples/_forms.scss */
+label {
   display: block;
   margin-bottom: .25em;
   /* Move labels so they align better with fields when using rounded corners */
-  /* Remove this if you fields don't have rounded corners */
   margin-left: .3em;
   color: #666666;
 }
@@ -539,9 +577,11 @@ textarea[disabled] {
 /**
  * Buttons
  *
+ * This is an example file
+ *
  * @author magnify
  */
-/* line 8, ../sass/base/_buttons.scss */
+/* line 10, ../sass/examples/_buttons.scss */
 .button {
   display: inline-block;
   font-size: 125%;
@@ -557,64 +597,228 @@ textarea[disabled] {
   border-radius: 0.6em;
   text-shadow: 0.025em 0.025em 0.1em #737373;
 }
-/* line 20, ../sass/base/_buttons.scss */
+/* line 22, ../sass/examples/_buttons.scss */
 .button:focus, .button:hover, .button:active {
   text-decoration: none;
 }
 
-/* line 28, ../sass/base/_buttons.scss */
+/* line 30, ../sass/examples/_buttons.scss */
 .button {
   background-color: #666666;
   border: 0;
   color: white;
 }
-/* line 35, ../sass/base/_buttons.scss */
+/* line 37, ../sass/examples/_buttons.scss */
 .button:hover {
   background-color: #4d4d4d;
 }
 
 /**
- * Layouts
+ * Layout
  *
- * This is an example file
+ * Contains styling of layout elements
  *
  * @author magnify
  */
-/* line 10, ../sass/examples/_layout.scss */
-.example-header--inner, .example-layout {
+/* Header
+   ========================================================================== */
+/* line 13, ../sass/layout/_layout.scss */
+.header {
+  background-color: #79a60b;
+  *position: relative;
+  *zoom: 1;
+}
+/* line 46, ../../../../../../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+.header:before, .header:after {
+  content: "";
+  display: table;
+}
+/* line 50, ../../../../../../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+.header:after {
+  clear: both;
+}
+
+/* line 19, ../sass/layout/_layout.scss */
+.header--inner {
+  min-height: 5em;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+/* Logo
+   ========================================================================== */
+/* line 31, ../sass/layout/_layout.scss */
+.logo--link {
+  display: inline-block;
+  max-width: 100%;
+  padding-top: 1.25em;
+  text-align: center;
+}
+@media only screen and (min-width: 18.75em) {
+  /* line 31, ../sass/layout/_layout.scss */
+  .logo--link {
+    max-width: 5.625em;
+  }
+}
+
+/* line 43, ../sass/layout/_layout.scss */
+.logo--image {
+  max-width: 75%;
   margin-right: auto;
   margin-left: auto;
-  max-width: 75em;
+}
+@media only screen and (min-width: 18.75em) {
+  /* line 43, ../sass/layout/_layout.scss */
+  .logo--image {
+    max-width: 100%;
+  }
 }
 
-/* Example logo */
-/* line 19, ../sass/examples/_layout.scss */
-.example-logo {
-  font-size: 200%;
+/* Navigation
+   ========================================================================== */
+/* line 58, ../sass/layout/_layout.scss */
+.nav {
+  text-align: center;
+}
+@media only screen and (min-width: 18.75em) {
+  /* line 58, ../sass/layout/_layout.scss */
+  .nav {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: right;
+    float: right;
+    width: 83.33333%;
+    margin-right: 0%;
+    margin-left: -83.33333%;
+    padding-left: 15px;
+    padding-right: 15px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
+    /* Padding should come from parent element, so let's make sure left and right padding is removed */
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
-/* Example header */
-/* line 25, ../sass/examples/_layout.scss */
-.example-header {
-  margin-bottom: 1.5em;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  background-color: #cccccc;
+/* Using a variable so we only have to set the size once */
+/* line 77, ../sass/layout/_layout.scss */
+.nav--link, .nav--link-mail, .nav--link-menu {
+  display: block;
+  position: relative;
+  height: 2.5em;
+  width: 2.5em;
+  margin-right: auto;
+  margin-bottom: 1em;
+  margin-left: auto;
+  background-color: rgba(255, 255, 255, 0.25);
+  font-size: 125%;
+  line-height: 2.5em;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+}
+/* line 93, ../sass/layout/_layout.scss */
+.nav--link:link, .nav--link-mail:link, .nav--link-menu:link, .nav--link:visited, .nav--link-mail:visited, .nav--link-menu:visited {
+  color: white;
+  text-decoration: none;
+}
+/* line 98, ../sass/layout/_layout.scss */
+.nav--link:hover, .nav--link-mail:hover, .nav--link-menu:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+/* line 102, ../sass/layout/_layout.scss */
+.nav--link i[class^="icon-"], .nav--link-mail i[class^="icon-"], .nav--link-menu i[class^="icon-"] {
+  vertical-align: bottom;
+}
+@media only screen and (min-width: 18.75em) {
+  /* line 77, ../sass/layout/_layout.scss */
+  .nav--link, .nav--link-mail, .nav--link-menu {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: .25em;
+  }
+}
+@media only screen and (min-width: 22.5em) {
+  /* line 77, ../sass/layout/_layout.scss */
+  .nav--link, .nav--link-mail, .nav--link-menu {
+    margin-left: 1em;
+  }
+}
+@media only screen and (min-width: 43em) {
+  /* line 77, ../sass/layout/_layout.scss */
+  .nav--link, .nav--link-mail, .nav--link-menu {
+    padding-right: .75em;
+    padding-left: .75em;
+    width: auto;
+    -webkit-border-radius: 0.6em;
+    -moz-border-radius: 0.6em;
+    -ms-border-radius: 0.6em;
+    -o-border-radius: 0.6em;
+    border-radius: 0.6em;
+  }
 }
 
-/* Example layout */
-/* Example section */
-/* line 47, ../sass/examples/_layout.scss */
-.example-section {
-  margin-bottom: 1.5em;
-  padding: 2em;
-  background-color: #e6e6e6;
+/* line 127, ../sass/layout/_layout.scss */
+.nav--text {
+  display: none;
+}
+@media only screen and (min-width: 28em) {
+  /* line 127, ../sass/layout/_layout.scss */
+  .nav--text {
+    display: inline;
+    font-size: 85%;
+  }
 }
 
-/* Example form */
-/* line 58, ../sass/examples/_layout.scss */
-.example-form .example-form--input {
-  margin-bottom: 1.5em;
+/* Make the mail icon bigger */
+/* line 141, ../sass/layout/_layout.scss */
+.nav--link-mail i[class^="icon-"] {
+  font-size: 125%;
+  line-height: 190%;
+}
+
+/* Make the menu icon bigger */
+/* line 154, ../sass/layout/_layout.scss */
+.nav--link-menu i[class^="icon-"] {
+  font-size: 150%;
+  line-height: 160%;
+}
+
+/* Notifications
+   ========================================================================== */
+/* line 166, ../sass/layout/_layout.scss */
+.notification {
+  display: inline-block;
+  position: absolute;
+  top: -.5em;
+  right: -.5em;
+  height: 2em;
+  width: 2em;
+  background-color: #ff6138;
+  font-size: 65%;
+  text-decoration: none;
+  line-height: 2em;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+}
+/* line 182, ../sass/layout/_layout.scss */
+.notification:link, .notification:visited {
+  text-decoration: none;
 }
 
 /**
@@ -624,16 +828,32 @@ textarea[disabled] {
  *
  * @author magnify
  */
+/* Add padding bottom to body because of the fixed debug container */
 /* line 11, ../sass/misc/_debug.scss */
+body {
+  padding-bottom: 14em;
+}
+
+/* line 16, ../sass/misc/_debug.scss */
 .debug {
   padding-top: 2em;
   padding-bottom: 2em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 99;
   background-color: yellowgreen;
+}
+
+/* line 27, ../sass/misc/_debug.scss */
+.debug--header {
+  padding-right: 1em;
+  padding-left: 1em;
 }
 
 /* Breakpoints
    ================================================================================================================== */
-/* line 23, ../sass/misc/_debug.scss */
+/* line 37, ../sass/misc/_debug.scss */
 .breakpoint-1, .breakpoint-2, .breakpoint-3 {
   display: none;
   margin-top: 1em;
@@ -644,7 +864,7 @@ textarea[disabled] {
 }
 
 @media only screen and (min-width: 18.75em) {
-  /* line 34, ../sass/misc/_debug.scss */
+  /* line 48, ../sass/misc/_debug.scss */
   .breakpoint-1 {
     display: block;
     width: 18.75em;
@@ -652,7 +872,7 @@ textarea[disabled] {
 }
 
 @media only screen and (min-width: 22.5em) {
-  /* line 43, ../sass/misc/_debug.scss */
+  /* line 57, ../sass/misc/_debug.scss */
   .breakpoint-2 {
     display: block;
     width: 22.5em;
@@ -660,9 +880,83 @@ textarea[disabled] {
 }
 
 @media only screen and (min-width: 28em) {
-  /* line 52, ../sass/misc/_debug.scss */
+  /* line 66, ../sass/misc/_debug.scss */
   .breakpoint-3 {
     display: block;
     width: 28em;
+  }
+}
+
+/**
+ * Search module
+ *
+ * @author magnify
+ */
+/* line 8, ../sass/modules/_search.scss */
+.search {
+  float: left;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: -100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+}
+
+/* line 12, ../sass/modules/_search.scss */
+.search--inner {
+  padding-top: 2em;
+}
+
+/* line 18, ../sass/modules/_search.scss */
+.search--field-wrapper {
+  position: relative;
+}
+/* line 21, ../sass/modules/_search.scss */
+.search--field-wrapper .search--icon {
+  position: absolute;
+  top: .25em;
+  left: .15em;
+  color: #999999;
+  font-size: 200%;
+}
+/* line 30, ../sass/modules/_search.scss */
+.search--field-wrapper .search--field {
+  margin-bottom: 1.25em;
+  padding-left: 3em;
+}
+@media only screen and (min-width: 3) {
+  /* line 36, ../sass/modules/_search.scss */
+  .search--field-wrapper .search--field {
+    min-width: 87%;
+  }
+}
+
+/* line 42, ../sass/modules/_search.scss */
+.search--button {
+  width: 100%;
+}
+@media only screen and (min-width: 3) {
+  /* line 42, ../sass/modules/_search.scss */
+  .search--button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-top: .65em;
+    padding-bottom: .65em;
+    width: auto;
+    font-size: 150%;
+    -webkit-border-radius: 0 0.6em 0.6em 0;
+    -moz-border-radius: 0 0.6em 0.6em 0;
+    -ms-border-radius: 0 0.6em 0.6em 0;
+    -o-border-radius: 0 0.6em 0.6em 0;
+    border-radius: 0 0.6em 0.6em 0;
   }
 }
