@@ -41,7 +41,6 @@ dependencies[] = page_title
 dependencies[] = pathauto
 dependencies[] = redirect
 dependencies[] = rules
-dependencies[] = secure_permissions
 dependencies[] = strongarm
 dependencies[] = taxonomy
 dependencies[] = token
@@ -53,3 +52,6 @@ dependencies[] = wysiwyg
 
 ; LOOP features
 dependencies[] = loop_post
+
+; LOOP modules
+dependencies[] = loop_permissions

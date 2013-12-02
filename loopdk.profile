@@ -43,7 +43,7 @@ function loopdk_install_tasks(&$install_state) {
       'type' => 'batch',
     ),
     'loopdk_setup_filter_and_wysiwyg' => array(
-      'display_name' => st('Setup filter and WYSIWIG'),
+      'display_name' => st('Setup filter and WYSIWYG'),
       'display' => TRUE,
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
       'type' => 'batch'
@@ -174,4 +174,6 @@ function loopdk_setup_filter_and_wysiwyg() {
  */
 function loopdk_setup_apache_solr() {
   db_query("UPDATE apachesolr_environment SET name='LOOP', url='http://localhost:8983/solr/loop_stg'");
+
+  variable_set('search_default_module', 'apachesolr_search');
 }

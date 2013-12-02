@@ -2,6 +2,9 @@ api = 2
 core = 7.x
 
 ; Contrib modules
+projects[active_tags][subdir] = "contrib"
+projects[active_tags][version] = "2.x-dev"
+
 projects[apachesolr][subdir] = "contrib"
 projects[apachesolr][version] = "1.6"
 
@@ -43,6 +46,9 @@ projects[globalredirect][version] = "1.5"
 
 projects[google_analytics][subdir] = "contrib"
 projects[google_analytics][version] = "1.4"
+
+projects[google_analytics_reports][subdir] = "contrib"
+projects[google_analytics_reports][version] = "1.3"
 
 projects[html5_tools][subdir] = "contrib"
 projects[html5_tools][version] = "1.2"
@@ -122,6 +128,11 @@ projects[loop_content][subdir] = "features"
 projects[loop_content][download][type] = "git"
 projects[loop_content][download][url] = "git@github.com:loopdk/loop_content.git"
 projects[loop_content][branch] = "development"
+
+projects[loop_permissions][type] = "module"
+projects[loop_permissions][download][type] = "git"
+projects[loop_permissions][download][url] = "git@github.com:loopdk/loop_permissions.git"
+projects[loop_permissions][branch] = "development"
 
 ; LOOP features
 projects[loop_post][type] = "module"
