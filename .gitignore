@@ -8,6 +8,7 @@ sites/*/files
 sites/*/private
 
 # Ignore default text files
+.sass-cache
 .htaccess
 robots.txt
 /CHANGELOG.txt
