@@ -1,0 +1,8 @@
+name = LOOP Role/permissions
+description = Role and permission settings for the site.
+core = 7.x
+dependencies[] = ctools
+dependencies[] = secure_permissions
+dependencies[] = strongarm
+package = LOOP
+version 7.x-1.0

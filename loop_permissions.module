@@ -1,0 +1,208 @@
+<?php
+
+/**
+ * @file loop_permissions.module.
+ * Module file for secure role/permissions in code.
+ */
+
+include_once 'loop_permissions.features.inc';
+
+/**
+ * Define site roles in code.
+ *
+ * @return
+ *   An array defining all the roles for the site.
+ */
+function loop_permissions_secure_permissions_roles() {
+  return array(
+    'anonymous user',
+    'authenticated user',
+    'documentation coordinator',
+    'manager',
+    'administrator',
+  );
+}
+
+/**
+ * Define site permissions in code.
+ *
+ * @param $role
+ *   The role for which the permissions are being requested.
+ *
+ * @return
+ *   An array defining all the permissions for the site.
+ */
+function loop_permissions_secure_permissions($role) {
+  $permissions = array(
+    'anonymous user' => array(
+    ),
+    'authenticated user' => array(
+      'access comments',
+      'access content',
+      'create post content',
+      'edit own comments',
+      'edit own post content',
+      'maintain own subscriptions',
+      'post comments',
+      'search content',
+      'skip comment approval',
+      'use text format editor',
+      'view own unpublished content',
+    ),
+    'documentation coordinator' => array(
+      'access content',
+      'access content overview',
+      'access contextual links',
+      'administer nodes',
+      'view own unpublished content',
+    ),
+    'manager' => array(
+      'access administration pages',
+      'access all views',
+      'access content overview',
+      'access contextual links',
+      'access site in maintenance mode',
+      'access toolbar',
+      'access user profiles',
+      'administer advanced pane settings',
+      'administer blocks',
+      'administer comments',
+      'administer facets',
+      'administer filters',
+      'administer image styles',
+      'administer menu',
+      'administer messaging',
+      'administer meta tags',
+      'administer nodes',
+      'administer notifications',
+      'administer page titles',
+      'administer pane access',
+      'administer panels layouts',
+      'administer panels styles',
+      'administer pathauto',
+      'administer redirects',
+      'administer rules',
+      'administer search',
+      'administer taxonomy',
+      'administer url aliases',
+      'administer users',
+      'administer views',
+      'block IP addresses',
+      'bypass node access',
+      'bypass rules access',
+      'change layouts in place editing',
+      'change own username',
+      'create subscriptions',
+      'create url aliases',
+      'delete any post content',
+      'delete own post content',
+      'delete revisions',
+      'delete terms in 1',
+      'delete terms in 2',
+      'edit any post content',
+      'edit meta tags',
+      'edit terms in 1',
+      'edit terms in 2',
+      'manage all subscriptions',
+      'notify of path changes',
+      'revert revisions',
+      'set page title',
+      'translate interface',
+      'use panels caching features',
+      'use panels in place editing',
+      'use panels locks',
+      'view pane admin links',
+      'view revisions',
+      'view the administration theme',
+    ),
+    'administrator' => array(
+      'access administration pages',
+      'access all views',
+      'access content overview',
+      'access contextual links',
+      'access rules debug',
+      'access site in maintenance mode',
+      'access site reports',
+      'access toolbar',
+      'access user profiles',
+      'administer actions',
+      'administer advanced pane settings',
+      'administer blocks',
+      'administer comments',
+      'administer content types',
+      'administer facets',
+      'administer features',
+      'administer fieldgroups',
+      'administer filters',
+      'administer flags',
+      'administer google analytics',
+      'administer group',
+      'administer image styles',
+      'administer languages',
+      'administer menu',
+      'administer messaging',
+      'administer meta tags',
+      'administer module filter',
+      'administer modules',
+      'administer nodes',
+      'administer notifications',
+      'administer page titles',
+      'administer pane access',
+      'administer panels layouts',
+      'administer panels styles',
+      'administer pathauto',
+      'administer permissions',
+      'administer redirects',
+      'administer rules',
+      'administer search',
+      'administer site configuration',
+      'administer software updates',
+      'administer taxonomy',
+      'administer themes',
+      'administer url aliases',
+      'administer users',
+      'administer views',
+      'block IP addresses',
+      'bypass node access',
+      'bypass rules access',
+      'cancel account',
+      'change layouts in place editing',
+      'change own username',
+      'create subscriptions',
+      'create url aliases',
+      'delete any post content',
+      'delete own post content',
+      'delete revisions',
+      'delete terms in 1',
+      'delete terms in 2',
+      'edit any post content',
+      'edit meta tags',
+      'edit terms in 1',
+      'edit terms in 2',
+      'export secure permissions',
+      'generate features',
+      'manage all subscriptions',
+      'manage features',
+      'notify of path changes',
+      'opt-in or out of tracking',
+      'revert revisions',
+      'select account cancellation method',
+      'set page title',
+      'skip notifications',
+      'translate interface',
+      'use flag import',
+      'use panels caching features',
+      'use panels dashboard',
+      'use panels in place editing',
+      'use panels locks',
+      'use PHP for title patterns',
+      'use PHP for tracking visibility',
+      'view pane admin links',
+      'view revisions',
+      'view the administration theme',
+    ),
+  );
+  if (isset($permissions[$role])) {
+    return $permissions[$role];
+  }
+}
