@@ -43,7 +43,7 @@ function loopdk_install_tasks(&$install_state) {
       'type' => 'batch',
     ),
     'loopdk_setup_filter_and_wysiwyg' => array(
-      'display_name' => st('Setup filter and WYSIWIG'),
+      'display_name' => st('Setup filter and WYSIWYG'),
       'display' => TRUE,
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
       'type' => 'batch'
