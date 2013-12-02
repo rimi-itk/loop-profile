@@ -28,7 +28,7 @@
   margin-bottom: $margin-bottom;
   padding: $padding-bottom;
 
-  background-color: $gray-light;
+  background-color: $gray-lightest;
 
   @include border-radius($border-radius);
   @include box-sizing(border-box);

@@ -494,7 +494,7 @@ img {
 .search--inner, .search-result, .question--inner, .content-list--item {
   margin-bottom: 1.5em;
   padding: 1.5em;
-  background-color: #b3b3b3;
+  background-color: #f2f2f2;
   -webkit-border-radius: 0.6em;
   -moz-border-radius: 0.6em;
   -ms-border-radius: 0.6em;
@@ -532,12 +532,12 @@ input[type="tel"],
 input[type="time"],
 input[type="url"],
 textarea {
-  border: 1px solid #cccccc;
+  border: 1px solid #e6e6e6;
   display: block;
   min-height: 1.25em;
   width: 100%;
   padding: .75em;
-  color: #666666;
+  color: #595959;
   background-color: white;
   -webkit-border-radius: 0.6em;
   -moz-border-radius: 0.6em;
@@ -560,8 +560,8 @@ input[type="tel"]:focus,
 input[type="time"]:focus,
 input[type="url"]:focus,
 textarea:focus {
-  border: 1px solid gray;
-  color: #4d4d4d;
+  border: 1px solid #737373;
+  color: #404040;
 }
 /* line 45, ../sass/theme/_forms.scss */
 input[type="text"][disabled],
@@ -578,8 +578,8 @@ textarea[disabled] {
   -webkit-box-shadow: 0 0 0;
   -moz-box-shadow: 0 0 0;
   box-shadow: 0 0 0;
-  border: 1px solid #b3b3b3;
-  background-color: #bfbfbf;
+  border: 1px solid #cccccc;
+  background-color: #d9d9d9;
 }
 
 /* Labels
@@ -590,7 +590,7 @@ label {
   margin-bottom: .25em;
   /* Move labels so they align better with fields when using rounded corners */
   margin-left: .3em;
-  color: #666666;
+  color: #595959;
 }
 
 /**
@@ -942,7 +942,7 @@ body {
   position: absolute;
   top: .25em;
   left: .15em;
-  color: #999999;
+  color: #b3b3b3;
   font-size: 200%;
 }
 /* line 33, ../sass/modules/_search.scss */
@@ -988,7 +988,7 @@ body {
 .search-result--question {
   margin-bottom: 1.5em;
   padding-bottom: 1.5em;
-  border-bottom: 0.2em dotted #999999;
+  border-bottom: 0.2em dotted #b3b3b3;
 }
 
 /**
@@ -1010,13 +1010,13 @@ body {
 /* line 7, ../sass/modules/_lists.scss */
 .content-list {
   padding-left: 0;
-  color: #666666;
+  color: #737373;
   list-style: none;
 }
 
 /* line 14, ../sass/modules/_lists.scss */
 .content-list--item {
-  background-color: #ababab;
+  background-color: #e6e6e6;
 }
 /* line 19, ../sass/modules/_lists.scss */
 .content-list--item.is-last {

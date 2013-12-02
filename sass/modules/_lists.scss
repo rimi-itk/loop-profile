@@ -7,14 +7,14 @@
 .content-list {
   padding-left: 0;
 
-  color: $gray-darker;
+  color: $gray-dark;
   list-style: none;
 }
 
 .content-list--item {
   @extend %basic-element-styling;
 
-  background-color: darken($gray-light, 3%);
+  background-color: $gray-lighter;
 
   &.is-last {
     margin-bottom: 0;
