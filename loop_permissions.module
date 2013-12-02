@@ -35,6 +35,7 @@ function loop_permissions_secure_permissions_roles() {
 function loop_permissions_secure_permissions($role) {
   $permissions = array(
     'anonymous user' => array(
+      'access content'
     ),
     'authenticated user' => array(
       'access comments',
@@ -136,6 +137,7 @@ function loop_permissions_secure_permissions($role) {
       'administer filters',
       'administer flags',
       'administer google analytics',
+      'administer google analytics counter',
       'administer group',
       'administer image styles',
       'administer languages',

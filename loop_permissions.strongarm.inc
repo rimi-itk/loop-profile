@@ -14,7 +14,7 @@ function loop_permissions_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'secure_permissions_active';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['secure_permissions_active'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -49,7 +49,7 @@ function loop_permissions_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'secure_permissions_verbose';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['secure_permissions_verbose'] = $strongarm;
 
   return $export;
