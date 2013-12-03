@@ -1,0 +1,7 @@
+name = Loop Admin
+description = Admin functionallity
+core = 7.x
+package = LOOP
+version = 7.x-1.0
+dependencies[] = ctools
+dependencies[] = views
