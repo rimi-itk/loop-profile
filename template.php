@@ -46,10 +46,10 @@ function loop_preprocess_panels_pane(&$variables) {
  * Implements template_preprocess_search_results().
  */
 function loop_preprocess_search_results(&$variables) {
-  if (sizeof($variables['results']) == 0) {
+  if (count($variables['results']) == 0) {
     // No hits. Send formular to template.
     module_load_include('inc', 'node', 'node.pages');
-    $node = new stdClass;
+    $node = new stdClass();
     $node->type = 'post';
 
     // Add the post.
