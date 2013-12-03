@@ -10,7 +10,7 @@ function loop_user_views_api() {
 /**
  * Implements hook_views_default_views().
  */
-function loop_admin_views_default_views() {
+function loop_user_views_default_views() {
   $view = new view();
   $view->name = 'comments';
   $view->description = '';
