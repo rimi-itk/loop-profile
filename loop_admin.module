@@ -30,11 +30,11 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
-  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
-  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
-  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
-  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Perform';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Restore';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sort by';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Ascending';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Descending';
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '50';
@@ -80,22 +80,27 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
-  $handler->display->display_options['fields']['field_description']['label'] = 'Beskrivelse';
+  $handler->display->display_options['fields']['field_description']['label'] = 'Description';
+  $handler->display->display_options['fields']['field_description']['alter']['max_length'] = '250';
+  $handler->display->display_options['fields']['field_description']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['settings'] = array(
+    'trim_length' => '250',
+  );
   /* Field: Content: Comment count */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
-  $handler->display->display_options['fields']['comment_count']['label'] = 'Kommentarantal';
+  $handler->display->display_options['fields']['comment_count']['label'] = 'Comment count';
   /* Field: Content statistics: Total views */
   $handler->display->display_options['fields']['totalcount']['id'] = 'totalcount';
   $handler->display->display_options['fields']['totalcount']['table'] = 'node_counter';
   $handler->display->display_options['fields']['totalcount']['field'] = 'totalcount';
-  $handler->display->display_options['fields']['totalcount']['label'] = 'Totale visninger';
+  $handler->display->display_options['fields']['totalcount']['label'] = 'Total views';
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = 'Oprettelsesdato';
+  $handler->display->display_options['fields']['created']['label'] = 'Create date';
   $handler->display->display_options['fields']['created']['date_format'] = 'html5_tools_iso8601';
   /* Sort criterion: Content statistics: Total views */
   $handler->display->display_options['sorts']['totalcount']['id'] = 'totalcount';
@@ -103,13 +108,13 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['sorts']['totalcount']['field'] = 'totalcount';
   $handler->display->display_options['sorts']['totalcount']['order'] = 'DESC';
   $handler->display->display_options['sorts']['totalcount']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['totalcount']['expose']['label'] = 'Totale visninger';
+  $handler->display->display_options['sorts']['totalcount']['expose']['label'] = 'Total views';
   /* Sort criterion: Content: Comment count */
   $handler->display->display_options['sorts']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['sorts']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['sorts']['comment_count']['field'] = 'comment_count';
   $handler->display->display_options['sorts']['comment_count']['exposed'] = TRUE;
-  $handler->display->display_options['sorts']['comment_count']['expose']['label'] = 'Kommentarantal';
+  $handler->display->display_options['sorts']['comment_count']['expose']['label'] = 'Comment count';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
