@@ -53,6 +53,7 @@ dependencies[] = wysiwyg
 
 ; LOOP features
 dependencies[] = loop_post
+dependencies[] = loop_frontpage
 
 ; LOOP modules
 dependencies[] = loop_admin

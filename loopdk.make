@@ -155,6 +155,12 @@ projects[loop_taxonomy][download][type] = "git"
 projects[loop_taxonomy][download][url] = "git@github.com:loopdk/loop_taxonomy.git"
 projects[loop_taxonomy][branch] = "development"
 
+projects[loop_frontpage][type] = "module"
+projects[loop_frontpage][subdir] = "features"
+projects[loop_frontpage][download][type] = "git"
+projects[loop_frontpage][download][url] = "git@github.com:loopdk/loop_frontpage.git"
+projects[loop_frontpage][branch] = "development"
+
 ; LOOP themes
 projects[loop][type] = "theme"
 projects[loop][download][type] = "git"
