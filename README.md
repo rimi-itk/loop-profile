@@ -1,4 +1,4 @@
-loop_frontpage
+Loop Frontpage
 ==============
 
-Frontpage settings for loop
+Frontpage settings for loop website.
