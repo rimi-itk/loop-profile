@@ -41,3 +41,20 @@ function loop_preprocess_block(&$variables) {
  */
 function loop_preprocess_panels_pane(&$variables) {
 }
+
+/**
+ * Implements template_preprocess_search_results().
+ */
+function loop_preprocess_search_results(&$variables) {
+  if (sizeof($variables['results']) == 0) {
+    // No hits. Send formular to template.
+    module_load_include('inc', 'node', 'node.pages');
+    $node = new stdClass;
+    $node->type = 'post';
+
+    // Add the post.
+    $node->field_description['und'][0]['value'] = arg(2);
+    $form = drupal_get_form('node_form', $node);
+    $variables['form'] = $form;
+  }
+}
