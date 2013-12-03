@@ -1,0 +1,32 @@
+/**
+ * Search module, Loop specific rules
+ *
+ * Dependencies:
+ * Loop_frontpage feature
+ *
+ * @author zorp
+ */
+
+
+
+/* Extending from search
+   ========================================================================== */
+
+.loop--search {
+  @extend .search;
+
+  .panel-pane--inner {
+    @extend .search--inner;
+  }
+
+  .pane-title {
+    @extend label;
+    @extend .form-label;
+
+    font-size: 1em;
+  }
+}
+
+.container-inline {
+  @extend .search--field-wrapper;
+}
