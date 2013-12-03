@@ -152,7 +152,7 @@ function loop_admin_views_default_views() {
     t('.'),
     t(','),
     t('Total views'),
-    t('Creationdate'),
+    t('Create date'),
     t('Page'),
   );
 
