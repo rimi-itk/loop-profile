@@ -57,3 +57,4 @@ dependencies[] = loop_post
 ; LOOP modules
 dependencies[] = loop_admin
 dependencies[] = loop_permissions
+dependencies[] = loop_user
