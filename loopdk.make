@@ -137,6 +137,11 @@ projects[loop_permissions][download][type] = "git"
 projects[loop_permissions][download][url] = "git@github.com:loopdk/loop_permissions.git"
 projects[loop_permissions][branch] = "development"
 
+projects[loop_admin][type] = "module"
+projects[loop_admin][download][type] = "git"
+projects[loop_admin][download][url] = "git@github.com:loopdk/loop_admin.git"
+projects[loop_admin][branch] = "development"
+
 ; LOOP features
 projects[loop_post][type] = "module"
 projects[loop_post][subdir] = "features"
