@@ -80,12 +80,13 @@ function loop_post_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'taxonomy',
+      'module' => 'active_tags',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
+        'mode' => 'single',
         'size' => 60,
       ),
-      'type' => 'taxonomy_autocomplete',
+      'type' => 'active_tags_taxonomy_autocomplete',
       'weight' => 3,
     ),
   );

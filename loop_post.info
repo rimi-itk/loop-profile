@@ -4,6 +4,7 @@ core = 7.x
 package = LOOP
 version = 7.x-1.2
 project = loop_post
+dependencies[] = active_tags
 dependencies[] = auto_nodetitle
 dependencies[] = ctools
 dependencies[] = features
