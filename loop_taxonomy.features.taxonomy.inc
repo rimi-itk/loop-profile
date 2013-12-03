@@ -25,5 +25,13 @@ function loop_taxonomy_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => 0,
     ),
+    'profession' => array(
+      'name' => 'Profession',
+      'machine_name' => 'profession',
+      'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
   );
 }
