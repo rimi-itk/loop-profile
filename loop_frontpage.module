@@ -5,3 +5,13 @@
  */
 
 include_once 'loop_frontpage.features.inc';
+
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Add placeholder text and icon to search field.
+ */
+function hook_form_search_block_alter() {
+
+}
