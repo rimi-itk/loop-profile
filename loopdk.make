@@ -169,6 +169,12 @@ projects[loop_frontpage][download][type] = "git"
 projects[loop_frontpage][download][url] = "git@github.com:loopdk/loop_frontpage.git"
 projects[loop_frontpage][branch] = "development"
 
+projects[loop_example_content][type] = "module"
+projects[loop_example_content][subdir] = "features"
+projects[loop_example_content][download][type] = "git"
+projects[loop_example_content][download][url] = "git@github.com:loopdk/loop_example_content.git"
+projects[loop_example_content][branch] = "development"
+
 ; LOOP themes
 projects[loop][type] = "theme"
 projects[loop][download][type] = "git"
