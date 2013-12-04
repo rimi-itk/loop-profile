@@ -35,20 +35,29 @@
     padding-right: 1.25em;
     padding-bottom: 1.25em;
     padding-left: 3em;
+    height: 65px;
 
     background-color: $white;
+
+    // Removing the browsers outline border when field is in focus
+    &:focus {
+      outline: none;
+    }
   }
 
   @include breakpoint($breakpoint-3) {
     .search--field {
-      min-width: 87%;
+      padding-right: 6em;
+      width: 90%;
+
+      @include border-radius($border-radius 0 0 $border-radius);
     }
   }
 }
 
 .search--button {
   @extend .button--action;
-
+  height: 65px;
   width: 100%;
 
   @include breakpoint($breakpoint-3) {
@@ -56,7 +65,7 @@
     bottom: 0;
     right: 0;
 
-    padding-top: .65em;
+    padding-top: .5em;
     padding-bottom: .65em;
     width: auto;
 

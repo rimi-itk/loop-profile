@@ -951,26 +951,38 @@ body {
   padding-right: 1.25em;
   padding-bottom: 1.25em;
   padding-left: 3em;
+  height: 65px;
   background-color: white;
 }
-@media only screen and (min-width: 28em) {
-  /* line 43, ../sass/modules/_search.scss */
-  .search--field-wrapper .search--field {
-    min-width: 87%;
-  }
-}
-
-/* line 49, ../sass/modules/_search.scss */
-.search--button {
-  width: 100%;
+/* line 43, ../sass/modules/_search.scss */
+.search--field-wrapper .search--field:focus {
+  outline: none;
 }
 @media only screen and (min-width: 28em) {
   /* line 49, ../sass/modules/_search.scss */
+  .search--field-wrapper .search--field {
+    padding-right: 6em;
+    width: 90%;
+    -webkit-border-radius: 0.6em 0 0 0.6em;
+    -moz-border-radius: 0.6em 0 0 0.6em;
+    -ms-border-radius: 0.6em 0 0 0.6em;
+    -o-border-radius: 0.6em 0 0 0.6em;
+    border-radius: 0.6em 0 0 0.6em;
+  }
+}
+
+/* line 58, ../sass/modules/_search.scss */
+.search--button {
+  height: 65px;
+  width: 100%;
+}
+@media only screen and (min-width: 28em) {
+  /* line 58, ../sass/modules/_search.scss */
   .search--button {
     position: absolute;
     bottom: 0;
     right: 0;
-    padding-top: .65em;
+    padding-top: .5em;
     padding-bottom: .65em;
     width: auto;
     font-size: 150%;
@@ -984,7 +996,7 @@ body {
 
 /* Search result
    ========================================================================== */
-/* line 79, ../sass/modules/_search.scss */
+/* line 88, ../sass/modules/_search.scss */
 .search-result--question {
   margin-bottom: 1.5em;
   padding-bottom: 1.5em;
