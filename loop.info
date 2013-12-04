@@ -10,6 +10,7 @@ regions[footer] = Footer
 
 ; Stylesheets
 stylesheets[all][] = css/styles.css
+stylesheets[all][] = icons/loop-icons.css
 
 ; Disable stylesheets
-; stylesheets[all][] = system.theme.css
+stylesheets[all][] = system.theme.css

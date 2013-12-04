@@ -585,7 +585,7 @@ textarea[disabled] {
 /* Labels
    ================================================================================================================== */
 /* line 61, ../sass/theme/_forms.scss */
-label, .loop--search .pane-title {
+label {
   display: block;
   margin-bottom: .25em;
   /* Move labels so they align better with fields when using rounded corners */
@@ -599,8 +599,7 @@ label, .loop--search .pane-title {
  * @author magnify
  */
 /* line 8, ../sass/theme/_buttons.scss */
-.button--action, .search--button,
-.form-submit {
+.button--action, .search--button {
   display: inline-block;
   font-size: 125%;
   padding: .5em 1.5em;
@@ -616,23 +615,18 @@ label, .loop--search .pane-title {
   text-shadow: 0.025em 0.025em 0.1em #33863f;
 }
 /* line 20, ../sass/theme/_buttons.scss */
-.button--action:focus, .search--button:focus,
-.form-submit:focus, .button--action:hover, .search--button:hover,
-.form-submit:hover, .button--action:active, .search--button:active,
-.form-submit:active {
+.button--action:focus, .search--button:focus, .button--action:hover, .search--button:hover, .button--action:active, .search--button:active {
   text-decoration: none;
 }
 
 /* line 28, ../sass/theme/_buttons.scss */
-.button--action, .search--button,
-.form-submit {
+.button--action, .search--button {
   background-color: #5dc26d;
   border: 1px solid #41ab51;
   color: white;
 }
 /* line 35, ../sass/theme/_buttons.scss */
-.button--action:hover, .search--button:hover,
-.form-submit:hover {
+.button--action:hover, .search--button:hover {
   background-color: #41ab51;
 }
 
@@ -940,21 +934,19 @@ body {
 }
 
 /* line 21, ../sass/modules/_search.scss */
-.search--field-wrapper, .container-inline {
+.search--field-wrapper {
   position: relative;
 }
 /* line 24, ../sass/modules/_search.scss */
-.search--field-wrapper .search--icon, .container-inline .search--icon {
+.search--field-wrapper .search--icon {
   position: absolute;
   top: .25em;
   left: .15em;
   color: #b3b3b3;
   font-size: 200%;
 }
-/* line 34, ../sass/modules/_search.scss */
-.search--field-wrapper .search--field, .container-inline .search--field,
-.search--field-wrapper .form-search,
-.container-inline .form-search {
+/* line 33, ../sass/modules/_search.scss */
+.search--field-wrapper .search--field {
   padding-top: 1.25em;
   padding-right: 1.25em;
   padding-bottom: 1.25em;
@@ -962,21 +954,19 @@ body {
   background-color: white;
 }
 @media only screen and (min-width: 28em) {
-  /* line 44, ../sass/modules/_search.scss */
-  .search--field-wrapper .search--field, .container-inline .search--field {
+  /* line 43, ../sass/modules/_search.scss */
+  .search--field-wrapper .search--field {
     min-width: 87%;
   }
 }
 
-/* line 51, ../sass/modules/_search.scss */
-.search--button,
-.form-submit {
+/* line 49, ../sass/modules/_search.scss */
+.search--button {
   width: 100%;
 }
 @media only screen and (min-width: 28em) {
-  /* line 51, ../sass/modules/_search.scss */
-  .search--button,
-  .form-submit {
+  /* line 49, ../sass/modules/_search.scss */
+  .search--button {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -994,7 +984,7 @@ body {
 
 /* Search result
    ========================================================================== */
-/* line 81, ../sass/modules/_search.scss */
+/* line 79, ../sass/modules/_search.scss */
 .search-result--question {
   margin-bottom: 1.5em;
   padding-bottom: 1.5em;
@@ -1012,8 +1002,8 @@ body {
 /* Extending from search
    ========================================================================== */
 /* line 22, ../sass/modules/_loop_search.scss */
-.loop--search .pane-title {
-  font-size: 1em;
+.loop--search .search--icon {
+  top: 1.2em;
 }
 
 /**

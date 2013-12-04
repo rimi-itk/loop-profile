@@ -58,3 +58,4 @@ function loop_apachesolr_search_page_alter(&$build, $search_page) {
     $build['form'] = $form;
   }
 }
+
