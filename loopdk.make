@@ -150,6 +150,11 @@ projects[loop_user][download][type] = "git"
 projects[loop_user][download][url] = "git@github.com:loopdk/loop_user.git"
 projects[loop_user][branch] = "development"
 
+projects[loop_frontend][type] = "module"
+projects[loop_frontend][download][type] = "git"
+projects[loop_frontend][download][url] = "git@github.com:loopdk/loop_frontend.git"
+projects[loop_frontend][branch] = "development"
+
 ; LOOP features
 projects[loop_post][type] = "module"
 projects[loop_post][subdir] = "features"
