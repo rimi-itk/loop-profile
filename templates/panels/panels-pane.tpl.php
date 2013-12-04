@@ -23,7 +23,7 @@
 <?php endif; ?>
 
 <div class="<?php print $classes; ?>" <?php print $id; ?>>
-  <div class="panel-pane--inner pane-<?php print $pane->pid; ?>">
+  <div class="panel-pane--inner">
     <?php if ($admin_links): ?>
       <?php print $admin_links; ?>
     <?php endif; ?>
