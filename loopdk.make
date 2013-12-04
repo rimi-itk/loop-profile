@@ -101,6 +101,9 @@ projects[pathauto][version] = "1.2"
 projects[redirect][subdir] = "contrib"
 projects[redirect][version] = "1.0-rc1"
 
+projects[rules][subdir] = "contrib"
+projects[rules][version] = "2.6"
+
 projects[secure_permissions][subdir] = "contrib"
 projects[secure_permissions][version] = "1.5"
 
@@ -113,8 +116,8 @@ projects[token][version] = "1.5"
 projects[transliteration][subdir] = "contrib"
 projects[transliteration][version] = "3.1"
 
-projects[rules][subdir] = "contrib"
-projects[rules][version] = "2.6"
+projects[uuid][subidr] = "contrib"
+projects[uuid][version] = "1.0-alpha5"
 
 projects[views][subdir] = "contrib"
 projects[views][version] = "3.7"
