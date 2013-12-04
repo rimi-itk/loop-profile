@@ -9,3 +9,4 @@ dependencies[] = taxonomy
 features[features_api][] = api:2
 features[taxonomy][] = keyword
 features[taxonomy][] = subject
+features[taxonomy][] = profession
