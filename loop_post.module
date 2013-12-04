@@ -5,3 +5,17 @@
  */
 
 include_once 'loop_post.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Sets the profession field to the same as the current user.
+ */
+function loop_post_form_node_form_alter(&$form, &$form_state) {
+  global $user;
+  // We need the field_profession field, so lets fire up user_load!
+  $account = user_load($user->uid);
+
+  // Set up the field.
+  $form['field_profession']['und']['#default_value'] = $account->field_profession['und'][0]['tid'];
+}
