@@ -45,8 +45,8 @@ function loop_preprocess_panels_pane(&$variables) {
 /**
  * Implements template_preprocess_search_results().
  */
-function loop_preprocess_search_results(&$variables) {
-  if (count($variables['results']) == 0) {
+function loop_apachesolr_search_page_alter(&$build, $search_page) {
+  if (!isset($build['search_results']['#results'])) {
     // No hits. Send formular to template.
     module_load_include('inc', 'node', 'node.pages');
     $node = new stdClass();
@@ -55,6 +55,6 @@ function loop_preprocess_search_results(&$variables) {
     // Add the post.
     $node->field_description['und'][0]['value'] = arg(2);
     $form = drupal_get_form('node_form', $node);
-    $variables['form'] = $form;
+    $build['form'] = $form;
   }
 }
