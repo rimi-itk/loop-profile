@@ -180,6 +180,12 @@ projects[loop_example_content][download][type] = "git"
 projects[loop_example_content][download][url] = "git@github.com:loopdk/loop_example_content.git"
 projects[loop_example_content][branch] = "development"
 
+projects[loop_flag][type] = "module"
+projects[loop_flag][subdir] = "features"
+projects[loop_flag][download][type] = "git"
+projects[loop_flag][download][url] = "git@github.com:loopdk/loop_flag.git"
+projects[loop_flag][branch] = "development"
+
 ; LOOP themes
 projects[loop][type] = "theme"
 projects[loop][download][type] = "git"
