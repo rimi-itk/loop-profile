@@ -53,7 +53,7 @@ function loop_post_default_page_manager_handlers() {
       'links' => 1,
       'no_extras' => 1,
       'override_title' => 0,
-      'override_title_text' => 'Motherfucker',
+      'override_title_text' => '',
       'identifier' => '',
       'link' => 1,
       'leave_node_title' => 0,
@@ -74,11 +74,11 @@ function loop_post_default_page_manager_handlers() {
     $pane->pid = 'new-2';
     $pane->panel = 'center';
     $pane->type = 'views_panes';
-    $pane->subtype = 'node_comment-loop_post_comments_ranking';
+    $pane->subtype = 'node_comment-loop_post_comments_most_valid_comment';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'items_per_page' => '100',
+      'items_per_page' => '1',
       'context' => array(
         0 => 'argument_entity_id:node_1',
       ),
@@ -93,6 +93,24 @@ function loop_post_default_page_manager_handlers() {
     $pane->locks = array();
     $display->content['new-2'] = $pane;
     $display->panels['center'][1] = 'new-2';
+    $pane = new stdClass();
+    $pane->pid = 'new-3';
+    $pane->panel = 'center';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'node_comment-loop_post_comments_other_comments';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $display->content['new-3'] = $pane;
+    $display->panels['center'][2] = 'new-3';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-1';
   $handler->conf['display'] = $display;
