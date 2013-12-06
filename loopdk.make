@@ -186,6 +186,12 @@ projects[loop_flag][download][type] = "git"
 projects[loop_flag][download][url] = "git@github.com:loopdk/loop_flag.git"
 projects[loop_flag][branch] = "development"
 
+projects[loop_notification][type] = "module"
+projects[loop_notification][subdir] = "features"
+projects[loop_notification][download][type] = "git"
+projects[loop_notification][download][url] = "git@github.com:loopdk/loop_notification.git"
+projects[loop_notification][branch] = "development"
+
 ; LOOP themes
 projects[loop][type] = "theme"
 projects[loop][download][type] = "git"
