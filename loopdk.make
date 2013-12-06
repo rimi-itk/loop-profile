@@ -119,6 +119,9 @@ projects[transliteration][version] = "3.1"
 projects[uuid][subidr] = "contrib"
 projects[uuid][version] = "1.0-alpha5"
 
+projects[uuid_features][subidr] = "contrib"
+projects[uuid_features][version] = "1.0-alpha3"
+
 projects[views][subdir] = "contrib"
 projects[views][version] = "3.7"
 

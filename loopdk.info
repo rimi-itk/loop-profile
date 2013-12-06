@@ -52,6 +52,7 @@ dependencies[] = views_bulk_operations
 dependencies[] = wysiwyg
 
 ; LOOP features
+dependencies[] = loop_content
 dependencies[] = loop_post
 dependencies[] = loop_frontpage
 
