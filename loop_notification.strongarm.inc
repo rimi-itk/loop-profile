@@ -7,7 +7,7 @@
 /**
  * Implements hook_strongarm().
  */
-function loop_notificaiton_strongarm() {
+function loop_notification_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

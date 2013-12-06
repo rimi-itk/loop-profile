@@ -4,4 +4,4 @@
  * Code for the Loop Notificaiton feature.
  */
 
-include_once 'loop_notificaiton.features.inc';
+include_once 'loop_notification.features.inc';
