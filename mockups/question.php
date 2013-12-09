@@ -10,7 +10,7 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
 
 <header class="header" role="banner">
   <div class="header--inner">
-    <a href="/" class="logo--link"><img src="../logo.png" alt="" class="logo--image"></a>
+    <a href="/" class="logo--link"><img src="<?php echo $path_to_theme; ?>/logo.png" alt="" class="logo--image"></a>
     <nav class="nav">
       <a href="#" title="Min konto" class="nav--link">
         <i class="icon-user"></i>

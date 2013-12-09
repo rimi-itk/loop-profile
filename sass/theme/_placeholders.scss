@@ -12,7 +12,7 @@
 
 /* Used for centering a section */
 %set-max-width-and-center-element {
-  max-width: 31.25em;
+  max-width: $layout-max-width;
   margin-right: auto;
   margin-left: auto;
 
@@ -30,8 +30,10 @@
 
   background-color: $gray-lightest;
 
-  @include border-radius($border-radius);
-  @include box-sizing(border-box);
+  @include breakpoint($layout-max-width) {
+    @include border-radius($border-radius);
+    @include box-sizing(border-box);
+  }
 }
 
 

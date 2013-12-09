@@ -9,7 +9,8 @@
 /* Layout
    ================================================================================================================== */
 
-$border-radius:    .4em;
+$layout-max-width:    31.25em;
+$border-radius:       .4em;
 
 
 
@@ -17,36 +18,36 @@ $border-radius:    .4em;
    ================================================================================================================== */
 
 
-$green:            #41ab51;
-$green-light:      lighten($green, 10%);
-$red:              #ff6138;
+$green:               #41ab51;
+$green-light:         lighten($green, 10%);
+$red:                 #ff6138;
 
-$gray-lightest:    lighten($black, 95%);
-$gray-lighter:     lighten($black, 90%);
-$gray-light:       lighten($black, 80%);
-$gray:             lighten($black, 70%);
-$gray-dark:        lighten($black, 45%);
-$gray-darker:      lighten($black, 35%);
-$gray-darkest:     lighten($black, 25%);
+$gray-lightest:       lighten($black, 95%);
+$gray-lighter:        lighten($black, 90%);
+$gray-light:          lighten($black, 80%);
+$gray:                lighten($black, 70%);
+$gray-dark:           lighten($black, 45%);
+$gray-darker:         lighten($black, 35%);
+$gray-darkest:        lighten($black, 25%);
 
-$gray-background:  #f2f2f2;
-$gray-color:       #999;
+$gray-background:     #f2f2f2;
+$gray-color:          #999;
 
 
 /* Link colors
    ================================================================================================================== */
 
-$link-color:       $green;
+$link-color:          $green;
 
 
 /* Spacing
    ================================================================================================================== */
 
-$margin-bottom:    1.5em;
-$padding-bottom:   1.5em;
+$margin-bottom:       1.5em;
+$padding-bottom:      1.5em;
 
 
 /* Misc
    ================================================================================================================== */
 
-$border-color:    $gray-lighter;
+$border-color:        $gray-lighter;

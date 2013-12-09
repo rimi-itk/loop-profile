@@ -499,17 +499,22 @@ img {
   margin-bottom: 1.5em;
   padding: 1.25em;
   background-color: #f2f2f2;
-  -webkit-border-radius: 0.4em;
-  -moz-border-radius: 0.4em;
-  -ms-border-radius: 0.4em;
-  -o-border-radius: 0.4em;
-  border-radius: 0.4em;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+}
+@media only screen and (min-width: 31.25em) {
+  /* line 27, ../sass/theme/_placeholders.scss */
+  .layout--wrapper, .search--inner, .loop--search .panel-pane--inner, .search-result, .content-list--item {
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -ms-border-radius: 0.4em;
+    -o-border-radius: 0.4em;
+    border-radius: 0.4em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
 }
 
-/* line 38, ../sass/theme/_placeholders.scss */
+/* line 40, ../sass/theme/_placeholders.scss */
 .layout--inner {
   padding: 1.25em;
   background-color: white;
@@ -935,29 +940,11 @@ body {
  */
 /* Search field
    ========================================================================== */
-/* line 12, ../sass/modules/_search.scss */
-.search, .loop--search {
-  float: left;
-  width: 100%;
-  margin-left: 0%;
-  margin-right: -100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-  word-wrap: break-word;
-  _display: inline;
-  _overflow: hidden;
-  _overflow-y: visible;
-}
-
-/* line 21, ../sass/modules/_search.scss */
+/* line 20, ../sass/modules/_search.scss */
 .search--field-wrapper {
   position: relative;
 }
-/* line 24, ../sass/modules/_search.scss */
+/* line 23, ../sass/modules/_search.scss */
 .search--field-wrapper .search--icon {
   position: absolute;
   top: .25em;
@@ -965,8 +952,9 @@ body {
   color: #b3b3b3;
   font-size: 200%;
 }
-/* line 33, ../sass/modules/_search.scss */
+/* line 32, ../sass/modules/_search.scss */
 .search--field-wrapper .search--field {
+  margin-bottom: .75em;
   padding-top: 1.25em;
   padding-right: 1.25em;
   padding-bottom: 1.25em;
@@ -1016,7 +1004,7 @@ body {
 
 /* Search result
    ========================================================================== */
-/* line 88, ../sass/modules/_search.scss */
+/* line 89, ../sass/modules/_search.scss */
 .search-result--question {
   margin-bottom: 1.5em;
   padding-bottom: 1.5em;
@@ -1055,27 +1043,29 @@ body {
   margin-bottom: 1.5em;
 }
 
-/* line 20, ../sass/modules/_question.scss */
-.question--author {
-  float: left;
-  width: 50%;
-  margin-left: 0%;
-  margin-right: -50%;
-  padding-left: 15px;
-  padding-right: 15px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-  word-wrap: break-word;
-  _display: inline;
-  _overflow: hidden;
-  _overflow-y: visible;
-  padding-left: 0;
-  padding-right: 0;
+@media only screen and (min-width: 40em) {
+  /* line 20, ../sass/modules/_question.scss */
+  .question--author {
+    float: left;
+    width: 50%;
+    margin-left: 0%;
+    margin-right: -50%;
+    padding-left: 15px;
+    padding-right: 15px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
-/* line 25, ../sass/modules/_question.scss */
+/* line 27, ../sass/modules/_question.scss */
 .question--author-image {
   float: left;
   overflow: hidden;
@@ -1089,21 +1079,20 @@ body {
   border-radius: 0.4em;
 }
 
-/* line 36, ../sass/modules/_question.scss */
+/* line 39, ../sass/modules/_question.scss */
 .question--author-link {
   font-weight: bold;
 }
 
-/* line 40, ../sass/modules/_question.scss */
+/* line 43, ../sass/modules/_question.scss */
 .question--author-title {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
 }
 
-/* line 44, ../sass/modules/_question.scss */
+/* line 47, ../sass/modules/_question.scss */
 .question--meta {
-  float: right;
-  padding: 1em;
+  padding: .5em 1.25em .65em;
   background-color: #f2f2f2;
   color: #999999;
   font-size: 80%;
@@ -1113,13 +1102,19 @@ body {
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
 }
+@media only screen and (min-width: 40em) {
+  /* line 47, ../sass/modules/_question.scss */
+  .question--meta {
+    float: right;
+  }
+}
 
-/* line 56, ../sass/modules/_question.scss */
+/* line 62, ../sass/modules/_question.scss */
 .question--inner {
   clear: both;
 }
 
-/* line 60, ../sass/modules/_question.scss */
+/* line 66, ../sass/modules/_question.scss */
 .question--header-label {
   display: block;
   margin-bottom: .25em;
@@ -1127,14 +1122,16 @@ body {
   font-weight: bold;
 }
 
-/* line 68, ../sass/modules/_question.scss */
+/* line 74, ../sass/modules/_question.scss */
 .question--header {
   font-size: 125%;
 }
 
-/* line 72, ../sass/modules/_question.scss */
+/* line 78, ../sass/modules/_question.scss */
 .question--term {
-  padding: .25em 1em;
+  display: inline-block;
+  margin-bottom: .25em;
+  padding: .1em 1em;
   background-color: #ff6138;
   font-size: 85%;
   -webkit-border-radius: 0.4em;
@@ -1143,12 +1140,12 @@ body {
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-/* line 83, ../sass/modules/_question.scss */
+/* line 91, ../sass/modules/_question.scss */
 .question--term:link, .question--term:visited, .question--term:hover, .question--term:active {
   color: white;
   text-decoration: none;
 }
-/* line 88, ../sass/modules/_question.scss */
+/* line 96, ../sass/modules/_question.scss */
 .question--term:hover {
   background-color: #eb3000;
 }

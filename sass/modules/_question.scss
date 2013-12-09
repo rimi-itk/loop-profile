@@ -18,12 +18,15 @@
 }
 
 .question--author {
-  @include zen-grid-item(6, 1);
-  @include zen-nested-container;
+  @include breakpoint(40em) {
+    @include zen-grid-item(6, 1);
+    @include zen-nested-container;
+  }
 }
 
 .question--author-image {
   float: left;
+
   overflow: hidden;
   margin-right: 1em;
   max-width: 3em;
@@ -42,14 +45,17 @@
 }
 
 .question--meta {
-  float: right;
-  padding: 1em;
+  padding: .5em 1.25em .65em;
 
   background-color: $gray-background;
   color: $gray-color;
   font-size: 80%;
 
   @include border-radius($border-radius);
+
+  @include breakpoint(40em) {
+    float: right;
+  }
 }
 
 
@@ -70,7 +76,9 @@
 }
 
 .question--term {
-  padding: .25em 1em;
+  display: inline-block;
+  margin-bottom: .25em;
+  padding: .1em 1em;
 
   background-color: $red;
   font-size: 85%;

@@ -10,7 +10,6 @@
    ========================================================================== */
 
 .search {
-  @include zen-grid-item(12, 1);
 }
 
 .search--inner {
@@ -31,6 +30,7 @@
   }
 
   .search--field {
+    margin-bottom: .75em;
     padding-top: 1.25em;
     padding-right: 1.25em;
     padding-bottom: 1.25em;
@@ -57,6 +57,7 @@
 
 .search--button {
   @extend .button--action;
+
   height: 65px;
   width: 100%;
 
