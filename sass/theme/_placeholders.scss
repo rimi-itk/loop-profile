@@ -26,11 +26,22 @@
 
 %basic-element-styling {
   margin-bottom: $margin-bottom;
-  padding: $padding-bottom;
+  padding: 1.25em;
 
   background-color: $gray-lightest;
 
   @include border-radius($border-radius);
   @include box-sizing(border-box);
 }
+
+
+%basic-element-inner-styling {
+  padding: 1.25em;
+
+  background-color: $white;
+
+  @include border-radius($border-radius);
+  @include box-sizing(border-box);
+}
+
 

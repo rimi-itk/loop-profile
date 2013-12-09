@@ -18,16 +18,20 @@
    ================================================================================================================== */
 /* Link colors
    ================================================================================================================== */
-/* Spacing
-   ================================================================================================================== */
 /**
  * Theme variables
  *
- * This is an example file
- *
  * @author magnify
  */
+/* Layout
+   ================================================================================================================== */
 /* Colors
+   ================================================================================================================== */
+/* Link colors
+   ================================================================================================================== */
+/* Spacing
+   ================================================================================================================== */
+/* Misc
    ================================================================================================================== */
 /**
  * Normalize
@@ -405,21 +409,21 @@ em strong {
    ================================================================================================================== */
 /* line 56, ../sass/base/_base.scss */
 a:link {
-  color: #04bfbf;
+  color: #41ab51;
   text-decoration: underline;
 }
 /* line 61, ../sass/base/_base.scss */
 a:visited {
-  color: #03a6a6;
+  color: #3a9948;
 }
 /* line 65, ../sass/base/_base.scss */
 a:hover {
-  color: #038d8d;
+  color: #33863f;
   text-decoration: none;
 }
 /* line 70, ../sass/base/_base.scss */
 a:focus {
-  color: #038d8d;
+  color: #33863f;
 }
 
 /* Paragraph
@@ -477,7 +481,7 @@ img {
    ========================================================================== */
 /* Used for centering a section */
 /* line 14, ../sass/theme/_placeholders.scss */
-.header--inner, .search--inner, .loop--search .panel-pane--inner, .search-result, .question--inner {
+.header--inner, .layout--wrapper, .search--inner, .loop--search .panel-pane--inner, .search-result {
   max-width: 31.25em;
   margin-right: auto;
   margin-left: auto;
@@ -485,21 +489,35 @@ img {
 }
 @media only screen and (min-width: 18.75em) {
   /* line 14, ../sass/theme/_placeholders.scss */
-  .header--inner, .search--inner, .loop--search .panel-pane--inner, .search-result, .question--inner {
+  .header--inner, .layout--wrapper, .search--inner, .loop--search .panel-pane--inner, .search-result {
     max-width: 48em;
   }
 }
 
 /* line 27, ../sass/theme/_placeholders.scss */
-.search--inner, .loop--search .panel-pane--inner, .search-result, .question--inner, .content-list--item {
+.layout--wrapper, .search--inner, .loop--search .panel-pane--inner, .search-result, .content-list--item {
   margin-bottom: 1.5em;
-  padding: 1.5em;
+  padding: 1.25em;
   background-color: #f2f2f2;
-  -webkit-border-radius: 0.6em;
-  -moz-border-radius: 0.6em;
-  -ms-border-radius: 0.6em;
-  -o-border-radius: 0.6em;
-  border-radius: 0.6em;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 38, ../sass/theme/_placeholders.scss */
+.layout--inner {
+  padding: 1.25em;
+  background-color: white;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -539,11 +557,11 @@ textarea {
   padding: .75em;
   color: #595959;
   background-color: white;
-  -webkit-border-radius: 0.6em;
-  -moz-border-radius: 0.6em;
-  -ms-border-radius: 0.6em;
-  -o-border-radius: 0.6em;
-  border-radius: 0.6em;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -607,11 +625,11 @@ label {
   cursor: pointer;
   text-align: center;
   vertical-align: middle;
-  -webkit-border-radius: 0.6em;
-  -moz-border-radius: 0.6em;
-  -ms-border-radius: 0.6em;
-  -o-border-radius: 0.6em;
-  border-radius: 0.6em;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
   text-shadow: 0.025em 0.025em 0.1em #33863f;
 }
 /* line 20, ../sass/theme/_buttons.scss */
@@ -778,11 +796,11 @@ label {
     padding-right: .75em;
     padding-left: .75em;
     width: auto;
-    -webkit-border-radius: 0.6em;
-    -moz-border-radius: 0.6em;
-    -ms-border-radius: 0.6em;
-    -o-border-radius: 0.6em;
-    border-radius: 0.6em;
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -ms-border-radius: 0.4em;
+    -o-border-radius: 0.4em;
+    border-radius: 0.4em;
   }
 }
 
@@ -812,6 +830,8 @@ label {
   line-height: 160%;
 }
 
+/* Layouts
+   ========================================================================== */
 /**
  * Debugging
  *
@@ -963,11 +983,11 @@ body {
   .search--field-wrapper .search--field {
     padding-right: 6em;
     width: 90%;
-    -webkit-border-radius: 0.6em 0 0 0.6em;
-    -moz-border-radius: 0.6em 0 0 0.6em;
-    -ms-border-radius: 0.6em 0 0 0.6em;
-    -o-border-radius: 0.6em 0 0 0.6em;
-    border-radius: 0.6em 0 0 0.6em;
+    -webkit-border-radius: 0.4em 0 0 0.4em;
+    -moz-border-radius: 0.4em 0 0 0.4em;
+    -ms-border-radius: 0.4em 0 0 0.4em;
+    -o-border-radius: 0.4em 0 0 0.4em;
+    border-radius: 0.4em 0 0 0.4em;
   }
 }
 
@@ -986,11 +1006,11 @@ body {
     padding-bottom: .65em;
     width: auto;
     font-size: 150%;
-    -webkit-border-radius: 0 0.6em 0.6em 0;
-    -moz-border-radius: 0 0.6em 0.6em 0;
-    -ms-border-radius: 0 0.6em 0.6em 0;
-    -o-border-radius: 0 0.6em 0.6em 0;
-    border-radius: 0 0.6em 0.6em 0;
+    -webkit-border-radius: 0 0.4em 0.4em 0;
+    -moz-border-radius: 0 0.4em 0.4em 0;
+    -ms-border-radius: 0 0.4em 0.4em 0;
+    -o-border-radius: 0 0.4em 0.4em 0;
+    border-radius: 0 0.4em 0.4em 0;
   }
 }
 
@@ -1023,10 +1043,114 @@ body {
  *
  * @author magnify
  */
-/* line 14, ../sass/modules/_question.scss */
-.question--answer {
-  color: #41ab51;
+/* line 9, ../sass/modules/_question.scss */
+.question--wrapper {
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+/* line 16, ../sass/modules/_question.scss */
+.question--author,
+.question--meta {
+  margin-bottom: 1.5em;
+}
+
+/* line 20, ../sass/modules/_question.scss */
+.question--author {
+  float: left;
+  width: 50%;
+  margin-left: 0%;
+  margin-right: -50%;
+  padding-left: 15px;
+  padding-right: 15px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* line 25, ../sass/modules/_question.scss */
+.question--author-image {
+  float: left;
+  overflow: hidden;
+  margin-right: 1em;
+  max-width: 3em;
+  border: 1px solid #e6e6e6;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+}
+
+/* line 36, ../sass/modules/_question.scss */
+.question--author-link {
   font-weight: bold;
+}
+
+/* line 40, ../sass/modules/_question.scss */
+.question--author-title {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+
+/* line 44, ../sass/modules/_question.scss */
+.question--meta {
+  float: right;
+  padding: 1em;
+  background-color: #f2f2f2;
+  color: #999999;
+  font-size: 80%;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+}
+
+/* line 56, ../sass/modules/_question.scss */
+.question--inner {
+  clear: both;
+}
+
+/* line 60, ../sass/modules/_question.scss */
+.question--header-label {
+  display: block;
+  margin-bottom: .25em;
+  font-size: 125%;
+  font-weight: bold;
+}
+
+/* line 68, ../sass/modules/_question.scss */
+.question--header {
+  font-size: 125%;
+}
+
+/* line 72, ../sass/modules/_question.scss */
+.question--term {
+  padding: .25em 1em;
+  background-color: #ff6138;
+  font-size: 85%;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+}
+/* line 83, ../sass/modules/_question.scss */
+.question--term:link, .question--term:visited, .question--term:hover, .question--term:active {
+  color: white;
+  text-decoration: none;
+}
+/* line 88, ../sass/modules/_question.scss */
+.question--term:hover {
+  background-color: #eb3000;
 }
 
 /**

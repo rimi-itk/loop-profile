@@ -159,3 +159,16 @@ $nav-link-dimensions: 2.5em;
     line-height: 160%;
   }
 }
+
+
+/* Layouts
+   ========================================================================== */
+
+.layout--wrapper {
+  @extend %set-max-width-and-center-element;
+  @extend %basic-element-styling;
+}
+
+.layout--inner {
+  @extend %basic-element-inner-styling;
+}
