@@ -10,7 +10,7 @@
 /* Layout placeholders
    ========================================================================== */
 
-/* Used for centering a section */
+/* Used for centering an element */
 %set-max-width-and-center-element {
   margin-right: auto;
   margin-left: auto;
@@ -46,3 +46,110 @@
 }
 
 
+
+
+/* Answer link
+   ================================================================================================================== */
+
+%answer-link {
+  display: block;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: .5em 1em;
+
+  font-weight: bold;
+  text-align: center;
+
+  @include border-radius($border-radius);
+
+  // Override the default icon stylingso it is aligned with the link text
+  [class^="icon-"]:before {
+    width: auto;
+
+    font-size: 150%;
+    vertical-align: top;
+  }
+
+  @include breakpoint(40em) {
+    display: inline-block;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+}
+
+.answer-link {
+  @extend %answer-link;
+
+  border: 1px solid $gray;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: $gray;
+  }
+
+  &:hover {
+    border: 1px solid $link-color-hover;
+
+    color: $gray-dark;
+  }
+}
+
+.answer-link--check {
+  @extend %answer-link;
+
+  border: 1px solid $link-color;
+  margin-bottom: 1em;
+
+  &:hover {
+    border: 1px solid $link-color-hover;
+  }
+}
+
+
+
+/* Meta data
+   ================================================================================================================== */
+
+.meta-data--author {
+  margin-bottom: .75em;
+  margin-left: -2em;
+
+  @include breakpoint($layout-max-width) {
+    margin-left: 0;
+  }
+}
+
+.meta-data--author-image {
+  border: 1px solid $border-color;
+  display: inline-block;
+  overflow: hidden;
+  margin-right: .5em;
+  max-width: 3em;
+
+  @include border-radius($border-radius);
+}
+
+.meta-data--author-wrapper {
+  vertical-align: top;
+
+  display: inline-block;
+}
+
+.meta-data--author-link {
+  font-weight: bold;
+}
+
+.meta-data--author-title {
+  display: block;
+
+  @include opacity(.5);
+}

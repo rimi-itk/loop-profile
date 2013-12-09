@@ -5,46 +5,26 @@
  */
 
 
+/* Question
+   ================================================================================================================== */
 
 .question--wrapper {
-  padding-bottom: $padding-bottom;
-
   border-bottom: 1px solid $border-color;
-}
 
-.question--author,
-.question--meta {
   margin-bottom: $margin-bottom;
+  padding-bottom: $padding-bottom;
 }
 
 .question--author {
+  @extend .meta-data--author;
+
   @include breakpoint(40em) {
-    @include zen-grid-item(6, 1);
-    @include zen-nested-container;
+    float: left;
   }
 }
 
-.question--author-image {
-  float: left;
-
-  overflow: hidden;
-  margin-right: 1em;
-  max-width: 3em;
-
-  border: 1px solid $border-color;
-
-  @include border-radius($border-radius);
-}
-
-.question--author-link {
-  font-weight: bold;
-}
-
-.question--author-title {
-  @include opacity(.5);
-}
-
-.question--meta {
+.question--meta-data {
+  margin-bottom: $margin-bottom;
   padding: .5em 1.25em .65em;
 
   background-color: $gray-background;
@@ -59,11 +39,12 @@
 }
 
 
+// Question header
 .question--inner {
   clear: both;
 }
 
-.question--header-label {
+.question--label {
   display: block;
   margin-bottom: .25em;
 
@@ -71,7 +52,7 @@
   font-weight: bold;
 }
 
-.question--header {
+.question {
   font-size: 125%;
 }
 
@@ -96,4 +77,35 @@
   &:hover {
     background-color: darken($red, 15%);
   }
+}
+
+
+
+/* Question answers
+   ================================================================================================================== */
+
+.question-answer {
+  border-bottom: 1px solid $border-color;
+
+  margin-bottom: $margin-bottom;
+  padding-bottom: $padding-bottom;
+
+  &.is-last {
+    border-bottom: 0;
+
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.question-answer--meta-data {
+  display: block;
+  margin-bottom: .5em;
+
+  color: $gray-light;
+  font-size: 80%;
+}
+
+.question-answer--text {
+  margin-bottom: 1em;
 }

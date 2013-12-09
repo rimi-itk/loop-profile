@@ -44,27 +44,111 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
   <div class="layout--inner">
     <section class="question--wrapper">
       <div class="question--author">
-        <a href="#" class="question--author-image">
+        <a href="#" class="meta-data--author-image">
           <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
         </a>
-        <a href="#" class="question--author-link">Ribena Hutsitove</a>
-        <div class="question--author-title">SOSU, AUH, HUH</div>
+        <div class="meta-data--author-wrapper">
+          <a href="#" class="meta-data--author-link">Ribena Hutsitove</a>
+          <span class="meta-data--author-title">SOSU, AUH, HUH</span>
+        </div>
       </div>
-      <div class="question--meta">
-        <div class="question--meta-date">Oprettet den 27. februar 2013</div>
-        <span class="question--meta-category">Kategori:</span> <a href="#">Dokumentationspraksis</a>
+      <div class="question--meta-data">
+        <div class="question--meta-data-date">Oprettet den 27. februar 2013</div>
+        <span class="question--meta-data-category">Kategori:</span> <a href="#">Dokumentationspraksis</a>
       </div>
       <div class="question--inner">
-        <span class="question--header-label">Spørgsmål:</span>
-        <h1 class="question--header">Hvordan dokumenteres delvis aktindsigt? Og findes der en vejledning i dokumentation af aktindsigt?</h1>
+        <span class="question--label">Spørgsmål:</span>
+        <h1 class="question">Hvordan dokumenteres delvis aktindsigt? Og findes der en vejledning i dokumentation af aktindsigt?</h1>
       </div>
       <div class="question--terms">
         <a href="#" class="question--term">Stamdata</a>
         <a href="#" class="question--term">Partsrepræsentant</a>
         <a href="#" class="question--term">Funktionsvurdering</a>
       </div>
+    </section>
+    <div class="question-answer--wrapper">
+      <div class="question-answer">
+        <div class="meta-data--author">
+          <a href="#" class="meta-data--author-image">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
+          </a>
+          <div class="meta-data--author-wrapper">
+            <a href="#" class="meta-data--author-link">Ribena Hutsitove</a>
+            <span class="meta-data--author-title">SOSU, AUH, HUH</span>
+          </div>
+        </div>
+        <a href="#" class="answer-link--check"><i class="icon-check"></i> Mest nyttige svar</a>
+        <span class="question-answer--meta-data">Oprettet den 28. marts 2013</span>
+        <div class="question-answer--text">
+          Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
+        </div>
+      </div>
+      <div class="question-answer">
+        <div class="meta-data--author">
+          <a href="#" class="meta-data--author-image">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
+          </a>
+          <div class="meta-data--author-wrapper">
+            <a href="#" class="meta-data--author-link">Ribena Hutsitove</a>
+            <span class="meta-data--author-title">SOSU, AUH, HUH</span>
+          </div>
+        </div>
+        <span class="question-answer--meta-data">Oprettet den 28. marts 2013</span>
+        <div class="question-answer--text">
+          Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
+        </div>
+        <a href="#" class="answer-link"><i class="icon-thumbs"></i> Nyttigt svar (12)</a>
+      </div>
+      <div class="question-answer">
+        <div class="meta-data--author">
+          <a href="#" class="meta-data--author-image">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
+          </a>
+          <div class="meta-data--author-wrapper">
+            <a href="#" class="meta-data--author-link">Ribena Hutsitove</a>
+            <span class="meta-data--author-title">SOSU, AUH, HUH</span>
+          </div>
+        </div>
+        <span class="question-answer--meta-data">Oprettet den 28. marts 2013</span>
+        <div class="question-answer--text">
+          Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
+        </div>
+        <a href="#" class="answer-link"><i class="icon-thumbs"></i> Nyttigt svar (0)</a>
+      </div>
+      <div class="question-answer">
+        <div class="meta-data--author">
+          <a href="#" class="meta-data--author-image">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
+          </a>
+          <div class="meta-data--author-wrapper">
+            <a href="#" class="meta-data--author-link">Ribena Hutsitove</a>
+            <span class="meta-data--author-title">SOSU, AUH, HUH</span>
+          </div>
+        </div>
+        <span class="question-answer--meta-data">Oprettet den 28. marts 2013</span>
+        <div class="question-answer--text">
+          Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
+        </div>
+        <a href="#" class="answer-link"><i class="icon-thumbs"></i> Nyttigt svar (2)</a>
+      </div>
+      <div class="question-answer is-last">
+        <div class="meta-data--author">
+          <a href="#" class="meta-data--author-image">
+            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
+          </a>
+          <div class="meta-data--author-wrapper">
+            <a href="#" class="meta-data--author-link">Ribena Hutsitove</a>
+            <span class="meta-data--author-title">SOSU, AUH, HUH</span>
+          </div>
+        </div>
+        <span class="question-answer--meta-data">Oprettet den 28. marts 2013</span>
+        <div class="question-answer--text">
+          Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
+        </div>
+        <a href="#" class="answer-link"><i class="icon-thumbs"></i> Nyttigt svar (3)</a>
+      </div>
     </div>
-  </section>
+  </div>
 </div>
 </body>
 </html>
