@@ -9,12 +9,13 @@
 /* Search field
    ========================================================================== */
 
-.search {
-}
-
 .search--inner {
   @extend %set-max-width-and-center-element;
   @extend %basic-element-styling;
+
+  @include breakpoint($layout-max-width) {
+    @include border-radius(0 0 $border-radius $border-radius);
+  }
 }
 
 .search--field-wrapper {

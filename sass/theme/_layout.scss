@@ -11,8 +11,6 @@
    ========================================================================== */
 
 .header {
-  margin-bottom: $margin-bottom;
-
   background-color: $green;
 
   @include zen-grid-container();
