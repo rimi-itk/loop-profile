@@ -55,6 +55,7 @@ textarea {
 }
 
 
+
 /* Labels
    ================================================================================================================== */
 
@@ -96,6 +97,9 @@ label {
   border: 1px solid $gray-lighter;
   padding: .75em;
   width: 100%;
+  
+  /* Set height for chrome */
+  height: 3em;
 
   background-color: darken($white, 2%);
 

@@ -627,7 +627,7 @@ textarea[disabled] {
 
 /* Labels
    ================================================================================================================== */
-/* line 61, ../sass/theme/_forms.scss */
+/* line 62, ../sass/theme/_forms.scss */
 label {
   display: block;
   margin-bottom: .25em;
@@ -638,12 +638,12 @@ label {
 
 /* Form elements
    ================================================================================================================== */
-/* line 75, ../sass/theme/_forms.scss */
+/* line 76, ../sass/theme/_forms.scss */
 .form-module {
   clear: both;
 }
 
-/* line 83, ../sass/theme/_forms.scss */
+/* line 84, ../sass/theme/_forms.scss */
 .form-module--fields-wrapper {
   border: 1px solid #f2f2f2;
   margin-bottom: 1.5em;
@@ -655,16 +655,18 @@ label {
   border-radius: 0.4em;
 }
 
-/* line 91, ../sass/theme/_forms.scss */
+/* line 92, ../sass/theme/_forms.scss */
 .form-module--required {
   color: #ff6138;
 }
 
-/* line 95, ../sass/theme/_forms.scss */
+/* line 96, ../sass/theme/_forms.scss */
 .form-module--select {
   border: 1px solid #e6e6e6;
   padding: .75em;
   width: 100%;
+  /* Set height for chrome */
+  height: 3em;
   background-color: #fafafa;
   -webkit-border-radius: 0.4em;
   -moz-border-radius: 0.4em;
@@ -676,17 +678,17 @@ label {
   box-sizing: border-box;
 }
 
-/* line 106, ../sass/theme/_forms.scss */
+/* line 110, ../sass/theme/_forms.scss */
 .form-module--actions {
   text-align: right;
 }
 
-/* line 110, ../sass/theme/_forms.scss */
+/* line 114, ../sass/theme/_forms.scss */
 .form-module--submit {
   width: 100%;
 }
 @media only screen and (min-width: 30em) {
-  /* line 110, ../sass/theme/_forms.scss */
+  /* line 114, ../sass/theme/_forms.scss */
   .form-module--submit {
     width: auto;
   }
