@@ -9,13 +9,13 @@
 /* Search field
    ========================================================================== */
 
-.search {
-  @include zen-grid-item(12, 1);
-}
-
 .search--inner {
   @extend %set-max-width-and-center-element;
   @extend %basic-element-styling;
+
+  @include breakpoint($layout-max-width) {
+    @include border-radius(0 0 $border-radius $border-radius);
+  }
 }
 
 .search--field-wrapper {
@@ -31,6 +31,7 @@
   }
 
   .search--field {
+    margin-bottom: .75em;
     padding-top: 1.25em;
     padding-right: 1.25em;
     padding-bottom: 1.25em;
@@ -57,6 +58,7 @@
 
 .search--button {
   @extend .button--action;
+
   height: 65px;
   width: 100%;
 

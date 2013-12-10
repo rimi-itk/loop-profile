@@ -10,27 +10,45 @@
 /* Layout placeholders
    ========================================================================== */
 
-/* Used for centering a section */
+/* Used for centering an element */
 %set-max-width-and-center-element {
-  max-width: 31.25em;
   margin-right: auto;
   margin-left: auto;
 
   clear: both;
 
   @include breakpoint($breakpoint-1) {
-    max-width: 48em;
+    max-width: $layout-max-width;
   }
 }
 
 
 %basic-element-styling {
   margin-bottom: $margin-bottom;
-  padding: $padding-bottom;
+  padding: 1.25em;
 
   background-color: $gray-lightest;
+
+  @include breakpoint($layout-max-width) {
+    @include border-radius($border-radius);
+    @include box-sizing(border-box);
+  }
+}
+
+
+%basic-element-inner-styling {
+  padding: 1.25em;
+
+  background-color: $white;
 
   @include border-radius($border-radius);
   @include box-sizing(border-box);
 }
+
+
+
+
+/* Answer link
+   ================================================================================================================== */
+
 

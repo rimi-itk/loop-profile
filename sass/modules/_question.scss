@@ -5,13 +5,67 @@
  */
 
 
+/* Question
+   ================================================================================================================== */
 
-.question--inner {
-  @extend %set-max-width-and-center-element;
-  @extend %basic-element-styling;
+.question--wrapper {
+  border-bottom: 1px solid $border-color;
+
+  margin-bottom: $margin-bottom;
+  padding-bottom: $padding-bottom;
 }
 
-.question--answer {
-  color: $green;
+.question--meta-data {
+  margin-bottom: $margin-bottom;
+  padding: .5em 1.25em .65em;
+
+  background-color: $gray-background;
+  color: $gray-color;
+  font-size: 80%;
+
+  @include border-radius($border-radius);
+
+  @include breakpoint(40em) {
+    float: right;
+  }
+}
+
+
+.question--inner {
+  clear: both;
+}
+
+.question--label {
+  display: block;
+  margin-bottom: .25em;
+
+  font-size: 125%;
   font-weight: bold;
+}
+
+.question {
+  font-size: 125%;
+}
+
+.question--term {
+  display: inline-block;
+  margin-bottom: .25em;
+  padding: .1em 1em;
+
+  background-color: $red;
+  font-size: 85%;
+
+  @include border-radius($border-radius);
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: darken($red, 15%);
+  }
 }

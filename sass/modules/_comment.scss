@@ -1,0 +1,131 @@
+/**
+ * Comment module
+ *
+ * @author magnify
+ */
+
+
+
+
+/* Comments
+   ================================================================================================================== */
+
+.comments--comment {
+  position: relative;
+
+  border-bottom: 1px solid $border-color;
+  margin-bottom: $margin-bottom;
+  padding-bottom: $padding-bottom;
+
+  &.is-last {
+    border-bottom: 0;
+
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.comments--comment-meta-data {
+  display: block;
+  margin-bottom: .5em;
+
+  color: $gray-light;
+  clear: both;
+  font-size: 80%;
+}
+
+
+/* Answer link
+   ================================================================================================================== */
+
+.answer {
+  border: 1px solid $gray;
+  display: block;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: .5em 1em;
+
+  font-weight: bold;
+  text-align: center;
+
+  @include border-radius($border-radius);
+
+  // Override the default icon styling so it is aligned with the link text
+  [class^="icon-"]:before {
+    width: auto;
+
+    font-size: 150%;
+    vertical-align: top;
+  }
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: $gray;
+    text-decoration: none;
+  }
+
+  &:hover {
+    border: 1px solid $gray-dark;
+
+    color: $gray-dark;
+  }
+
+  &.is-active,
+  &.is-sticky {
+    border: 1px solid $link-color;
+
+    color: $link-color;
+
+    &:hover {
+      border: 1px solid $link-color-hover;
+
+      color: $link-color-hover;
+    }
+  }
+
+  &.is-sticky {
+    margin-bottom: 1em;
+  }
+
+  @include breakpoint(40em) {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    display: inline-block;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+
+/* Comments form
+   ================================================================================================================== */
+
+.comment-form--wrapper {
+  @extend %basic-element-inner-styling;
+}
+
+.comment-form {
+  clear: both;
+}
+
+.comment-form--textarea {
+  margin-bottom: .75em;
+}
+
+.comment-form--actions {
+  text-align: right;
+}
+
+.comment-form--submit {
+  @extend .button--action;
+
+  width: 100%;
+
+  @include breakpoint(30em) {
+    width: auto;
+  }
+}

@@ -18,16 +18,20 @@
    ================================================================================================================== */
 /* Link colors
    ================================================================================================================== */
-/* Spacing
-   ================================================================================================================== */
 /**
  * Theme variables
  *
- * This is an example file
- *
  * @author magnify
  */
+/* Layout
+   ================================================================================================================== */
 /* Colors
+   ================================================================================================================== */
+/* Link colors
+   ================================================================================================================== */
+/* Spacing
+   ================================================================================================================== */
+/* Misc
    ================================================================================================================== */
 /**
  * Normalize
@@ -405,21 +409,21 @@ em strong {
    ================================================================================================================== */
 /* line 56, ../sass/base/_base.scss */
 a:link {
-  color: #04bfbf;
+  color: #41ab51;
   text-decoration: underline;
 }
 /* line 61, ../sass/base/_base.scss */
 a:visited {
-  color: #03a6a6;
+  color: #3a9948;
 }
 /* line 65, ../sass/base/_base.scss */
 a:hover {
-  color: #038d8d;
+  color: #33863f;
   text-decoration: none;
 }
 /* line 70, ../sass/base/_base.scss */
 a:focus {
-  color: #038d8d;
+  color: #33863f;
 }
 
 /* Paragraph
@@ -475,36 +479,56 @@ img {
  */
 /* Layout placeholders
    ========================================================================== */
-/* Used for centering a section */
+/* Used for centering an element */
 /* line 14, ../sass/theme/_placeholders.scss */
-.header--inner, .search--inner, .loop--search .panel-pane--inner, .search-result, .question--inner {
-  max-width: 31.25em;
+.header--inner, .layout--wrapper, .search--inner, .loop--search .panel-pane--inner, .search-result {
   margin-right: auto;
   margin-left: auto;
   clear: both;
 }
 @media only screen and (min-width: 18.75em) {
   /* line 14, ../sass/theme/_placeholders.scss */
-  .header--inner, .search--inner, .loop--search .panel-pane--inner, .search-result, .question--inner {
-    max-width: 48em;
+  .header--inner, .layout--wrapper, .search--inner, .loop--search .panel-pane--inner, .search-result {
+    max-width: 75em;
   }
 }
 
-/* line 27, ../sass/theme/_placeholders.scss */
-.search--inner, .loop--search .panel-pane--inner, .search-result, .question--inner, .content-list--item {
+/* line 26, ../sass/theme/_placeholders.scss */
+.layout--wrapper, .search--inner, .loop--search .panel-pane--inner, .search-result, .content-list--item {
   margin-bottom: 1.5em;
-  padding: 1.5em;
+  padding: 1.25em;
   background-color: #f2f2f2;
-  -webkit-border-radius: 0.6em;
-  -moz-border-radius: 0.6em;
-  -ms-border-radius: 0.6em;
-  -o-border-radius: 0.6em;
-  border-radius: 0.6em;
+}
+@media only screen and (min-width: 75em) {
+  /* line 26, ../sass/theme/_placeholders.scss */
+  .layout--wrapper, .search--inner, .loop--search .panel-pane--inner, .search-result, .content-list--item {
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -ms-border-radius: 0.4em;
+    -o-border-radius: 0.4em;
+    border-radius: 0.4em;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+/* line 39, ../sass/theme/_placeholders.scss */
+.layout--inner, .comment-form--wrapper {
+  padding: 1.25em;
+  background-color: white;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
+/* Answer link
+   ================================================================================================================== */
 /**
  * Forms
  *
@@ -538,12 +562,12 @@ textarea {
   width: 100%;
   padding: .75em;
   color: #595959;
-  background-color: white;
-  -webkit-border-radius: 0.6em;
-  -moz-border-radius: 0.6em;
-  -ms-border-radius: 0.6em;
-  -o-border-radius: 0.6em;
-  border-radius: 0.6em;
+  background-color: #f2f2f2;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -590,7 +614,7 @@ label {
   margin-bottom: .25em;
   /* Move labels so they align better with fields when using rounded corners */
   margin-left: .3em;
-  color: #595959;
+  color: #b3b3b3;
 }
 
 /**
@@ -599,7 +623,7 @@ label {
  * @author magnify
  */
 /* line 8, ../sass/theme/_buttons.scss */
-.button--action, .search--button {
+.button--action, .search--button, .comment-form--submit {
   display: inline-block;
   font-size: 125%;
   padding: .5em 1.5em;
@@ -607,26 +631,26 @@ label {
   cursor: pointer;
   text-align: center;
   vertical-align: middle;
-  -webkit-border-radius: 0.6em;
-  -moz-border-radius: 0.6em;
-  -ms-border-radius: 0.6em;
-  -o-border-radius: 0.6em;
-  border-radius: 0.6em;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
   text-shadow: 0.025em 0.025em 0.1em #33863f;
 }
 /* line 20, ../sass/theme/_buttons.scss */
-.button--action:focus, .search--button:focus, .button--action:hover, .search--button:hover, .button--action:active, .search--button:active {
+.button--action:focus, .search--button:focus, .comment-form--submit:focus, .button--action:hover, .search--button:hover, .comment-form--submit:hover, .button--action:active, .search--button:active, .comment-form--submit:active {
   text-decoration: none;
 }
 
 /* line 28, ../sass/theme/_buttons.scss */
-.button--action, .search--button {
+.button--action, .search--button, .comment-form--submit {
   background-color: #5dc26d;
   border: 1px solid #41ab51;
   color: white;
 }
 /* line 35, ../sass/theme/_buttons.scss */
-.button--action:hover, .search--button:hover {
+.button--action:hover, .search--button:hover, .comment-form--submit:hover {
   background-color: #41ab51;
 }
 
@@ -638,10 +662,9 @@ label {
  * @author magnify
  */
 /* Header
-   ========================================================================== */
+   ================================================================================================================== */
 /* line 13, ../sass/theme/_layout.scss */
 .header {
-  margin-bottom: 1.5em;
   background-color: #41ab51;
   *position: relative;
   *zoom: 1;
@@ -656,7 +679,7 @@ label {
   clear: both;
 }
 
-/* line 21, ../sass/theme/_layout.scss */
+/* line 19, ../sass/theme/_layout.scss */
 .header--inner {
   min-height: 5em;
   padding-right: 1em;
@@ -664,8 +687,8 @@ label {
 }
 
 /* Logo
-   ========================================================================== */
-/* line 34, ../sass/theme/_layout.scss */
+   ================================================================================================================== */
+/* line 32, ../sass/theme/_layout.scss */
 .logo--link {
   display: inline-block;
   max-width: 100%;
@@ -673,33 +696,33 @@ label {
   text-align: center;
 }
 @media only screen and (min-width: 18.75em) {
-  /* line 34, ../sass/theme/_layout.scss */
+  /* line 32, ../sass/theme/_layout.scss */
   .logo--link {
     max-width: 5.625em;
   }
 }
 
-/* line 46, ../sass/theme/_layout.scss */
+/* line 44, ../sass/theme/_layout.scss */
 .logo--image {
   max-width: 75%;
   margin-right: auto;
   margin-left: auto;
 }
 @media only screen and (min-width: 18.75em) {
-  /* line 46, ../sass/theme/_layout.scss */
+  /* line 44, ../sass/theme/_layout.scss */
   .logo--image {
     max-width: 100%;
   }
 }
 
 /* Navigation
-   ========================================================================== */
-/* line 61, ../sass/theme/_layout.scss */
+   ================================================================================================================== */
+/* line 59, ../sass/theme/_layout.scss */
 .nav {
   text-align: center;
 }
 @media only screen and (min-width: 18.75em) {
-  /* line 61, ../sass/theme/_layout.scss */
+  /* line 59, ../sass/theme/_layout.scss */
   .nav {
     padding-top: 1em;
     padding-bottom: 1em;
@@ -725,7 +748,7 @@ label {
 }
 
 /* Using a variable so we only have to set the size once */
-/* line 80, ../sass/theme/_layout.scss */
+/* line 78, ../sass/theme/_layout.scss */
 .nav--link, .nav--link-mail, .nav--link-menu {
   display: block;
   position: relative;
@@ -745,21 +768,21 @@ label {
   -o-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 96, ../sass/theme/_layout.scss */
+/* line 94, ../sass/theme/_layout.scss */
 .nav--link:link, .nav--link-mail:link, .nav--link-menu:link, .nav--link:visited, .nav--link-mail:visited, .nav--link-menu:visited {
   color: white;
   text-decoration: none;
 }
-/* line 101, ../sass/theme/_layout.scss */
+/* line 99, ../sass/theme/_layout.scss */
 .nav--link:hover, .nav--link-mail:hover, .nav--link-menu:hover {
   background-color: rgba(255, 255, 255, 0.5);
 }
-/* line 105, ../sass/theme/_layout.scss */
+/* line 103, ../sass/theme/_layout.scss */
 .nav--link i[class^="icon-"], .nav--link-mail i[class^="icon-"], .nav--link-menu i[class^="icon-"] {
   vertical-align: bottom;
 }
 @media only screen and (min-width: 18.75em) {
-  /* line 80, ../sass/theme/_layout.scss */
+  /* line 78, ../sass/theme/_layout.scss */
   .nav--link, .nav--link-mail, .nav--link-menu {
     display: inline-block;
     margin-bottom: 0;
@@ -767,31 +790,31 @@ label {
   }
 }
 @media only screen and (min-width: 22.5em) {
-  /* line 80, ../sass/theme/_layout.scss */
+  /* line 78, ../sass/theme/_layout.scss */
   .nav--link, .nav--link-mail, .nav--link-menu {
     margin-left: 1em;
   }
 }
 @media only screen and (min-width: 43em) {
-  /* line 80, ../sass/theme/_layout.scss */
+  /* line 78, ../sass/theme/_layout.scss */
   .nav--link, .nav--link-mail, .nav--link-menu {
     padding-right: .75em;
     padding-left: .75em;
     width: auto;
-    -webkit-border-radius: 0.6em;
-    -moz-border-radius: 0.6em;
-    -ms-border-radius: 0.6em;
-    -o-border-radius: 0.6em;
-    border-radius: 0.6em;
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -ms-border-radius: 0.4em;
+    -o-border-radius: 0.4em;
+    border-radius: 0.4em;
   }
 }
 
-/* line 130, ../sass/theme/_layout.scss */
+/* line 128, ../sass/theme/_layout.scss */
 .nav--text {
   display: none;
 }
 @media only screen and (min-width: 43em) {
-  /* line 130, ../sass/theme/_layout.scss */
+  /* line 128, ../sass/theme/_layout.scss */
   .nav--text {
     display: inline;
     font-size: 85%;
@@ -799,17 +822,24 @@ label {
 }
 
 /* Make the mail icon bigger */
-/* line 144, ../sass/theme/_layout.scss */
+/* line 142, ../sass/theme/_layout.scss */
 .nav--link-mail i[class^="icon-"] {
   font-size: 125%;
   line-height: 190%;
 }
 
 /* Make the menu icon bigger */
-/* line 157, ../sass/theme/_layout.scss */
+/* line 155, ../sass/theme/_layout.scss */
 .nav--link-menu i[class^="icon-"] {
   font-size: 150%;
   line-height: 160%;
+}
+
+/* Layouts
+   ================================================================================================================== */
+/* line 170, ../sass/theme/_layout.scss */
+.layout--inner {
+  margin-bottom: 1.5em;
 }
 
 /**
@@ -915,22 +945,15 @@ body {
  */
 /* Search field
    ========================================================================== */
-/* line 12, ../sass/modules/_search.scss */
-.search, .loop--search {
-  float: left;
-  width: 100%;
-  margin-left: 0%;
-  margin-right: -100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-  word-wrap: break-word;
-  _display: inline;
-  _overflow: hidden;
-  _overflow-y: visible;
+@media only screen and (min-width: 75em) {
+  /* line 12, ../sass/modules/_search.scss */
+  .search--inner, .loop--search .panel-pane--inner {
+    -webkit-border-radius: 0 0 0.4em 0.4em;
+    -moz-border-radius: 0 0 0.4em 0.4em;
+    -ms-border-radius: 0 0 0.4em 0.4em;
+    -o-border-radius: 0 0 0.4em 0.4em;
+    border-radius: 0 0 0.4em 0.4em;
+  }
 }
 
 /* line 21, ../sass/modules/_search.scss */
@@ -947,6 +970,7 @@ body {
 }
 /* line 33, ../sass/modules/_search.scss */
 .search--field-wrapper .search--field {
+  margin-bottom: .75em;
   padding-top: 1.25em;
   padding-right: 1.25em;
   padding-bottom: 1.25em;
@@ -954,30 +978,30 @@ body {
   height: 65px;
   background-color: white;
 }
-/* line 43, ../sass/modules/_search.scss */
+/* line 44, ../sass/modules/_search.scss */
 .search--field-wrapper .search--field:focus {
   outline: none;
 }
 @media only screen and (min-width: 28em) {
-  /* line 49, ../sass/modules/_search.scss */
+  /* line 50, ../sass/modules/_search.scss */
   .search--field-wrapper .search--field {
     padding-right: 6em;
     width: 90%;
-    -webkit-border-radius: 0.6em 0 0 0.6em;
-    -moz-border-radius: 0.6em 0 0 0.6em;
-    -ms-border-radius: 0.6em 0 0 0.6em;
-    -o-border-radius: 0.6em 0 0 0.6em;
-    border-radius: 0.6em 0 0 0.6em;
+    -webkit-border-radius: 0.4em 0 0 0.4em;
+    -moz-border-radius: 0.4em 0 0 0.4em;
+    -ms-border-radius: 0.4em 0 0 0.4em;
+    -o-border-radius: 0.4em 0 0 0.4em;
+    border-radius: 0.4em 0 0 0.4em;
   }
 }
 
-/* line 58, ../sass/modules/_search.scss */
+/* line 59, ../sass/modules/_search.scss */
 .search--button {
   height: 65px;
   width: 100%;
 }
 @media only screen and (min-width: 28em) {
-  /* line 58, ../sass/modules/_search.scss */
+  /* line 59, ../sass/modules/_search.scss */
   .search--button {
     position: absolute;
     bottom: 0;
@@ -986,17 +1010,17 @@ body {
     padding-bottom: .65em;
     width: auto;
     font-size: 150%;
-    -webkit-border-radius: 0 0.6em 0.6em 0;
-    -moz-border-radius: 0 0.6em 0.6em 0;
-    -ms-border-radius: 0 0.6em 0.6em 0;
-    -o-border-radius: 0 0.6em 0.6em 0;
-    border-radius: 0 0.6em 0.6em 0;
+    -webkit-border-radius: 0 0.4em 0.4em 0;
+    -moz-border-radius: 0 0.4em 0.4em 0;
+    -ms-border-radius: 0 0.4em 0.4em 0;
+    -o-border-radius: 0 0.4em 0.4em 0;
+    border-radius: 0 0.4em 0.4em 0;
   }
 }
 
 /* Search result
    ========================================================================== */
-/* line 88, ../sass/modules/_search.scss */
+/* line 90, ../sass/modules/_search.scss */
 .search-result--question {
   margin-bottom: 1.5em;
   padding-bottom: 1.5em;
@@ -1023,10 +1047,74 @@ body {
  *
  * @author magnify
  */
-/* line 14, ../sass/modules/_question.scss */
-.question--answer {
-  color: #41ab51;
+/* Question
+   ================================================================================================================== */
+/* line 11, ../sass/modules/_question.scss */
+.question--wrapper {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+}
+
+/* line 18, ../sass/modules/_question.scss */
+.question--meta-data {
+  margin-bottom: 1.5em;
+  padding: .5em 1.25em .65em;
+  background-color: #f2f2f2;
+  color: #999999;
+  font-size: 80%;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+}
+@media only screen and (min-width: 40em) {
+  /* line 18, ../sass/modules/_question.scss */
+  .question--meta-data {
+    float: right;
+  }
+}
+
+/* line 34, ../sass/modules/_question.scss */
+.question--inner {
+  clear: both;
+}
+
+/* line 38, ../sass/modules/_question.scss */
+.question--label {
+  display: block;
+  margin-bottom: .25em;
+  font-size: 125%;
   font-weight: bold;
+}
+
+/* line 46, ../sass/modules/_question.scss */
+.question {
+  font-size: 125%;
+}
+
+/* line 50, ../sass/modules/_question.scss */
+.question--term {
+  display: inline-block;
+  margin-bottom: .25em;
+  padding: .1em 1em;
+  background-color: #ff6138;
+  font-size: 85%;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+}
+/* line 63, ../sass/modules/_question.scss */
+.question--term:link, .question--term:visited, .question--term:hover, .question--term:active {
+  color: white;
+  text-decoration: none;
+}
+/* line 68, ../sass/modules/_question.scss */
+.question--term:hover {
+  background-color: #eb3000;
 }
 
 /**
@@ -1048,4 +1136,176 @@ body {
 /* line 19, ../sass/modules/_lists.scss */
 .content-list--item.is-last {
   margin-bottom: 0;
+}
+
+/**
+ * Meta data module
+ *
+ * @author magnify
+ */
+/* line 9, ../sass/modules/_meta-data.scss */
+.meta-data--author {
+  margin-bottom: .75em;
+  margin-left: -2em;
+}
+@media only screen and (min-width: 75em) {
+  /* line 9, ../sass/modules/_meta-data.scss */
+  .meta-data--author {
+    margin-left: 0;
+  }
+}
+@media only screen and (min-width: 40em) {
+  /* line 9, ../sass/modules/_meta-data.scss */
+  .meta-data--author {
+    float: left;
+  }
+}
+
+/* line 22, ../sass/modules/_meta-data.scss */
+.meta-data--author-image {
+  border: 1px solid #e6e6e6;
+  display: inline-block;
+  overflow: hidden;
+  margin-right: .5em;
+  max-width: 3em;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+}
+
+/* line 32, ../sass/modules/_meta-data.scss */
+.meta-data--author-wrapper {
+  vertical-align: top;
+  display: inline-block;
+}
+
+/* line 38, ../sass/modules/_meta-data.scss */
+.meta-data--author-link {
+  font-weight: bold;
+}
+
+/* line 42, ../sass/modules/_meta-data.scss */
+.meta-data--author-title {
+  display: block;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+
+/**
+ * Comment module
+ *
+ * @author magnify
+ */
+/* Comments
+   ================================================================================================================== */
+/* line 13, ../sass/modules/_comment.scss */
+.comments--comment {
+  position: relative;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+}
+/* line 20, ../sass/modules/_comment.scss */
+.comments--comment.is-last {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* line 28, ../sass/modules/_comment.scss */
+.comments--comment-meta-data {
+  display: block;
+  margin-bottom: .5em;
+  color: #cccccc;
+  clear: both;
+  font-size: 80%;
+}
+
+/* Answer link
+   ================================================================================================================== */
+/* line 41, ../sass/modules/_comment.scss */
+.answer {
+  border: 1px solid #b3b3b3;
+  display: block;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: .5em 1em;
+  font-weight: bold;
+  text-align: center;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+}
+/* line 54, ../sass/modules/_comment.scss */
+.answer [class^="icon-"]:before {
+  width: auto;
+  font-size: 150%;
+  vertical-align: top;
+}
+/* line 64, ../sass/modules/_comment.scss */
+.answer:link, .answer:visited, .answer:hover, .answer:active {
+  color: #b3b3b3;
+  text-decoration: none;
+}
+/* line 69, ../sass/modules/_comment.scss */
+.answer:hover {
+  border: 1px solid #737373;
+  color: #737373;
+}
+/* line 76, ../sass/modules/_comment.scss */
+.answer.is-active, .answer.is-sticky {
+  border: 1px solid #41ab51;
+  color: #41ab51;
+}
+/* line 81, ../sass/modules/_comment.scss */
+.answer.is-active:hover, .answer.is-sticky:hover {
+  border: 1px solid #33863f;
+  color: #33863f;
+}
+/* line 88, ../sass/modules/_comment.scss */
+.answer.is-sticky {
+  margin-bottom: 1em;
+}
+@media only screen and (min-width: 40em) {
+  /* line 41, ../sass/modules/_comment.scss */
+  .answer {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: inline-block;
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+/* Comments form
+   ================================================================================================================== */
+/* line 111, ../sass/modules/_comment.scss */
+.comment-form {
+  clear: both;
+}
+
+/* line 115, ../sass/modules/_comment.scss */
+.comment-form--textarea {
+  margin-bottom: .75em;
+}
+
+/* line 119, ../sass/modules/_comment.scss */
+.comment-form--actions {
+  text-align: right;
+}
+
+/* line 123, ../sass/modules/_comment.scss */
+.comment-form--submit {
+  width: 100%;
+}
+@media only screen and (min-width: 30em) {
+  /* line 123, ../sass/modules/_comment.scss */
+  .comment-form--submit {
+    width: auto;
+  }
 }
