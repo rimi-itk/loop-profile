@@ -1,0 +1,68 @@
+/**
+ * Flag module
+ *
+ * @author magnify
+ */
+
+
+
+.flag {
+  border: 1px solid $gray;
+  display: block;
+  padding: .5em 1em;
+
+  font-weight: bold;
+  text-align: center;
+
+  @include border-radius($border-radius);
+
+  /* Pseudo classes */
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: $gray;
+    text-decoration: none;
+  }
+
+  &:hover {
+    border: 1px solid $gray-dark;
+
+    color: $gray-dark;
+  }
+
+  &:before {
+    @extend %icon-like;
+  }
+
+  /* States */
+  &.is-active,
+  &.is-sticky {
+    border: 1px solid $link-color;
+
+    color: $link-color;
+
+    &:hover {
+      border: 1px solid $link-color-hover;
+
+      color: $link-color-hover;
+    }
+  }
+
+  &.is-sticky {
+    margin-bottom: 1em;
+
+    &:before {
+      @extend %icon-check;
+    }
+  }
+
+  /* Breakpoints */
+  @include breakpoint($breakpoint-4) {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    display: inline-block;
+  }
+}
