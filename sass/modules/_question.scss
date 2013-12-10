@@ -17,10 +17,6 @@
 
 .question--author {
   @extend .meta-data--author;
-
-  @include breakpoint(40em) {
-    float: left;
-  }
 }
 
 .question--meta-data {
@@ -85,8 +81,9 @@
    ================================================================================================================== */
 
 .question-answer {
-  border-bottom: 1px solid $border-color;
+  position: relative;
 
+  border-bottom: 1px solid $border-color;
   margin-bottom: $margin-bottom;
   padding-bottom: $padding-bottom;
 
@@ -103,6 +100,7 @@
   margin-bottom: .5em;
 
   color: $gray-light;
+  clear: both;
   font-size: 80%;
 }
 
