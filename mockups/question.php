@@ -149,6 +149,26 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
       </div>
     </div>
   </div>
+  <div class="comment--wrapper">
+    <div class="meta-data--author">
+      <a href="#" class="meta-data--author-image">
+        <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
+      </a>
+      <div class="meta-data--author-wrapper">
+        Ribena Hutsitove
+        <span class="meta-data--author-title">SOSU, AUH, HUH</span>
+      </div>
+    </div>
+    <div class="comment--form">
+      <form action="ask-question.php">
+        <label for="comment-textarea">Skriv svar</label>
+        <textarea rows="5" class="comment--textarea" id="comment-textarea"></textarea>
+        <div class="comment--form-actions">
+          <input type="submit" value="Skriv svar" class="comment--submit">
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 </body>
 </html>

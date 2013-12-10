@@ -514,7 +514,7 @@ img {
 }
 
 /* line 39, ../sass/theme/_placeholders.scss */
-.layout--inner {
+.layout--inner, .comment--wrapper {
   padding: 1.25em;
   background-color: white;
   -webkit-border-radius: 0.4em;
@@ -614,7 +614,7 @@ label {
   margin-bottom: .25em;
   /* Move labels so they align better with fields when using rounded corners */
   margin-left: .3em;
-  color: #595959;
+  color: #b3b3b3;
 }
 
 /**
@@ -623,7 +623,7 @@ label {
  * @author magnify
  */
 /* line 8, ../sass/theme/_buttons.scss */
-.button--action, .search--button {
+.button--action, .search--button, .comment--submit {
   display: inline-block;
   font-size: 125%;
   padding: .5em 1.5em;
@@ -639,18 +639,18 @@ label {
   text-shadow: 0.025em 0.025em 0.1em #33863f;
 }
 /* line 20, ../sass/theme/_buttons.scss */
-.button--action:focus, .search--button:focus, .button--action:hover, .search--button:hover, .button--action:active, .search--button:active {
+.button--action:focus, .search--button:focus, .comment--submit:focus, .button--action:hover, .search--button:hover, .comment--submit:hover, .button--action:active, .search--button:active, .comment--submit:active {
   text-decoration: none;
 }
 
 /* line 28, ../sass/theme/_buttons.scss */
-.button--action, .search--button {
+.button--action, .search--button, .comment--submit {
   background-color: #5dc26d;
   border: 1px solid #41ab51;
   color: white;
 }
 /* line 35, ../sass/theme/_buttons.scss */
-.button--action:hover, .search--button:hover {
+.button--action:hover, .search--button:hover, .comment--submit:hover {
   background-color: #41ab51;
 }
 
@@ -837,6 +837,11 @@ label {
 
 /* Layouts
    ================================================================================================================== */
+/* line 170, ../sass/theme/_layout.scss */
+.layout--inner {
+  margin-bottom: 1.5em;
+}
+
 /**
  * Debugging
  *
@@ -1285,4 +1290,35 @@ body {
 /* line 77, ../sass/modules/_answer.scss */
 .answer.is-sticky {
   margin-bottom: 1em;
+}
+
+/**
+ * Comment module
+ *
+ * @author magnify
+ */
+/* line 14, ../sass/modules/_comment.scss */
+.comment--form {
+  clear: both;
+}
+
+/* line 18, ../sass/modules/_comment.scss */
+.comment--textarea {
+  margin-bottom: .75em;
+}
+
+/* line 22, ../sass/modules/_comment.scss */
+.comment--form-actions {
+  text-align: right;
+}
+
+/* line 26, ../sass/modules/_comment.scss */
+.comment--submit {
+  width: 100%;
+}
+@media only screen and (min-width: 30em) {
+  /* line 26, ../sass/modules/_comment.scss */
+  .comment--submit {
+    width: auto;
+  }
 }
