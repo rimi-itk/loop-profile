@@ -514,7 +514,7 @@ img {
 }
 
 /* line 39, ../sass/theme/_placeholders.scss */
-.layout--inner, .comment--wrapper {
+.layout--inner, .comment-form--wrapper {
   padding: 1.25em;
   background-color: white;
   -webkit-border-radius: 0.4em;
@@ -623,7 +623,7 @@ label {
  * @author magnify
  */
 /* line 8, ../sass/theme/_buttons.scss */
-.button--action, .search--button, .comment--submit {
+.button--action, .search--button, .comment-form--submit {
   display: inline-block;
   font-size: 125%;
   padding: .5em 1.5em;
@@ -639,18 +639,18 @@ label {
   text-shadow: 0.025em 0.025em 0.1em #33863f;
 }
 /* line 20, ../sass/theme/_buttons.scss */
-.button--action:focus, .search--button:focus, .comment--submit:focus, .button--action:hover, .search--button:hover, .comment--submit:hover, .button--action:active, .search--button:active, .comment--submit:active {
+.button--action:focus, .search--button:focus, .comment-form--submit:focus, .button--action:hover, .search--button:hover, .comment-form--submit:hover, .button--action:active, .search--button:active, .comment-form--submit:active {
   text-decoration: none;
 }
 
 /* line 28, ../sass/theme/_buttons.scss */
-.button--action, .search--button, .comment--submit {
+.button--action, .search--button, .comment-form--submit {
   background-color: #5dc26d;
   border: 1px solid #41ab51;
   color: white;
 }
 /* line 35, ../sass/theme/_buttons.scss */
-.button--action:hover, .search--button:hover, .comment--submit:hover {
+.button--action:hover, .search--button:hover, .comment-form--submit:hover {
   background-color: #41ab51;
 }
 
@@ -1056,7 +1056,7 @@ body {
   padding-bottom: 1.5em;
 }
 
-/* line 22, ../sass/modules/_question.scss */
+/* line 18, ../sass/modules/_question.scss */
 .question--meta-data {
   margin-bottom: 1.5em;
   padding: .5em 1.25em .65em;
@@ -1070,18 +1070,18 @@ body {
   border-radius: 0.4em;
 }
 @media only screen and (min-width: 40em) {
-  /* line 22, ../sass/modules/_question.scss */
+  /* line 18, ../sass/modules/_question.scss */
   .question--meta-data {
     float: right;
   }
 }
 
-/* line 38, ../sass/modules/_question.scss */
+/* line 34, ../sass/modules/_question.scss */
 .question--inner {
   clear: both;
 }
 
-/* line 42, ../sass/modules/_question.scss */
+/* line 38, ../sass/modules/_question.scss */
 .question--label {
   display: block;
   margin-bottom: .25em;
@@ -1089,12 +1089,12 @@ body {
   font-weight: bold;
 }
 
-/* line 50, ../sass/modules/_question.scss */
+/* line 46, ../sass/modules/_question.scss */
 .question {
   font-size: 125%;
 }
 
-/* line 54, ../sass/modules/_question.scss */
+/* line 50, ../sass/modules/_question.scss */
 .question--term {
   display: inline-block;
   margin-bottom: .25em;
@@ -1107,44 +1107,14 @@ body {
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-/* line 67, ../sass/modules/_question.scss */
+/* line 63, ../sass/modules/_question.scss */
 .question--term:link, .question--term:visited, .question--term:hover, .question--term:active {
   color: white;
   text-decoration: none;
 }
-/* line 72, ../sass/modules/_question.scss */
+/* line 68, ../sass/modules/_question.scss */
 .question--term:hover {
   background-color: #eb3000;
-}
-
-/* Question answers
-   ================================================================================================================== */
-/* line 82, ../sass/modules/_question.scss */
-.question-answer {
-  position: relative;
-  border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 1.5em;
-  padding-bottom: 1.5em;
-}
-/* line 89, ../sass/modules/_question.scss */
-.question-answer.is-last {
-  border-bottom: 0;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-/* line 97, ../sass/modules/_question.scss */
-.question-answer--meta-data {
-  display: block;
-  margin-bottom: .5em;
-  color: #cccccc;
-  clear: both;
-  font-size: 80%;
-}
-
-/* line 106, ../sass/modules/_question.scss */
-.question-answer--text {
-  margin-bottom: 1em;
 }
 
 /**
@@ -1174,19 +1144,19 @@ body {
  * @author magnify
  */
 /* line 9, ../sass/modules/_meta-data.scss */
-.meta-data--author, .question--author {
+.meta-data--author {
   margin-bottom: .75em;
   margin-left: -2em;
 }
 @media only screen and (min-width: 75em) {
   /* line 9, ../sass/modules/_meta-data.scss */
-  .meta-data--author, .question--author {
+  .meta-data--author {
     margin-left: 0;
   }
 }
 @media only screen and (min-width: 40em) {
   /* line 9, ../sass/modules/_meta-data.scss */
-  .meta-data--author, .question--author {
+  .meta-data--author {
     float: left;
   }
 }
@@ -1224,12 +1194,40 @@ body {
 }
 
 /**
- * 
+ * Comment module
  *
  * @author magnify
  */
-/* line 9, ../sass/modules/_answer.scss */
+/* Comments
+   ================================================================================================================== */
+/* line 13, ../sass/modules/_comment.scss */
+.comments--comment {
+  position: relative;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 1.5em;
+  padding-bottom: 1.5em;
+}
+/* line 20, ../sass/modules/_comment.scss */
+.comments--comment.is-last {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* line 28, ../sass/modules/_comment.scss */
+.comments--comment-meta-data {
+  display: block;
+  margin-bottom: .5em;
+  color: #cccccc;
+  clear: both;
+  font-size: 80%;
+}
+
+/* Answer link
+   ================================================================================================================== */
+/* line 41, ../sass/modules/_comment.scss */
 .answer {
+  border: 1px solid #b3b3b3;
   display: block;
   margin-right: 10%;
   margin-left: 10%;
@@ -1242,14 +1240,38 @@ body {
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-/* line 21, ../sass/modules/_answer.scss */
+/* line 54, ../sass/modules/_comment.scss */
 .answer [class^="icon-"]:before {
   width: auto;
   font-size: 150%;
   vertical-align: top;
 }
+/* line 64, ../sass/modules/_comment.scss */
+.answer:link, .answer:visited, .answer:hover, .answer:active {
+  color: #b3b3b3;
+  text-decoration: none;
+}
+/* line 69, ../sass/modules/_comment.scss */
+.answer:hover {
+  border: 1px solid #737373;
+  color: #737373;
+}
+/* line 76, ../sass/modules/_comment.scss */
+.answer.is-active, .answer.is-sticky {
+  border: 1px solid #41ab51;
+  color: #41ab51;
+}
+/* line 81, ../sass/modules/_comment.scss */
+.answer.is-active:hover, .answer.is-sticky:hover {
+  border: 1px solid #33863f;
+  color: #33863f;
+}
+/* line 88, ../sass/modules/_comment.scss */
+.answer.is-sticky {
+  margin-bottom: 1em;
+}
 @media only screen and (min-width: 40em) {
-  /* line 9, ../sass/modules/_answer.scss */
+  /* line 41, ../sass/modules/_comment.scss */
   .answer {
     position: absolute;
     right: 0;
@@ -1259,66 +1281,31 @@ body {
     margin-left: 0;
   }
 }
-/* line 41, ../sass/modules/_answer.scss */
-.answer:link, .answer:visited, .answer:hover, .answer:active {
-  text-decoration: none;
-}
 
-/* line 46, ../sass/modules/_answer.scss */
-.answer {
-  border: 1px solid #b3b3b3;
-}
-/* line 54, ../sass/modules/_answer.scss */
-.answer:link, .answer:visited, .answer:hover, .answer:active {
-  color: #b3b3b3;
-}
-/* line 58, ../sass/modules/_answer.scss */
-.answer:hover {
-  border: 1px solid #737373;
-  color: #737373;
-}
-/* line 65, ../sass/modules/_answer.scss */
-.answer.is-active, .answer.is-sticky {
-  border: 1px solid #41ab51;
-  color: #41ab51;
-}
-/* line 70, ../sass/modules/_answer.scss */
-.answer.is-active:hover, .answer.is-sticky:hover {
-  border: 1px solid #33863f;
-  color: #33863f;
-}
-/* line 77, ../sass/modules/_answer.scss */
-.answer.is-sticky {
-  margin-bottom: 1em;
-}
-
-/**
- * Comment module
- *
- * @author magnify
- */
-/* line 14, ../sass/modules/_comment.scss */
-.comment--form {
+/* Comments form
+   ================================================================================================================== */
+/* line 111, ../sass/modules/_comment.scss */
+.comment-form {
   clear: both;
 }
 
-/* line 18, ../sass/modules/_comment.scss */
-.comment--textarea {
+/* line 115, ../sass/modules/_comment.scss */
+.comment-form--textarea {
   margin-bottom: .75em;
 }
 
-/* line 22, ../sass/modules/_comment.scss */
-.comment--form-actions {
+/* line 119, ../sass/modules/_comment.scss */
+.comment-form--actions {
   text-align: right;
 }
 
-/* line 26, ../sass/modules/_comment.scss */
-.comment--submit {
+/* line 123, ../sass/modules/_comment.scss */
+.comment-form--submit {
   width: 100%;
 }
 @media only screen and (min-width: 30em) {
-  /* line 26, ../sass/modules/_comment.scss */
-  .comment--submit {
+  /* line 123, ../sass/modules/_comment.scss */
+  .comment-form--submit {
     width: auto;
   }
 }

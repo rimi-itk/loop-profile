@@ -6,7 +6,6 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
 </head>
 
 <body>
-<?php include('inc/debug.inc') ?>
 
 <header class="header" role="banner">
   <div class="header--inner">
@@ -43,7 +42,7 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
 <div class="layout--wrapper">
   <div class="layout--inner">
     <section class="question--wrapper">
-      <div class="question--author">
+      <div class="meta-data--author">
         <a href="#" class="meta-data--author-image">
           <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
         </a>
@@ -66,90 +65,78 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
         <a href="#" class="question--term">Funktionsvurdering</a>
       </div>
     </section>
-    <div class="question-answer--wrapper">
-      <div class="question-answer">
-        <div class="meta-data--author">
-          <a href="#" class="meta-data--author-image">
-            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
-          </a>
-          <div class="meta-data--author-wrapper">
-            <a href="#" class="meta-data--author-link">Ribena Hutsitove</a>
-            <span class="meta-data--author-title">SOSU, AUH, HUH</span>
-          </div>
-        </div>
-        <a href="#" class="answer is-sticky"><i class="icon-check"></i> Mest nyttige svar</a>
-        <span class="question-answer--meta-data">Oprettet den 28. marts 2013</span>
-        <div class="question-answer--text">
-          Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
+    <div class="comments--comment">
+      <div class="meta-data--author">
+        <a href="#" class="meta-data--author-image">
+          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
+        </a>
+        <div class="meta-data--author-wrapper">
+          <a href="#" class="meta-data--author-link">Ribena Hutsitove</a>
+          <span class="meta-data--author-title">SOSU, AUH, HUH</span>
         </div>
       </div>
-      <div class="question-answer">
-        <div class="meta-data--author">
-          <a href="#" class="meta-data--author-image">
-            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
-          </a>
-          <div class="meta-data--author-wrapper">
-            <a href="#" class="meta-data--author-link">Ribena Hutsitove</a>
-            <span class="meta-data--author-title">SOSU, AUH, HUH</span>
-          </div>
+      <a href="#" class="answer is-sticky"><i class="icon-check"></i> Mest nyttige svar</a>
+      <span class="comments--comment-meta-data">Oprettet den 28. marts 2013</span>
+      Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
+    </div>
+    <div class="comments--comment">
+      <div class="meta-data--author">
+        <a href="#" class="meta-data--author-image">
+          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
+        </a>
+        <div class="meta-data--author-wrapper">
+          <a href="#" class="meta-data--author-link">Ribena Hutsitove</a>
+          <span class="meta-data--author-title">SOSU, AUH, HUH</span>
         </div>
-        <span class="question-answer--meta-data">Oprettet den 28. marts 2013</span>
-        <div class="question-answer--text">
-          Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
-        </div>
-        <a href="#" class="answer"><i class="icon-thumbs"></i> Nyttigt svar (12)</a>
       </div>
-      <div class="question-answer">
-        <div class="meta-data--author">
-          <a href="#" class="meta-data--author-image">
-            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
-          </a>
-          <div class="meta-data--author-wrapper">
-            <a href="#" class="meta-data--author-link">Ribena Hutsitove</a>
-            <span class="meta-data--author-title">SOSU, AUH, HUH</span>
-          </div>
+      <span class="comments--comment-meta-data">Oprettet den 28. marts 2013</span>
+      Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
+      <a href="#" class="answer"><i class="icon-thumbs"></i> Nyttigt svar (12)</a>
+    </div>
+    <div class="comments--comment">
+      <div class="meta-data--author">
+        <a href="#" class="meta-data--author-image">
+          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
+        </a>
+        <div class="meta-data--author-wrapper">
+          <a href="#" class="meta-data--author-link">Ribena Hutsitove</a>
+          <span class="meta-data--author-title">SOSU, AUH, HUH</span>
         </div>
-        <span class="question-answer--meta-data">Oprettet den 28. marts 2013</span>
-        <div class="question-answer--text">
-          Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
-        </div>
-        <a href="#" class="answer"><i class="icon-thumbs"></i> Nyttigt svar (0)</a>
       </div>
-      <div class="question-answer">
-        <div class="meta-data--author">
-          <a href="#" class="meta-data--author-image">
-            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
-          </a>
-          <div class="meta-data--author-wrapper">
-            <a href="#" class="meta-data--author-link">Ribena Hutsitove</a>
-            <span class="meta-data--author-title">SOSU, AUH, HUH</span>
-          </div>
+      <span class="comments--comment-meta-data">Oprettet den 28. marts 2013</span>
+      Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
+      <a href="#" class="answer"><i class="icon-thumbs"></i> Dette svar er nyttigt (0)</a>
+    </div>
+    <div class="comments--comment">
+      <div class="meta-data--author">
+        <a href="#" class="meta-data--author-image">
+          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
+        </a>
+        <div class="meta-data--author-wrapper">
+          <a href="#" class="meta-data--author-link">Ribena Hutsitove</a>
+          <span class="meta-data--author-title">SOSU, AUH, HUH</span>
         </div>
-        <span class="question-answer--meta-data">Oprettet den 28. marts 2013</span>
-        <div class="question-answer--text">
-          Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
-        </div>
-        <a href="#" class="answer" data-answer-state="is-active"><i class="icon-thumbs"></i> Nyttigt svar (2)</a>
       </div>
-      <div class="question-answer is-last">
-        <div class="meta-data--author">
-          <a href="#" class="meta-data--author-image">
-            <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
-          </a>
-          <div class="meta-data--author-wrapper">
-            <a href="#" class="meta-data--author-link">Ribena Hutsitove</a>
-            <span class="meta-data--author-title">SOSU, AUH, HUH</span>
-          </div>
+      <span class="comments--comment-meta-data">Oprettet den 28. marts 2013</span>
+      Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
+      <a href="#" class="answer is-active"><i class="icon-thumbs"></i> Du fandt dette svar nyttigt</a>
+    </div>
+    <div class="comments--comment is-last">
+      <div class="meta-data--author">
+        <a href="#" class="meta-data--author-image">
+          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
+        </a>
+        <div class="meta-data--author-wrapper">
+          <a href="#" class="meta-data--author-link">Ribena Hutsitove</a>
+          <span class="meta-data--author-title">SOSU, AUH, HUH</span>
         </div>
-        <span class="question-answer--meta-data">Oprettet den 28. marts 2013</span>
-        <div class="question-answer--text">
-          Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
-        </div>
-        <a href="#" class="answer"><i class="icon-thumbs"></i> Nyttigt svar (3)</a>
       </div>
+      <span class="comments--comment-meta-data">Oprettet den 28. marts 2013</span>
+      Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
+      <a href="#" class="answer"><i class="icon-thumbs"></i> Nyttigt svar (3)</a>
     </div>
   </div>
-  <div class="comment--wrapper">
+  <div class="comment-form--wrapper">
     <div class="meta-data--author">
       <a href="#" class="meta-data--author-image">
         <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
@@ -159,12 +146,12 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
         <span class="meta-data--author-title">SOSU, AUH, HUH</span>
       </div>
     </div>
-    <div class="comment--form">
+    <div class="comment-form">
       <form action="ask-question.php">
         <label for="comment-textarea">Skriv svar</label>
-        <textarea rows="5" class="comment--textarea" id="comment-textarea"></textarea>
-        <div class="comment--form-actions">
-          <input type="submit" value="Skriv svar" class="comment--submit">
+        <textarea rows="5" class="comment-form--textarea" id="comment-textarea"></textarea>
+        <div class="comment-form--actions">
+          <input type="submit" value="Skriv svar" class="comment-form--submit">
         </div>
       </form>
     </div>

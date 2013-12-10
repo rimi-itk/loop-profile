@@ -15,10 +15,6 @@
   padding-bottom: $padding-bottom;
 }
 
-.question--author {
-  @extend .meta-data--author;
-}
-
 .question--meta-data {
   margin-bottom: $margin-bottom;
   padding: .5em 1.25em .65em;
@@ -72,37 +68,4 @@
   &:hover {
     background-color: darken($red, 15%);
   }
-}
-
-
-
-/* Question answers
-   ================================================================================================================== */
-
-.question-answer {
-  position: relative;
-
-  border-bottom: 1px solid $border-color;
-  margin-bottom: $margin-bottom;
-  padding-bottom: $padding-bottom;
-
-  &.is-last {
-    border-bottom: 0;
-
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-}
-
-.question-answer--meta-data {
-  display: block;
-  margin-bottom: .5em;
-
-  color: $gray-light;
-  clear: both;
-  font-size: 80%;
-}
-
-.question-answer--text {
-  margin-bottom: 1em;
 }
