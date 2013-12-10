@@ -48,7 +48,27 @@
 
 
 
-/* Answer link
+/* Icons
    ================================================================================================================== */
 
+%icon-base {
+  display: inline-block;
+  margin-right: .35em;
 
+  font-family: "loop-icons";
+  font-size: 150%;
+  line-height: 100%;
+}
+
+%icon-check {
+  @extend %icon-base;
+
+  content: '\e804';
+}
+
+
+%icon-like {
+  @extend %icon-base;
+
+  content: '\e805';
+}
