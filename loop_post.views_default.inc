@@ -31,7 +31,6 @@ function loop_post_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Perform';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Restore';
-  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sort by';
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Ascending';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Descending';
   $handler->display->display_options['pager']['type'] = 'some';
@@ -68,9 +67,9 @@ function loop_post_views_default_views() {
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
   $handler->display->display_options['arguments']['nid']['relationship'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'not found';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
@@ -127,6 +126,16 @@ function loop_post_views_default_views() {
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
   $handler->display->display_options['relationships']['nid']['required'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Nid',
+    ),
+  );
   $translatables['node_comment'] = array(
     t('Master'),
     t('Comment for content'),
@@ -135,11 +144,12 @@ function loop_post_views_default_views() {
     t('Restore'),
     t('Sort by'),
     t('Ascending'),
-    t('descending'),
+    t('Descending'),
     t('Content'),
     t('counter'),
     t('All'),
     t('Most valid comment'),
+    t('more'),
     t('View panes'),
     t('Other comments'),
   );
