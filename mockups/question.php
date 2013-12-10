@@ -77,7 +77,7 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
             <span class="meta-data--author-title">SOSU, AUH, HUH</span>
           </div>
         </div>
-        <a href="#" class="answer-link--check"><i class="icon-check"></i> Mest nyttige svar</a>
+        <a href="#" class="answer--check"><i class="icon-check"></i> Mest nyttige svar</a>
         <span class="question-answer--meta-data">Oprettet den 28. marts 2013</span>
         <div class="question-answer--text">
           Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
@@ -97,7 +97,7 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
         <div class="question-answer--text">
           Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
         </div>
-        <a href="#" class="answer-link"><i class="icon-thumbs"></i> Nyttigt svar (12)</a>
+        <a href="#" class="answer"><i class="icon-thumbs"></i> Nyttigt svar (12)</a>
       </div>
       <div class="question-answer">
         <div class="meta-data--author">
@@ -113,7 +113,7 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
         <div class="question-answer--text">
           Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
         </div>
-        <a href="#" class="answer-link"><i class="icon-thumbs"></i> Nyttigt svar (0)</a>
+        <a href="#" class="answer"><i class="icon-thumbs"></i> Nyttigt svar (0)</a>
       </div>
       <div class="question-answer">
         <div class="meta-data--author">
@@ -129,7 +129,7 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
         <div class="question-answer--text">
           Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
         </div>
-        <a href="#" class="answer-link"><i class="icon-thumbs"></i> Nyttigt svar (2)</a>
+        <a href="#" class="answer"><i class="icon-thumbs"></i> Nyttigt svar (2)</a>
       </div>
       <div class="question-answer is-last">
         <div class="meta-data--author">
@@ -145,7 +145,7 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
         <div class="question-answer--text">
           Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
         </div>
-        <a href="#" class="answer-link"><i class="icon-thumbs"></i> Nyttigt svar (3)</a>
+        <a href="#" class="answer"><i class="icon-thumbs"></i> Nyttigt svar (3)</a>
       </div>
     </div>
   </div>
