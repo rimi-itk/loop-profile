@@ -22,6 +22,8 @@ function loop_notification_menu() {
 
 /**
  * Implements hook_form_ID_alter().
+ *
+ * Add new comments to every subscription list.
  */
 function loop_notification_form_notifications_account_subscription_list_form_alter(&$form, $form_state) {
   // Add comments column.
@@ -53,7 +55,7 @@ function loop_notification_form_notifications_account_subscription_list_form_alt
 function loop_notification_get_comments($user) {
   // Build our query from notificiation tabels.
   $query = db_select('notifications_subscription', 's')
-  ->condition('s.uid', $user->uid);
+    ->condition('s.uid', $user->uid);
 
   // Join to get node ID.
   $query->join('notifications_subscription_fields', 'f', 's.sid = f.sid');
