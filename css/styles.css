@@ -1071,12 +1071,12 @@ body {
   }
 }
 
-/* line 39, ../sass/modules/_question.scss */
+/* line 38, ../sass/modules/_question.scss */
 .question--inner {
   clear: both;
 }
 
-/* line 43, ../sass/modules/_question.scss */
+/* line 42, ../sass/modules/_question.scss */
 .question--label {
   display: block;
   margin-bottom: .25em;
@@ -1084,12 +1084,12 @@ body {
   font-weight: bold;
 }
 
-/* line 51, ../sass/modules/_question.scss */
+/* line 50, ../sass/modules/_question.scss */
 .question {
   font-size: 125%;
 }
 
-/* line 55, ../sass/modules/_question.scss */
+/* line 54, ../sass/modules/_question.scss */
 .question--term {
   display: inline-block;
   margin-bottom: .25em;
@@ -1102,33 +1102,33 @@ body {
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-/* line 68, ../sass/modules/_question.scss */
+/* line 67, ../sass/modules/_question.scss */
 .question--term:link, .question--term:visited, .question--term:hover, .question--term:active {
   color: white;
   text-decoration: none;
 }
-/* line 73, ../sass/modules/_question.scss */
+/* line 72, ../sass/modules/_question.scss */
 .question--term:hover {
   background-color: #eb3000;
 }
 
 /* Question answers
    ================================================================================================================== */
-/* line 83, ../sass/modules/_question.scss */
+/* line 82, ../sass/modules/_question.scss */
 .question-answer {
   position: relative;
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 1.5em;
   padding-bottom: 1.5em;
 }
-/* line 90, ../sass/modules/_question.scss */
+/* line 89, ../sass/modules/_question.scss */
 .question-answer.is-last {
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-/* line 98, ../sass/modules/_question.scss */
+/* line 97, ../sass/modules/_question.scss */
 .question-answer--meta-data {
   display: block;
   margin-bottom: .5em;
@@ -1137,7 +1137,7 @@ body {
   font-size: 80%;
 }
 
-/* line 107, ../sass/modules/_question.scss */
+/* line 106, ../sass/modules/_question.scss */
 .question-answer--text {
   margin-bottom: 1em;
 }
@@ -1224,7 +1224,7 @@ body {
  * @author magnify
  */
 /* line 9, ../sass/modules/_answer.scss */
-.answer, .answer--check {
+.answer {
   display: block;
   margin-right: 10%;
   margin-left: 10%;
@@ -1238,14 +1238,14 @@ body {
   border-radius: 0.4em;
 }
 /* line 21, ../sass/modules/_answer.scss */
-.answer [class^="icon-"]:before, .answer--check [class^="icon-"]:before {
+.answer [class^="icon-"]:before {
   width: auto;
   font-size: 150%;
   vertical-align: top;
 }
 @media only screen and (min-width: 40em) {
   /* line 9, ../sass/modules/_answer.scss */
-  .answer, .answer--check {
+  .answer {
     position: absolute;
     right: 0;
     top: 0;
@@ -1255,7 +1255,7 @@ body {
   }
 }
 /* line 41, ../sass/modules/_answer.scss */
-.answer:link, .answer--check:link, .answer:visited, .answer--check:visited, .answer:hover, .answer--check:hover, .answer:active, .answer--check:active {
+.answer:link, .answer:visited, .answer:hover, .answer:active {
   text-decoration: none;
 }
 
@@ -1269,16 +1269,20 @@ body {
 }
 /* line 58, ../sass/modules/_answer.scss */
 .answer:hover {
-  border: 1px solid #33863f;
+  border: 1px solid #737373;
   color: #737373;
 }
-
 /* line 65, ../sass/modules/_answer.scss */
-.answer--check {
+.answer.is-active, .answer.is-sticky {
   border: 1px solid #41ab51;
-  margin-bottom: 1em;
+  color: #41ab51;
 }
-/* line 71, ../sass/modules/_answer.scss */
-.answer--check:hover {
+/* line 70, ../sass/modules/_answer.scss */
+.answer.is-active:hover, .answer.is-sticky:hover {
   border: 1px solid #33863f;
+  color: #33863f;
+}
+/* line 77, ../sass/modules/_answer.scss */
+.answer.is-sticky {
+  margin-bottom: 1em;
 }
