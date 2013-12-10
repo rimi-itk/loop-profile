@@ -34,7 +34,7 @@ textarea {
   padding: .75em;
 
   color: $gray-darker;
-  background-color: $gray-lightest;
+  background-color: darken($white, 2%);
 
   &:focus {
     border: 1px solid $gray-dark;
@@ -63,7 +63,56 @@ label {
   margin-bottom: .25em;
 
   /* Move labels so they align better with fields when using rounded corners */
-  margin-left: .3em;
+  margin-left: .2em;
 
   color: $gray;
+}
+
+
+/* Form elements
+   ================================================================================================================== */
+
+.form-module {
+  clear: both;
+}
+
+.form-module--wrapper {
+  @extend %basic-element-inner-styling;
+}
+
+.form-module--fields-wrapper {
+  border: 1px solid $gray-lightest;
+  margin-bottom: $margin-bottom;
+  padding: 1em;
+
+  @include border-radius($border-radius);
+}
+
+.form-module--required {
+  color: $red;
+}
+
+.form-module--select {
+  border: 1px solid $gray-lighter;
+  padding: .75em;
+  width: 100%;
+
+  background-color: darken($white, 2%);
+
+  @include border-radius($border-radius);
+  @include box-sizing(border-box);
+}
+
+.form-module--actions {
+  text-align: right;
+}
+
+.form-module--submit {
+  @extend .button--action;
+
+  width: 100%;
+
+  @include breakpoint(30em) {
+    width: auto;
+  }
 }
