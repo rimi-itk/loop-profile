@@ -183,4 +183,35 @@ function loopdk_setup_apache_solr() {
     ->execute();
 
   variable_set('search_default_module', 'apachesolr_search');
+
+  // Setting facet api correctly.
+  $facets = array(
+    array(
+      'name' => 'apachesolr@solr:block:im_field_keyword',
+      'facet' => 'im_field_keyword',
+      'settings' => 'a:10:{s:6:"weight";i:0;s:6:"widget";s:14:"facetapi_links";s:7:"filters";a:0:{}s:12:"active_sorts";a:3:{s:6:"active";s:6:"active";s:5:"count";s:5:"count";s:7:"display";s:7:"display";}s:11:"sort_weight";a:3:{s:6:"active";i:-50;s:5:"count";i:-49;s:7:"display";i:-48;}s:10:"sort_order";a:3:{s:6:"active";i:3;s:5:"count";i:3;s:7:"display";i:4;}s:14:"empty_behavior";s:4:"none";s:10:"soft_limit";i:20;s:8:"nofollow";i:1;s:13:"show_expanded";i:0;}'
+    ),
+  array(
+    'name' => 'apachesolr@solr:block:im_field_profession',
+    'facet' => 'im_field_profession',
+    'settings' => 'a:10:{s:6:"weight";i:0;s:6:"widget";s:14:"facetapi_links";s:7:"filters";a:0:{}s:12:"active_sorts";a:3:{s:6:"active";s:6:"active";s:5:"count";s:5:"count";s:7:"display";s:7:"display";}s:11:"sort_weight";a:3:{s:6:"active";i:-50;s:5:"count";i:-49;s:7:"display";i:-48;}s:10:"sort_order";a:3:{s:6:"active";i:3;s:5:"count";i:3;s:7:"display";i:4;}s:14:"empty_behavior";s:4:"none";s:10:"soft_limit";i:20;s:8:"nofollow";i:1;s:13:"show_expanded";i:0;}'
+  ),
+  array(
+    'name' => 'apachesolr@solr:block:im_field_subject',
+    'facet' => 'im_field_subject',
+    'settings' => 'a:10:{s:6:"weight";i:0;s:6:"widget";s:14:"facetapi_links";s:7:"filters";a:0:{}s:12:"active_sorts";a:3:{s:6:"active";s:6:"active";s:5:"count";s:5:"count";s:7:"display";s:7:"display";}s:11:"sort_weight";a:3:{s:6:"active";i:-50;s:5:"count";i:-49;s:7:"display";i:-48;}s:10:"sort_order";a:3:{s:6:"active";i:3;s:5:"count";i:3;s:7:"display";i:4;}s:14:"empty_behavior";s:4:"none";s:10:"soft_limit";i:20;s:8:"nofollow";i:1;s:13:"show_expanded";i:0;}'
+  ));
+
+  foreach ($facets as $facet) {
+  db_insert('facetapi')
+    ->fields(array(
+      'name' => $facet['name'],
+      'searcher' => 'apachesolr@solr',
+      'realm' => 'block',
+      'facet' => $facet['facet'],
+      'enabled' => 1,
+      'settings' => $facet['settings'],
+    ))
+    ->execute();
+  }
 }
