@@ -2,7 +2,7 @@
 $path_to_theme = "/profiles/loopdk/themes/loop/";
 ?>
 <?php include('inc/head.inc') ?>
-<title>LOOP question</title>
+<title>LOOP - question</title>
 </head>
 
 <body>
@@ -146,7 +146,7 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
       <a href="#" class="flag">Dette svar er nyttigt (3)</a>
     </div>
   </div>
-  <div class="comment-form--wrapper">
+  <div class="form-module--wrapper">
     <div class="meta-data--author">
       <a href="#" class="meta-data--author-image">
         <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
@@ -156,12 +156,12 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
         <span class="meta-data--author-title">SOSU, AUH, HUH</span>
       </div>
     </div>
-    <div class="comment-form">
+    <div class="form-module">
       <form action="ask-question.php">
-        <label for="comment-textarea">Skriv svar</label>
-        <textarea rows="5" class="comment-form--textarea" id="comment-textarea"></textarea>
-        <div class="comment-form--actions">
-          <input type="submit" value="Skriv svar" class="comment-form--submit">
+        <label for="form-module--textarea">Skriv svar</label>
+        <textarea rows="5" class="form-module--textarea" id="comment-textarea"></textarea>
+        <div class="form-module--actions">
+          <input type="submit" value="Skriv svar" class="form-module--submit">
         </div>
       </form>
     </div>
