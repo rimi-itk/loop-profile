@@ -6,6 +6,7 @@ version = 7.x-1.0
 project = loop_notification
 dependencies[] = ctools
 dependencies[] = messaging_htmlmail
+dependencies[] = messaging_mail
 dependencies[] = messaging_simple
 dependencies[] = notifications
 dependencies[] = notifications_account
