@@ -1,0 +1,74 @@
+/**
+ * 
+ *
+ * @author magnify
+ */
+
+
+
+%answer {
+  display: block;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: .5em 1em;
+
+  font-weight: bold;
+  text-align: center;
+
+  @include border-radius($border-radius);
+
+  // Override the default icon styling so it is aligned with the link text
+  [class^="icon-"]:before {
+    width: auto;
+
+    font-size: 150%;
+    vertical-align: top;
+  }
+
+  @include breakpoint(40em) {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    display: inline-block;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+}
+
+.answer {
+  @extend %answer;
+
+  border: 1px solid $gray;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: $gray;
+  }
+
+  &:hover {
+    border: 1px solid $link-color-hover;
+
+    color: $gray-dark;
+  }
+}
+
+.answer--check {
+  @extend %answer;
+
+  border: 1px solid $link-color;
+  margin-bottom: 1em;
+
+  &:hover {
+    border: 1px solid $link-color-hover;
+  }
+}
