@@ -527,8 +527,27 @@ img {
   box-sizing: border-box;
 }
 
-/* Answer link
+/* Icons
    ================================================================================================================== */
+/* line 54, ../sass/theme/_placeholders.scss */
+.flag.is-sticky:before, .flag:before {
+  display: inline-block;
+  margin-right: .35em;
+  font-family: "loop-icons";
+  font-size: 150%;
+  line-height: 100%;
+}
+
+/* line 63, ../sass/theme/_placeholders.scss */
+.flag.is-sticky:before {
+  content: '\e804';
+}
+
+/* line 70, ../sass/theme/_placeholders.scss */
+.flag:before {
+  content: '\e805';
+}
+
 /**
  * Forms
  *
@@ -1223,14 +1242,54 @@ body {
   font-size: 80%;
 }
 
-/* Answer link
+/* line 37, ../sass/modules/_comment.scss */
+.comments--comment-content {
+  margin-bottom: 1em;
+}
+@media only screen and (min-width: 43em) {
+  /* line 37, ../sass/modules/_comment.scss */
+  .comments--comment-content {
+    margin-bottom: 0;
+  }
+}
+
+/* Comments form
    ================================================================================================================== */
-/* line 41, ../sass/modules/_comment.scss */
-.answer {
+/* line 54, ../sass/modules/_comment.scss */
+.comment-form {
+  clear: both;
+}
+
+/* line 58, ../sass/modules/_comment.scss */
+.comment-form--textarea {
+  margin-bottom: .75em;
+}
+
+/* line 62, ../sass/modules/_comment.scss */
+.comment-form--actions {
+  text-align: right;
+}
+
+/* line 66, ../sass/modules/_comment.scss */
+.comment-form--submit {
+  width: 100%;
+}
+@media only screen and (min-width: 30em) {
+  /* line 66, ../sass/modules/_comment.scss */
+  .comment-form--submit {
+    width: auto;
+  }
+}
+
+/**
+ * Flag module
+ *
+ * @author magnify
+ */
+/* line 9, ../sass/modules/_flag.scss */
+.flag {
   border: 1px solid #b3b3b3;
   display: block;
-  margin-right: 10%;
-  margin-left: 10%;
   padding: .5em 1em;
   font-weight: bold;
   text-align: center;
@@ -1239,73 +1298,40 @@ body {
   -ms-border-radius: 0.4em;
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
+  /* Pseudo classes */
+  /* States */
+  /* Breakpoints */
 }
-/* line 54, ../sass/modules/_comment.scss */
-.answer [class^="icon-"]:before {
-  width: auto;
-  font-size: 150%;
-  vertical-align: top;
-}
-/* line 64, ../sass/modules/_comment.scss */
-.answer:link, .answer:visited, .answer:hover, .answer:active {
+/* line 23, ../sass/modules/_flag.scss */
+.flag:link, .flag:visited, .flag:hover, .flag:active {
   color: #b3b3b3;
   text-decoration: none;
 }
-/* line 69, ../sass/modules/_comment.scss */
-.answer:hover {
+/* line 28, ../sass/modules/_flag.scss */
+.flag:hover {
   border: 1px solid #737373;
   color: #737373;
 }
-/* line 76, ../sass/modules/_comment.scss */
-.answer.is-active, .answer.is-sticky {
+/* line 40, ../sass/modules/_flag.scss */
+.flag.is-active, .flag.is-sticky {
   border: 1px solid #41ab51;
   color: #41ab51;
 }
-/* line 81, ../sass/modules/_comment.scss */
-.answer.is-active:hover, .answer.is-sticky:hover {
+/* line 45, ../sass/modules/_flag.scss */
+.flag.is-active:hover, .flag.is-sticky:hover {
   border: 1px solid #33863f;
   color: #33863f;
 }
-/* line 88, ../sass/modules/_comment.scss */
-.answer.is-sticky {
+/* line 52, ../sass/modules/_flag.scss */
+.flag.is-sticky {
   margin-bottom: 1em;
 }
-@media only screen and (min-width: 40em) {
-  /* line 41, ../sass/modules/_comment.scss */
-  .answer {
+@media only screen and (min-width: 43em) {
+  /* line 9, ../sass/modules/_flag.scss */
+  .flag {
     position: absolute;
     right: 0;
     top: 0;
     display: inline-block;
-    margin-right: 0;
-    margin-left: 0;
-  }
-}
-
-/* Comments form
-   ================================================================================================================== */
-/* line 111, ../sass/modules/_comment.scss */
-.comment-form {
-  clear: both;
-}
-
-/* line 115, ../sass/modules/_comment.scss */
-.comment-form--textarea {
-  margin-bottom: .75em;
-}
-
-/* line 119, ../sass/modules/_comment.scss */
-.comment-form--actions {
-  text-align: right;
-}
-
-/* line 123, ../sass/modules/_comment.scss */
-.comment-form--submit {
-  width: 100%;
-}
-@media only screen and (min-width: 30em) {
-  /* line 123, ../sass/modules/_comment.scss */
-  .comment-form--submit {
-    width: auto;
   }
 }

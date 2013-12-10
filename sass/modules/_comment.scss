@@ -34,71 +34,14 @@
   font-size: 80%;
 }
 
+.comments--comment-content {
+  margin-bottom: 1em;
 
-/* Answer link
-   ================================================================================================================== */
-
-.answer {
-  border: 1px solid $gray;
-  display: block;
-  margin-right: 10%;
-  margin-left: 10%;
-  padding: .5em 1em;
-
-  font-weight: bold;
-  text-align: center;
-
-  @include border-radius($border-radius);
-
-  // Override the default icon styling so it is aligned with the link text
-  [class^="icon-"]:before {
-    width: auto;
-
-    font-size: 150%;
-    vertical-align: top;
-  }
-
-  &:link,
-  &:visited,
-  &:hover,
-  &:active {
-    color: $gray;
-    text-decoration: none;
-  }
-
-  &:hover {
-    border: 1px solid $gray-dark;
-
-    color: $gray-dark;
-  }
-
-  &.is-active,
-  &.is-sticky {
-    border: 1px solid $link-color;
-
-    color: $link-color;
-
-    &:hover {
-      border: 1px solid $link-color-hover;
-
-      color: $link-color-hover;
-    }
-  }
-
-  &.is-sticky {
-    margin-bottom: 1em;
-  }
-
-  @include breakpoint(40em) {
-    position: absolute;
-    right: 0;
-    top: 0;
-
-    display: inline-block;
-    margin-right: 0;
-    margin-left: 0;
+  @include breakpoint($breakpoint-4) {
+    margin-bottom: 0;
   }
 }
+
 
 
 /* Comments form
