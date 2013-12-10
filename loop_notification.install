@@ -1,0 +1,31 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function loop_notification_install() {
+  // Load defautl shortcut set.
+  $shortcut_set = shortcut_set_load(SHORTCUT_DEFAULT_SET_NAME);
+
+  // Figure out if we should clean up the default shortcuts.
+  $shortcut_results = db_select('menu_links', 'm')
+    ->fields('m')
+    ->condition('menu_name', 'shortcut-set-1')
+    ->execute();
+
+  $count = $shortcut_results->rowCount();
+  if ($count == 2) {
+    // Remove the old one.
+    db_delete('menu_links')
+      ->condition('menu_name', 'shortcut-set-1')
+      ->execute();
+  }
+
+  $shortcut_set->links = array(
+    array(
+      'link_path' => 'admin/config/messaging/settings',
+      'link_title' => t('Messagning settings'),
+    ),
+  );
+  shortcut_set_save($shortcut_set);
+}

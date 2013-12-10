@@ -9,6 +9,7 @@ dependencies[] = notifications
 dependencies[] = notifications_account
 dependencies[] = notifications_content
 dependencies[] = notifications_ui
+dependencies[] = shortcut
 dependencies[] = strongarm
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
