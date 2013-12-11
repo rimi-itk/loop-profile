@@ -10,7 +10,7 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
 
 <header class="header" role="banner">
   <div class="header--inner">
-    <a href="/" class="logo--link"><img src="../logo.png" alt="" class="logo--image"></a>
+    <a href="/" class="logo--link"><img src="<?php echo $path_to_theme; ?>/logo.png" alt="" class="logo--image"></a>
     <nav class="nav">
       <a href="#" title="Min konto" class="nav--link">
         <i class="icon-user"></i>
@@ -28,16 +28,20 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
     </nav>
   </div>
 </header>
-<div class="search">
-  <div class="search--inner">
-    <form action="search-question.php">
-      <label class="form-label">Søg efter svar</label>
-      <div class="search--field-wrapper">
-        <i class="search--icon icon-search"></i>
-        <input type="text" placeholder="Skriv f.eks. &quot;Hvordan dokumenteres delvis aktindsigt&quot;" class="search--field">
-        <input type="submit" class="search--button" value="Søg">
-      </div>
-    </form>
+<div class="search--wrapper">
+  <form action="search-question.php">
+    <label class="form-label">Søg efter svar</label>
+    <div class="search--field-wrapper">
+      <i class="search--icon icon-search"></i>
+      <input type="text" placeholder="Skriv f.eks. &quot;Hvordan dokumenteres delvis aktindsigt&quot;" class="search--field">
+      <input type="submit" class="search--button" value="Søg">
+    </div>
+  </form>
+  <div class="search--autocomplete">
+    <a href="#" class="search--autocomplete-link">Hvordan dokumenteres delvis aktindsigt? Og findes der en vejledning i dokumentation af aktindsigt?</a>
+    <a href="#" class="search--autocomplete-link">I hvilket special ark skal terapeuter i plejeboliger visitere i?</a>
+    <a href="#" class="search--autocomplete-link">Skal der oprettes et Fokusområder der hedder ernæring, hvis en borger scorer 0 i en ernæringsvurdering?</a>
+    <a href="#" class="search--autocomplete-link">Skal køkkenpersonale, som samarbejder tæt med beboere, plejepersonale og terapeuter omkring ernæring dokumentere om ernærings indsatser?</a>
   </div>
 </div>
 </body>

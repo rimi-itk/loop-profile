@@ -10,7 +10,7 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
 
 <header class="header" role="banner">
   <div class="header--inner">
-    <a href="/" class="logo--link"><img src="../logo.png" alt="" class="logo--image"></a>
+    <a href="/" class="logo--link"><img src="<?php echo $path_to_theme; ?>/logo.png" alt="" class="logo--image"></a>
     <nav class="nav">
       <a href="#" title="Min konto" class="nav--link">
         <i class="icon-user"></i>
@@ -28,17 +28,15 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
     </nav>
   </div>
 </header>
-<div class="search">
-  <div class="search--inner">
-    <form>
-      <label class="form-label">Søg efter svar</label>
-      <div class="search--field-wrapper">
-        <i class="search--icon icon-search"></i>
-        <input type="text" placeholder="Skriv f.eks. &quot;Hvordan dokumenteres delvis aktindsigt&quot;" value="Hvordan dokumenteres delvis aktindsigt" class="search--field">
-        <input type="submit" class="search--button" value="Søg">
-      </div>
-    </form>
-  </div>
+<div class="search--wrapper">
+  <form>
+    <label class="form-label">Søg efter svar</label>
+    <div class="search--field-wrapper">
+      <i class="search--icon icon-search"></i>
+      <input type="text" placeholder="Skriv f.eks. &quot;Hvordan dokumenteres delvis aktindsigt&quot;" value="Hvordan dokumenteres delvis aktindsigt" class="search--field">
+      <input type="submit" class="search--button" value="Søg">
+    </div>
+  </form>
 </div>
 <div class="search-result">
   <div class="search-result--inner">
