@@ -15,7 +15,6 @@ include_once 'loop_permissions.features.inc';
  */
 function loop_permissions_secure_permissions_roles() {
   return array(
-    'anonymous user',
     'authenticated user',
     'documentation coordinator',
     'manager',
@@ -34,9 +33,6 @@ function loop_permissions_secure_permissions_roles() {
  */
 function loop_permissions_secure_permissions($role) {
   $permissions = array(
-    'anonymous user' => array(
-      'access content',
-    ),
     'authenticated user' => array(
       'access comments',
       'access content',
