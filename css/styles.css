@@ -481,43 +481,27 @@ img {
    ========================================================================== */
 /* Used for centering an element */
 /* line 14, ../sass/theme/_placeholders.scss */
-<<<<<<< HEAD
-.header--inner, .layout--wrapper, .search--inner, .search-block .panel-pane--inner, .search-result {
-=======
-.header--inner, .layout--wrapper, .search--wrapper, .search-result {
->>>>>>> 84dc3866bc1d790e5daed0b3afbf73b8efd18bb5
+.header--inner, .layout--wrapper, .search-block, .search-result {
   margin-right: auto;
   margin-left: auto;
   clear: both;
 }
 @media only screen and (min-width: 18.75em) {
   /* line 14, ../sass/theme/_placeholders.scss */
-<<<<<<< HEAD
-  .header--inner, .layout--wrapper, .search--inner, .search-block .panel-pane--inner, .search-result {
-=======
-  .header--inner, .layout--wrapper, .search--wrapper, .search-result {
->>>>>>> 84dc3866bc1d790e5daed0b3afbf73b8efd18bb5
+  .header--inner, .layout--wrapper, .search-block, .search-result {
     max-width: 75em;
   }
 }
 
 /* line 26, ../sass/theme/_placeholders.scss */
-<<<<<<< HEAD
-.layout--wrapper, .search--inner, .search-block .panel-pane--inner, .search-result, .content-list--item {
-=======
-.layout--wrapper, .search--wrapper, .search-result, .content-list--item {
->>>>>>> 84dc3866bc1d790e5daed0b3afbf73b8efd18bb5
+.layout--wrapper, .search-block, .search-result, .content-list--item {
   margin-bottom: 1.5em;
   padding: 1.25em;
   background-color: #f2f2f2;
 }
 @media only screen and (min-width: 75em) {
   /* line 26, ../sass/theme/_placeholders.scss */
-<<<<<<< HEAD
-  .layout--wrapper, .search--inner, .search-block .panel-pane--inner, .search-result, .content-list--item {
-=======
-  .layout--wrapper, .search--wrapper, .search-result, .content-list--item {
->>>>>>> 84dc3866bc1d790e5daed0b3afbf73b8efd18bb5
+  .layout--wrapper, .search-block, .search-result, .content-list--item {
     -webkit-border-radius: 0.4em;
     -moz-border-radius: 0.4em;
     -ms-border-radius: 0.4em;
@@ -1074,16 +1058,12 @@ body {
 /* Search field
    ========================================================================== */
 /* line 12, ../sass/modules/_search.scss */
-.search--wrapper {
+.search-block {
   position: relative;
 }
 @media only screen and (min-width: 75em) {
   /* line 12, ../sass/modules/_search.scss */
-<<<<<<< HEAD
-  .search--inner, .search-block .panel-pane--inner {
-=======
-  .search--wrapper {
->>>>>>> 84dc3866bc1d790e5daed0b3afbf73b8efd18bb5
+  .search-block {
     -webkit-border-radius: 0 0 0.4em 0.4em;
     -moz-border-radius: 0 0 0.4em 0.4em;
     -ms-border-radius: 0 0 0.4em 0.4em;
