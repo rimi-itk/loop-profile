@@ -11,7 +11,6 @@
  * Adds custom class names and placeholder attribute and icon prefix to search field.
  */
 function loop_frontend_form_search_block_form_alter(&$form, &$form_state, $form_id) {
-
   // Change title text and make sure the label is displayed.
   $form['search_block_form']['#title_display'] = 'before';
   $form['search_block_form']['#title'] = t('Search for an answer');
