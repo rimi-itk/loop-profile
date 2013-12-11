@@ -37,7 +37,7 @@ function loop_user_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => 47,
     ),
   );
 
