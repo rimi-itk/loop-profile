@@ -88,6 +88,50 @@ label {
   @include border-radius($border-radius);
 }
 
+.form-item-description {
+  padding-top: .5em;
+
+  color: $gray-light;
+}
+
+.at-term-list {
+  margin-bottom: .25em;
+}
+
+.at-term {
+  display: inline-block;
+  margin-bottom: .25em;
+  padding: .1em 1em;
+
+  background-color: $gray;
+  color: $white;
+  cursor: pointer;
+  font-size: 85%;
+
+  @include border-radius($border-radius);
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: $gray-dark;
+  }
+
+  &:after {
+    @extend %icon-cancel;
+    @extend %icon-after;
+  }
+}
+
+.at-term-entry {
+  margin-bottom: .5em;
+}
+
 .form-required {
   color: $red;
 }
@@ -109,12 +153,30 @@ label {
   @include box-sizing(border-box);
 }
 
+.form-textarea {
+  height: 6em;
+
+  @include breakpoint(30em) {
+    height: 3.25em;
+  }
+}
+
 .form-actions {
   text-align: right;
 }
 
 .form-submit {
   @extend .button--action;
+
+  width: 100%;
+
+  @include breakpoint(30em) {
+    width: auto;
+  }
+}
+
+.form-submit-inline {
+  @extend .button--inline;
 
   width: 100%;
 

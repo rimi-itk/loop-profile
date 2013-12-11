@@ -53,11 +53,17 @@
 
 %icon-base {
   display: inline-block;
-  margin-right: .35em;
 
   font-family: "loop-icons";
-  font-size: 150%;
   line-height: 100%;
+}
+
+%icon-before {
+  margin-right: .35em;
+}
+
+%icon-after {
+  margin-left: .35em;
 }
 
 %icon-check {
@@ -71,4 +77,10 @@
   @extend %icon-base;
 
   content: '\e805';
+}
+
+%icon-cancel {
+  @extend %icon-base;
+
+  content: '\e80b';
 }

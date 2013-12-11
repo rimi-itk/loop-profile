@@ -58,11 +58,22 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
         </div>
         <div class="form-item">
           <label for="question-terms">Nøgleord <span class="form-required">*</span></label>
-          <input type="text" placeholder="Indtast nøgleord, systemet kommer automatisk med forslag" class="form-text" id="question-terms" required>
+          <div class="at-term-list">
+            <div class="at-term at-term-remove activeTagsRemove-processed">
+              <span class="at-term-text">Afgørelser</span>
+            </div>
+            <div class="at-term at-term-remove activeTagsRemove-processed">
+              <span class="at-term-text">Optag lås</span>
+            </div>
+          </div>
+          <input type="text" placeholder="Indtast nøgleord, systemet kommer automatisk med forslag" class="at-term-entry form-text" id="question-terms" required>
+          <input type="submit" value="Tilføj nøgleord" class="form-submit-inline">
+          <div class="form-item-description">Indtast nøgleord, systemet kommer automatisk med forslag. Tryk på enter eller knappen for at tilføje.</div>
         </div>
         <div class="form-item">
           <label for="question-textarea">Spørgsmål <span class="form-required">*</span></label>
           <textarea rows="1" class="form-textarea" id="question-textarea" required></textarea>
+          <div class="form-item-description">Enter your question or observation.</div>
         </div>
         <div class="form-actions">
           <input type="submit" value="Opret spørgsmål" class="form-submit">

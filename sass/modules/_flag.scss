@@ -33,6 +33,9 @@
 
   &:before {
     @extend %icon-like;
+    @extend %icon-before;
+
+    font-size: 150%;
   }
 
   /* States */

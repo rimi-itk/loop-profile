@@ -25,6 +25,21 @@
   @include text-shadow(.025em .025em .1em darken($green, 10%));
 }
 
+.button--inline {
+  @extend %button;
+
+  padding: .25em .75em;
+
+  background-color: $gray-darker;
+  border: 1px solid $gray-darkest;
+  color: $white;
+  font-size: 100%;
+
+  &:hover {
+    background-color: $gray-darkest;
+  }
+}
+
 .button--action {
   @extend %button;
 
