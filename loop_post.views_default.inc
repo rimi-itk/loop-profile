@@ -31,38 +31,39 @@ function loop_post_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Perform';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Restore';
-  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Ascending';
-  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Descending';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '100';
   $handler->display->display_options['pager']['options']['offset'] = '1';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'comment';
-  /* Relationship: Comment: Content */
+  /* Forbindelse: Kommentar: Indhold */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'comment';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
   $handler->display->display_options['relationships']['nid']['required'] = TRUE;
-  /* Relationship: Flags: ranking counter */
+  /* Forbindelse: Flag: ranking tæller */
   $handler->display->display_options['relationships']['flag_count_rel']['id'] = 'flag_count_rel';
   $handler->display->display_options['relationships']['flag_count_rel']['table'] = 'comment';
   $handler->display->display_options['relationships']['flag_count_rel']['field'] = 'flag_count_rel';
   $handler->display->display_options['relationships']['flag_count_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_count_rel']['flag'] = 'ranking';
-  /* Field: Comment: Title */
+  /* Felt: Kommentar: Titel */
   $handler->display->display_options['fields']['subject']['id'] = 'subject';
   $handler->display->display_options['fields']['subject']['table'] = 'comment';
   $handler->display->display_options['fields']['subject']['field'] = 'subject';
   $handler->display->display_options['fields']['subject']['label'] = '';
   $handler->display->display_options['fields']['subject']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['subject']['alter']['ellipsis'] = FALSE;
-  /* Sort criterion: Flags: Flag counter */
+  /* Sorteringskriterie: Flag: Flagtæller */
   $handler->display->display_options['sorts']['count']['id'] = 'count';
   $handler->display->display_options['sorts']['count']['table'] = 'flag_counts';
   $handler->display->display_options['sorts']['count']['field'] = 'count';
   $handler->display->display_options['sorts']['count']['relationship'] = 'flag_count_rel';
   $handler->display->display_options['sorts']['count']['order'] = 'DESC';
-  /* Contextual filter: Content: Nid */
+  /* Kontekstuelt filter: Indhold: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -75,14 +76,14 @@ function loop_post_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['nid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['nid']['validate']['type'] = 'node';
-  /* Filter criterion: Comment: Approved */
+  /* Filterkriterie: Kommentar: Godkendt */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'comment';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filterkriterie: Indhold: Udgivet */
   $handler->display->display_options['filters']['status_node']['id'] = 'status_node';
   $handler->display->display_options['filters']['status_node']['table'] = 'node';
   $handler->display->display_options['filters']['status_node']['field'] = 'status';
@@ -90,6 +91,14 @@ function loop_post_views_default_views() {
   $handler->display->display_options['filters']['status_node']['value'] = 1;
   $handler->display->display_options['filters']['status_node']['group'] = 1;
   $handler->display->display_options['filters']['status_node']['expose']['operator'] = FALSE;
+  /* Filterkriterie: Indhold: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'nid';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'post' => 'post',
+  );
 
   /* Display: Most valid comment */
   $handler = $view->new_display('panel_pane', 'Most valid comment', 'loop_post_comments_most_valid_comment');
@@ -120,7 +129,7 @@ function loop_post_views_default_views() {
   /* Display: Other comments */
   $handler = $view->new_display('panel_pane', 'Other comments', 'loop_post_comments_other_comments');
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Comment: Content */
+  /* Forbindelse: Kommentar: Indhold */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'comment';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
@@ -139,17 +148,16 @@ function loop_post_views_default_views() {
   $translatables['node_comment'] = array(
     t('Master'),
     t('Comment for content'),
-    t('More'),
+    t('mere'),
     t('Perform'),
     t('Restore'),
-    t('Sort by'),
-    t('Ascending'),
-    t('Descending'),
-    t('Content'),
-    t('counter'),
-    t('All'),
+    t('Sortér efter'),
+    t('Stigende'),
+    t('Faldende'),
+    t('Indhold'),
+    t('tæller'),
+    t('Alle'),
     t('Most valid comment'),
-    t('more'),
     t('View panes'),
     t('Other comments'),
   );
