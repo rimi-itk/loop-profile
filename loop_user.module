@@ -1,4 +1,10 @@
 <?php
+/**
+ * @file
+ * Code for the Loop user feature.
+ */
+
+include_once 'loop_user.features.inc';
 
 /**
  * Implements hook_views_api().
