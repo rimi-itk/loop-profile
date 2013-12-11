@@ -7,6 +7,7 @@ php_memory_limit = 128M
 exclusive = TRUE
 
 ; Default dependencies
+dependencies[] = admin_views
 dependencies[] = apachesolr
 dependencies[] = apachesolr_search
 dependencies[] = block

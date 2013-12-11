@@ -5,6 +5,9 @@ core = 7.x
 projects[active_tags][subdir] = "contrib"
 projects[active_tags][version] = "2.x-dev"
 
+projects[admin_views][subdir] = "contrib"
+projects[admin_views][version] = "1.2"
+
 projects[apachesolr][subdir] = "contrib"
 projects[apachesolr][version] = "1.6"
 
