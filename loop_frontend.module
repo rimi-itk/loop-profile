@@ -16,7 +16,7 @@ function loop_frontend_form_search_block_form_alter(&$form, &$form_state, $form_
   $form['search_block_form']['#title'] = t('Search for an answer');
 
   // Add field title as placeholder attribute.
-  $form['search_block_form']['#attributes']['placeholder'] = t('E.g. &quot;How do you document a subject&quot;"');
+  $form['search_block_form']['#attributes']['placeholder'] = t('E.g. "How do you document a subject"');
 
   // Add icon markup as a prefix to field.
   $form['search_block_form']['#field_prefix'] = '<i class="search--icon icon-search"></i>';
