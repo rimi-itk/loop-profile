@@ -1163,17 +1163,26 @@ body {
 }
 
 /* line 118, ../sass/modules/_search.scss */
+.search--autocomplete-header {
+  border-bottom: 1px solid #f2f2f2;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  font-size: 110%;
+  font-weight: bold;
+}
+
+/* line 127, ../sass/modules/_search.scss */
 .search--autocomplete-link {
   border-bottom: 1px solid #f2f2f2;
   display: block;
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 127, ../sass/modules/_search.scss */
+/* line 136, ../sass/modules/_search.scss */
 .search--autocomplete-link:link, .search--autocomplete-link:visited, .search--autocomplete-link:hover, .search--autocomplete-link:active {
   text-decoration: none;
 }
-/* line 131, ../sass/modules/_search.scss */
+/* line 140, ../sass/modules/_search.scss */
 .search--autocomplete-link:last-child {
   border-bottom: 0;
   margin-bottom: 0;

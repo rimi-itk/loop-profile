@@ -115,6 +115,15 @@
   @include border-radius($border-radius);
 }
 
+.search--autocomplete-header {
+  border-bottom: 1px solid #f2f2f2;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+
+  font-size: 110%;
+  font-weight: bold;
+}
+
 .search--autocomplete-link {
   border-bottom: 1px solid $gray-lightest;
   display: block;
