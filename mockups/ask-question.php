@@ -47,25 +47,25 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
     </p>
     <div class="form-module">
       <form action="ask-question.php">
-        <div class="form-module--fields-wrapper">
-          <label for="question-categori">Kategori <span class="form-module--required">*</span></label>
-          <select class="form-module--select" required>
+        <div class="form-item">
+          <label for="question-categori">Kategori <span class="form-required">*</span></label>
+          <select class="form-select" required>
             <option value="">Vælg kategori</option>
             <option value="1">Option 1</option>
             <option value="2">Option 2</option>
             <option value="3">Option 3</option>
           </select>
         </div>
-        <div class="form-module--fields-wrapper">
-          <label for="question-terms">Nøgleord <span class="form-module--required">*</span></label>
-          <input type="text" placeholder="Indtast nøgleord, systemet kommer automatisk med forslag" class="form-module--input" id="question-terms" required>
+        <div class="form-item">
+          <label for="question-terms">Nøgleord <span class="form-required">*</span></label>
+          <input type="text" placeholder="Indtast nøgleord, systemet kommer automatisk med forslag" class="form-text" id="question-terms" required>
         </div>
-        <div class="form-module--fields-wrapper">
-          <label for="question-textarea">Spørgsmål <span class="form-module--required">*</span></label>
-          <textarea rows="1" class="form-module--textarea" id="question-textarea" required></textarea>
+        <div class="form-item">
+          <label for="question-textarea">Spørgsmål <span class="form-required">*</span></label>
+          <textarea rows="1" class="form-textarea" id="question-textarea" required></textarea>
         </div>
-        <div class="form-module--actions">
-          <input type="submit" value="Opret spørgsmål" class="form-module--submit">
+        <div class="form-actions">
+          <input type="submit" value="Opret spørgsmål" class="form-submit">
         </div>
       </form>
     </div>

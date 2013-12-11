@@ -514,7 +514,7 @@ img {
 }
 
 /* line 39, ../sass/theme/_placeholders.scss */
-.form-module--wrapper, .layout--inner {
+.layout--inner {
   padding: 1.25em;
   background-color: white;
   -webkit-border-radius: 0.4em;
@@ -637,14 +637,17 @@ label {
 }
 
 /* Form elements
+ *
+ * Based on Drupal's form markup, guidelines are not used
+ *
    ================================================================================================================== */
-/* line 75, ../sass/theme/_forms.scss */
+/* line 78, ../sass/theme/_forms.scss */
 .form-module {
   clear: both;
 }
 
-/* line 83, ../sass/theme/_forms.scss */
-.form-module--fields-wrapper {
+/* line 82, ../sass/theme/_forms.scss */
+.form-item {
   border: 1px solid #f2f2f2;
   margin-bottom: 1.5em;
   padding: 1em;
@@ -655,13 +658,13 @@ label {
   border-radius: 0.4em;
 }
 
-/* line 91, ../sass/theme/_forms.scss */
-.form-module--required {
+/* line 90, ../sass/theme/_forms.scss */
+.form-required {
   color: #ff6138;
 }
 
-/* line 95, ../sass/theme/_forms.scss */
-.form-module--select {
+/* line 94, ../sass/theme/_forms.scss */
+.form-select {
   border: 1px solid #e6e6e6;
   padding: .75em;
   width: 100%;
@@ -678,18 +681,18 @@ label {
   box-sizing: border-box;
 }
 
-/* line 109, ../sass/theme/_forms.scss */
-.form-module--actions {
+/* line 108, ../sass/theme/_forms.scss */
+.form-actions {
   text-align: right;
 }
 
-/* line 113, ../sass/theme/_forms.scss */
-.form-module--submit {
+/* line 112, ../sass/theme/_forms.scss */
+.form-submit {
   width: 100%;
 }
 @media only screen and (min-width: 30em) {
-  /* line 113, ../sass/theme/_forms.scss */
-  .form-module--submit {
+  /* line 112, ../sass/theme/_forms.scss */
+  .form-submit {
     width: auto;
   }
 }
@@ -700,7 +703,7 @@ label {
  * @author magnify
  */
 /* line 8, ../sass/theme/_buttons.scss */
-.button--action, .form-module--submit, .search--button {
+.button--action, .form-submit, .search--button {
   display: inline-block;
   font-size: 125%;
   padding: .5em 1.5em;
@@ -716,18 +719,18 @@ label {
   text-shadow: 0.025em 0.025em 0.1em #33863f;
 }
 /* line 20, ../sass/theme/_buttons.scss */
-.button--action:focus, .form-module--submit:focus, .search--button:focus, .button--action:hover, .form-module--submit:hover, .search--button:hover, .button--action:active, .form-module--submit:active, .search--button:active {
+.button--action:focus, .form-submit:focus, .search--button:focus, .button--action:hover, .form-submit:hover, .search--button:hover, .button--action:active, .form-submit:active, .search--button:active {
   text-decoration: none;
 }
 
 /* line 28, ../sass/theme/_buttons.scss */
-.button--action, .form-module--submit, .search--button {
+.button--action, .form-submit, .search--button {
   background-color: #5dc26d;
   border: 1px solid #41ab51;
   color: white;
 }
 /* line 35, ../sass/theme/_buttons.scss */
-.button--action:hover, .form-module--submit:hover, .search--button:hover {
+.button--action:hover, .form-submit:hover, .search--button:hover {
   background-color: #41ab51;
 }
 
