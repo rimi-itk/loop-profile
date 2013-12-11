@@ -9,9 +9,11 @@
 /* Search field
    ========================================================================== */
 
-.search--inner {
+.search--wrapper {
   @extend %set-max-width-and-center-element;
   @extend %basic-element-styling;
+
+  position: relative;
 
   @include breakpoint($layout-max-width) {
     @include border-radius(0 0 $border-radius $border-radius);
@@ -92,4 +94,52 @@
   padding-bottom: $padding-bottom;
 
   border-bottom: .2em dotted $gray;
+}
+
+
+/* Search autocomplete
+   ========================================================================== */
+
+.search--autocomplete {
+  position: absolute;
+  top: 7.5em;
+  right: 1.25em;
+  left: 1.25em;
+  z-index: 99;
+
+  border: 1px solid $gray-light;
+  padding: 1em;
+
+  background-color: $white;
+
+  @include border-radius($border-radius);
+}
+
+.search--autocomplete-header {
+  border-bottom: 1px solid #f2f2f2;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+
+  font-size: 110%;
+  font-weight: bold;
+}
+
+.search--autocomplete-link {
+  border-bottom: 1px solid $gray-lightest;
+  display: block;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:last-child {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 }
