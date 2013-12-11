@@ -1,0 +1,32 @@
+/**
+ * Tag
+ *
+ * @author magnify
+ */
+
+
+
+%tag {
+  display: inline-block;
+  margin-bottom: .25em;
+  padding: .1em 1em;
+
+  background-color: $red;
+  color: $white;
+  cursor: pointer;
+  font-size: 85%;
+
+  @include border-radius($border-radius);
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: darken($red, 15%);
+  }
+}

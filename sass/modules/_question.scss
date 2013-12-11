@@ -48,24 +48,5 @@
 }
 
 .question--term {
-  display: inline-block;
-  margin-bottom: .25em;
-  padding: .1em 1em;
-
-  background-color: $red;
-  font-size: 85%;
-
-  @include border-radius($border-radius);
-
-  &:link,
-  &:visited,
-  &:hover,
-  &:active {
-    color: $white;
-    text-decoration: none;
-  }
-
-  &:hover {
-    background-color: darken($red, 15%);
-  }
+  @extend %tag;
 }

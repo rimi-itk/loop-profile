@@ -67,7 +67,7 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
             </div>
           </div>
           <input type="text" placeholder="Indtast nøgleord, systemet kommer automatisk med forslag" class="at-term-entry form-text" id="question-terms" required>
-          <input type="submit" value="Tilføj nøgleord" class="form-submit-inline">
+          <input type="submit" value="Tilføj nøgleord" class="at-add-btn">
           <div class="form-item-description">Indtast nøgleord, systemet kommer automatisk med forslag. Tryk på enter eller knappen for at tilføje.</div>
         </div>
         <div class="form-item">
