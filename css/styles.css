@@ -481,27 +481,27 @@ img {
    ========================================================================== */
 /* Used for centering an element */
 /* line 14, ../sass/theme/_placeholders.scss */
-.header--inner, .layout--wrapper, .search-block, .search-result {
+.header--inner, .layout--wrapper, .search-block {
   margin-right: auto;
   margin-left: auto;
   clear: both;
 }
 @media only screen and (min-width: 18.75em) {
   /* line 14, ../sass/theme/_placeholders.scss */
-  .header--inner, .layout--wrapper, .search-block, .search-result {
+  .header--inner, .layout--wrapper, .search-block {
     max-width: 75em;
   }
 }
 
 /* line 26, ../sass/theme/_placeholders.scss */
-.layout--wrapper, .search-block, .search-result, .content-list--item {
+.layout--wrapper, .search-block, .content-list--item {
   margin-bottom: 1.5em;
   padding: 1.25em;
   background-color: #f2f2f2;
 }
 @media only screen and (min-width: 75em) {
   /* line 26, ../sass/theme/_placeholders.scss */
-  .layout--wrapper, .search-block, .search-result, .content-list--item {
+  .layout--wrapper, .search-block, .content-list--item {
     -webkit-border-radius: 0.4em;
     -moz-border-radius: 0.4em;
     -ms-border-radius: 0.4em;
@@ -527,38 +527,58 @@ img {
   box-sizing: border-box;
 }
 
+/* line 49, ../sass/theme/_placeholders.scss */
+.search-result--lead, .search-result--item, .comments--comment {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+/* line 55, ../sass/theme/_placeholders.scss */
+.search-result--item:last-child, .comments--comment.is-last {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
 /* Icons
    ================================================================================================================== */
-/* line 54, ../sass/theme/_placeholders.scss */
-.flag.is-sticky:before, .flag:before, .at-term:after {
+/* line 65, ../sass/theme/_placeholders.scss */
+.flag.is-sticky:before, .flag:before, .at-term:after, .search-result--comments:before {
   display: inline-block;
   font-family: "loop-icons";
   line-height: 100%;
+  vertical-align: middle;
 }
 
-/* line 61, ../sass/theme/_placeholders.scss */
-.flag:before {
+/* line 73, ../sass/theme/_placeholders.scss */
+.search-result--comments:before, .flag:before {
   margin-right: .35em;
 }
 
-/* line 65, ../sass/theme/_placeholders.scss */
+/* line 77, ../sass/theme/_placeholders.scss */
 .at-term:after {
   margin-left: .35em;
 }
 
-/* line 69, ../sass/theme/_placeholders.scss */
+/* line 81, ../sass/theme/_placeholders.scss */
 .flag.is-sticky:before {
   content: '\e804';
 }
 
-/* line 76, ../sass/theme/_placeholders.scss */
+/* line 87, ../sass/theme/_placeholders.scss */
 .flag:before {
   content: '\e805';
 }
 
-/* line 82, ../sass/theme/_placeholders.scss */
+/* line 93, ../sass/theme/_placeholders.scss */
 .at-term:after {
   content: '\e80b';
+}
+
+/* line 99, ../sass/theme/_placeholders.scss */
+.search-result--comments:before {
+  content: '\e80a';
 }
 
 /**
@@ -949,7 +969,12 @@ label {
 
 /* Layouts
    ================================================================================================================== */
-/* line 170, ../sass/theme/_layout.scss */
+/* line 169, ../sass/theme/_layout.scss */
+.layout--wrapper .layout--inner:last-child {
+  margin-bottom: 0;
+}
+
+/* line 174, ../sass/theme/_layout.scss */
 .layout--inner {
   margin-bottom: 1.5em;
 }
@@ -1136,23 +1161,44 @@ body {
 
 /* Search result
    ========================================================================== */
-/* line 92, ../sass/modules/_search.scss */
-.search-result--question {
-  margin-bottom: 1.5em;
-  padding-bottom: 1.5em;
-  border-bottom: 0.2em dotted #b3b3b3;
+/* line 99, ../sass/modules/_search.scss */
+.search-result--link {
+  display: block;
+  margin-bottom: .5em;
+}
+/* line 104, ../sass/modules/_search.scss */
+.search-result--link:link, .search-result--link:visited {
+  text-decoration: none;
+}
+/* line 109, ../sass/modules/_search.scss */
+.search-result--link:hover, .search-result--link:active {
+  text-decoration: underline;
+}
+
+/* line 114, ../sass/modules/_search.scss */
+.search-result--comments {
+  display: block;
+}
+/* line 118, ../sass/modules/_search.scss */
+.search-result--comments:link, .search-result--comments:visited {
+  color: #737373;
+  text-decoration: none;
+}
+/* line 124, ../sass/modules/_search.scss */
+.search-result--comments:hover, .search-result--comments:active {
+  color: #404040;
 }
 
 /* Search autocomplete
    ========================================================================== */
-/* line 103, ../sass/modules/_search.scss */
+/* line 138, ../sass/modules/_search.scss */
 .search--autocomplete {
   position: absolute;
   top: 7.5em;
   right: 1.25em;
   left: 1.25em;
   z-index: 99;
-  border: 1px solid #cccccc;
+  border: 1px solid #e6e6e6;
   padding: 1em;
   background-color: white;
   -webkit-border-radius: 0.4em;
@@ -1162,7 +1208,7 @@ body {
   border-radius: 0.4em;
 }
 
-/* line 118, ../sass/modules/_search.scss */
+/* line 153, ../sass/modules/_search.scss */
 .search--autocomplete-header {
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 1em;
@@ -1171,18 +1217,18 @@ body {
   font-weight: bold;
 }
 
-/* line 127, ../sass/modules/_search.scss */
+/* line 162, ../sass/modules/_search.scss */
 .search--autocomplete-link {
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 1px solid #e6e6e6;
   display: block;
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 136, ../sass/modules/_search.scss */
+/* line 171, ../sass/modules/_search.scss */
 .search--autocomplete-link:link, .search--autocomplete-link:visited, .search--autocomplete-link:hover, .search--autocomplete-link:active {
   text-decoration: none;
 }
-/* line 140, ../sass/modules/_search.scss */
+/* line 175, ../sass/modules/_search.scss */
 .search--autocomplete-link:last-child {
   border-bottom: 0;
   margin-bottom: 0;
@@ -1286,6 +1332,14 @@ body {
 }
 
 /* line 22, ../sass/modules/_meta-data.scss */
+.meta-data--date, .comments--comment-meta-data {
+  display: block;
+  color: #cccccc;
+  clear: both;
+  font-size: 80%;
+}
+
+/* line 30, ../sass/modules/_meta-data.scss */
 .meta-data--author-image {
   border: 1px solid #e6e6e6;
   display: inline-block;
@@ -1299,18 +1353,18 @@ body {
   border-radius: 0.4em;
 }
 
-/* line 32, ../sass/modules/_meta-data.scss */
+/* line 40, ../sass/modules/_meta-data.scss */
 .meta-data--author-wrapper {
   vertical-align: top;
   display: inline-block;
 }
 
-/* line 38, ../sass/modules/_meta-data.scss */
+/* line 46, ../sass/modules/_meta-data.scss */
 .meta-data--author-link {
   font-weight: bold;
 }
 
-/* line 42, ../sass/modules/_meta-data.scss */
+/* line 50, ../sass/modules/_meta-data.scss */
 .meta-data--author-title {
   display: block;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
@@ -1327,32 +1381,14 @@ body {
 /* line 13, ../sass/modules/_comment.scss */
 .comments--comment {
   position: relative;
-  border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 1.5em;
-  padding-bottom: 1.5em;
-}
-/* line 20, ../sass/modules/_comment.scss */
-.comments--comment.is-last {
-  border-bottom: 0;
-  margin-bottom: 0;
-  padding-bottom: 0;
 }
 
-/* line 28, ../sass/modules/_comment.scss */
-.comments--comment-meta-data {
-  display: block;
-  margin-bottom: .5em;
-  color: #cccccc;
-  clear: both;
-  font-size: 80%;
-}
-
-/* line 37, ../sass/modules/_comment.scss */
+/* line 27, ../sass/modules/_comment.scss */
 .comments--comment-content {
   margin-bottom: 1em;
 }
 @media only screen and (min-width: 43em) {
-  /* line 37, ../sass/modules/_comment.scss */
+  /* line 27, ../sass/modules/_comment.scss */
   .comments--comment-content {
     margin-bottom: 0;
   }

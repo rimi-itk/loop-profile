@@ -46,6 +46,17 @@
 }
 
 
+%element-spacing {
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+%reset-element-spacing {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
 
 
 /* Icons
@@ -56,6 +67,7 @@
 
   font-family: "loop-icons";
   line-height: 100%;
+  vertical-align: middle;
 }
 
 %icon-before {
@@ -72,7 +84,6 @@
   content: '\e804';
 }
 
-
 %icon-like {
   @extend %icon-base;
 
@@ -83,4 +94,10 @@
   @extend %icon-base;
 
   content: '\e80b';
+}
+
+%icon-comment {
+  @extend %icon-base;
+
+  content: '\e80a';
 }

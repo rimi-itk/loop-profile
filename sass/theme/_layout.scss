@@ -165,6 +165,10 @@ $nav-link-dimensions: 2.5em;
 .layout--wrapper {
   @extend %set-max-width-and-center-element;
   @extend %basic-element-styling;
+
+  .layout--inner:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .layout--inner {

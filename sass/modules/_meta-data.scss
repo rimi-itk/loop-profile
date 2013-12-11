@@ -19,6 +19,14 @@
   }
 }
 
+.meta-data--date {
+  display: block;
+
+  color: $gray-light;
+  clear: both;
+  font-size: 80%;
+}
+
 .meta-data--author-image {
   border: 1px solid $border-color;
   display: inline-block;

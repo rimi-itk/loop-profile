@@ -84,16 +84,51 @@
 /* Search result
    ========================================================================== */
 
-.search-result {
-  @extend %set-max-width-and-center-element;
-  @extend %basic-element-styling;
+.search-result--lead {
+  @extend %element-spacing;
 }
 
-.search-result--question {
-  margin-bottom: $margin-bottom;
-  padding-bottom: $padding-bottom;
+.search-result--item {
+  @extend %element-spacing;
 
-  border-bottom: .2em dotted $gray;
+  &:last-child {
+    @extend %reset-element-spacing;
+  }
+}
+
+.search-result--link {
+  display: block;
+  margin-bottom: .5em;
+
+  &:link,
+  &:visited {
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+}
+
+.search-result--comments {
+  display: block;
+
+  &:link,
+  &:visited {
+    color: $gray-dark;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:active {
+    color: $gray-darkest;
+  }
+
+  &:before {
+    @extend %icon-comment;
+    @extend %icon-before;
+  }
 }
 
 
@@ -107,7 +142,7 @@
   left: 1.25em;
   z-index: 99;
 
-  border: 1px solid $gray-light;
+  border: 1px solid $border-color;
   padding: 1em;
 
   background-color: $white;
@@ -125,7 +160,7 @@
 }
 
 .search--autocomplete-link {
-  border-bottom: 1px solid $gray-lightest;
+  border-bottom: 1px solid $border-color;
   display: block;
   margin-bottom: 1em;
   padding-bottom: 1em;
