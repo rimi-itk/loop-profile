@@ -152,11 +152,6 @@ projects[loop_admin][download][type] = "git"
 projects[loop_admin][download][url] = "git@github.com:loopdk/loop_admin.git"
 projects[loop_admin][branch] = "development"
 
-projects[loop_user][type] = "module"
-projects[loop_user][download][type] = "git"
-projects[loop_user][download][url] = "git@github.com:loopdk/loop_user.git"
-projects[loop_user][branch] = "development"
-
 projects[loop_frontend][type] = "module"
 projects[loop_frontend][download][type] = "git"
 projects[loop_frontend][download][url] = "git@github.com:loopdk/loop_frontend.git"
@@ -204,6 +199,12 @@ projects[loop_notification][subdir] = "features"
 projects[loop_notification][download][type] = "git"
 projects[loop_notification][download][url] = "git@github.com:loopdk/loop_notification.git"
 projects[loop_notification][branch] = "development"
+
+projects[loop_user][type] = "module"
+projects[loop_user][subdir] = "features"
+projects[loop_user][download][type] = "git"
+projects[loop_user][download][url] = "git@github.com:loopdk/loop_user.git"
+projects[loop_user][branch] = "development"
 
 ; LOOP themes
 projects[loop][type] = "theme"
