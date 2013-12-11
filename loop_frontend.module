@@ -23,6 +23,7 @@ function loop_frontend_form_search_block_form_alter(&$form, &$form_state, $form_
   $form['search_block_form']['#field_prefix'] = '<i class="search--icon icon-search"></i>';
 
   // Add class name to field.
+  unset($form['search_block_form']['#attributes']['class']);
   $form['search_block_form']['#attributes']['class'] = array('search--field');
 
   // Add class name to form submit button.
