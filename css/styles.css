@@ -481,27 +481,27 @@ img {
    ========================================================================== */
 /* Used for centering an element */
 /* line 14, ../sass/theme/_placeholders.scss */
-.header--inner, .layout--wrapper, .search--inner, .loop--search .panel-pane--inner, .search-result {
+.header--inner, .layout--wrapper, .search--inner, .search-block .panel-pane--inner, .search-result {
   margin-right: auto;
   margin-left: auto;
   clear: both;
 }
 @media only screen and (min-width: 18.75em) {
   /* line 14, ../sass/theme/_placeholders.scss */
-  .header--inner, .layout--wrapper, .search--inner, .loop--search .panel-pane--inner, .search-result {
+  .header--inner, .layout--wrapper, .search--inner, .search-block .panel-pane--inner, .search-result {
     max-width: 75em;
   }
 }
 
 /* line 26, ../sass/theme/_placeholders.scss */
-.layout--wrapper, .search--inner, .loop--search .panel-pane--inner, .search-result, .content-list--item {
+.layout--wrapper, .search--inner, .search-block .panel-pane--inner, .search-result, .content-list--item {
   margin-bottom: 1.5em;
   padding: 1.25em;
   background-color: #f2f2f2;
 }
 @media only screen and (min-width: 75em) {
   /* line 26, ../sass/theme/_placeholders.scss */
-  .layout--wrapper, .search--inner, .loop--search .panel-pane--inner, .search-result, .content-list--item {
+  .layout--wrapper, .search--inner, .search-block .panel-pane--inner, .search-result, .content-list--item {
     -webkit-border-radius: 0.4em;
     -moz-border-radius: 0.4em;
     -ms-border-radius: 0.4em;
@@ -1059,7 +1059,7 @@ body {
    ========================================================================== */
 @media only screen and (min-width: 75em) {
   /* line 12, ../sass/modules/_search.scss */
-  .search--inner, .loop--search .panel-pane--inner {
+  .search--inner, .search-block .panel-pane--inner {
     -webkit-border-radius: 0 0 0.4em 0.4em;
     -moz-border-radius: 0 0 0.4em 0.4em;
     -ms-border-radius: 0 0 0.4em 0.4em;
@@ -1075,8 +1075,8 @@ body {
 /* line 24, ../sass/modules/_search.scss */
 .search--field-wrapper .search--icon {
   position: absolute;
-  top: .25em;
-  left: .15em;
+  top: 1.2em;
+  left: .35em;
   color: #b3b3b3;
   font-size: 200%;
 }
@@ -1137,21 +1137,6 @@ body {
   margin-bottom: 1.5em;
   padding-bottom: 1.5em;
   border-bottom: 0.2em dotted #b3b3b3;
-}
-
-/**
- * Search module, Loop specific rules
- *
- * Dependencies:
- * Loop_frontpage feature
- *
- * @author zorp
- */
-/* Extending from search
-   ========================================================================== */
-/* line 22, ../sass/modules/_loop_search.scss */
-.loop--search .search--icon {
-  top: 1.2em;
 }
 
 /**
@@ -1458,4 +1443,21 @@ body {
   .at-add-btn {
     width: auto;
   }
+}
+
+/**
+ * Loop frontpage module
+ *
+ * Dependencies:
+ * Loop_frontpage feature
+ *
+ * @author zorp
+ */
+/* Extending from search module
+   ========================================================================== */
+/* line 20, ../sass/drupal-modules/_loop-frontpage.scss */
+.search-block .form-item {
+  border: 0;
+  margin-bottom: 0;
+  padding: 0;
 }

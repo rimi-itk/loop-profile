@@ -52,7 +52,6 @@ $zen-gutter-width: 30px;
 // Modules
 @import "modules/_notifications";
 @import "modules/_search";
-@import "modules/_loop_search";
 @import "modules/_question";
 @import "modules/_lists";
 @import "modules/_meta-data";
@@ -64,3 +63,4 @@ $zen-gutter-width: 30px;
 
 // Drupal modules
 @import "drupal-modules/_at-term";
+@import "drupal-modules/loop-frontpage";

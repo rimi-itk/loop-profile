@@ -1,5 +1,5 @@
 /**
- * Search module, Loop specific rules
+ * Loop frontpage module
  *
  * Dependencies:
  * Loop_frontpage feature
@@ -9,17 +9,17 @@
 
 
 
-/* Extending from search
+/* Extending from search module
    ========================================================================== */
 
-.loop--search {
-  @extend .search;
-
+.search-block {
   .panel-pane--inner {
     @extend .search--inner;
   }
 
-  .search--icon {
-    top: 1.2em;
+  .form-item {
+    border: 0;
+    margin-bottom: 0;
+    padding: 0;
   }
 }

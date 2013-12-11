@@ -28,18 +28,7 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
     </nav>
   </div>
 </header>
-<div class="search">
-  <div class="search--inner">
-    <form>
-      <label class="form-label">Søg efter svar</label>
-      <div class="search--field-wrapper">
-        <i class="search--icon icon-search"></i>
-        <input type="text" placeholder="Skriv f.eks. &quot;Hvordan dokumenteres delvis aktindsigt&quot;" value="Hvordan dokumenteres delvis aktindsigt" class="search--field">
-        <input type="submit" class="search--button" value="Søg">
-      </div>
-    </form>
-  </div>
-</div>
+<?php include('inc/search-block.inc') ?>
 <div class="search-result">
   <div class="search-result--inner">
     <div class="search-result--question">Dit spørgsmål: <strong>&quot;Hvordan dokumenteres delvis aktindsigt&quot;</strong></div>
