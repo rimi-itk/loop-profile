@@ -104,8 +104,11 @@ projects[redirect][version] = "1.0-rc1"
 projects[rules][subdir] = "contrib"
 projects[rules][version] = "2.6"
 
+projects[secure_permissions][type] = "module"
 projects[secure_permissions][subdir] = "contrib"
-projects[secure_permissions][version] = "1.5"
+projects[secure_permissions][download][type] = "git"
+projects[secure_permissions][download][url] = "http://git.drupal.org/project/secure_permissions.git"
+projects[secure_permissions][download][revision] = "ef5eec5"
 
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
