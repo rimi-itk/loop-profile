@@ -222,7 +222,7 @@ function loop_post_views_default_views() {
   );
 
   /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'loop_user_nodes');
+  $handler = $view->new_display('page', 'Page', 'loop_post_user_nodes');
   $handler->display->display_options['path'] = 'user/%/nodes';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'My nodes';
@@ -251,6 +251,136 @@ function loop_post_views_default_views() {
   );
 
   $export['user_nodes'] = $view;
+
+  $view = new view();
+  $view->name = 'user_comments';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'comment';
+  $view->human_name = 'User comments';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'User comments';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'comment_count' => 'comment_count',
+    'title' => 'title',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'comment_count' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Relationship: Comment: Content */
+  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['table'] = 'comment';
+  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['required'] = TRUE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['relationship'] = 'nid';
+  /* Field: Content: Comment count */
+  $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
+  $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
+  $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
+  $handler->display->display_options['fields']['comment_count']['relationship'] = 'nid';
+  /* Field: Content: New comments */
+  $handler->display->display_options['fields']['new_comments']['id'] = 'new_comments';
+  $handler->display->display_options['fields']['new_comments']['table'] = 'node';
+  $handler->display->display_options['fields']['new_comments']['field'] = 'new_comments';
+  $handler->display->display_options['fields']['new_comments']['relationship'] = 'nid';
+  /* Sort criterion: Comment: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'comment';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Comment: Author uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'comment';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'empty';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['uid']['validate']['type'] = 'user';
+  /* Filter criterion: Comment: Approved */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'comment';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_node']['id'] = 'status_node';
+  $handler->display->display_options['filters']['status_node']['table'] = 'node';
+  $handler->display->display_options['filters']['status_node']['field'] = 'status';
+  $handler->display->display_options['filters']['status_node']['relationship'] = 'nid';
+  $handler->display->display_options['filters']['status_node']['value'] = 1;
+  $handler->display->display_options['filters']['status_node']['group'] = 1;
+  $handler->display->display_options['filters']['status_node']['expose']['operator'] = FALSE;
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'user_post_user_comments');
+  $handler->display->display_options['path'] = 'user/%/user-comments';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'My comments';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $translatables['user_comments'] = array(
+    t('Master'),
+    t('User comments'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Content'),
+    t('Title'),
+    t('Comment count'),
+    t('.'),
+    t(','),
+    t('New comments'),
+    t('All'),
+    t('Page'),
+  );
+
+  $export['user_comments'] = $view;
 
   return $export;
 }
