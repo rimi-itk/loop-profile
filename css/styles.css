@@ -481,27 +481,27 @@ img {
    ========================================================================== */
 /* Used for centering an element */
 /* line 14, ../sass/theme/_placeholders.scss */
-.header--inner, .layout--wrapper, .search--inner, .loop--search .panel-pane--inner, .search-result {
+.header--inner, .layout--wrapper, .search--wrapper, .search-result {
   margin-right: auto;
   margin-left: auto;
   clear: both;
 }
 @media only screen and (min-width: 18.75em) {
   /* line 14, ../sass/theme/_placeholders.scss */
-  .header--inner, .layout--wrapper, .search--inner, .loop--search .panel-pane--inner, .search-result {
+  .header--inner, .layout--wrapper, .search--wrapper, .search-result {
     max-width: 75em;
   }
 }
 
 /* line 26, ../sass/theme/_placeholders.scss */
-.layout--wrapper, .search--inner, .loop--search .panel-pane--inner, .search-result, .content-list--item {
+.layout--wrapper, .search--wrapper, .search-result, .content-list--item {
   margin-bottom: 1.5em;
   padding: 1.25em;
   background-color: #f2f2f2;
 }
 @media only screen and (min-width: 75em) {
   /* line 26, ../sass/theme/_placeholders.scss */
-  .layout--wrapper, .search--inner, .loop--search .panel-pane--inner, .search-result, .content-list--item {
+  .layout--wrapper, .search--wrapper, .search-result, .content-list--item {
     -webkit-border-radius: 0.4em;
     -moz-border-radius: 0.4em;
     -ms-border-radius: 0.4em;
@@ -1057,9 +1057,13 @@ body {
  */
 /* Search field
    ========================================================================== */
+/* line 12, ../sass/modules/_search.scss */
+.search--wrapper {
+  position: relative;
+}
 @media only screen and (min-width: 75em) {
   /* line 12, ../sass/modules/_search.scss */
-  .search--inner, .loop--search .panel-pane--inner {
+  .search--wrapper {
     -webkit-border-radius: 0 0 0.4em 0.4em;
     -moz-border-radius: 0 0 0.4em 0.4em;
     -ms-border-radius: 0 0 0.4em 0.4em;
@@ -1068,11 +1072,11 @@ body {
   }
 }
 
-/* line 21, ../sass/modules/_search.scss */
+/* line 23, ../sass/modules/_search.scss */
 .search--field-wrapper {
   position: relative;
 }
-/* line 24, ../sass/modules/_search.scss */
+/* line 26, ../sass/modules/_search.scss */
 .search--field-wrapper .search--icon {
   position: absolute;
   top: .25em;
@@ -1080,7 +1084,7 @@ body {
   color: #b3b3b3;
   font-size: 200%;
 }
-/* line 33, ../sass/modules/_search.scss */
+/* line 35, ../sass/modules/_search.scss */
 .search--field-wrapper .search--field {
   margin-bottom: .75em;
   padding-top: 1.25em;
@@ -1090,12 +1094,12 @@ body {
   height: 65px;
   background-color: white;
 }
-/* line 44, ../sass/modules/_search.scss */
+/* line 46, ../sass/modules/_search.scss */
 .search--field-wrapper .search--field:focus {
   outline: none;
 }
 @media only screen and (min-width: 28em) {
-  /* line 50, ../sass/modules/_search.scss */
+  /* line 52, ../sass/modules/_search.scss */
   .search--field-wrapper .search--field {
     padding-right: 6em;
     width: 90%;
@@ -1107,13 +1111,13 @@ body {
   }
 }
 
-/* line 59, ../sass/modules/_search.scss */
+/* line 61, ../sass/modules/_search.scss */
 .search--button {
   height: 65px;
   width: 100%;
 }
 @media only screen and (min-width: 28em) {
-  /* line 59, ../sass/modules/_search.scss */
+  /* line 61, ../sass/modules/_search.scss */
   .search--button {
     position: absolute;
     bottom: 0;
@@ -1132,11 +1136,48 @@ body {
 
 /* Search result
    ========================================================================== */
-/* line 90, ../sass/modules/_search.scss */
+/* line 92, ../sass/modules/_search.scss */
 .search-result--question {
   margin-bottom: 1.5em;
   padding-bottom: 1.5em;
   border-bottom: 0.2em dotted #b3b3b3;
+}
+
+/* Search autocomplete
+   ========================================================================== */
+/* line 103, ../sass/modules/_search.scss */
+.search--autocomplete {
+  position: absolute;
+  top: 7.5em;
+  right: 1.25em;
+  left: 1.25em;
+  z-index: 99;
+  border: 1px solid #cccccc;
+  padding: 1em;
+  background-color: white;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+}
+
+/* line 118, ../sass/modules/_search.scss */
+.search--autocomplete-link {
+  border-bottom: 1px solid #f2f2f2;
+  display: block;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+/* line 127, ../sass/modules/_search.scss */
+.search--autocomplete-link:link, .search--autocomplete-link:visited, .search--autocomplete-link:hover, .search--autocomplete-link:active {
+  text-decoration: none;
+}
+/* line 131, ../sass/modules/_search.scss */
+.search--autocomplete-link:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 /**

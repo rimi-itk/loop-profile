@@ -27,17 +27,15 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
     </nav>
   </div>
 </header>
-<div class="search">
-  <div class="search--inner">
-    <form>
-      <label class="form-label">Søg efter svar</label>
-      <div class="search--field-wrapper">
-        <i class="search--icon icon-search"></i>
-        <input type="text" placeholder="Skriv f.eks. &quot;Hvordan dokumenteres delvis aktindsigt&quot;" class="search--field">
-        <input type="submit" class="search--button" value="Søg">
-      </div>
-    </form>
-  </div>
+<div class="search--wrapper">
+  <form>
+    <label class="form-label">Søg efter svar</label>
+    <div class="search--field-wrapper">
+      <i class="search--icon icon-search"></i>
+      <input type="text" placeholder="Skriv f.eks. &quot;Hvordan dokumenteres delvis aktindsigt&quot;" class="search--field">
+      <input type="submit" class="search--button" value="Søg">
+    </div>
+  </form>
 </div>
 <div class="layout--wrapper">
   <div class="layout--inner">
