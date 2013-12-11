@@ -65,7 +65,7 @@ label {
   /* Move labels so they align better with fields when using rounded corners */
   margin-left: .2em;
 
-  color: $gray;
+  color: $gray-dark;
 }
 
 
@@ -96,6 +96,9 @@ label {
   border: 1px solid $gray-lighter;
   padding: .75em;
   width: 100%;
+
+  /* For Chrome */
+  height: 3em;
 
   background-color: darken($white, 2%);
 

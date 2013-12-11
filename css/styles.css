@@ -633,7 +633,7 @@ label {
   margin-bottom: .25em;
   /* Move labels so they align better with fields when using rounded corners */
   margin-left: .2em;
-  color: #b3b3b3;
+  color: #737373;
 }
 
 /* Form elements
@@ -665,6 +665,8 @@ label {
   border: 1px solid #e6e6e6;
   padding: .75em;
   width: 100%;
+  /* For Chrome */
+  height: 3em;
   background-color: #fafafa;
   -webkit-border-radius: 0.4em;
   -moz-border-radius: 0.4em;
@@ -676,17 +678,17 @@ label {
   box-sizing: border-box;
 }
 
-/* line 106, ../sass/theme/_forms.scss */
+/* line 109, ../sass/theme/_forms.scss */
 .form-module--actions {
   text-align: right;
 }
 
-/* line 110, ../sass/theme/_forms.scss */
+/* line 113, ../sass/theme/_forms.scss */
 .form-module--submit {
   width: 100%;
 }
 @media only screen and (min-width: 30em) {
-  /* line 110, ../sass/theme/_forms.scss */
+  /* line 113, ../sass/theme/_forms.scss */
   .form-module--submit {
     width: auto;
   }
