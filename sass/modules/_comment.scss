@@ -11,27 +11,17 @@
    ================================================================================================================== */
 
 .comments--comment {
+  @extend %element-spacing;
+
   position: relative;
 
-  border-bottom: 1px solid $border-color;
-  margin-bottom: $margin-bottom;
-  padding-bottom: $padding-bottom;
-
   &.is-last {
-    border-bottom: 0;
-
-    margin-bottom: 0;
-    padding-bottom: 0;
+    @extend %reset-element-spacing;
   }
 }
 
 .comments--comment-meta-data {
-  display: block;
-  margin-bottom: .5em;
-
-  color: $gray-light;
-  clear: both;
-  font-size: 80%;
+  @extend .meta-data--date;
 }
 
 .comments--comment-content {
