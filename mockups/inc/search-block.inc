@@ -7,7 +7,7 @@
             <div class="form-item form-type-searchfield form-item-search-block-form">
               <label for="edit-search-block-form--2">Search for an answer</label>
               <span class="field-prefix"><i class="search--icon icon-search"></i></span>
-              <input title="Indtast de ord du ønsker at søge efter." placeholder="Indtast de ord du ønsker at søge efter." class="search--field form-text form-search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128">
+              <input title="Skriv f.eks. &quot;Hvordan dokumenteres delvis aktindsigt&quot;" placeholder="Skriv f.eks. &quot;Hvordan dokumenteres delvis aktindsigt&quot;"”" class="search--field form-text form-search" type="search" id="edit-search-block-form--2" name="search_block_form" value="" size="15" maxlength="128">
             </div>
             <div class="form-actions form-wrapper" id="edit-actions">
               <input class="search--button form-submit" type="submit" id="edit-submit" name="op" value="Søg">
