@@ -146,7 +146,7 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
       <a href="#" class="flag">Dette svar er nyttigt (3)</a>
     </div>
   </div>
-  <div class="form-module--wrapper">
+  <div class="layout--inner">
     <div class="meta-data--author">
       <a href="#" class="meta-data--author-image">
         <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
@@ -158,10 +158,12 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
     </div>
     <div class="form-module">
       <form action="ask-question.php">
-        <label for="form-module--textarea">Skriv svar</label>
-        <textarea rows="5" class="form-module--textarea" id="comment-textarea"></textarea>
-        <div class="form-module--actions">
-          <input type="submit" value="Skriv svar" class="form-module--submit">
+        <div class="form-item">
+          <label for="comment-textarea">Skriv svar <span class="form-required">*</span></label>
+          <textarea rows="5" class="form-textarea required" id="comment-textarea"></textarea>
+        </div>
+        <div class="form-actions">
+          <input type="submit" value="Skriv svar" class="form-submit">
         </div>
       </form>
     </div>

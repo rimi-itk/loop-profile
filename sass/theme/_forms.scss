@@ -66,22 +66,21 @@ label {
   /* Move labels so they align better with fields when using rounded corners */
   margin-left: .2em;
 
-  color: $gray;
+  color: $gray-dark;
 }
 
 
 /* Form elements
+ *
+ * Based on Drupal's form markup, guidelines are not used
+ *
    ================================================================================================================== */
 
 .form-module {
   clear: both;
 }
 
-.form-module--wrapper {
-  @extend %basic-element-inner-styling;
-}
-
-.form-module--fields-wrapper {
+.form-item {
   border: 1px solid $gray-lightest;
   margin-bottom: $margin-bottom;
   padding: 1em;
@@ -89,16 +88,19 @@ label {
   @include border-radius($border-radius);
 }
 
-.form-module--required {
+.form-required {
   color: $red;
 }
 
-.form-module--select {
+.form-select {
   border: 1px solid $gray-lighter;
   padding: .75em;
   width: 100%;
   
   /* Set height for chrome */
+  height: 3em;
+
+  /* For Chrome */
   height: 3em;
 
   background-color: darken($white, 2%);
@@ -107,11 +109,11 @@ label {
   @include box-sizing(border-box);
 }
 
-.form-module--actions {
+.form-actions {
   text-align: right;
 }
 
-.form-module--submit {
+.form-submit {
   @extend .button--action;
 
   width: 100%;
