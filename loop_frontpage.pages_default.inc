@@ -77,8 +77,8 @@ function loop_frontpage_default_page_manager_pages() {
       'settings' => NULL,
     );
     $pane->css = array(
-      'css_id' => 'loop-search--inner',
-      'css_class' => 'loop--search',
+      'css_id' => '',
+      'css_class' => 'loop-frontend--search-block search-block',
     );
     $pane->extras = array();
     $pane->position = 0;
