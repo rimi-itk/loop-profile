@@ -98,9 +98,16 @@
   </div>
 </header>
 
+<?php if (isset($search)): ?>
+<div class="search-block">
+  <div class="search--inner">
+    <?php print render($search); ?>
+  </div>
+</div>
+<?php endif ?>
 
-<div class="content">
-  <div class="content--inner">
+<div class="layout--wrapper">
+  <div class="layout--inner">
     <?php if ($breadcrumb): ?>
       <div id="breadcrumb"><?php print $breadcrumb; ?></div>
     <?php endif; ?>

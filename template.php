@@ -10,7 +10,10 @@ function loop_preprocess_html(&$variables) {
  * Override or insert variables into the page template.
  */
 function loop_preprocess_page(&$variables) {
+  // Prepare system search block for page.tpl.
+  $variables['search'] = module_invoke('search', 'block_view', 'form');;
 }
+
 
 /**
  * Override or insert variables into the region template.

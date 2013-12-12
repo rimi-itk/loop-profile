@@ -23,6 +23,13 @@
 .search--field-wrapper {
   position: relative;
 
+  // Reset general form styling
+  .form-item {
+    border: 0;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
   .search--icon {
     position: absolute;
     top: 1.2em;
