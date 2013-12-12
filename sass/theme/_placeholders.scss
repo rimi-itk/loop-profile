@@ -118,3 +118,21 @@
 
   content: '\e807';
 }
+
+%icon-mail {
+  @extend %icon-base;
+
+  content: '\e801';
+}
+
+%icon-user {
+  @extend %icon-base;
+
+  content: '\e802';
+}
+
+%icon-menu {
+  @extend %icon-base;
+
+  content: '\e800';
+}

@@ -551,14 +551,14 @@ img {
 /* Icons
    ================================================================================================================== */
 /* line 65, ../sass/theme/_placeholders.scss */
-.flag.is-sticky:before, .messages.status:before, .flag:before, .at-term:after, .messages.error:before, .search-result--comments:before, .messages.warning:before, .nav-mobile--link:before {
+.flag.is-sticky:before, .messages.status:before, .flag:before, .at-term:after, .messages.error:before, .search-result--comments:before, .messages.warning:before, .nav-mobile--link:before, .nav--link-mail:before, .nav--link-user:before, .nav--link-menu:before {
   display: inline-block;
   font-family: "loop-icons";
   line-height: 100%;
 }
 
 /* line 72, ../sass/theme/_placeholders.scss */
-.nav-mobile--link:before, .search-result--comments:before, .flag:before, .messages.status:before, .messages.warning:before, .messages.error:before {
+.nav--link-user:before, .nav--link-mail:before, .nav--link-menu:before, .nav-mobile--link:before, .search-result--comments:before, .flag:before, .messages.status:before, .messages.warning:before, .messages.error:before {
   margin-right: .35em;
 }
 
@@ -600,6 +600,21 @@ img {
 /* line 116, ../sass/theme/_placeholders.scss */
 .nav-mobile--link:before {
   content: '\e807';
+}
+
+/* line 122, ../sass/theme/_placeholders.scss */
+.nav--link-mail:before {
+  content: '\e801';
+}
+
+/* line 128, ../sass/theme/_placeholders.scss */
+.nav--link-user:before {
+  content: '\e802';
+}
+
+/* line 134, ../sass/theme/_placeholders.scss */
+.nav--link-menu:before {
+  content: '\e800';
 }
 
 /**
@@ -834,6 +849,7 @@ label {
 
 /* line 19, ../sass/theme/_layout.scss */
 .header--inner {
+  position: relative;
   min-height: 5em;
   padding-right: 1em;
   padding-left: 1em;
@@ -841,7 +857,7 @@ label {
 
 /* Logo
    ================================================================================================================== */
-/* line 32, ../sass/theme/_layout.scss */
+/* line 33, ../sass/theme/_layout.scss */
 .logo--link {
   display: inline-block;
   max-width: 100%;
@@ -849,20 +865,20 @@ label {
   text-align: center;
 }
 @media only screen and (min-width: 18.75em) {
-  /* line 32, ../sass/theme/_layout.scss */
+  /* line 33, ../sass/theme/_layout.scss */
   .logo--link {
     max-width: 5.625em;
   }
 }
 
-/* line 44, ../sass/theme/_layout.scss */
+/* line 45, ../sass/theme/_layout.scss */
 .logo--image {
   max-width: 75%;
   margin-right: auto;
   margin-left: auto;
 }
 @media only screen and (min-width: 18.75em) {
-  /* line 44, ../sass/theme/_layout.scss */
+  /* line 45, ../sass/theme/_layout.scss */
   .logo--image {
     max-width: 100%;
   }
@@ -870,12 +886,12 @@ label {
 
 /* Layouts
    ================================================================================================================== */
-/* line 63, ../sass/theme/_layout.scss */
+/* line 64, ../sass/theme/_layout.scss */
 .layout--wrapper .layout--inner:last-child {
   margin-bottom: 0;
 }
 
-/* line 68, ../sass/theme/_layout.scss */
+/* line 69, ../sass/theme/_layout.scss */
 .layout--inner {
   margin-bottom: 1.5em;
 }
@@ -887,131 +903,103 @@ label {
  */
 /* line 8, ../sass/theme/_nav.scss */
 .nav {
+  position: absolute;
+  right: .75em;
+  bottom: .75em;
   text-align: center;
 }
-@media only screen and (min-width: 18.75em) {
+@media only screen and (min-width: 43em) {
   /* line 8, ../sass/theme/_nav.scss */
   .nav {
-    padding-top: 1em;
-    padding-bottom: 1em;
-    text-align: right;
-    float: right;
-    width: 83.33333%;
-    margin-right: 0%;
-    margin-left: -83.33333%;
-    padding-left: 15px;
-    padding-right: 15px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-    word-wrap: break-word;
-    _display: inline;
-    _overflow: hidden;
-    _overflow-y: visible;
-    /* Padding should come from parent element, so let's make sure left and right padding is removed */
-    padding-left: 0;
-    padding-right: 0;
+    right: 1em;
+    bottom: 0;
   }
 }
 
-/* Using a variable so we only have to set the size once */
-/* line 27, ../sass/theme/_nav.scss */
-.nav--link, .nav--link-mail, .nav--link-menu {
-  display: block;
+/* line 22, ../sass/theme/_nav.scss */
+.nav--link, .nav--link-user, .nav--link-mail, .nav--link-menu {
   position: relative;
-  height: 2.5em;
-  width: 2.5em;
-  margin-right: auto;
-  margin-bottom: 1em;
-  margin-left: auto;
+  display: block;
+  height: 3.5em;
+  margin-left: 1em;
+  width: 3.5em;
   background-color: rgba(255, 255, 255, 0.25);
-  font-size: 125%;
-  line-height: 2.5em;
+  line-height: 3.5em;
   text-align: center;
-  vertical-align: middle;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
   -o-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 43, ../sass/theme/_nav.scss */
-.nav--link:link, .nav--link-mail:link, .nav--link-menu:link, .nav--link:visited, .nav--link-mail:visited, .nav--link-menu:visited {
+/* line 34, ../sass/theme/_nav.scss */
+.nav--link:before, .nav--link-user:before, .nav--link-mail:before, .nav--link-menu:before {
+  margin-right: 0;
+  font-size: 125%;
+}
+/* line 41, ../sass/theme/_nav.scss */
+.nav--link:link, .nav--link-user:link, .nav--link-mail:link, .nav--link-menu:link, .nav--link:visited, .nav--link-user:visited, .nav--link-mail:visited, .nav--link-menu:visited {
   color: white;
   text-decoration: none;
 }
-/* line 48, ../sass/theme/_nav.scss */
-.nav--link:hover, .nav--link-mail:hover, .nav--link-menu:hover {
+/* line 46, ../sass/theme/_nav.scss */
+.nav--link:hover, .nav--link-user:hover, .nav--link-mail:hover, .nav--link-menu:hover {
   background-color: rgba(255, 255, 255, 0.5);
 }
-/* line 52, ../sass/theme/_nav.scss */
-.nav--link i[class^="icon-"], .nav--link-mail i[class^="icon-"], .nav--link-menu i[class^="icon-"] {
-  vertical-align: bottom;
-}
 @media only screen and (min-width: 18.75em) {
-  /* line 27, ../sass/theme/_nav.scss */
-  .nav--link, .nav--link-mail, .nav--link-menu {
+  /* line 22, ../sass/theme/_nav.scss */
+  .nav--link, .nav--link-user, .nav--link-mail, .nav--link-menu {
     display: inline-block;
-    margin-bottom: 0;
-    margin-left: .25em;
-  }
-}
-@media only screen and (min-width: 22.5em) {
-  /* line 27, ../sass/theme/_nav.scss */
-  .nav--link, .nav--link-mail, .nav--link-menu {
-    margin-left: 1em;
   }
 }
 @media only screen and (min-width: 43em) {
-  /* line 27, ../sass/theme/_nav.scss */
-  .nav--link, .nav--link-mail, .nav--link-menu {
-    padding-right: .75em;
-    padding-left: .75em;
+  /* line 22, ../sass/theme/_nav.scss */
+  .nav--link, .nav--link-user, .nav--link-mail, .nav--link-menu {
+    padding-right: 1.25em;
+    padding-left: 1.25em;
+    height: auto;
     width: auto;
-    -webkit-border-radius: 0.4em;
-    -moz-border-radius: 0.4em;
-    -ms-border-radius: 0.4em;
-    -o-border-radius: 0.4em;
-    border-radius: 0.4em;
+    line-height: 2.5em;
+    -webkit-border-radius: 0.4em 0.4em 0 0;
+    -moz-border-radius: 0.4em 0.4em 0 0;
+    -ms-border-radius: 0.4em 0.4em 0 0;
+    -o-border-radius: 0.4em 0.4em 0 0;
+    border-radius: 0.4em 0.4em 0 0;
+  }
+  /* line 67, ../sass/theme/_nav.scss */
+  .nav--link:before, .nav--link-user:before, .nav--link-mail:before, .nav--link-menu:before {
+    display: none;
   }
 }
 
-/* line 77, ../sass/theme/_nav.scss */
+/* line 75, ../sass/theme/_nav.scss */
 .nav--text {
   display: none;
 }
 @media only screen and (min-width: 43em) {
-  /* line 77, ../sass/theme/_nav.scss */
+  /* line 75, ../sass/theme/_nav.scss */
   .nav--text {
     display: inline;
-    font-size: 85%;
   }
 }
 
-/* Make the mail icon bigger */
-/* line 91, ../sass/theme/_nav.scss */
-.nav--link-mail i[class^="icon-"] {
-  font-size: 125%;
-  line-height: 190%;
-}
-
 /* Make the menu icon bigger */
-/* line 104, ../sass/theme/_nav.scss */
-.nav--link-menu i[class^="icon-"] {
-  font-size: 150%;
-  line-height: 160%;
+/* line 109, ../sass/theme/_nav.scss */
+.nav--link-menu:before {
+  font-size: 200%;
+  vertical-align: sub;
 }
 
 /* Mobile navigation
    ================================================================================================================== */
-/* line 114, ../sass/theme/_nav.scss */
+/* line 122, ../sass/theme/_nav.scss */
 .nav-mobile {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   z-index: 99;
+  display: block;
   padding: 1.5em;
   min-width: 82%;
   background-color: #41ab51;
@@ -1031,7 +1019,7 @@ label {
   -o-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
 }
-/* line 131, ../sass/theme/_nav.scss */
+/* line 140, ../sass/theme/_nav.scss */
 .nav-mobile.is-open {
   -webkit-transition: -webkit-transform 500ms ease;
   -moz-transition: -moz-transform 500ms ease;
@@ -1043,26 +1031,32 @@ label {
   -o-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
 }
-/* line 137, ../sass/theme/_nav.scss */
+/* line 146, ../sass/theme/_nav.scss */
 .nav-mobile a:link {
   color: white;
   text-decoration: none;
 }
-/* line 142, ../sass/theme/_nav.scss */
+/* line 151, ../sass/theme/_nav.scss */
 .nav-mobile a:visited {
   color: white;
 }
-/* line 146, ../sass/theme/_nav.scss */
+/* line 155, ../sass/theme/_nav.scss */
 .nav-mobile a:hover {
   color: white;
   text-decoration: underline;
 }
-/* line 151, ../sass/theme/_nav.scss */
+/* line 160, ../sass/theme/_nav.scss */
 .nav-mobile a:focus {
   color: white;
 }
+@media only screen and (min-width: 75em) {
+  /* line 122, ../sass/theme/_nav.scss */
+  .nav-mobile {
+    display: none;
+  }
+}
 
-/* line 157, ../sass/theme/_nav.scss */
+/* line 170, ../sass/theme/_nav.scss */
 .nav-mobile--link {
   border-bottom-color: #5dc26d;
   display: block;

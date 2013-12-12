@@ -6,38 +6,36 @@
 
 
 .nav {
+  position: absolute;
+  right: .75em;
+  bottom: .75em;
+
   text-align: center;
 
-  @include breakpoint($breakpoint-1) {
-    padding-top: 1em;
-    padding-bottom: 1em;
-
-    text-align: right;
-
-    @include zen-grid-item(10, 1, right);
-
-    /* Padding should come from parent element, so let's make sure left and right padding is removed */
-    @include zen-nested-container();
+  @include breakpoint($breakpoint-4) {
+    right: 1em;
+    bottom: 0;
   }
 }
 
-/* Using a variable so we only have to set the size once */
-$nav-link-dimensions: 2.5em;
 
 .nav--link {
-  display: block;
   position: relative;
-  height: $nav-link-dimensions;
-  width: $nav-link-dimensions;
-  margin-right: auto;
-  margin-bottom: 1em;
-  margin-left: auto;
+
+  display: block;
+  height: 3.5em;
+  margin-left: 1em;
+  width: 3.5em;
 
   background-color: transparentize($white, .75);
-  font-size: 125%;
-  line-height: $nav-link-dimensions;
+  line-height: 3.5em;
   text-align: center;
-  vertical-align: middle;
+
+  &:before {
+    margin-right: 0;
+
+    font-size: 125%;
+  }
 
   &:link,
   &:visited {
@@ -49,28 +47,28 @@ $nav-link-dimensions: 2.5em;
     background-color: transparentize($white, .5);
   }
 
-  i[class^="icon-"] {
-    vertical-align: bottom;
-  }
-
   @include border-radius(100%);
 
   @include breakpoint($breakpoint-1) {
     display: inline-block;
-    margin-bottom: 0;
-    margin-left: .25em;
   }
 
   @include breakpoint($breakpoint-2) {
-    margin-left: 1em;
   }
 
   @include breakpoint($breakpoint-4) {
-    padding-right: .75em;
-    padding-left: .75em;
+    padding-right: 1.25em;
+    padding-left: 1.25em;
+    height: auto;
     width: auto;
 
-    @include border-radius($border-radius);
+    line-height: 2.5em;
+
+    &:before {
+      display: none;
+    }
+
+    @include border-radius($border-radius $border-radius 0 0);
   }
 }
 
@@ -79,18 +77,25 @@ $nav-link-dimensions: 2.5em;
 
   @include breakpoint($breakpoint-4) {
     display: inline;
-
-    font-size: 85%;
   }
 }
 
-/* Make the mail icon bigger */
+
+.nav--link-user {
+  @extend .nav--link;
+
+  &:before {
+    @extend %icon-user;
+    @extend %icon-before;
+  }
+}
+
 .nav--link-mail {
   @extend .nav--link;
 
-  i[class^="icon-"] {
-    font-size: 125%;
-    line-height: 190%;
+  &:before {
+    @extend %icon-mail;
+    @extend %icon-before;
   }
 
   @include breakpoint($breakpoint-4) {
@@ -101,9 +106,12 @@ $nav-link-dimensions: 2.5em;
 .nav--link-menu {
   @extend .nav--link;
 
-  i[class^="icon-"] {
-    font-size: 150%;
-    line-height: 160%;
+  &:before {
+    @extend %icon-menu;
+    @extend %icon-before;
+
+    font-size: 200%;
+    vertical-align: sub;
   }
 }
 
@@ -118,6 +126,7 @@ $nav-link-dimensions: 2.5em;
   bottom: 0;
   z-index: $z-index-top;
 
+  display: block;
   padding: 1.5em;
   min-width: 82%;
 
@@ -151,6 +160,10 @@ $nav-link-dimensions: 2.5em;
     &:focus {
       color: $white;
     }
+  }
+
+  @include breakpoint($layout-max-width) {
+    display: none;
   }
 }
 
