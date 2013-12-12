@@ -19,7 +19,6 @@ dependencies[] = views
 dependencies[] = views_content
 features[ctools][] = page_manager:pages_default:1
 features[ctools][] = strongarm:strongarm:1
-features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[field_base][] = field_description
 features[field_base][] = field_keyword
@@ -49,4 +48,4 @@ features[variable][] = node_options_post
 features[variable][] = node_preview_post
 features[variable][] = node_submitted_post
 features[variable][] = page_manager_node_view_disabled
-features[views_view][] = node_comment
+
