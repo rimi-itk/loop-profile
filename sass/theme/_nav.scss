@@ -162,6 +162,10 @@
     }
   }
 
+  @include breakpoint($breakpoint-4) {
+    right: -100%;
+  }
+
   @include breakpoint($layout-max-width) {
     display: none;
   }

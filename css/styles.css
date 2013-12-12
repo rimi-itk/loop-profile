@@ -1049,6 +1049,12 @@ label {
 .nav-mobile a:focus {
   color: white;
 }
+@media only screen and (min-width: 43em) {
+  /* line 122, ../sass/theme/_nav.scss */
+  .nav-mobile {
+    right: -100%;
+  }
+}
 @media only screen and (min-width: 75em) {
   /* line 122, ../sass/theme/_nav.scss */
   .nav-mobile {
@@ -1056,7 +1062,7 @@ label {
   }
 }
 
-/* line 170, ../sass/theme/_nav.scss */
+/* line 174, ../sass/theme/_nav.scss */
 .nav-mobile--link {
   border-bottom-color: #5dc26d;
   display: block;
@@ -1118,7 +1124,13 @@ label {
 .search--field-wrapper {
   position: relative;
 }
-/* line 26, ../sass/modules/_search.scss */
+/* line 27, ../sass/modules/_search.scss */
+.search--field-wrapper .form-item {
+  border: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+/* line 33, ../sass/modules/_search.scss */
 .search--field-wrapper .search--icon {
   position: absolute;
   top: 1.2em;
@@ -1126,7 +1138,7 @@ label {
   color: #b3b3b3;
   font-size: 200%;
 }
-/* line 35, ../sass/modules/_search.scss */
+/* line 42, ../sass/modules/_search.scss */
 .search--field-wrapper .search--field {
   margin-bottom: .75em;
   padding-top: 1.25em;
@@ -1136,12 +1148,12 @@ label {
   height: 65px;
   background-color: white;
 }
-/* line 46, ../sass/modules/_search.scss */
+/* line 53, ../sass/modules/_search.scss */
 .search--field-wrapper .search--field:focus {
   outline: none;
 }
 @media only screen and (min-width: 28em) {
-  /* line 52, ../sass/modules/_search.scss */
+  /* line 59, ../sass/modules/_search.scss */
   .search--field-wrapper .search--field {
     padding-right: 6em;
     width: 90%;
@@ -1153,13 +1165,13 @@ label {
   }
 }
 
-/* line 61, ../sass/modules/_search.scss */
+/* line 68, ../sass/modules/_search.scss */
 .search--button {
   height: 65px;
   width: 100%;
 }
 @media only screen and (min-width: 28em) {
-  /* line 61, ../sass/modules/_search.scss */
+  /* line 68, ../sass/modules/_search.scss */
   .search--button {
     position: absolute;
     bottom: 0;
@@ -1178,37 +1190,37 @@ label {
 
 /* Search result
    ========================================================================== */
-/* line 99, ../sass/modules/_search.scss */
+/* line 106, ../sass/modules/_search.scss */
 .search-result--link {
   display: block;
   margin-bottom: .5em;
 }
-/* line 104, ../sass/modules/_search.scss */
+/* line 111, ../sass/modules/_search.scss */
 .search-result--link:link, .search-result--link:visited {
   text-decoration: none;
 }
-/* line 109, ../sass/modules/_search.scss */
+/* line 116, ../sass/modules/_search.scss */
 .search-result--link:hover, .search-result--link:active {
   text-decoration: underline;
 }
 
-/* line 114, ../sass/modules/_search.scss */
+/* line 121, ../sass/modules/_search.scss */
 .search-result--comments {
   display: block;
 }
-/* line 118, ../sass/modules/_search.scss */
+/* line 125, ../sass/modules/_search.scss */
 .search-result--comments:link, .search-result--comments:visited {
   color: #737373;
   text-decoration: none;
 }
-/* line 124, ../sass/modules/_search.scss */
+/* line 131, ../sass/modules/_search.scss */
 .search-result--comments:hover, .search-result--comments:active {
   color: #404040;
 }
 
 /* Search autocomplete
    ========================================================================== */
-/* line 138, ../sass/modules/_search.scss */
+/* line 145, ../sass/modules/_search.scss */
 .search--autocomplete {
   position: absolute;
   top: 7.5em;
@@ -1225,7 +1237,7 @@ label {
   border-radius: 0.4em;
 }
 
-/* line 153, ../sass/modules/_search.scss */
+/* line 160, ../sass/modules/_search.scss */
 .search--autocomplete-header {
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 1em;
@@ -1234,18 +1246,18 @@ label {
   font-weight: bold;
 }
 
-/* line 162, ../sass/modules/_search.scss */
+/* line 169, ../sass/modules/_search.scss */
 .search--autocomplete-link {
   border-bottom: 1px solid #e6e6e6;
   display: block;
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 171, ../sass/modules/_search.scss */
+/* line 178, ../sass/modules/_search.scss */
 .search--autocomplete-link:link, .search--autocomplete-link:visited, .search--autocomplete-link:hover, .search--autocomplete-link:active {
   text-decoration: none;
 }
-/* line 175, ../sass/modules/_search.scss */
+/* line 182, ../sass/modules/_search.scss */
 .search--autocomplete-link:last-child {
   border-bottom: 0;
   margin-bottom: 0;
@@ -1523,8 +1535,18 @@ label {
   -o-transform: translate3d(-82%, 0, 0);
   transform: translate3d(-82%, 0, 0);
 }
+@media only screen and (min-width: 28em) {
+  /* line 8, ../sass/modules/_page.scss */
+  .page-wrapper {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
 
-/* line 22, ../sass/modules/_page.scss */
+/* line 26, ../sass/modules/_page.scss */
 .page-title {
   font-size: 200%;
   font-weight: bold;
@@ -1565,23 +1587,6 @@ label {
   .at-add-btn {
     width: auto;
   }
-}
-
-/**
- * Loop frontpage module
- *
- * Dependencies:
- * Loop_frontpage feature
- *
- * @author zorp
- */
-/* Extending from search module
-   ========================================================================== */
-/* line 20, ../sass/drupal-modules/_loop-frontpage.scss */
-.search-block .form-item {
-  border: 0;
-  margin-bottom: 0;
-  padding: 0;
 }
 
 /**
