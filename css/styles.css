@@ -1557,7 +1557,12 @@ body {
   padding: 0;
 }
 
-/* line 1, ../sass/drupal-modules/_messages.scss */
+/**
+ * Messages
+ *
+ * @author magnify
+ */
+/* line 7, ../sass/drupal-modules/_messages.scss */
 .messages {
   margin-bottom: 1.5em;
   padding: 1.5em;
@@ -1567,22 +1572,22 @@ body {
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-/* line 7, ../sass/drupal-modules/_messages.scss */
+/* line 13, ../sass/drupal-modules/_messages.scss */
 .messages:before {
   font-size: 150%;
   vertical-align: top;
 }
-/* line 12, ../sass/drupal-modules/_messages.scss */
+/* line 18, ../sass/drupal-modules/_messages.scss */
 .messages.status {
   background-color: #41ab51;
   color: white;
 }
-/* line 22, ../sass/drupal-modules/_messages.scss */
+/* line 28, ../sass/drupal-modules/_messages.scss */
 .messages.warning {
   background-color: #fff98f;
   color: black;
 }
-/* line 32, ../sass/drupal-modules/_messages.scss */
+/* line 38, ../sass/drupal-modules/_messages.scss */
 .messages.error {
   background-color: #eb3000;
   color: white;
