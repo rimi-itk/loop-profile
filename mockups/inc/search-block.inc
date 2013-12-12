@@ -4,7 +4,7 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
 <div class="panel-pane pane-block pane-search-form loop-frontpage--search-block search-block">
   <div class="panel-pane--inner">
     <div class="pane-content">
-      <form action="<?php echo $path_to_theme; ?>/mockups/search-result.php" method="post" id="search-block-form" accept-charset="UTF-8">
+      <form action="<?php echo $path_to_theme; ?>mockups/search-result.php" method="post" id="search-block-form" accept-charset="UTF-8">
         <div>
           <div class="search--field-wrapper">
             <div class="form-item form-type-searchfield form-item-search-block-form">
