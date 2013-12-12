@@ -6,10 +6,10 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
 </head>
 
 <body>
-<div class="page-wrapper is-moved-left">
+<div class="page-wrapper js-page-wrapper">
   <header class="header" role="banner">
     <div class="header--inner">
-      <nav class="nav-mobile is-open">
+      <nav class="nav-mobile js-mobile-nav">
         <a href="#" title="Min konto" class="nav-mobile--link">
           <span class="nav-mobile--text">Min konto</span>
         </a>
@@ -31,7 +31,7 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
           <span class="nav--text">Notifikationer</span>
           <span class="notification">3</span>
         </a>
-        <a href="#" title="Menu" class="nav--link-menu">
+        <a href="#" title="Menu" class="nav--link-menu js-toggle-mobile-nav">
           <i class="icon-menu"></i>
           <span class="nav--text">Menu</span>
         </a>

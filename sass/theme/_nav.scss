@@ -126,9 +126,10 @@ $nav-link-dimensions: 2.5em;
   @include box-sizing(border-box);
   @include box-shadow(5px 0 8px darken($green, 10%) inset);
   @include transition(transform 500ms ease);
-  @include transform(translate3d(85%, 0, 0));
+  @include transform(translate3d(100%, 0, 0));
 
   &.is-open {
+    @include transition(transform 500ms ease);
     @include transform(translate3d(100%, 0, 0));
   }
 
