@@ -6,6 +6,7 @@ version = 7.x-1.9
 project = loop_post
 dependencies[] = active_tags
 dependencies[] = auto_nodetitle
+dependencies[] = autocomplete_deluxe
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = loop_taxonomy
