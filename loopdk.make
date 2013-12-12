@@ -2,9 +2,6 @@ api = 2
 core = 7.x
 
 ; Contrib modules
-projects[active_tags][subdir] = "contrib"
-projects[active_tags][version] = "2.x-dev"
-
 projects[admin_views][subdir] = "contrib"
 projects[admin_views][version] = "1.2"
 
@@ -16,6 +13,9 @@ projects[apachesolr_autocomplete][version] = "1.3"
 
 projects[auto_nodetitle][subdir] = "contrib"
 projects[auto_nodetitle][version] = "1.0"
+
+projects[autocomplete_deluxe][subdir] = "contrib"
+projects[autocomplete_deluxe][version] = "2.0-beta3"
 
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.3"
