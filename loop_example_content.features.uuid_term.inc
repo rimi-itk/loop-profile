@@ -71,6 +71,7 @@ function loop_example_content_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => '21915d62-61f7-40ab-9ada-b50debfdfc78',
     'vocabulary_machine_name' => 'profession',
+    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -89,6 +90,7 @@ function loop_example_content_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => '322d0ec1-b072-4425-9e9c-abd65e72711d',
     'vocabulary_machine_name' => 'profession',
+    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -125,6 +127,7 @@ function loop_example_content_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => '374fc3b1-7193-4d02-838d-3d3069e3128a',
     'vocabulary_machine_name' => 'profession',
+    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -197,6 +200,7 @@ function loop_example_content_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => '551a13f2-5cf9-4a72-adc6-4cce2d569862',
     'vocabulary_machine_name' => 'profession',
+    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -251,6 +255,7 @@ function loop_example_content_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => '64e910aa-b1d7-4f05-a91a-beea007e58b9',
     'vocabulary_machine_name' => 'profession',
+    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -296,6 +301,7 @@ function loop_example_content_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => '7097a5f1-c0ca-4f8a-a5e8-93639dcd1191',
     'vocabulary_machine_name' => 'profession',
+    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -350,6 +356,7 @@ function loop_example_content_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => '75c6a0d5-2ffe-40c2-afee-20bde83d3f37',
     'vocabulary_machine_name' => 'profession',
+    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -377,6 +384,7 @@ function loop_example_content_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => '7ca29a3c-0d9b-4362-bee2-028247d218c4',
     'vocabulary_machine_name' => 'profession',
+    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -431,6 +439,7 @@ function loop_example_content_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => '93c2ad6e-d669-4a97-ab5c-68f8aec48276',
     'vocabulary_machine_name' => 'profession',
+    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -602,6 +611,7 @@ function loop_example_content_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => 'c3c8ab9e-c53b-40fd-b446-b85b2ad6647c',
     'vocabulary_machine_name' => 'profession',
+    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -674,6 +684,7 @@ function loop_example_content_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => 'd835fa8a-16be-46ab-826a-d4338ab5c66c',
     'vocabulary_machine_name' => 'profession',
+    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -692,6 +703,7 @@ function loop_example_content_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => 'dadbc379-0018-4730-96cb-0fb945ba5548',
     'vocabulary_machine_name' => 'profession',
+    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -719,6 +731,7 @@ function loop_example_content_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => 'db8553a4-69cc-4c8d-93d2-1f95746d81e0',
     'vocabulary_machine_name' => 'profession',
+    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -755,6 +768,7 @@ function loop_example_content_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => 'eff40111-8f10-4ff7-9b81-24a4771a533f',
     'vocabulary_machine_name' => 'profession',
+    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -764,6 +778,7 @@ function loop_example_content_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => 'f039f55a-5a2b-468b-bc1e-b999220a78d9',
     'vocabulary_machine_name' => 'profession',
+    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
