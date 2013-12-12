@@ -1582,13 +1582,25 @@ body {
   background-color: #41ab51;
   color: white;
 }
-/* line 28, ../sass/drupal-modules/_messages.scss */
+/* line 22, ../sass/drupal-modules/_messages.scss */
+.messages.status:before {
+  margin-right: .5em;
+}
+/* line 30, ../sass/drupal-modules/_messages.scss */
 .messages.warning {
   background-color: #fff98f;
   color: black;
 }
-/* line 38, ../sass/drupal-modules/_messages.scss */
+/* line 34, ../sass/drupal-modules/_messages.scss */
+.messages.warning:before {
+  margin-right: .5em;
+}
+/* line 42, ../sass/drupal-modules/_messages.scss */
 .messages.error {
   background-color: #eb3000;
   color: white;
+}
+/* line 46, ../sass/drupal-modules/_messages.scss */
+.messages.error:before {
+  margin-right: .5em;
 }
