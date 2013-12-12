@@ -374,14 +374,13 @@ html {
 
 /* line 14, ../sass/base/_base.scss */
 body {
-  overflow: hidden;
   height: 100%;
   background-color: #fff;
   color: #333;
   font: 1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 29, ../sass/base/_base.scss */
+/* line 28, ../sass/base/_base.scss */
 h1,
 h2,
 h3,
@@ -398,44 +397,44 @@ h6 {
   text-rendering: optimizeLegibility;
 }
 
-/* line 44, ../sass/base/_base.scss */
+/* line 43, ../sass/base/_base.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 49, ../sass/base/_base.scss */
+/* line 48, ../sass/base/_base.scss */
 em {
   font-style: italic;
 }
-/* line 52, ../sass/base/_base.scss */
+/* line 51, ../sass/base/_base.scss */
 em strong {
   font-weight: bold;
 }
 
 /* Links
    ================================================================================================================== */
-/* line 63, ../sass/base/_base.scss */
+/* line 62, ../sass/base/_base.scss */
 a:link {
   color: #41ab51;
   text-decoration: underline;
 }
-/* line 68, ../sass/base/_base.scss */
+/* line 67, ../sass/base/_base.scss */
 a:visited {
   color: #3a9948;
 }
-/* line 72, ../sass/base/_base.scss */
+/* line 71, ../sass/base/_base.scss */
 a:hover {
   color: #33863f;
   text-decoration: none;
 }
-/* line 77, ../sass/base/_base.scss */
+/* line 76, ../sass/base/_base.scss */
 a:focus {
   color: #33863f;
 }
 
 /* Paragraph
    ================================================================================================================== */
-/* line 86, ../sass/base/_base.scss */
+/* line 85, ../sass/base/_base.scss */
 p {
   margin-top: 0;
   margin-bottom: 1.5em;
@@ -443,7 +442,7 @@ p {
 
 /* Image
    ================================================================================================================== */
-/* line 95, ../sass/base/_base.scss */
+/* line 94, ../sass/base/_base.scss */
 img {
   display: inline;
   height: auto;
@@ -453,7 +452,7 @@ img {
 
 /* States
    ========================================================================== */
-/* line 106, ../sass/base/_base.scss */
+/* line 105, ../sass/base/_base.scss */
 .is-hidden {
   display: none;
 }
