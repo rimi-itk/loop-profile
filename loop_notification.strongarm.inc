@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * loop_notificaiton.strongarm.inc
+ * loop_notification.strongarm.inc
  */
 
 /**
