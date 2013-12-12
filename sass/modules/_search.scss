@@ -140,7 +140,7 @@
   top: 7.5em;
   right: 1.25em;
   left: 1.25em;
-  z-index: 99;
+  z-index: $z-index-middle;
 
   border: 1px solid $border-color;
   padding: 1em;

@@ -1,0 +1,181 @@
+/**
+ * Navigation
+ *
+ * @author magnify
+ */
+
+
+.nav {
+  position: absolute;
+  right: .75em;
+  bottom: .75em;
+
+  text-align: center;
+
+  @include breakpoint($breakpoint-4) {
+    right: 1em;
+    bottom: 0;
+  }
+}
+
+
+.nav--link {
+  position: relative;
+
+  display: block;
+  height: 3.5em;
+  margin-left: 1em;
+  width: 3.5em;
+
+  background-color: transparentize($white, .75);
+  line-height: 3.5em;
+  text-align: center;
+
+  &:before {
+    margin-right: 0;
+
+    font-size: 125%;
+  }
+
+  &:link,
+  &:visited {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: transparentize($white, .5);
+  }
+
+  @include border-radius(100%);
+
+  @include breakpoint($breakpoint-1) {
+    display: inline-block;
+  }
+
+  @include breakpoint($breakpoint-2) {
+  }
+
+  @include breakpoint($breakpoint-4) {
+    padding-right: 1.25em;
+    padding-left: 1.25em;
+    height: auto;
+    width: auto;
+
+    line-height: 2.5em;
+
+    &:before {
+      display: none;
+    }
+
+    @include border-radius($border-radius $border-radius 0 0);
+  }
+}
+
+.nav--text {
+  display: none;
+
+  @include breakpoint($breakpoint-4) {
+    display: inline;
+  }
+}
+
+
+.nav--link-user {
+  @extend .nav--link;
+
+  &:before {
+    @extend %icon-user;
+    @extend %icon-before;
+  }
+}
+
+.nav--link-mail {
+  @extend .nav--link;
+
+  &:before {
+    @extend %icon-mail;
+    @extend %icon-before;
+  }
+
+  @include breakpoint($breakpoint-4) {
+  }
+}
+
+/* Make the menu icon bigger */
+.nav--link-menu {
+  @extend .nav--link;
+
+  &:before {
+    @extend %icon-menu;
+    @extend %icon-before;
+
+    font-size: 200%;
+    vertical-align: sub;
+  }
+}
+
+
+/* Mobile navigation
+   ================================================================================================================== */
+
+.nav-mobile {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $z-index-top;
+
+  display: block;
+  padding: 1.5em;
+  min-width: 82%;
+
+  background-color: $green;
+
+  @include box-sizing(border-box);
+  @include box-shadow(5px 0 8px darken($green, 10%) inset);
+  @include transition(transform 500ms ease);
+  @include transform(translate3d(100%, 0, 0));
+
+  &.is-open {
+    @include transition(transform 500ms ease);
+    @include transform(translate3d(100%, 0, 0));
+  }
+
+  a {
+    &:link {
+      color: $white;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: $white;
+    }
+
+    &:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+
+    &:focus {
+      color: $white;
+    }
+  }
+
+  @include breakpoint($layout-max-width) {
+    display: none;
+  }
+}
+
+.nav-mobile--link {
+  @extend %element-spacing;
+
+  border-bottom-color: $green-light;
+
+  display: block;
+
+  &:before {
+    @extend %icon-arrow-right;
+    @extend %icon-before;
+  }
+}
