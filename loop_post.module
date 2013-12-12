@@ -10,12 +10,20 @@ include_once 'loop_post.features.inc';
  * Implements hook_form_FORM_ID_alter().
  *
  * Sets the profession field to the same as the current user.
+ * Figure out if profession is linked to a subject, set it as default.
  */
 function loop_post_form_node_form_alter(&$form, &$form_state) {
   global $user;
   // We need the field_profession field, so lets fire up user_load!
   $account = user_load($user->uid);
 
-  // Set up the field.
+  // Set up profession field.
   $form['field_profession']['und']['#default_value'] = $account->field_profession['und'][0]['tid'];
+
+  // Load profession term.
+  $profession = taxonomy_term_load($account->field_profession['und'][0]['tid']);
+  // If the profession has a relation - add it.
+  if (isset($profession->field_subject_reference['und'][0]['tid'])) {
+    $form['field_subject']['und']['#default_value'] = $profession->field_subject_reference['und'][0]['tid'];
+  }
 }
