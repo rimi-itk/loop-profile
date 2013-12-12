@@ -1,0 +1,41 @@
+.messages {
+  margin-bottom: $margin-bottom;
+  padding: 1.5em;
+
+  @include border-radius($border-radius);
+
+  &:before {
+    font-size: 150%;
+    vertical-align: top;
+  }
+
+  &.status {
+    background-color: $green;
+    color: $white;
+
+    &:before {
+      @extend %icon-check-circled;
+      @extend %icon-before;
+    }
+  }
+
+  &.warning {
+    background-color: $yellow-light;
+    color: $black;
+
+    &:before {
+      @extend %icon-attention;
+      @extend %icon-before;
+    }
+  }
+
+  &.error {
+    background-color: darken($red, 15%);
+    color: $white;
+
+    &:before {
+      @extend %icon-cancel;
+      @extend %icon-before;
+    }
+  }
+}

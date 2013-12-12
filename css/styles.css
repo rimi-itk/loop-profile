@@ -544,41 +544,50 @@ img {
 /* Icons
    ================================================================================================================== */
 /* line 65, ../sass/theme/_placeholders.scss */
-.flag.is-sticky:before, .flag:before, .at-term:after, .search-result--comments:before {
+.flag.is-sticky:before, .messages.status:before, .flag:before, .at-term:after, .messages.error:before, .search-result--comments:before, .messages.warning:before {
   display: inline-block;
   font-family: "loop-icons";
   line-height: 100%;
-  vertical-align: middle;
 }
 
-/* line 73, ../sass/theme/_placeholders.scss */
-.search-result--comments:before, .flag:before {
+/* line 72, ../sass/theme/_placeholders.scss */
+.search-result--comments:before, .flag:before, .messages.status:before, .messages.warning:before, .messages.error:before {
   margin-right: .35em;
 }
 
-/* line 77, ../sass/theme/_placeholders.scss */
+/* line 76, ../sass/theme/_placeholders.scss */
 .at-term:after {
   margin-left: .35em;
 }
 
-/* line 81, ../sass/theme/_placeholders.scss */
+/* line 80, ../sass/theme/_placeholders.scss */
 .flag.is-sticky:before {
   content: '\e804';
 }
 
-/* line 87, ../sass/theme/_placeholders.scss */
+/* line 86, ../sass/theme/_placeholders.scss */
+.messages.status:before {
+  content: '\e80d';
+}
+
+/* line 92, ../sass/theme/_placeholders.scss */
 .flag:before {
   content: '\e805';
 }
 
-/* line 93, ../sass/theme/_placeholders.scss */
-.at-term:after {
+/* line 98, ../sass/theme/_placeholders.scss */
+.at-term:after, .messages.error:before {
   content: '\e80b';
 }
 
-/* line 99, ../sass/theme/_placeholders.scss */
+/* line 104, ../sass/theme/_placeholders.scss */
 .search-result--comments:before {
   content: '\e80a';
+}
+
+/* line 110, ../sass/theme/_placeholders.scss */
+.messages.warning:before {
+  content: '\e80c';
 }
 
 /**
@@ -608,13 +617,13 @@ input[type="tel"],
 input[type="time"],
 input[type="url"],
 textarea {
-  border: 1px solid #e6e6e6;
+  border: 1px solid #cccccc;
   display: block;
   min-height: 1.25em;
   width: 100%;
   padding: .75em;
   color: #595959;
-  background-color: #fafafa;
+  background-color: #f2f2f2;
   -webkit-border-radius: 0.4em;
   -moz-border-radius: 0.4em;
   -ms-border-radius: 0.4em;
@@ -655,7 +664,7 @@ textarea[disabled] {
   -moz-box-shadow: 0 0 0;
   box-shadow: 0 0 0;
   border: 1px solid #cccccc;
-  background-color: #d9d9d9;
+  background-color: #e6e6e6;
 }
 
 /* Labels
@@ -704,14 +713,14 @@ label {
 
 /* line 101, ../sass/theme/_forms.scss */
 .form-select {
-  border: 1px solid #e6e6e6;
+  border: 1px solid #cccccc;
   padding: .75em;
   width: 100%;
   /* Set height for chrome */
   height: 3em;
   /* For Chrome */
   height: 3em;
-  background-color: #fafafa;
+  background-color: #f2f2f2;
   -webkit-border-radius: 0.4em;
   -moz-border-radius: 0.4em;
   -ms-border-radius: 0.4em;
@@ -723,12 +732,12 @@ label {
 }
 
 /* line 118, ../sass/theme/_forms.scss */
-.form-textarea {
+.form-textarea-question {
   height: 6em;
 }
 @media only screen and (min-width: 30em) {
   /* line 118, ../sass/theme/_forms.scss */
-  .form-textarea {
+  .form-textarea-question {
     height: 3.25em;
   }
 }
@@ -1546,4 +1555,35 @@ body {
   border: 0;
   margin-bottom: 0;
   padding: 0;
+}
+
+/* line 1, ../sass/drupal-modules/_messages.scss */
+.messages {
+  margin-bottom: 1.5em;
+  padding: 1.5em;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+}
+/* line 7, ../sass/drupal-modules/_messages.scss */
+.messages:before {
+  font-size: 150%;
+  vertical-align: top;
+}
+/* line 12, ../sass/drupal-modules/_messages.scss */
+.messages.status {
+  background-color: #41ab51;
+  color: white;
+}
+/* line 22, ../sass/drupal-modules/_messages.scss */
+.messages.warning {
+  background-color: #fff98f;
+  color: black;
+}
+/* line 32, ../sass/drupal-modules/_messages.scss */
+.messages.error {
+  background-color: #eb3000;
+  color: white;
 }

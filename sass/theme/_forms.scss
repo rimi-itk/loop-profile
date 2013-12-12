@@ -27,14 +27,14 @@ input[type="tel"],
 input[type="time"],
 input[type="url"],
 textarea {
-  border: 1px solid $gray-lighter;
+  border: 1px solid $gray-light;
   display: block;
   min-height: 1.25em;
   width: 100%;
   padding: .75em;
 
   color: $gray-darker;
-  background-color: darken($white, 2%);
+  background-color: darken($white, 5%);
 
   &:focus {
     border: 1px solid $gray-dark;
@@ -47,7 +47,7 @@ textarea {
 
     border: 1px solid $gray-light;
 
-    background-color: lighten($gray-light, 5%);
+    background-color: lighten($gray-light, 10%);
   }
 
   @include border-radius($border-radius);
@@ -99,7 +99,7 @@ label {
 }
 
 .form-select {
-  border: 1px solid $gray-lighter;
+  border: 1px solid $gray-light;
   padding: .75em;
   width: 100%;
   
@@ -109,13 +109,13 @@ label {
   /* For Chrome */
   height: 3em;
 
-  background-color: darken($white, 2%);
+  background-color: darken($white, 5%);
 
   @include border-radius($border-radius);
   @include box-sizing(border-box);
 }
 
-.form-textarea {
+.form-textarea-question {
   height: 6em;
 
   @include breakpoint(30em) {
