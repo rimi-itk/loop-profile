@@ -15,7 +15,7 @@ function loop_frontpage_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Loop frontpage';
   $page->admin_description = 'Frontpage for Loop website';
-  $page->path = 'frontpage';
+  $page->path = 'front';
   $page->access = array(
     'logic' => 'and',
   );
