@@ -368,19 +368,13 @@ table {
  * @author magnify
  */
 /* line 10, ../sass/base/_base.scss */
-html {
-  height: 100%;
-}
-
-/* line 14, ../sass/base/_base.scss */
 body {
-  height: 100%;
   background-color: #fff;
   color: #333;
   font: 1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 28, ../sass/base/_base.scss */
+/* line 22, ../sass/base/_base.scss */
 h1,
 h2,
 h3,
@@ -397,44 +391,44 @@ h6 {
   text-rendering: optimizeLegibility;
 }
 
-/* line 43, ../sass/base/_base.scss */
+/* line 37, ../sass/base/_base.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 48, ../sass/base/_base.scss */
+/* line 42, ../sass/base/_base.scss */
 em {
   font-style: italic;
 }
-/* line 51, ../sass/base/_base.scss */
+/* line 45, ../sass/base/_base.scss */
 em strong {
   font-weight: bold;
 }
 
 /* Links
    ================================================================================================================== */
-/* line 62, ../sass/base/_base.scss */
+/* line 56, ../sass/base/_base.scss */
 a:link {
   color: #41ab51;
   text-decoration: underline;
 }
-/* line 67, ../sass/base/_base.scss */
+/* line 61, ../sass/base/_base.scss */
 a:visited {
   color: #3a9948;
 }
-/* line 71, ../sass/base/_base.scss */
+/* line 65, ../sass/base/_base.scss */
 a:hover {
   color: #33863f;
   text-decoration: none;
 }
-/* line 76, ../sass/base/_base.scss */
+/* line 70, ../sass/base/_base.scss */
 a:focus {
   color: #33863f;
 }
 
 /* Paragraph
    ================================================================================================================== */
-/* line 85, ../sass/base/_base.scss */
+/* line 79, ../sass/base/_base.scss */
 p {
   margin-top: 0;
   margin-bottom: 1.5em;
@@ -442,7 +436,7 @@ p {
 
 /* Image
    ================================================================================================================== */
-/* line 94, ../sass/base/_base.scss */
+/* line 88, ../sass/base/_base.scss */
 img {
   display: inline;
   height: auto;
@@ -452,7 +446,7 @@ img {
 
 /* States
    ========================================================================== */
-/* line 105, ../sass/base/_base.scss */
+/* line 99, ../sass/base/_base.scss */
 .is-hidden {
   display: none;
 }
@@ -1492,14 +1486,9 @@ label {
  */
 /* line 8, ../sass/modules/_page.scss */
 .page-wrapper {
-  height: 100%;
   width: 100%;
 }
 /* line 12, ../sass/modules/_page.scss */
-.page-wrapper.is-moved-left {
-  overflow: hidden;
-}
-/* line 15, ../sass/modules/_page.scss */
 .page-wrapper.is-moved-left .page-inner {
   -webkit-transform: translate3d(-76%, 0, 0);
   -moz-transform: translate3d(-76%, 0, 0);
@@ -1508,7 +1497,7 @@ label {
   transform: translate3d(-76%, 0, 0);
 }
 
-/* line 21, ../sass/modules/_page.scss */
+/* line 18, ../sass/modules/_page.scss */
 .page-inner {
   position: relative;
   height: 100%;
@@ -1520,7 +1509,7 @@ label {
   transition: transform 500ms ease 0s;
 }
 
-/* line 30, ../sass/modules/_page.scss */
+/* line 27, ../sass/modules/_page.scss */
 .page-title {
   font-size: 200%;
   font-weight: bold;
