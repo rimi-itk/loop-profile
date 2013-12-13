@@ -1511,6 +1511,10 @@ label {
   position: relative;
   height: 100%;
   width: 100%;
+  -webkit-transition: -webkit-transform 500ms ease;
+  -webkit-transition-delay: 0s;
+  -moz-transition: -moz-transform 500ms ease 0s;
+  -o-transition: -o-transform 500ms ease 0s;
   transition: transform 500ms ease 0s;
 }
 
