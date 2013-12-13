@@ -1214,8 +1214,14 @@ label {
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
 }
+@media only screen and (min-width: 28em) {
+  /* line 145, ../sass/modules/_search.scss */
+  .search--autocomplete {
+    top: 7.5em;
+  }
+}
 
-/* line 160, ../sass/modules/_search.scss */
+/* line 164, ../sass/modules/_search.scss */
 .search--autocomplete-header {
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 1em;
@@ -1224,18 +1230,18 @@ label {
   font-weight: bold;
 }
 
-/* line 169, ../sass/modules/_search.scss */
+/* line 173, ../sass/modules/_search.scss */
 .search--autocomplete-link {
   border-bottom: 1px solid #e6e6e6;
   display: block;
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 178, ../sass/modules/_search.scss */
+/* line 182, ../sass/modules/_search.scss */
 .search--autocomplete-link:link, .search--autocomplete-link:visited, .search--autocomplete-link:hover, .search--autocomplete-link:active {
   text-decoration: none;
 }
-/* line 182, ../sass/modules/_search.scss */
+/* line 186, ../sass/modules/_search.scss */
 .search--autocomplete-link:last-child {
   border-bottom: 0;
   margin-bottom: 0;

@@ -155,6 +155,10 @@
   background-color: $white;
 
   @include border-radius($border-radius);
+
+  @include breakpoint($breakpoint-3) {
+    top: 7.5em;
+  }
 }
 
 .search--autocomplete-header {
