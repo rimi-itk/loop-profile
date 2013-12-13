@@ -1503,11 +1503,17 @@ label {
  */
 /* line 8, ../sass/modules/_page.scss */
 .page-wrapper {
-  position: relative;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  overflow-y: visible;
   width: 100%;
 }
-/* line 15, ../sass/modules/_page.scss */
+/* line 16, ../sass/modules/_page.scss */
+.page-wrapper.is-moved-left {
+  overflow-y: hidden;
+}
+/* line 19, ../sass/modules/_page.scss */
 .page-wrapper.is-moved-left .page-inner {
   -webkit-transform: translate3d(-76%, 0, 0);
   -moz-transform: translate3d(-76%, 0, 0);
@@ -1516,10 +1522,10 @@ label {
   transform: translate3d(-76%, 0, 0);
 }
 
-/* line 21, ../sass/modules/_page.scss */
+/* line 25, ../sass/modules/_page.scss */
 .page-inner {
   position: relative;
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   -webkit-transition: -webkit-transform 500ms ease;
   -webkit-transition-delay: 0s;
@@ -1528,7 +1534,7 @@ label {
   transition: transform 500ms ease 0s;
 }
 
-/* line 30, ../sass/modules/_page.scss */
+/* line 34, ../sass/modules/_page.scss */
 .page-title {
   font-size: 200%;
   font-weight: bold;
