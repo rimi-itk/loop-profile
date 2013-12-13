@@ -133,10 +133,9 @@
 
   background-color: $green;
 
-  transform: translate3d(100%, 0px, 0px);
-
   @include box-sizing(border-box);
   @include box-shadow(5px 0 8px darken($green, 10%) inset);
+  @include transform(translate3d(100%, 0px, 0px));
 
   &.is-open {
   }
