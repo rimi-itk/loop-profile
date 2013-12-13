@@ -120,26 +120,25 @@
    ================================================================================================================== */
 
 .nav-mobile {
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: 0;
+  right: -82%;
   bottom: 0;
   z-index: $z-index-top;
 
   display: block;
   padding: 1.5em;
-  min-width: 82%;
+  width: 82%;
 
   background-color: $green;
 
   @include box-sizing(border-box);
   @include box-shadow(5px 0 8px darken($green, 10%) inset);
-  @include transition(transform 500ms ease);
-  @include transform(translate3d(100%, 0, 0));
 
   &.is-open {
+    position: absolute;
+
     @include transition(transform 500ms ease);
-    @include transform(translate3d(100%, 0, 0));
   }
 
   a {

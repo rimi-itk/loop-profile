@@ -993,14 +993,14 @@ label {
    ================================================================================================================== */
 /* line 122, ../sass/theme/_nav.scss */
 .nav-mobile {
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: 0;
+  right: -82%;
   bottom: 0;
   z-index: 99;
   display: block;
   padding: 1.5em;
-  min-width: 82%;
+  width: 82%;
   background-color: #41ab51;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1008,43 +1008,30 @@ label {
   -webkit-box-shadow: 5px 0 8px #33863f inset;
   -moz-box-shadow: 5px 0 8px #33863f inset;
   box-shadow: 5px 0 8px #33863f inset;
-  -webkit-transition: -webkit-transform 500ms ease;
-  -moz-transition: -moz-transform 500ms ease;
-  -o-transition: -o-transform 500ms ease;
-  transition: transform 500ms ease;
-  -webkit-transform: translate3d(100%, 0, 0);
-  -moz-transform: translate3d(100%, 0, 0);
-  -ms-transform: translate3d(100%, 0, 0);
-  -o-transform: translate3d(100%, 0, 0);
-  transform: translate3d(100%, 0, 0);
 }
-/* line 140, ../sass/theme/_nav.scss */
+/* line 138, ../sass/theme/_nav.scss */
 .nav-mobile.is-open {
+  position: absolute;
   -webkit-transition: -webkit-transform 500ms ease;
   -moz-transition: -moz-transform 500ms ease;
   -o-transition: -o-transform 500ms ease;
   transition: transform 500ms ease;
-  -webkit-transform: translate3d(100%, 0, 0);
-  -moz-transform: translate3d(100%, 0, 0);
-  -ms-transform: translate3d(100%, 0, 0);
-  -o-transform: translate3d(100%, 0, 0);
-  transform: translate3d(100%, 0, 0);
 }
-/* line 146, ../sass/theme/_nav.scss */
+/* line 145, ../sass/theme/_nav.scss */
 .nav-mobile a:link {
   color: white;
   text-decoration: none;
 }
-/* line 151, ../sass/theme/_nav.scss */
+/* line 150, ../sass/theme/_nav.scss */
 .nav-mobile a:visited {
   color: white;
 }
-/* line 155, ../sass/theme/_nav.scss */
+/* line 154, ../sass/theme/_nav.scss */
 .nav-mobile a:hover {
   color: white;
   text-decoration: underline;
 }
-/* line 160, ../sass/theme/_nav.scss */
+/* line 159, ../sass/theme/_nav.scss */
 .nav-mobile a:focus {
   color: white;
 }
@@ -1061,7 +1048,7 @@ label {
   }
 }
 
-/* line 174, ../sass/theme/_nav.scss */
+/* line 173, ../sass/theme/_nav.scss */
 .nav-mobile--link {
   border-bottom-color: #5dc26d;
   display: block;
@@ -1527,25 +1514,11 @@ label {
 }
 /* line 15, ../sass/modules/_page.scss */
 .page-wrapper.is-moved-left {
-  overflow: visible;
-  -webkit-transform: translate3d(-82%, 0, 0);
   -moz-transform: translate3d(-82%, 0, 0);
-  -ms-transform: translate3d(-82%, 0, 0);
-  -o-transform: translate3d(-82%, 0, 0);
-  transform: translate3d(-82%, 0, 0);
-}
-@media only screen and (min-width: 28em) {
-  /* line 8, ../sass/modules/_page.scss */
-  .page-wrapper {
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
+  -webkit-transform: translate3d(-82%, 0, 0);
 }
 
-/* line 26, ../sass/modules/_page.scss */
+/* line 21, ../sass/modules/_page.scss */
 .page-title {
   font-size: 200%;
   font-weight: bold;
