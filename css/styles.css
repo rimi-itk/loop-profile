@@ -993,7 +993,7 @@ label {
    ================================================================================================================== */
 /* line 122, ../sass/theme/_nav.scss */
 .nav-mobile {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -1492,15 +1492,14 @@ label {
  */
 /* line 8, ../sass/modules/_page.scss */
 .page-wrapper {
-  overflow-x: hidden;
   height: 100%;
   width: 100%;
 }
-/* line 14, ../sass/modules/_page.scss */
+/* line 12, ../sass/modules/_page.scss */
 .page-wrapper.is-moved-left {
   overflow: hidden;
 }
-/* line 17, ../sass/modules/_page.scss */
+/* line 15, ../sass/modules/_page.scss */
 .page-wrapper.is-moved-left .page-inner {
   -webkit-transform: translate3d(-76%, 0, 0);
   -moz-transform: translate3d(-76%, 0, 0);
@@ -1509,7 +1508,7 @@ label {
   transform: translate3d(-76%, 0, 0);
 }
 
-/* line 23, ../sass/modules/_page.scss */
+/* line 21, ../sass/modules/_page.scss */
 .page-inner {
   position: relative;
   height: 100%;
@@ -1521,7 +1520,7 @@ label {
   transition: transform 500ms ease 0s;
 }
 
-/* line 32, ../sass/modules/_page.scss */
+/* line 30, ../sass/modules/_page.scss */
 .page-title {
   font-size: 200%;
   font-weight: bold;
