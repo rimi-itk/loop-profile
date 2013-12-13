@@ -144,10 +144,10 @@
 
 .search--autocomplete {
   position: absolute;
-  top: 7.5em;
+  top: 12.25em;
   right: 1.25em;
   left: 1.25em;
-  z-index: $z-index-middle;
+  z-index: 99;
 
   border: 1px solid $border-color;
   padding: 1em;
