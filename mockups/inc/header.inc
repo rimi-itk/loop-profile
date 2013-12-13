@@ -8,6 +8,42 @@
   <a href="#" title="Menu" class="nav-mobile--link">
     <span class="nav-mobile--text">Menu</span>
   </a>
+  <a href="#" title="Min konto" class="nav-mobile--link">
+    <span class="nav-mobile--text">Min konto</span>
+  </a>
+  <a href="#" title="Notifikationer" class="nav-mobile--link">
+    <span class="nav-mobile--text">Notifikationer</span>
+  </a>
+  <a href="#" title="Menu" class="nav-mobile--link">
+    <span class="nav-mobile--text">Menu</span>
+  </a>
+  <a href="#" title="Min konto" class="nav-mobile--link">
+    <span class="nav-mobile--text">Min konto</span>
+  </a>
+  <a href="#" title="Notifikationer" class="nav-mobile--link">
+    <span class="nav-mobile--text">Notifikationer</span>
+  </a>
+  <a href="#" title="Menu" class="nav-mobile--link">
+    <span class="nav-mobile--text">Menu</span>
+  </a>
+  <a href="#" title="Min konto" class="nav-mobile--link">
+    <span class="nav-mobile--text">Min konto</span>
+  </a>
+  <a href="#" title="Notifikationer" class="nav-mobile--link">
+    <span class="nav-mobile--text">Notifikationer</span>
+  </a>
+  <a href="#" title="Menu" class="nav-mobile--link">
+    <span class="nav-mobile--text">Menu</span>
+  </a>
+  <a href="#" title="Min konto" class="nav-mobile--link">
+    <span class="nav-mobile--text">Min konto</span>
+  </a>
+  <a href="#" title="Notifikationer" class="nav-mobile--link">
+    <span class="nav-mobile--text">Notifikationer</span>
+  </a>
+  <a href="#" title="Menu" class="nav-mobile--link">
+    <span class="nav-mobile--text">Menu</span>
+  </a>
 </nav>
 <header class="header" role="banner">
   <div class="header--inner">
