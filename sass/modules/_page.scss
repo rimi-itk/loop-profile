@@ -6,21 +6,25 @@
 
 
 .page-wrapper {
+  height: 100%;
+  width: 100%;
+
+  &.is-moved-left {
+    overflow: hidden;
+
+    .page-inner {
+      @include transform(translate3d(-76%, 0, 0));
+    }
+  }
+}
+
+.page-inner {
   position: relative;
 
   height: 100%;
+  width: 100%;
 
-  @include transition(transform 500ms ease);
-
-  &.is-moved-left {
-    overflow: visible;
-
-    @include transform(translate3d(-82%, 0, 0));
-  }
-
-  @include breakpoint($breakpoint-3) {
-    @include transform(translate3d(0, 0, 0));
-  }
+  @include transition(transform 500ms ease 0s);
 }
 
 .page-title {

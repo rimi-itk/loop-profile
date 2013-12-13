@@ -993,75 +993,49 @@ label {
    ================================================================================================================== */
 /* line 122, ../sass/theme/_nav.scss */
 .nav-mobile {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
-  z-index: 99;
-  display: block;
+  overflow-y: auto;
+  z-index: 1001;
   padding: 1.5em;
-  min-width: 82%;
+  height: 100%;
+  width: 76%;
   background-color: #41ab51;
+  -webkit-backface-visibility: hidden;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-box-shadow: 5px 0 8px #33863f inset;
   -moz-box-shadow: 5px 0 8px #33863f inset;
   box-shadow: 5px 0 8px #33863f inset;
-  -webkit-transition: -webkit-transform 500ms ease;
-  -moz-transition: -moz-transform 500ms ease;
-  -o-transition: -o-transform 500ms ease;
-  transition: transform 500ms ease;
   -webkit-transform: translate3d(100%, 0, 0);
   -moz-transform: translate3d(100%, 0, 0);
   -ms-transform: translate3d(100%, 0, 0);
   -o-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
 }
-/* line 140, ../sass/theme/_nav.scss */
-.nav-mobile.is-open {
-  -webkit-transition: -webkit-transform 500ms ease;
-  -moz-transition: -moz-transform 500ms ease;
-  -o-transition: -o-transform 500ms ease;
-  transition: transform 500ms ease;
-  -webkit-transform: translate3d(100%, 0, 0);
-  -moz-transform: translate3d(100%, 0, 0);
-  -ms-transform: translate3d(100%, 0, 0);
-  -o-transform: translate3d(100%, 0, 0);
-  transform: translate3d(100%, 0, 0);
-}
-/* line 146, ../sass/theme/_nav.scss */
+/* line 143, ../sass/theme/_nav.scss */
 .nav-mobile a:link {
   color: white;
   text-decoration: none;
 }
-/* line 151, ../sass/theme/_nav.scss */
+/* line 148, ../sass/theme/_nav.scss */
 .nav-mobile a:visited {
   color: white;
 }
-/* line 155, ../sass/theme/_nav.scss */
+/* line 152, ../sass/theme/_nav.scss */
 .nav-mobile a:hover {
   color: white;
   text-decoration: underline;
 }
-/* line 160, ../sass/theme/_nav.scss */
+/* line 157, ../sass/theme/_nav.scss */
 .nav-mobile a:focus {
   color: white;
 }
-@media only screen and (min-width: 43em) {
-  /* line 122, ../sass/theme/_nav.scss */
-  .nav-mobile {
-    right: -100%;
-  }
-}
-@media only screen and (min-width: 75em) {
-  /* line 122, ../sass/theme/_nav.scss */
-  .nav-mobile {
-    display: none;
-  }
-}
 
-/* line 174, ../sass/theme/_nav.scss */
+/* line 163, ../sass/theme/_nav.scss */
 .nav-mobile--link {
   border-bottom-color: #5dc26d;
   display: block;
@@ -1518,34 +1492,35 @@ label {
  */
 /* line 8, ../sass/modules/_page.scss */
 .page-wrapper {
-  position: relative;
   height: 100%;
-  -webkit-transition: -webkit-transform 500ms ease;
-  -moz-transition: -moz-transform 500ms ease;
-  -o-transition: -o-transform 500ms ease;
-  transition: transform 500ms ease;
+  width: 100%;
+}
+/* line 12, ../sass/modules/_page.scss */
+.page-wrapper.is-moved-left {
+  overflow: hidden;
 }
 /* line 15, ../sass/modules/_page.scss */
-.page-wrapper.is-moved-left {
-  overflow: visible;
-  -webkit-transform: translate3d(-82%, 0, 0);
-  -moz-transform: translate3d(-82%, 0, 0);
-  -ms-transform: translate3d(-82%, 0, 0);
-  -o-transform: translate3d(-82%, 0, 0);
-  transform: translate3d(-82%, 0, 0);
-}
-@media only screen and (min-width: 28em) {
-  /* line 8, ../sass/modules/_page.scss */
-  .page-wrapper {
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
+.page-wrapper.is-moved-left .page-inner {
+  -webkit-transform: translate3d(-76%, 0, 0);
+  -moz-transform: translate3d(-76%, 0, 0);
+  -ms-transform: translate3d(-76%, 0, 0);
+  -o-transform: translate3d(-76%, 0, 0);
+  transform: translate3d(-76%, 0, 0);
 }
 
-/* line 26, ../sass/modules/_page.scss */
+/* line 21, ../sass/modules/_page.scss */
+.page-inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: -webkit-transform 500ms ease;
+  -webkit-transition-delay: 0s;
+  -moz-transition: -moz-transform 500ms ease 0s;
+  -o-transition: -o-transform 500ms ease 0s;
+  transition: transform 500ms ease 0s;
+}
+
+/* line 30, ../sass/modules/_page.scss */
 .page-title {
   font-size: 200%;
   font-weight: bold;
