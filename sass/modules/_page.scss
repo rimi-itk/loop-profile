@@ -7,15 +7,25 @@
 
 .page-wrapper {
   position: relative;
+  overflow: hidden;
 
   height: 100%;
-
-  @include transition(transform 500ms ease);
+  width: 100%;
 
   &.is-moved-left {
-    -moz-transform: translate3d(-82%, 0, 0);
-    -webkit-transform: translate3d(-82%, 0, 0);
+    .page-inner {
+      transform: translate3d(-82%, 0px, 0px);
+    }
   }
+}
+
+.page-inner {
+  position: relative;
+
+  height: 100%;
+  width: 100%;
+
+  transition: transform 500ms ease 0s;
 }
 
 .page-title {

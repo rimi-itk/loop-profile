@@ -993,29 +993,23 @@ label {
    ================================================================================================================== */
 /* line 122, ../sass/theme/_nav.scss */
 .nav-mobile {
-  position: fixed;
+  position: absolute;
   top: 0;
-  right: -82%;
+  right: 0;
   bottom: 0;
-  z-index: 99;
-  display: block;
+  overflow-y: auto;
+  z-index: 1001;
   padding: 1.5em;
+  height: 100%;
   width: 82%;
   background-color: #41ab51;
+  transform: translate3d(100%, 0px, 0px);
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-box-shadow: 5px 0 8px #33863f inset;
   -moz-box-shadow: 5px 0 8px #33863f inset;
   box-shadow: 5px 0 8px #33863f inset;
-}
-/* line 138, ../sass/theme/_nav.scss */
-.nav-mobile.is-open {
-  position: absolute;
-  -webkit-transition: -webkit-transform 500ms ease;
-  -moz-transition: -moz-transform 500ms ease;
-  -o-transition: -o-transform 500ms ease;
-  transition: transform 500ms ease;
 }
 /* line 145, ../sass/theme/_nav.scss */
 .nav-mobile a:link {
@@ -1035,20 +1029,8 @@ label {
 .nav-mobile a:focus {
   color: white;
 }
-@media only screen and (min-width: 43em) {
-  /* line 122, ../sass/theme/_nav.scss */
-  .nav-mobile {
-    right: -100%;
-  }
-}
-@media only screen and (min-width: 75em) {
-  /* line 122, ../sass/theme/_nav.scss */
-  .nav-mobile {
-    display: none;
-  }
-}
 
-/* line 173, ../sass/theme/_nav.scss */
+/* line 165, ../sass/theme/_nav.scss */
 .nav-mobile--link {
   border-bottom-color: #5dc26d;
   display: block;
@@ -1506,19 +1488,24 @@ label {
 /* line 8, ../sass/modules/_page.scss */
 .page-wrapper {
   position: relative;
+  overflow: hidden;
   height: 100%;
-  -webkit-transition: -webkit-transform 500ms ease;
-  -moz-transition: -moz-transform 500ms ease;
-  -o-transition: -o-transform 500ms ease;
-  transition: transform 500ms ease;
+  width: 100%;
 }
-/* line 15, ../sass/modules/_page.scss */
-.page-wrapper.is-moved-left {
-  -moz-transform: translate3d(-82%, 0, 0);
-  -webkit-transform: translate3d(-82%, 0, 0);
+/* line 16, ../sass/modules/_page.scss */
+.page-wrapper.is-moved-left .page-inner {
+  transform: translate3d(-82%, 0px, 0px);
 }
 
-/* line 21, ../sass/modules/_page.scss */
+/* line 22, ../sass/modules/_page.scss */
+.page-inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition: transform 500ms ease 0s;
+}
+
+/* line 31, ../sass/modules/_page.scss */
 .page-title {
   font-size: 200%;
   font-weight: bold;

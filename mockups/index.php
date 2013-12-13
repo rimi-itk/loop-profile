@@ -7,9 +7,11 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
 
 <body>
 <div class="page-wrapper js-page-wrapper">
-  <?php include 'inc/header.inc'; ?>
-  <?php $is_front = TRUE; ?>
-  <?php include 'inc/search-block.inc'; ?>
+  <div class="page-inner">
+    <?php include 'inc/header.inc'; ?>
+    <?php $is_front = TRUE; ?>
+    <?php include 'inc/search-block.inc'; ?>
+  </div>
 </div>
 </body>
 </html>

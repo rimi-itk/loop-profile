@@ -120,25 +120,25 @@
    ================================================================================================================== */
 
 .nav-mobile {
-  position: fixed;
+  position: absolute;
   top: 0;
-  right: -82%;
+  right: 0;
   bottom: 0;
-  z-index: $z-index-top;
+  overflow-y: auto;
+  z-index: 1001;
 
-  display: block;
   padding: 1.5em;
+  height: 100%;
   width: 82%;
 
   background-color: $green;
+
+  transform: translate3d(100%, 0px, 0px);
 
   @include box-sizing(border-box);
   @include box-shadow(5px 0 8px darken($green, 10%) inset);
 
   &.is-open {
-    position: absolute;
-
-    @include transition(transform 500ms ease);
   }
 
   a {
@@ -159,14 +159,6 @@
     &:focus {
       color: $white;
     }
-  }
-
-  @include breakpoint($breakpoint-4) {
-    right: -100%;
-  }
-
-  @include breakpoint($layout-max-width) {
-    display: none;
   }
 }
 
