@@ -1496,7 +1496,11 @@ label {
   height: 100%;
   width: 100%;
 }
-/* line 15, ../sass/modules/_page.scss */
+/* line 14, ../sass/modules/_page.scss */
+.page-wrapper.is-moved-left {
+  overflow: hidden;
+}
+/* line 17, ../sass/modules/_page.scss */
 .page-wrapper.is-moved-left .page-inner {
   -webkit-transform: translate3d(-76%, 0, 0);
   -moz-transform: translate3d(-76%, 0, 0);
@@ -1505,7 +1509,7 @@ label {
   transform: translate3d(-76%, 0, 0);
 }
 
-/* line 21, ../sass/modules/_page.scss */
+/* line 23, ../sass/modules/_page.scss */
 .page-inner {
   position: relative;
   height: 100%;
@@ -1517,7 +1521,7 @@ label {
   transition: transform 500ms ease 0s;
 }
 
-/* line 30, ../sass/modules/_page.scss */
+/* line 32, ../sass/modules/_page.scss */
 .page-title {
   font-size: 200%;
   font-weight: bold;
