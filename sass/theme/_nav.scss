@@ -133,9 +133,11 @@
 
   background-color: $green;
 
+  -webkit-backface-visibility: hidden;
+
   @include box-sizing(border-box);
   @include box-shadow(5px 0 8px darken($green, 10%) inset);
-  @include transform(translate3d(100%, 0px, 0px));
+  @include transform(translate3d(100%, 0, 0));
 
   &.is-open {
   }

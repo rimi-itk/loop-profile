@@ -14,7 +14,7 @@
 
   &.is-moved-left {
     .page-inner {
-      transform: translate3d(-82%, 0px, 0px);
+      @include transform(translate3d(-82%, 0, 0));
     }
   }
 }
