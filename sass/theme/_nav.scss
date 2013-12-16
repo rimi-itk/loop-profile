@@ -28,14 +28,8 @@
   width: 3.5em;
 
   background-color: transparentize($white, .75);
-  line-height: 3.5em;
+  line-height: 2.5em;
   text-align: center;
-
-  &:before {
-    margin-right: 0;
-
-    font-size: 125%;
-  }
 
   &:link,
   &:visited {
@@ -53,22 +47,21 @@
     display: inline-block;
   }
 
-  @include breakpoint($breakpoint-2) {
-  }
-
   @include breakpoint($breakpoint-4) {
     padding-right: 1.25em;
     padding-left: 1.25em;
     height: auto;
     width: auto;
 
-    line-height: 2.5em;
-
-    &:before {
-      display: none;
-    }
-
     @include border-radius($border-radius $border-radius 0 0);
+  }
+}
+
+.nav--icon {
+  max-width: 1.5em;
+
+  @include breakpoint($breakpoint-4) {
+    display: none;
   }
 }
 
@@ -81,41 +74,10 @@
 }
 
 
-.nav--link-user {
-  @extend .nav--link;
-
-  &:before {
-    @extend %icon-user;
-    @extend %icon-before;
-  }
-}
-
-.nav--link-mail {
-  @extend .nav--link;
-
-  &:before {
-    @extend %icon-mail;
-    @extend %icon-before;
-  }
-}
-
-/* Make the menu icon bigger */
-.nav--link-menu {
-  @extend .nav--link;
-
-  &:before {
-    @extend %icon-menu;
-    @extend %icon-before;
-
-    font-size: 200%;
-    vertical-align: sub;
-  }
-}
-
 
 /* Mobile navigation
  *
- * See specific IE9 stylesheets
+ * See specific IE9 styles in separate stylesheet
  *
    ================================================================================================================== */
 

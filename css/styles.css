@@ -551,14 +551,14 @@ img {
 /* Icons
    ================================================================================================================== */
 /* line 65, ../sass/theme/_placeholders.scss */
-.flag.is-sticky:before, .messages.status:before, .flag:before, .at-term:after, .messages.error:before, .search-result--comments:before, .messages.warning:before, .nav-mobile--link:before, .nav--link-mail:before, .nav--link-user:before, .nav--link-menu:before {
+.flag.is-sticky:before, .messages.status:before, .flag:before, .at-term:after, .messages.error:before, .search-result--comments:before, .messages.warning:before, .nav-mobile--link:before {
   display: inline-block;
   font-family: "loop-icons";
   line-height: 100%;
 }
 
 /* line 72, ../sass/theme/_placeholders.scss */
-.nav--link-user:before, .nav--link-mail:before, .nav--link-menu:before, .nav-mobile--link:before, .search-result--comments:before, .flag:before, .messages.status:before, .messages.warning:before, .messages.error:before {
+.nav-mobile--link:before, .search-result--comments:before, .flag:before, .messages.status:before, .messages.warning:before, .messages.error:before {
   margin-right: .35em;
 }
 
@@ -600,21 +600,6 @@ img {
 /* line 116, ../sass/theme/_placeholders.scss */
 .nav-mobile--link:before {
   content: '\e807';
-}
-
-/* line 122, ../sass/theme/_placeholders.scss */
-.nav--link-mail:before {
-  content: '\e801';
-}
-
-/* line 128, ../sass/theme/_placeholders.scss */
-.nav--link-user:before {
-  content: '\e802';
-}
-
-/* line 134, ../sass/theme/_placeholders.scss */
-.nav--link-menu:before {
-  content: '\e800';
 }
 
 /**
@@ -921,14 +906,14 @@ label {
 }
 
 /* line 22, ../sass/theme/_nav.scss */
-.nav--link, .nav--link-user, .nav--link-mail, .nav--link-menu {
+.nav--link {
   position: relative;
   display: block;
   height: 3.5em;
   margin-left: 1em;
   width: 3.5em;
   background-color: rgba(255, 255, 255, 0.25);
-  line-height: 3.5em;
+  line-height: 2.5em;
   text-align: center;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
@@ -936,70 +921,64 @@ label {
   -o-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 34, ../sass/theme/_nav.scss */
-.nav--link:before, .nav--link-user:before, .nav--link-mail:before, .nav--link-menu:before {
-  margin-right: 0;
-  font-size: 125%;
-}
-/* line 41, ../sass/theme/_nav.scss */
-.nav--link:link, .nav--link-user:link, .nav--link-mail:link, .nav--link-menu:link, .nav--link:visited, .nav--link-user:visited, .nav--link-mail:visited, .nav--link-menu:visited {
+/* line 35, ../sass/theme/_nav.scss */
+.nav--link:link, .nav--link:visited {
   color: white;
   text-decoration: none;
 }
-/* line 46, ../sass/theme/_nav.scss */
-.nav--link:hover, .nav--link-user:hover, .nav--link-mail:hover, .nav--link-menu:hover {
+/* line 40, ../sass/theme/_nav.scss */
+.nav--link:hover {
   background-color: rgba(255, 255, 255, 0.5);
 }
 @media only screen and (min-width: 18.75em) {
   /* line 22, ../sass/theme/_nav.scss */
-  .nav--link, .nav--link-user, .nav--link-mail, .nav--link-menu {
+  .nav--link {
     display: inline-block;
   }
 }
 @media only screen and (min-width: 43em) {
   /* line 22, ../sass/theme/_nav.scss */
-  .nav--link, .nav--link-user, .nav--link-mail, .nav--link-menu {
+  .nav--link {
     padding-right: 1.25em;
     padding-left: 1.25em;
     height: auto;
     width: auto;
-    line-height: 2.5em;
     -webkit-border-radius: 0.4em 0.4em 0 0;
     -moz-border-radius: 0.4em 0.4em 0 0;
     -ms-border-radius: 0.4em 0.4em 0 0;
     -o-border-radius: 0.4em 0.4em 0 0;
     border-radius: 0.4em 0.4em 0 0;
   }
-  /* line 67, ../sass/theme/_nav.scss */
-  .nav--link:before, .nav--link-user:before, .nav--link-mail:before, .nav--link-menu:before {
+}
+
+/* line 60, ../sass/theme/_nav.scss */
+.nav--icon {
+  max-width: 1.5em;
+}
+@media only screen and (min-width: 43em) {
+  /* line 60, ../sass/theme/_nav.scss */
+  .nav--icon {
     display: none;
   }
 }
 
-/* line 75, ../sass/theme/_nav.scss */
+/* line 68, ../sass/theme/_nav.scss */
 .nav--text {
   display: none;
 }
 @media only screen and (min-width: 43em) {
-  /* line 75, ../sass/theme/_nav.scss */
+  /* line 68, ../sass/theme/_nav.scss */
   .nav--text {
     display: inline;
   }
 }
 
-/* Make the menu icon bigger */
-/* line 106, ../sass/theme/_nav.scss */
-.nav--link-menu:before {
-  font-size: 200%;
-  vertical-align: sub;
-}
-
 /* Mobile navigation
  *
- * See specific IE9 stylesheets
+ * See specific IE9 styles in separate stylesheet
  *
    ================================================================================================================== */
-/* line 122, ../sass/theme/_nav.scss */
+/* line 84, ../sass/theme/_nav.scss */
 .nav-mobile {
   position: absolute;
   top: 0;
@@ -1024,26 +1003,26 @@ label {
   -o-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
 }
-/* line 143, ../sass/theme/_nav.scss */
+/* line 105, ../sass/theme/_nav.scss */
 .nav-mobile a:link {
   color: white;
   text-decoration: none;
 }
-/* line 148, ../sass/theme/_nav.scss */
+/* line 110, ../sass/theme/_nav.scss */
 .nav-mobile a:visited {
   color: white;
 }
-/* line 152, ../sass/theme/_nav.scss */
+/* line 114, ../sass/theme/_nav.scss */
 .nav-mobile a:hover {
   color: white;
   text-decoration: underline;
 }
-/* line 157, ../sass/theme/_nav.scss */
+/* line 119, ../sass/theme/_nav.scss */
 .nav-mobile a:focus {
   color: white;
 }
 
-/* line 163, ../sass/theme/_nav.scss */
+/* line 125, ../sass/theme/_nav.scss */
 .nav-mobile--link {
   border-bottom-color: #5dc26d;
   display: block;
