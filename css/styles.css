@@ -1019,11 +1019,11 @@ label {
   -webkit-box-shadow: 5px 0 8px #33863f inset;
   -moz-box-shadow: 5px 0 8px #33863f inset;
   box-shadow: 5px 0 8px #33863f inset;
-  -webkit-transform: translate3d(100%, 0, 0);
-  -moz-transform: translate3d(100%, 0, 0);
-  -ms-transform: translate3d(100%, 0, 0);
-  -o-transform: translate3d(100%, 0, 0);
-  transform: translate3d(100%, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 /* line 147, ../sass/theme/_nav.scss */
 .nav-mobile a:link {
