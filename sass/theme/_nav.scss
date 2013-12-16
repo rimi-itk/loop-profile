@@ -141,7 +141,7 @@
 
   @include box-sizing(border-box);
   @include box-shadow(5px 0 8px darken($green, 10%) inset);
-  @include transform(translate3d(0, 0, 0));
+  @include transform(translate3d(100%, 0, 0));
 
   a {
     &:link {
