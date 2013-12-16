@@ -58,9 +58,8 @@
         <span class="nav--text">Notifikationer</span>
         <span class="notification">3</span>
       </a>
-      <a href="#" title="Menu" class="nav--link js-toggle-mobile-nav">
+      <a href="#" title="Menu" class="nav--toggle-mobile-nav js-toggle-mobile-nav">
         <img src="<?php echo $path_to_theme; ?>images/nav-menu-icon.png" class="nav--icon">
-        <span class="nav--text">Menu</span>
       </a>
     </nav>
   </div>

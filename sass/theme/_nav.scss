@@ -61,6 +61,14 @@
   }
 }
 
+.nav--toggle-mobile-nav {
+  @extend .nav--link;
+
+  @include breakpoint($breakpoint-4) {
+    display: none;
+  }
+}
+
 .nav--icon {
   max-width: 1.5em;
 
