@@ -51,6 +51,7 @@ dependencies[] = transliteration
 dependencies[] = views
 dependencies[] = views_bulk_operations
 dependencies[] = wysiwyg
+dependencies[] = respondjs
 
 ; LOOP features
 dependencies[] = loop_content

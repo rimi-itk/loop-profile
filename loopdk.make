@@ -140,6 +140,9 @@ projects[views_bulk_operations][version] = "3.1"
 projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][version] = "2.2"
 
+projects[respondjs][subdir] = "contrib"
+projects[respondjs][version] = "1.2"
+
 ; LOOP modules
 projects[loop_content][type] = "module"
 projects[loop_content][subdir] = "features"
