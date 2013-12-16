@@ -97,9 +97,6 @@
     @extend %icon-mail;
     @extend %icon-before;
   }
-
-  @include breakpoint($breakpoint-4) {
-  }
 }
 
 /* Make the menu icon bigger */
@@ -123,7 +120,7 @@
    ================================================================================================================== */
 
 .nav-mobile {
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 0;
   bottom: 0;

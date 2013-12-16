@@ -6,16 +6,12 @@
 
 
 .page-wrapper {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  overflow-y: visible;
+  position: relative;
+  overflow: hidden;
 
   width: 100%;
 
   &.is-moved-left {
-    overflow-y: hidden;
-
     .page-inner {
       @include transform(translate3d(-76%, 0, 0));
     }
