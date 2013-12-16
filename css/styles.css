@@ -605,19 +605,17 @@ img {
 /**
  * Forms
  *
- * This is an example file
- *
  * @author magnify
  */
 /* Basic styling
    ================================================================================================================== */
-/* line 15, ../sass/theme/_forms.scss */
+/* line 13, ../sass/theme/_forms.scss */
 input,
 textarea {
   font: 1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 29, ../sass/theme/_forms.scss */
+/* line 27, ../sass/theme/_forms.scss */
 input[type="text"],
 input[type="password"],
 input[type="date"],
@@ -645,7 +643,7 @@ textarea {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 39, ../sass/theme/_forms.scss */
+/* line 37, ../sass/theme/_forms.scss */
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="date"]:focus,
@@ -660,7 +658,7 @@ textarea:focus {
   border: 1px solid #737373;
   color: #404040;
 }
-/* line 45, ../sass/theme/_forms.scss */
+/* line 43, ../sass/theme/_forms.scss */
 input[type="text"][disabled],
 input[type="password"][disabled],
 input[type="date"][disabled],
@@ -681,7 +679,7 @@ textarea[disabled] {
 
 /* Labels
    ================================================================================================================== */
-/* line 62, ../sass/theme/_forms.scss */
+/* line 60, ../sass/theme/_forms.scss */
 label {
   display: block;
   margin-bottom: .25em;
@@ -695,12 +693,12 @@ label {
  * Based on Drupal's form markup, guidelines are not used
  *
    ================================================================================================================== */
-/* line 79, ../sass/theme/_forms.scss */
+/* line 77, ../sass/theme/_forms.scss */
 .form-module {
   clear: both;
 }
 
-/* line 83, ../sass/theme/_forms.scss */
+/* line 81, ../sass/theme/_forms.scss */
 .form-item {
   border: 1px solid #f2f2f2;
   margin-bottom: 1.5em;
@@ -712,18 +710,18 @@ label {
   border-radius: 0.4em;
 }
 
-/* line 91, ../sass/theme/_forms.scss */
+/* line 89, ../sass/theme/_forms.scss */
 .form-item-description {
   padding-top: .5em;
   color: #b3b3b3;
 }
 
-/* line 97, ../sass/theme/_forms.scss */
+/* line 95, ../sass/theme/_forms.scss */
 .form-required {
   color: #ff6138;
 }
 
-/* line 101, ../sass/theme/_forms.scss */
+/* line 99, ../sass/theme/_forms.scss */
 .form-select {
   border: 1px solid #cccccc;
   padding: .75em;
@@ -743,28 +741,28 @@ label {
   box-sizing: border-box;
 }
 
-/* line 118, ../sass/theme/_forms.scss */
+/* line 116, ../sass/theme/_forms.scss */
 .form-textarea-question {
   height: 6em;
 }
 @media only screen and (min-width: 30em) {
-  /* line 118, ../sass/theme/_forms.scss */
+  /* line 116, ../sass/theme/_forms.scss */
   .form-textarea-question {
     height: 3.25em;
   }
 }
 
-/* line 126, ../sass/theme/_forms.scss */
+/* line 124, ../sass/theme/_forms.scss */
 .form-actions {
   text-align: right;
 }
 
-/* line 130, ../sass/theme/_forms.scss */
+/* line 128, ../sass/theme/_forms.scss */
 .form-submit {
   width: 100%;
 }
 @media only screen and (min-width: 30em) {
-  /* line 130, ../sass/theme/_forms.scss */
+  /* line 128, ../sass/theme/_forms.scss */
   .form-submit {
     width: auto;
   }
