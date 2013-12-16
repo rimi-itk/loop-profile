@@ -1024,32 +1024,27 @@ label {
   -o-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
 }
-/* line 145, ../sass/theme/_nav.scss */
-.nav-mobile.is-open {
-  position: absolute;
-}
-/* line 150, ../sass/theme/_nav.scss */
+/* line 146, ../sass/theme/_nav.scss */
 .nav-mobile a:link {
   color: white;
   text-decoration: none;
 }
-/* line 155, ../sass/theme/_nav.scss */
+/* line 151, ../sass/theme/_nav.scss */
 .nav-mobile a:visited {
   color: white;
 }
-/* line 159, ../sass/theme/_nav.scss */
+/* line 155, ../sass/theme/_nav.scss */
 .nav-mobile a:hover {
   color: white;
   text-decoration: underline;
 }
-/* line 164, ../sass/theme/_nav.scss */
+/* line 160, ../sass/theme/_nav.scss */
 .nav-mobile a:focus {
   color: white;
 }
 
-/* line 170, ../sass/theme/_nav.scss */
+/* line 166, ../sass/theme/_nav.scss */
 .nav-mobile--link {
-  background-color: blue;
   border-bottom-color: #5dc26d;
   display: block;
 }
