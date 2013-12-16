@@ -910,7 +910,7 @@ label {
   position: relative;
   display: block;
   height: 3.5em;
-  margin-left: 1em;
+  margin-left: .25em;
   width: 3.5em;
   background-color: rgba(255, 255, 255, 0.25);
   line-height: 2.5em;
@@ -936,6 +936,12 @@ label {
     display: inline-block;
   }
 }
+@media only screen and (min-width: 22.5em) {
+  /* line 22, ../sass/theme/_nav.scss */
+  .nav--link {
+    margin-left: 1em;
+  }
+}
 @media only screen and (min-width: 43em) {
   /* line 22, ../sass/theme/_nav.scss */
   .nav--link {
@@ -951,23 +957,23 @@ label {
   }
 }
 
-/* line 60, ../sass/theme/_nav.scss */
+/* line 64, ../sass/theme/_nav.scss */
 .nav--icon {
   max-width: 1.5em;
 }
 @media only screen and (min-width: 43em) {
-  /* line 60, ../sass/theme/_nav.scss */
+  /* line 64, ../sass/theme/_nav.scss */
   .nav--icon {
     display: none;
   }
 }
 
-/* line 68, ../sass/theme/_nav.scss */
+/* line 72, ../sass/theme/_nav.scss */
 .nav--text {
   display: none;
 }
 @media only screen and (min-width: 43em) {
-  /* line 68, ../sass/theme/_nav.scss */
+  /* line 72, ../sass/theme/_nav.scss */
   .nav--text {
     display: inline;
   }
@@ -978,7 +984,7 @@ label {
  * See specific IE9 styles in separate stylesheet
  *
    ================================================================================================================== */
-/* line 84, ../sass/theme/_nav.scss */
+/* line 88, ../sass/theme/_nav.scss */
 .nav-mobile {
   position: absolute;
   top: 0;
@@ -1003,26 +1009,26 @@ label {
   -o-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
 }
-/* line 105, ../sass/theme/_nav.scss */
+/* line 109, ../sass/theme/_nav.scss */
 .nav-mobile a:link {
   color: white;
   text-decoration: none;
 }
-/* line 110, ../sass/theme/_nav.scss */
+/* line 114, ../sass/theme/_nav.scss */
 .nav-mobile a:visited {
   color: white;
 }
-/* line 114, ../sass/theme/_nav.scss */
+/* line 118, ../sass/theme/_nav.scss */
 .nav-mobile a:hover {
   color: white;
   text-decoration: underline;
 }
-/* line 119, ../sass/theme/_nav.scss */
+/* line 123, ../sass/theme/_nav.scss */
 .nav-mobile a:focus {
   color: white;
 }
 
-/* line 125, ../sass/theme/_nav.scss */
+/* line 129, ../sass/theme/_nav.scss */
 .nav-mobile--link {
   border-bottom-color: #5dc26d;
   display: block;
