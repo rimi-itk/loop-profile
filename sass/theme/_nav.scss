@@ -130,7 +130,8 @@
   overflow-y: auto;
   z-index: 99;
 
-  padding: 1.5em;
+  border: 3px dashed red;
+    padding: 1.5em;
   height: 100%;
   width: 76%;
 
@@ -166,6 +167,7 @@
 .nav-mobile--link {
   @extend %element-spacing;
 
+  background-color: blue;
   border-bottom-color: $green-light;
 
   display: block;
