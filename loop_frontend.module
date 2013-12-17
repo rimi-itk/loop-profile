@@ -6,6 +6,18 @@
 
 
 /**
+ * Implements template_process_html().
+ */
+function loop_frontend_process_html(&$variables) {
+  // Load Html5 Shiv library.
+  drupal_add_js(loop_frontend_get_library_file('html5shiv', 'html5shiv.js'));
+  drupal_add_js(loop_frontend_get_library_file('html5shiv', 'html5shiv-printshiv.js'));
+  // Load Respond.js library.
+  drupal_add_js(loop_frontend_get_library_file('respondjs', 'respond.min.js'));
+}
+
+
+/**
  * Implements hook_form_alter().
  *
  * Adds custom class names and placeholder attribute and icon prefix to search field.
@@ -27,4 +39,29 @@ function loop_frontend_form_search_block_form_alter(&$form, &$form_state, $form_
 
   // Add class name to form submit button.
   $form['actions']['submit']['#attributes']['class'] = array('search--button');
+}
+
+
+/**
+ * Helper function gets the path to a libraries file.
+ *
+ * @param string $libpath
+ *   The name of library path.
+ * @param string $libfile
+ *   The filename of the library.
+ *
+ * @return string
+ *   The full path to external library.
+ */
+function loop_frontend_get_library_file($libpath, $libfile) {
+  // If Libraries API is enabled,
+  // make sure the file exists before pointing there.
+  if (function_exists('libraries_get_path') && file_exists(libraries_get_path($libpath))) {
+    $path = libraries_get_path($libpath);
+    $path .= '/' . $libfile;
+  }
+  else {
+    $path = NULL;
+  }
+  return $path;
 }
