@@ -141,8 +141,7 @@
 
 /* Search autocomplete
    ========================================================================== */
-
-.search--autocomplete {
+.search--autocomplete-wrapper {
   position: absolute;
   top: 7.5em;
   right: 1.25em;
@@ -157,7 +156,11 @@
   @include border-radius($border-radius);
 }
 
-.search--autocomplete-header {
+.autocomplete-suggestions {
+
+}
+
+.autocomplete-header {
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 1em;
   padding-bottom: 1em;
@@ -166,7 +169,7 @@
   font-weight: bold;
 }
 
-.search--autocomplete-link {
+.autocomplete-suggestion {
   border-bottom: 1px solid $border-color;
   display: block;
   margin-bottom: 1em;

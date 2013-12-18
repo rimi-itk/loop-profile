@@ -102,6 +102,7 @@
 <div class="search-block">
   <div class="search--inner">
     <?php print render($search); ?>
+    <div class="search--autocomplete-wrapper js-autocomplete-search"></div>
   </div>
 </div>
 <?php endif ?>
