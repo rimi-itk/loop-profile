@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function loop_search_form_search_block_form_alter(&$form, $form_state) {
+  // Add our JS class to form.
+  array_push($form['search_block_form']['#attributes']['class'], 'js-autocomplete-search--field');
+
+  // Add javascript to autocomplete scripts.
+  drupal_add_js(drupal_get_path('module', 'loop_search') .'/jquery.autocomplete.js');
+  drupal_add_js(drupal_get_path('module', 'loop_search') .'/loop_search.js');
+
+  // Add path to autocomplete.
+  drupal_add_js(array('loop_search_autocomplete' => array('path' => url('loop_search_autocomplete'))), 'setting');
+}
+
+/**
+ * Implements hook_menu().
+ */
+function loop_search_menu() {
+  $items['loop_search_autocomplete'] = array(
+    'page callback' => 'loop_search_suggest_entries',
+    'access callback' => 'user_access',
+    'access arguments' => array('search content'),
+    'type' => MENU_CALLBACK,
+  );
+  return $items;
+}
+
+function loop_search_suggest_entries() {
+  // Get query from autocomplete search.
+  $keys = $_GET['query'];
+
+  // Get default conditions.
+  $searchConditions = apachesolr_search_conditions();
+
+  // Load the Solr core search.
+  $search_page = apachesolr_search_page_load('core_search');
+
+  // Set this to 5 items, per design.
+  $search_page['settings']['apachesolr_search_per_page'] = 5;
+
+  // Make the search.
+  $suggestions = apachesolr_search_search_results($keys, $searchConditions, $search_page);
+
+  // Build data array
+  $data = array();
+  foreach ($suggestions as $suggestion) {
+    $data[] = array(
+      // Truncate snippet.
+      'value' => truncate_utf8($suggestion['snippet'], 100, FALSE, TRUE),
+      'data' => $suggestion['link'],
+    );
+  }
+
+  // Output to JSON.
+  drupal_json_output(array('suggestions' => $data));
+}
