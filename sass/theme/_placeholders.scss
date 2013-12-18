@@ -112,3 +112,9 @@
 
   content: '\e80c';
 }
+
+%icon-arrow-right {
+  @extend %icon-base;
+
+  content: '\e807';
+}

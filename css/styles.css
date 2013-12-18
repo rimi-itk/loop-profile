@@ -368,13 +368,20 @@ table {
  * @author magnify
  */
 /* line 10, ../sass/base/_base.scss */
+html {
+  height: 100%;
+}
+
+/* line 14, ../sass/base/_base.scss */
 body {
+  position: relative;
+  min-height: 100%;
   background-color: #fff;
   color: #333;
   font: 1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 22, ../sass/base/_base.scss */
+/* line 30, ../sass/base/_base.scss */
 h1,
 h2,
 h3,
@@ -391,44 +398,44 @@ h6 {
   text-rendering: optimizeLegibility;
 }
 
-/* line 37, ../sass/base/_base.scss */
+/* line 45, ../sass/base/_base.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 42, ../sass/base/_base.scss */
+/* line 50, ../sass/base/_base.scss */
 em {
   font-style: italic;
 }
-/* line 45, ../sass/base/_base.scss */
+/* line 53, ../sass/base/_base.scss */
 em strong {
   font-weight: bold;
 }
 
 /* Links
    ================================================================================================================== */
-/* line 56, ../sass/base/_base.scss */
+/* line 64, ../sass/base/_base.scss */
 a:link {
   color: #41ab51;
   text-decoration: underline;
 }
-/* line 61, ../sass/base/_base.scss */
+/* line 69, ../sass/base/_base.scss */
 a:visited {
   color: #3a9948;
 }
-/* line 65, ../sass/base/_base.scss */
+/* line 73, ../sass/base/_base.scss */
 a:hover {
   color: #33863f;
   text-decoration: none;
 }
-/* line 70, ../sass/base/_base.scss */
+/* line 78, ../sass/base/_base.scss */
 a:focus {
   color: #33863f;
 }
 
 /* Paragraph
    ================================================================================================================== */
-/* line 79, ../sass/base/_base.scss */
+/* line 87, ../sass/base/_base.scss */
 p {
   margin-top: 0;
   margin-bottom: 1.5em;
@@ -436,7 +443,7 @@ p {
 
 /* Image
    ================================================================================================================== */
-/* line 88, ../sass/base/_base.scss */
+/* line 96, ../sass/base/_base.scss */
 img {
   display: inline;
   height: auto;
@@ -446,7 +453,7 @@ img {
 
 /* States
    ========================================================================== */
-/* line 99, ../sass/base/_base.scss */
+/* line 107, ../sass/base/_base.scss */
 .is-hidden {
   display: none;
 }
@@ -528,7 +535,7 @@ img {
 }
 
 /* line 49, ../sass/theme/_placeholders.scss */
-.search-result--lead, .search-result--item, .comments--comment {
+.nav-mobile--link, .search-result--lead, .search-result--item, .comments--comment {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 1em;
   padding-bottom: 1em;
@@ -544,14 +551,14 @@ img {
 /* Icons
    ================================================================================================================== */
 /* line 65, ../sass/theme/_placeholders.scss */
-.flag.is-sticky:before, .messages.status:before, .flag:before, .at-term:after, .messages.error:before, .search-result--comments:before, .messages.warning:before {
+.flag.is-sticky:before, .messages.status:before, .flag:before, .at-term:after, .messages.error:before, .search-result--comments:before, .messages.warning:before, .nav-mobile--link:before {
   display: inline-block;
   font-family: "loop-icons";
   line-height: 100%;
 }
 
 /* line 72, ../sass/theme/_placeholders.scss */
-.search-result--comments:before, .flag:before, .messages.status:before, .messages.warning:before, .messages.error:before {
+.nav-mobile--link:before, .search-result--comments:before, .flag:before, .messages.status:before, .messages.warning:before, .messages.error:before {
   margin-right: .35em;
 }
 
@@ -590,22 +597,25 @@ img {
   content: '\e80c';
 }
 
+/* line 116, ../sass/theme/_placeholders.scss */
+.nav-mobile--link:before {
+  content: '\e807';
+}
+
 /**
  * Forms
- *
- * This is an example file
  *
  * @author magnify
  */
 /* Basic styling
    ================================================================================================================== */
-/* line 15, ../sass/theme/_forms.scss */
+/* line 13, ../sass/theme/_forms.scss */
 input,
 textarea {
   font: 1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 29, ../sass/theme/_forms.scss */
+/* line 27, ../sass/theme/_forms.scss */
 input[type="text"],
 input[type="password"],
 input[type="date"],
@@ -633,7 +643,7 @@ textarea {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 39, ../sass/theme/_forms.scss */
+/* line 37, ../sass/theme/_forms.scss */
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="date"]:focus,
@@ -648,7 +658,7 @@ textarea:focus {
   border: 1px solid #737373;
   color: #404040;
 }
-/* line 45, ../sass/theme/_forms.scss */
+/* line 43, ../sass/theme/_forms.scss */
 input[type="text"][disabled],
 input[type="password"][disabled],
 input[type="date"][disabled],
@@ -669,7 +679,7 @@ textarea[disabled] {
 
 /* Labels
    ================================================================================================================== */
-/* line 62, ../sass/theme/_forms.scss */
+/* line 60, ../sass/theme/_forms.scss */
 label {
   display: block;
   margin-bottom: .25em;
@@ -683,12 +693,12 @@ label {
  * Based on Drupal's form markup, guidelines are not used
  *
    ================================================================================================================== */
-/* line 79, ../sass/theme/_forms.scss */
+/* line 77, ../sass/theme/_forms.scss */
 .form-module {
   clear: both;
 }
 
-/* line 83, ../sass/theme/_forms.scss */
+/* line 81, ../sass/theme/_forms.scss */
 .form-item {
   border: 1px solid #f2f2f2;
   margin-bottom: 1.5em;
@@ -700,18 +710,18 @@ label {
   border-radius: 0.4em;
 }
 
-/* line 91, ../sass/theme/_forms.scss */
+/* line 89, ../sass/theme/_forms.scss */
 .form-item-description {
   padding-top: .5em;
   color: #b3b3b3;
 }
 
-/* line 97, ../sass/theme/_forms.scss */
+/* line 95, ../sass/theme/_forms.scss */
 .form-required {
   color: #ff6138;
 }
 
-/* line 101, ../sass/theme/_forms.scss */
+/* line 99, ../sass/theme/_forms.scss */
 .form-select {
   border: 1px solid #cccccc;
   padding: .75em;
@@ -731,28 +741,28 @@ label {
   box-sizing: border-box;
 }
 
-/* line 118, ../sass/theme/_forms.scss */
+/* line 116, ../sass/theme/_forms.scss */
 .form-textarea-question {
   height: 6em;
 }
 @media only screen and (min-width: 30em) {
-  /* line 118, ../sass/theme/_forms.scss */
+  /* line 116, ../sass/theme/_forms.scss */
   .form-textarea-question {
     height: 3.25em;
   }
 }
 
-/* line 126, ../sass/theme/_forms.scss */
+/* line 124, ../sass/theme/_forms.scss */
 .form-actions {
   text-align: right;
 }
 
-/* line 130, ../sass/theme/_forms.scss */
+/* line 128, ../sass/theme/_forms.scss */
 .form-submit {
   width: 100%;
 }
 @media only screen and (min-width: 30em) {
-  /* line 130, ../sass/theme/_forms.scss */
+  /* line 128, ../sass/theme/_forms.scss */
   .form-submit {
     width: auto;
   }
@@ -822,6 +832,7 @@ label {
 
 /* line 19, ../sass/theme/_layout.scss */
 .header--inner {
+  position: relative;
   min-height: 5em;
   padding-right: 1em;
   padding-left: 1em;
@@ -829,7 +840,7 @@ label {
 
 /* Logo
    ================================================================================================================== */
-/* line 32, ../sass/theme/_layout.scss */
+/* line 33, ../sass/theme/_layout.scss */
 .logo--link {
   display: inline-block;
   max-width: 100%;
@@ -837,221 +848,195 @@ label {
   text-align: center;
 }
 @media only screen and (min-width: 18.75em) {
-  /* line 32, ../sass/theme/_layout.scss */
+  /* line 33, ../sass/theme/_layout.scss */
   .logo--link {
     max-width: 5.625em;
   }
 }
 
-/* line 44, ../sass/theme/_layout.scss */
+/* line 45, ../sass/theme/_layout.scss */
 .logo--image {
   max-width: 75%;
   margin-right: auto;
   margin-left: auto;
 }
 @media only screen and (min-width: 18.75em) {
-  /* line 44, ../sass/theme/_layout.scss */
+  /* line 45, ../sass/theme/_layout.scss */
   .logo--image {
     max-width: 100%;
   }
 }
 
-/* Navigation
+/* Layouts
    ================================================================================================================== */
-/* line 59, ../sass/theme/_layout.scss */
+/* line 60, ../sass/theme/_layout.scss */
+.layout--wrapper {
+  margin-bottom: 0;
+}
+/* line 66, ../sass/theme/_layout.scss */
+.layout--wrapper .layout--inner:last-child {
+  margin-bottom: 0;
+}
+
+/* line 71, ../sass/theme/_layout.scss */
+.layout--inner {
+  margin-bottom: 1.5em;
+}
+
+/**
+ * Navigation
+ *
+ * @author magnify
+ */
+/* line 8, ../sass/theme/_nav.scss */
 .nav {
+  position: absolute;
+  right: .75em;
+  bottom: .75em;
   text-align: center;
 }
-@media only screen and (min-width: 18.75em) {
-  /* line 59, ../sass/theme/_layout.scss */
+@media only screen and (min-width: 43em) {
+  /* line 8, ../sass/theme/_nav.scss */
   .nav {
-    padding-top: 1em;
-    padding-bottom: 1em;
-    text-align: right;
-    float: right;
-    width: 83.33333%;
-    margin-right: 0%;
-    margin-left: -83.33333%;
-    padding-left: 15px;
-    padding-right: 15px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-    word-wrap: break-word;
-    _display: inline;
-    _overflow: hidden;
-    _overflow-y: visible;
-    /* Padding should come from parent element, so let's make sure left and right padding is removed */
-    padding-left: 0;
-    padding-right: 0;
+    right: 1em;
+    bottom: 0;
   }
 }
 
-/* Using a variable so we only have to set the size once */
-/* line 78, ../sass/theme/_layout.scss */
-.nav--link, .nav--link-mail, .nav--link-menu {
-  display: block;
+/* line 22, ../sass/theme/_nav.scss */
+.nav--link, .nav--toggle-mobile-nav {
   position: relative;
-  height: 2.5em;
-  width: 2.5em;
-  margin-right: auto;
-  margin-bottom: 1em;
-  margin-left: auto;
+  display: block;
+  height: 3.5em;
+  margin-left: .25em;
+  width: 3.5em;
   background-color: rgba(255, 255, 255, 0.25);
-  font-size: 125%;
   line-height: 2.5em;
   text-align: center;
-  vertical-align: middle;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
   -o-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 94, ../sass/theme/_layout.scss */
-.nav--link:link, .nav--link-mail:link, .nav--link-menu:link, .nav--link:visited, .nav--link-mail:visited, .nav--link-menu:visited {
+/* line 35, ../sass/theme/_nav.scss */
+.nav--link:link, .nav--toggle-mobile-nav:link, .nav--link:visited, .nav--toggle-mobile-nav:visited {
   color: white;
   text-decoration: none;
 }
-/* line 99, ../sass/theme/_layout.scss */
-.nav--link:hover, .nav--link-mail:hover, .nav--link-menu:hover {
+/* line 40, ../sass/theme/_nav.scss */
+.nav--link:hover, .nav--toggle-mobile-nav:hover {
   background-color: rgba(255, 255, 255, 0.5);
 }
-/* line 103, ../sass/theme/_layout.scss */
-.nav--link i[class^="icon-"], .nav--link-mail i[class^="icon-"], .nav--link-menu i[class^="icon-"] {
-  vertical-align: bottom;
-}
 @media only screen and (min-width: 18.75em) {
-  /* line 78, ../sass/theme/_layout.scss */
-  .nav--link, .nav--link-mail, .nav--link-menu {
+  /* line 22, ../sass/theme/_nav.scss */
+  .nav--link, .nav--toggle-mobile-nav {
     display: inline-block;
-    margin-bottom: 0;
-    margin-left: .25em;
   }
 }
 @media only screen and (min-width: 22.5em) {
-  /* line 78, ../sass/theme/_layout.scss */
-  .nav--link, .nav--link-mail, .nav--link-menu {
+  /* line 22, ../sass/theme/_nav.scss */
+  .nav--link, .nav--toggle-mobile-nav {
     margin-left: 1em;
   }
 }
 @media only screen and (min-width: 43em) {
-  /* line 78, ../sass/theme/_layout.scss */
-  .nav--link, .nav--link-mail, .nav--link-menu {
-    padding-right: .75em;
-    padding-left: .75em;
+  /* line 22, ../sass/theme/_nav.scss */
+  .nav--link, .nav--toggle-mobile-nav {
+    padding-right: 1.25em;
+    padding-left: 1.25em;
+    height: auto;
     width: auto;
-    -webkit-border-radius: 0.4em;
-    -moz-border-radius: 0.4em;
-    -ms-border-radius: 0.4em;
-    -o-border-radius: 0.4em;
-    border-radius: 0.4em;
+    -webkit-border-radius: 0.4em 0.4em 0 0;
+    -moz-border-radius: 0.4em 0.4em 0 0;
+    -ms-border-radius: 0.4em 0.4em 0 0;
+    -o-border-radius: 0.4em 0.4em 0 0;
+    border-radius: 0.4em 0.4em 0 0;
   }
 }
 
-/* line 128, ../sass/theme/_layout.scss */
+@media only screen and (min-width: 43em) {
+  /* line 64, ../sass/theme/_nav.scss */
+  .nav--toggle-mobile-nav {
+    display: none;
+  }
+}
+
+/* line 72, ../sass/theme/_nav.scss */
+.nav--icon {
+  max-width: 1.5em;
+}
+@media only screen and (min-width: 43em) {
+  /* line 72, ../sass/theme/_nav.scss */
+  .nav--icon {
+    display: none;
+  }
+}
+
+/* line 80, ../sass/theme/_nav.scss */
 .nav--text {
   display: none;
 }
 @media only screen and (min-width: 43em) {
-  /* line 128, ../sass/theme/_layout.scss */
+  /* line 80, ../sass/theme/_nav.scss */
   .nav--text {
     display: inline;
-    font-size: 85%;
   }
 }
 
-/* Make the mail icon bigger */
-/* line 142, ../sass/theme/_layout.scss */
-.nav--link-mail i[class^="icon-"] {
-  font-size: 125%;
-  line-height: 190%;
-}
-
-/* Make the menu icon bigger */
-/* line 155, ../sass/theme/_layout.scss */
-.nav--link-menu i[class^="icon-"] {
-  font-size: 150%;
-  line-height: 160%;
-}
-
-/* Layouts
+/* Mobile navigation
+ *
+ * See specific IE9 styles in separate stylesheet
+ *
    ================================================================================================================== */
-/* line 169, ../sass/theme/_layout.scss */
-.layout--wrapper .layout--inner:last-child {
-  margin-bottom: 0;
-}
-
-/* line 174, ../sass/theme/_layout.scss */
-.layout--inner {
-  margin-bottom: 1.5em;
-}
-
-/**
- * Debugging
- *
- * Contains debugging stuff, should only be used in development
- *
- * @author magnify
- */
-/* Add padding bottom to body because of the fixed debug container */
-/* line 11, ../sass/misc/_debug.scss */
-body {
-  padding-bottom: 14em;
-}
-
-/* line 16, ../sass/misc/_debug.scss */
-.debug {
-  padding-top: 2em;
-  padding-bottom: 2em;
-  position: fixed;
+/* line 96, ../sass/theme/_nav.scss */
+.nav-mobile {
+  position: absolute;
+  top: 0;
+  right: 0;
   bottom: 0;
-  width: 100%;
+  overflow-y: auto;
   z-index: 99;
+  padding: 1.5em;
+  height: 100%;
+  width: 76%;
   background-color: #41ab51;
+  -webkit-backface-visibility: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-box-shadow: 5px 0 8px #33863f inset;
+  -moz-box-shadow: 5px 0 8px #33863f inset;
+  box-shadow: 5px 0 8px #33863f inset;
+  -webkit-transform: translate3d(100%, 0, 0);
+  -moz-transform: translate3d(100%, 0, 0);
+  -ms-transform: translate3d(100%, 0, 0);
+  -o-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
 }
-
-/* line 27, ../sass/misc/_debug.scss */
-.debug--header {
-  padding-right: 1em;
-  padding-left: 1em;
-}
-
-/* Breakpoints
-   ================================================================================================================== */
-/* line 37, ../sass/misc/_debug.scss */
-.breakpoint-1, .breakpoint-2, .breakpoint-3 {
-  display: none;
-  margin-top: 1em;
-  margin-bottom: 1em;
-  background-color: black;
+/* line 117, ../sass/theme/_nav.scss */
+.nav-mobile a:link {
   color: white;
-  text-align: center;
+  text-decoration: none;
+}
+/* line 122, ../sass/theme/_nav.scss */
+.nav-mobile a:visited {
+  color: white;
+}
+/* line 126, ../sass/theme/_nav.scss */
+.nav-mobile a:hover {
+  color: white;
+  text-decoration: underline;
+}
+/* line 131, ../sass/theme/_nav.scss */
+.nav-mobile a:focus {
+  color: white;
 }
 
-@media only screen and (min-width: 18.75em) {
-  /* line 48, ../sass/misc/_debug.scss */
-  .breakpoint-1 {
-    display: block;
-    width: 18.75em;
-  }
-}
-
-@media only screen and (min-width: 22.5em) {
-  /* line 57, ../sass/misc/_debug.scss */
-  .breakpoint-2 {
-    display: block;
-    width: 22.5em;
-  }
-}
-
-@media only screen and (min-width: 28em) {
-  /* line 66, ../sass/misc/_debug.scss */
-  .breakpoint-3 {
-    display: block;
-    width: 28em;
-  }
+/* line 137, ../sass/theme/_nav.scss */
+.nav-mobile--link {
+  border-bottom-color: #5dc26d;
+  display: block;
 }
 
 /**
@@ -1110,7 +1095,13 @@ body {
 .search--field-wrapper {
   position: relative;
 }
-/* line 26, ../sass/modules/_search.scss */
+/* line 27, ../sass/modules/_search.scss */
+.search--field-wrapper .form-item {
+  border: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+/* line 33, ../sass/modules/_search.scss */
 .search--field-wrapper .search--icon {
   position: absolute;
   top: 1.2em;
@@ -1118,7 +1109,7 @@ body {
   color: #b3b3b3;
   font-size: 200%;
 }
-/* line 35, ../sass/modules/_search.scss */
+/* line 42, ../sass/modules/_search.scss */
 .search--field-wrapper .search--field {
   margin-bottom: .75em;
   padding-top: 1.25em;
@@ -1128,12 +1119,12 @@ body {
   height: 65px;
   background-color: white;
 }
-/* line 46, ../sass/modules/_search.scss */
+/* line 53, ../sass/modules/_search.scss */
 .search--field-wrapper .search--field:focus {
   outline: none;
 }
 @media only screen and (min-width: 28em) {
-  /* line 52, ../sass/modules/_search.scss */
+  /* line 59, ../sass/modules/_search.scss */
   .search--field-wrapper .search--field {
     padding-right: 6em;
     width: 90%;
@@ -1145,13 +1136,13 @@ body {
   }
 }
 
-/* line 61, ../sass/modules/_search.scss */
+/* line 68, ../sass/modules/_search.scss */
 .search--button {
   height: 65px;
   width: 100%;
 }
 @media only screen and (min-width: 28em) {
-  /* line 61, ../sass/modules/_search.scss */
+  /* line 68, ../sass/modules/_search.scss */
   .search--button {
     position: absolute;
     bottom: 0;
@@ -1170,43 +1161,43 @@ body {
 
 /* Search result
    ========================================================================== */
-/* line 99, ../sass/modules/_search.scss */
+/* line 106, ../sass/modules/_search.scss */
 .search-result--link {
   display: block;
   margin-bottom: .5em;
 }
-/* line 104, ../sass/modules/_search.scss */
+/* line 111, ../sass/modules/_search.scss */
 .search-result--link:link, .search-result--link:visited {
   text-decoration: none;
 }
-/* line 109, ../sass/modules/_search.scss */
+/* line 116, ../sass/modules/_search.scss */
 .search-result--link:hover, .search-result--link:active {
   text-decoration: underline;
 }
 
-/* line 114, ../sass/modules/_search.scss */
+/* line 121, ../sass/modules/_search.scss */
 .search-result--comments {
   display: block;
 }
-/* line 118, ../sass/modules/_search.scss */
+/* line 125, ../sass/modules/_search.scss */
 .search-result--comments:link, .search-result--comments:visited {
   color: #737373;
   text-decoration: none;
 }
-/* line 124, ../sass/modules/_search.scss */
+/* line 131, ../sass/modules/_search.scss */
 .search-result--comments:hover, .search-result--comments:active {
   color: #404040;
 }
 
 /* Search autocomplete
    ========================================================================== */
-/* line 138, ../sass/modules/_search.scss */
+/* line 145, ../sass/modules/_search.scss */
 .search--autocomplete {
   position: absolute;
-  top: 7.5em;
+  top: 12.25em;
   right: 1.25em;
   left: 1.25em;
-  z-index: 99;
+  z-index: 90;
   border: 1px solid #e6e6e6;
   padding: 1em;
   background-color: white;
@@ -1216,8 +1207,14 @@ body {
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
 }
+@media only screen and (min-width: 28em) {
+  /* line 145, ../sass/modules/_search.scss */
+  .search--autocomplete {
+    top: 7.5em;
+  }
+}
 
-/* line 153, ../sass/modules/_search.scss */
+/* line 164, ../sass/modules/_search.scss */
 .search--autocomplete-header {
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 1em;
@@ -1226,18 +1223,18 @@ body {
   font-weight: bold;
 }
 
-/* line 162, ../sass/modules/_search.scss */
+/* line 173, ../sass/modules/_search.scss */
 .search--autocomplete-link {
   border-bottom: 1px solid #e6e6e6;
   display: block;
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 171, ../sass/modules/_search.scss */
+/* line 182, ../sass/modules/_search.scss */
 .search--autocomplete-link:link, .search--autocomplete-link:visited, .search--autocomplete-link:hover, .search--autocomplete-link:active {
   text-decoration: none;
 }
-/* line 175, ../sass/modules/_search.scss */
+/* line 186, ../sass/modules/_search.scss */
 .search--autocomplete-link:last-child {
   border-bottom: 0;
   margin-bottom: 0;
@@ -1497,7 +1494,34 @@ body {
  *
  * @author magnify
  */
-/* line 9, ../sass/modules/_page.scss */
+/* line 8, ../sass/modules/_page.scss */
+.page-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+/* line 15, ../sass/modules/_page.scss */
+.page-wrapper.is-moved-left .page-inner {
+  -webkit-transform: translate3d(-76%, 0, 0);
+  -moz-transform: translate3d(-76%, 0, 0);
+  -ms-transform: translate3d(-76%, 0, 0);
+  -o-transform: translate3d(-76%, 0, 0);
+  transform: translate3d(-76%, 0, 0);
+}
+
+/* line 21, ../sass/modules/_page.scss */
+.page-inner {
+  position: relative;
+  min-height: 100%;
+  width: 100%;
+  -webkit-transition: -webkit-transform 500ms ease;
+  -webkit-transition-delay: 0s;
+  -moz-transition: -moz-transform 500ms ease 0s;
+  -o-transition: -o-transform 500ms ease 0s;
+  transition: transform 500ms ease 0s;
+}
+
+/* line 30, ../sass/modules/_page.scss */
 .page-title {
   font-size: 200%;
   font-weight: bold;
@@ -1538,23 +1562,6 @@ body {
   .at-add-btn {
     width: auto;
   }
-}
-
-/**
- * Loop frontpage module
- *
- * Dependencies:
- * Loop_frontpage feature
- *
- * @author zorp
- */
-/* Extending from search module
-   ========================================================================== */
-/* line 20, ../sass/drupal-modules/_loop-frontpage.scss */
-.search-block .form-item {
-  border: 0;
-  margin-bottom: 0;
-  padding: 0;
 }
 
 /**

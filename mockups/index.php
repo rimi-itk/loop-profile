@@ -6,29 +6,12 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
 </head>
 
 <body>
-<?php include 'inc/debug.inc'; ?>
-
-<header class="header" role="banner">
-  <div class="header--inner">
-    <a href="/" class="logo--link"><img src="<?php echo $path_to_theme; ?>/logo.png" alt="" class="logo--image"></a>
-    <nav class="nav">
-      <a href="#" title="Min konto" class="nav--link">
-        <i class="icon-user"></i>
-        <span class="nav--text">Min konto</span>
-      </a>
-      <a href="#" title="Notifikationer" class="nav--link-mail">
-        <i class="icon-mail"></i>
-        <span class="nav--text">Notifikationer</span>
-        <span class="notification">3</span>
-      </a>
-      <a href="#" title="Menu" class="nav--link-menu">
-        <i class="icon-menu"></i>
-        <span class="nav--text">Menu</span>
-      </a>
-    </nav>
+<div class="page-wrapper js-page-wrapper">
+  <div class="page-inner">
+    <?php include 'inc/header.inc'; ?>
+    <?php $is_front = TRUE; ?>
+    <?php include 'inc/search-block.inc'; ?>
   </div>
-</header>
-<?php $is_front = TRUE; ?>
-<?php include 'inc/search-block.inc'; ?>
+</div>
 </body>
 </html>

@@ -143,10 +143,10 @@
    ========================================================================== */
 .search--autocomplete-wrapper {
   position: absolute;
-  top: 7.5em;
+  top: 12.25em;
   right: 1.25em;
   left: 1.25em;
-  z-index: 99;
+  z-index: 90;
 
   border: 1px solid $border-color;
   padding: 1em;
@@ -154,6 +154,10 @@
   background-color: $white;
 
   @include border-radius($border-radius);
+
+  @include breakpoint($breakpoint-3) {
+    top: 7.5em;
+  }
 }
 
 .autocomplete-suggestions {

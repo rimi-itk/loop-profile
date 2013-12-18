@@ -109,16 +109,9 @@
 
 <div class="layout--wrapper">
   <div class="layout--inner">
-    <?php if ($breadcrumb): ?>
-      <div id="breadcrumb"><?php print $breadcrumb; ?></div>
-    <?php endif; ?>
-
     <?php if ($messages): ?>
-      <div class="messages">
-        <?php print $messages; ?>
-      </div>
+      <?php print $messages; ?>
     <?php endif; ?>
-
     <?php print render($title_prefix); ?>
     <?php if ($title): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
     <?php print render($title_suffix); ?>

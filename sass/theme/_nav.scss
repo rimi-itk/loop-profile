@@ -1,0 +1,148 @@
+/**
+ * Navigation
+ *
+ * @author magnify
+ */
+
+
+.nav {
+  position: absolute;
+  right: .75em;
+  bottom: .75em;
+
+  text-align: center;
+
+  @include breakpoint($breakpoint-4) {
+    right: 1em;
+    bottom: 0;
+  }
+}
+
+
+.nav--link {
+  position: relative;
+
+  display: block;
+  height: 3.5em;
+  margin-left: .25em;
+  width: 3.5em;
+
+  background-color: transparentize($white, .75);
+  line-height: 2.5em;
+  text-align: center;
+
+  &:link,
+  &:visited {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: transparentize($white, .5);
+  }
+
+  @include border-radius(100%);
+
+  @include breakpoint($breakpoint-1) {
+    display: inline-block;
+  }
+
+  @include breakpoint($breakpoint-2) {
+    margin-left: 1em;
+  }
+
+  @include breakpoint($breakpoint-4) {
+    padding-right: 1.25em;
+    padding-left: 1.25em;
+    height: auto;
+    width: auto;
+
+    @include border-radius($border-radius $border-radius 0 0);
+  }
+}
+
+.nav--toggle-mobile-nav {
+  @extend .nav--link;
+
+  @include breakpoint($breakpoint-4) {
+    display: none;
+  }
+}
+
+.nav--icon {
+  max-width: 1.5em;
+
+  @include breakpoint($breakpoint-4) {
+    display: none;
+  }
+}
+
+.nav--text {
+  display: none;
+
+  @include breakpoint($breakpoint-4) {
+    display: inline;
+  }
+}
+
+
+
+/* Mobile navigation
+ *
+ * See specific IE9 styles in separate stylesheet
+ *
+   ================================================================================================================== */
+
+.nav-mobile {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 99;
+
+  padding: 1.5em;
+  height: 100%;
+  width: 76%;
+
+  background-color: $green;
+
+  -webkit-backface-visibility: hidden;
+
+  @include box-sizing(border-box);
+  @include box-shadow(5px 0 8px darken($green, 10%) inset);
+  @include transform(translate3d(100%, 0, 0));
+
+  a {
+    &:link {
+      color: $white;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: $white;
+    }
+
+    &:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+
+    &:focus {
+      color: $white;
+    }
+  }
+}
+
+.nav-mobile--link {
+  @extend %element-spacing;
+
+  border-bottom-color: $green-light;
+
+  display: block;
+
+  &:before {
+    @extend %icon-arrow-right;
+    @extend %icon-before;
+  }
+}
