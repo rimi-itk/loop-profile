@@ -74,6 +74,9 @@ projects[memcache][version] = "1.0"
 projects[menu_block][subdir] = "contrib"
 projects[menu_block][version] = "2.3"
 
+projects[menu_token][subdir] = "contrib"
+projects[menu_token][version] = "1.0-beta5"
+
 projects[messaging][subdir] = "contrib"
 projects[messaging][version] = "1.0-alpha2"
 
