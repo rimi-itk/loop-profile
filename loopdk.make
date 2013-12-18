@@ -157,6 +157,11 @@ projects[loop_frontend][download][type] = "git"
 projects[loop_frontend][download][url] = "git@github.com:loopdk/loop_frontend.git"
 projects[loop_frontend][branch] = "development"
 
+projects[loop_search][type] = "module"
+projects[loop_search][download][type] = "git"
+projects[loop_search][download][url] = "git@github.com:loopdk/loop_search.git"
+projects[loop_search][branch] = "development"
+
 ; LOOP features
 projects[loop_permissions][type] = "module"
 projects[loop_permissions][subdir] = "features"
