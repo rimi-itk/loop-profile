@@ -74,6 +74,9 @@ projects[memcache][version] = "1.0"
 projects[menu_block][subdir] = "contrib"
 projects[menu_block][version] = "2.3"
 
+projects[menu_token][subdir] = "contrib"
+projects[menu_token][version] = "1.0-beta5"
+
 projects[messaging][subdir] = "contrib"
 projects[messaging][version] = "1.0-alpha2"
 
@@ -223,3 +226,18 @@ libraries[ckeditor][download][type] = "get"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%203.6.6.1/ckeditor_3.6.6.1.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][destination] = "libraries"
+
+libraries[respondjs][download][type] = "get"
+libraries[respondjs][download][url] = "https://raw.github.com/scottjehl/Respond/master/dest/respond.min.js"
+libraries[respondjs][directory_name] = "respondjs"
+libraries[respondjs][destination] = "libraries"
+
+libraries[html5shiv][download][type] = "get"
+libraries[html5shiv][download][url] = "https://raw.github.com/aFarkas/html5shiv/master/dist/html5shiv.js"
+libraries[html5shiv][directory_name] = "html5shiv"
+libraries[html5shiv][destination] = "libraries"
+
+libraries[html5shiv_printshiv][download][type] = "get"
+libraries[html5shiv_printshiv][download][url] = "https://raw.github.com/aFarkas/html5shiv/master/dist/html5shiv-printshiv.js"
+libraries[html5shiv_printshiv][directory_name] = "html5shiv"
+libraries[html5shiv_printshiv][destination] = "libraries"
