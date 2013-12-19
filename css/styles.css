@@ -1001,7 +1001,6 @@ label {
   height: 100%;
   width: 76%;
   background-color: #41ab51;
-  -webkit-backface-visibility: hidden;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -1013,27 +1012,32 @@ label {
   -ms-transform: translate3d(100%, 0, 0);
   -o-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
-/* line 117, ../sass/theme/_nav.scss */
+/* line 116, ../sass/theme/_nav.scss */
 .nav-mobile a:link {
   color: white;
   text-decoration: none;
 }
-/* line 122, ../sass/theme/_nav.scss */
+/* line 121, ../sass/theme/_nav.scss */
 .nav-mobile a:visited {
   color: white;
 }
-/* line 126, ../sass/theme/_nav.scss */
+/* line 125, ../sass/theme/_nav.scss */
 .nav-mobile a:hover {
   color: white;
   text-decoration: underline;
 }
-/* line 131, ../sass/theme/_nav.scss */
+/* line 130, ../sass/theme/_nav.scss */
 .nav-mobile a:focus {
   color: white;
 }
 
-/* line 137, ../sass/theme/_nav.scss */
+/* line 136, ../sass/theme/_nav.scss */
 .nav-mobile--link {
   border-bottom-color: #5dc26d;
   display: block;
