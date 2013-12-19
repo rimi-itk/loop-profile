@@ -46,8 +46,8 @@ function loop_search_menu() {
  *   JSON with suggestions.
  */
 function loop_search_suggest_entries() {
-  // Get query from autocomplete search.
-  $keys = $_GET['query'];
+  // Validate.
+  $keys = check_plain($_GET['query']);
 
   // Get default conditions.
   $searchConditions = apachesolr_search_conditions();
