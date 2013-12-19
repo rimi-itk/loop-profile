@@ -1,4 +1,10 @@
 /**
+ * @file
+ * Autocomplete attachement for search in Apache Solr.
+ */
+
+
+/**
  * Adds the custom autocomplete widget behavior.
  */
 Drupal.behaviors.loop_search = {

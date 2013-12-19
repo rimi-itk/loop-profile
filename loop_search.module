@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Autcomplete Apache Solr search module.
+ */
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function loop_search_form_search_block_form_alter(&$form, $form_state) {
@@ -28,6 +33,12 @@ function loop_search_menu() {
   return $items;
 }
 
+/**
+ * Callback to search in Apache Solr for suggestions.
+ *
+ * @return string
+ *   JSON with suggestions.
+ */
 function loop_search_suggest_entries() {
   // Get query from autocomplete search.
   $keys = $_GET['query'];
