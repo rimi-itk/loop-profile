@@ -13,11 +13,17 @@ function loop_search_form_search_block_form_alter(&$form, $form_state) {
   array_push($form['search_block_form']['#attributes']['class'], 'js-autocomplete-search--field');
 
   // Add javascript to autocomplete scripts.
-  drupal_add_js(drupal_get_path('module', 'loop_search') .'/jquery.autocomplete.js');
-  drupal_add_js(drupal_get_path('module', 'loop_search') .'/loop_search.js');
+  $form['#attached']['js'] = array(
+    drupal_get_path('module', 'loop_search') .'/jquery.autocomplete.js',
+    drupal_get_path('module', 'loop_search') .'/loop_search.js',
+  );
 
   // Add path to autocomplete.
-  drupal_add_js(array('loop_search_autocomplete' => array('path' => url('loop_search_autocomplete'))), 'setting');
+  $settings = array('path' => url('loop_search_autocomplete'));
+  $form['#attached']['js'][] = array(
+    'data' => array('loop_search_autocomplete' => $settings),
+    'type' => 'setting',
+  );
 }
 
 /**
