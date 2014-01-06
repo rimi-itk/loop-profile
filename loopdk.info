@@ -20,6 +20,7 @@ dependencies[] = entityreference
 dependencies[] = diff
 dependencies[] = facetapi
 dependencies[] = features
+dependencies[] = fe_block
 dependencies[] = field_group
 dependencies[] = flag
 dependencies[] = jquery_update
