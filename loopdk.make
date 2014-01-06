@@ -39,7 +39,7 @@ projects[features][subdir] = "contrib"
 projects[features][version] = "2.0"
 
 projects[features_extra][subdir] = "contrib"
-projects[features_extra][version] = "7.x-1.0-beta1"
+projects[features_extra][version] = "1.0-beta1"
 
 projects[field_group][subdir] = "contrib"
 projects[field_group][version] = "1.3"
