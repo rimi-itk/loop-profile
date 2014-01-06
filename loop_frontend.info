@@ -5,3 +5,6 @@ package = LOOP
 version = 7.x-1.0
 
 dependencies[] = libraries
+dependencies[] = fe_block
+features[fe_block_settings][] = system-main-menu
+features[features_api][] = api:2
