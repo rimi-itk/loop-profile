@@ -28,10 +28,10 @@ function loop_frontend_default_fe_block_settings() {
         'weight' => 0,
       ),
       'loop' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'header',
+        'status' => 1,
         'theme' => 'loop',
-        'weight' => 0,
+        'weight' => -13,
       ),
       'seven' => array(
         'region' => '',
