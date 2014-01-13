@@ -1,0 +1,13 @@
+name = Loop Navigation
+description = Provides a mobile friendly menu item in the main menu
+core = 7.x
+package = LOOP
+dependencies[] = features
+dependencies[] = loop_user
+dependencies[] = menu
+dependencies[] = special_menu_items
+features[features_api][] = api:2
+features[menu_custom][] = menu-loop-primary-menu
+features[menu_links][] = main-menu_menu:<nolink>
+features[menu_links][] = menu-loop-primary-menu_another-example-menu-item:<front>
+features[menu_links][] = menu-loop-primary-menu_example-menu-item:<front>
