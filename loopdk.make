@@ -122,6 +122,9 @@ projects[secure_permissions][download][type] = "git"
 projects[secure_permissions][download][url] = "http://git.drupal.org/project/secure_permissions.git"
 projects[secure_permissions][download][revision] = "ef5eec5"
 
+projects[special_menu_items][subdir] = "contrib"
+projects[special_menu_items][version] = "2.0"
+
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
 
@@ -205,6 +208,12 @@ projects[loop_flag][subdir] = "features"
 projects[loop_flag][download][type] = "git"
 projects[loop_flag][download][url] = "git@github.com:loopdk/loop_flag.git"
 projects[loop_flag][branch] = "development"
+
+projects[loop_navigation][type] = "module"
+projects[loop_navigation][subdir] = "features"
+projects[loop_navigation][download][type] = "git"
+projects[loop_navigation][download][url] = "git@github.com:loopdk/loop_navigation.git"
+projects[loop_navigation][branch] = "development"
 
 projects[loop_notification][type] = "module"
 projects[loop_notification][subdir] = "features"
