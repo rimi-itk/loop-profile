@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * Preprocess and Process Functions.
+ */
 
 /**
  * Override or insert variables into the html template.
@@ -11,7 +15,7 @@ function loop_preprocess_html(&$variables) {
  */
 function loop_preprocess_page(&$variables) {
   // Prepare system search block for page.tpl.
-  $variables['search'] = module_invoke('search', 'block_view', 'form');;
+  $variables['search'] = module_invoke('search', 'block_view', 'form');
 }
 
 
@@ -62,3 +66,48 @@ function loop_apachesolr_search_page_alter(&$build, $search_page) {
   }
 }
 
+/**
+ * Returns HTML for a wrapper for a menu sub-tree.
+ *
+ * Cleans up markup for main menu.
+ */
+function loop_menu_tree__main_menu($variables) {
+  return $variables['tree'];
+}
+
+/**
+ * Returns HTML for a menu link and submenu.
+ *
+ * Cleans up markup for main menu.
+ * And insert icons in front of spcific menu items.
+ */
+function loop_menu_link__main_menu(array $variables) {
+  // Path to theme variable.
+  $path_to_theme = drupal_get_path('theme', 'loop');
+
+  $element = $variables['element'];
+  $element['#attributes']['class'][] = 'nav--link';
+  $element['#localized_options']['attributes']['class'] = $element['#attributes']['class'];
+  // Make sure text string is treated as html by l function.
+  $element['#localized_options']['html'] = TRUE;
+
+  $output_title = '<span class="nav--text">' . $element['#title'] . '</span>';
+
+  // Insert menu icon for specific menu items.
+  if ($element['#href'] == 'user') {
+    $icon_img = $path_to_theme . '/images/nav-user-icon.png';
+  }
+  if (stristr($element['#href'], '/messages')) {
+    $icon_img = $path_to_theme . '/images/nav-mail-icon.png';
+  }
+  if (isset($icon_img)) {
+    $imgvars = array(
+      'path' => $icon_img,
+      'attributes' => array('class' => array('nav--icon')),
+    );
+    $output_title = theme_image($imgvars) . $output_title;
+  }
+
+  $output = l($output_title, $element['#href'], $element['#localized_options']);
+  return $output;
+}

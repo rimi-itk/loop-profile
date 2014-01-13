@@ -71,7 +71,6 @@
  * @ingroup themeable
  */
 ?>
-
 <header class="header" role="banner">
   <div class="header--inner">
     <?php if ($logo): ?>
@@ -80,21 +79,6 @@
       </a>
     <?php endif; ?>
     <?php print render($page['header']); ?>
-    <nav class="nav">
-      <a href="#" title="Min konto" class="nav--link">
-        <i class="icon-user"></i>
-        <span class="nav--text">Min konto</span>
-      </a>
-      <a href="#" title="Notifikationer" class="nav--link-mail">
-        <i class="icon-mail"></i>
-        <span class="nav--text">Notifikationer</span>
-        <span class="notification">3</span>
-      </a>
-      <a href="#" title="Menu" class="nav--link-menu">
-        <i class="icon-menu"></i>
-        <span class="nav--text">Menu</span>
-      </a>
-    </nav>
   </div>
 </header>
 
