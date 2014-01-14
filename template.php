@@ -87,6 +87,9 @@ function loop_menu_link__main_menu(array $variables) {
 
   $element = $variables['element'];
   $element['#attributes']['class'][] = 'nav--link';
+  if ($element['#href'] == '<nolink>') {
+    $element['#attributes']['class'][] = 'js-toggle-mobile-nav';
+  }
   $element['#localized_options']['attributes']['class'] = $element['#attributes']['class'];
   // Make sure text string is treated as html by l function.
   $element['#localized_options']['html'] = TRUE;
@@ -100,6 +103,9 @@ function loop_menu_link__main_menu(array $variables) {
   if (stristr($element['#href'], '/messages')) {
     $icon_img = $path_to_theme . '/images/nav-mail-icon.png';
   }
+  if ($element['#href'] == '<nolink>') {
+    $icon_img = $path_to_theme . '/images/nav-menu-icon.png';
+  }
   if (isset($icon_img)) {
     $imgvars = array(
       'path' => $icon_img,
@@ -107,6 +113,33 @@ function loop_menu_link__main_menu(array $variables) {
     );
     $output_title = theme_image($imgvars) . $output_title;
   }
+
+  $output = l($output_title, $element['#href'], $element['#localized_options']);
+  return $output;
+}
+
+/**
+ * Returns HTML for a wrapper for a menu sub-tree.
+ *
+ * Cleans up markup for Loop primary menu.
+ */
+function loop_menu_tree__menu_loop_primary_menu($variables) {
+  return $variables['tree'];
+}
+
+/**
+ * Returns HTML for a menu link and submenu.
+ *
+ * Cleans up markup for Loop primary menu.
+ */
+function loop_menu_link__menu_loop_primary_menu(array $variables) {
+  $element = $variables['element'];
+  $element['#attributes']['class'][] = 'nav-mobile--link';
+  $element['#localized_options']['attributes']['class'] = $element['#attributes']['class'];
+  // Make sure text string is treated as html by l function.
+  $element['#localized_options']['html'] = TRUE;
+
+  $output_title = '<span class="nav-mobile--text">' . $element['#title'] . '</span>';
 
   $output = l($output_title, $element['#href'], $element['#localized_options']);
   return $output;

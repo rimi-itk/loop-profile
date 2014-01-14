@@ -56,8 +56,12 @@
   <?php print $scripts; ?>
 </head>
 <body class="html-tpl <?php print $classes; ?>" <?php print $attributes;?>>
-  <?php print $page_top; ?>
-  <?php print $page; ?>
-  <?php print $page_bottom; ?>
+<div class="page-wrapper js-page-wrapper">
+  <div class="page-inner">
+    <?php print $page_top; ?>
+    <?php print $page; ?>
+    <?php print $page_bottom; ?>
+  </div>
+</div>
 </body>
 </html>

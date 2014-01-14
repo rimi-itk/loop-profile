@@ -8,6 +8,9 @@ regions[header] = Header
 regions[content] = Content
 regions[footer] = Footer
 
+; Scripts
+scripts[] = scripts/mobile-nav.js
+
 ; Stylesheets
 stylesheets[all][] = css/styles.css
 stylesheets[all][] = icons/loop-icons.css
