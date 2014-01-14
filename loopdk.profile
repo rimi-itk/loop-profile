@@ -34,6 +34,12 @@ if (!function_exists("system_form_install_configure_form_alter")) {
  * else the task specifying a form may not be available on form submit.
  */
 function loopdk_install_tasks(&$install_state) {
+
+  // Clean up if were finished.
+  if ($install_state['installation_finished']) {
+    loopdk_final_settings();
+  }
+
   $ret = array(
     // Update translations.
     'loopdk_import_translation' => array(
@@ -213,5 +219,35 @@ function loopdk_setup_apache_solr() {
       'settings' => $facet['settings'],
     ))
     ->execute();
+  }
+}
+
+function loopdk_final_settings() {
+  // Revert features to ensure they are all installed as default.
+  $features = array(
+    'loop_frontend',
+    'loop_user',
+  );
+  loopdk_features_revert($features);
+}
+
+/**
+ * Reverts a given set of feature modules.
+ *
+ * @param array $modules
+ *   Names of the modules to revert.
+ */
+function loopdk_features_revert($modules = array()) {
+  foreach ($modules as $module) {
+    // Load the feature.
+    if (($feature = features_load_feature($module, TRUE)) && module_exists($module)) {
+      // Get all components of the feature.
+      foreach (array_keys($feature->info['features']) as $component) {
+        if (features_hook($component, 'features_revert')) {
+          // Revert each component (force).
+          features_revert(array($module => array($component)));
+        }
+      }
+    }
   }
 }
