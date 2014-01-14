@@ -77,8 +77,8 @@
  * Insert Loop primary menu if module is enabled.
  * Must be placed here to work on small screen devices.
  */
+if (module_exists('loop_navigation')):
 ?>
-<?php if (module_exists('loop_navigation')): ?>
   <?php $loop_menu_block = module_invoke('menu', 'block_view', 'menu-loop-primary-menu'); ?>
   <nav class="nav-mobile js-mobile-nav">
     <?php print render($loop_menu_block); ?>
