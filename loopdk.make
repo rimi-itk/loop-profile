@@ -27,7 +27,7 @@ projects[elements][subdir] = "contrib"
 projects[elements][version] = "1.4"
 
 projects[entity][subdir] = "contrib"
-projects[entity][version] = "1.2"
+projects[entity][version] = "1.3"
 
 projects[entityreference][subdir] = "contrib"
 projects[entityreference][version] = "1.1"
@@ -69,7 +69,7 @@ projects[libraries][subdir] = "contrib"
 projects[libraries][version] = "2.1"
 
 projects[link][subdir] = "contrib"
-projects[link][version] = "1.1"
+projects[link][version] = "1.2"
 
 projects[memcache][subdir] = "contrib"
 projects[memcache][version] = "1.0"
