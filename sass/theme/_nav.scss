@@ -6,11 +6,19 @@
 
 
 .nav {
-  position: absolute;
-  right: .75em;
-  bottom: .75em;
+  margin-bottom: 1em;
+  margin-top: 1em;
 
-  text-align: center;
+  text-align: right;
+
+  @include breakpoint($breakpoint-2) {
+    position: absolute;
+    right: .75em;
+    bottom: .75em;
+    margin: 0;
+
+    text-align: center;
+  }
 
   @include breakpoint($breakpoint-4) {
     right: 1em;
@@ -47,7 +55,7 @@
     display: inline-block;
   }
 
-  @include breakpoint($breakpoint-2) {
+  @include breakpoint($breakpoint-3) {
     margin-left: 1em;
   }
 

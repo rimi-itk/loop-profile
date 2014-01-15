@@ -890,10 +890,19 @@ label {
  */
 /* line 8, ../sass/theme/_nav.scss */
 .nav {
-  position: absolute;
-  right: .75em;
-  bottom: .75em;
-  text-align: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  text-align: right;
+}
+@media only screen and (min-width: 22.5em) {
+  /* line 8, ../sass/theme/_nav.scss */
+  .nav {
+    position: absolute;
+    right: .75em;
+    bottom: .75em;
+    margin: 0;
+    text-align: center;
+  }
 }
 @media only screen and (min-width: 43em) {
   /* line 8, ../sass/theme/_nav.scss */
@@ -903,7 +912,7 @@ label {
   }
 }
 
-/* line 22, ../sass/theme/_nav.scss */
+/* line 30, ../sass/theme/_nav.scss */
 .nav--link, .nav--toggle-mobile-nav {
   position: relative;
   display: block;
@@ -919,29 +928,29 @@ label {
   -o-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 35, ../sass/theme/_nav.scss */
+/* line 43, ../sass/theme/_nav.scss */
 .nav--link:link, .nav--toggle-mobile-nav:link, .nav--link:visited, .nav--toggle-mobile-nav:visited {
   color: white;
   text-decoration: none;
 }
-/* line 40, ../sass/theme/_nav.scss */
+/* line 48, ../sass/theme/_nav.scss */
 .nav--link:hover, .nav--toggle-mobile-nav:hover {
   background-color: rgba(255, 255, 255, 0.5);
 }
 @media only screen and (min-width: 18.75em) {
-  /* line 22, ../sass/theme/_nav.scss */
+  /* line 30, ../sass/theme/_nav.scss */
   .nav--link, .nav--toggle-mobile-nav {
     display: inline-block;
   }
 }
-@media only screen and (min-width: 22.5em) {
-  /* line 22, ../sass/theme/_nav.scss */
+@media only screen and (min-width: 28em) {
+  /* line 30, ../sass/theme/_nav.scss */
   .nav--link, .nav--toggle-mobile-nav {
     margin-left: 1em;
   }
 }
 @media only screen and (min-width: 43em) {
-  /* line 22, ../sass/theme/_nav.scss */
+  /* line 30, ../sass/theme/_nav.scss */
   .nav--link, .nav--toggle-mobile-nav {
     padding-right: 1.25em;
     padding-left: 1.25em;
@@ -956,29 +965,29 @@ label {
 }
 
 @media only screen and (min-width: 43em) {
-  /* line 64, ../sass/theme/_nav.scss */
+  /* line 72, ../sass/theme/_nav.scss */
   .nav--toggle-mobile-nav {
     display: none;
   }
 }
 
-/* line 72, ../sass/theme/_nav.scss */
+/* line 80, ../sass/theme/_nav.scss */
 .nav--icon {
   max-width: 1.5em;
 }
 @media only screen and (min-width: 43em) {
-  /* line 72, ../sass/theme/_nav.scss */
+  /* line 80, ../sass/theme/_nav.scss */
   .nav--icon {
     display: none;
   }
 }
 
-/* line 80, ../sass/theme/_nav.scss */
+/* line 88, ../sass/theme/_nav.scss */
 .nav--text {
   display: none;
 }
 @media only screen and (min-width: 43em) {
-  /* line 80, ../sass/theme/_nav.scss */
+  /* line 88, ../sass/theme/_nav.scss */
   .nav--text {
     display: inline;
   }
@@ -989,7 +998,7 @@ label {
  * See specific IE9 styles in separate stylesheet
  *
    ================================================================================================================== */
-/* line 96, ../sass/theme/_nav.scss */
+/* line 104, ../sass/theme/_nav.scss */
 .nav-mobile {
   position: absolute;
   top: 0;
@@ -1018,26 +1027,26 @@ label {
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-/* line 116, ../sass/theme/_nav.scss */
+/* line 124, ../sass/theme/_nav.scss */
 .nav-mobile a:link {
   color: white;
   text-decoration: none;
 }
-/* line 121, ../sass/theme/_nav.scss */
+/* line 129, ../sass/theme/_nav.scss */
 .nav-mobile a:visited {
   color: white;
 }
-/* line 125, ../sass/theme/_nav.scss */
+/* line 133, ../sass/theme/_nav.scss */
 .nav-mobile a:hover {
   color: white;
   text-decoration: underline;
 }
-/* line 130, ../sass/theme/_nav.scss */
+/* line 138, ../sass/theme/_nav.scss */
 .nav-mobile a:focus {
   color: white;
 }
 
-/* line 136, ../sass/theme/_nav.scss */
+/* line 144, ../sass/theme/_nav.scss */
 .nav-mobile--link {
   border-bottom-color: #5dc26d;
   display: block;
@@ -1195,8 +1204,8 @@ label {
 
 /* Search autocomplete
    ========================================================================== */
-/* line 145, ../sass/modules/_search.scss */
-.search--autocomplete {
+/* line 144, ../sass/modules/_search.scss */
+.search--autocomplete-wrapper {
   position: absolute;
   top: 12.25em;
   right: 1.25em;
@@ -1212,14 +1221,14 @@ label {
   border-radius: 0.4em;
 }
 @media only screen and (min-width: 28em) {
-  /* line 145, ../sass/modules/_search.scss */
-  .search--autocomplete {
+  /* line 144, ../sass/modules/_search.scss */
+  .search--autocomplete-wrapper {
     top: 7.5em;
   }
 }
 
-/* line 164, ../sass/modules/_search.scss */
-.search--autocomplete-header {
+/* line 167, ../sass/modules/_search.scss */
+.autocomplete-header {
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 1em;
   padding-bottom: 1em;
@@ -1227,19 +1236,19 @@ label {
   font-weight: bold;
 }
 
-/* line 173, ../sass/modules/_search.scss */
-.search--autocomplete-link {
+/* line 176, ../sass/modules/_search.scss */
+.autocomplete-suggestion {
   border-bottom: 1px solid #e6e6e6;
   display: block;
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 182, ../sass/modules/_search.scss */
-.search--autocomplete-link:link, .search--autocomplete-link:visited, .search--autocomplete-link:hover, .search--autocomplete-link:active {
+/* line 185, ../sass/modules/_search.scss */
+.autocomplete-suggestion:link, .autocomplete-suggestion:visited, .autocomplete-suggestion:hover, .autocomplete-suggestion:active {
   text-decoration: none;
 }
-/* line 186, ../sass/modules/_search.scss */
-.search--autocomplete-link:last-child {
+/* line 189, ../sass/modules/_search.scss */
+.autocomplete-suggestion:last-child {
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
