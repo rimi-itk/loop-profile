@@ -227,6 +227,7 @@ function loopdk_final_settings() {
   $features = array(
     'loop_frontend',
     'loop_user',
+    'loop_post',
   );
   loopdk_features_revert($features);
 }
