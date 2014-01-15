@@ -29,3 +29,11 @@ function loop_notification_install() {
   );
   shortcut_set_save($shortcut_set);
 }
+
+/**
+ * Implements hook_disable().
+ */
+function loop_notification_disable() {
+  // Delete link to users messages when feature is disabled.
+  menu_link_delete(NULL, 'menutoken/52cabe32c537e');
+}
