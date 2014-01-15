@@ -103,6 +103,9 @@ function loop_menu_link__main_menu(array $variables) {
   if (stristr($element['#href'], '/messages')) {
     $icon_img = $path_to_theme . '/images/nav-mail-icon.png';
   }
+  if ($element['#href'] == 'node/add/post') {
+    $icon_img = $path_to_theme . '/images/nav-add-icon.png';
+  }
   if ($element['#href'] == '<nolink>') {
     $icon_img = $path_to_theme . '/images/nav-menu-icon.png';
   }
