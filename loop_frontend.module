@@ -51,6 +51,9 @@ function loop_frontend_form_search_block_form_alter(&$form, &$form_state, $form_
   // Add field title as placeholder attribute.
   $form['search_block_form']['#attributes']['placeholder'] = t('E.g. "How do you document a subject"');
 
+  // Disable autocomplete for search field.
+  $form['search_block_form']['#attributes']['autocomplete'] = 'off';
+
   // Add icon markup as a prefix to field.
   $form['search_block_form']['#field_prefix'] = '<i class="search--icon icon-search"></i>';
 
