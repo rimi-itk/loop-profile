@@ -66,7 +66,7 @@ function loop_search_suggest_entries() {
   foreach ($suggestions as $suggestion) {
     $data[] = array(
       // Truncate snippet.
-      'value' => truncate_utf8($suggestion['snippet'], 100, FALSE, TRUE),
+      'value' => truncate_utf8(strip_tags($suggestion['snippet']), 100, FALSE, TRUE),
       'data' => $suggestion['link'],
     );
   }
