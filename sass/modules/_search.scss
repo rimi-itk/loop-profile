@@ -154,14 +154,10 @@
 
   background-color: $white;
 
-  @include border-radius(0 0 $border-radius $border-radius);
+  @include border-radius($border-radius);
 
   @include breakpoint($breakpoint-3) {
-    top: 7em;
-  }
-
-  @include breakpoint($breakpoint-4) {
-    width: 75%;
+    top: 7.5em;
   }
 }
 
