@@ -26,6 +26,7 @@ Drupal.behaviors.loop_search = {
         if (jQuery('.js-autocomplete-header').length === 0) {
           jQuery('.js-autocomplete-search').prepend('<h4 class="autocomplete-header js-autocomplete-header">' + Drupal.t('Questions others have asked') + '</h4>');
         }
+        jQuery('.js-autocomplete-search').show();
       },
 
       // When item is selected, redirect.
