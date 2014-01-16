@@ -880,6 +880,7 @@ label {
 
 /* line 71, ../sass/theme/_layout.scss */
 .layout--inner {
+  min-height: 400px;
   margin-bottom: 1.5em;
 }
 
@@ -1206,28 +1207,35 @@ label {
    ========================================================================== */
 /* line 144, ../sass/modules/_search.scss */
 .search--autocomplete-wrapper {
+  display: none;
   position: absolute;
   top: 12.25em;
   right: 1.25em;
   left: 1.25em;
   z-index: 90;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #737373;
   padding: 1em;
   background-color: white;
-  -webkit-border-radius: 0.4em;
-  -moz-border-radius: 0.4em;
-  -ms-border-radius: 0.4em;
-  -o-border-radius: 0.4em;
-  border-radius: 0.4em;
+  -webkit-border-radius: 0 0 0.4em 0.4em;
+  -moz-border-radius: 0 0 0.4em 0.4em;
+  -ms-border-radius: 0 0 0.4em 0.4em;
+  -o-border-radius: 0 0 0.4em 0.4em;
+  border-radius: 0 0 0.4em 0.4em;
 }
 @media only screen and (min-width: 28em) {
   /* line 144, ../sass/modules/_search.scss */
   .search--autocomplete-wrapper {
-    top: 7.5em;
+    top: 7em;
+  }
+}
+@media only screen and (min-width: 43em) {
+  /* line 144, ../sass/modules/_search.scss */
+  .search--autocomplete-wrapper {
+    width: 75%;
   }
 }
 
-/* line 167, ../sass/modules/_search.scss */
+/* line 172, ../sass/modules/_search.scss */
 .autocomplete-header {
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 1em;
@@ -1236,18 +1244,24 @@ label {
   font-weight: bold;
 }
 
-/* line 176, ../sass/modules/_search.scss */
+/* line 181, ../sass/modules/_search.scss */
 .autocomplete-suggestion {
   border-bottom: 1px solid #e6e6e6;
+  color: #41ab51;
+  cursor: pointer;
   display: block;
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 185, ../sass/modules/_search.scss */
-.autocomplete-suggestion:link, .autocomplete-suggestion:visited, .autocomplete-suggestion:hover, .autocomplete-suggestion:active {
+/* line 190, ../sass/modules/_search.scss */
+.autocomplete-suggestion:link, .autocomplete-suggestion:visited {
   text-decoration: none;
 }
-/* line 189, ../sass/modules/_search.scss */
+/* line 195, ../sass/modules/_search.scss */
+.autocomplete-suggestion:hover, .autocomplete-suggestion:active {
+  text-decoration: underline;
+}
+/* line 199, ../sass/modules/_search.scss */
 .autocomplete-suggestion:last-child {
   border-bottom: 0;
   margin-bottom: 0;

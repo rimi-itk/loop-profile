@@ -71,5 +71,6 @@
 .layout--inner {
   @extend %basic-element-inner-styling;
 
+  min-height: 400px;
   margin-bottom: $margin-bottom;
 }
