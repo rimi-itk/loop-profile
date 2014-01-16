@@ -5,3 +5,4 @@ package = LOOP
 version = 7.x-1.0
 
 dependencies[] = apachesolr
+dependencies[] = jquery_update

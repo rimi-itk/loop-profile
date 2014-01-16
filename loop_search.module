@@ -6,6 +6,19 @@
  */
 
 /**
+ * Implements hook_install().
+ */
+function loop_search_install() {
+  // Check jQuery version.
+  $jquery_version = variable_get('jquery_update_jquery_version', 1.5);
+
+  // Update jQuery version to version 1.7.
+  if ($jquery_version < 1.7) {
+    variable_set('jquery_update_jquery_version', 1.7);
+  }
+}
+
+/**
  * Implements hook_form_FORM_ID_alter().
  */
 function loop_search_form_search_block_form_alter(&$form, $form_state) {
