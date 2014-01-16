@@ -60,6 +60,7 @@ dependencies[] = loop_frontpage
 
 ; LOOP modules
 dependencies[] = loop_admin
-dependencies[] = loop_permissions
-dependencies[] = loop_user
 dependencies[] = loop_frontend
+dependencies[] = loop_permissions
+dependencies[] = loop_search
+dependencies[] = loop_user
