@@ -59,8 +59,11 @@ projects[google_analytics_counter][version] = "2.1"
 projects[html5_tools][subdir] = "contrib"
 projects[html5_tools][version] = "1.2"
 
+projects[jquery_update][type] = "module"
 projects[jquery_update][subdir] = "contrib"
-projects[jquery_update][version] = "2.3"
+projects[jquery_update][download][type] = "git"
+projects[jquery_update][download][url] = "http://git.drupal.org/project/secure_permissions.git"
+projects[jquery_update][download][revision] = "65eecb0"
 
 projects[l10n_update][subdir] = "contrib"
 projects[l10n_update][version] = "1.0-beta3"
