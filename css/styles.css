@@ -1216,26 +1216,20 @@ label {
   border: 1px solid #737373;
   padding: 1em;
   background-color: white;
-  -webkit-border-radius: 0 0 0.4em 0.4em;
-  -moz-border-radius: 0 0 0.4em 0.4em;
-  -ms-border-radius: 0 0 0.4em 0.4em;
-  -o-border-radius: 0 0 0.4em 0.4em;
-  border-radius: 0 0 0.4em 0.4em;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
 }
 @media only screen and (min-width: 28em) {
   /* line 144, ../sass/modules/_search.scss */
   .search--autocomplete-wrapper {
-    top: 7em;
-  }
-}
-@media only screen and (min-width: 43em) {
-  /* line 144, ../sass/modules/_search.scss */
-  .search--autocomplete-wrapper {
-    width: 75%;
+    top: 7.5em;
   }
 }
 
-/* line 172, ../sass/modules/_search.scss */
+/* line 168, ../sass/modules/_search.scss */
 .autocomplete-header {
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 1em;
@@ -1244,7 +1238,7 @@ label {
   font-weight: bold;
 }
 
-/* line 181, ../sass/modules/_search.scss */
+/* line 177, ../sass/modules/_search.scss */
 .autocomplete-suggestion {
   border-bottom: 1px solid #e6e6e6;
   color: #41ab51;
@@ -1253,15 +1247,15 @@ label {
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 190, ../sass/modules/_search.scss */
+/* line 186, ../sass/modules/_search.scss */
 .autocomplete-suggestion:link, .autocomplete-suggestion:visited {
   text-decoration: none;
 }
-/* line 195, ../sass/modules/_search.scss */
+/* line 191, ../sass/modules/_search.scss */
 .autocomplete-suggestion:hover, .autocomplete-suggestion:active {
   text-decoration: underline;
 }
-/* line 199, ../sass/modules/_search.scss */
+/* line 195, ../sass/modules/_search.scss */
 .autocomplete-suggestion:last-child {
   border-bottom: 0;
   margin-bottom: 0;
