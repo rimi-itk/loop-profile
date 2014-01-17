@@ -13,8 +13,8 @@ function loop_search_install() {
   $jquery_version = variable_get('jquery_update_jquery_version', 1.5);
 
   // Update jQuery version to version 1.7.
-  if ($jquery_version < 1.7) {
-    variable_set('jquery_update_jquery_version', 1.7);
+  if ($jquery_version < 1.9) {
+    variable_set('jquery_update_jquery_version', 1.9);
   }
 }
 
@@ -27,8 +27,9 @@ function loop_search_form_search_block_form_alter(&$form, $form_state) {
 
   // Add javascript to autocomplete scripts.
   $form['#attached']['js'] = array(
-    drupal_get_path('module', 'loop_search') .'/jquery.autocomplete.js',
-    drupal_get_path('module', 'loop_search') .'/loop_search.js',
+    drupal_get_path('module', 'loop_search') . '/hogan-2.0.0.js',
+    drupal_get_path('module', 'loop_search') . '/typeahead.js',
+    drupal_get_path('module', 'loop_search') . '/loop_search.js',
   );
 
   // Add path to autocomplete.
@@ -43,8 +44,9 @@ function loop_search_form_search_block_form_alter(&$form, $form_state) {
  * Implements hook_menu().
  */
 function loop_search_menu() {
-  $items['loop_search_autocomplete'] = array(
+  $items['loop_search_autocomplete/%'] = array(
     'page callback' => 'loop_search_suggest_entries',
+    'page arguments' => array(1),
     'access callback' => 'user_access',
     'access arguments' => array('search content'),
     'type' => MENU_CALLBACK,
@@ -58,10 +60,7 @@ function loop_search_menu() {
  * @return string
  *   JSON with suggestions.
  */
-function loop_search_suggest_entries() {
-  // Validate.
-  $keys = check_plain($_GET['query']);
-
+function loop_search_suggest_entries($keys) {
   // Get default conditions.
   $searchConditions = apachesolr_search_conditions();
 
@@ -80,10 +79,17 @@ function loop_search_suggest_entries() {
     $data[] = array(
       // Truncate snippet.
       'value' => truncate_utf8(strip_tags($suggestion['snippet']), 100, FALSE, TRUE),
-      'data' => $suggestion['link'],
+
+      // Adding other values, for maybe usage.
+      // TODO: Take action of what we really need here!
+      'link' => $suggestion['link'],
+      'snippet' => $suggestion['snippet'],
+      'date' => $suggestion['date'],
+      'comments' => $suggestion['extra']['comments'],
+      'score' => $suggestion['score'],
     );
   }
 
   // Output to JSON.
-  drupal_json_output(array('suggestions' => $data));
+  drupal_json_output($data);
 }
