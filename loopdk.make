@@ -66,7 +66,7 @@ projects[html5_tools][version] = "1.2"
 projects[jquery_update][type] = "module"
 projects[jquery_update][subdir] = "contrib"
 projects[jquery_update][download][type] = "git"
-projects[jquery_update][download][url] = "http://git.drupal.org/project/secure_permissions.git"
+projects[jquery_update][download][url] = "http://git.drupal.org/project/jquery_update.git"
 projects[jquery_update][download][revision] = "65eecb0"
 
 projects[l10n_update][subdir] = "contrib"
