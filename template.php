@@ -17,7 +17,7 @@ function loop_preprocess_page(&$variables) {
   // Prepare system search block for page.tpl.
   $variables['search'] = module_invoke('search', 'block_view', 'form');
 
-  if (!isset($variables['page']['no_result'])) {
+  if ( (arg(0) == 'search') && (!isset($variables['page']['no_result'])) ) {
     // No search results, change title.
     $variables['title'] = t('Ask question');
   }
