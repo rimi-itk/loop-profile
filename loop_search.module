@@ -16,6 +16,14 @@ function loop_search_install() {
   if ($jquery_version < 1.9) {
     variable_set('jquery_update_jquery_version', 1.9);
   }
+
+  // Setup Apache Solr as the only search engine.
+  variable_set('search_active_modules', array(
+    'apachesolr_search' => 'apachesolr_search',
+    'node' => 0,
+    'user' => 0,
+  ));
+
 }
 
 /**
