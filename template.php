@@ -16,6 +16,11 @@ function loop_preprocess_html(&$variables) {
 function loop_preprocess_page(&$variables) {
   // Prepare system search block for page.tpl.
   $variables['search'] = module_invoke('search', 'block_view', 'form');
+
+  if (!isset($variables['page']['no_result'])) {
+    // No search results, change title.
+    $variables['title'] = t('Ask question');
+  }
 }
 
 
@@ -59,13 +64,22 @@ function loop_apachesolr_search_page_alter(&$build, $search_page) {
     $node = new stdClass();
     $node->type = 'post';
 
+    // Add no search results message.
+    $build['no_result'] = array(
+      '#prefix' => '<div class="loop-no-search-results">',
+      '#suffix' => '</div>',
+      '#markup' => t('No search results found!'),
+    );
+
     // Add the post.
     $node->field_description['und'][0]['value'] = arg(2);
     $form = drupal_get_form('node_form', $node);
+    $build['form'] = $form;
+
+    // Remove suggestions and other related information.
     unset($build['search_form']);
     unset($build['suggestions']);
     unset($build['search_results']);
-    $build['form'] = $form;
   }
 }
 
