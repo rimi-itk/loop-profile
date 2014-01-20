@@ -23,6 +23,10 @@
 .search--field-wrapper {
   position: relative;
 
+  .twitter-typeahead {
+    width: 100%;
+  }
+
   // Reset general form styling
   .form-item {
     border: 0;
@@ -79,6 +83,7 @@
     padding-top: .5em;
     padding-bottom: .65em;
     width: auto;
+    margin-bottom: 0.5em;
 
     font-size: 150%;
 
