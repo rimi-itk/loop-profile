@@ -3,7 +3,7 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
 ?>
 <div class="search-block">
   <div class="search--inner">
-    <form action="<?php echo $path_to_theme; ?>mockups/search-result.php" method="post" id="search-block-form" accept-charset="UTF-8">
+    <form action="<?php echo $path_to_theme; ?>mockups/search-result.php" method="post" id="search-block-form" accept-charset="UTF-8" autocomplete="off">
       <div>
         <div class="search--field-wrapper">
           <div class="form-item form-type-searchfield form-item-search-block-form">
@@ -18,7 +18,7 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
       </div>
     </form>
     <?php if (isset($is_front)): ?>
-    <div class="search--autocomplete-wrapper js-autocomplete-search">
+    <div class="search--autocomplete-wrapper js-autocomplete-search" style="display: block;">
       <h4 class="autocomplete-header js-autocomplete-header">Spørgsmål andre har stillet</h4>
       <div class="autocomplete-suggestions">
         <div class="autocomplete-suggestion" data-index="0">Hvordan dokumenteres delvis aktindsigt? Og findes der en vejledning i dokumentation af aktindsigt?...</div>
