@@ -62,6 +62,9 @@ function loop_apachesolr_search_page_alter(&$build, $search_page) {
     // Add the post.
     $node->field_description['und'][0]['value'] = arg(2);
     $form = drupal_get_form('node_form', $node);
+    unset($build['search_form']);
+    unset($build['suggestions']);
+    unset($build['search_results']);
     $build['form'] = $form;
   }
 }
