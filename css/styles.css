@@ -1224,7 +1224,6 @@ label {
 }
 /* line 51, ../sass/modules/_search.scss */
 .search--field-wrapper .search--field {
-  margin-bottom: .75em;
   padding-top: 1.25em;
   padding-right: 1.25em;
   padding-bottom: 1.25em;
@@ -1232,12 +1231,20 @@ label {
   height: 65px;
   background-color: white;
 }
+<<<<<<< HEAD
+/* line 58, ../sass/modules/_search.scss */
+=======
 /* line 62, ../sass/modules/_search.scss */
+>>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
 .search--field-wrapper .search--field:focus {
   outline: none;
 }
 @media only screen and (min-width: 28em) {
+<<<<<<< HEAD
+  /* line 64, ../sass/modules/_search.scss */
+=======
   /* line 68, ../sass/modules/_search.scss */
+>>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
   .search--field-wrapper .search--field {
     padding-right: 6em;
     width: 90%;
@@ -1249,13 +1256,21 @@ label {
   }
 }
 
+<<<<<<< HEAD
+/* line 73, ../sass/modules/_search.scss */
+=======
 /* line 77, ../sass/modules/_search.scss */
+>>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
 .search--button {
   height: 65px;
   width: 100%;
 }
 @media only screen and (min-width: 28em) {
+<<<<<<< HEAD
+  /* line 73, ../sass/modules/_search.scss */
+=======
   /* line 77, ../sass/modules/_search.scss */
+>>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
   .search--button {
     position: absolute;
     bottom: 0;
@@ -1263,7 +1278,6 @@ label {
     padding-top: .5em;
     padding-bottom: .65em;
     width: auto;
-    margin-bottom: 0.5em;
     font-size: 150%;
     -webkit-border-radius: 0 0.4em 0.4em 0;
     -moz-border-radius: 0 0.4em 0.4em 0;
@@ -1275,37 +1289,65 @@ label {
 
 /* Search result
    ========================================================================== */
+<<<<<<< HEAD
+/* line 111, ../sass/modules/_search.scss */
+=======
 /* line 116, ../sass/modules/_search.scss */
+>>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
 .search-result--link {
   display: block;
   margin-bottom: .5em;
 }
+<<<<<<< HEAD
+/* line 116, ../sass/modules/_search.scss */
+.search-result--link:link, .search-result--link:visited {
+  text-decoration: none;
+}
+/* line 121, ../sass/modules/_search.scss */
+=======
 /* line 121, ../sass/modules/_search.scss */
 .search-result--link:link, .search-result--link:visited {
   text-decoration: none;
 }
 /* line 126, ../sass/modules/_search.scss */
+>>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
 .search-result--link:hover, .search-result--link:active {
   text-decoration: underline;
 }
 
+<<<<<<< HEAD
+/* line 126, ../sass/modules/_search.scss */
+.search-result--comments {
+  display: block;
+}
+/* line 130, ../sass/modules/_search.scss */
+=======
 /* line 131, ../sass/modules/_search.scss */
 .search-result--comments {
   display: block;
 }
 /* line 135, ../sass/modules/_search.scss */
+>>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
 .search-result--comments:link, .search-result--comments:visited {
   color: #737373;
   text-decoration: none;
 }
+<<<<<<< HEAD
+/* line 136, ../sass/modules/_search.scss */
+=======
 /* line 141, ../sass/modules/_search.scss */
+>>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
 .search-result--comments:hover, .search-result--comments:active {
   color: #404040;
 }
 
 /* Search autocomplete
    ========================================================================== */
+<<<<<<< HEAD
+/* line 149, ../sass/modules/_search.scss */
+=======
 /* line 154, ../sass/modules/_search.scss */
+>>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
 .search--autocomplete-wrapper {
   display: none;
   position: absolute;
@@ -1323,13 +1365,21 @@ label {
   border-radius: 0.4em;
 }
 @media only screen and (min-width: 28em) {
+<<<<<<< HEAD
+  /* line 149, ../sass/modules/_search.scss */
+=======
   /* line 154, ../sass/modules/_search.scss */
+>>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
   .search--autocomplete-wrapper {
     top: 7.5em;
   }
 }
 
+<<<<<<< HEAD
+/* line 173, ../sass/modules/_search.scss */
+=======
 /* line 178, ../sass/modules/_search.scss */
+>>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
 .autocomplete-header {
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 1em;
@@ -1338,7 +1388,11 @@ label {
   font-weight: bold;
 }
 
+<<<<<<< HEAD
+/* line 182, ../sass/modules/_search.scss */
+=======
 /* line 187, ../sass/modules/_search.scss */
+>>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
 .autocomplete-suggestion {
   border-bottom: 1px solid #e6e6e6;
   color: #41ab51;
@@ -1347,6 +1401,17 @@ label {
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
+<<<<<<< HEAD
+/* line 191, ../sass/modules/_search.scss */
+.autocomplete-suggestion:link, .autocomplete-suggestion:visited {
+  text-decoration: none;
+}
+/* line 196, ../sass/modules/_search.scss */
+.autocomplete-suggestion:hover, .autocomplete-suggestion:active {
+  text-decoration: underline;
+}
+/* line 200, ../sass/modules/_search.scss */
+=======
 /* line 196, ../sass/modules/_search.scss */
 .autocomplete-suggestion:link, .autocomplete-suggestion:visited {
   text-decoration: none;
@@ -1356,6 +1421,7 @@ label {
   text-decoration: underline;
 }
 /* line 205, ../sass/modules/_search.scss */
+>>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
 .autocomplete-suggestion:last-child {
   border-bottom: 0;
   margin-bottom: 0;
