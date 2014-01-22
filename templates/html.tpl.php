@@ -53,6 +53,9 @@
   <meta name="viewport" content="width=device-width">
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
+  <!--[if IE 8]>
+  <link rel="stylesheet" href="/profiles/loopdk/themes/loop/css/ie8.css">
+  <![endif]-->
   <!--[if lt IE 10]>
   <link rel="stylesheet" href="/profiles/loopdk/themes/loop/css/lt-ie10.css">
   <![endif]-->
