@@ -157,6 +157,9 @@ projects[views_bulk_operations][version] = "3.1"
 projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][version] = "2.2"
 
+projects[logintoboggan][subdir] = "contrib"
+projects[logintoboggan][version] = "1.3"
+
 ; LOOP modules
 projects[loop_content][type] = "module"
 projects[loop_content][subdir] = "features"
