@@ -53,7 +53,7 @@
   <meta name="viewport" content="width=device-width">
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
-  <!--[if lt IE 9]>
+  <!--[if lt IE 10]>
   <link rel="stylesheet" href="/profiles/loopdk/themes/loop/css/ie.css">
   <![endif]-->
   <?php print $scripts; ?>

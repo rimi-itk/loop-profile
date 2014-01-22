@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="/profiles/loopdk/themes/loop/css/styles.css">
   <link rel="stylesheet" href="/profiles/loopdk/themes/loop/icons/loop-icons.css">
-  <!--[if IE 9]>
+  <!--[if lt IE 10]>
     <link rel="stylesheet" href="/profiles/loopdk/themes/loop/css/ie9.css">
   <![endif]-->
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
