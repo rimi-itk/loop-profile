@@ -806,6 +806,98 @@ label {
 }
 
 /**
+* Tabs
+*/
+/* line 6, ../sass/theme/_tabs.scss */
+.tabs {
+  margin-bottom: 0;
+}
+/* line 9, ../sass/theme/_tabs.scss */
+.tabs.primary {
+  padding-left: .5em;
+  border: none;
+}
+/* line 18, ../sass/theme/_tabs.scss */
+.tabs li,
+.tabs li.active,
+.tabs li:hover,
+.tabs li.active:hover {
+  border-right: none;
+  display: inline-block;
+  padding-right: 0;
+  background: transparent;
+}
+/* line 25, ../sass/theme/_tabs.scss */
+.tabs li a,
+.tabs li.active a,
+.tabs li:hover a,
+.tabs li.active:hover a {
+  border-top: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  display: block;
+  margin: 0;
+  padding: .75em 1.5em .5em;
+  line-height: 100%;
+  text-decoration: none;
+  -webkit-border-radius: 0.4em 0.4em 0 0;
+  -moz-border-radius: 0.4em 0.4em 0 0;
+  -ms-border-radius: 0.4em 0.4em 0 0;
+  -o-border-radius: 0.4em 0.4em 0 0;
+  border-radius: 0.4em 0.4em 0 0;
+}
+/* line 38, ../sass/theme/_tabs.scss */
+.tabs li a:hover,
+.tabs li.active a:hover,
+.tabs li:hover a:hover,
+.tabs li.active:hover a:hover {
+  background: #f2f2f2;
+  color: black;
+  text-decoration: none;
+}
+/* line 46, ../sass/theme/_tabs.scss */
+.tabs li a {
+  background: #f2f2f2;
+}
+/* line 50, ../sass/theme/_tabs.scss */
+.tabs li a.active {
+  background: white;
+}
+/* line 54, ../sass/theme/_tabs.scss */
+.tabs.secondary {
+  margin-top: 0;
+  margin-bottom: -.5em;
+  padding: 1.5em 1em .25em;
+  background-color: white;
+  -webkit-border-radius: 0.4em 0.4em 0 0;
+  -moz-border-radius: 0.4em 0.4em 0 0;
+  -ms-border-radius: 0.4em 0.4em 0 0;
+  -o-border-radius: 0.4em 0.4em 0 0;
+  border-radius: 0.4em 0.4em 0 0;
+}
+/* line 64, ../sass/theme/_tabs.scss */
+.tabs.secondary li a {
+  border: 1px solid #cccccc;
+  padding: .5em 1.25em .25em;
+  background: white;
+}
+/* line 71, ../sass/theme/_tabs.scss */
+.tabs.secondary li a.active {
+  background: #e6e6e6;
+}
+/* line 80, ../sass/theme/_tabs.scss */
+.tabs.secondary li a,
+.tabs.secondary li.active a,
+.tabs.secondary li:hover a,
+.tabs.secondary li.active:hover a {
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+}
+
+/**
  * Layout
  *
  * Contains styling of layout elements
