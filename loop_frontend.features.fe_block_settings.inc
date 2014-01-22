@@ -19,7 +19,9 @@ function loop_frontend_default_fe_block_settings() {
     'module' => 'system',
     'node_types' => array(),
     'pages' => '',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 2,
+    ),
     'themes' => array(
       'bartik' => array(
         'region' => '',
