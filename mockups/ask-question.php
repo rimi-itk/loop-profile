@@ -39,12 +39,12 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
               </div>
               <input type="text" placeholder="Indtast nøgleord, systemet kommer automatisk med forslag" class="at-term-entry form-text" id="question-terms" required>
               <input type="submit" value="Tilføj nøgleord" class="at-add-btn">
-              <div class="form-item-description">Indtast nøgleord, systemet kommer automatisk med forslag. Tryk på enter eller knappen for at tilføje.</div>
+              <div class="description">Indtast nøgleord, systemet kommer automatisk med forslag. Tryk på enter eller knappen for at tilføje.</div>
             </div>
             <div class="form-item">
               <label for="question-textarea">Spørgsmål <span class="form-required">*</span></label>
               <textarea rows="1" class="form-textarea" id="question-textarea" required></textarea>
-              <div class="form-item-description">Enter your question or observation.</div>
+              <div class="description">Enter your question or observation.</div>
             </div>
             <div class="form-actions">
               <input type="submit" value="Opret spørgsmål" class="form-submit">

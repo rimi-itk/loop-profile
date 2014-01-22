@@ -709,19 +709,18 @@ label {
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-
 /* line 89, ../sass/theme/_forms.scss */
-.form-item-description {
+.form-item .description {
   padding-top: .5em;
   color: #b3b3b3;
 }
 
-/* line 95, ../sass/theme/_forms.scss */
+/* line 97, ../sass/theme/_forms.scss */
 .form-required {
   color: #ff6138;
 }
 
-/* line 99, ../sass/theme/_forms.scss */
+/* line 101, ../sass/theme/_forms.scss */
 .form-select {
   border: 1px solid #cccccc;
   padding: .75em;
@@ -741,28 +740,28 @@ label {
   box-sizing: border-box;
 }
 
-/* line 116, ../sass/theme/_forms.scss */
+/* line 118, ../sass/theme/_forms.scss */
 .form-textarea-question {
   height: 6em;
 }
 @media only screen and (min-width: 30em) {
-  /* line 116, ../sass/theme/_forms.scss */
+  /* line 118, ../sass/theme/_forms.scss */
   .form-textarea-question {
     height: 3.25em;
   }
 }
 
-/* line 124, ../sass/theme/_forms.scss */
+/* line 126, ../sass/theme/_forms.scss */
 .form-actions {
   text-align: right;
 }
 
-/* line 128, ../sass/theme/_forms.scss */
+/* line 130, ../sass/theme/_forms.scss */
 .form-submit {
   width: 100%;
 }
 @media only screen and (min-width: 30em) {
-  /* line 128, ../sass/theme/_forms.scss */
+  /* line 130, ../sass/theme/_forms.scss */
   .form-submit {
     width: auto;
   }
@@ -1231,20 +1230,12 @@ label {
   height: 65px;
   background-color: white;
 }
-<<<<<<< HEAD
-/* line 58, ../sass/modules/_search.scss */
-=======
-/* line 62, ../sass/modules/_search.scss */
->>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
+/* line 61, ../sass/modules/_search.scss */
 .search--field-wrapper .search--field:focus {
   outline: none;
 }
 @media only screen and (min-width: 28em) {
-<<<<<<< HEAD
-  /* line 64, ../sass/modules/_search.scss */
-=======
-  /* line 68, ../sass/modules/_search.scss */
->>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
+  /* line 67, ../sass/modules/_search.scss */
   .search--field-wrapper .search--field {
     padding-right: 6em;
     width: 90%;
@@ -1256,21 +1247,13 @@ label {
   }
 }
 
-<<<<<<< HEAD
-/* line 73, ../sass/modules/_search.scss */
-=======
-/* line 77, ../sass/modules/_search.scss */
->>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
+/* line 76, ../sass/modules/_search.scss */
 .search--button {
   height: 65px;
   width: 100%;
 }
 @media only screen and (min-width: 28em) {
-<<<<<<< HEAD
-  /* line 73, ../sass/modules/_search.scss */
-=======
-  /* line 77, ../sass/modules/_search.scss */
->>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
+  /* line 76, ../sass/modules/_search.scss */
   .search--button {
     position: absolute;
     bottom: 0;
@@ -1289,65 +1272,37 @@ label {
 
 /* Search result
    ========================================================================== */
-<<<<<<< HEAD
-/* line 111, ../sass/modules/_search.scss */
-=======
-/* line 116, ../sass/modules/_search.scss */
->>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
+/* line 114, ../sass/modules/_search.scss */
 .search-result--link {
   display: block;
   margin-bottom: .5em;
 }
-<<<<<<< HEAD
-/* line 116, ../sass/modules/_search.scss */
+/* line 119, ../sass/modules/_search.scss */
 .search-result--link:link, .search-result--link:visited {
   text-decoration: none;
 }
-/* line 121, ../sass/modules/_search.scss */
-=======
-/* line 121, ../sass/modules/_search.scss */
-.search-result--link:link, .search-result--link:visited {
-  text-decoration: none;
-}
-/* line 126, ../sass/modules/_search.scss */
->>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
+/* line 124, ../sass/modules/_search.scss */
 .search-result--link:hover, .search-result--link:active {
   text-decoration: underline;
 }
 
-<<<<<<< HEAD
-/* line 126, ../sass/modules/_search.scss */
+/* line 129, ../sass/modules/_search.scss */
 .search-result--comments {
   display: block;
 }
-/* line 130, ../sass/modules/_search.scss */
-=======
-/* line 131, ../sass/modules/_search.scss */
-.search-result--comments {
-  display: block;
-}
-/* line 135, ../sass/modules/_search.scss */
->>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
+/* line 133, ../sass/modules/_search.scss */
 .search-result--comments:link, .search-result--comments:visited {
   color: #737373;
   text-decoration: none;
 }
-<<<<<<< HEAD
-/* line 136, ../sass/modules/_search.scss */
-=======
-/* line 141, ../sass/modules/_search.scss */
->>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
+/* line 139, ../sass/modules/_search.scss */
 .search-result--comments:hover, .search-result--comments:active {
   color: #404040;
 }
 
 /* Search autocomplete
    ========================================================================== */
-<<<<<<< HEAD
-/* line 149, ../sass/modules/_search.scss */
-=======
-/* line 154, ../sass/modules/_search.scss */
->>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
+/* line 152, ../sass/modules/_search.scss */
 .search--autocomplete-wrapper {
   display: none;
   position: absolute;
@@ -1365,21 +1320,13 @@ label {
   border-radius: 0.4em;
 }
 @media only screen and (min-width: 28em) {
-<<<<<<< HEAD
-  /* line 149, ../sass/modules/_search.scss */
-=======
-  /* line 154, ../sass/modules/_search.scss */
->>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
+  /* line 152, ../sass/modules/_search.scss */
   .search--autocomplete-wrapper {
     top: 7.5em;
   }
 }
 
-<<<<<<< HEAD
-/* line 173, ../sass/modules/_search.scss */
-=======
-/* line 178, ../sass/modules/_search.scss */
->>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
+/* line 176, ../sass/modules/_search.scss */
 .autocomplete-header {
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 1em;
@@ -1388,11 +1335,7 @@ label {
   font-weight: bold;
 }
 
-<<<<<<< HEAD
-/* line 182, ../sass/modules/_search.scss */
-=======
-/* line 187, ../sass/modules/_search.scss */
->>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
+/* line 185, ../sass/modules/_search.scss */
 .autocomplete-suggestion {
   border-bottom: 1px solid #e6e6e6;
   color: #41ab51;
@@ -1401,27 +1344,15 @@ label {
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-<<<<<<< HEAD
-/* line 191, ../sass/modules/_search.scss */
+/* line 194, ../sass/modules/_search.scss */
 .autocomplete-suggestion:link, .autocomplete-suggestion:visited {
   text-decoration: none;
 }
-/* line 196, ../sass/modules/_search.scss */
+/* line 199, ../sass/modules/_search.scss */
 .autocomplete-suggestion:hover, .autocomplete-suggestion:active {
   text-decoration: underline;
 }
-/* line 200, ../sass/modules/_search.scss */
-=======
-/* line 196, ../sass/modules/_search.scss */
-.autocomplete-suggestion:link, .autocomplete-suggestion:visited {
-  text-decoration: none;
-}
-/* line 201, ../sass/modules/_search.scss */
-.autocomplete-suggestion:hover, .autocomplete-suggestion:active {
-  text-decoration: underline;
-}
-/* line 205, ../sass/modules/_search.scss */
->>>>>>> 9bea36eb172a24a678cfd7aa4a7199fbbe9af9e9
+/* line 203, ../sass/modules/_search.scss */
 .autocomplete-suggestion:last-child {
   border-bottom: 0;
   margin-bottom: 0;

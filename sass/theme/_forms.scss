@@ -84,13 +84,15 @@ label {
   padding: 1em;
 
   @include border-radius($border-radius);
+
+  // Too comprehensive to change the class so we nest instead
+  .description {
+    padding-top: .5em;
+
+    color: $gray;
+  }
 }
 
-.form-item-description {
-  padding-top: .5em;
-
-  color: $gray;
-}
 
 .form-required {
   color: $red;
