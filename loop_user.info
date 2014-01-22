@@ -36,6 +36,7 @@ features[field_instance][] = user-user-field_profession
 features[image][] = profile
 features[menu_custom][] = main-menu
 features[menu_links][] = main-menu_my-account:user
+features[variable][] = logintoboggan_login_with_email
 features[variable][] = pcp_enabled_fields
 features[variable][] = user_picture_default
 features[variable][] = user_picture_dimensions
