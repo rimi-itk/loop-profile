@@ -805,8 +805,8 @@ label {
 }
 
 /**
-* Tabs
-*/
+ * Tabs
+ */
 /* line 6, ../sass/theme/_tabs.scss */
 .tabs {
   margin-bottom: 0;
@@ -1736,4 +1736,13 @@ label {
 /* line 55, ../sass/drupal-modules/_messages.scss */
 .messages.error:before {
   margin-right: .5em;
+}
+
+/**
+ * Item list
+ */
+/* line 8, ../sass/drupal-modules/_item-list.scss */
+.block-user .item-list ul {
+  padding-left: 0;
+  list-style: none;
 }
