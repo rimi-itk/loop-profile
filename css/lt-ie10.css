@@ -1,32 +1,22 @@
 /**
- * IE 9 specific styles
- *
- * @author magnify
+ * IE lt 10 specific styles
  */
-
-
-
 /* Page
  *
    ================================================================================================================== */
-
-.page-wrapper {
-  &.is-moved-left {
-    .page-inner {
-      right: 76%;
-    }
-  }
+/* line 13, ../sass/lt-ie10.scss */
+.page-wrapper.is-moved-left .page-inner {
+  right: 76%;
 }
-
 
 /* Mobile navigation
  *
    ================================================================================================================== */
-
+/* line 24, ../sass/lt-ie10.scss */
 .nav-mobile {
   right: -76%;
-
-  &.is-open {
-    right: 0;
-  }
+}
+/* line 27, ../sass/lt-ie10.scss */
+.nav-mobile.is-open {
+  right: 0;
 }
