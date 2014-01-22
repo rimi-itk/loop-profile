@@ -25,8 +25,22 @@
   }
 
   &.status {
-    background-color: $green;
-    color: $white;
+    background-color: $green-lighter;
+    color: $black;
+
+    a {
+      &:link {
+        color: $black;
+        text-decoration: underline;
+      }
+
+      &:visited,
+      &:hover,
+      &:focus {
+        color: $black;
+        text-decoration: none;
+      }
+    }
 
     &:before {
       @extend %icon-check-circled;
@@ -40,6 +54,21 @@
     background-color: $yellow-light;
     color: $black;
 
+    a {
+      &:link {
+        color: $black;
+        text-decoration: underline;
+      }
+
+      &:visited,
+      &:hover,
+      &:focus {
+        color: $black;
+        text-decoration: none;
+      }
+
+    }
+
     &:before {
       @extend %icon-attention;
       @extend %icon-before;
@@ -51,6 +80,20 @@
   &.error {
     background-color: darken($red, 15%);
     color: $white;
+
+    a {
+      &:link {
+        color: $white;
+        text-decoration: underline;
+      }
+
+      &:visited,
+      &:hover,
+      &:focus {
+        color: $white;
+        text-decoration: none;
+      }
+    }
 
     &:before {
       @extend %icon-cancel;

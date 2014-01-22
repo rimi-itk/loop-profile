@@ -1712,28 +1712,58 @@ label {
 }
 /* line 27, ../sass/drupal-modules/_messages.scss */
 .messages.status {
-  background-color: #41ab51;
-  color: white;
+  background-color: #d6ff9a;
+  color: black;
 }
-/* line 31, ../sass/drupal-modules/_messages.scss */
+/* line 32, ../sass/drupal-modules/_messages.scss */
+.messages.status a:link {
+  color: black;
+  text-decoration: underline;
+}
+/* line 39, ../sass/drupal-modules/_messages.scss */
+.messages.status a:visited, .messages.status a:hover, .messages.status a:focus {
+  color: black;
+  text-decoration: none;
+}
+/* line 45, ../sass/drupal-modules/_messages.scss */
 .messages.status:before {
   margin-right: .5em;
 }
-/* line 39, ../sass/drupal-modules/_messages.scss */
+/* line 53, ../sass/drupal-modules/_messages.scss */
 .messages.warning {
   background-color: #fff98f;
   color: black;
 }
-/* line 43, ../sass/drupal-modules/_messages.scss */
+/* line 58, ../sass/drupal-modules/_messages.scss */
+.messages.warning a:link {
+  color: black;
+  text-decoration: underline;
+}
+/* line 65, ../sass/drupal-modules/_messages.scss */
+.messages.warning a:visited, .messages.warning a:hover, .messages.warning a:focus {
+  color: black;
+  text-decoration: none;
+}
+/* line 72, ../sass/drupal-modules/_messages.scss */
 .messages.warning:before {
   margin-right: .5em;
 }
-/* line 51, ../sass/drupal-modules/_messages.scss */
+/* line 80, ../sass/drupal-modules/_messages.scss */
 .messages.error {
   background-color: #eb3000;
   color: white;
 }
-/* line 55, ../sass/drupal-modules/_messages.scss */
+/* line 85, ../sass/drupal-modules/_messages.scss */
+.messages.error a:link {
+  color: white;
+  text-decoration: underline;
+}
+/* line 92, ../sass/drupal-modules/_messages.scss */
+.messages.error a:visited, .messages.error a:hover, .messages.error a:focus {
+  color: white;
+  text-decoration: none;
+}
+/* line 98, ../sass/drupal-modules/_messages.scss */
 .messages.error:before {
   margin-right: .5em;
 }
