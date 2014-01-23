@@ -17,4 +17,5 @@ stylesheets[all][] = icons/loop-icons.css
 
 ; Disable stylesheets
 stylesheets[all][] = system.theme.css
+stylesheets[all][] = system.menus.css
 stylesheets[all][] = system.messages.css
