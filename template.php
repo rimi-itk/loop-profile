@@ -164,3 +164,31 @@ function loop_menu_link__menu_loop_primary_menu(array $variables) {
   $output = l($output_title, $element['#href'], $element['#localized_options']);
   return $output;
 }
+
+/**
+ * Returns HTML for a fieldset form element and its children.
+ *
+ * Changes the class added to fieldsets, so it differs from the wrapper added inside.
+ */
+function loop_fieldset($variables) {
+  $element = $variables['element'];
+  element_set_attributes($element, array('id'));
+  _form_set_class($element, array('field-group-fieldset'));
+
+  $output = '<fieldset' . drupal_attributes($element['#attributes']) . '>';
+  if (!empty($element['#title'])) {
+    // Always wrap fieldset legends in a SPAN for CSS positioning.
+    $output .= '<legend><span class="fieldset-legend">' . $element['#title'] . '</span></legend>';
+  }
+  $output .= '<div class="fieldset-wrapper">';
+  if (!empty($element['#description'])) {
+    $output .= '<div class="fieldset-description">' . $element['#description'] . '</div>';
+  }
+  $output .= $element['#children'];
+  if (isset($element['#value'])) {
+    $output .= $element['#value'];
+  }
+  $output .= '</div>';
+  $output .= "</fieldset>\n";
+  return $output;
+}

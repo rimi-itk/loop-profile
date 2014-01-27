@@ -136,3 +136,19 @@ label {
     width: auto;
   }
 }
+
+.field-group-fieldset {
+  border: 1px solid $gray-light;
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+
+  @include border-radius($border-radius);
+}
+
+.fieldset-legend {
+  padding-right: .5em;
+  padding-left: .5em;
+
+  font-size: 125%;
+}

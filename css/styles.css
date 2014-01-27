@@ -767,6 +767,26 @@ label {
   }
 }
 
+/* line 140, ../sass/theme/_forms.scss */
+.field-group-fieldset {
+  border: 1px solid #cccccc;
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+}
+
+/* line 149, ../sass/theme/_forms.scss */
+.fieldset-legend {
+  padding-right: .5em;
+  padding-left: .5em;
+  font-size: 125%;
+}
+
 /**
  * Buttons
  *
