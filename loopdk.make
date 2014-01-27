@@ -78,6 +78,9 @@ projects[libraries][version] = "2.1"
 projects[link][subdir] = "contrib"
 projects[link][version] = "1.2"
 
+projects[logintoboggan][subdir] = "contrib"
+projects[logintoboggan][version] = "1.3"
+
 projects[memcache][subdir] = "contrib"
 projects[memcache][version] = "1.0"
 
@@ -157,20 +160,17 @@ projects[views_bulk_operations][version] = "3.1"
 projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][version] = "2.2"
 
-projects[logintoboggan][subdir] = "contrib"
-projects[logintoboggan][version] = "1.3"
-
 ; LOOP modules
+projects[loop_admin][type] = "module"
+projects[loop_admin][download][type] = "git"
+projects[loop_admin][download][url] = "git@github.com:loopdk/loop_admin.git"
+projects[loop_admin][branch] = "development"
+
 projects[loop_content][type] = "module"
 projects[loop_content][subdir] = "features"
 projects[loop_content][download][type] = "git"
 projects[loop_content][download][url] = "git@github.com:loopdk/loop_content.git"
 projects[loop_content][branch] = "development"
-
-projects[loop_admin][type] = "module"
-projects[loop_admin][download][type] = "git"
-projects[loop_admin][download][url] = "git@github.com:loopdk/loop_admin.git"
-projects[loop_admin][branch] = "development"
 
 projects[loop_search][type] = "module"
 projects[loop_search][download][type] = "git"
@@ -178,6 +178,42 @@ projects[loop_search][download][url] = "git@github.com:loopdk/loop_search.git"
 projects[loop_search][branch] = "development"
 
 ; LOOP features
+projects[loop_example_content][type] = "module"
+projects[loop_example_content][subdir] = "features"
+projects[loop_example_content][download][type] = "git"
+projects[loop_example_content][download][url] = "git@github.com:loopdk/loop_example_content.git"
+projects[loop_example_content][branch] = "development"
+
+projects[loop_flag][type] = "module"
+projects[loop_flag][subdir] = "features"
+projects[loop_flag][download][type] = "git"
+projects[loop_flag][download][url] = "git@github.com:loopdk/loop_flag.git"
+projects[loop_flag][branch] = "development"
+
+projects[loop_frontend][type] = "module"
+projects[loop_frontend][subdir] = "features"
+projects[loop_frontend][download][type] = "git"
+projects[loop_frontend][download][url] = "git@github.com:loopdk/loop_frontend.git"
+projects[loop_frontend][branch] = "development"
+
+projects[loop_frontpage][type] = "module"
+projects[loop_frontpage][subdir] = "features"
+projects[loop_frontpage][download][type] = "git"
+projects[loop_frontpage][download][url] = "git@github.com:loopdk/loop_frontpage.git"
+projects[loop_frontpage][branch] = "development"
+
+projects[loop_navigation][type] = "module"
+projects[loop_navigation][subdir] = "features"
+projects[loop_navigation][download][type] = "git"
+projects[loop_navigation][download][url] = "git@github.com:loopdk/loop_navigation.git"
+projects[loop_navigation][branch] = "development"
+
+projects[loop_notification][type] = "module"
+projects[loop_notification][subdir] = "features"
+projects[loop_notification][download][type] = "git"
+projects[loop_notification][download][url] = "git@github.com:loopdk/loop_notification.git"
+projects[loop_notification][branch] = "development"
+
 projects[loop_permissions][type] = "module"
 projects[loop_permissions][subdir] = "features"
 projects[loop_permissions][download][type] = "git"
@@ -195,42 +231,6 @@ projects[loop_taxonomy][subdir] = "features"
 projects[loop_taxonomy][download][type] = "git"
 projects[loop_taxonomy][download][url] = "git@github.com:loopdk/loop_taxonomy.git"
 projects[loop_taxonomy][branch] = "development"
-
-projects[loop_frontpage][type] = "module"
-projects[loop_frontpage][subdir] = "features"
-projects[loop_frontpage][download][type] = "git"
-projects[loop_frontpage][download][url] = "git@github.com:loopdk/loop_frontpage.git"
-projects[loop_frontpage][branch] = "development"
-
-projects[loop_frontend][type] = "module"
-projects[loop_frontend][subdir] = "features"
-projects[loop_frontend][download][type] = "git"
-projects[loop_frontend][download][url] = "git@github.com:loopdk/loop_frontend.git"
-projects[loop_frontend][branch] = "development"
-
-projects[loop_example_content][type] = "module"
-projects[loop_example_content][subdir] = "features"
-projects[loop_example_content][download][type] = "git"
-projects[loop_example_content][download][url] = "git@github.com:loopdk/loop_example_content.git"
-projects[loop_example_content][branch] = "development"
-
-projects[loop_flag][type] = "module"
-projects[loop_flag][subdir] = "features"
-projects[loop_flag][download][type] = "git"
-projects[loop_flag][download][url] = "git@github.com:loopdk/loop_flag.git"
-projects[loop_flag][branch] = "development"
-
-projects[loop_navigation][type] = "module"
-projects[loop_navigation][subdir] = "features"
-projects[loop_navigation][download][type] = "git"
-projects[loop_navigation][download][url] = "git@github.com:loopdk/loop_navigation.git"
-projects[loop_navigation][branch] = "development"
-
-projects[loop_notification][type] = "module"
-projects[loop_notification][subdir] = "features"
-projects[loop_notification][download][type] = "git"
-projects[loop_notification][download][url] = "git@github.com:loopdk/loop_notification.git"
-projects[loop_notification][branch] = "development"
 
 projects[loop_user][type] = "module"
 projects[loop_user][subdir] = "features"
@@ -251,11 +251,6 @@ libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEd
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][destination] = "libraries"
 
-libraries[respondjs][download][type] = "get"
-libraries[respondjs][download][url] = "https://raw.github.com/scottjehl/Respond/master/dest/respond.min.js"
-libraries[respondjs][directory_name] = "respondjs"
-libraries[respondjs][destination] = "libraries"
-
 libraries[html5shiv][download][type] = "get"
 libraries[html5shiv][download][url] = "https://raw.github.com/aFarkas/html5shiv/master/dist/html5shiv.js"
 libraries[html5shiv][directory_name] = "html5shiv"
@@ -265,3 +260,8 @@ libraries[html5shiv_printshiv][download][type] = "get"
 libraries[html5shiv_printshiv][download][url] = "https://raw.github.com/aFarkas/html5shiv/master/dist/html5shiv-printshiv.js"
 libraries[html5shiv_printshiv][directory_name] = "html5shiv"
 libraries[html5shiv_printshiv][destination] = "libraries"
+
+libraries[respondjs][download][type] = "get"
+libraries[respondjs][download][url] = "https://raw.github.com/scottjehl/Respond/master/dest/respond.min.js"
+libraries[respondjs][directory_name] = "respondjs"
+libraries[respondjs][destination] = "libraries"
