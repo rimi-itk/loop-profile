@@ -1136,7 +1136,7 @@ label {
 /* line 127, ../sass/theme/_nav.scss */
 .nav-dropdown--icon {
   position: absolute;
-  top: .9em;
+  top: .8em;
   right: 1em;
   max-width: 1em;
 }
