@@ -169,6 +169,9 @@ function loopdk_setup_filter_and_wysiwyg() {
     ->execute();
 }
 
+/*
+ * Revert features.
+ */
 function loopdk_final_settings() {
   // Revert features to ensure they are all installed as default.
   $features = array(
