@@ -5,12 +5,6 @@ core = 7.x
 projects[admin_views][subdir] = "contrib"
 projects[admin_views][version] = "1.2"
 
-projects[apachesolr][subdir] = "contrib"
-projects[apachesolr][version] = "1.6"
-
-projects[apachesolr_autocomplete][subdir] = "contrib"
-projects[apachesolr_autocomplete][version] = "1.3"
-
 projects[auto_nodetitle][subdir] = "contrib"
 projects[auto_nodetitle][version] = "1.0"
 
@@ -126,6 +120,18 @@ projects[redirect][version] = "1.0-rc1"
 
 projects[rules][subdir] = "contrib"
 projects[rules][version] = "2.6"
+
+projects[search_api][subdir] = "contrib"
+projects[search_api][version] = "1.11"
+
+projects[search_api_autocomplete][subdir] = "contrib"
+projects[search_api_autocomplete][version] = "1.0"
+
+projects[search_api_page][subdir] = "contrib"
+projects[search_api_page][version] = "1.0"
+
+projects[search_api_solr][subdir] = "contrib"
+projects[search_api_solr][version] = "1.4"
 
 projects[secure_permissions][type] = "module"
 projects[secure_permissions][subdir] = "contrib"
