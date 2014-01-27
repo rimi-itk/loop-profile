@@ -1,7 +1,5 @@
 /**
  * Navigation
- *
- * @author magnify
  */
 
 
@@ -21,7 +19,7 @@
   }
 
   @include breakpoint($breakpoint-4) {
-    right: 1em;
+    right: 8.5em;
     bottom: 0;
   }
 }
@@ -35,7 +33,7 @@
   margin-left: .25em;
   width: 3.5em;
 
-  background-color: transparentize($white, .75);
+  background-color: $green-light;
   line-height: 2.5em;
   text-align: center;
 
@@ -46,7 +44,7 @@
   }
 
   &:hover {
-    background-color: transparentize($white, .5);
+    background-color: lighten($green-light, 10%);
   }
 
   @include border-radius(100%);
@@ -93,6 +91,98 @@
   }
 }
 
+
+/* Dropdown menu
+   ================================================================================================================== */
+
+.nav-dropdown {
+  @extend .nav;
+
+  display: none;
+  right: 1em;
+
+  @include breakpoint($breakpoint-4) {
+    display: block;
+  }
+}
+
+.nav-dropdown--header {
+  @extend .nav--link;
+
+  position: relative;
+
+  padding-right: 2.5em;
+
+  &:link,
+  &:visited {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: $green-light;
+  }
+}
+
+.nav-dropdown--icon {
+  position: absolute;
+  top: .9em;
+  right: 1em;
+
+  max-width: 1em;
+}
+
+.nav-dropdown--item {
+  position: absolute;
+  top: 2.5em;
+  right: 0;
+  z-index: 99;
+
+  display: none;
+  padding-top: .5em;
+  padding-right: 1.25em;
+  padding-left: 1.25em;
+
+  background-color: $green-light;
+  line-height: 2.5em;
+
+  @include border-radius(0 0 $border-radius $border-radius);
+}
+
+// Nesting because we use hover to show the sub menu
+.nav-dropdown--wrapper {
+  &:hover {
+    .nav-dropdown--item {
+      display: block;
+    }
+  }
+}
+
+.nav-dropdown--link {
+  border-bottom: 1px solid lighten($green-light, 10%);
+  margin-bottom: .5em;
+  padding-bottom: .5em;
+
+  display: block;
+  min-width: 10em;
+
+  text-align: right;
+
+  &:link,
+  &:visited {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:last-child {
+    border: 0;
+    margin-bottom: 0;
+  }
+}
 
 
 /* Mobile navigation
