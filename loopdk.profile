@@ -54,12 +54,6 @@ function loopdk_install_tasks(&$install_state) {
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
       'type' => 'batch'
     ),
-    'loopdk_setup_apache_solr' => array(
-      'display_name' => st('Setup Apache Solr'),
-      'display' => TRUE,
-      'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
-      'type' => 'batch'
-    ),
   );
   return $ret;
 }
@@ -173,53 +167,6 @@ function loopdk_setup_filter_and_wysiwyg() {
       'settings' => serialize($settings),
     ))
     ->execute();
-}
-
-/**
- * Setup Apache Solr.
- */
-function loopdk_setup_apache_solr() {
-  db_query("UPDATE apachesolr_environment SET name='LOOP', url='http://localhost:8983/solr/loop_stg'");
-
-  db_update('apachesolr_search_page')
-    ->fields(array(
-      'env_id' => 'solr'
-    ))
-    ->condition('page_id', 'taxonomy_search')
-    ->execute();
-
-  variable_set('search_default_module', 'apachesolr_search');
-
-  // Setting facet api correctly.
-  $facets = array(
-    array(
-      'name' => 'apachesolr@solr:block:im_field_keyword',
-      'facet' => 'im_field_keyword',
-      'settings' => 'a:10:{s:6:"weight";i:0;s:6:"widget";s:14:"facetapi_links";s:7:"filters";a:0:{}s:12:"active_sorts";a:3:{s:6:"active";s:6:"active";s:5:"count";s:5:"count";s:7:"display";s:7:"display";}s:11:"sort_weight";a:3:{s:6:"active";i:-50;s:5:"count";i:-49;s:7:"display";i:-48;}s:10:"sort_order";a:3:{s:6:"active";i:3;s:5:"count";i:3;s:7:"display";i:4;}s:14:"empty_behavior";s:4:"none";s:10:"soft_limit";i:20;s:8:"nofollow";i:1;s:13:"show_expanded";i:0;}'
-    ),
-  array(
-    'name' => 'apachesolr@solr:block:im_field_profession',
-    'facet' => 'im_field_profession',
-    'settings' => 'a:10:{s:6:"weight";i:0;s:6:"widget";s:14:"facetapi_links";s:7:"filters";a:0:{}s:12:"active_sorts";a:3:{s:6:"active";s:6:"active";s:5:"count";s:5:"count";s:7:"display";s:7:"display";}s:11:"sort_weight";a:3:{s:6:"active";i:-50;s:5:"count";i:-49;s:7:"display";i:-48;}s:10:"sort_order";a:3:{s:6:"active";i:3;s:5:"count";i:3;s:7:"display";i:4;}s:14:"empty_behavior";s:4:"none";s:10:"soft_limit";i:20;s:8:"nofollow";i:1;s:13:"show_expanded";i:0;}'
-  ),
-  array(
-    'name' => 'apachesolr@solr:block:im_field_subject',
-    'facet' => 'im_field_subject',
-    'settings' => 'a:10:{s:6:"weight";i:0;s:6:"widget";s:14:"facetapi_links";s:7:"filters";a:0:{}s:12:"active_sorts";a:3:{s:6:"active";s:6:"active";s:5:"count";s:5:"count";s:7:"display";s:7:"display";}s:11:"sort_weight";a:3:{s:6:"active";i:-50;s:5:"count";i:-49;s:7:"display";i:-48;}s:10:"sort_order";a:3:{s:6:"active";i:3;s:5:"count";i:3;s:7:"display";i:4;}s:14:"empty_behavior";s:4:"none";s:10:"soft_limit";i:20;s:8:"nofollow";i:1;s:13:"show_expanded";i:0;}'
-  ));
-
-  foreach ($facets as $facet) {
-  db_insert('facetapi')
-    ->fields(array(
-      'name' => $facet['name'],
-      'searcher' => 'apachesolr@solr',
-      'realm' => 'block',
-      'facet' => $facet['facet'],
-      'enabled' => 1,
-      'settings' => $facet['settings'],
-    ))
-    ->execute();
-  }
 }
 
 function loopdk_final_settings() {
