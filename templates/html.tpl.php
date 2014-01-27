@@ -43,21 +43,20 @@
  * @ingroup themeable
  */
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
-  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language; ?>" version="XHTML+RDFa 1.0" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces; ?>>
+<!DOCTYPE html>
+<html>
 <head profile="<?php print $grddl_profile; ?>">
   <?php print $head; ?>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width" />
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
   <!--[if IE 8]>
-  <link rel="stylesheet" href="/profiles/loopdk/themes/loop/css/ie8.css">
+  <link rel="stylesheet" href="/profiles/loopdk/themes/loop/css/ie8.css" />
   <![endif]-->
   <!--[if lt IE 10]>
-  <link rel="stylesheet" href="/profiles/loopdk/themes/loop/css/lt-ie10.css">
+  <link rel="stylesheet" href="/profiles/loopdk/themes/loop/css/lt-ie10.css" />
   <![endif]-->
   <?php print $scripts; ?>
 </head>

@@ -85,7 +85,7 @@ if (module_exists('loop_navigation')):
   </nav>
 <?php endif ?>
 
-<header class="header" role="banner">
+<header class="header">
   <div class="header--inner">
     <?php if ($logo): ?>
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="logo--link">
