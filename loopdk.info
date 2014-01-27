@@ -8,8 +8,6 @@ exclusive = TRUE
 
 ; Default dependencies
 dependencies[] = admin_views
-dependencies[] = apachesolr
-dependencies[] = apachesolr_search
 dependencies[] = block
 dependencies[] = comment
 dependencies[] = contextual
