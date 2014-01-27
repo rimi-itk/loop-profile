@@ -19,3 +19,12 @@ run this command instead.
 
 ## Apache Solr
 If you have an Apache Solr on your local dev environment you should name the core: _loop_stg_ for seamless integration.
+
+
+## Setting up LOOP
+After running the make file you should install the site as any other Drupal website.
+By default only the core features are enabled so you should visit the features overview and enable any additional features you would need.
+
+### Setup for development
+Enable the Loop example content feature and create a demo user account.
+You can drush dl and drush en the Devel module and use this for generating content.
