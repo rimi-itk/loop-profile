@@ -616,7 +616,7 @@ textarea {
 }
 
 /* line 27, ../sass/theme/_forms.scss */
-input[type="text"],
+input[type="text"], .autocomplete-deluxe-container,
 input[type="password"],
 input[type="date"],
 input[type="datetime"],
@@ -644,7 +644,7 @@ textarea {
   box-sizing: border-box;
 }
 /* line 37, ../sass/theme/_forms.scss */
-input[type="text"]:focus,
+input[type="text"]:focus, .autocomplete-deluxe-container:focus,
 input[type="password"]:focus,
 input[type="date"]:focus,
 input[type="datetime"]:focus,
@@ -659,7 +659,7 @@ textarea:focus {
   color: #404040;
 }
 /* line 43, ../sass/theme/_forms.scss */
-input[type="text"][disabled],
+input[type="text"][disabled], [disabled].autocomplete-deluxe-container,
 input[type="password"][disabled],
 input[type="date"][disabled],
 input[type="datetime"][disabled],
@@ -1876,4 +1876,126 @@ label {
 .block-user .item-list ul {
   padding-left: 0;
   list-style: none;
+}
+
+/**
+ * Autocomplete Deluxe module
+ *
+ * @created by zorp
+ */
+/* Autocomplete field
+   ================================================================================================================== */
+/* line 11, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.ui-autocomplete {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* line 16, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-single:hover {
+  text-decoration: none;
+}
+
+/* line 20, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-container {
+  width: 100%;
+  position: relative;
+}
+/* line 26, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-container .autocomplete-deluxe-form {
+  background: none;
+  padding: 0;
+  border: none;
+  width: auto;
+}
+/* line 32, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-container .autocomplete-deluxe-form:focus {
+  outline: 0;
+  border: none;
+}
+/* line 37, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-container .autocomplete-deluxe-form.autocomplete-deluxe-multiple {
+  float: left;
+  margin-left: 0.5em;
+}
+/* line 43, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-container .autocomplete-deluxe-form-single {
+  display: inline-block;
+}
+
+/* line 48, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-multiple {
+  display: inline-block;
+  position: relative;
+  height: auto !important;
+  margin: 0;
+  overflow: hidden;
+  cursor: text;
+}
+
+/* line 57, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+div.autocomplete-deluxe-throbber {
+  width: 16px;
+  float: right;
+  position: absolute;
+  top: 13px;
+  right: 10px;
+}
+
+/* line 65, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-closed {
+  background: url("../images/throbber.gif") no-repeat 100% 6px;
+}
+
+/* line 69, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-open {
+  background: url("../images/throbber.gif") no-repeat 100% -14px;
+}
+
+/* line 73, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-item {
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+  float: left;
+  position: relative;
+  padding: 0.2em 1.25em 0.2em 0.5em;
+  margin: 3px 5px 0 0;
+  line-height: 13px;
+  background-color: #f2f2f2;
+  box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #737373;
+  cursor: default;
+}
+
+/* line 88, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-item-delete {
+  background: url("../images/x.gif");
+  display: block;
+  font-size: 1px;
+  height: 13px;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  width: 12px;
+}
+
+/* line 99, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-value-delete {
+  display: inline-block;
+  float: right;
+  background: url("../images/x.gif") no-repeat center;
+  width: 18px;
+  width: 18px;
+  /* Prevent text selection. */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* line 110, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-highlight-char {
+  color: #41ab51;
 }

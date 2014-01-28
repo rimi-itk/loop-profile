@@ -1,0 +1,112 @@
+/**
+ * Autocomplete Deluxe module
+ *
+ * @created by zorp
+ */
+
+
+/* Autocomplete field
+   ================================================================================================================== */
+
+.ui-autocomplete {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.autocomplete-deluxe-single:hover {
+  text-decoration: none;
+}
+
+.autocomplete-deluxe-container {
+  @extend input[type="text"];
+
+  width: 100%;
+  position: relative;
+
+  .autocomplete-deluxe-form {
+    background: none;
+    padding: 0;
+    border: none;
+    width: auto;
+
+    &:focus {
+      outline: 0;
+      border: none;
+    }
+
+    &.autocomplete-deluxe-multiple {
+      float: left;
+      margin-left: 0.5em;
+    }
+  }
+
+  .autocomplete-deluxe-form-single  {
+    display: inline-block;
+  }
+}
+
+.autocomplete-deluxe-multiple {
+  display: inline-block;
+  position: relative;
+  height: auto !important;
+  margin: 0;
+  overflow: hidden;
+  cursor: text;
+}
+
+div.autocomplete-deluxe-throbber {
+  width: 16px;
+  float: right;
+  position: absolute;
+  top: 13px;
+  right: 10px
+}
+
+.autocomplete-deluxe-closed {
+  background: url("../images/throbber.gif") no-repeat 100% 6px;
+}
+
+.autocomplete-deluxe-open {
+  background: url("../images/throbber.gif") no-repeat 100% -14px;
+}
+
+.autocomplete-deluxe-item {
+  @include border-radius($border-radius);
+
+  float: left;
+  position: relative;
+  padding: 0.2em 1.25em 0.2em 0.5em;
+  margin: 3px 5px 0 0;
+  line-height: 13px;
+
+  background-color: $gray-lightest;
+  box-shadow: 0 0 2px #FFFFFF inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid $gray-dark;
+  cursor: default;
+}
+
+.autocomplete-deluxe-item-delete {
+  background: url("../images/x.gif");
+  display: block;
+  font-size: 1px;
+  height: 13px;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  width: 12px;
+}
+
+.autocomplete-deluxe-value-delete {
+  display: inline-block;
+  float: right;
+  background:url('../images/x.gif') no-repeat center;
+  width: 18px;
+  width: 18px;
+
+  /* Prevent text selection. */
+  @include user-select(none);
+}
+
+.autocomplete-deluxe-highlight-char {
+  color: $green;
+}
