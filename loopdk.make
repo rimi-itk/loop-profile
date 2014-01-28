@@ -43,7 +43,7 @@ projects[field_group][subdir] = "contrib"
 projects[field_group][version] = "1.3"
 
 projects[flag][subdir] = "contrib"
-projects[flag][version] = "3.2"
+projects[flag][version] = "3.3"
 
 projects[globalredirect][subdir] = "contrib"
 projects[globalredirect][version] = "1.5"
