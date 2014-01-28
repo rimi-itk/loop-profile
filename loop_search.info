@@ -6,6 +6,7 @@ version = 7.x-1.0
 
 dependencies[] = entity
 dependencies[] = jquery_update
+dependencies[] = search
 dependencies[] = search_api
 dependencies[] = search_api_autocomplete
 dependencies[] = search_api_page
