@@ -20,7 +20,8 @@ Drupal.behaviors.loop_search = {
         // The template we are building suggestion list from.
         template: [
           '<p class="repo-link">{{link}}</p>',
-          '<p class=""repo-desc">{{value}}</p>'
+          '<p class="repo-desc">{{value}}</p>',
+          '<p class="repo-click">{{suggestion}}</p>'
         ].join(''),
 
         // Template enigne.
@@ -31,8 +32,15 @@ Drupal.behaviors.loop_search = {
 };
 
 jQuery(document).ready(function($) {
-  // When a suggestion is clicked/selected. Redirect to that item.
   $('.js-autocomplete-search--field').on('typeahead:selected', function (object, datum) {
-    window.location = datum['link'];
+    // If suggestion contains a link. Redirect.
+    if (datum['link'] != undefined) {
+      window.location = datum['link'];
+    }
+    else {
+      // Suggestion is clicked. Display the results.
+      $('.js-autocomplete-search--field').blur();
+      $('.js-autocomplete-search--field').focus();
+    }
   });
 });
