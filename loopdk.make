@@ -178,11 +178,6 @@ projects[loop_content][download][type] = "git"
 projects[loop_content][download][url] = "git@github.com:loopdk/loop_content.git"
 projects[loop_content][branch] = "development"
 
-projects[loop_search][type] = "module"
-projects[loop_search][download][type] = "git"
-projects[loop_search][download][url] = "git@github.com:loopdk/loop_search.git"
-projects[loop_search][branch] = "development"
-
 ; LOOP features
 projects[loop_example_content][type] = "module"
 projects[loop_example_content][subdir] = "features"
@@ -231,6 +226,12 @@ projects[loop_post][subdir] = "features"
 projects[loop_post][download][type] = "git"
 projects[loop_post][download][url] = "git@github.com:loopdk/loop_post.git"
 projects[loop_post][branch] = "development";
+
+projects[loop_search][type] = "module"
+projects[loop_search][subdir] = "features"
+projects[loop_search][download][type] = "git"
+projects[loop_search][download][url] = "git@github.com:loopdk/loop_search.git"
+projects[loop_search][branch] = "development"
 
 projects[loop_taxonomy][type] = "module"
 projects[loop_taxonomy][subdir] = "features"
