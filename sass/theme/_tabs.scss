@@ -7,7 +7,8 @@
   margin-bottom: 0;
 
   &.primary {
-    padding-left: .5em;
+    margin-top: 0;
+    padding-left: 0;
 
     border: none;
   }
@@ -28,7 +29,7 @@
       border-left: 1px solid $gray-light;
       display: block;
       margin: 0;
-      padding: .75em 1.5em .5em;
+      padding: .75em 1.25em .5em;
 
       line-height: 100%;
       text-decoration: none;
@@ -53,17 +54,16 @@
 
   &.secondary {
     margin-top: 0;
-    margin-bottom: -.5em;
-    padding: 1.5em 1em .25em;
+    margin-bottom: -1.75em;
+    padding: 1.5em 1em;
 
     background-color: $white;
 
-    @include border-radius($border-radius $border-radius 0 0);
-
     li {
-      a {
+      a,
+      a:hover {
         border: 1px solid $gray-light;
-        padding: .5em 1.25em .25em;
+        padding: .5em 1.25em;
 
         background: $white;
       }
