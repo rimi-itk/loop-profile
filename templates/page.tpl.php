@@ -93,6 +93,9 @@ if (module_exists('loop_navigation')):
       </a>
     <?php endif; ?>
     <?php print render($page['header']); ?>
+    <div class="nav--wrapper">
+      <?php print render($page['navigation']); ?>
+    </div>
   </div>
 </header>
 

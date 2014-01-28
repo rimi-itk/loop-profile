@@ -3,15 +3,10 @@
  */
 
 
-.nav {
-  margin-bottom: 1em;
-  margin-top: 1em;
-
-  text-align: right;
-
+.nav--wrapper {
   @include breakpoint($breakpoint-2) {
     position: absolute;
-    right: .75em;
+    right: 1em;
     bottom: .75em;
     margin: 0;
 
@@ -19,9 +14,14 @@
   }
 
   @include breakpoint($breakpoint-4) {
-    right: 8.5em;
     bottom: 0;
   }
+}
+
+.nav {
+  float: left;
+
+  text-align: right;
 }
 
 
@@ -99,7 +99,6 @@
   @extend .nav;
 
   display: none;
-  right: 1em;
 
   @include breakpoint($breakpoint-4) {
     display: block;
@@ -126,10 +125,10 @@
 
 .nav-dropdown--icon {
   position: absolute;
-  top: .8em;
+  top: .85em;
   right: 1em;
 
-  max-width: 1em;
+  max-width: .85em;
 }
 
 .nav-dropdown--item {
