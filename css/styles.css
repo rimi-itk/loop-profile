@@ -846,11 +846,14 @@ label {
 @media only screen and (min-width: 75em) {
   /* line 9, ../sass/theme/_tabs.scss */
   .tabs.primary {
-    padding: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: .5em;
     background-color: transparent;
   }
 }
-/* line 28, ../sass/theme/_tabs.scss */
+/* line 31, ../sass/theme/_tabs.scss */
 .tabs li,
 .tabs li.active,
 .tabs li:hover,
@@ -861,7 +864,7 @@ label {
   padding-right: 0;
   background: transparent;
 }
-/* line 36, ../sass/theme/_tabs.scss */
+/* line 39, ../sass/theme/_tabs.scss */
 .tabs li a,
 .tabs li.active a,
 .tabs li:hover a,
@@ -878,7 +881,7 @@ label {
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-/* line 47, ../sass/theme/_tabs.scss */
+/* line 50, ../sass/theme/_tabs.scss */
 .tabs li a:hover,
 .tabs li.active a:hover,
 .tabs li:hover a:hover,
@@ -888,7 +891,7 @@ label {
   text-decoration: none;
 }
 @media only screen and (min-width: 75em) {
-  /* line 28, ../sass/theme/_tabs.scss */
+  /* line 31, ../sass/theme/_tabs.scss */
   .tabs li,
   .tabs li.active,
   .tabs li:hover,
@@ -896,7 +899,7 @@ label {
     display: inline-block;
     margin-bottom: 0;
   }
-  /* line 58, ../sass/theme/_tabs.scss */
+  /* line 61, ../sass/theme/_tabs.scss */
   .tabs li a,
   .tabs li.active a,
   .tabs li:hover a,
@@ -910,33 +913,33 @@ label {
     border-radius: 0.4em 0.4em 0 0;
   }
 }
-/* line 68, ../sass/theme/_tabs.scss */
+/* line 71, ../sass/theme/_tabs.scss */
 .tabs li a {
   background: #f2f2f2;
 }
-/* line 72, ../sass/theme/_tabs.scss */
+/* line 75, ../sass/theme/_tabs.scss */
 .tabs li a.active {
   background: white;
 }
-/* line 76, ../sass/theme/_tabs.scss */
+/* line 79, ../sass/theme/_tabs.scss */
 .tabs.secondary {
   margin-top: 0;
   margin-bottom: -1.75em;
   padding: 1.5em 1em;
   background-color: white;
 }
-/* line 85, ../sass/theme/_tabs.scss */
+/* line 88, ../sass/theme/_tabs.scss */
 .tabs.secondary li a,
 .tabs.secondary li a:hover {
   border: 1px solid #cccccc;
   padding: .5em 1.25em;
   background: white;
 }
-/* line 92, ../sass/theme/_tabs.scss */
+/* line 95, ../sass/theme/_tabs.scss */
 .tabs.secondary li a.active {
   background: #e6e6e6;
 }
-/* line 101, ../sass/theme/_tabs.scss */
+/* line 104, ../sass/theme/_tabs.scss */
 .tabs.secondary li a,
 .tabs.secondary li.active a,
 .tabs.secondary li:hover a,
