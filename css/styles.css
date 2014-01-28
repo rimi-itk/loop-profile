@@ -833,40 +833,52 @@ label {
 }
 /* line 9, ../sass/theme/_tabs.scss */
 .tabs.primary {
-  margin-top: 0;
-  padding-left: 0;
   border: none;
+  margin-top: 0;
+  padding: 1em;
+  background-color: white;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
 }
-/* line 19, ../sass/theme/_tabs.scss */
+@media only screen and (min-width: 75em) {
+  /* line 9, ../sass/theme/_tabs.scss */
+  .tabs.primary {
+    padding: 0;
+    background-color: transparent;
+  }
+}
+/* line 28, ../sass/theme/_tabs.scss */
 .tabs li,
 .tabs li.active,
 .tabs li:hover,
 .tabs li.active:hover {
   border-right: none;
-  display: inline-block;
+  display: block;
+  margin-bottom: .5em;
   padding-right: 0;
   background: transparent;
 }
-/* line 26, ../sass/theme/_tabs.scss */
+/* line 36, ../sass/theme/_tabs.scss */
 .tabs li a,
 .tabs li.active a,
 .tabs li:hover a,
 .tabs li.active:hover a {
-  border-top: 1px solid #cccccc;
-  border-right: 1px solid #cccccc;
-  border-left: 1px solid #cccccc;
+  border: 1px solid #cccccc;
   display: block;
   margin: 0;
-  padding: .75em 1.25em .5em;
+  padding: .75em 1.25em;
   line-height: 100%;
   text-decoration: none;
-  -webkit-border-radius: 0.4em 0.4em 0 0;
-  -moz-border-radius: 0.4em 0.4em 0 0;
-  -ms-border-radius: 0.4em 0.4em 0 0;
-  -o-border-radius: 0.4em 0.4em 0 0;
-  border-radius: 0.4em 0.4em 0 0;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
 }
-/* line 39, ../sass/theme/_tabs.scss */
+/* line 47, ../sass/theme/_tabs.scss */
 .tabs li a:hover,
 .tabs li.active a:hover,
 .tabs li:hover a:hover,
@@ -875,33 +887,56 @@ label {
   color: black;
   text-decoration: none;
 }
-/* line 47, ../sass/theme/_tabs.scss */
+@media only screen and (min-width: 75em) {
+  /* line 28, ../sass/theme/_tabs.scss */
+  .tabs li,
+  .tabs li.active,
+  .tabs li:hover,
+  .tabs li.active:hover {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  /* line 58, ../sass/theme/_tabs.scss */
+  .tabs li a,
+  .tabs li.active a,
+  .tabs li:hover a,
+  .tabs li.active:hover a {
+    border-bottom: 0;
+    padding: .75em 1.25em .5em;
+    -webkit-border-radius: 0.4em 0.4em 0 0;
+    -moz-border-radius: 0.4em 0.4em 0 0;
+    -ms-border-radius: 0.4em 0.4em 0 0;
+    -o-border-radius: 0.4em 0.4em 0 0;
+    border-radius: 0.4em 0.4em 0 0;
+  }
+}
+/* line 68, ../sass/theme/_tabs.scss */
 .tabs li a {
   background: #f2f2f2;
 }
-/* line 51, ../sass/theme/_tabs.scss */
+/* line 72, ../sass/theme/_tabs.scss */
 .tabs li a.active {
   background: white;
 }
-/* line 55, ../sass/theme/_tabs.scss */
+/* line 76, ../sass/theme/_tabs.scss */
 .tabs.secondary {
   margin-top: 0;
   margin-bottom: -1.75em;
   padding: 1.5em 1em;
   background-color: white;
 }
-/* line 64, ../sass/theme/_tabs.scss */
+/* line 85, ../sass/theme/_tabs.scss */
 .tabs.secondary li a,
 .tabs.secondary li a:hover {
   border: 1px solid #cccccc;
   padding: .5em 1.25em;
   background: white;
 }
-/* line 71, ../sass/theme/_tabs.scss */
+/* line 92, ../sass/theme/_tabs.scss */
 .tabs.secondary li a.active {
   background: #e6e6e6;
 }
-/* line 80, ../sass/theme/_tabs.scss */
+/* line 101, ../sass/theme/_tabs.scss */
 .tabs.secondary li a,
 .tabs.secondary li.active a,
 .tabs.secondary li:hover a,
