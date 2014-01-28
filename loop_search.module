@@ -5,6 +5,8 @@
  * Autcomplete Apache Solr search module.
  */
 
+include_once 'loop_search.features.inc';
+
 /**
  * Implements hook_install().
  */
@@ -12,18 +14,10 @@ function loop_search_install() {
   // Check jQuery version.
   $jquery_version = variable_get('jquery_update_jquery_version', 1.5);
 
-  // Update jQuery version to version 1.7.
+  // Update jQuery version to version 1.9.
   if ($jquery_version < 1.9) {
     variable_set('jquery_update_jquery_version', 1.9);
   }
-
-  // Setup Apache Solr as the only search engine.
-  variable_set('search_active_modules', array(
-    'apachesolr_search' => 'apachesolr_search',
-    'node' => 0,
-    'user' => 0,
-  ));
-
 }
 
 /**
@@ -69,33 +63,69 @@ function loop_search_menu() {
  *   JSON with suggestions.
  */
 function loop_search_suggest_entries($keys) {
-  // Get default conditions.
-  $searchConditions = apachesolr_search_conditions();
 
-  // Load the Solr core search.
-  $search_page = apachesolr_search_page_load('core_search');
+  // Suggestions search.
+  $autocomplete_searches = search_api_autocomplete_search_load_multiple();
+  $search = $autocomplete_searches['search_api_page_default'];
 
-  // Set this to 5 items, per design.
-  $search_page['settings']['apachesolr_search_per_page'] = 5;
+  // Pick the correct server.
+  $server = $search->server();
 
-  // Make the search.
-  $suggestions = apachesolr_search_search_results($keys, $searchConditions, $search_page);
+  // Remove spacing 'n stuff.
+  $keys = preg_replace('/\s+/', ' ', trim($keys));
 
-  // Build data array
+  // Build query with limit.
+  $query = $search->getQuery(NULL, $keys);
+  $query->range(0, 10);
+  $query->setOption('search id', 'loop_search:' . $search->machine_name);
+
+  // Add query field(s).
+  $query->fields($search->options['fields']);
+
+  // preExecute must be called before getAutocompleteSuggestions.
+  $query->preExecute();
+
+  // The call!
+  $suggestions = $server->getAutocompleteSuggestions($query, $search, $keys, $keys);
+
+  // Full query search. Will return nodes.
+  $query = search_api_query(1)
+    ->keys($keys);
+  $items = $query->execute();
+
+  // Prepare for data!
   $data = array();
-  foreach ($suggestions as $suggestion) {
-    $data[] = array(
-      // Truncate snippet.
-      'value' => truncate_utf8(strip_tags($suggestion['snippet']), 100, FALSE, TRUE),
 
-      // Adding other values, for maybe usage.
-      // TODO: Take action of what we really need here!
-      'link' => $suggestion['link'],
-      'snippet' => $suggestion['snippet'],
-      'date' => $suggestion['date'],
-      'comments' => $suggestion['extra']['comments'],
-      'score' => $suggestion['score'],
-    );
+  if (count($items['results']) > 0) {
+    // Build data array from full query search.
+    foreach ($items['results'] as $suggestion) {
+      $data[] = array(
+        'value' => $suggestion['fields']['field_description'],
+        //'name' => truncate_utf8($suggestion['fields']['field_description'], 100, FALSE, TRUE),
+        // Adding other values, for maybe usage.
+        // TODO: Take action of what we really need here!
+        'link' => 'node/' . $suggestion['fields']['search_api_id'],
+      );
+    }
+  }
+  else if (count($suggestions) > 0) {
+    // No nodes found. Try suggestions.
+    foreach ($suggestions as $suggestion) {
+      if (isset($suggestion['term'])) {
+        // This is a term!
+        $data[] = array(
+          'value' => $suggestion['term'],
+          'suggestion' => t('Click me!'),
+        );
+      }
+      else {
+        // This is a spell correction.
+        $data[] = array(
+          'value' => $suggestion['user_input'],
+          'suggestion' => t('Click me!'),
+        );
+      }
+    }
   }
 
   // Output to JSON.
