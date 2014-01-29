@@ -1345,65 +1345,6 @@ label {
   color: #404040;
 }
 
-/* Search autocomplete
-   ========================================================================== */
-/* line 60, ../sass/modules/_search.scss */
-.search--autocomplete-wrapper {
-  display: none;
-  position: absolute;
-  top: 12.25em;
-  right: 1.25em;
-  left: 1.25em;
-  z-index: 90;
-  border: 1px solid #737373;
-  padding: 1em;
-  background-color: white;
-  -webkit-border-radius: 0.4em;
-  -moz-border-radius: 0.4em;
-  -ms-border-radius: 0.4em;
-  -o-border-radius: 0.4em;
-  border-radius: 0.4em;
-}
-@media only screen and (min-width: 28em) {
-  /* line 60, ../sass/modules/_search.scss */
-  .search--autocomplete-wrapper {
-    top: 7.5em;
-  }
-}
-
-/* line 84, ../sass/modules/_search.scss */
-.autocomplete-header {
-  border-bottom: 1px solid #f2f2f2;
-  margin-bottom: 1em;
-  padding-bottom: 1em;
-  font-size: 110%;
-  font-weight: bold;
-}
-
-/* line 93, ../sass/modules/_search.scss */
-.autocomplete-suggestion {
-  border-bottom: 1px solid #e6e6e6;
-  color: #41ab51;
-  cursor: pointer;
-  display: block;
-  margin-bottom: 1em;
-  padding-bottom: 1em;
-}
-/* line 102, ../sass/modules/_search.scss */
-.autocomplete-suggestion:link, .autocomplete-suggestion:visited {
-  text-decoration: none;
-}
-/* line 107, ../sass/modules/_search.scss */
-.autocomplete-suggestion:hover, .autocomplete-suggestion:active {
-  text-decoration: underline;
-}
-/* line 111, ../sass/modules/_search.scss */
-.autocomplete-suggestion:last-child {
-  border-bottom: 0;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
 /**
  * Question module
  *
@@ -1787,6 +1728,66 @@ label {
     -o-border-radius: 0 0.4em 0.4em 0;
     border-radius: 0 0.4em 0.4em 0;
   }
+}
+
+/* Suggestions
+   ========================================================================== */
+/* line 95, ../sass/modules/_twitter-typeahead.scss */
+.tt-dropdown-menu {
+  position: absolute;
+  z-index: 90;
+  border: 1px solid #737373;
+  margin-top: .5em;
+  padding: 1em;
+  width: 100%;
+  background-color: white;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media only screen and (min-width: 28em) {
+  /* line 95, ../sass/modules/_twitter-typeahead.scss */
+  .tt-dropdown-menu {
+    top: 7.5em;
+  }
+}
+
+/* line 115, ../sass/modules/_twitter-typeahead.scss */
+.tt-suggestion-header {
+  border-bottom: 1px solid #f2f2f2;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  font-size: 110%;
+  font-weight: bold;
+}
+
+/* line 124, ../sass/modules/_twitter-typeahead.scss */
+.tt-suggestion {
+  border-bottom: 1px solid #e6e6e6;
+  color: #41ab51;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+/* line 133, ../sass/modules/_twitter-typeahead.scss */
+.tt-suggestion:link, .tt-suggestion:visited {
+  text-decoration: none;
+}
+/* line 138, ../sass/modules/_twitter-typeahead.scss */
+.tt-suggestion:hover, .tt-suggestion:active {
+  text-decoration: underline;
+}
+/* line 142, ../sass/modules/_twitter-typeahead.scss */
+.tt-suggestion:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 /**
