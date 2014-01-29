@@ -45,6 +45,14 @@
  * @ingroup themeable
  */
 ?>
-<nav class="nav-mobile js-mobile-nav">
-  <?php print $content ?>
+<nav class="nav-dropdown">
+  <div class="nav-dropdown--wrapper">
+    <a href="#" title="" class="nav-dropdown--header">
+      <?php print $block->subject; ?>
+      <img class="nav-dropdown--icon" src="images/nav-arrow-down-icon.png">
+    </a>
+    <div class="nav-dropdown--item">
+      <?php print $content ?>
+    </div>
+  </div>
 </nav>

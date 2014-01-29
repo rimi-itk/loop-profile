@@ -21,6 +21,11 @@ function loop_preprocess_page(&$variables) {
     // No search results, change title.
     $variables['title'] = t('Ask question');
   }
+
+  // Load LOOP primary menu.
+  if (module_exists('loop_navigation')) {
+    $variables['loop_primary_menu'] = module_invoke('menu', 'block_view', 'menu-loop-primary-menu');
+  }
 }
 
 
@@ -152,7 +157,7 @@ function loop_menu_tree__menu_loop_primary_menu($variables) {
  *
  * Cleans up markup for Loop primary menu.
  */
-function loop_menu_link__menu_loop_primary_menu(array $variables) {
+function loop_menu_link__menu_loop_primary_menu($variables) {
   $element = $variables['element'];
   $element['#attributes']['class'][] = 'nav-mobile--link';
   $element['#localized_options']['attributes']['class'] = $element['#attributes']['class'];
