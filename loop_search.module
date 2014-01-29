@@ -124,14 +124,14 @@ function loop_search_suggest_entries($keys) {
         // This is a term!
         $data[] = array(
           'value' => $suggestion['term'],
-          'suggestion' => t('Click me!'),
+          'suggestion' => '',
         );
       }
       else {
         // This is a spell correction.
         $data[] = array(
           'value' => $suggestion['user_input'],
-          'suggestion' => t('Click me!'),
+          'suggestion' => '',
         );
       }
     }
