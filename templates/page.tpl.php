@@ -99,9 +99,12 @@ if (isset($loop_primary_menu)): ?>
 
 <?php if (isset($search)): ?>
 <div class="search-block">
+
   <div class="search--inner">
-    <?php print render($search); ?>
-    <div class="search--autocomplete-wrapper js-autocomplete-search"></div>
+    <form>
+    <input type="text" placeholder="countries" class="typeahead tt-query" style="position: relative; vertical-align: top; background-color: transparent;">
+    <input type="submit">
+    </form>
   </div>
 </div>
 <?php endif ?>
