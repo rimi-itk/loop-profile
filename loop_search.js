@@ -9,10 +9,10 @@
  */
 Drupal.behaviors.loop_search = {
   attach: function(context) {
-    jQuery('.js-autocomplete-search--field', context).typeahead(
+    jQuery('.typeahead', context).typeahead(
       {
         // The autocomplete url.
-        remote: Drupal.settings.loop_search_autocomplete.path + '/%QUERY',
+        remote: '/loop_search_autocomplete/%QUERY',
 
         // Name of search.
         name: 'search',
@@ -32,15 +32,15 @@ Drupal.behaviors.loop_search = {
 };
 
 jQuery(document).ready(function($) {
-  $('.js-autocomplete-search--field').on('typeahead:selected', function (object, datum) {
+  $('.typeahead').on('typeahead:selected', function (object, datum) {
     // If suggestion contains a link. Redirect.
     if (datum['link'] != undefined) {
       window.location = datum['link'];
     }
     else {
       // Suggestion is clicked. Display the results.
-      $('.js-autocomplete-search--field').blur();
-      $('.js-autocomplete-search--field').focus();
+      $('.typeahead').blur();
+      $('.typeahead').focus();
     }
   });
 });
