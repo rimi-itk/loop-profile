@@ -19,9 +19,9 @@ Drupal.behaviors.loop_search = {
 
         // The template we are building suggestion list from.
         template: [
-          '<p class="repo-link">{{link}}</p>',
-          '<p class="repo-desc">{{value}}</p>',
-          '<p class="repo-click">{{suggestion}}</p>'
+          '<span>{{link}}</span>',
+          '<span>{{value}}</span>',
+          '<span>{{suggestion}}</span>'
         ].join(''),
 
         // Template enigne.
