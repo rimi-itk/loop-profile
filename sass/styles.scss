@@ -8,6 +8,7 @@
 
 /* Compass */
 @import "compass/css3";
+@import "compass/css3/user-interface";
 
 
 
@@ -63,3 +64,4 @@ $zen-gutter-width: 30px;
 @import "drupal-modules/_at-term";
 @import "drupal-modules/_messages";
 @import "drupal-modules/_item-list";
+@import "drupal-modules/_autocomplete-deluxe";

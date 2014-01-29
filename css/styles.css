@@ -616,7 +616,7 @@ textarea {
 }
 
 /* line 27, ../sass/theme/_forms.scss */
-input[type="text"],
+input[type="text"], .autocomplete-deluxe-container,
 input[type="password"],
 input[type="date"],
 input[type="datetime"],
@@ -644,7 +644,7 @@ textarea {
   box-sizing: border-box;
 }
 /* line 37, ../sass/theme/_forms.scss */
-input[type="text"]:focus,
+input[type="text"]:focus, .autocomplete-deluxe-container:focus,
 input[type="password"]:focus,
 input[type="date"]:focus,
 input[type="datetime"]:focus,
@@ -659,7 +659,7 @@ textarea:focus {
   color: #404040;
 }
 /* line 43, ../sass/theme/_forms.scss */
-input[type="text"][disabled],
+input[type="text"][disabled], [disabled].autocomplete-deluxe-container,
 input[type="password"][disabled],
 input[type="date"][disabled],
 input[type="datetime"][disabled],
@@ -833,39 +833,55 @@ label {
 }
 /* line 9, ../sass/theme/_tabs.scss */
 .tabs.primary {
-  padding-left: .5em;
   border: none;
+  margin-top: 0;
+  padding: 1em;
+  background-color: white;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
 }
-/* line 18, ../sass/theme/_tabs.scss */
+@media only screen and (min-width: 75em) {
+  /* line 9, ../sass/theme/_tabs.scss */
+  .tabs.primary {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: .5em;
+    background-color: transparent;
+  }
+}
+/* line 31, ../sass/theme/_tabs.scss */
 .tabs li,
 .tabs li.active,
 .tabs li:hover,
 .tabs li.active:hover {
   border-right: none;
-  display: inline-block;
+  display: block;
+  margin-bottom: .5em;
   padding-right: 0;
   background: transparent;
 }
-/* line 25, ../sass/theme/_tabs.scss */
+/* line 39, ../sass/theme/_tabs.scss */
 .tabs li a,
 .tabs li.active a,
 .tabs li:hover a,
 .tabs li.active:hover a {
-  border-top: 1px solid #cccccc;
-  border-right: 1px solid #cccccc;
-  border-left: 1px solid #cccccc;
+  border: 1px solid #cccccc;
   display: block;
   margin: 0;
-  padding: .75em 1.5em .5em;
+  padding: .75em 1.25em;
   line-height: 100%;
   text-decoration: none;
-  -webkit-border-radius: 0.4em 0.4em 0 0;
-  -moz-border-radius: 0.4em 0.4em 0 0;
-  -ms-border-radius: 0.4em 0.4em 0 0;
-  -o-border-radius: 0.4em 0.4em 0 0;
-  border-radius: 0.4em 0.4em 0 0;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
 }
-/* line 38, ../sass/theme/_tabs.scss */
+/* line 50, ../sass/theme/_tabs.scss */
 .tabs li a:hover,
 .tabs li.active a:hover,
 .tabs li:hover a:hover,
@@ -874,37 +890,56 @@ label {
   color: black;
   text-decoration: none;
 }
-/* line 46, ../sass/theme/_tabs.scss */
+@media only screen and (min-width: 75em) {
+  /* line 31, ../sass/theme/_tabs.scss */
+  .tabs li,
+  .tabs li.active,
+  .tabs li:hover,
+  .tabs li.active:hover {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+  /* line 61, ../sass/theme/_tabs.scss */
+  .tabs li a,
+  .tabs li.active a,
+  .tabs li:hover a,
+  .tabs li.active:hover a {
+    border-bottom: 0;
+    padding: .75em 1.25em .5em;
+    -webkit-border-radius: 0.4em 0.4em 0 0;
+    -moz-border-radius: 0.4em 0.4em 0 0;
+    -ms-border-radius: 0.4em 0.4em 0 0;
+    -o-border-radius: 0.4em 0.4em 0 0;
+    border-radius: 0.4em 0.4em 0 0;
+  }
+}
+/* line 71, ../sass/theme/_tabs.scss */
 .tabs li a {
   background: #f2f2f2;
 }
-/* line 50, ../sass/theme/_tabs.scss */
+/* line 75, ../sass/theme/_tabs.scss */
 .tabs li a.active {
   background: white;
 }
-/* line 54, ../sass/theme/_tabs.scss */
+/* line 79, ../sass/theme/_tabs.scss */
 .tabs.secondary {
   margin-top: 0;
-  margin-bottom: -.5em;
-  padding: 1.5em 1em .25em;
+  margin-bottom: -1.75em;
+  padding: 1.5em 1em;
   background-color: white;
-  -webkit-border-radius: 0.4em 0.4em 0 0;
-  -moz-border-radius: 0.4em 0.4em 0 0;
-  -ms-border-radius: 0.4em 0.4em 0 0;
-  -o-border-radius: 0.4em 0.4em 0 0;
-  border-radius: 0.4em 0.4em 0 0;
 }
-/* line 64, ../sass/theme/_tabs.scss */
-.tabs.secondary li a {
+/* line 88, ../sass/theme/_tabs.scss */
+.tabs.secondary li a,
+.tabs.secondary li a:hover {
   border: 1px solid #cccccc;
-  padding: .5em 1.25em .25em;
+  padding: .5em 1.25em;
   background: white;
 }
-/* line 71, ../sass/theme/_tabs.scss */
+/* line 95, ../sass/theme/_tabs.scss */
 .tabs.secondary li a.active {
   background: #e6e6e6;
 }
-/* line 80, ../sass/theme/_tabs.scss */
+/* line 104, ../sass/theme/_tabs.scss */
 .tabs.secondary li a,
 .tabs.secondary li.active a,
 .tabs.secondary li:hover a,
@@ -1876,4 +1911,126 @@ label {
 .block-user .item-list ul {
   padding-left: 0;
   list-style: none;
+}
+
+/**
+ * Autocomplete Deluxe module
+ *
+ * @created by zorp
+ */
+/* Autocomplete field
+   ================================================================================================================== */
+/* line 11, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.ui-autocomplete {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* line 16, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-single:hover {
+  text-decoration: none;
+}
+
+/* line 20, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-container {
+  width: 100%;
+  position: relative;
+}
+/* line 26, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-container .autocomplete-deluxe-form {
+  background: none;
+  padding: 0;
+  border: none;
+  width: auto;
+}
+/* line 32, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-container .autocomplete-deluxe-form:focus {
+  outline: 0;
+  border: none;
+}
+/* line 37, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-container .autocomplete-deluxe-form.autocomplete-deluxe-multiple {
+  float: left;
+  margin-left: 0.5em;
+}
+/* line 43, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-container .autocomplete-deluxe-form-single {
+  display: inline-block;
+}
+
+/* line 48, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-multiple {
+  display: inline-block;
+  position: relative;
+  height: auto !important;
+  margin: 0;
+  overflow: hidden;
+  cursor: text;
+}
+
+/* line 57, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+div.autocomplete-deluxe-throbber {
+  width: 16px;
+  float: right;
+  position: absolute;
+  top: 13px;
+  right: 10px;
+}
+
+/* line 65, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-closed {
+  background: url("../images/throbber.gif") no-repeat 100% 6px;
+}
+
+/* line 69, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-open {
+  background: url("../images/throbber.gif") no-repeat 100% -14px;
+}
+
+/* line 73, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-item {
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+  float: left;
+  position: relative;
+  padding: 0.2em 1.25em 0.2em 0.5em;
+  margin: 3px 5px 0 0;
+  line-height: 13px;
+  background-color: #f2f2f2;
+  box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  border: 1px solid #737373;
+  cursor: default;
+}
+
+/* line 88, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-item-delete {
+  background: url("../images/x.gif");
+  display: block;
+  font-size: 1px;
+  height: 13px;
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  width: 12px;
+}
+
+/* line 99, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-value-delete {
+  display: inline-block;
+  float: right;
+  background: url("../images/x.gif") no-repeat center;
+  width: 18px;
+  width: 18px;
+  /* Prevent text selection. */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+/* line 110, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+.autocomplete-deluxe-highlight-char {
+  color: #41ab51;
 }

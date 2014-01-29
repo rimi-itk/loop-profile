@@ -20,3 +20,4 @@ stylesheets[all][] = icons/loop-icons.css
 stylesheets[all][] = system.theme.css
 stylesheets[all][] = system.menus.css
 stylesheets[all][] = system.messages.css
+stylesheets[all][] = autocomplete_deluxe.css
