@@ -1,0 +1,89 @@
+/**
+ * Twitter typeahead
+ *
+ * http://twitter.github.io/typeahead.js/
+ *
+ */
+
+
+.typeahead-block {
+  @extend %set-max-width-and-center-element;
+  @extend %basic-element-styling;
+
+  position: relative;
+
+  // Compensate for margin from header (necessary when not logged in)
+  margin-top: -$margin-bottom;
+
+  @include breakpoint($layout-max-width) {
+    @include border-radius(0 0 $border-radius $border-radius);
+  }
+}
+
+.typeahead-block--wrapper {
+  position: relative;
+
+  .tt-hint,
+  .typeahead {
+    padding-top: 1.25em;
+    padding-right: 1.25em;
+    padding-bottom: 1.25em;
+    padding-left: 3em;
+    height: 65px;
+
+    background-color: $white;
+
+    // Removing the browsers outline border when field is in focus
+    &:focus {
+      outline: none;
+    }
+
+    @include breakpoint($breakpoint-3) {
+      padding-right: 6em;
+      width: 90%;
+
+      @include border-radius($border-radius 0 0 $border-radius);
+    }
+  }
+}
+
+.typeahead-block--icon {
+  position: absolute;
+  top: 1.2em;
+  left: .35em;
+
+  color: $gray;
+  font-size: 200%;
+
+  z-index: 1;
+}
+
+.twitter-typeahead {
+  display: block !important;
+
+  background-color: $white;
+
+  @include border-radius($border-radius);
+}
+
+.typeahead-block--button {
+  @extend .button--action;
+
+  height: 65px;
+  width: 100%;
+
+  @include breakpoint($breakpoint-3) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    padding-top: .5em;
+    padding-bottom: .65em;
+    width: auto;
+
+    font-size: 150%;
+
+    @include border-radius(0 $border-radius $border-radius 0);
+
+  }
+}

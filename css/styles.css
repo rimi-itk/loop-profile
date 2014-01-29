@@ -488,27 +488,27 @@ img {
    ========================================================================== */
 /* Used for centering an element */
 /* line 14, ../sass/theme/_placeholders.scss */
-.header--inner, .layout--wrapper, .search-block {
+.header--inner, .layout--wrapper, .typeahead-block {
   margin-right: auto;
   margin-left: auto;
   clear: both;
 }
 @media only screen and (min-width: 18.75em) {
   /* line 14, ../sass/theme/_placeholders.scss */
-  .header--inner, .layout--wrapper, .search-block {
+  .header--inner, .layout--wrapper, .typeahead-block {
     max-width: 75em;
   }
 }
 
 /* line 26, ../sass/theme/_placeholders.scss */
-.layout--wrapper, .search-block, .content-list--item {
+.layout--wrapper, .content-list--item, .typeahead-block {
   margin-bottom: 1.5em;
   padding: 1.25em;
   background-color: #f2f2f2;
 }
 @media only screen and (min-width: 75em) {
   /* line 26, ../sass/theme/_placeholders.scss */
-  .layout--wrapper, .search-block, .content-list--item {
+  .layout--wrapper, .content-list--item, .typeahead-block {
     -webkit-border-radius: 0.4em;
     -moz-border-radius: 0.4em;
     -ms-border-radius: 0.4em;
@@ -674,12 +674,13 @@ textarea[disabled] {
   -moz-box-shadow: 0 0 0;
   box-shadow: 0 0 0;
   border: 1px solid #cccccc;
+  color: #b3b3b3;
   background-color: #e6e6e6;
 }
 
 /* Labels
    ================================================================================================================== */
-/* line 60, ../sass/theme/_forms.scss */
+/* line 61, ../sass/theme/_forms.scss */
 label {
   display: block;
   margin-bottom: .25em;
@@ -693,12 +694,12 @@ label {
  * Based on Drupal's form markup, guidelines are not used
  *
    ================================================================================================================== */
-/* line 77, ../sass/theme/_forms.scss */
+/* line 78, ../sass/theme/_forms.scss */
 .form-module {
   clear: both;
 }
 
-/* line 81, ../sass/theme/_forms.scss */
+/* line 82, ../sass/theme/_forms.scss */
 .form-item {
   border: 1px solid #f2f2f2;
   margin-bottom: 1.5em;
@@ -709,18 +710,18 @@ label {
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-/* line 89, ../sass/theme/_forms.scss */
+/* line 90, ../sass/theme/_forms.scss */
 .form-item .description {
   padding-top: .5em;
   color: #b3b3b3;
 }
 
-/* line 97, ../sass/theme/_forms.scss */
+/* line 98, ../sass/theme/_forms.scss */
 .form-required {
   color: #ff6138;
 }
 
-/* line 101, ../sass/theme/_forms.scss */
+/* line 102, ../sass/theme/_forms.scss */
 .form-select {
   border: 1px solid #cccccc;
   padding: .75em;
@@ -740,34 +741,34 @@ label {
   box-sizing: border-box;
 }
 
-/* line 118, ../sass/theme/_forms.scss */
+/* line 119, ../sass/theme/_forms.scss */
 .form-textarea-question {
   height: 6em;
 }
 @media only screen and (min-width: 30em) {
-  /* line 118, ../sass/theme/_forms.scss */
+  /* line 119, ../sass/theme/_forms.scss */
   .form-textarea-question {
     height: 3.25em;
   }
 }
 
-/* line 126, ../sass/theme/_forms.scss */
+/* line 127, ../sass/theme/_forms.scss */
 .form-actions {
   text-align: right;
 }
 
-/* line 130, ../sass/theme/_forms.scss */
+/* line 131, ../sass/theme/_forms.scss */
 .form-submit {
   width: 100%;
 }
 @media only screen and (min-width: 30em) {
-  /* line 130, ../sass/theme/_forms.scss */
+  /* line 131, ../sass/theme/_forms.scss */
   .form-submit {
     width: auto;
   }
 }
 
-/* line 140, ../sass/theme/_forms.scss */
+/* line 141, ../sass/theme/_forms.scss */
 .field-group-fieldset {
   border: 1px solid #cccccc;
   margin-bottom: 2em;
@@ -780,7 +781,7 @@ label {
   border-radius: 0.4em;
 }
 
-/* line 149, ../sass/theme/_forms.scss */
+/* line 150, ../sass/theme/_forms.scss */
 .fieldset-legend {
   padding-right: .5em;
   padding-left: .5em;
@@ -793,7 +794,7 @@ label {
  * @author magnify
  */
 /* line 8, ../sass/theme/_buttons.scss */
-.button--action, .form-submit, .search--button, .at-add-btn {
+.button--action, .form-submit, .typeahead-block--button, .at-add-btn {
   display: inline-block;
   font-size: 125%;
   padding: .5em 1.5em;
@@ -809,18 +810,18 @@ label {
   text-shadow: 0.025em 0.025em 0.1em #33863f;
 }
 /* line 20, ../sass/theme/_buttons.scss */
-.button--action:focus, .form-submit:focus, .search--button:focus, .at-add-btn:focus, .button--action:hover, .form-submit:hover, .search--button:hover, .at-add-btn:hover, .button--action:active, .form-submit:active, .search--button:active, .at-add-btn:active {
+.button--action:focus, .form-submit:focus, .typeahead-block--button:focus, .at-add-btn:focus, .button--action:hover, .form-submit:hover, .typeahead-block--button:hover, .at-add-btn:hover, .button--action:active, .form-submit:active, .typeahead-block--button:active, .at-add-btn:active {
   text-decoration: none;
 }
 
 /* line 28, ../sass/theme/_buttons.scss */
-.button--action, .form-submit, .search--button {
+.button--action, .form-submit, .typeahead-block--button {
   background-color: #5dc26d;
   border: 1px solid #41ab51;
   color: white;
 }
 /* line 35, ../sass/theme/_buttons.scss */
-.button--action:hover, .form-submit:hover, .search--button:hover {
+.button--action:hover, .form-submit:hover, .typeahead-block--button:hover {
   background-color: #41ab51;
 }
 
@@ -1313,140 +1314,40 @@ label {
 
 /**
  * Search module
- *
- * @author magnify
  */
-/* Search field
-   ========================================================================== */
-/* line 12, ../sass/modules/_search.scss */
-.search-block {
-  position: relative;
-  margin-top: -1.5em;
-}
-@media only screen and (min-width: 75em) {
-  /* line 12, ../sass/modules/_search.scss */
-  .search-block {
-    -webkit-border-radius: 0 0 0.4em 0.4em;
-    -moz-border-radius: 0 0 0.4em 0.4em;
-    -ms-border-radius: 0 0 0.4em 0.4em;
-    -o-border-radius: 0 0 0.4em 0.4em;
-    border-radius: 0 0 0.4em 0.4em;
-  }
-}
-
-/* line 26, ../sass/modules/_search.scss */
-.search--field-wrapper {
-  position: relative;
-}
-/* line 29, ../sass/modules/_search.scss */
-.search--field-wrapper .twitter-typeahead {
-  width: 100%;
-}
-/* line 34, ../sass/modules/_search.scss */
-.search--field-wrapper .form-item {
-  border: 0;
-  margin-bottom: 0;
-  padding: 0;
-}
-/* line 40, ../sass/modules/_search.scss */
-.search--field-wrapper .search--icon {
-  position: absolute;
-  top: 1.2em;
-  left: .35em;
-  color: #b3b3b3;
-  font-size: 200%;
-  z-index: 1;
-}
-/* line 51, ../sass/modules/_search.scss */
-.search--field-wrapper .search--field, .search--field-wrapper .tt-hint,
-.search--field-wrapper .typeahead {
-  padding-top: 1.25em;
-  padding-right: 1.25em;
-  padding-bottom: 1.25em;
-  padding-left: 3em;
-  height: 65px;
-  background-color: white;
-}
-/* line 61, ../sass/modules/_search.scss */
-.search--field-wrapper .search--field:focus, .search--field-wrapper .tt-hint:focus,
-.search--field-wrapper .typeahead:focus {
-  outline: none;
-}
-@media only screen and (min-width: 28em) {
-  /* line 67, ../sass/modules/_search.scss */
-  .search--field-wrapper .search--field, .search--field-wrapper .tt-hint,
-  .search--field-wrapper .typeahead {
-    padding-right: 6em;
-    width: 90%;
-    -webkit-border-radius: 0.4em 0 0 0.4em;
-    -moz-border-radius: 0.4em 0 0 0.4em;
-    -ms-border-radius: 0.4em 0 0 0.4em;
-    -o-border-radius: 0.4em 0 0 0.4em;
-    border-radius: 0.4em 0 0 0.4em;
-  }
-}
-
-/* line 81, ../sass/modules/_search.scss */
-.typeahead {
-  background-color: white !important;
-}
-
-/* line 85, ../sass/modules/_search.scss */
-.search--button {
-  height: 65px;
-  width: 100%;
-}
-@media only screen and (min-width: 28em) {
-  /* line 85, ../sass/modules/_search.scss */
-  .search--button {
-    position: absolute;
-    bottom: .25em;
-    right: 0;
-    padding-top: .5em;
-    padding-bottom: .65em;
-    width: auto;
-    font-size: 150%;
-    -webkit-border-radius: 0 0.4em 0.4em 0;
-    -moz-border-radius: 0 0.4em 0.4em 0;
-    -ms-border-radius: 0 0.4em 0.4em 0;
-    -o-border-radius: 0 0.4em 0.4em 0;
-    border-radius: 0 0.4em 0.4em 0;
-  }
-}
-
 /* Search result
    ========================================================================== */
-/* line 123, ../sass/modules/_search.scss */
+/* line 22, ../sass/modules/_search.scss */
 .search-result--link {
   display: block;
   margin-bottom: .5em;
 }
-/* line 128, ../sass/modules/_search.scss */
+/* line 27, ../sass/modules/_search.scss */
 .search-result--link:link, .search-result--link:visited {
   text-decoration: none;
 }
-/* line 133, ../sass/modules/_search.scss */
+/* line 32, ../sass/modules/_search.scss */
 .search-result--link:hover, .search-result--link:active {
   text-decoration: underline;
 }
 
-/* line 138, ../sass/modules/_search.scss */
+/* line 37, ../sass/modules/_search.scss */
 .search-result--comments {
   display: block;
 }
-/* line 142, ../sass/modules/_search.scss */
+/* line 41, ../sass/modules/_search.scss */
 .search-result--comments:link, .search-result--comments:visited {
   color: #737373;
   text-decoration: none;
 }
-/* line 148, ../sass/modules/_search.scss */
+/* line 47, ../sass/modules/_search.scss */
 .search-result--comments:hover, .search-result--comments:active {
   color: #404040;
 }
 
 /* Search autocomplete
    ========================================================================== */
-/* line 161, ../sass/modules/_search.scss */
+/* line 60, ../sass/modules/_search.scss */
 .search--autocomplete-wrapper {
   display: none;
   position: absolute;
@@ -1464,13 +1365,13 @@ label {
   border-radius: 0.4em;
 }
 @media only screen and (min-width: 28em) {
-  /* line 161, ../sass/modules/_search.scss */
+  /* line 60, ../sass/modules/_search.scss */
   .search--autocomplete-wrapper {
     top: 7.5em;
   }
 }
 
-/* line 185, ../sass/modules/_search.scss */
+/* line 84, ../sass/modules/_search.scss */
 .autocomplete-header {
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 1em;
@@ -1479,7 +1380,7 @@ label {
   font-weight: bold;
 }
 
-/* line 194, ../sass/modules/_search.scss */
+/* line 93, ../sass/modules/_search.scss */
 .autocomplete-suggestion {
   border-bottom: 1px solid #e6e6e6;
   color: #41ab51;
@@ -1488,15 +1389,15 @@ label {
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 203, ../sass/modules/_search.scss */
+/* line 102, ../sass/modules/_search.scss */
 .autocomplete-suggestion:link, .autocomplete-suggestion:visited {
   text-decoration: none;
 }
-/* line 208, ../sass/modules/_search.scss */
+/* line 107, ../sass/modules/_search.scss */
 .autocomplete-suggestion:hover, .autocomplete-suggestion:active {
   text-decoration: underline;
 }
-/* line 212, ../sass/modules/_search.scss */
+/* line 111, ../sass/modules/_search.scss */
 .autocomplete-suggestion:last-child {
   border-bottom: 0;
   margin-bottom: 0;
@@ -1787,6 +1688,105 @@ label {
 .page-title {
   font-size: 200%;
   font-weight: bold;
+}
+
+/**
+ * Twitter typeahead
+ *
+ * http://twitter.github.io/typeahead.js/
+ *
+ */
+/* line 9, ../sass/modules/_twitter-typeahead.scss */
+.typeahead-block {
+  position: relative;
+  margin-top: -1.5em;
+}
+@media only screen and (min-width: 75em) {
+  /* line 9, ../sass/modules/_twitter-typeahead.scss */
+  .typeahead-block {
+    -webkit-border-radius: 0 0 0.4em 0.4em;
+    -moz-border-radius: 0 0 0.4em 0.4em;
+    -ms-border-radius: 0 0 0.4em 0.4em;
+    -o-border-radius: 0 0 0.4em 0.4em;
+    border-radius: 0 0 0.4em 0.4em;
+  }
+}
+
+/* line 23, ../sass/modules/_twitter-typeahead.scss */
+.typeahead-block--wrapper {
+  position: relative;
+}
+/* line 27, ../sass/modules/_twitter-typeahead.scss */
+.typeahead-block--wrapper .tt-hint,
+.typeahead-block--wrapper .typeahead {
+  padding-top: 1.25em;
+  padding-right: 1.25em;
+  padding-bottom: 1.25em;
+  padding-left: 3em;
+  height: 65px;
+  background-color: white;
+}
+/* line 37, ../sass/modules/_twitter-typeahead.scss */
+.typeahead-block--wrapper .tt-hint:focus,
+.typeahead-block--wrapper .typeahead:focus {
+  outline: none;
+}
+@media only screen and (min-width: 28em) {
+  /* line 27, ../sass/modules/_twitter-typeahead.scss */
+  .typeahead-block--wrapper .tt-hint,
+  .typeahead-block--wrapper .typeahead {
+    padding-right: 6em;
+    width: 90%;
+    -webkit-border-radius: 0.4em 0 0 0.4em;
+    -moz-border-radius: 0.4em 0 0 0.4em;
+    -ms-border-radius: 0.4em 0 0 0.4em;
+    -o-border-radius: 0.4em 0 0 0.4em;
+    border-radius: 0.4em 0 0 0.4em;
+  }
+}
+
+/* line 50, ../sass/modules/_twitter-typeahead.scss */
+.typeahead-block--icon {
+  position: absolute;
+  top: 1.2em;
+  left: .35em;
+  color: #b3b3b3;
+  font-size: 200%;
+  z-index: 1;
+}
+
+/* line 61, ../sass/modules/_twitter-typeahead.scss */
+.twitter-typeahead {
+  display: block !important;
+  background-color: white;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+}
+
+/* line 69, ../sass/modules/_twitter-typeahead.scss */
+.typeahead-block--button {
+  height: 65px;
+  width: 100%;
+}
+@media only screen and (min-width: 28em) {
+  /* line 69, ../sass/modules/_twitter-typeahead.scss */
+  .typeahead-block--button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-top: .5em;
+    padding-bottom: .65em;
+    width: auto;
+    font-size: 150%;
+    -webkit-border-radius: 0 0.4em 0.4em 0;
+    -moz-border-radius: 0 0.4em 0.4em 0;
+    -ms-border-radius: 0 0.4em 0.4em 0;
+    -o-border-radius: 0 0.4em 0.4em 0;
+    border-radius: 0 0.4em 0.4em 0;
+  }
 }
 
 /**

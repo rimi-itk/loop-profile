@@ -98,18 +98,15 @@ if (isset($loop_primary_menu)): ?>
 </header>
 
 <?php if (isset($search)): ?>
-<div class="search-block">
-
-  <div class="search--inner">
-    <div class="search--field-wrapper">
-      <form>
-        <label for="search--typeahead">Search for an answer</label>
-        <i class="search--icon icon-search"></i>
-        <input type="text" id="search--typeahead" title="<?php print t('E.g. &quot;How do you document a subject&quot;'); ?>" placeholder="<?php print t('E.g. &quot;How do you document a subject&quot;'); ?>" class="typeahead tt-query" style="position: relative; vertical-align: top; background-color: transparent;">
-        <input type="submit" value="<?php print t('Search'); ?>" class="search--button">
-      </form>
+<div class="typeahead-block">
+  <form>
+    <div class="typeahead-block--wrapper">
+      <label for="typeahead">Search for an answer</label>
+      <i class="typeahead-block--icon icon-search"></i>
+      <input type="text" id="typeahead" title="<?php print t('E.g. &quot;How do you document a subject&quot;'); ?>" placeholder="<?php print t('E.g. &quot;How do you document a subject&quot;'); ?>" class="typeahead tt-query" style="position: relative; vertical-align: top; background-color: transparent;">
+      <input type="submit" value="<?php print t('Search'); ?>" class="typeahead-block--button">
     </div>
-  </div>
+  </form>
 </div>
 <?php endif ?>
 
