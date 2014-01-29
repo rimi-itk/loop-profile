@@ -73,6 +73,15 @@
   }
 }
 
+.tt-hint,
+.typeahead {
+  @extend .search--field;
+}
+
+.typeahead {
+  background-color: $white !important;
+}
+
 .search--button {
   @extend .button--action;
 
@@ -81,7 +90,7 @@
 
   @include breakpoint($breakpoint-3) {
     position: absolute;
-    bottom: 0;
+    bottom: .25em;
     right: 0;
 
     padding-top: .5em;

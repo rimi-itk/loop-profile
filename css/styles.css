@@ -1358,7 +1358,8 @@ label {
   z-index: 1;
 }
 /* line 51, ../sass/modules/_search.scss */
-.search--field-wrapper .search--field {
+.search--field-wrapper .search--field, .search--field-wrapper .tt-hint,
+.search--field-wrapper .typeahead {
   padding-top: 1.25em;
   padding-right: 1.25em;
   padding-bottom: 1.25em;
@@ -1367,12 +1368,14 @@ label {
   background-color: white;
 }
 /* line 61, ../sass/modules/_search.scss */
-.search--field-wrapper .search--field:focus {
+.search--field-wrapper .search--field:focus, .search--field-wrapper .tt-hint:focus,
+.search--field-wrapper .typeahead:focus {
   outline: none;
 }
 @media only screen and (min-width: 28em) {
   /* line 67, ../sass/modules/_search.scss */
-  .search--field-wrapper .search--field {
+  .search--field-wrapper .search--field, .search--field-wrapper .tt-hint,
+  .search--field-wrapper .typeahead {
     padding-right: 6em;
     width: 90%;
     -webkit-border-radius: 0.4em 0 0 0.4em;
@@ -1383,16 +1386,21 @@ label {
   }
 }
 
-/* line 76, ../sass/modules/_search.scss */
+/* line 81, ../sass/modules/_search.scss */
+.typeahead {
+  background-color: white !important;
+}
+
+/* line 85, ../sass/modules/_search.scss */
 .search--button {
   height: 65px;
   width: 100%;
 }
 @media only screen and (min-width: 28em) {
-  /* line 76, ../sass/modules/_search.scss */
+  /* line 85, ../sass/modules/_search.scss */
   .search--button {
     position: absolute;
-    bottom: 0;
+    bottom: .25em;
     right: 0;
     padding-top: .5em;
     padding-bottom: .65em;
@@ -1408,37 +1416,37 @@ label {
 
 /* Search result
    ========================================================================== */
-/* line 114, ../sass/modules/_search.scss */
+/* line 123, ../sass/modules/_search.scss */
 .search-result--link {
   display: block;
   margin-bottom: .5em;
 }
-/* line 119, ../sass/modules/_search.scss */
+/* line 128, ../sass/modules/_search.scss */
 .search-result--link:link, .search-result--link:visited {
   text-decoration: none;
 }
-/* line 124, ../sass/modules/_search.scss */
+/* line 133, ../sass/modules/_search.scss */
 .search-result--link:hover, .search-result--link:active {
   text-decoration: underline;
 }
 
-/* line 129, ../sass/modules/_search.scss */
+/* line 138, ../sass/modules/_search.scss */
 .search-result--comments {
   display: block;
 }
-/* line 133, ../sass/modules/_search.scss */
+/* line 142, ../sass/modules/_search.scss */
 .search-result--comments:link, .search-result--comments:visited {
   color: #737373;
   text-decoration: none;
 }
-/* line 139, ../sass/modules/_search.scss */
+/* line 148, ../sass/modules/_search.scss */
 .search-result--comments:hover, .search-result--comments:active {
   color: #404040;
 }
 
 /* Search autocomplete
    ========================================================================== */
-/* line 152, ../sass/modules/_search.scss */
+/* line 161, ../sass/modules/_search.scss */
 .search--autocomplete-wrapper {
   display: none;
   position: absolute;
@@ -1456,13 +1464,13 @@ label {
   border-radius: 0.4em;
 }
 @media only screen and (min-width: 28em) {
-  /* line 152, ../sass/modules/_search.scss */
+  /* line 161, ../sass/modules/_search.scss */
   .search--autocomplete-wrapper {
     top: 7.5em;
   }
 }
 
-/* line 176, ../sass/modules/_search.scss */
+/* line 185, ../sass/modules/_search.scss */
 .autocomplete-header {
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 1em;
@@ -1471,7 +1479,7 @@ label {
   font-weight: bold;
 }
 
-/* line 185, ../sass/modules/_search.scss */
+/* line 194, ../sass/modules/_search.scss */
 .autocomplete-suggestion {
   border-bottom: 1px solid #e6e6e6;
   color: #41ab51;
@@ -1480,15 +1488,15 @@ label {
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 194, ../sass/modules/_search.scss */
+/* line 203, ../sass/modules/_search.scss */
 .autocomplete-suggestion:link, .autocomplete-suggestion:visited {
   text-decoration: none;
 }
-/* line 199, ../sass/modules/_search.scss */
+/* line 208, ../sass/modules/_search.scss */
 .autocomplete-suggestion:hover, .autocomplete-suggestion:active {
   text-decoration: underline;
 }
-/* line 203, ../sass/modules/_search.scss */
+/* line 212, ../sass/modules/_search.scss */
 .autocomplete-suggestion:last-child {
   border-bottom: 0;
   margin-bottom: 0;

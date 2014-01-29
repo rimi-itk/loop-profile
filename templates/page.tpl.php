@@ -101,10 +101,14 @@ if (isset($loop_primary_menu)): ?>
 <div class="search-block">
 
   <div class="search--inner">
-    <form>
-    <input type="text" placeholder="countries" class="typeahead tt-query" style="position: relative; vertical-align: top; background-color: transparent;">
-    <input type="submit">
-    </form>
+    <div class="search--field-wrapper">
+      <form>
+        <label for="search--typeahead">Search for an answer</label>
+        <i class="search--icon icon-search"></i>
+        <input type="text" id="search--typeahead" title="<?php print t('E.g. &quot;How do you document a subject&quot;'); ?>" placeholder="<?php print t('E.g. &quot;How do you document a subject&quot;'); ?>" class="typeahead tt-query" style="position: relative; vertical-align: top; background-color: transparent;">
+        <input type="submit" value="<?php print t('Search'); ?>" class="search--button">
+      </form>
+    </div>
   </div>
 </div>
 <?php endif ?>
