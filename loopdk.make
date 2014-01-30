@@ -113,7 +113,7 @@ projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = "1.2"
 
 projects[pcp][subdir] = "contrib"
-projects[pcp][version] = "1.4"
+projects[pcp][version] = "1.5"
 
 projects[redirect][subdir] = "contrib"
 projects[redirect][version] = "1.0-rc1"
