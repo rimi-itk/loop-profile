@@ -27,10 +27,10 @@
   font-size: 80%;
 }
 
-// We have to style directly on <a> because of Drupal's output
 .meta-data--author-image {
   display: inline;
 
+  // We have to style directly on <a> because of Drupal's output
   a {
     border: 1px solid $border-color;
     display: inline-block;
