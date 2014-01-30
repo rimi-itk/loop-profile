@@ -93,13 +93,13 @@
       <?php print $user_picture; ?>
     </div>
     <div class="meta-data--author-wrapper">
-      <a href="#" class="meta-data--author-link"><?php echo $name; ?></a>
+      <a href="#" class="meta-data--author-link"><?php print $name; ?></a>
       <span class="meta-data--author-title">SOSU, AUH, HUH</span>
     </div>
   </div>
   <div class="question--meta-data">
-    <div class="question--meta-data-date"><?php echo t('Submitted') . ' ' . format_date($created, $type = 'medium'); ?></div>
-    <span class="question--meta-data-category"><?php echo t('Categori:'); ?></span> <a href="#"><?php print_r($node->field_subject); ?></a>
+    <div class="question--meta-data-date"><?php print t('Submitted') . ' ' . format_date($created, $type = 'medium'); ?></div>
+    <span class="question--meta-data-category"><?php print t('Categori:'); ?></span><?php print render($content['field_subject']);?>
   </div>
   <div class="question--inner">
     <span class="question--label"><?php echo t('Question:'); ?></span>
