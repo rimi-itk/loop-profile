@@ -28,11 +28,11 @@ function loop_preprocess_page(&$variables) {
   }
 
   // Add layout class depending on node type.
-  // Get node type
-  $node_type = $variables['node']->type;
-
   // Make sure node type is set
-  if (isset($node_type)) {
+  if (isset($variables['node']->type)) {
+    // Get node type
+    $node_type = $variables['node']->type;
+
     // use node type to determine layout class
     switch ($node_type) {
       case 'post':
