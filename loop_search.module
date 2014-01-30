@@ -80,11 +80,14 @@ function loop_search_suggest_entries($keys) {
   // Pick the correct server.
   $server = $search->server();
 
+  // Split keys up.
+  list($complete, $incomplete) = $search->splitKeys($keys);
+
   // Remove spacing 'n stuff.
   $keys = preg_replace('/\s+/', ' ', trim($keys));
 
   // Build query with limit.
-  $query = $search->getQuery(NULL, $keys);
+  $query = $search->getQuery($complete, $incomplete);
   $query->range(0, 10);
   $query->setOption('search id', 'loop_search:' . $search->machine_name);
 
@@ -95,11 +98,13 @@ function loop_search_suggest_entries($keys) {
   $query->preExecute();
 
   // The call!
-  $suggestions = $server->getAutocompleteSuggestions($query, $search, $keys, $keys);
+  $suggestions = $server->getAutocompleteSuggestions($query, $search, $incomplete, $keys);
 
   // Full query search. Will return nodes.
   $query = search_api_query(1)
-    ->keys($keys);
+    ->keys($keys)
+    ->fields($search->options['fields'])
+    ->range(0, 10);
   $items = $query->execute();
 
   // Prepare for data!
