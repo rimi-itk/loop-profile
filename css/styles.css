@@ -794,12 +794,13 @@ label {
  * @author magnify
  */
 /* line 8, ../sass/theme/_buttons.scss */
-.button--action, .form-submit, .typeahead-block--button, .at-add-btn {
+.button--action, .form-submit, .block-follow-question .block-module--link, .typeahead-block--button, .button--warning, .block-unfollow-question .block-module--link, .at-add-btn {
   display: inline-block;
   font-size: 125%;
-  padding: .5em 1.5em;
+  padding: .4em 1.5em .5em;
   position: relative;
   cursor: pointer;
+  line-height: 150%;
   text-align: center;
   vertical-align: middle;
   -webkit-border-radius: 0.4em;
@@ -807,22 +808,44 @@ label {
   -ms-border-radius: 0.4em;
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
-  text-shadow: 0.025em 0.025em 0.1em #33863f;
 }
-/* line 20, ../sass/theme/_buttons.scss */
-.button--action:focus, .form-submit:focus, .typeahead-block--button:focus, .at-add-btn:focus, .button--action:hover, .form-submit:hover, .typeahead-block--button:hover, .at-add-btn:hover, .button--action:active, .form-submit:active, .typeahead-block--button:active, .at-add-btn:active {
+/* line 21, ../sass/theme/_buttons.scss */
+.button--action:focus, .form-submit:focus, .block-follow-question .block-module--link:focus, .typeahead-block--button:focus, .button--warning:focus, .block-unfollow-question .block-module--link:focus, .at-add-btn:focus, .button--action:hover, .form-submit:hover, .block-follow-question .block-module--link:hover, .typeahead-block--button:hover, .button--warning:hover, .block-unfollow-question .block-module--link:hover, .at-add-btn:hover, .button--action:active, .form-submit:active, .block-follow-question .block-module--link:active, .typeahead-block--button:active, .button--warning:active, .block-unfollow-question .block-module--link:active, .at-add-btn:active {
   text-decoration: none;
 }
 
 /* line 28, ../sass/theme/_buttons.scss */
-.button--action, .form-submit, .typeahead-block--button {
+.button--action, .form-submit, .block-follow-question .block-module--link, .typeahead-block--button {
   background-color: #5dc26d;
   border: 1px solid #41ab51;
   color: white;
+  text-shadow: 0.05em 0.05em 0 #33863f;
 }
-/* line 35, ../sass/theme/_buttons.scss */
-.button--action:hover, .form-submit:hover, .typeahead-block--button:hover {
+/* line 38, ../sass/theme/_buttons.scss */
+.button--action:link, .form-submit:link, .block-follow-question .block-module--link:link, .typeahead-block--button:link, .button--action:visited, .form-submit:visited, .block-follow-question .block-module--link:visited, .typeahead-block--button:visited {
+  color: white;
+  text-decoration: none;
+}
+/* line 43, ../sass/theme/_buttons.scss */
+.button--action:hover, .form-submit:hover, .block-follow-question .block-module--link:hover, .typeahead-block--button:hover {
   background-color: #41ab51;
+}
+
+/* line 48, ../sass/theme/_buttons.scss */
+.button--warning, .block-unfollow-question .block-module--link {
+  background-color: #ff6138;
+  border: 1px solid #ff3905;
+  color: white;
+  text-shadow: 0.05em 0.05em 0 #d12b00;
+}
+/* line 58, ../sass/theme/_buttons.scss */
+.button--warning:link, .block-unfollow-question .block-module--link:link, .button--warning:visited, .block-unfollow-question .block-module--link:visited {
+  color: white;
+  text-decoration: none;
+}
+/* line 63, ../sass/theme/_buttons.scss */
+.button--warning:hover, .block-unfollow-question .block-module--link:hover {
+  background-color: #ff3905;
 }
 
 /**
@@ -1844,6 +1867,47 @@ label {
 .page-title {
   font-size: 200%;
   font-weight: bold;
+}
+
+/**
+ *
+ * Block module
+ *
+ */
+/* line 8, ../sass/modules/_block-module.scss */
+.block-module, .block-follow-question,
+.block-unfollow-question {
+  margin-bottom: 1.5em;
+  background-color: #f2f2f2;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+}
+
+/* line 16, ../sass/modules/_block-module.scss */
+.block-module--inner {
+  padding: 1.5em;
+}
+
+/* line 20, ../sass/modules/_block-module.scss */
+.block-module--header {
+  font-size: 130%;
+  font-weight: bold;
+}
+
+/* line 25, ../sass/modules/_block-module.scss */
+.block-module--content {
+  margin-bottom: 1em;
+}
+
+/* line 29, ../sass/modules/_block-module.scss */
+.block-module--link {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /**

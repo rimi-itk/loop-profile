@@ -1,0 +1,53 @@
+/**
+ *
+ * Block module
+ *
+ */
+
+
+.block-module {
+  margin-bottom: $margin-bottom;
+
+  background-color: $gray-lightest;
+
+  @include border-radius($border-radius);
+}
+
+.block-module--inner {
+  padding: 1.5em;
+}
+
+.block-module--header {
+  font-size: 130%;
+  font-weight: bold;
+}
+
+.block-module--content {
+  margin-bottom: 1em;
+}
+
+.block-module--link {
+  width: 100%;
+
+  @include box-sizing(border-box);
+}
+
+
+.block-follow-question,
+.block-unfollow-question {
+  @extend .block-module;
+}
+
+
+.block-follow-question {
+  .block-module--link {
+    @extend .button--action;
+  }
+}
+
+.block-unfollow-question {
+  .block-module--link {
+    @extend .button--warning;
+  }
+}
+

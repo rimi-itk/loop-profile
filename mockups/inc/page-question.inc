@@ -119,7 +119,8 @@
       </div>
     </div>
     <div class="layout-element-beta">
-      Beta
+      <?php include 'inc/block-follow-question.inc'; ?>
+      <?php include 'inc/block-unfollow-question.inc'; ?>
     </div>
   </div>
   <div class="layout--inner">
