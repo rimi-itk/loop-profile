@@ -5,8 +5,8 @@ core = 7.x
 projects[admin_views][subdir] = "contrib"
 projects[admin_views][version] = "1.2"
 
-projects[auto_nodetitle][subdir] = "contrib"
-projects[auto_nodetitle][version] = "1.0"
+projects[auto_entitylabel][subdir] = "contrib"
+projects[auto_entitylabel][version] = "1.2"
 
 projects[autocomplete_deluxe][type] = "module"
 projects[autocomplete_deluxe][subdir] = "contrib"
