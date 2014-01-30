@@ -57,9 +57,9 @@
 
 
 /* Layouts
-   ================================================================================================================== */ 
+   ================================================================================================================== */
 
-.layout--wrapper {
+%layout--wrapper {
   @extend %set-max-width-and-center-element;
   @extend %basic-element-styling;
 
@@ -75,4 +75,101 @@
 
   min-height: 400px;
   margin-bottom: $margin-bottom;
+  overflow: auto;
+}
+
+.layout-element-alpha,
+.layout-element-beta,
+.layout-element-gamma,
+.layout-element-delta,
+.layout-element-epsilon {
+  float: left;
+
+  width: 100%;
+
+  @include box-sizing(border-box);
+}
+
+
+// Default layout
+
+.layout-default {
+  @extend %layout--wrapper;
+
+  .layout-element-alpha {
+    @include breakpoint(45em) {
+      @include zen-grid-item(8.5, 1);
+    }
+  }
+
+  .layout-element-beta {
+    @include breakpoint(45em) {
+      @include zen-grid-item(3.5, 1, right);
+    }
+  }
+
+  .layout-element-gamma {
+    @include breakpoint(45em) {
+      clear: both;
+
+      @include zen-grid-item(6, 1);
+    }
+  }
+
+  .layout-element-delta {
+    @include breakpoint(45em) {
+      @include zen-grid-item(6, 1, right);
+    }
+  }
+
+  .layout-element-epsilon {
+    @include breakpoint(45em) {
+      clear: both;
+
+      @include zen-grid-item(12, 1);
+    }
+  }
+}
+
+
+// Alternative layout
+
+.layout-alternative {
+  @extend %layout--wrapper;
+
+  .layout-element-alpha {
+    @include breakpoint(45em) {
+      @include zen-grid-item(12, 1);
+    }
+  }
+
+  .layout-element-beta {
+    @include breakpoint(45em) {
+      clear: both;
+
+      @include zen-grid-item(12, 1);
+    }
+  }
+
+  .layout-element-gamma {
+    @include breakpoint(45em) {
+      clear: both;
+
+      @include zen-grid-item(6, 1);
+    }
+  }
+
+  .layout-element-delta {
+    @include breakpoint(45em) {
+      @include zen-grid-item(6, 1, right);
+    }
+  }
+
+  .layout-element-epsilon {
+    @include breakpoint(45em) {
+      clear: both;
+
+      @include zen-grid-item(12, 1);
+    }
+  }
 }
