@@ -13,23 +13,23 @@ function loop_post_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'ant_pattern_post';
-  $strongarm->value = '';
-  $export['ant_pattern_post'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'ant_php_post';
-  $strongarm->value = 0;
-  $export['ant_php_post'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'ant_post';
+  $strongarm->name = 'auto_entitylabel_node_post';
   $strongarm->value = '1';
-  $export['ant_post'] = $strongarm;
+  $export['auto_entitylabel_node_post'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'auto_entitylabel_pattern_node_post';
+  $strongarm->value = '[node:field-description]';
+  $export['auto_entitylabel_pattern_node_post'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'auto_entitylabel_php_node_post';
+  $strongarm->value = 0;
+  $export['auto_entitylabel_php_node_post'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
