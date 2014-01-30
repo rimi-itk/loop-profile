@@ -99,46 +99,12 @@
   </div>
   <div class="question--meta-data">
     <div class="question--meta-data-date"><?php print t('Submitted') . ' ' . format_date($created, $type = 'medium'); ?></div>
-    <span class="question--meta-data-category"><?php print t('Categori:'); ?></span><?php print render($content['field_subject']);?>
+    <?php print render($content['field_subject']);?>
   </div>
   <div class="question--inner">
-    <span class="question--label"><?php echo t('Question:'); ?></span>
-    <h1 class="question">Hvordan dokumenteres delvis aktindsigt? Og findes der en vejledning i dokumentation af aktindsigt?</h1>
+    <?php print render($content['field_description']);?>
+  </div>
+  <div class="question--terms">
+    <?php print render($content['field_keyword']);?>
   </div>
 </section>
-
-
-<br style="clear: both;">
-<br>
-<br>
-<br>
-<br>
-<br>
-<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
-  <?php print render($title_prefix); ?>
-  <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
-
-  <?php if ($display_submitted): ?>
-    <div class="submitted">
-      <?php print $submitted; ?>
-    </div>
-  <?php endif; ?>
-
-  <div class="content"<?php print $content_attributes; ?>>
-    <?php
-      // We hide the comments and links now so that we can render them later.
-      hide($content['comments']);
-      hide($content['links']);
-      print render($content);
-    ?>
-  </div>
-
-  <?php print render($content['links']); ?>
-
-  <?php print render($content['comments']); ?>
-
-</div>
