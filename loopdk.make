@@ -100,7 +100,7 @@ projects[oauth][subdir] = "contrib"
 projects[oauth][version] = "3.2"
 
 projects[og][subdir] = "contrib"
-projects[og][version] = "2.3"
+projects[og][version] = "2.4"
 
 projects[page_title][subdir] = "contrib"
 projects[page_title][version] = "2.7"
