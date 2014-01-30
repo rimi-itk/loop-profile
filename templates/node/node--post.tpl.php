@@ -81,12 +81,6 @@
  */
 ?>
 
-<pre>
-  <?php // print_r($node); ?>
-</pre>
-
-<?php // echo $node->field_profession; ?>
-
 <section class="question--wrapper">
   <div class="meta-data--author">
     <div class="meta-data--author-image">
