@@ -37,8 +37,8 @@ function loop_user_image_default_styles() {
         'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 200,
-          'height' => 160,
+          'width' => 500,
+          'height' => 500,
         ),
         'weight' => 1,
       ),
