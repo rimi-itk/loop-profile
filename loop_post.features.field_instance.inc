@@ -64,7 +64,7 @@ function loop_post_field_default_field_instances() {
     'description' => 'Type in keyword(s).',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
