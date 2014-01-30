@@ -97,7 +97,7 @@ projects[notifications][subdir] = "contrib"
 projects[notifications][version] = "1.0-alpha2"
 
 projects[oauth][subdir] = "contrib"
-projects[oauth][version] = "3.1"
+projects[oauth][version] = "3.2"
 
 projects[og][subdir] = "contrib"
 projects[og][version] = "2.3"
