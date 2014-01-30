@@ -27,14 +27,19 @@
   font-size: 80%;
 }
 
+// We have to style directly on <a> because of Drupal's output
 .meta-data--author-image {
-  border: 1px solid $border-color;
-  display: inline-block;
-  overflow: hidden;
-  margin-right: .5em;
-  max-width: 3em;
+  display: inline;
 
-  @include border-radius($border-radius);
+  a {
+    border: 1px solid $border-color;
+    display: inline-block;
+    overflow: hidden;
+    margin-right: .5em;
+    max-width: 3em;
+
+    @include border-radius($border-radius);
+  }
 }
 
 .meta-data--author-wrapper {

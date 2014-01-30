@@ -15,9 +15,11 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
       <div class="layout--inner">
         <section class="question--wrapper">
           <div class="meta-data--author">
-            <a href="#" class="meta-data--author-image">
-              <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
-            </a>
+            <div class="meta-data--author-image">
+              <a href="#">
+                <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg">
+              </a>
+            </div>
             <div class="meta-data--author-wrapper">
               <a href="#" class="meta-data--author-link">Ribena Hutsitove</a>
               <span class="meta-data--author-title">SOSU, AUH, HUH</span>

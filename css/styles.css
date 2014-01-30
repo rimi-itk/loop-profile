@@ -1449,8 +1449,12 @@ label {
   font-size: 80%;
 }
 
-/* line 30, ../sass/modules/_meta-data.scss */
+/* line 31, ../sass/modules/_meta-data.scss */
 .meta-data--author-image {
+  display: inline;
+}
+/* line 34, ../sass/modules/_meta-data.scss */
+.meta-data--author-image a {
   border: 1px solid #e6e6e6;
   display: inline-block;
   overflow: hidden;
@@ -1463,18 +1467,18 @@ label {
   border-radius: 0.4em;
 }
 
-/* line 40, ../sass/modules/_meta-data.scss */
+/* line 45, ../sass/modules/_meta-data.scss */
 .meta-data--author-wrapper {
   vertical-align: top;
   display: inline-block;
 }
 
-/* line 46, ../sass/modules/_meta-data.scss */
+/* line 51, ../sass/modules/_meta-data.scss */
 .meta-data--author-link {
   font-weight: bold;
 }
 
-/* line 50, ../sass/modules/_meta-data.scss */
+/* line 55, ../sass/modules/_meta-data.scss */
 .meta-data--author-title {
   display: block;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
