@@ -93,6 +93,9 @@ projects[metatag][version] = "1.0-beta7"
 projects[module_filter][subdir] = "contrib"
 projects[module_filter][version] = "1.8"
 
+projects[node_export][subdir] = "contrib"
+projects[node_export][version] = "3.0"
+
 projects[notifications][subdir] = "contrib"
 projects[notifications][version] = "1.0-alpha2"
 
