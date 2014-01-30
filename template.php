@@ -26,6 +26,24 @@ function loop_preprocess_page(&$variables) {
   if (module_exists('loop_navigation')) {
     $variables['loop_primary_menu'] = module_invoke('menu', 'block_view', 'menu-loop-primary-menu');
   }
+
+  // Add layout class depending on node type.
+  // Get node type
+  $node_type = $variables['node']->type;
+
+  // Make sure node type is set
+  if (isset($node_type)) {
+    // use node type to determine layout class
+    switch ($node_type) {
+      case 'post':
+        $variables['layout_class'] = 'layout-alternative';
+        break;
+    }
+  }
+  else {
+    // Use default layout
+    $variables['layout_class'] = 'layout-default';
+  }
 }
 
 

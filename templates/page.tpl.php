@@ -110,7 +110,7 @@ if (isset($loop_primary_menu)): ?>
 </div>
 <?php endif ?>
 
-<div class="layout--wrapper">
+<div class="<?php print $layout_class; ?>">
   <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
   <div class="layout--inner">
     <?php if ($messages): ?>
