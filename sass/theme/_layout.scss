@@ -132,7 +132,7 @@
 }
 
 
-// lternative layout
+// Alternative layout
 
 .layout-alternative {
   @extend %layout--wrapper;
@@ -171,5 +171,15 @@
 
       @include zen-grid-item(12, 1);
     }
+  }
+}
+
+// Layout without element wrappers
+
+.layout-no-wrapper {
+  @extend %layout--wrapper;
+
+  .layout--inner {
+    padding: 1.5em;
   }
 }

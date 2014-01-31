@@ -81,24 +81,26 @@
  */
 ?>
 
-<section class="question--wrapper">
-  <div class="meta-data--author">
-    <div class="meta-data--author-image">
-      <?php print $user_picture; ?>
+<div class="layout-element-alpha">
+  <section class="question--wrapper">
+    <div class="meta-data--author">
+      <div class="meta-data--author-image">
+        <?php print $user_picture; ?>
+      </div>
+      <div class="meta-data--author-wrapper">
+        <a href="#" class="meta-data--author-link"><?php print $name; ?></a>
+        <span class="meta-data--author-title">SOSU, AUH, HUH</span>
+      </div>
     </div>
-    <div class="meta-data--author-wrapper">
-      <a href="#" class="meta-data--author-link"><?php print $name; ?></a>
-      <span class="meta-data--author-title">SOSU, AUH, HUH</span>
+    <div class="question--meta-data">
+      <div class="question--meta-data-date"><?php print t('Submitted') . ' ' . format_date($created, $type = 'medium'); ?></div>
+      <?php print render($content['field_subject']);?>
     </div>
-  </div>
-  <div class="question--meta-data">
-    <div class="question--meta-data-date"><?php print t('Submitted') . ' ' . format_date($created, $type = 'medium'); ?></div>
-    <?php print render($content['field_subject']);?>
-  </div>
-  <div class="question--inner">
-    <?php print render($content['field_description']);?>
-  </div>
-  <div class="question--terms">
-    <?php print render($content['field_keyword']);?>
-  </div>
-</section>
+    <div class="question--inner">
+      <?php print render($content['field_description']);?>
+    </div>
+    <div class="question--terms">
+      <?php print render($content['field_keyword']);?>
+    </div>
+  </section>
+</div>

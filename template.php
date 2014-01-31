@@ -38,11 +38,14 @@ function loop_preprocess_page(&$variables) {
       case 'post':
         $variables['layout_class'] = 'layout-alternative';
         break;
+      case 'post':
+        $variables['layout_class'] = 'layout-default';
+        break;
     }
   }
   else {
-    // Use default layout.
-    $variables['layout_class'] = 'layout-default';
+    // Use layout without wrapper elements (alpha, beta etc.).
+    $variables['layout_class'] = 'layout-no-wrapper';
   }
 }
 

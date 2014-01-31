@@ -488,27 +488,27 @@ img {
    ========================================================================== */
 /* Used for centering an element */
 /* line 14, ../sass/theme/_placeholders.scss */
-.header--inner, .layout-default, .layout-alternative, .typeahead-block {
+.header--inner, .layout-default, .layout-alternative, .layout-no-wrapper, .typeahead-block {
   margin-right: auto;
   margin-left: auto;
   clear: both;
 }
 @media only screen and (min-width: 18.75em) {
   /* line 14, ../sass/theme/_placeholders.scss */
-  .header--inner, .layout-default, .layout-alternative, .typeahead-block {
+  .header--inner, .layout-default, .layout-alternative, .layout-no-wrapper, .typeahead-block {
     max-width: 75em;
   }
 }
 
 /* line 26, ../sass/theme/_placeholders.scss */
-.layout-default, .layout-alternative, .content-list--item, .typeahead-block {
+.layout-default, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
   margin-bottom: 1.5em;
   padding: 1.25em;
   background-color: #f2f2f2;
 }
 @media only screen and (min-width: 75em) {
   /* line 26, ../sass/theme/_placeholders.scss */
-  .layout-default, .layout-alternative, .content-list--item, .typeahead-block {
+  .layout-default, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
     -webkit-border-radius: 0.4em;
     -moz-border-radius: 0.4em;
     -ms-border-radius: 0.4em;
@@ -1041,11 +1041,11 @@ label {
 /* Layouts
    ================================================================================================================== */
 /* line 62, ../sass/theme/_layout.scss */
-.layout-default, .layout-alternative {
+.layout-default, .layout-alternative, .layout-no-wrapper {
   margin-bottom: 0;
 }
 /* line 68, ../sass/theme/_layout.scss */
-.layout-default .layout--inner:last-child, .layout-alternative .layout--inner:last-child {
+.layout-default .layout--inner:last-child, .layout-alternative .layout--inner:last-child, .layout-no-wrapper .layout--inner:last-child {
   margin-bottom: 0;
 }
 
@@ -1264,6 +1264,11 @@ label {
     _overflow: hidden;
     _overflow-y: visible;
   }
+}
+
+/* line 182, ../sass/theme/_layout.scss */
+.layout-no-wrapper .layout--inner {
+  padding: 1.5em;
 }
 
 /**
@@ -1686,9 +1691,6 @@ label {
 /* line 30, ../sass/modules/_meta-data.scss */
 .meta-data--author-image {
   display: inline;
-}
-/* line 34, ../sass/modules/_meta-data.scss */
-.meta-data--author-image a {
   border: 1px solid #e6e6e6;
   display: inline-block;
   overflow: hidden;
@@ -1701,18 +1703,18 @@ label {
   border-radius: 0.4em;
 }
 
-/* line 45, ../sass/modules/_meta-data.scss */
+/* line 46, ../sass/modules/_meta-data.scss */
 .meta-data--author-wrapper {
   vertical-align: top;
   display: inline-block;
 }
 
-/* line 51, ../sass/modules/_meta-data.scss */
+/* line 52, ../sass/modules/_meta-data.scss */
 .meta-data--author-link {
   font-weight: bold;
 }
 
-/* line 55, ../sass/modules/_meta-data.scss */
+/* line 56, ../sass/modules/_meta-data.scss */
 .meta-data--author-title {
   display: block;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
