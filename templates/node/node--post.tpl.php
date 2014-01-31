@@ -88,7 +88,7 @@
         <?php print $user_picture; ?>
       </div>
       <div class="meta-data--author-wrapper">
-        <a href="#" class="meta-data--author-link"><?php print $name; ?></a>
+        <span class="meta-data--author-link"><?php print $name; ?></span>
         <span class="meta-data--author-title"><?php print render($content['field_profession']);?></span>
       </div>
     </div>
