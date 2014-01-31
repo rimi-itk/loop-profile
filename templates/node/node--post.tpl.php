@@ -89,7 +89,7 @@
       </div>
       <div class="meta-data--author-wrapper">
         <a href="#" class="meta-data--author-link"><?php print $name; ?></a>
-        <span class="meta-data--author-title">SOSU, AUH, HUH</span>
+        <span class="meta-data--author-title"><?php print render($content['field_profession']);?></span>
       </div>
     </div>
     <div class="question--meta-data">
