@@ -1,0 +1,62 @@
+/**
+ *
+ * User profile module
+ *
+ */
+
+
+.user-profile-module--edit-link {
+  margin: 0 0.5em;
+  font-size: 0.7em;
+}
+
+.user-profile-module--field-group-fieldset {
+  @extend .field-group-fieldset;
+
+  padding: 0.5em 1.5em 1.5em;
+}
+
+.user-profile-module--field-group-fieldset-personal-info {
+  @extend .user-profile-module--field-group-fieldset;
+}
+
+.user-profile-module--personal-info-text {
+  float: left;
+  width: 60%;
+}
+
+.user-profile-module--personal-info-image {
+  float: right;
+  width: 20%;
+}
+
+.user-profile-module--field {
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+
+  &:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+
+    border: 0;
+  }
+}
+
+.user-profile-module--field-personal-info {
+  @extend .user-profile-module--field;
+
+  border-bottom: 1px solid $border-color;
+}
+
+.user-profile-module--fieldset-legend {
+  @extend .fieldset-legend;
+
+  font-weight: bold;
+}
+
+.user-profile-module--field-label {
+  display: inline-block;
+  font-weight: bold;
+  width: 10em;
+  margin-right: 1em;
+}

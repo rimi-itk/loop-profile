@@ -19,6 +19,8 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
     <?php include('inc/page-search-result.inc') ?>
     <h1 style="border-bottom: 1px solid gray; margin-right: .5em; margin: 1em 0; margin-left: .5em; padding-bottom: .5em; text-align: center;">No search results</h1>
     <?php include('inc/page-no-search-results.inc') ?>
+    <h1 style="border-bottom: 1px solid gray; margin-right: .5em; margin: 1em 0; margin-left: .5em; padding-bottom: .5em; text-align: center;">User profile</h1>
+    <?php include('inc/user-profile-logged-in-page.inc') ?>
   </div>
 </div>
 </body>
