@@ -13,8 +13,6 @@
 .comments--comment {
   @extend %element-spacing;
 
-  position: relative;
-
   &.is-last {
     @extend %reset-element-spacing;
   }

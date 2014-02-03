@@ -28,6 +28,8 @@
 }
 
 .meta-data--author-image {
+  position: absolute;
+
   display: inline;
   border: 1px solid $border-color;
   display: inline-block;
@@ -47,6 +49,7 @@
   vertical-align: top;
 
   display: inline-block;
+  margin-left: 4em;
 }
 
 .meta-data--author-link {

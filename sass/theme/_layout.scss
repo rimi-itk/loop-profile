@@ -73,9 +73,10 @@
 .layout--inner {
   @extend %basic-element-inner-styling;
 
+  overflow: auto;
   min-height: 400px;
   margin-bottom: $margin-bottom;
-  overflow: auto;
+  padding: 1.5em;
 }
 
 .layout-element-alpha,
@@ -181,5 +182,19 @@
 
   .layout--inner {
     padding: 1.5em;
+  }
+}
+
+
+// Make all layout elements nested containers
+.layout-default,
+.layout-alternative,
+.layout-no-wrapper {
+  .layout-element-alpha,
+  .layout-element-beta,
+  .layout-element-gamma,
+  .layout-element-delta,
+  .layout-element-epsilon {
+    @include zen-nested-container;
   }
 }
