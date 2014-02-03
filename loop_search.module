@@ -122,7 +122,7 @@ function loop_search_suggest_entries($keys) {
       );
     }
   }
-  else if (count($suggestions) > 0) {
+  /*else if (count($suggestions) > 0) {
     // No nodes found. Try suggestions.
     foreach ($suggestions as $suggestion) {
       if (isset($suggestion['term'])) {
@@ -140,7 +140,7 @@ function loop_search_suggest_entries($keys) {
         );
       }
     }
-  }
+  }*/
 
   // Output to JSON.
   drupal_json_output($data);
