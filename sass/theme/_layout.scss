@@ -130,6 +130,14 @@
       @include zen-grid-item(12, 1);
     }
   }
+
+  .layout-element-alpha {
+    padding-left: 0;
+  }
+
+  .layout-element-beta {
+    padding-right: 0;
+  }
 }
 
 
@@ -187,7 +195,6 @@
 
 
 // Make all layout elements nested containers
-.layout-default,
 .layout-alternative,
 .layout-no-wrapper {
   .layout-element-alpha,
