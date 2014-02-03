@@ -35,7 +35,7 @@ function loop_preprocess_page(&$variables) {
 
     // use node type to determine layout class.
     switch ($node_type) {
-      case 'post':
+      case 'page':
         $variables['layout_class'] = 'layout-alternative';
         break;
       case 'post':
