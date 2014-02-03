@@ -1094,10 +1094,11 @@ label {
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible;
+    padding-left: 0;
   }
 }
 @media only screen and (min-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003110}}
   .layout-default .layout-element-beta {
     float: right;
     width: 29.16667%;
@@ -1113,10 +1114,11 @@ label {
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible;
+    padding-right: 0;
   }
 }
 @media only screen and (min-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003118}}
   .layout-default .layout-element-gamma {
     clear: both;
     float: left;
@@ -1136,7 +1138,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003126}}
   .layout-default .layout-element-delta {
     float: right;
     width: 50%;
@@ -1155,7 +1157,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003128}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003132}}
   .layout-default .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1174,15 +1176,7 @@ label {
     _overflow-y: visible;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003136}}
-.layout-default .layout-element-alpha {
-  padding-left: 0;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003140}}
-.layout-default .layout-element-beta {
-  padding-right: 0;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003146}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003142}}
 .layout-default .layout-element-gamma,
 .layout-default .layout-element-delta,
 .layout-default .layout-element-epsilon {
@@ -1191,7 +1185,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003156}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003152}}
   .layout-default-inverted .layout-element-alpha {
     float: left;
     width: 29.16667%;
@@ -1207,10 +1201,11 @@ label {
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible;
+    padding-left: 0;
   }
 }
 @media only screen and (min-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003162}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003160}}
   .layout-default-inverted .layout-element-beta {
     float: right;
     width: 70.83333%;
@@ -1226,6 +1221,7 @@ label {
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible;
+    padding-right: 0;
   }
 }
 @media only screen and (min-width: 45em) {
@@ -1287,9 +1283,16 @@ label {
     _overflow-y: visible;
   }
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003192}}
+.layout-default-inverted .layout-element-gamma,
+.layout-default-inverted .layout-element-delta,
+.layout-default-inverted .layout-element-epsilon {
+  padding-left: 0;
+  padding-right: 0;
+}
 
 @media only screen and (min-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003197}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003203}}
   .layout-alternative .layout-element-alpha {
     float: left;
     width: 100%;
@@ -1308,7 +1311,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003203}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003209}}
   .layout-alternative .layout-element-beta {
     clear: both;
     float: left;
@@ -1328,7 +1331,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003211}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003217}}
   .layout-alternative .layout-element-gamma {
     clear: both;
     float: left;
@@ -1348,7 +1351,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003219}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003225}}
   .layout-alternative .layout-element-delta {
     float: right;
     width: 50%;
@@ -1367,7 +1370,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003225}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003231}}
   .layout-alternative .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1387,12 +1390,12 @@ label {
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003239}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003245}}
 .layout-no-wrapper .layout--inner {
   padding: 1.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003252}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003258}}
 .layout-alternative .layout-element-alpha,
 .layout-alternative .layout-element-beta,
 .layout-alternative .layout-element-gamma,
@@ -2072,21 +2075,21 @@ label {
   display: block;
   border-bottom-color: #5dc26d;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\00003129}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_mixins\.scss}line{font-family:\000038}}
 .block-module--user-links-item a:link {
   color: white;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\00003134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_mixins\.scss}line{font-family:\0000313}}
 .block-module--user-links-item a:visited {
   color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\00003138}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_mixins\.scss}line{font-family:\0000317}}
 .block-module--user-links-item a:hover {
   color: white;
   text-decoration: underline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\00003143}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_mixins\.scss}line{font-family:\0000322}}
 .block-module--user-links-item a:focus {
   color: white;
 }
@@ -2121,21 +2124,21 @@ label {
   display: block;
   border-bottom-color: #cccccc;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\00003129}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_mixins\.scss}line{font-family:\000038}}
 .block-module--my-content-item a:link {
   color: #41ab51;
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\00003134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_mixins\.scss}line{font-family:\0000313}}
 .block-module--my-content-item a:visited {
   color: #41ab51;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\00003138}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_mixins\.scss}line{font-family:\0000317}}
 .block-module--my-content-item a:hover {
   color: #41ab51;
   text-decoration: underline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\00003143}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_mixins\.scss}line{font-family:\0000322}}
 .block-module--my-content-item a:focus {
   color: #41ab51;
 }
