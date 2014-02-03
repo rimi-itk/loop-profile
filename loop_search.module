@@ -20,6 +20,24 @@ function loop_search_install() {
   }
 }
 
+function loop_search_nodes() {
+  $nodes = db_select('node', 'n')
+    ->fields('n', array('nid', 'title'))
+    ->condition('status', 1)
+    ->condition('type', 'post')
+    ->execute();
+
+  $data = array();
+  foreach ($nodes as $node) {
+    $data[] = array(
+      'value' => trim($node->title),
+      'link' => '/'. drupal_get_path_alias('node/' . $node->nid),
+    );
+  }
+
+  drupal_json_output($data);
+}
+
 /**
  * Implements hook_form_FORM_ID_alter().
  */
@@ -61,6 +79,13 @@ function loop_search_menu() {
     'access callback' => 'user_access',
     'access arguments' => array('search content'),
     'type' => MENU_CALLBACK,
+  );
+
+  $items['loop_search_nodes'] = array(
+    'title' => 'List nodes in JSON format',
+    'page callback' => 'loop_search_nodes',
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('access content'),
   );
   return $items;
 }
