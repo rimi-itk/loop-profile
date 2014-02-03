@@ -136,8 +136,11 @@ projects[search_api_page][version] = "1.0"
 projects[search_api_solr][subdir] = "contrib"
 projects[search_api_solr][version] = "1.4"
 
+projects[secure_permissions][type] = "module"
 projects[secure_permissions][subdir] = "contrib"
-projects[secure_permissions][version] = "1.5"
+projects[secure_permissions][download][type] = "git"
+projects[secure_permissions][download][url] = "http://git.drupal.org/project/secure_permissions.git"
+projects[secure_permissions][download][revision] = "ef5eec5"
 
 projects[special_menu_items][subdir] = "contrib"
 projects[special_menu_items][version] = "2.0"
