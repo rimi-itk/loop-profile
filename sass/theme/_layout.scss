@@ -73,9 +73,10 @@
 .layout--inner {
   @extend %basic-element-inner-styling;
 
+  overflow: auto;
   min-height: 400px;
   margin-bottom: $margin-bottom;
-  overflow: auto;
+  padding: 1.5em;
 }
 
 .layout-element-alpha,
@@ -128,6 +129,14 @@
 
       @include zen-grid-item(12, 1);
     }
+  }
+
+  .layout-element-alpha {
+    padding-left: 0;
+  }
+
+  .layout-element-beta {
+    padding-right: 0;
   }
 }
 
@@ -221,5 +230,18 @@
 
   .layout--inner {
     padding: 1.5em;
+  }
+}
+
+
+// Make all layout elements nested containers
+.layout-alternative,
+.layout-no-wrapper {
+  .layout-element-alpha,
+  .layout-element-beta,
+  .layout-element-gamma,
+  .layout-element-delta,
+  .layout-element-epsilon {
+    @include zen-nested-container;
   }
 }
