@@ -1167,9 +1167,17 @@ label {
     _overflow-y: visible;
   }
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003134}}
+.layout-default .layout-element-alpha {
+  padding-left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003138}}
+.layout-default .layout-element-beta {
+  padding-right: 0;
+}
 
 @media only screen and (min-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003141}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003149}}
   .layout-alternative .layout-element-alpha {
     float: left;
     width: 100%;
@@ -1188,7 +1196,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003147}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003155}}
   .layout-alternative .layout-element-beta {
     clear: both;
     float: left;
@@ -1208,7 +1216,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003163}}
   .layout-alternative .layout-element-gamma {
     clear: both;
     float: left;
@@ -1228,7 +1236,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003163}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003171}}
   .layout-alternative .layout-element-delta {
     float: right;
     width: 50%;
@@ -1247,7 +1255,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003169}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003177}}
   .layout-alternative .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1267,17 +1275,12 @@ label {
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003183}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003191}}
 .layout-no-wrapper .layout--inner {
   padding: 1.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003197}}
-.layout-default .layout-element-alpha,
-.layout-default .layout-element-beta,
-.layout-default .layout-element-gamma,
-.layout-default .layout-element-delta,
-.layout-default .layout-element-epsilon,
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003204}}
 .layout-alternative .layout-element-alpha,
 .layout-alternative .layout-element-beta,
 .layout-alternative .layout-element-gamma,
