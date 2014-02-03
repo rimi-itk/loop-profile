@@ -4,7 +4,11 @@
 
 
 .tabs {
-  margin-bottom: 0;
+  margin-bottom: 1em;
+
+  @include breakpoint($layout-max-width) {
+    margin-bottom: 0;
+  }
 
   &.primary {
     border: none;
