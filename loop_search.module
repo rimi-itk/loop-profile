@@ -9,6 +9,8 @@ include_once 'loop_search.features.inc';
 
 /**
  * Implements hook_install().
+ *
+ * jQuery version check.
  */
 function loop_search_install() {
   // Check jQuery version.
@@ -20,49 +22,41 @@ function loop_search_install() {
   }
 }
 
+/**
+ * Return every node of type post in JSON format.
+ *
+ * @return string
+ *   JSON object.
+ */
 function loop_search_nodes() {
+  // Select nodes.
   $nodes = db_select('node', 'n')
     ->fields('n', array('nid', 'title'))
     ->condition('status', 1)
     ->condition('type', 'post')
     ->execute();
 
+  // Build nodes.
   $data = array();
   foreach ($nodes as $node) {
     $data[] = array(
+      // For better search, use strtolower.
       'value' => strtolower(trim($node->title)),
+      // Fine human output.
       'title' => trim($node->title),
+      // Use internal path.
       'link' => '/'. drupal_get_path_alias('node/' . $node->nid),
     );
   }
 
+  // Return as JSON.
   drupal_json_output($data);
 }
 
 /**
- * Implements hook_form_FORM_ID_alter().
- */
-function loop_search_form_search_block_form_alter(&$form, $form_state) {
-  // Add our JS class to form.
-  //array_push($form['search_block_form']['#attributes']['class'], 'js-autocomplete-search--field');
-
-  // Add javascript to autocomplete scripts.
-  $form['#attached']['js'] = array(
-    drupal_get_path('module', 'loop_search') . '/hogan-2.0.0.js',
-    drupal_get_path('module', 'loop_search') . '/typeahead.bundle.js',
-    drupal_get_path('module', 'loop_search') . '/loop_search.js',
-  );
-
-  // Add path to autocomplete.
-  $settings = array('path' => url('loop_search_autocomplete'));
-  $form['#attached']['js'][] = array(
-    'data' => array('loop_search_autocomplete' => $settings),
-    'type' => 'setting',
-  );
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
+ * Implements hook_init().
+ *
+ * Include search JS for every pageload!
  */
 function loop_search_init() {
   drupal_add_js(drupal_get_path('module', 'loop_search') . '/hogan-2.0.0.js');
@@ -74,14 +68,6 @@ function loop_search_init() {
  * Implements hook_menu().
  */
 function loop_search_menu() {
-  $items['loop_search_autocomplete/%'] = array(
-    'page callback' => 'loop_search_suggest_entries',
-    'page arguments' => array(1),
-    'access callback' => 'user_access',
-    'access arguments' => array('search content'),
-    'type' => MENU_CALLBACK,
-  );
-
   $items['loop_search_nodes'] = array(
     'title' => 'List nodes in JSON format',
     'page callback' => 'loop_search_nodes',
@@ -89,85 +75,4 @@ function loop_search_menu() {
     'access arguments' => array('access content'),
   );
   return $items;
-}
-
-/**
- * Callback to search in Apache Solr for suggestions.
- *
- * @return string
- *   JSON with suggestions.
- */
-function loop_search_suggest_entries($keys) {
-
-  // Suggestions search.
-  $autocomplete_searches = search_api_autocomplete_search_load_multiple();
-  $search = $autocomplete_searches['search_api_page_default'];
-
-  // Pick the correct server.
-  $server = $search->server();
-
-  // Split keys up.
-  list($complete, $incomplete) = $search->splitKeys($keys);
-
-  // Remove spacing 'n stuff.
-  $keys = preg_replace('/\s+/', ' ', trim($keys));
-
-  // Build query with limit.
-  $query = $search->getQuery($complete, $incomplete);
-  $query->range(0, 10);
-  $query->setOption('search id', 'loop_search:' . $search->machine_name);
-
-  // Add query field(s).
-  $query->fields($search->options['fields']);
-
-  // preExecute must be called before getAutocompleteSuggestions.
-  $query->preExecute();
-
-  // The call!
-  $suggestions = $server->getAutocompleteSuggestions($query, $search, $incomplete, $keys);
-
-  // Full query search. Will return nodes.
-  $query = search_api_query(1)
-    ->keys($keys)
-    ->fields($search->options['fields'])
-    ->range(0, 10);
-  $items = $query->execute();
-
-  // Prepare for data!
-  $data = array();
-
-  if (count($items['results']) > 0) {
-    // Build data array from full query search.
-    foreach ($items['results'] as $suggestion) {
-      $data[] = array(
-        'value' => $suggestion['fields']['field_description'],
-        //'name' => truncate_utf8($suggestion['fields']['field_description'], 100, FALSE, TRUE),
-        // Adding other values, for maybe usage.
-        // TODO: Take action of what we really need here!
-        'link' => 'node/' . $suggestion['fields']['search_api_id'],
-      );
-    }
-  }
-  /*else if (count($suggestions) > 0) {
-    // No nodes found. Try suggestions.
-    foreach ($suggestions as $suggestion) {
-      if (isset($suggestion['term'])) {
-        // This is a term!
-        $data[] = array(
-          'value' => $suggestion['term'],
-          'suggestion' => '',
-        );
-      }
-      else {
-        // This is a spell correction.
-        $data[] = array(
-          'value' => $suggestion['user_input'],
-          'suggestion' => '',
-        );
-      }
-    }
-  }*/
-
-  // Output to JSON.
-  drupal_json_output($data);
 }
