@@ -30,7 +30,8 @@ function loop_search_nodes() {
   $data = array();
   foreach ($nodes as $node) {
     $data[] = array(
-      'value' => trim($node->title),
+      'value' => strtolower(trim($node->title)),
+      'title' => trim($node->title),
       'link' => '/'. drupal_get_path_alias('node/' . $node->nid),
     );
   }
@@ -48,7 +49,7 @@ function loop_search_form_search_block_form_alter(&$form, $form_state) {
   // Add javascript to autocomplete scripts.
   $form['#attached']['js'] = array(
     drupal_get_path('module', 'loop_search') . '/hogan-2.0.0.js',
-    drupal_get_path('module', 'loop_search') . '/typeahead.js',
+    drupal_get_path('module', 'loop_search') . '/typeahead.bundle.js',
     drupal_get_path('module', 'loop_search') . '/loop_search.js',
   );
 
@@ -65,7 +66,7 @@ function loop_search_form_search_block_form_alter(&$form, $form_state) {
  */
 function loop_search_init() {
   drupal_add_js(drupal_get_path('module', 'loop_search') . '/hogan-2.0.0.js');
-  drupal_add_js(drupal_get_path('module', 'loop_search') . '/typeahead.js');
+  drupal_add_js(drupal_get_path('module', 'loop_search') . '/typeahead.bundle.js');
   drupal_add_js(drupal_get_path('module', 'loop_search') . '/loop_search.js');
 }
 
