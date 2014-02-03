@@ -131,6 +131,46 @@
   }
 }
 
+// Default layout inverted
+
+.layout-default-inverted {
+  @extend %layout--wrapper;
+
+  .layout-element-alpha {
+    @include breakpoint(45em) {
+      @include zen-grid-item(3.5, 1);
+    }
+  }
+
+  .layout-element-beta {
+    @include breakpoint(45em) {
+      @include zen-grid-item(8.5, 1, right);
+    }
+  }
+
+  .layout-element-gamma {
+    @include breakpoint(45em) {
+      clear: both;
+
+      @include zen-grid-item(6, 1);
+    }
+  }
+
+  .layout-element-delta {
+    @include breakpoint(45em) {
+      @include zen-grid-item(6, 1, right);
+    }
+  }
+
+  .layout-element-epsilon {
+    @include breakpoint(45em) {
+      clear: both;
+
+      @include zen-grid-item(12, 1);
+    }
+  }
+}
+
 
 // Alternative layout
 

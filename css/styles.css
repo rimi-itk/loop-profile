@@ -488,27 +488,27 @@ img {
    ========================================================================== */
 /* Used for centering an element */
 /* line 14, ../sass/theme/_placeholders.scss */
-.header--inner, .layout-default, .layout-alternative, .layout-no-wrapper, .typeahead-block {
+.header--inner, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .typeahead-block {
   margin-right: auto;
   margin-left: auto;
   clear: both;
 }
 @media only screen and (min-width: 18.75em) {
   /* line 14, ../sass/theme/_placeholders.scss */
-  .header--inner, .layout-default, .layout-alternative, .layout-no-wrapper, .typeahead-block {
+  .header--inner, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .typeahead-block {
     max-width: 75em;
   }
 }
 
 /* line 26, ../sass/theme/_placeholders.scss */
-.layout-default, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
+.layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
   margin-bottom: 1.5em;
   padding: 1.25em;
   background-color: #f2f2f2;
 }
 @media only screen and (min-width: 75em) {
   /* line 26, ../sass/theme/_placeholders.scss */
-  .layout-default, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
+  .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
     -webkit-border-radius: 0.4em;
     -moz-border-radius: 0.4em;
     -ms-border-radius: 0.4em;
@@ -535,7 +535,7 @@ img {
 }
 
 /* line 49, ../sass/theme/_placeholders.scss */
-.nav-mobile--link, .search-result--lead, .search-result--item, .comments--comment {
+.nav-mobile--link, .search-result--lead, .search-result--item, .comments--comment, .block-module--user-links-item, .block-module--my-content-item {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 1em;
   padding-bottom: 1em;
@@ -551,14 +551,14 @@ img {
 /* Icons
    ================================================================================================================== */
 /* line 65, ../sass/theme/_placeholders.scss */
-.flag.is-sticky:before, .messages.status:before, .flag:before, .at-term:after, .messages.error:before, .search-result--comments:before, .messages.warning:before, .nav-mobile--link:before {
+.flag.is-sticky:before, .messages.status:before, .flag:before, .at-term:after, .messages.error:before, .search-result--comments:before, .messages.warning:before, .nav-mobile--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before {
   display: inline-block;
   font-family: "loop-icons";
   line-height: 100%;
 }
 
 /* line 72, ../sass/theme/_placeholders.scss */
-.nav-mobile--link:before, .search-result--comments:before, .flag:before, .messages.status:before, .messages.warning:before, .messages.error:before {
+.nav-mobile--link:before, .search-result--comments:before, .flag:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .messages.status:before, .messages.warning:before, .messages.error:before {
   margin-right: .35em;
 }
 
@@ -598,7 +598,7 @@ img {
 }
 
 /* line 116, ../sass/theme/_placeholders.scss */
-.nav-mobile--link:before {
+.nav-mobile--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before {
   content: '\e807';
 }
 
@@ -769,7 +769,7 @@ label {
 }
 
 /* line 141, ../sass/theme/_forms.scss */
-.field-group-fieldset {
+.field-group-fieldset, .user-profile-module--field-group-fieldset, .user-profile-module--field-group-fieldset-personal-info {
   border: 1px solid #cccccc;
   margin-bottom: 2em;
   padding-bottom: 1em;
@@ -782,7 +782,7 @@ label {
 }
 
 /* line 150, ../sass/theme/_forms.scss */
-.fieldset-legend {
+.fieldset-legend, .user-profile-module--fieldset-legend {
   padding-right: .5em;
   padding-left: .5em;
   font-size: 125%;
@@ -1041,11 +1041,11 @@ label {
 /* Layouts
    ================================================================================================================== */
 /* line 62, ../sass/theme/_layout.scss */
-.layout-default, .layout-alternative, .layout-no-wrapper {
+.layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper {
   margin-bottom: 0;
 }
 /* line 68, ../sass/theme/_layout.scss */
-.layout-default .layout--inner:last-child, .layout-alternative .layout--inner:last-child, .layout-no-wrapper .layout--inner:last-child {
+.layout-default .layout--inner:last-child, .layout-default-inverted .layout--inner:last-child, .layout-alternative .layout--inner:last-child, .layout-no-wrapper .layout--inner:last-child {
   margin-bottom: 0;
 }
 
@@ -1168,7 +1168,105 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 140, ../sass/theme/_layout.scss */
+  /* line 139, ../sass/theme/_layout.scss */
+  .layout-default-inverted .layout-element-alpha {
+    float: left;
+    width: 29.16667%;
+    margin-left: 0%;
+    margin-right: -29.16667%;
+    padding-left: 15px;
+    padding-right: 15px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
+  }
+}
+@media only screen and (min-width: 45em) {
+  /* line 145, ../sass/theme/_layout.scss */
+  .layout-default-inverted .layout-element-beta {
+    float: right;
+    width: 70.83333%;
+    margin-right: 0%;
+    margin-left: -70.83333%;
+    padding-left: 15px;
+    padding-right: 15px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
+  }
+}
+@media only screen and (min-width: 45em) {
+  /* line 151, ../sass/theme/_layout.scss */
+  .layout-default-inverted .layout-element-gamma {
+    clear: both;
+    float: left;
+    width: 50%;
+    margin-left: 0%;
+    margin-right: -50%;
+    padding-left: 15px;
+    padding-right: 15px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
+  }
+}
+@media only screen and (min-width: 45em) {
+  /* line 159, ../sass/theme/_layout.scss */
+  .layout-default-inverted .layout-element-delta {
+    float: right;
+    width: 50%;
+    margin-right: 0%;
+    margin-left: -50%;
+    padding-left: 15px;
+    padding-right: 15px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
+  }
+}
+@media only screen and (min-width: 45em) {
+  /* line 165, ../sass/theme/_layout.scss */
+  .layout-default-inverted .layout-element-epsilon {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: -100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
+  }
+}
+
+@media only screen and (min-width: 45em) {
+  /* line 180, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-alpha {
     float: left;
     width: 100%;
@@ -1187,7 +1285,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 146, ../sass/theme/_layout.scss */
+  /* line 186, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-beta {
     clear: both;
     float: left;
@@ -1207,7 +1305,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 154, ../sass/theme/_layout.scss */
+  /* line 194, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-gamma {
     clear: both;
     float: left;
@@ -1227,7 +1325,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 162, ../sass/theme/_layout.scss */
+  /* line 202, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-delta {
     float: right;
     width: 50%;
@@ -1246,7 +1344,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 168, ../sass/theme/_layout.scss */
+  /* line 208, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1266,7 +1364,7 @@ label {
   }
 }
 
-/* line 182, ../sass/theme/_layout.scss */
+/* line 222, ../sass/theme/_layout.scss */
 .layout-no-wrapper .layout--inner {
   padding: 1.5em;
 }
@@ -1877,8 +1975,9 @@ label {
  *
  */
 /* line 8, ../sass/modules/_block-module.scss */
-.block-module, .block-follow-question,
-.block-unfollow-question {
+.block-module, .block-my-content,
+.block-follow-question,
+.block-unfollow-question, .block-user-links {
   margin-bottom: 1.5em;
   background-color: #f2f2f2;
   -webkit-border-radius: 0.4em;
@@ -1894,7 +1993,7 @@ label {
 }
 
 /* line 20, ../sass/modules/_block-module.scss */
-.block-module--header {
+.block-module--header, .block-module--user-links-header, .block-module--my-content-header {
   font-size: 130%;
   font-weight: bold;
 }
@@ -1910,6 +2009,168 @@ label {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+/* User links block
+   ================================================================================================================== */
+/* line 61, ../sass/modules/_block-module.scss */
+.block-user-links {
+  background-color: #41ab51;
+}
+
+/* line 67, ../sass/modules/_block-module.scss */
+.block-module--user-links-header {
+  border-bottom: 1px solid #5dc26d;
+  color: white;
+  padding-bottom: 0.5em;
+}
+
+/* line 75, ../sass/modules/_block-module.scss */
+.block-module--user-links-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 81, ../sass/modules/_block-module.scss */
+.block-module--user-links-item {
+  display: block;
+  border-bottom-color: #5dc26d;
+}
+/* line 129, ../sass/theme/_placeholders.scss */
+.block-module--user-links-item a:link {
+  color: white;
+  text-decoration: none;
+}
+/* line 134, ../sass/theme/_placeholders.scss */
+.block-module--user-links-item a:visited {
+  color: white;
+}
+/* line 138, ../sass/theme/_placeholders.scss */
+.block-module--user-links-item a:hover {
+  color: white;
+  text-decoration: underline;
+}
+/* line 143, ../sass/theme/_placeholders.scss */
+.block-module--user-links-item a:focus {
+  color: white;
+}
+/* line 90, ../sass/modules/_block-module.scss */
+.block-module--user-links-item:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+/* line 96, ../sass/modules/_block-module.scss */
+.block-module--user-links-item.active {
+  font-weight: bold;
+}
+
+/* My content block
+   ================================================================================================================== */
+/* line 104, ../sass/modules/_block-module.scss */
+.block-module--my-content-header {
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 0.5em;
+}
+
+/* line 111, ../sass/modules/_block-module.scss */
+.block-module--my-content-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 117, ../sass/modules/_block-module.scss */
+.block-module--my-content-item {
+  display: block;
+  border-bottom-color: #cccccc;
+}
+/* line 129, ../sass/theme/_placeholders.scss */
+.block-module--my-content-item a:link {
+  color: #41ab51;
+  text-decoration: none;
+}
+/* line 134, ../sass/theme/_placeholders.scss */
+.block-module--my-content-item a:visited {
+  color: #41ab51;
+}
+/* line 138, ../sass/theme/_placeholders.scss */
+.block-module--my-content-item a:hover {
+  color: #41ab51;
+  text-decoration: underline;
+}
+/* line 143, ../sass/theme/_placeholders.scss */
+.block-module--my-content-item a:focus {
+  color: #41ab51;
+}
+/* line 126, ../sass/modules/_block-module.scss */
+.block-module--my-content-item:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+/* line 132, ../sass/modules/_block-module.scss */
+.block-module--my-content-item.active {
+  font-weight: bold;
+}
+
+/**
+ *
+ * User profile module
+ *
+ */
+/* line 8, ../sass/modules/_user-profile.scss */
+.user-profile-module--edit-link {
+  margin: 0 0.5em;
+  font-size: 0.7em;
+}
+
+/* line 13, ../sass/modules/_user-profile.scss */
+.user-profile-module--field-group-fieldset, .user-profile-module--field-group-fieldset-personal-info {
+  padding: 0.5em 1.5em 1.5em;
+}
+
+/* line 23, ../sass/modules/_user-profile.scss */
+.user-profile-module--personal-info-text {
+  float: left;
+  width: 60%;
+}
+
+/* line 28, ../sass/modules/_user-profile.scss */
+.user-profile-module--personal-info-image {
+  float: right;
+  width: 20%;
+}
+
+/* line 33, ../sass/modules/_user-profile.scss */
+.user-profile-module--field, .user-profile-module--field-personal-info {
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+/* line 37, ../sass/modules/_user-profile.scss */
+.user-profile-module--field:last-child, .user-profile-module--field-personal-info:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border: 0;
+}
+
+/* line 45, ../sass/modules/_user-profile.scss */
+.user-profile-module--field-personal-info {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+/* line 51, ../sass/modules/_user-profile.scss */
+.user-profile-module--fieldset-legend {
+  font-weight: bold;
+}
+
+/* line 57, ../sass/modules/_user-profile.scss */
+.user-profile-module--field-label {
+  display: inline-block;
+  font-weight: bold;
+  width: 10em;
+  margin-right: 1em;
 }
 
 /**
