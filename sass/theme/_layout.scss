@@ -138,6 +138,12 @@
   .layout-element-beta {
     padding-right: 0;
   }
+
+  .layout-element-gamma,
+  .layout-element-delta,
+  .layout-element-epsilon {
+    @include zen-nested-container;
+  }
 }
 
 // Default layout inverted

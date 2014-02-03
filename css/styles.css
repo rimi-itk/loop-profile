@@ -1181,9 +1181,16 @@ label {
 .layout-default .layout-element-beta {
   padding-right: 0;
 }
+/* line 144, ../sass/theme/_layout.scss */
+.layout-default .layout-element-gamma,
+.layout-default .layout-element-delta,
+.layout-default .layout-element-epsilon {
+  padding-left: 0;
+  padding-right: 0;
+}
 
 @media only screen and (min-width: 45em) {
-  /* line 148, ../sass/theme/_layout.scss */
+  /* line 154, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-alpha {
     float: left;
     width: 29.16667%;
@@ -1202,7 +1209,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 154, ../sass/theme/_layout.scss */
+  /* line 160, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-beta {
     float: right;
     width: 70.83333%;
@@ -1221,7 +1228,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 160, ../sass/theme/_layout.scss */
+  /* line 166, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-gamma {
     clear: both;
     float: left;
@@ -1241,7 +1248,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 168, ../sass/theme/_layout.scss */
+  /* line 174, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-delta {
     float: right;
     width: 50%;
@@ -1260,7 +1267,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 174, ../sass/theme/_layout.scss */
+  /* line 180, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1281,7 +1288,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 189, ../sass/theme/_layout.scss */
+  /* line 195, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-alpha {
     float: left;
     width: 100%;
@@ -1300,7 +1307,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 195, ../sass/theme/_layout.scss */
+  /* line 201, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-beta {
     clear: both;
     float: left;
@@ -1320,7 +1327,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 203, ../sass/theme/_layout.scss */
+  /* line 209, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-gamma {
     clear: both;
     float: left;
@@ -1340,7 +1347,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 211, ../sass/theme/_layout.scss */
+  /* line 217, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-delta {
     float: right;
     width: 50%;
@@ -1359,7 +1366,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 217, ../sass/theme/_layout.scss */
+  /* line 223, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1379,12 +1386,12 @@ label {
   }
 }
 
-/* line 231, ../sass/theme/_layout.scss */
+/* line 237, ../sass/theme/_layout.scss */
 .layout-no-wrapper .layout--inner {
   padding: 1.5em;
 }
 
-/* line 244, ../sass/theme/_layout.scss */
+/* line 250, ../sass/theme/_layout.scss */
 .layout-alternative .layout-element-alpha,
 .layout-alternative .layout-element-beta,
 .layout-alternative .layout-element-gamma,
