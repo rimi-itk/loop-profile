@@ -80,8 +80,6 @@
  * @ingroup themeable
  */
 ?>
-
-<div class="layout-element-alpha">
   <section class="question--wrapper">
     <div class="meta-data--author">
       <div class="meta-data--author-image">
@@ -103,4 +101,4 @@
       <?php print render($content['field_keyword']);?>
     </div>
   </section>
-</div>
+
