@@ -5,10 +5,10 @@
  */
 // Plugin definition
 $plugin = array(
-  'title' => t('Default'),
+  'title' => t('Default inverted'),
   'category' => t('Loop custom'),
   'icon' => 'default.png',
-  'theme' => 'default',
+  'theme' => 'default-inverted',
   'regions' => array(
     'alpha' => t('Alpha'),
     'beta' => t('Beta')
