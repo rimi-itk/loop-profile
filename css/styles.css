@@ -41,7 +41,7 @@
 /* HTML5 display definitions
    ================================================================================================================== */
 /* Correct `block` display not defined in IE 8/9. */
-/* line 25, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\0000325}}
 article,
 aside,
 details,
@@ -58,7 +58,7 @@ summary {
 }
 
 /* Correct `inline-block` display not defined in IE 8/9. */
-/* line 34, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\0000334}}
 audio,
 canvas,
 video {
@@ -67,14 +67,14 @@ video {
 
 /* Prevent modern browsers from displaying `audio` without controls. */
 /* Remove excess height in iOS 5 devices. */
-/* line 42, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\0000342}}
 audio:not([controls]) {
   display: none;
   height: 0;
 }
 
 /* Address styling not present in IE 8/9. */
-/* line 49, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\0000349}}
 [hidden] {
   display: none;
 }
@@ -83,7 +83,7 @@ audio:not([controls]) {
    ================================================================================================================== */
 /* 1. Set default fontello family to sans-serif. */
 /* 2. Prevent iOS text size adjust after orientation change, without disabling user zoom. */
-/* line 60, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\0000360}}
 html {
   font-family: sans-serif;
   /* 1 */
@@ -94,7 +94,7 @@ html {
 }
 
 /* Remove default margin. */
-/* line 69, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\0000369}}
 body {
   margin: 0;
 }
@@ -102,13 +102,13 @@ body {
 /* Links
    ================================================================================================================== */
 /* Address `outline` inconsistency between Chrome and other browsers. */
-/* line 79, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\0000379}}
 a:focus {
   outline: thin dotted;
 }
 
 /* Improve readability when focused and also mouse hovered in all browsers. */
-/* line 86, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\0000386}}
 a:active,
 a:hover {
   outline: 0;
@@ -118,33 +118,33 @@ a:hover {
    ================================================================================================================== */
 /* Address variable `h1` fontello-size and margin within `section` and `article` */
 /* contexts in Firefox 4+, Safari 5, and Chrome. */
-/* line 96, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\0000396}}
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
 /* Address styling not present in IE 8/9, Safari 5, and Chrome. */
-/* line 103, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003103}}
 abbr[title] {
   border-bottom: 1px dotted;
 }
 
 /* Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome. */
-/* line 110, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003110}}
 b,
 strong {
   font-weight: bold;
 }
 
 /* Address styling not present in Safari 5 and Chrome. */
-/* line 116, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003116}}
 dfn {
   font-style: italic;
 }
 
 /* Address differences between Firefox and other browsers. */
-/* line 122, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003122}}
 hr {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
@@ -152,14 +152,14 @@ hr {
 }
 
 /* Address styling not present in IE 8/9. */
-/* line 130, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003130}}
 mark {
   background: #ff0;
   color: #000;
 }
 
 /* Correct fontello family set oddly in Safari 5 and Chrome. */
-/* line 140, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003140}}
 code,
 kbd,
 pre,
@@ -169,25 +169,25 @@ samp {
 }
 
 /* Improve readability of pre-formatted text in all browsers. */
-/* line 147, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003147}}
 pre {
   white-space: pre-wrap;
 }
 
 /* Set consistent quote types. */
-/* line 153, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003153}}
 q {
   quotes: "\201C" "\201D" "\2018" "\2019";
 }
 
 /* Address inconsistent and variable fontello size in all browsers. */
-/* line 159, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003159}}
 small {
   font-size: 80%;
 }
 
 /* Prevent `sub` and `sup` affecting `line-height` in all browsers. */
-/* line 166, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003166}}
 sub,
 sup {
   font-size: 75%;
@@ -196,12 +196,12 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 173, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003173}}
 sup {
   top: -0.5em;
 }
 
-/* line 177, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003177}}
 sub {
   bottom: -0.25em;
 }
@@ -209,13 +209,13 @@ sub {
 /* Embedded content
    ================================================================================================================== */
 /* Remove border when inside `a` element in IE 8/9. */
-/* line 187, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003187}}
 img {
   border: 0;
 }
 
 /* Correct overflow displayed oddly in IE 9. */
-/* line 193, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003193}}
 svg:not(:root) {
   overflow: hidden;
 }
@@ -223,7 +223,7 @@ svg:not(:root) {
 /* Figures
    ================================================================================================================== */
 /* Address margin not present in IE 8/9 and Safari 5. */
-/* line 203, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003203}}
 figure {
   margin: 0;
 }
@@ -231,7 +231,7 @@ figure {
 /* Forms
    ================================================================================================================== */
 /* Define consistent border, margin, and padding. */
-/* line 213, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003213}}
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -240,7 +240,7 @@ fieldset {
 
 /* 1. Correct `color` not being inherited in IE 8/9. */
 /* 2. Remove padding so people aren't caught out if they zero out fieldsets. */
-/* line 222, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003222}}
 legend {
   border: 0;
   /* 1 */
@@ -251,7 +251,7 @@ legend {
 /* 1. Correct fontello family not being inherited in all browsers. */
 /* 2. Correct fontello size not being inherited in all browsers. */
 /* 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome. */
-/* line 234, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003234}}
 button,
 input,
 select,
@@ -266,7 +266,7 @@ textarea {
 
 /* Address Firefox 4+ setting `line-height` on `input` using `!important` in */
 /* the UA stylesheet. */
-/* line 244, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003244}}
 button,
 input {
   line-height: normal;
@@ -276,7 +276,7 @@ input {
 /* All other form control elements do not inherit `text-transform` values. */
 /* Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+. */
 /* Correct `select` style inheritance in Firefox 4+ and Opera. */
-/* line 254, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003254}}
 button,
 select {
   text-transform: none;
@@ -285,7 +285,7 @@ select {
 /* 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio` and `video` controls. */
 /* 2. Correct inability to style clickable `input` types in iOS. */
 /* 3. Improve usability and consistency of cursor style between image-type `input` and others. */
-/* line 265, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003265}}
 button,
 html input[type="button"],
 input[type="reset"],
@@ -297,7 +297,7 @@ input[type="submit"] {
 }
 
 /* Re-set default cursor for disabled elements. */
-/* line 273, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003273}}
 button[disabled],
 html input[disabled] {
   cursor: default;
@@ -305,7 +305,7 @@ html input[disabled] {
 
 /* 1. Address box sizing set to `content-box` in IE 8/9. */
 /* 2. Remove excess padding in IE 8/9. */
-/* line 281, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003281}}
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -316,7 +316,7 @@ input[type="radio"] {
 
 /* 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome. */
 /* 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome (include `-moz` to future-proof). */
-/* line 289, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003289}}
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -327,14 +327,14 @@ input[type="search"] {
 }
 
 /* Remove inner padding and search cancel button in Safari 5 and Chrome on OS X. */
-/* line 299, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003299}}
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
 /* Remove inner padding and border in Firefox 4+. */
-/* line 306, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003306}}
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -343,7 +343,7 @@ input::-moz-focus-inner {
 
 /* 1. Remove default vertical scrollbar in IE 8/9. */
 /* 2. Improve readability and alignment in all browsers. */
-/* line 314, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003314}}
 textarea {
   overflow: auto;
   /* 1 */
@@ -354,7 +354,7 @@ textarea {
 /* Tables
    ================================================================================================================== */
 /* Remove most spacing between table cells. */
-/* line 325, ../sass/base/_normalize.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_normalize\.scss}line{font-family:\00003325}}
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -367,12 +367,12 @@ table {
  *
  * @author magnify
  */
-/* line 10, ../sass/base/_base.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_base\.scss}line{font-family:\0000310}}
 html {
   height: 100%;
 }
 
-/* line 14, ../sass/base/_base.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_base\.scss}line{font-family:\0000314}}
 body {
   position: relative;
   min-height: 100%;
@@ -381,7 +381,7 @@ body {
   font: 1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 30, ../sass/base/_base.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_base\.scss}line{font-family:\0000330}}
 h1,
 h2,
 h3,
@@ -398,44 +398,44 @@ h6 {
   text-rendering: optimizeLegibility;
 }
 
-/* line 45, ../sass/base/_base.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_base\.scss}line{font-family:\0000345}}
 strong {
   font-weight: bold;
 }
 
-/* line 50, ../sass/base/_base.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_base\.scss}line{font-family:\0000350}}
 em {
   font-style: italic;
 }
-/* line 53, ../sass/base/_base.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_base\.scss}line{font-family:\0000353}}
 em strong {
   font-weight: bold;
 }
 
 /* Links
    ================================================================================================================== */
-/* line 64, ../sass/base/_base.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_base\.scss}line{font-family:\0000364}}
 a:link {
   color: #41ab51;
   text-decoration: underline;
 }
-/* line 69, ../sass/base/_base.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_base\.scss}line{font-family:\0000369}}
 a:visited {
   color: #3a9948;
 }
-/* line 73, ../sass/base/_base.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_base\.scss}line{font-family:\0000373}}
 a:hover {
   color: #33863f;
   text-decoration: none;
 }
-/* line 78, ../sass/base/_base.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_base\.scss}line{font-family:\0000378}}
 a:focus {
   color: #33863f;
 }
 
 /* Paragraph
    ================================================================================================================== */
-/* line 87, ../sass/base/_base.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_base\.scss}line{font-family:\0000387}}
 p {
   margin-top: 0;
   margin-bottom: 1.5em;
@@ -443,7 +443,7 @@ p {
 
 /* Image
    ================================================================================================================== */
-/* line 96, ../sass/base/_base.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_base\.scss}line{font-family:\0000396}}
 img {
   display: inline;
   height: auto;
@@ -453,7 +453,7 @@ img {
 
 /* States
    ========================================================================== */
-/* line 107, ../sass/base/_base.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/base\/_base\.scss}line{font-family:\00003107}}
 .is-hidden {
   display: none;
 }
@@ -487,27 +487,27 @@ img {
 /* Layout placeholders
    ========================================================================== */
 /* Used for centering an element */
-/* line 14, ../sass/theme/_placeholders.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\0000314}}
 .header--inner, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .typeahead-block {
   margin-right: auto;
   margin-left: auto;
   clear: both;
 }
 @media only screen and (min-width: 18.75em) {
-  /* line 14, ../sass/theme/_placeholders.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\0000314}}
   .header--inner, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .typeahead-block {
     max-width: 75em;
   }
 }
 
-/* line 26, ../sass/theme/_placeholders.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\0000326}}
 .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
   margin-bottom: 1.5em;
   padding: 1.25em;
   background-color: #f2f2f2;
 }
 @media only screen and (min-width: 75em) {
-  /* line 26, ../sass/theme/_placeholders.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\0000326}}
   .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
     -webkit-border-radius: 0.4em;
     -moz-border-radius: 0.4em;
@@ -520,7 +520,7 @@ img {
   }
 }
 
-/* line 39, ../sass/theme/_placeholders.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\0000339}}
 .layout--inner {
   padding: 1.5em .5em;
   background-color: white;
@@ -534,14 +534,14 @@ img {
   box-sizing: border-box;
 }
 
-/* line 49, ../sass/theme/_placeholders.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\0000349}}
 .nav-mobile--link, .search-result--lead, .search-result--item, .comments--comment, .block-module--user-links-item, .block-module--my-content-item {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
 
-/* line 55, ../sass/theme/_placeholders.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\0000355}}
 .search-result--item:last-child, .comments--comment.is-last {
   border-bottom: 0;
   margin-bottom: 0;
@@ -550,54 +550,54 @@ img {
 
 /* Icons
    ================================================================================================================== */
-/* line 65, ../sass/theme/_placeholders.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\0000365}}
 .flag.is-sticky:before, .messages.status:before, .flag:before, .at-term:after, .messages.error:before, .search-result--comments:before, .messages.warning:before, .nav-mobile--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before {
   display: inline-block;
   font-family: "loop-icons";
   line-height: 100%;
 }
 
-/* line 72, ../sass/theme/_placeholders.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\0000372}}
 .nav-mobile--link:before, .search-result--comments:before, .flag:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .messages.status:before, .messages.warning:before, .messages.error:before {
   margin-right: .35em;
 }
 
-/* line 76, ../sass/theme/_placeholders.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\0000376}}
 .at-term:after {
   margin-left: .35em;
 }
 
-/* line 80, ../sass/theme/_placeholders.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\0000380}}
 .flag.is-sticky:before {
   content: '\e804';
 }
 
-/* line 86, ../sass/theme/_placeholders.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\0000386}}
 .messages.status:before {
   content: '\e80d';
 }
 
-/* line 92, ../sass/theme/_placeholders.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\0000392}}
 .flag:before {
   content: '\e805';
 }
 
-/* line 98, ../sass/theme/_placeholders.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\0000398}}
 .at-term:after, .messages.error:before {
   content: '\e80b';
 }
 
-/* line 104, ../sass/theme/_placeholders.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\00003104}}
 .search-result--comments:before {
   content: '\e80a';
 }
 
-/* line 110, ../sass/theme/_placeholders.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\00003110}}
 .messages.warning:before {
   content: '\e80c';
 }
 
-/* line 116, ../sass/theme/_placeholders.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_placeholders\.scss}line{font-family:\00003116}}
 .nav-mobile--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before {
   content: '\e807';
 }
@@ -609,13 +609,13 @@ img {
  */
 /* Basic styling
    ================================================================================================================== */
-/* line 13, ../sass/theme/_forms.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_forms\.scss}line{font-family:\0000313}}
 input,
 textarea {
   font: 1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/* line 27, ../sass/theme/_forms.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_forms\.scss}line{font-family:\0000327}}
 input[type="text"], .autocomplete-deluxe-container,
 input[type="password"],
 input[type="date"],
@@ -643,7 +643,7 @@ textarea {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 37, ../sass/theme/_forms.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_forms\.scss}line{font-family:\0000337}}
 input[type="text"]:focus, .autocomplete-deluxe-container:focus,
 input[type="password"]:focus,
 input[type="date"]:focus,
@@ -658,7 +658,7 @@ textarea:focus {
   border: 1px solid #737373;
   color: #404040;
 }
-/* line 43, ../sass/theme/_forms.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_forms\.scss}line{font-family:\0000343}}
 input[type="text"][disabled], [disabled].autocomplete-deluxe-container,
 input[type="password"][disabled],
 input[type="date"][disabled],
@@ -680,7 +680,7 @@ textarea[disabled] {
 
 /* Labels
    ================================================================================================================== */
-/* line 61, ../sass/theme/_forms.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_forms\.scss}line{font-family:\0000361}}
 label {
   display: block;
   margin-bottom: .25em;
@@ -694,12 +694,12 @@ label {
  * Based on Drupal's form markup, guidelines are not used
  *
    ================================================================================================================== */
-/* line 78, ../sass/theme/_forms.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_forms\.scss}line{font-family:\0000378}}
 .form-module {
   clear: both;
 }
 
-/* line 82, ../sass/theme/_forms.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_forms\.scss}line{font-family:\0000382}}
 .form-item {
   border: 1px solid #f2f2f2;
   margin-bottom: 1.5em;
@@ -710,18 +710,18 @@ label {
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-/* line 90, ../sass/theme/_forms.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_forms\.scss}line{font-family:\0000390}}
 .form-item .description {
   padding-top: .5em;
   color: #b3b3b3;
 }
 
-/* line 98, ../sass/theme/_forms.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_forms\.scss}line{font-family:\0000398}}
 .form-required {
   color: #ff6138;
 }
 
-/* line 102, ../sass/theme/_forms.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_forms\.scss}line{font-family:\00003102}}
 .form-select {
   border: 1px solid #cccccc;
   padding: .75em;
@@ -741,34 +741,34 @@ label {
   box-sizing: border-box;
 }
 
-/* line 119, ../sass/theme/_forms.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_forms\.scss}line{font-family:\00003119}}
 .form-textarea-question {
   height: 6em;
 }
 @media only screen and (min-width: 30em) {
-  /* line 119, ../sass/theme/_forms.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_forms\.scss}line{font-family:\00003119}}
   .form-textarea-question {
     height: 3.25em;
   }
 }
 
-/* line 127, ../sass/theme/_forms.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_forms\.scss}line{font-family:\00003127}}
 .form-actions {
   text-align: right;
 }
 
-/* line 131, ../sass/theme/_forms.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_forms\.scss}line{font-family:\00003131}}
 .form-submit {
   width: 100%;
 }
 @media only screen and (min-width: 30em) {
-  /* line 131, ../sass/theme/_forms.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_forms\.scss}line{font-family:\00003131}}
   .form-submit {
     width: auto;
   }
 }
 
-/* line 141, ../sass/theme/_forms.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_forms\.scss}line{font-family:\00003141}}
 .field-group-fieldset, .user-profile-module--field-group-fieldset, .user-profile-module--field-group-fieldset-personal-info {
   border: 1px solid #cccccc;
   margin-bottom: 2em;
@@ -781,7 +781,7 @@ label {
   border-radius: 0.4em;
 }
 
-/* line 150, ../sass/theme/_forms.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_forms\.scss}line{font-family:\00003150}}
 .fieldset-legend, .user-profile-module--fieldset-legend {
   padding-right: .5em;
   padding-left: .5em;
@@ -793,7 +793,7 @@ label {
  *
  * @author magnify
  */
-/* line 8, ../sass/theme/_buttons.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_buttons\.scss}line{font-family:\000038}}
 .button--action, .form-submit, .block-follow-question .block-module--link, .typeahead-block--button, .button--warning, .block-unfollow-question .block-module--link, .at-add-btn {
   display: inline-block;
   font-size: 125%;
@@ -809,41 +809,41 @@ label {
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-/* line 21, ../sass/theme/_buttons.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_buttons\.scss}line{font-family:\0000321}}
 .button--action:focus, .form-submit:focus, .block-follow-question .block-module--link:focus, .typeahead-block--button:focus, .button--warning:focus, .block-unfollow-question .block-module--link:focus, .at-add-btn:focus, .button--action:hover, .form-submit:hover, .block-follow-question .block-module--link:hover, .typeahead-block--button:hover, .button--warning:hover, .block-unfollow-question .block-module--link:hover, .at-add-btn:hover, .button--action:active, .form-submit:active, .block-follow-question .block-module--link:active, .typeahead-block--button:active, .button--warning:active, .block-unfollow-question .block-module--link:active, .at-add-btn:active {
   text-decoration: none;
 }
 
-/* line 28, ../sass/theme/_buttons.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_buttons\.scss}line{font-family:\0000328}}
 .button--action, .form-submit, .block-follow-question .block-module--link, .typeahead-block--button {
   background-color: #5dc26d;
   border: 1px solid #41ab51;
   color: white;
   text-shadow: 0.05em 0.05em 0 #33863f;
 }
-/* line 38, ../sass/theme/_buttons.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_buttons\.scss}line{font-family:\0000338}}
 .button--action:link, .form-submit:link, .block-follow-question .block-module--link:link, .typeahead-block--button:link, .button--action:visited, .form-submit:visited, .block-follow-question .block-module--link:visited, .typeahead-block--button:visited {
   color: white;
   text-decoration: none;
 }
-/* line 43, ../sass/theme/_buttons.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_buttons\.scss}line{font-family:\0000343}}
 .button--action:hover, .form-submit:hover, .block-follow-question .block-module--link:hover, .typeahead-block--button:hover {
   background-color: #41ab51;
 }
 
-/* line 48, ../sass/theme/_buttons.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_buttons\.scss}line{font-family:\0000348}}
 .button--warning, .block-unfollow-question .block-module--link {
   background-color: #ff6138;
   border: 1px solid #ff3905;
   color: white;
   text-shadow: 0.05em 0.05em 0 #d12b00;
 }
-/* line 58, ../sass/theme/_buttons.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_buttons\.scss}line{font-family:\0000358}}
 .button--warning:link, .block-unfollow-question .block-module--link:link, .button--warning:visited, .block-unfollow-question .block-module--link:visited {
   color: white;
   text-decoration: none;
 }
-/* line 63, ../sass/theme/_buttons.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_buttons\.scss}line{font-family:\0000363}}
 .button--warning:hover, .block-unfollow-question .block-module--link:hover {
   background-color: #ff3905;
 }
@@ -851,17 +851,17 @@ label {
 /**
  * Tabs
  */
-/* line 6, ../sass/theme/_tabs.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_tabs\.scss}line{font-family:\000036}}
 .tabs {
   margin-bottom: 1em;
 }
 @media only screen and (min-width: 75em) {
-  /* line 6, ../sass/theme/_tabs.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_tabs\.scss}line{font-family:\000036}}
   .tabs {
     margin-bottom: 0;
   }
 }
-/* line 13, ../sass/theme/_tabs.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_tabs\.scss}line{font-family:\0000313}}
 .tabs.primary {
   border: none;
   margin-top: 0;
@@ -874,7 +874,7 @@ label {
   border-radius: 0.4em;
 }
 @media only screen and (min-width: 75em) {
-  /* line 13, ../sass/theme/_tabs.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_tabs\.scss}line{font-family:\0000313}}
   .tabs.primary {
     padding-top: 0;
     padding-right: 0;
@@ -883,7 +883,7 @@ label {
     background-color: transparent;
   }
 }
-/* line 35, ../sass/theme/_tabs.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_tabs\.scss}line{font-family:\0000335}}
 .tabs li,
 .tabs li.active,
 .tabs li:hover,
@@ -894,7 +894,7 @@ label {
   padding-right: 0;
   background: transparent;
 }
-/* line 43, ../sass/theme/_tabs.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_tabs\.scss}line{font-family:\0000343}}
 .tabs li a,
 .tabs li.active a,
 .tabs li:hover a,
@@ -911,7 +911,7 @@ label {
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-/* line 54, ../sass/theme/_tabs.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_tabs\.scss}line{font-family:\0000354}}
 .tabs li a:hover,
 .tabs li.active a:hover,
 .tabs li:hover a:hover,
@@ -921,7 +921,7 @@ label {
   text-decoration: none;
 }
 @media only screen and (min-width: 75em) {
-  /* line 35, ../sass/theme/_tabs.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_tabs\.scss}line{font-family:\0000335}}
   .tabs li,
   .tabs li.active,
   .tabs li:hover,
@@ -929,7 +929,7 @@ label {
     display: inline-block;
     margin-bottom: 0;
   }
-  /* line 65, ../sass/theme/_tabs.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_tabs\.scss}line{font-family:\0000365}}
   .tabs li a,
   .tabs li.active a,
   .tabs li:hover a,
@@ -943,33 +943,33 @@ label {
     border-radius: 0.4em 0.4em 0 0;
   }
 }
-/* line 75, ../sass/theme/_tabs.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_tabs\.scss}line{font-family:\0000375}}
 .tabs li a {
   background: #f2f2f2;
 }
-/* line 79, ../sass/theme/_tabs.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_tabs\.scss}line{font-family:\0000379}}
 .tabs li a.active {
   background: white;
 }
-/* line 83, ../sass/theme/_tabs.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_tabs\.scss}line{font-family:\0000383}}
 .tabs.secondary {
   margin-top: 0;
   margin-bottom: -1.75em;
   padding: 1.5em 1em;
   background-color: white;
 }
-/* line 92, ../sass/theme/_tabs.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_tabs\.scss}line{font-family:\0000392}}
 .tabs.secondary li a,
 .tabs.secondary li a:hover {
   border: 1px solid #cccccc;
   padding: .5em 1.25em;
   background: white;
 }
-/* line 99, ../sass/theme/_tabs.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_tabs\.scss}line{font-family:\0000399}}
 .tabs.secondary li a.active {
   background: #e6e6e6;
 }
-/* line 108, ../sass/theme/_tabs.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_tabs\.scss}line{font-family:\00003108}}
 .tabs.secondary li a,
 .tabs.secondary li.active a,
 .tabs.secondary li:hover a,
@@ -990,24 +990,24 @@ label {
  */
 /* Header
    ================================================================================================================== */
-/* line 13, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\0000313}}
 .header {
   margin-bottom: 1.5em;
   background-color: #41ab51;
   *position: relative;
   *zoom: 1;
 }
-/* line 46, ../../../../../../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/zen-grids-1\.4\/stylesheets\/zen\/_grids\.scss}line{font-family:\0000346}}
 .header:before, .header:after {
   content: "";
   display: table;
 }
-/* line 50, ../../../../../../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Library\/Ruby\/Gems\/1\.8\/gems\/zen-grids-1\.4\/stylesheets\/zen\/_grids\.scss}line{font-family:\0000350}}
 .header:after {
   clear: both;
 }
 
-/* line 21, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\0000321}}
 .header--inner {
   position: relative;
   min-height: 5em;
@@ -1017,7 +1017,7 @@ label {
 
 /* Logo
    ================================================================================================================== */
-/* line 35, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\0000335}}
 .logo--link {
   display: inline-block;
   max-width: 100%;
@@ -1025,20 +1025,20 @@ label {
   text-align: center;
 }
 @media only screen and (min-width: 18.75em) {
-  /* line 35, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\0000335}}
   .logo--link {
     max-width: 5.625em;
   }
 }
 
-/* line 47, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\0000347}}
 .logo--image {
   max-width: 75%;
   margin-right: auto;
   margin-left: auto;
 }
 @media only screen and (min-width: 18.75em) {
-  /* line 47, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\0000347}}
   .logo--image {
     max-width: 100%;
   }
@@ -1046,24 +1046,25 @@ label {
 
 /* Layouts
    ================================================================================================================== */
-/* line 62, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\0000362}}
 .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper {
+  overflow: auto;
   margin-bottom: 0;
 }
-/* line 68, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\0000369}}
 .layout-default .layout--inner:last-child, .layout-default-inverted .layout--inner:last-child, .layout-alternative .layout--inner:last-child, .layout-no-wrapper .layout--inner:last-child {
   margin-bottom: 0;
 }
 
-/* line 73, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\0000374}}
 .layout--inner {
-  overflow: auto;
+  float: left;
   min-height: 400px;
   margin-bottom: 1.5em;
   padding: 1.5em;
 }
 
-/* line 86, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\0000388}}
 .layout-element-alpha,
 .layout-element-beta,
 .layout-element-gamma,
@@ -1077,7 +1078,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 100, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003102}}
   .layout-default .layout-element-alpha {
     float: left;
     width: 70.83333%;
@@ -1097,7 +1098,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 108, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003110}}
   .layout-default .layout-element-beta {
     float: right;
     width: 29.16667%;
@@ -1117,7 +1118,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 116, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003118}}
   .layout-default .layout-element-gamma {
     clear: both;
     float: left;
@@ -1137,7 +1138,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 124, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003126}}
   .layout-default .layout-element-delta {
     float: right;
     width: 50%;
@@ -1156,7 +1157,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 130, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003132}}
   .layout-default .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1175,7 +1176,7 @@ label {
     _overflow-y: visible;
   }
 }
-/* line 140, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003142}}
 .layout-default .layout-element-gamma,
 .layout-default .layout-element-delta,
 .layout-default .layout-element-epsilon {
@@ -1184,7 +1185,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 150, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003152}}
   .layout-default-inverted .layout-element-alpha {
     float: left;
     width: 29.16667%;
@@ -1204,7 +1205,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 158, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003160}}
   .layout-default-inverted .layout-element-beta {
     float: right;
     width: 70.83333%;
@@ -1224,7 +1225,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 166, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003168}}
   .layout-default-inverted .layout-element-gamma {
     clear: both;
     float: left;
@@ -1244,7 +1245,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 174, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003176}}
   .layout-default-inverted .layout-element-delta {
     float: right;
     width: 50%;
@@ -1263,7 +1264,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 180, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003182}}
   .layout-default-inverted .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1282,7 +1283,7 @@ label {
     _overflow-y: visible;
   }
 }
-/* line 190, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003192}}
 .layout-default-inverted .layout-element-gamma,
 .layout-default-inverted .layout-element-delta,
 .layout-default-inverted .layout-element-epsilon {
@@ -1291,7 +1292,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 201, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003203}}
   .layout-alternative .layout-element-alpha {
     float: left;
     width: 100%;
@@ -1310,7 +1311,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 207, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003209}}
   .layout-alternative .layout-element-beta {
     clear: both;
     float: left;
@@ -1330,7 +1331,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 215, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003217}}
   .layout-alternative .layout-element-gamma {
     clear: both;
     float: left;
@@ -1350,7 +1351,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 223, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003225}}
   .layout-alternative .layout-element-delta {
     float: right;
     width: 50%;
@@ -1369,7 +1370,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 229, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003231}}
   .layout-alternative .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1389,12 +1390,12 @@ label {
   }
 }
 
-/* line 243, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003245}}
 .layout-no-wrapper .layout--inner {
   padding: 1.5em;
 }
 
-/* line 256, ../sass/theme/_layout.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_layout\.scss}line{font-family:\00003258}}
 .layout-alternative .layout-element-alpha,
 .layout-alternative .layout-element-beta,
 .layout-alternative .layout-element-gamma,
@@ -1413,7 +1414,7 @@ label {
  * Navigation
  */
 @media only screen and (min-width: 22.5em) {
-  /* line 6, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\000036}}
   .nav--wrapper {
     position: absolute;
     right: 1em;
@@ -1423,19 +1424,19 @@ label {
   }
 }
 @media only screen and (min-width: 43em) {
-  /* line 6, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\000036}}
   .nav--wrapper {
     bottom: 0;
   }
 }
 
-/* line 21, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\0000321}}
 .nav, .nav-dropdown {
   float: left;
   text-align: right;
 }
 
-/* line 28, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\0000328}}
 .nav--link, .nav--toggle-mobile-nav, .nav-dropdown--header {
   position: relative;
   display: block;
@@ -1451,29 +1452,29 @@ label {
   -o-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 41, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\0000341}}
 .nav--link:link, .nav--toggle-mobile-nav:link, .nav-dropdown--header:link, .nav--link:visited, .nav--toggle-mobile-nav:visited, .nav-dropdown--header:visited {
   color: white;
   text-decoration: none;
 }
-/* line 46, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\0000346}}
 .nav--link:hover, .nav--toggle-mobile-nav:hover, .nav-dropdown--header:hover {
   background-color: #82d08e;
 }
 @media only screen and (min-width: 18.75em) {
-  /* line 28, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\0000328}}
   .nav--link, .nav--toggle-mobile-nav, .nav-dropdown--header {
     display: inline-block;
   }
 }
 @media only screen and (min-width: 28em) {
-  /* line 28, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\0000328}}
   .nav--link, .nav--toggle-mobile-nav, .nav-dropdown--header {
     margin-left: 1em;
   }
 }
 @media only screen and (min-width: 43em) {
-  /* line 28, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\0000328}}
   .nav--link, .nav--toggle-mobile-nav, .nav-dropdown--header {
     padding-right: 1.25em;
     padding-left: 1.25em;
@@ -1488,29 +1489,29 @@ label {
 }
 
 @media only screen and (min-width: 43em) {
-  /* line 70, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\0000370}}
   .nav--toggle-mobile-nav {
     display: none;
   }
 }
 
-/* line 78, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\0000378}}
 .nav--icon {
   max-width: 1.5em;
 }
 @media only screen and (min-width: 43em) {
-  /* line 78, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\0000378}}
   .nav--icon {
     display: none;
   }
 }
 
-/* line 86, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\0000386}}
 .nav--text {
   display: none;
 }
 @media only screen and (min-width: 43em) {
-  /* line 86, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\0000386}}
   .nav--text {
     display: inline;
   }
@@ -1518,33 +1519,33 @@ label {
 
 /* Dropdown menu
    ================================================================================================================== */
-/* line 98, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\0000398}}
 .nav-dropdown {
   display: none;
 }
 @media only screen and (min-width: 43em) {
-  /* line 98, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\0000398}}
   .nav-dropdown {
     display: block;
   }
 }
 
-/* line 108, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\00003108}}
 .nav-dropdown--header {
   position: relative;
   padding-right: 2.5em;
 }
-/* line 116, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\00003116}}
 .nav-dropdown--header:link, .nav-dropdown--header:visited {
   color: white;
   text-decoration: none;
 }
-/* line 121, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\00003121}}
 .nav-dropdown--header:hover {
   background-color: #5dc26d;
 }
 
-/* line 126, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\00003126}}
 .nav-dropdown--icon {
   position: absolute;
   top: .85em;
@@ -1552,7 +1553,7 @@ label {
   max-width: .85em;
 }
 
-/* line 134, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\00003134}}
 .nav-dropdown--item {
   position: absolute;
   top: 2.5em;
@@ -1571,12 +1572,12 @@ label {
   border-radius: 0 0 0.4em 0.4em;
 }
 
-/* line 154, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\00003154}}
 .nav-dropdown--wrapper:hover .nav-dropdown--item {
   display: block;
 }
 
-/* line 160, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\00003160}}
 .nav-dropdown--link {
   border-bottom: 1px solid #82d08e;
   margin-bottom: .5em;
@@ -1585,16 +1586,16 @@ label {
   min-width: 10em;
   text-align: right;
 }
-/* line 171, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\00003171}}
 .nav-dropdown--link:link, .nav-dropdown--link:visited {
   color: white;
   text-decoration: none;
 }
-/* line 176, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\00003176}}
 .nav-dropdown--link:hover {
   text-decoration: underline;
 }
-/* line 180, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\00003180}}
 .nav-dropdown--link:last-child {
   border: 0;
   margin-bottom: 0;
@@ -1605,7 +1606,7 @@ label {
  * See specific IE9 styles in separate stylesheet
  *
    ================================================================================================================== */
-/* line 193, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\00003193}}
 .nav-mobile {
   position: absolute;
   top: 0;
@@ -1634,26 +1635,26 @@ label {
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-/* line 213, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\00003213}}
 .nav-mobile a:link {
   color: white;
   text-decoration: none;
 }
-/* line 218, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\00003218}}
 .nav-mobile a:visited {
   color: white;
 }
-/* line 222, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\00003222}}
 .nav-mobile a:hover {
   color: white;
   text-decoration: underline;
 }
-/* line 227, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\00003227}}
 .nav-mobile a:focus {
   color: white;
 }
 
-/* line 233, ../sass/theme/_nav.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_nav\.scss}line{font-family:\00003233}}
 .nav-mobile--link {
   border-bottom-color: #5dc26d;
   display: block;
@@ -1664,7 +1665,7 @@ label {
  *
  * @author magnify
  */
-/* line 10, ../sass/modules/_notifications.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_notifications\.scss}line{font-family:\0000310}}
 .notification {
   display: inline-block;
   position: absolute;
@@ -1684,7 +1685,7 @@ label {
   -o-border-radius: 100%;
   border-radius: 100%;
 }
-/* line 26, ../sass/modules/_notifications.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_notifications\.scss}line{font-family:\0000326}}
 .notification:link, .notification:visited {
   text-decoration: none;
 }
@@ -1694,30 +1695,30 @@ label {
  */
 /* Search result
    ========================================================================== */
-/* line 22, ../sass/modules/_search.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_search\.scss}line{font-family:\0000322}}
 .search-result--link {
   display: block;
   margin-bottom: .5em;
 }
-/* line 27, ../sass/modules/_search.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_search\.scss}line{font-family:\0000327}}
 .search-result--link:link, .search-result--link:visited {
   text-decoration: none;
 }
-/* line 32, ../sass/modules/_search.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_search\.scss}line{font-family:\0000332}}
 .search-result--link:hover, .search-result--link:active {
   text-decoration: underline;
 }
 
-/* line 37, ../sass/modules/_search.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_search\.scss}line{font-family:\0000337}}
 .search-result--comments {
   display: block;
 }
-/* line 41, ../sass/modules/_search.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_search\.scss}line{font-family:\0000341}}
 .search-result--comments:link, .search-result--comments:visited {
   color: #737373;
   text-decoration: none;
 }
-/* line 47, ../sass/modules/_search.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_search\.scss}line{font-family:\0000347}}
 .search-result--comments:hover, .search-result--comments:active {
   color: #404040;
 }
@@ -1729,14 +1730,14 @@ label {
  */
 /* Question
    ================================================================================================================== */
-/* line 11, ../sass/modules/_question.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_question\.scss}line{font-family:\0000311}}
 .question--wrapper {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 1.5em;
   padding-bottom: 1.5em;
 }
 
-/* line 18, ../sass/modules/_question.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_question\.scss}line{font-family:\0000318}}
 .question--meta-data {
   margin-bottom: 1.5em;
   padding: .5em 1.25em .65em;
@@ -1750,18 +1751,18 @@ label {
   border-radius: 0.4em;
 }
 @media only screen and (min-width: 40em) {
-  /* line 18, ../sass/modules/_question.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_question\.scss}line{font-family:\0000318}}
   .question--meta-data {
     float: right;
   }
 }
 
-/* line 34, ../sass/modules/_question.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_question\.scss}line{font-family:\0000334}}
 .question--inner {
   clear: both;
 }
 
-/* line 38, ../sass/modules/_question.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_question\.scss}line{font-family:\0000338}}
 .question--label {
   display: block;
   margin-bottom: .25em;
@@ -1769,7 +1770,7 @@ label {
   font-weight: bold;
 }
 
-/* line 46, ../sass/modules/_question.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_question\.scss}line{font-family:\0000346}}
 .question {
   font-size: 125%;
 }
@@ -1779,18 +1780,18 @@ label {
  *
  * @author magnify
  */
-/* line 7, ../sass/modules/_lists.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_lists\.scss}line{font-family:\000037}}
 .content-list {
   padding-left: 0;
   color: #737373;
   list-style: none;
 }
 
-/* line 14, ../sass/modules/_lists.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_lists\.scss}line{font-family:\0000314}}
 .content-list--item {
   background-color: #e6e6e6;
 }
-/* line 19, ../sass/modules/_lists.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_lists\.scss}line{font-family:\0000319}}
 .content-list--item.is-last {
   margin-bottom: 0;
 }
@@ -1800,25 +1801,25 @@ label {
  *
  * @author magnify
  */
-/* line 9, ../sass/modules/_meta-data.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_meta-data\.scss}line{font-family:\000039}}
 .meta-data--author {
   margin-bottom: .75em;
   margin-left: -2em;
 }
 @media only screen and (min-width: 75em) {
-  /* line 9, ../sass/modules/_meta-data.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_meta-data\.scss}line{font-family:\000039}}
   .meta-data--author {
     margin-left: 0;
   }
 }
 @media only screen and (min-width: 40em) {
-  /* line 9, ../sass/modules/_meta-data.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_meta-data\.scss}line{font-family:\000039}}
   .meta-data--author {
     float: left;
   }
 }
 
-/* line 22, ../sass/modules/_meta-data.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_meta-data\.scss}line{font-family:\0000322}}
 .meta-data--date, .comments--comment-meta-data {
   display: block;
   color: #cccccc;
@@ -1826,7 +1827,7 @@ label {
   font-size: 80%;
 }
 
-/* line 30, ../sass/modules/_meta-data.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_meta-data\.scss}line{font-family:\0000330}}
 .meta-data--author-image {
   position: absolute;
   display: inline;
@@ -1842,19 +1843,19 @@ label {
   border-radius: 0.4em;
 }
 
-/* line 48, ../sass/modules/_meta-data.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_meta-data\.scss}line{font-family:\0000348}}
 .meta-data--author-wrapper {
   vertical-align: top;
   display: inline-block;
   margin-left: 4em;
 }
 
-/* line 55, ../sass/modules/_meta-data.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_meta-data\.scss}line{font-family:\0000355}}
 .meta-data--author-link {
   font-weight: bold;
 }
 
-/* line 59, ../sass/modules/_meta-data.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_meta-data\.scss}line{font-family:\0000359}}
 .meta-data--author-title {
   display: block;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
@@ -1868,12 +1869,12 @@ label {
  */
 /* Comments
    ================================================================================================================== */
-/* line 25, ../sass/modules/_comment.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_comment\.scss}line{font-family:\0000325}}
 .comments--comment-content {
   margin-bottom: 1em;
 }
 @media only screen and (min-width: 43em) {
-  /* line 25, ../sass/modules/_comment.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_comment\.scss}line{font-family:\0000325}}
   .comments--comment-content {
     margin-bottom: 0;
   }
@@ -1884,7 +1885,7 @@ label {
  *
  * @author magnify
  */
-/* line 9, ../sass/modules/_flag.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_flag\.scss}line{font-family:\000039}}
 .flag {
   border: 1px solid #b3b3b3;
   display: block;
@@ -1900,36 +1901,36 @@ label {
   /* States */
   /* Breakpoints */
 }
-/* line 23, ../sass/modules/_flag.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_flag\.scss}line{font-family:\0000323}}
 .flag:link, .flag:visited, .flag:hover, .flag:active {
   color: #b3b3b3;
   text-decoration: none;
 }
-/* line 28, ../sass/modules/_flag.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_flag\.scss}line{font-family:\0000328}}
 .flag:hover {
   border: 1px solid #737373;
   color: #737373;
 }
-/* line 34, ../sass/modules/_flag.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_flag\.scss}line{font-family:\0000334}}
 .flag:before {
   font-size: 150%;
 }
-/* line 43, ../sass/modules/_flag.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_flag\.scss}line{font-family:\0000343}}
 .flag.is-active, .flag.is-sticky {
   border: 1px solid #41ab51;
   color: #41ab51;
 }
-/* line 48, ../sass/modules/_flag.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_flag\.scss}line{font-family:\0000348}}
 .flag.is-active:hover, .flag.is-sticky:hover {
   border: 1px solid #33863f;
   color: #33863f;
 }
-/* line 55, ../sass/modules/_flag.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_flag\.scss}line{font-family:\0000355}}
 .flag.is-sticky {
   margin-bottom: 1em;
 }
 @media only screen and (min-width: 43em) {
-  /* line 9, ../sass/modules/_flag.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_flag\.scss}line{font-family:\000039}}
   .flag {
     position: absolute;
     right: 0;
@@ -1943,7 +1944,7 @@ label {
  *
  * @author magnify
  */
-/* line 9, ../sass/modules/_tag.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_tag\.scss}line{font-family:\000039}}
 .question--term, .at-term {
   display: inline-block;
   margin-bottom: .25em;
@@ -1958,12 +1959,12 @@ label {
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-/* line 24, ../sass/modules/_tag.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_tag\.scss}line{font-family:\0000324}}
 .question--term:link, .at-term:link, .question--term:visited, .at-term:visited, .question--term:hover, .at-term:hover, .question--term:active, .at-term:active {
   color: white;
   text-decoration: none;
 }
-/* line 29, ../sass/modules/_tag.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_tag\.scss}line{font-family:\0000329}}
 .question--term:hover, .at-term:hover {
   background-color: #eb3000;
 }
@@ -1973,13 +1974,13 @@ label {
  *
  * @author magnify
  */
-/* line 8, ../sass/modules/_page.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_page\.scss}line{font-family:\000038}}
 .page-wrapper {
   position: relative;
   overflow: hidden;
   width: 100%;
 }
-/* line 15, ../sass/modules/_page.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_page\.scss}line{font-family:\0000315}}
 .page-wrapper.is-moved-left .page-inner {
   -webkit-transform: translate3d(-76%, 0, 0);
   -moz-transform: translate3d(-76%, 0, 0);
@@ -1988,7 +1989,7 @@ label {
   transform: translate3d(-76%, 0, 0);
 }
 
-/* line 21, ../sass/modules/_page.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_page\.scss}line{font-family:\0000321}}
 .page-inner {
   position: relative;
   min-height: 100%;
@@ -2000,7 +2001,7 @@ label {
   transition: transform 500ms ease 0s;
 }
 
-/* line 30, ../sass/modules/_page.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_page\.scss}line{font-family:\0000330}}
 .page-title {
   font-size: 200%;
   font-weight: bold;
@@ -2011,7 +2012,7 @@ label {
  * Block module
  *
  */
-/* line 8, ../sass/modules/_block-module.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_block-module\.scss}line{font-family:\000038}}
 .block-module, .block-my-content,
 .block-follow-question,
 .block-unfollow-question, .block-user-links {
@@ -2024,23 +2025,23 @@ label {
   border-radius: 0.4em;
 }
 
-/* line 16, ../sass/modules/_block-module.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_block-module\.scss}line{font-family:\0000316}}
 .block-module--inner {
   padding: 1.5em;
 }
 
-/* line 20, ../sass/modules/_block-module.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_block-module\.scss}line{font-family:\0000320}}
 .block-module--header, .block-module--user-links-header, .block-module--my-content-header {
   font-size: 130%;
   font-weight: bold;
 }
 
-/* line 25, ../sass/modules/_block-module.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_block-module\.scss}line{font-family:\0000325}}
 .block-module--content {
   margin-bottom: 1em;
 }
 
-/* line 29, ../sass/modules/_block-module.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_block-module\.scss}line{font-family:\0000329}}
 .block-module--link {
   width: 100%;
   -webkit-box-sizing: border-box;
@@ -2050,104 +2051,104 @@ label {
 
 /* User links block
    ================================================================================================================== */
-/* line 61, ../sass/modules/_block-module.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_block-module\.scss}line{font-family:\0000361}}
 .block-user-links {
   background-color: #41ab51;
 }
 
-/* line 67, ../sass/modules/_block-module.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_block-module\.scss}line{font-family:\0000367}}
 .block-module--user-links-header {
   border-bottom: 1px solid #5dc26d;
   color: white;
   padding-bottom: 0.5em;
 }
 
-/* line 75, ../sass/modules/_block-module.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_block-module\.scss}line{font-family:\0000375}}
 .block-module--user-links-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* line 81, ../sass/modules/_block-module.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_block-module\.scss}line{font-family:\0000381}}
 .block-module--user-links-item {
   display: block;
   border-bottom-color: #5dc26d;
 }
-/* line 8, ../sass/theme/_mixins.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_mixins\.scss}line{font-family:\000038}}
 .block-module--user-links-item a:link {
   color: white;
   text-decoration: none;
 }
-/* line 13, ../sass/theme/_mixins.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_mixins\.scss}line{font-family:\0000313}}
 .block-module--user-links-item a:visited {
   color: white;
 }
-/* line 17, ../sass/theme/_mixins.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_mixins\.scss}line{font-family:\0000317}}
 .block-module--user-links-item a:hover {
   color: white;
   text-decoration: underline;
 }
-/* line 22, ../sass/theme/_mixins.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_mixins\.scss}line{font-family:\0000322}}
 .block-module--user-links-item a:focus {
   color: white;
 }
-/* line 90, ../sass/modules/_block-module.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_block-module\.scss}line{font-family:\0000390}}
 .block-module--user-links-item:last-child {
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
 }
-/* line 96, ../sass/modules/_block-module.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_block-module\.scss}line{font-family:\0000396}}
 .block-module--user-links-item.active {
   font-weight: bold;
 }
 
 /* My content block
    ================================================================================================================== */
-/* line 104, ../sass/modules/_block-module.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_block-module\.scss}line{font-family:\00003104}}
 .block-module--my-content-header {
   border-bottom: 1px solid #cccccc;
   padding-bottom: 0.5em;
 }
 
-/* line 111, ../sass/modules/_block-module.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_block-module\.scss}line{font-family:\00003111}}
 .block-module--my-content-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* line 117, ../sass/modules/_block-module.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_block-module\.scss}line{font-family:\00003117}}
 .block-module--my-content-item {
   display: block;
   border-bottom-color: #cccccc;
 }
-/* line 8, ../sass/theme/_mixins.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_mixins\.scss}line{font-family:\000038}}
 .block-module--my-content-item a:link {
   color: #41ab51;
   text-decoration: none;
 }
-/* line 13, ../sass/theme/_mixins.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_mixins\.scss}line{font-family:\0000313}}
 .block-module--my-content-item a:visited {
   color: #41ab51;
 }
-/* line 17, ../sass/theme/_mixins.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_mixins\.scss}line{font-family:\0000317}}
 .block-module--my-content-item a:hover {
   color: #41ab51;
   text-decoration: underline;
 }
-/* line 22, ../sass/theme/_mixins.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/theme\/_mixins\.scss}line{font-family:\0000322}}
 .block-module--my-content-item a:focus {
   color: #41ab51;
 }
-/* line 126, ../sass/modules/_block-module.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_block-module\.scss}line{font-family:\00003126}}
 .block-module--my-content-item:last-child {
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
 }
-/* line 132, ../sass/modules/_block-module.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_block-module\.scss}line{font-family:\00003132}}
 .block-module--my-content-item.active {
   font-weight: bold;
 }
@@ -2157,52 +2158,52 @@ label {
  * User profile module
  *
  */
-/* line 8, ../sass/modules/_user-profile.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_user-profile\.scss}line{font-family:\000038}}
 .user-profile-module--edit-link {
   margin: 0 0.5em;
   font-size: 0.7em;
 }
 
-/* line 13, ../sass/modules/_user-profile.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_user-profile\.scss}line{font-family:\0000313}}
 .user-profile-module--field-group-fieldset, .user-profile-module--field-group-fieldset-personal-info {
   padding: 0.5em 1.5em 1.5em;
 }
 
-/* line 23, ../sass/modules/_user-profile.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_user-profile\.scss}line{font-family:\0000323}}
 .user-profile-module--personal-info-text {
   float: left;
   width: 60%;
 }
 
-/* line 28, ../sass/modules/_user-profile.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_user-profile\.scss}line{font-family:\0000328}}
 .user-profile-module--personal-info-image {
   float: right;
   width: 20%;
 }
 
-/* line 33, ../sass/modules/_user-profile.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_user-profile\.scss}line{font-family:\0000333}}
 .user-profile-module--field, .user-profile-module--field-personal-info {
   padding-bottom: 1em;
   margin-bottom: 1em;
 }
-/* line 37, ../sass/modules/_user-profile.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_user-profile\.scss}line{font-family:\0000337}}
 .user-profile-module--field:last-child, .user-profile-module--field-personal-info:last-child {
   padding-bottom: 0;
   margin-bottom: 0;
   border: 0;
 }
 
-/* line 45, ../sass/modules/_user-profile.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_user-profile\.scss}line{font-family:\0000345}}
 .user-profile-module--field-personal-info {
   border-bottom: 1px solid #e6e6e6;
 }
 
-/* line 51, ../sass/modules/_user-profile.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_user-profile\.scss}line{font-family:\0000351}}
 .user-profile-module--fieldset-legend {
   font-weight: bold;
 }
 
-/* line 57, ../sass/modules/_user-profile.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_user-profile\.scss}line{font-family:\0000357}}
 .user-profile-module--field-label {
   display: inline-block;
   font-weight: bold;
@@ -2216,13 +2217,13 @@ label {
  * http://twitter.github.io/typeahead.js/
  *
  */
-/* line 9, ../sass/modules/_twitter-typeahead.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\000039}}
 .typeahead-block {
   position: relative;
   margin-top: -1.5em;
 }
 @media only screen and (min-width: 75em) {
-  /* line 9, ../sass/modules/_twitter-typeahead.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\000039}}
   .typeahead-block {
     -webkit-border-radius: 0 0 0.4em 0.4em;
     -moz-border-radius: 0 0 0.4em 0.4em;
@@ -2232,11 +2233,11 @@ label {
   }
 }
 
-/* line 23, ../sass/modules/_twitter-typeahead.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000323}}
 .typeahead-block--wrapper {
   position: relative;
 }
-/* line 27, ../sass/modules/_twitter-typeahead.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000327}}
 .typeahead-block--wrapper .tt-hint,
 .typeahead-block--wrapper .typeahead {
   padding-top: 1.25em;
@@ -2246,13 +2247,13 @@ label {
   height: 65px;
   background-color: white;
 }
-/* line 37, ../sass/modules/_twitter-typeahead.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000337}}
 .typeahead-block--wrapper .tt-hint:focus,
 .typeahead-block--wrapper .typeahead:focus {
   outline: none;
 }
 @media only screen and (min-width: 28em) {
-  /* line 27, ../sass/modules/_twitter-typeahead.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000327}}
   .typeahead-block--wrapper .tt-hint,
   .typeahead-block--wrapper .typeahead {
     padding-right: 6em;
@@ -2265,7 +2266,7 @@ label {
   }
 }
 
-/* line 50, ../sass/modules/_twitter-typeahead.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000350}}
 .typeahead-block--icon {
   position: absolute;
   top: 1.2em;
@@ -2275,7 +2276,7 @@ label {
   z-index: 1;
 }
 
-/* line 61, ../sass/modules/_twitter-typeahead.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000361}}
 .twitter-typeahead {
   display: block !important;
   background-color: white;
@@ -2286,13 +2287,13 @@ label {
   border-radius: 0.4em;
 }
 
-/* line 69, ../sass/modules/_twitter-typeahead.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000369}}
 .typeahead-block--button {
   height: 65px;
   width: 100%;
 }
 @media only screen and (min-width: 28em) {
-  /* line 69, ../sass/modules/_twitter-typeahead.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000369}}
   .typeahead-block--button {
     position: absolute;
     bottom: 0;
@@ -2311,7 +2312,7 @@ label {
 
 /* Suggestions
    ========================================================================== */
-/* line 95, ../sass/modules/_twitter-typeahead.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000395}}
 .tt-dropdown-menu {
   position: absolute;
   z-index: 90;
@@ -2330,13 +2331,13 @@ label {
   box-sizing: border-box;
 }
 @media only screen and (min-width: 28em) {
-  /* line 95, ../sass/modules/_twitter-typeahead.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000395}}
   .tt-dropdown-menu {
     top: 7.5em;
   }
 }
 
-/* line 115, ../sass/modules/_twitter-typeahead.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\00003115}}
 .tt-suggestion-header {
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 1em;
@@ -2345,7 +2346,7 @@ label {
   font-weight: bold;
 }
 
-/* line 124, ../sass/modules/_twitter-typeahead.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\00003124}}
 .tt-suggestion {
   border-bottom: 1px solid #e6e6e6;
   color: #41ab51;
@@ -2354,15 +2355,15 @@ label {
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 133, ../sass/modules/_twitter-typeahead.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\00003133}}
 .tt-suggestion:link, .tt-suggestion:visited {
   text-decoration: none;
 }
-/* line 138, ../sass/modules/_twitter-typeahead.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\00003138}}
 .tt-suggestion:hover, .tt-suggestion:active {
   text-decoration: underline;
 }
-/* line 142, ../sass/modules/_twitter-typeahead.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\00003142}}
 .tt-suggestion:last-child {
   border-bottom: 0;
   margin-bottom: 0;
@@ -2376,17 +2377,17 @@ label {
  *
  * @author magnify
  */
-/* line 11, ../sass/drupal-modules/_at-term.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_at-term\.scss}line{font-family:\0000311}}
 .at-term-list {
   margin-bottom: .25em;
 }
 
-/* line 24, ../sass/drupal-modules/_at-term.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_at-term\.scss}line{font-family:\0000324}}
 .at-term-entry {
   margin-bottom: .5em;
 }
 
-/* line 28, ../sass/drupal-modules/_at-term.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_at-term\.scss}line{font-family:\0000328}}
 .at-add-btn {
   padding: .25em .75em;
   width: 100%;
@@ -2395,12 +2396,12 @@ label {
   color: white;
   font-size: 100%;
 }
-/* line 39, ../sass/drupal-modules/_at-term.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_at-term\.scss}line{font-family:\0000339}}
 .at-add-btn:hover {
   background-color: #404040;
 }
 @media only screen and (min-width: 30em) {
-  /* line 28, ../sass/drupal-modules/_at-term.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_at-term\.scss}line{font-family:\0000328}}
   .at-add-btn {
     width: auto;
   }
@@ -2411,7 +2412,7 @@ label {
  *
  * @author magnify
  */
-/* line 7, ../sass/drupal-modules/_messages.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_messages\.scss}line{font-family:\000037}}
 .messages {
   margin-bottom: 1.5em;
   padding: 1.5em;
@@ -2421,7 +2422,7 @@ label {
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-/* line 13, ../sass/drupal-modules/_messages.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_messages\.scss}line{font-family:\0000313}}
 .messages ul {
   display: inline-block;
   margin-top: 0;
@@ -2429,65 +2430,65 @@ label {
   padding-left: 0;
   list-style: none;
 }
-/* line 22, ../sass/drupal-modules/_messages.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_messages\.scss}line{font-family:\0000322}}
 .messages:before {
   font-size: 150%;
   vertical-align: top;
 }
-/* line 27, ../sass/drupal-modules/_messages.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_messages\.scss}line{font-family:\0000327}}
 .messages.status {
   background-color: #d6ff9a;
   color: black;
 }
-/* line 32, ../sass/drupal-modules/_messages.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_messages\.scss}line{font-family:\0000332}}
 .messages.status a:link {
   color: black;
   text-decoration: underline;
 }
-/* line 39, ../sass/drupal-modules/_messages.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_messages\.scss}line{font-family:\0000339}}
 .messages.status a:visited, .messages.status a:hover, .messages.status a:focus {
   color: black;
   text-decoration: none;
 }
-/* line 45, ../sass/drupal-modules/_messages.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_messages\.scss}line{font-family:\0000345}}
 .messages.status:before {
   margin-right: .5em;
 }
-/* line 53, ../sass/drupal-modules/_messages.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_messages\.scss}line{font-family:\0000353}}
 .messages.warning {
   background-color: #fff98f;
   color: black;
 }
-/* line 58, ../sass/drupal-modules/_messages.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_messages\.scss}line{font-family:\0000358}}
 .messages.warning a:link {
   color: black;
   text-decoration: underline;
 }
-/* line 65, ../sass/drupal-modules/_messages.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_messages\.scss}line{font-family:\0000365}}
 .messages.warning a:visited, .messages.warning a:hover, .messages.warning a:focus {
   color: black;
   text-decoration: none;
 }
-/* line 72, ../sass/drupal-modules/_messages.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_messages\.scss}line{font-family:\0000372}}
 .messages.warning:before {
   margin-right: .5em;
 }
-/* line 80, ../sass/drupal-modules/_messages.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_messages\.scss}line{font-family:\0000380}}
 .messages.error {
   background-color: #eb3000;
   color: white;
 }
-/* line 85, ../sass/drupal-modules/_messages.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_messages\.scss}line{font-family:\0000385}}
 .messages.error a:link {
   color: white;
   text-decoration: underline;
 }
-/* line 92, ../sass/drupal-modules/_messages.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_messages\.scss}line{font-family:\0000392}}
 .messages.error a:visited, .messages.error a:hover, .messages.error a:focus {
   color: white;
   text-decoration: none;
 }
-/* line 98, ../sass/drupal-modules/_messages.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_messages\.scss}line{font-family:\0000398}}
 .messages.error:before {
   margin-right: .5em;
 }
@@ -2495,7 +2496,7 @@ label {
 /**
  * Item list
  */
-/* line 8, ../sass/drupal-modules/_item-list.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_item-list\.scss}line{font-family:\000038}}
 .block-user .item-list ul {
   padding-left: 0;
   list-style: none;
@@ -2508,45 +2509,45 @@ label {
  */
 /* Autocomplete field
    ================================================================================================================== */
-/* line 11, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_autocomplete-deluxe\.scss}line{font-family:\0000311}}
 .ui-autocomplete {
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
-/* line 16, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_autocomplete-deluxe\.scss}line{font-family:\0000316}}
 .autocomplete-deluxe-single:hover {
   text-decoration: none;
 }
 
-/* line 20, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_autocomplete-deluxe\.scss}line{font-family:\0000320}}
 .autocomplete-deluxe-container {
   width: 100%;
   position: relative;
 }
-/* line 26, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_autocomplete-deluxe\.scss}line{font-family:\0000326}}
 .autocomplete-deluxe-container .autocomplete-deluxe-form {
   background: none;
   padding: 0;
   border: none;
   width: auto;
 }
-/* line 32, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_autocomplete-deluxe\.scss}line{font-family:\0000332}}
 .autocomplete-deluxe-container .autocomplete-deluxe-form:focus {
   outline: 0;
   border: none;
 }
-/* line 37, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_autocomplete-deluxe\.scss}line{font-family:\0000337}}
 .autocomplete-deluxe-container .autocomplete-deluxe-form.autocomplete-deluxe-multiple {
   float: left;
   margin-left: 0.5em;
 }
-/* line 43, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_autocomplete-deluxe\.scss}line{font-family:\0000343}}
 .autocomplete-deluxe-container .autocomplete-deluxe-form-single {
   display: inline-block;
 }
 
-/* line 48, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_autocomplete-deluxe\.scss}line{font-family:\0000348}}
 .autocomplete-deluxe-multiple {
   display: inline-block;
   position: relative;
@@ -2556,7 +2557,7 @@ label {
   cursor: text;
 }
 
-/* line 57, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_autocomplete-deluxe\.scss}line{font-family:\0000357}}
 div.autocomplete-deluxe-throbber {
   width: 16px;
   float: right;
@@ -2565,17 +2566,17 @@ div.autocomplete-deluxe-throbber {
   right: 10px;
 }
 
-/* line 65, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_autocomplete-deluxe\.scss}line{font-family:\0000365}}
 .autocomplete-deluxe-closed {
   background: url("../images/throbber.gif") no-repeat 100% 6px;
 }
 
-/* line 69, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_autocomplete-deluxe\.scss}line{font-family:\0000369}}
 .autocomplete-deluxe-open {
   background: url("../images/throbber.gif") no-repeat 100% -14px;
 }
 
-/* line 73, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_autocomplete-deluxe\.scss}line{font-family:\0000373}}
 .autocomplete-deluxe-item {
   -webkit-border-radius: 0.4em;
   -moz-border-radius: 0.4em;
@@ -2593,7 +2594,7 @@ div.autocomplete-deluxe-throbber {
   cursor: default;
 }
 
-/* line 88, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_autocomplete-deluxe\.scss}line{font-family:\0000388}}
 .autocomplete-deluxe-item-delete {
   background: url("../images/x.gif");
   display: block;
@@ -2605,7 +2606,7 @@ div.autocomplete-deluxe-throbber {
   width: 12px;
 }
 
-/* line 99, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_autocomplete-deluxe\.scss}line{font-family:\0000399}}
 .autocomplete-deluxe-value-delete {
   display: inline-block;
   float: right;
@@ -2618,7 +2619,7 @@ div.autocomplete-deluxe-throbber {
   user-select: none;
 }
 
-/* line 110, ../sass/drupal-modules/_autocomplete-deluxe.scss */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/drupal-modules\/_autocomplete-deluxe\.scss}line{font-family:\00003110}}
 .autocomplete-deluxe-highlight-char {
   color: #41ab51;
 }
