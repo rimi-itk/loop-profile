@@ -33,8 +33,6 @@ function loop_permissions_secure_permissions_roles() {
  */
 function loop_permissions_secure_permissions($role) {
   $permissions = array(
-    'anonymous user' => array(
-    ),
     'authenticated user' => array(
       'access comments',
       'access content',
