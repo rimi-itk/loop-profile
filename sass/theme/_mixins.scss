@@ -1,0 +1,26 @@
+@mixin custom-menu-links($color){
+  a {
+    &:before {
+      @extend %icon-arrow-right;
+      @extend %icon-before;
+    }
+
+    &:link {
+      color: $color;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: $color;
+    }
+
+    &:hover {
+      color: $color;
+      text-decoration: underline;
+    }
+
+    &:focus {
+      color: $color;
+    }
+  }
+}
