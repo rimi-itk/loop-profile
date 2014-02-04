@@ -110,19 +110,24 @@ if (isset($loop_primary_menu)): ?>
 </div>
 <?php endif ?>
 
-<div class="<?php print $layout_class; ?>">
-  <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
-  <div class="layout--inner">
-    <?php if ($messages): ?>
-      <?php print $messages; ?>
-    <?php endif; ?>
-    <?php print render($title_prefix); ?>
-    <?php print render($title_suffix); ?>
-    <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-    <?php print render($page['content']); ?>
-    <?php print $feed_icons; ?>
+<?php if ($no_panel || $is_front) : ?>
+  <div class="layout-no-wrapper">
+    <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
+    <div class="layout--inner">
+      <?php if ($messages): ?>
+        <?php print $messages; ?>
+      <?php endif; ?>
+      <?php print render($title_prefix); ?>
+      <?php print render($title_suffix); ?>
+      <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+      <?php print render($page['content']); ?>
+      <?php print $feed_icons; ?>
+    </div>
   </div>
-</div>
+<?php else : ?>
+  <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+  <?php print render($page['content']); ?>
+<?php endif;?>
 
 
 <footer class="footer">
