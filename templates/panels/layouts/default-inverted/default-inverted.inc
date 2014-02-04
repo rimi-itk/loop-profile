@@ -7,7 +7,7 @@
 $plugin = array(
   'title' => t('Default inverted'),
   'category' => t('Loop custom'),
-  'icon' => 'default.png',
+  'icon' => 'default-inverted.png',
   'theme' => 'default-inverted',
   'regions' => array(
     'alpha' => t('Alpha'),
