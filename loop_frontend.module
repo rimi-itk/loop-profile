@@ -1,6 +1,12 @@
 <?php
 /**
  * @file
+ * Code for the Loop Frontend feature.
+ */
+
+include_once 'loop_frontend.features.inc';
+/**
+ * @file
  * Code for the Loop frontend module.
  */
 
