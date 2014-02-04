@@ -1761,9 +1761,10 @@ label {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_question\.scss}line{font-family:\0000334}}
 .question--inner {
   clear: both;
+  margin-bottom: 1.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_question\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_question\.scss}line{font-family:\0000340}}
 .question--label {
   display: block;
   margin-bottom: .25em;
@@ -1771,8 +1772,9 @@ label {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_question\.scss}line{font-family:\0000346}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_question\.scss}line{font-family:\0000348}}
 .question {
+  margin-bottom: 0;
   font-size: 125%;
 }
 

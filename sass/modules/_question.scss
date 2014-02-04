@@ -33,6 +33,8 @@
 
 .question--inner {
   clear: both;
+  
+  margin-bottom: $margin-bottom;
 }
 
 .question--label {
@@ -44,6 +46,8 @@
 }
 
 .question {
+  margin-bottom: 0;
+
   font-size: 125%;
 }
 
