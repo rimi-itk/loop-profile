@@ -19,11 +19,11 @@ function loop_content_ctools_plugin_api($module = NULL, $api = NULL) {
 function loop_content_node_info() {
   $items = array(
     'page' => array(
-      'name' => t('Page'),
+      'name' => t('Side'),
       'base' => 'node_content',
       'description' => t('This content type is for static content, like about page.'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
   );
