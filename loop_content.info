@@ -12,6 +12,10 @@ dependencies[] = node
 dependencies[] = strongarm
 dependencies[] = text
 dependencies[] = wysiwyg
+<<<<<<< HEAD
+dependencies[] = loop_field_bases
+>>>>>>> d79400a0befda512175cc408be7f5a7efef8e1d9
+dependencies[] = node
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[field_instance][] = node-page-body
@@ -31,3 +35,4 @@ features[variable][] = node_options_page
 features[variable][] = node_preview_page
 features[variable][] = node_submitted_page
 features[wysiwyg][] = editor
+features_exclude[field_base][body] = body
