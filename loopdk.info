@@ -53,6 +53,7 @@ dependencies[] = wysiwyg
 
 ; LOOP features
 dependencies[] = loop_content
+dependencies[] = loop_field_bases
 dependencies[] = loop_post
 dependencies[] = loop_frontpage
 

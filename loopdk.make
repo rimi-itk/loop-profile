@@ -185,6 +185,12 @@ projects[loop_example_content][download][type] = "git"
 projects[loop_example_content][download][url] = "git@github.com:loopdk/loop_example_content.git"
 projects[loop_example_content][branch] = "development"
 
+projects[loop_field_bases][type] = "module"
+projects[loop_field_bases][subdir] = "features"
+projects[loop_field_bases][download][type] = "git"
+projects[loop_field_bases][download][url] = "git@github.com:loopdk/loop_field_bases.git"
+projects[loop_field_bases][branch] = "development"
+
 projects[loop_flag][type] = "module"
 projects[loop_flag][subdir] = "features"
 projects[loop_flag][download][type] = "git"
