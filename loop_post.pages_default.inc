@@ -13,13 +13,13 @@ function loop_post_default_page_manager_handlers() {
   $handler = new stdClass();
   $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
   $handler->api_version = 1;
-  $handler->name = 'node_view_panel_context';
+  $handler->name = 'node_view_panel_context_2';
   $handler->task = 'node_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = 0;
+  $handler->weight = -30;
   $handler->conf = array(
-    'title' => 'Node view',
+    'title' => 'Post',
     'no_blocks' => 0,
     'pipeline' => 'standard',
     'body_classes_to_remove' => '',
@@ -28,6 +28,21 @@ function loop_post_default_page_manager_handlers() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'node_type',
+          'settings' => array(
+            'type' => array(
+              'post' => 'post',
+            ),
+          ),
+          'context' => 'argument_entity_id:node_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
   );
   $display = new panels_display();
   $display->layout = 'flexible';
@@ -74,11 +89,10 @@ function loop_post_default_page_manager_handlers() {
     $pane->pid = 'new-2';
     $pane->panel = 'center';
     $pane->type = 'views_panes';
-    $pane->subtype = 'node_comment-loop_post_comments_most_valid_comment';
+    $pane->subtype = 'loop_comments-loop_comments_first';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'items_per_page' => '1',
       'context' => array(
         0 => 'argument_entity_id:node_1',
       ),
@@ -97,7 +111,7 @@ function loop_post_default_page_manager_handlers() {
     $pane->pid = 'new-3';
     $pane->panel = 'center';
     $pane->type = 'views_panes';
-    $pane->subtype = 'node_comment-loop_post_comments_other_comments';
+    $pane->subtype = 'loop_comments-loop_comments_all';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -118,7 +132,7 @@ function loop_post_default_page_manager_handlers() {
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-1';
   $handler->conf['display'] = $display;
-  $export['node_view_panel_context'] = $handler;
+  $export['node_view_panel_context_2'] = $handler;
 
   return $export;
 }
