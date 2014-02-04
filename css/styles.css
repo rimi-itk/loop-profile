@@ -2243,6 +2243,7 @@ label {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000327}}
 .typeahead-block--wrapper .tt-hint,
 .typeahead-block--wrapper .typeahead {
+  margin-bottom: 1em;
   padding-top: 1.25em;
   padding-right: 1.25em;
   padding-bottom: 1.25em;
@@ -2250,7 +2251,7 @@ label {
   height: 65px;
   background-color: white;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000338}}
 .typeahead-block--wrapper .tt-hint:focus,
 .typeahead-block--wrapper .typeahead:focus {
   outline: none;
@@ -2269,7 +2270,7 @@ label {
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000351}}
 .typeahead-block--icon {
   position: absolute;
   top: 1.2em;
@@ -2279,7 +2280,7 @@ label {
   z-index: 1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000361}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000362}}
 .twitter-typeahead {
   display: block !important;
   background-color: white;
@@ -2290,13 +2291,13 @@ label {
   border-radius: 0.4em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000370}}
 .typeahead-block--button {
   height: 65px;
   width: 100%;
 }
 @media only screen and (min-width: 28em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000369}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000370}}
   .typeahead-block--button {
     position: absolute;
     bottom: 0;
@@ -2315,7 +2316,7 @@ label {
 
 /* Suggestions
    ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000396}}
 .tt-dropdown-menu {
   position: absolute;
   z-index: 90;
@@ -2334,13 +2335,13 @@ label {
   box-sizing: border-box;
 }
 @media only screen and (min-width: 28em) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\0000396}}
   .tt-dropdown-menu {
     top: 7.5em;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\00003115}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\00003116}}
 .tt-suggestion-header {
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 1em;
@@ -2349,7 +2350,7 @@ label {
   font-weight: bold;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\00003124}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\00003125}}
 .tt-suggestion {
   border-bottom: 1px solid #e6e6e6;
   color: #41ab51;
@@ -2358,15 +2359,15 @@ label {
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\00003133}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\00003134}}
 .tt-suggestion:link, .tt-suggestion:visited {
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\00003138}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\00003139}}
 .tt-suggestion:hover, .tt-suggestion:active {
   text-decoration: underline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\00003142}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/brianjensen\/www\/work\/loop\/htdocs\/profiles\/loopdk\/themes\/loop\/sass\/modules\/_twitter-typeahead\.scss}line{font-family:\00003143}}
 .tt-suggestion:last-child {
   border-bottom: 0;
   margin-bottom: 0;
