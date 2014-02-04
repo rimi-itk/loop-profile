@@ -33,22 +33,6 @@ function loop_preprocess_page(&$variables) {
 
   if(empty($panel)) {
     $variables['no_panel'] = TRUE;
-    // Add layout class depending on node type.
-    // Make sure node type is set.
-    if (isset($variables['node']->type)) {
-      // Get node type
-      $node_type = $variables['node']->type;
-
-      // use node type to determine layout class.
-      switch ($node_type) {
-        case 'page':
-          $variables['layout_class'] = 'layout-alternative';
-          break;
-        case 'post':
-          $variables['layout_class'] = 'layout-default';
-          break;
-      }
-    }
   }
 }
 
