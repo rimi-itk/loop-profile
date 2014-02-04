@@ -12,9 +12,13 @@
  *   $content['middle']: The only panel in the layout.
  */
 ?>
-<div class="layout-element-alpha">
-  <?php print $content['alpha']; ?>
-</div>
-<div class="layout-element-beta">
-  <?php print $content['beta']; ?>
+<div class="layout-default-inverted">
+  <div class="layout--inner">
+    <div class="layout-element-alpha">
+      <?php print $content['alpha']; ?>
+    </div>
+    <div class="layout-element-beta">
+      <?php print $content['beta']; ?>
+    </div>
+  </div>
 </div>

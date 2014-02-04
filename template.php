@@ -27,25 +27,12 @@ function loop_preprocess_page(&$variables) {
     $variables['loop_primary_menu'] = module_invoke('menu', 'block_view', 'menu-loop-primary-menu');
   }
 
-  // Add layout class depending on node type.
-  // Make sure node type is set.
-  if (isset($variables['node']->type)) {
-    // Get node type
-    $node_type = $variables['node']->type;
+  // Check if we are using a panel page to define layout.
+  $variables['no_panel'] = FALSE;
+  $panel = panels_get_current_page_display();
 
-    // use node type to determine layout class.
-    switch ($node_type) {
-      case 'page':
-        $variables['layout_class'] = 'layout-alternative';
-        break;
-      case 'post':
-        $variables['layout_class'] = 'layout-default';
-        break;
-    }
-  }
-  else {
-    // Use layout without wrapper elements (alpha, beta etc.).
-    $variables['layout_class'] = 'layout-no-wrapper';
+  if(empty($panel)) {
+    $variables['no_panel'] = TRUE;
   }
 }
 
