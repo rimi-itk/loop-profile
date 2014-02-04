@@ -60,6 +60,7 @@ function loop_search_nodes() {
  */
 function loop_search_init() {
   drupal_add_js(drupal_get_path('module', 'loop_search') . '/hogan-2.0.0.js');
+  drupal_add_js(drupal_get_path('module', 'loop_search') . '/handlebars-v1.2.0.js');
   drupal_add_js(drupal_get_path('module', 'loop_search') . '/typeahead.bundle.js');
   drupal_add_js(drupal_get_path('module', 'loop_search') . '/loop_search.js');
 }

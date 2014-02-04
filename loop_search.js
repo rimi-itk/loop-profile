@@ -10,7 +10,7 @@
  * Start typeahead.
  */
 jQuery(document).ready(function($) {
-  var testing = new Bloodhound({
+  var loopSearch = new Bloodhound({
     datumTokenizer: function(d) {
       // Tokenize by splitting whitespace.
       return Bloodhound.tokenizers.whitespace(d.value);
@@ -23,12 +23,15 @@ jQuery(document).ready(function($) {
     name: 'search'
   });
 
-  testing.initialize();
+  loopSearch.initialize();
 
-  jQuery('.typeahead').typeahead(null,
+  jQuery('.typeahead').typeahead(
+    {
+      highlight: true,
+    },
     {
       // Bloodhound source.
-      source: testing.ttAdapter(),
+      source: loopSearch.ttAdapter(),
 
       // Name of search.
       name: 'search',
@@ -36,14 +39,11 @@ jQuery(document).ready(function($) {
       // Display field.
       displayKey: 'title',
 
-      // The template we are building suggestion list from.
-      template: [
-        '<span>{{link}}</span>',
-        '<span>{{title}}</span>'
-      ].join(''),
-
-      // Template enigne.
-      engine: Hogan
+      templates: {
+        suggestion: Handlebars.compile(
+          '{{title}}'
+        )
+      }
     }
   );
 
