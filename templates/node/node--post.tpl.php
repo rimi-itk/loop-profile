@@ -80,15 +80,26 @@
  * @ingroup themeable
  */
 ?>
+
+
   <section class="question--wrapper">
     <div class="meta-data--author">
-      <div class="meta-data--author-image">
-        <?php print $user_picture; ?>
-      </div>
-      <div class="meta-data--author-wrapper">
-        <span class="meta-data--author-link"><?php print $name; ?></span>
-        <span class="meta-data--author-title"><?php print render($content['field_profession']);?></span>
-      </div>
+      <?php if (isset($user_picture)): ?>
+        <div class="meta-data--author-image">
+          <?php print $user_picture; ?>
+        </div>
+      <?php endif ?>
+      <?php if ((isset($node->name) && isset($node->uid)) || isset($content['field_profession'])): ?>
+        <div class="meta-data--author-wrapper">
+          <?php if (isset($node->name) && isset($node->uid)): ?>
+            <span class="meta-data--author-link"><?php print l($node->name, 'user/' . $node->uid); ?></span>
+          <?php endif ?>
+
+          <?php if (isset($content['field_profession'])): ?>
+            <span class="meta-data--author-title"><?php print render($content['field_profession']);?></span>
+          <?php endif ?>
+        </div>
+      <?php endif ?>
     </div>
     <div class="question--meta-data">
       <div class="question--meta-data-date"><?php print t('Submitted') . ' ' . format_date($created, $type = 'medium'); ?></div>
@@ -101,4 +112,3 @@
       <?php print render($content['field_keyword']);?>
     </div>
   </section>
-
