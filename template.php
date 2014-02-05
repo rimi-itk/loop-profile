@@ -119,14 +119,17 @@ function loop_menu_link($variables) {
 
   // Main menu.
   if ($element['#theme'][0]  == 'menu_link__menu_block__2') {
-    return _loop_menu_styling($variables, 'nav--link');
+    return _loop_menu_styling($variables, 'nav--link', FALSE, FALSE, 'nav--icon', 'nav--text');
   }
 }
 
 /**
  * Helper function for menu blocks
  */
-function _loop_menu_styling($variables, $class, $nolink_class = FALSE, $below_class = FALSE, $icon = FALSE, $span = FALSE) {
+function _loop_menu_styling($variables, $class, $nolink_class = FALSE, $below_class = FALSE, $icon = FALSE, $span_class = FALSE) {
+  // Path to theme variable.
+  $path_to_theme = drupal_get_path('theme', 'loop');
+
   $element = $variables['element'];
 
   $sub_menu = '';
@@ -135,7 +138,6 @@ function _loop_menu_styling($variables, $class, $nolink_class = FALSE, $below_cl
   if ($element['#href'] == '<nolink>') {
     // Add header class to parent item.
     $element['#localized_options']['attributes']['class'][] = $nolink_class;
-    // <img src="/profiles/loopdk/themes/loop/images/nav-arrow-down-icon.png" class="nav-dropdown--icon">
 
     if (isset($element['#below'])) {
       // Add a wrapper class.
@@ -155,9 +157,22 @@ function _loop_menu_styling($variables, $class, $nolink_class = FALSE, $below_cl
   // Make sure text string is treated as html by l function.
   $element['#localized_options']['html'] = true;
 
-  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  // Add an icon.
+  $icon_output = '';
 
-  return (($span)?'<span>':'') . $output . (($span)?'</span>':'') . $sub_menu . "\n";
+  if (isset($icon) && isset($element['#localized_options']['attributes']['rel'])) {
+    $icon_output = '<img src="'. $path_to_theme. '/images/' . $element['#localized_options']['attributes']['rel'] . '.png ' . '" class="' . $icon . '">';
+  }
+
+  // Add a span.
+  if ($span_class) {
+    $output = l($icon_output . '<span class="' . $span_class . '">'. $element['#title'] . '</span>', $element['#href'], $element['#localized_options']);
+  }
+  else {
+    $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  }
+
+  return $output . $sub_menu . "\n";
 }
 
 
