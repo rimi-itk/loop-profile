@@ -121,6 +121,9 @@ function loop_frontend_strongarm() {
   $strongarm->name = 'menu_block_2_title_link';
   $strongarm->value = 0;
   $export['menu_block_2_title_link'] = $strongarm;
+  $strongarm->name = 'page_manager_node_view_disabled';
+  $strongarm->value = FALSE;
+  $export['page_manager_node_view_disabled'] = $strongarm;
 
   return $export;
 }
