@@ -223,7 +223,10 @@ function loop_user_default_page_manager_handlers() {
     $pane->subtype = 'user_comments-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '%user:field_first_name %user:field_last_name kommentarer',
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -335,7 +338,10 @@ function loop_user_default_page_manager_handlers() {
     $pane->subtype = 'loop_user_comments-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '%user:field_first_name %user:field_last_name indhold',
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
