@@ -8,9 +8,6 @@
  * - $user
  * - $profile
  *
- * @see template_preprocess_user_picture()
- *
- * @ingroup themeable
  */
 ?>
 <?php if ($user->uid == $profile->uid) : ?>
