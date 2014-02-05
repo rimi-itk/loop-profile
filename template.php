@@ -205,3 +205,31 @@ function loop_fieldset($variables) {
   $output .= "</fieldset>\n";
   return $output;
 }
+
+/**
+ * Implements template_preprocess_user_profile().
+ */
+function loop_preprocess_user_profile(&$variables) {
+  $account = $variables['elements']['#account'];
+
+  // Provide a full name to the template if both first name and surname exists.
+  $first_name = field_get_items('user', $variables['elements']['#account'], 'field_first_name');
+  $surname = field_get_items('user', $variables['elements']['#account'], 'field_last_name');
+  if(!empty($first_name)) {
+    $variables['first_name'] = field_view_value('user', $variables['elements']['#account'], 'field_first_name', $first_name['0']);
+  }
+  if(!empty($surname)) {
+    $variables['surname'] = field_view_value('user', $variables['elements']['#account'], 'field_last_name', $surname['0']);
+  }
+  if(!empty($first_name) && !empty($surname)) {
+    $variables['full_name'] = $variables['first_name']['#markup'] . ' ' . $variables['surname']['#markup'];
+  }
+
+  // Helpful $user_profile variable for templates.
+  foreach (element_children($variables['elements']) as $key) {
+    $variables['user_profile'][$key] = $variables['elements'][$key];
+  }
+
+  // Preprocess fields.
+  field_attach_preprocess('user', $account, $variables['elements'], $variables);
+}
