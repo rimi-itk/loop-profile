@@ -96,14 +96,76 @@ function loop_apachesolr_search_page_alter(&$build, $search_page) {
   }
 }
 
+// Main menu
+function loop_menu_tree__menu_block__1($variables) {
+  return $variables['tree'];
+}
+
+// Secondary menu
+function loop_menu_tree__menu_block__2($variables) {
+  return $variables['tree'];
+}
+
+/**
+ * Implements theme_menu_link().
+ */
+function loop_menu_link($variables) {
+  $element = $variables['element'];
+
+  // Dropdown menu.
+  if ($element['#theme'][0] == 'menu_link__menu_block__1') {
+    return _loop_menu_styling($variables, 'nav-dropdown--link', 'nav-dropdown--header', 'nav-dropdown--item');
+  }
+
+  // Main menu.
+  if ($element['#theme'][0]  == 'menu_link__menu_block__2') {
+    return _loop_menu_styling($variables, 'nav--link');
+  }
+}
+
+/**
+ * Helper function for menu blocks
+ */
+function _loop_menu_styling($variables, $class, $nolink_class = FALSE, $below_class = FALSE, $icon = FALSE, $span = FALSE) {
+  $element = $variables['element'];
+
+  $sub_menu = '';
+
+  // Check if <nolink> is present (used for parent menu items).
+  if ($element['#href'] == '<nolink>') {
+    // Add header class to parent item.
+    $element['#localized_options']['attributes']['class'][] = $nolink_class;
+    // <img src="/profiles/loopdk/themes/loop/images/nav-arrow-down-icon.png" class="nav-dropdown--icon">
+
+    if (isset($element['#below'])) {
+      // Add a wrapper class.
+      if (isset($below_class)) {
+        $sub_menu = '<div class="' . $below_class . '">' . drupal_render($element['#below']) . '</div>';
+      }
+      else {
+        $sub_menu = drupal_render($element['#below']);
+      }
+    }
+  }
+  else {
+    // Add default class to a tag.
+    $element['#localized_options']['attributes']['class'][] = $class;
+  }
+
+  // Make sure text string is treated as html by l function.
+  $element['#localized_options']['html'] = true;
+
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+
+  return (($span)?'<span>':'') . $output . (($span)?'</span>':'') . $sub_menu . "\n";
+}
+
+
 /**
  * Returns HTML for a wrapper for a menu sub-tree.
  *
  * Cleans up markup for main menu.
  */
-function loop_menu_tree__main_menu($variables) {
-  return $variables['tree'];
-}
 
 /**
  * Returns HTML for a menu link and submenu.
@@ -111,45 +173,6 @@ function loop_menu_tree__main_menu($variables) {
  * Cleans up markup for main menu.
  * And insert icons in front of spcific menu items.
  */
-function loop_menu_link__main_menu(array $variables) {
-  // Path to theme variable.
-  $path_to_theme = drupal_get_path('theme', 'loop');
-
-  $element = $variables['element'];
-  $element['#attributes']['class'][] = 'nav--link';
-  if ($element['#href'] == '<nolink>') {
-    $element['#attributes']['class'][] = 'js-toggle-mobile-nav';
-  }
-  $element['#localized_options']['attributes']['class'] = $element['#attributes']['class'];
-  // Make sure text string is treated as html by l function.
-  $element['#localized_options']['html'] = TRUE;
-
-  $output_title = '<span class="nav--text">' . $element['#title'] . '</span>';
-
-  // Insert menu icon for specific menu items.
-  if ($element['#href'] == 'user') {
-    $icon_img = $path_to_theme . '/images/nav-user-icon.png';
-  }
-  if (stristr($element['#href'], '/messages')) {
-    $icon_img = $path_to_theme . '/images/nav-mail-icon.png';
-  }
-  if ($element['#href'] == 'node/add/post') {
-    $icon_img = $path_to_theme . '/images/nav-add-icon.png';
-  }
-  if ($element['#href'] == '<nolink>') {
-    $icon_img = $path_to_theme . '/images/nav-menu-icon.png';
-  }
-  if (isset($icon_img)) {
-    $imgvars = array(
-      'path' => $icon_img,
-      'attributes' => array('class' => array('nav--icon')),
-    );
-    $output_title = theme_image($imgvars) . $output_title;
-  }
-
-  $output = l($output_title, $element['#href'], $element['#localized_options']);
-  return $output;
-}
 
 /**
  * Returns HTML for a wrapper for a menu sub-tree.
