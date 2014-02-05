@@ -78,6 +78,9 @@ projects[logintoboggan][version] = "1.3"
 projects[memcache][subdir] = "contrib"
 projects[memcache][version] = "1.0"
 
+projects[menu_attributes][subdir] = "contrib"
+projects[menu_attributes][version] = "1.0-rc2"
+
 projects[menu_block][subdir] = "contrib"
 projects[menu_block][version] = "2.3"
 
@@ -168,6 +171,7 @@ projects[views_bulk_operations][version] = "3.2"
 
 projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][version] = "2.2"
+
 
 ; LOOP modules
 projects[loop_admin][type] = "module"
