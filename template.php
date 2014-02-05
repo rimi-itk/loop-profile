@@ -180,6 +180,20 @@ function _loop_menu_styling($variables, $class, $nolink_class = FALSE, $below_cl
   return $output . $sub_menu . "\n";
 }
 
+/**
+ * Returns HTML for a user menu link.
+ *
+ * Cleans up markup for Loop user menu.
+ */
+function loop_menu_link__user_menu($variables) {
+  $element = $variables['element'];
+  $element['#localized_options']['attributes']['class'] = $element['#attributes']['class'];
+  // Make sure text string is treated as html by l function.
+  $element['#localized_options']['html'] = TRUE;
+
+  $output = '<li class="block-module--user-links-item ">' . l($element['#title'], $element['#href'], $element['#localized_options']) . '</li>';
+  return $output;
+}
 
 /**
  * Returns HTML for a fieldset form element and its children.
