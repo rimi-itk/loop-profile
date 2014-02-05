@@ -129,3 +129,44 @@ function loop_user_views_default_views() {
 
   return $views;
 }
+
+/**
+ * Implements hook_block_info().
+ */
+function loop_user_block_info() {
+  // Block for display of "My content".
+  $blocks['loop_user_my_content'] = array(
+    'info' => t('User my content'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function loop_user_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'loop_user_my_content' :
+      if(arg(0) == 'user' && is_numeric(arg(1))) {
+        $profile =  user_load(arg(1));
+      }
+      $variables = array('profile' => $profile);
+      $block['content'] = theme('loop_user_my_content', $variables);
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function loop_user_theme() {
+  return array(
+    'loop_user_my_content' => array(
+      'variables' => array(),
+      'template' => 'templates/loop-user--my-content',
+    ),
+  );
+}
