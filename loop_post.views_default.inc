@@ -197,6 +197,13 @@ function loop_post_views_default_views() {
   $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
   $handler->display->display_options['style_plugin'] = 'table';
+  /* Opførsel ved ingen resultater: Global: Tekstområde */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'No content';
+  $handler->display->display_options['empty']['area']['format'] = 'editor';
   /* Felt: Indhold: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -235,14 +242,18 @@ function loop_post_views_default_views() {
     'post' => 'post',
   );
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'loop_post_user_nodes');
-  $handler->display->display_options['path'] = 'user/%/nodes';
-  $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'My nodes';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  /* Display: Node comments */
+  $handler = $view->new_display('panel_pane', 'Node comments', 'panel_pane_1');
+  $handler->display->display_options['argument_input'] = array(
+    'uid' => array(
+      'type' => 'panel',
+      'context' => 'entity:search_api_autocomplete_search.enabled',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Indhold: Forfatter uid',
+    ),
+  );
   $translatables['loop_user_comments'] = array(
     t('Master'),
     t('User nodes'),
@@ -259,9 +270,11 @@ function loop_post_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
+    t('No content'),
     t('Titel'),
     t('Alle'),
-    t('Page'),
+    t('Node comments'),
+    t('View panes'),
   );
   $export['loop_user_comments'] = $view;
 
@@ -320,6 +333,13 @@ function loop_post_views_default_views() {
       'empty_column' => 0,
     ),
   );
+  /* Opførsel ved ingen resultater: Global: Tekstområde */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'No comments';
+  $handler->display->display_options['empty']['area']['format'] = 'editor';
   /* Forbindelse: Kommentar: Indhold */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'comment';
@@ -373,14 +393,18 @@ function loop_post_views_default_views() {
   $handler->display->display_options['filters']['status_node']['group'] = 1;
   $handler->display->display_options['filters']['status_node']['expose']['operator'] = FALSE;
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'user_post_user_comments');
-  $handler->display->display_options['path'] = 'user/%/user-comments';
-  $handler->display->display_options['menu']['type'] = 'tab';
-  $handler->display->display_options['menu']['title'] = 'My comments';
-  $handler->display->display_options['menu']['weight'] = '0';
-  $handler->display->display_options['menu']['context'] = 0;
-  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  /* Display: User comments */
+  $handler = $view->new_display('panel_pane', 'User comments', 'panel_pane_1');
+  $handler->display->display_options['argument_input'] = array(
+    'uid' => array(
+      'type' => 'panel',
+      'context' => 'entity:search_api_autocomplete_search.enabled',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Kommentar: Forfatter uid',
+    ),
+  );
   $translatables['user_comments'] = array(
     t('Master'),
     t('User comments'),
@@ -397,6 +421,7 @@ function loop_post_views_default_views() {
     t('‹ forrige'),
     t('næste ›'),
     t('sidste »'),
+    t('No comments'),
     t('Indhold'),
     t('Titel'),
     t('Kommentarantal'),
@@ -404,7 +429,7 @@ function loop_post_views_default_views() {
     t(','),
     t('Nye kommentarer'),
     t('Alle'),
-    t('Page'),
+    t('View panes'),
   );
   $export['user_comments'] = $view;
 
