@@ -25,9 +25,9 @@ function loop_navigation_menu_default_menu_links() {
     'module' => 'menu',
     'hidden' => 0,
     'external' => 0,
-    'has_children' => 0,
+    'has_children' => 1,
     'expanded' => 0,
-    'weight' => 50,
+    'weight' => -50,
     'customized' => 1,
   );
   // Exported menu link: menu-loop-primary-menu_another-example-menu-item:<front>
