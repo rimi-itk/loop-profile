@@ -152,6 +152,9 @@ function loop_user_block_view($delta = '') {
       if(arg(0) == 'user' && is_numeric(arg(1))) {
         $profile =  user_load(arg(1));
       }
+      else {
+        $profile = FALSE;
+      }
       $variables = array('profile' => $profile);
       $block['content'] = theme('loop_user_my_content', $variables);
       break;
