@@ -121,6 +121,11 @@ function loop_menu_link($variables) {
   if ($element['#theme'][0]  == 'menu_link__menu_block__2') {
     return _loop_menu_styling($variables, 'nav--link', FALSE, FALSE, 'nav--icon', 'nav--text');
   }
+
+  // Mobile menu.
+  if ($element['#theme'][0] == 'menu_link__menu_block__3') {
+    return _loop_menu_styling($variables, 'nav-mobile--link', FALSE, FALSE, FALSE, 'nav-mobile--text');
+  }
 }
 
 /**
@@ -141,7 +146,7 @@ function _loop_menu_styling($variables, $class, $nolink_class = FALSE, $below_cl
 
     if (isset($element['#below'])) {
       // Add a wrapper class.
-      if (isset($below_class)) {
+      if ($below_class) {
         $sub_menu = '<div class="' . $below_class . '">' . drupal_render($element['#below']) . '</div>';
       }
       else {
@@ -175,46 +180,6 @@ function _loop_menu_styling($variables, $class, $nolink_class = FALSE, $below_cl
   return $output . $sub_menu . "\n";
 }
 
-
-/**
- * Returns HTML for a wrapper for a menu sub-tree.
- *
- * Cleans up markup for main menu.
- */
-
-/**
- * Returns HTML for a menu link and submenu.
- *
- * Cleans up markup for main menu.
- * And insert icons in front of spcific menu items.
- */
-
-/**
- * Returns HTML for a wrapper for a menu sub-tree.
- *
- * Cleans up markup for Loop primary menu.
- */
-function loop_menu_tree__menu_loop_primary_menu($variables) {
-  return $variables['tree'];
-}
-
-/**
- * Returns HTML for a menu link and submenu.
- *
- * Cleans up markup for Loop primary menu.
- */
-function loop_menu_link__menu_loop_primary_menu($variables) {
-  $element = $variables['element'];
-  $element['#attributes']['class'][] = 'nav-mobile--link';
-  $element['#localized_options']['attributes']['class'] = $element['#attributes']['class'];
-  // Make sure text string is treated as html by l function.
-  $element['#localized_options']['html'] = TRUE;
-
-  $output_title = '<span class="nav-mobile--text">' . $element['#title'] . '</span>';
-
-  $output = l($output_title, $element['#href'], $element['#localized_options']);
-  return $output;
-}
 
 /**
  * Returns HTML for a fieldset form element and its children.
