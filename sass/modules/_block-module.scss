@@ -62,6 +62,12 @@
   @extend .block-module;
 
   background-color: $green;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .block-module--user-links-header {
@@ -70,12 +76,6 @@
   border-bottom: 1px solid $green-light;
   color: $white;
   padding-bottom: 0.5em;
-}
-
-.block-module--user-links-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
 }
 
 .block-module--user-links-item {
