@@ -17,5 +17,5 @@
  */
 ?>
 <?php if ($user_picture): ?>
-  <?php print $user_picture; ?>
+  <?php print l($user_picture, $account->name, array('html' => TRUE)); ?>
 <?php endif; ?>
