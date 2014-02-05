@@ -2063,19 +2063,18 @@ label {
 .block-user-links {
   background-color: #41ab51;
 }
+/* line 66, ../sass/modules/_block-module.scss */
+.block-user-links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
-/* line 67, ../sass/modules/_block-module.scss */
+/* line 73, ../sass/modules/_block-module.scss */
 .block-module--user-links-header {
   border-bottom: 1px solid #5dc26d;
   color: white;
   padding-bottom: 0.5em;
-}
-
-/* line 75, ../sass/modules/_block-module.scss */
-.block-module--user-links-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
 }
 
 /* line 81, ../sass/modules/_block-module.scss */

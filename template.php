@@ -178,6 +178,23 @@ function loop_menu_link__menu_loop_primary_menu($variables) {
   return $output;
 }
 
+
+/**
+ * Returns HTML for a menu link and submenu.
+ *
+ * Cleans up markup for Loop primary menu.
+ */
+function loop_menu_link__user_menu($variables) {
+  $element = $variables['element'];
+  $element['#localized_options']['attributes']['class'] = $element['#attributes']['class'];
+  // Make sure text string is treated as html by l function.
+  $element['#localized_options']['html'] = TRUE;
+
+  $output = '<li class="block-module--user-links-item ">' . l($element['#title'], $element['#href'], $element['#localized_options']) . '</li>';
+  return $output;
+}
+
+
 /**
  * Returns HTML for a fieldset form element and its children.
  *
