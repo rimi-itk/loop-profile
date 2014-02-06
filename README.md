@@ -18,7 +18,7 @@ run this command instead.
 ```
 
 ## Apache Solr
-If you have an Apache Solr on your local dev environment you should name the core: _loop_stg_ for seamless integration.
+If you have an Apache Solr on your local dev environment you should name the core: 'loop_stg' for seamless integration.
 
 
 ## Setting up LOOP
