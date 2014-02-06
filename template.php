@@ -15,7 +15,12 @@ function loop_preprocess_html(&$variables) {
  */
 function loop_preprocess_page(&$variables) {
   // Prepare system search block for page.tpl.
-  $variables['search'] = module_invoke('search', 'block_view', 'form');
+  if (module_exists('search_api_page')) {
+    $variables['search'] = module_invoke('search_api_page', 'block_view', 'default');
+  }
+  else {
+    $variables['search'] = module_invoke('search', 'block_view', 'form');
+  }
 
   if ( (arg(0) == 'search') && (!isset($variables['page']['no_result'])) ) {
     // No search results, change title.

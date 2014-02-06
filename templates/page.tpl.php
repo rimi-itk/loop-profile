@@ -99,14 +99,9 @@ if (isset($loop_primary_menu)): ?>
 
 <?php if (isset($search)): ?>
 <div class="typeahead-block">
-  <form>
-    <div class="typeahead-block--wrapper">
-      <label for="typeahead">Search for an answer</label>
-      <i class="typeahead-block--icon icon-search"></i>
-      <input type="text" id="typeahead" title="<?php print t('E.g. &quot;How do you document a subject&quot;'); ?>" placeholder="<?php print t('E.g. &quot;How do you document a subject&quot;'); ?>" class="typeahead tt-query" style="position: relative; vertical-align: top; background-color: transparent;">
-      <input type="submit" value="<?php print t('Search'); ?>" class="typeahead-block--button">
-    </div>
-  </form>
+  <div class="typeahead-block--wrapper">
+    <?php print render($search); ?>
+  </div>
 </div>
 <?php endif ?>
 
