@@ -63,7 +63,7 @@
   @extend %set-max-width-and-center-element;
   @extend %basic-element-styling;
 
-  overflow: auto;
+  overflow: hidden;
   margin-bottom: 0;
 
   .layout--inner:last-child {

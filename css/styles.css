@@ -1048,7 +1048,7 @@ label {
    ================================================================================================================== */
 /* line 62, ../sass/theme/_layout.scss */
 .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper {
-  overflow: auto;
+  overflow: hidden;
   margin-bottom: 0;
 }
 /* line 69, ../sass/theme/_layout.scss */
