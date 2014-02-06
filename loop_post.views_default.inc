@@ -233,8 +233,8 @@ function loop_post_views_default_views() {
     'post' => 'post',
   );
 
-  /* Display: Node comments */
-  $handler = $view->new_display('panel_pane', 'Node comments', 'panel_pane_1');
+  /* Display: User nodes */
+  $handler = $view->new_display('panel_pane', 'User nodes', 'panel_pane_1');
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
