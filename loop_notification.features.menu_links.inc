@@ -10,11 +10,11 @@
 function loop_notification_menu_default_menu_links() {
   $menu_links = array();
 
-  // Exported menu link: main-menu_messages:menutoken/52cabe32c537e
-  $menu_links['main-menu_messages:menutoken/52cabe32c537e'] = array(
+  // Exported menu link: main-menu_messages:user/1/messages
+  $menu_links['main-menu_messages:user/1/messages'] = array(
     'menu_name' => 'main-menu',
-    'link_path' => 'menutoken/52cabe32c537e',
-    'router_path' => 'menutoken/%',
+    'link_path' => 'user/1/messages',
+    'router_path' => 'user/%/messages',
     'link_title' => 'Messages',
     'options' => array(
       'menu_token_link_path' => 'user/[current-user:uid]/messages',
@@ -22,11 +22,11 @@ function loop_notification_menu_default_menu_links() {
       'menu_token_options' => array(
         'clear' => 0,
       ),
-      'attributes' => array(
-        'title' => '',
-      ),
       'alter' => TRUE,
-      'identifier' => 'main-menu_messages:menutoken/52cabe32c537e',
+      'identifier' => 'main-menu_messages:user/1/messages',
+      'attributes' => array(
+        'rel' => 'nav-mail-icon',
+      ),
     ),
     'module' => 'menu',
     'hidden' => 0,
