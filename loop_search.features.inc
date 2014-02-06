@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * loop_search2.features.inc
+ * loop_search.features.inc
  */
 
 /**
@@ -14,7 +14,7 @@ function loop_search_default_search_api_autocomplete_search() {
     "name" : "Default",
     "index_id" : "post",
     "type" : "search_api_page",
-    "enabled" : "1",
+    "enabled" : "0",
     "options" : {
       "custom" : { "page_id" : "default" },
       "result count" : true,

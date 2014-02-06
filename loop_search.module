@@ -84,3 +84,17 @@ function loop_search_menu() {
   );
   return $items;
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Alter search form for Twitter Typeahead.
+ */
+function loop_search_form_search_api_page_search_form_default_alter(&$form, &$form_state) {
+  $form['keys_1']['#title'] = t('Search for an answer');
+  $form['keys_1']['#attributes']['style'] = "position: relative; vertical-align: top; background-color: transparent;";
+  $form['keys_1']['#attributes']['placeholder'] =  t('E.g. "How do you document a subject"');
+  $form['keys_1']['#attributes']['id'][] = 'typeahead';
+  $form['keys_1']['#attributes']['class'][] = 'typeahead';
+  $form['keys_1']['#attributes']['class'][] = 'tt-query';
+}
