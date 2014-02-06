@@ -85,12 +85,29 @@ function loop_search_menu() {
   return $items;
 }
 
+
+function loop_search_theme($vars) {
+  return array(
+    'loop_search_theme' => array(
+      'render element' => 'form',
+      'template' => 'loop-search--form'
+    ),
+  );
+}
+
 /**
  * Implements hook_form_FORM_ID_alter().
  *
  * Alter search form for Twitter Typeahead.
  */
 function loop_search_form_search_api_page_search_form_default_alter(&$form, &$form_state) {
+  // Add class to submit.
+  $form['submit_1']['#attributes']['class'][] = 'typeahead-block--button';
+
+  //
+  $form['#theme_wrappers'] = array();
+  $form['#theme'] = 'loop_search_theme';
+
   // Inline styling needed for Twitter Typeahead.
   $form['keys_1']['#attributes']['style'] = "position: relative; vertical-align: top; background-color: transparent;";
 
