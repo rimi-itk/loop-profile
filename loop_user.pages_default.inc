@@ -17,7 +17,7 @@ function loop_user_default_page_manager_handlers() {
   $handler->task = 'user_view';
   $handler->subtask = '';
   $handler->handler = 'panel_context';
-  $handler->weight = -28;
+  $handler->weight = -26;
   $handler->conf = array(
     'title' => 'User default',
     'no_blocks' => 0,
@@ -241,19 +241,7 @@ function loop_user_default_page_manager_handlers() {
     $pane->subtype = 'loop_user_comments-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'compare_users',
-          'settings' => array(
-            'equality' => '1',
-          ),
-          'context' => array(
-            0 => 'argument_entity_id:user_1',
-            1 => 'logged-in-user',
-          ),
-          'not' => FALSE,
-        ),
-      ),
+      'plugins' => array(),
     );
     $pane->configuration = array(
       'override_title' => 1,
@@ -386,19 +374,7 @@ function loop_user_default_page_manager_handlers() {
     $pane->subtype = 'loop_user_nodes-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array(
-      'plugins' => array(
-        0 => array(
-          'name' => 'compare_users',
-          'settings' => array(
-            'equality' => '1',
-          ),
-          'context' => array(
-            0 => 'argument_entity_id:user_1',
-            1 => 'logged-in-user',
-          ),
-          'not' => FALSE,
-        ),
-      ),
+      'plugins' => array(),
     );
     $pane->configuration = array(
       'override_title' => 1,
