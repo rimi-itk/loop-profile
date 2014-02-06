@@ -29,11 +29,11 @@ function loop_post_views_api($module = NULL, $api = NULL) {
 function loop_post_node_info() {
   $items = array(
     'post' => array(
-      'name' => t('Indlæg'),
+      'name' => t('Post'),
       'base' => 'node_content',
       'description' => t('A post, question or observation, which can be answered.'),
       'has_title' => '1',
-      'title_label' => t('Titel'),
+      'title_label' => t('Title'),
       'help' => '',
     ),
   );
