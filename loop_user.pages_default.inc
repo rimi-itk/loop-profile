@@ -46,8 +46,8 @@ function loop_user_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-1';
     $pane->panel = 'alpha';
-    $pane->type = 'block';
-    $pane->subtype = 'system-user-menu';
+    $pane->type = 'page_tabs';
+    $pane->subtype = 'page_tabs';
     $pane->shown = TRUE;
     $pane->access = array(
       'plugins' => array(
@@ -65,6 +65,8 @@ function loop_user_default_page_manager_handlers() {
       ),
     );
     $pane->configuration = array(
+      'type' => 'primary',
+      'id' => 'tabs',
       'override_title' => 1,
       'override_title_text' => 'My account',
     );
@@ -177,13 +179,29 @@ function loop_user_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-4';
     $pane->panel = 'alpha';
-    $pane->type = 'block';
-    $pane->subtype = 'system-user-menu';
+    $pane->type = 'page_tabs';
+    $pane->subtype = 'page_tabs';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'compare_users',
+          'settings' => array(
+            'equality' => '1',
+          ),
+          'context' => array(
+            0 => 'logged-in-user',
+            1 => 'argument_entity_id:user_1',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
+      'type' => 'primary',
+      'id' => 'tabs',
+      'override_title' => 1,
+      'override_title_text' => 'My account',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -220,12 +238,26 @@ function loop_user_default_page_manager_handlers() {
     $pane->pid = 'new-6';
     $pane->panel = 'beta';
     $pane->type = 'views_panes';
-    $pane->subtype = 'user_comments-panel_pane_1';
+    $pane->subtype = 'loop_user_comments-panel_pane_1';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'compare_users',
+          'settings' => array(
+            'equality' => '1',
+          ),
+          'context' => array(
+            0 => 'argument_entity_id:user_1',
+            1 => 'logged-in-user',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => '%user:field_first_name %user:field_last_name kommentarer',
+      'override_title_text' => 'Comments by %user:field_first_name %user:field_last_name',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -292,13 +324,29 @@ function loop_user_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-7';
     $pane->panel = 'alpha';
-    $pane->type = 'block';
-    $pane->subtype = 'system-user-menu';
+    $pane->type = 'page_tabs';
+    $pane->subtype = 'page_tabs';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'compare_users',
+          'settings' => array(
+            'equality' => '1',
+          ),
+          'context' => array(
+            0 => 'logged-in-user',
+            1 => 'argument_entity_id:user_1',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
-      'override_title' => 0,
-      'override_title_text' => '',
+      'type' => 'primary',
+      'id' => 'tabs',
+      'override_title' => 1,
+      'override_title_text' => 'My account',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -335,12 +383,26 @@ function loop_user_default_page_manager_handlers() {
     $pane->pid = 'new-9';
     $pane->panel = 'beta';
     $pane->type = 'views_panes';
-    $pane->subtype = 'loop_user_comments-panel_pane_1';
+    $pane->subtype = 'loop_user_nodes-panel_pane_1';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'compare_users',
+          'settings' => array(
+            'equality' => '1',
+          ),
+          'context' => array(
+            0 => 'argument_entity_id:user_1',
+            1 => 'logged-in-user',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'override_title' => 1,
-      'override_title_text' => '%user:field_first_name %user:field_last_name indhold',
+      'override_title_text' => 'Content by %user:field_first_name %user:field_last_name',
     );
     $pane->cache = array();
     $pane->style = array(
