@@ -49,6 +49,7 @@ dependencies[] = toolbar
 dependencies[] = transliteration
 dependencies[] = views
 dependencies[] = views_bulk_operations
+dependencies[] = views_ui
 dependencies[] = wysiwyg
 
 ; LOOP features
