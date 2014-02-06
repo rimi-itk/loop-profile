@@ -118,6 +118,7 @@ function loop_post_default_page_manager_handlers() {
       'center' => NULL,
       'alpha' => NULL,
       'beta' => NULL,
+      'gamma' => NULL,
     ),
   );
   $display->cache = array();
@@ -155,15 +156,14 @@ function loop_post_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-3';
     $pane->panel = 'alpha';
-    $pane->type = 'node_comment_form';
-    $pane->subtype = 'node_comment_form';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'loop_node_comments-loop_post_comments_most_valid_comment';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'anon_links' => 0,
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
     );
     $pane->cache = array();
     $pane->style = array(
@@ -179,7 +179,7 @@ function loop_post_default_page_manager_handlers() {
     $pane->pid = 'new-4';
     $pane->panel = 'alpha';
     $pane->type = 'views_panes';
-    $pane->subtype = 'loop_node_comments-loop_post_comments_most_valid_comment';
+    $pane->subtype = 'loop_node_comments-loop_post_comments_other_comments';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -199,15 +199,16 @@ function loop_post_default_page_manager_handlers() {
     $display->panels['alpha'][2] = 'new-4';
     $pane = new stdClass();
     $pane->pid = 'new-5';
-    $pane->panel = 'alpha';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'loop_node_comments-loop_post_comments_other_comments';
+    $pane->panel = 'gamma';
+    $pane->type = 'node_comment_form';
+    $pane->subtype = 'node_comment_form';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'context' => array(
-        0 => 'argument_entity_id:node_1',
-      ),
+      'anon_links' => 0,
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -215,10 +216,10 @@ function loop_post_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 0;
     $pane->locks = array();
     $display->content['new-5'] = $pane;
-    $display->panels['alpha'][3] = 'new-5';
+    $display->panels['gamma'][0] = 'new-5';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-2';
   $handler->conf['display'] = $display;
