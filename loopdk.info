@@ -20,6 +20,7 @@ dependencies[] = facetapi
 dependencies[] = features
 dependencies[] = fe_block
 dependencies[] = field_group
+dependencies[] = field_ui
 dependencies[] = flag
 dependencies[] = jquery_update
 dependencies[] = globalredirect
