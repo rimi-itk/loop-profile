@@ -42,12 +42,12 @@ function loopdk_install_tasks(&$install_state) {
 
   $ret = array(
     // Update translations.
-    'loopdk_import_translation' => array(
+    /*'loopdk_import_translation' => array(
       'display_name' => st('Set up translations'),
       'display' => TRUE,
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
       'type' => 'batch',
-    ),
+    ),*/
     'loopdk_setup_filter_and_wysiwyg' => array(
       'display_name' => st('Setup filter and WYSIWYG'),
       'display' => TRUE,
