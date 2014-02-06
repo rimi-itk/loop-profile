@@ -124,7 +124,7 @@
     </div>
   </div>
   <div class="layout--inner">
-    <div class="layout-element-epsilon">
+    <div class="layout-element-gamma">
       <div class="meta-data--author">
         <div class="meta-data--author-image">
           <a href="#">
