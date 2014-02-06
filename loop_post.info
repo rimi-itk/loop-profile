@@ -9,6 +9,7 @@ dependencies[] = autocomplete_deluxe
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = loop_field_bases
+dependencies[] = loop_flag
 dependencies[] = loop_taxonomy
 dependencies[] = loop_user
 dependencies[] = menu
