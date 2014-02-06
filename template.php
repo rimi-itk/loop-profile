@@ -133,7 +133,7 @@ function loop_menu_link($variables) {
  */
 function _loop_menu_styling($variables, $class, $nolink_class = FALSE, $below_class = FALSE, $icon = FALSE, $span_class = FALSE) {
   // Path to theme variable.
-  $path_to_theme = drupal_get_path('theme', 'loop');
+  $path_to_theme = '/' . drupal_get_path('theme', 'loop');
 
   $element = $variables['element'];
 
