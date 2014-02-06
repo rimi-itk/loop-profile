@@ -91,9 +91,20 @@ function loop_search_menu() {
  * Alter search form for Twitter Typeahead.
  */
 function loop_search_form_search_api_page_search_form_default_alter(&$form, &$form_state) {
+  // Inline styling needed for Twitter Typeahead.
   $form['keys_1']['#attributes']['style'] = "position: relative; vertical-align: top; background-color: transparent;";
+
+  // Defualt placeholder.
   $form['keys_1']['#attributes']['placeholder'] =  t('E.g. "How do you document a subject"');
+
+  // Yet again, some id and classes for Twitter Typehead.
   $form['keys_1']['#attributes']['id'][] = 'typeahead';
   $form['keys_1']['#attributes']['class'][] = 'typeahead';
   $form['keys_1']['#attributes']['class'][] = 'tt-query';
+
+  // Figure out if we need a default value.
+  $arg = arg(1);
+  if (isset($arg)) {
+    $form['keys_1']['#default_value'] = $arg;
+  }
 }
