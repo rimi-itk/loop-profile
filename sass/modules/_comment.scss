@@ -15,7 +15,9 @@
 
   position: relative;
 
-  &.is-last {
+  margin-bottom: 1.5em;
+
+  &:last-child {
     @extend %reset-element-spacing;
   }
 }
@@ -28,6 +30,7 @@
   margin-bottom: 1em;
 
   @include breakpoint($breakpoint-4) {
-    margin-bottom: 0;
+    // Compensate for <p> margin bottom.
+    margin-bottom: -1.5em;
   }
 }

@@ -542,7 +542,7 @@ img {
 }
 
 /* line 55, ../sass/theme/_placeholders.scss */
-.search-result--item:last-child, .comments--comment.is-last {
+.search-result--item:last-child, .comments--comment:last-child {
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
@@ -1833,16 +1833,17 @@ label {
 /* line 13, ../sass/modules/_comment.scss */
 .comments--comment {
   position: relative;
+  margin-bottom: 1.5em;
 }
 
-/* line 27, ../sass/modules/_comment.scss */
+/* line 29, ../sass/modules/_comment.scss */
 .comments--comment-content {
   margin-bottom: 1em;
 }
 @media only screen and (min-width: 43em) {
-  /* line 27, ../sass/modules/_comment.scss */
+  /* line 29, ../sass/modules/_comment.scss */
   .comments--comment-content {
-    margin-bottom: 0;
+    margin-bottom: -1.5em;
   }
 }
 
