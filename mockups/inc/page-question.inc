@@ -42,7 +42,7 @@
         <a href="#" class="flag is-sticky">Mest nyttige svar</a>
         <span class="comments--comment-meta-data">Oprettet den 28. marts 2013</span>
         <div class="comments--comment-content">
-          Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
+          <p>Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.</p>
         </div>
       </div>
       <div class="comments--comment">
@@ -59,7 +59,7 @@
         </div>
         <span class="comments--comment-meta-data">Oprettet den 28. marts 2013</span>
         <div class="comments--comment-content">
-          Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
+          <p>Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.</p>
         </div>
         <a href="#" class="flag">Dette svar er nyttigt (12)</a>
       </div>
@@ -77,7 +77,7 @@
         </div>
         <span class="comments--comment-meta-data">Oprettet den 28. marts 2013</span>
         <div class="comments--comment-content">
-          Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
+          <p>Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.</p>
         </div>
         <a href="#" class="flag">Dette svar er nyttigt (0)</a>
       </div>
@@ -95,11 +95,11 @@
         </div>
         <span class="comments--comment-meta-data">Oprettet den 28. marts 2013</span>
         <div class="comments--comment-content">
-          Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
+          <p>Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.</p>
         </div>
         <a href="#" class="flag is-active">Du fandt dette svar nyttigt</a>
       </div>
-      <div class="comments--comment is-last">
+      <div class="comments--comment">
         <div class="meta-data--author">
           <div class="meta-data--author-image">
             <a href="#">
@@ -113,7 +113,7 @@
         </div>
         <span class="comments--comment-meta-data">Oprettet den 28. marts 2013</span>
         <div class="comments--comment-content">
-          Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.
+          <p>Nej der er ikke en selvstændig vejledning i aktindsigt. Under aktindsigt (i Stamdata) kan Status sættes til Delvis bevilliget samt i bemærkningen kan dokumenteres hvilken sag det omfatter.</p>
         </div>
         <a href="#" class="flag">Dette svar er nyttigt (3)</a>
       </div>
@@ -124,7 +124,7 @@
     </div>
   </div>
   <div class="layout--inner">
-    <div class="layout-element-epsilon">
+    <div class="layout-element-gamma">
       <div class="meta-data--author">
         <div class="meta-data--author-image">
           <a href="#">

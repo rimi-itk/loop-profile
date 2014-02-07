@@ -63,7 +63,7 @@
   @extend %set-max-width-and-center-element;
   @extend %basic-element-styling;
 
-  overflow: auto;
+  overflow: hidden;
   margin-bottom: 0;
 
   .layout--inner:last-child {
@@ -116,32 +116,20 @@
     }
   }
 
-  .layout-element-gamma {
-    @include breakpoint(45em) {
-      clear: both;
-
-      @include zen-grid-item(6, 1);
-    }
-  }
-
-  .layout-element-delta {
-    @include breakpoint(45em) {
-      @include zen-grid-item(6, 1, right);
-    }
-  }
-
+  .layout-element-gamma,
+  .layout-element-delta,
   .layout-element-epsilon {
     @include breakpoint(45em) {
       clear: both;
 
       @include zen-grid-item(12, 1);
+      @include zen-nested-container;
     }
   }
 
   .layout-element-gamma,
   .layout-element-delta,
   .layout-element-epsilon {
-    @include zen-nested-container;
   }
 }
 

@@ -542,7 +542,7 @@ img {
 }
 
 /* line 55, ../sass/theme/_placeholders.scss */
-.search-result--item:last-child, .comments--comment.is-last {
+.search-result--item:last-child, .comments--comment:last-child {
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
@@ -1048,7 +1048,7 @@ label {
    ================================================================================================================== */
 /* line 62, ../sass/theme/_layout.scss */
 .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper {
-  overflow: auto;
+  overflow: hidden;
   margin-bottom: 0;
 }
 /* line 69, ../sass/theme/_layout.scss */
@@ -1119,46 +1119,9 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 119, ../sass/theme/_layout.scss */
-  .layout-default .layout-element-gamma {
-    clear: both;
-    float: left;
-    width: 50%;
-    margin-left: 0%;
-    margin-right: -50%;
-    padding-left: 15px;
-    padding-right: 15px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-    word-wrap: break-word;
-    _display: inline;
-    _overflow: hidden;
-    _overflow-y: visible;
-  }
-}
-@media only screen and (min-width: 45em) {
-  /* line 127, ../sass/theme/_layout.scss */
-  .layout-default .layout-element-delta {
-    float: right;
-    width: 50%;
-    margin-right: 0%;
-    margin-left: -50%;
-    padding-left: 15px;
-    padding-right: 15px;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
-    word-wrap: break-word;
-    _display: inline;
-    _overflow: hidden;
-    _overflow-y: visible;
-  }
-}
-@media only screen and (min-width: 45em) {
-  /* line 133, ../sass/theme/_layout.scss */
+  /* line 121, ../sass/theme/_layout.scss */
+  .layout-default .layout-element-gamma,
+  .layout-default .layout-element-delta,
   .layout-default .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1175,18 +1138,13 @@ label {
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible;
+    padding-left: 0;
+    padding-right: 0;
   }
-}
-/* line 143, ../sass/theme/_layout.scss */
-.layout-default .layout-element-gamma,
-.layout-default .layout-element-delta,
-.layout-default .layout-element-epsilon {
-  padding-left: 0;
-  padding-right: 0;
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 153, ../sass/theme/_layout.scss */
+  /* line 141, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-alpha {
     float: left;
     width: 29.16667%;
@@ -1206,7 +1164,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 161, ../sass/theme/_layout.scss */
+  /* line 149, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-beta {
     float: right;
     width: 70.83333%;
@@ -1226,7 +1184,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 169, ../sass/theme/_layout.scss */
+  /* line 157, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-gamma {
     clear: both;
     float: left;
@@ -1246,7 +1204,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 177, ../sass/theme/_layout.scss */
+  /* line 165, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-delta {
     float: right;
     width: 50%;
@@ -1265,7 +1223,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 183, ../sass/theme/_layout.scss */
+  /* line 171, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1284,7 +1242,7 @@ label {
     _overflow-y: visible;
   }
 }
-/* line 193, ../sass/theme/_layout.scss */
+/* line 181, ../sass/theme/_layout.scss */
 .layout-default-inverted .layout-element-gamma,
 .layout-default-inverted .layout-element-delta,
 .layout-default-inverted .layout-element-epsilon {
@@ -1293,7 +1251,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 204, ../sass/theme/_layout.scss */
+  /* line 192, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-alpha {
     float: left;
     width: 100%;
@@ -1312,7 +1270,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 210, ../sass/theme/_layout.scss */
+  /* line 198, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-beta {
     clear: both;
     float: left;
@@ -1332,7 +1290,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 218, ../sass/theme/_layout.scss */
+  /* line 206, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-gamma {
     clear: both;
     float: left;
@@ -1352,7 +1310,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 226, ../sass/theme/_layout.scss */
+  /* line 214, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-delta {
     float: right;
     width: 50%;
@@ -1371,7 +1329,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 232, ../sass/theme/_layout.scss */
+  /* line 220, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1391,12 +1349,12 @@ label {
   }
 }
 
-/* line 246, ../sass/theme/_layout.scss */
+/* line 234, ../sass/theme/_layout.scss */
 .layout-no-wrapper .layout--inner {
   padding: 1.5em;
 }
 
-/* line 259, ../sass/theme/_layout.scss */
+/* line 247, ../sass/theme/_layout.scss */
 .layout-alternative .layout-element-alpha,
 .layout-alternative .layout-element-beta,
 .layout-alternative .layout-element-gamma,
@@ -1875,16 +1833,17 @@ label {
 /* line 13, ../sass/modules/_comment.scss */
 .comments--comment {
   position: relative;
+  margin-bottom: 1.5em;
 }
 
-/* line 27, ../sass/modules/_comment.scss */
+/* line 29, ../sass/modules/_comment.scss */
 .comments--comment-content {
   margin-bottom: 1em;
 }
 @media only screen and (min-width: 43em) {
-  /* line 27, ../sass/modules/_comment.scss */
+  /* line 29, ../sass/modules/_comment.scss */
   .comments--comment-content {
-    margin-bottom: 0;
+    margin-bottom: -1.5em;
   }
 }
 

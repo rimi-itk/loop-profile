@@ -21,4 +21,9 @@
       <?php print $content['beta']; ?>
     </div>
   </div>
+  <div class="layout--inner">
+    <div class="layout-element-gamma">
+      <?php print $content['gamma']; ?>
+    </div>
+  </div>
 </div>

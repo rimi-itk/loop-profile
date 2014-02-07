@@ -16,7 +16,12 @@ function loop_preprocess_html(&$variables) {
 function loop_preprocess_page(&$variables) {
   $arg0 = arg(0);
   // Prepare system search block for page.tpl.
-  $variables['search'] = module_invoke('search', 'block_view', 'form');
+  if (module_exists('search_api_page')) {
+    $variables['search'] = module_invoke('search_api_page', 'block_view', 'default');
+  }
+  else {
+    $variables['search'] = module_invoke('search', 'block_view', 'form');
+  }
 
   if ( ($arg0 == 'search') && (!isset($variables['page']['no_result'])) ) {
     // No search results, change title.
@@ -138,7 +143,7 @@ function loop_menu_link($variables) {
  */
 function _loop_menu_styling($variables, $class, $nolink_class = FALSE, $below_class = FALSE, $icon = FALSE, $span_class = FALSE) {
   // Path to theme variable.
-  $path_to_theme = drupal_get_path('theme', 'loop');
+  $path_to_theme = '/' . drupal_get_path('theme', 'loop');
 
   $element = $variables['element'];
 

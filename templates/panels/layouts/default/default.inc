@@ -11,6 +11,7 @@ $plugin = array(
   'theme' => 'default',
   'regions' => array(
     'alpha' => t('Alpha'),
-    'beta' => t('Beta')
+    'beta' => t('Beta'),
+    'gamma' => t('Gamma')
   ),
 );
