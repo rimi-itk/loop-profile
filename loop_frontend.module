@@ -86,7 +86,7 @@ function loop_frontend_get_library_file($libpath, $libfile) {
   // If Libraries API is enabled,
   // make sure the file exists before pointing there.
   if (function_exists('libraries_get_path') && file_exists(libraries_get_path($libpath))) {
-    $path = libraries_get_path($libpath);
+    $path = '/' . libraries_get_path($libpath);
     $path .= '/' . $libfile;
   }
   else {
