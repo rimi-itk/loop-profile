@@ -29,8 +29,8 @@
   <script src="/profiles/loopdk/modules/contrib/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
   <script src="/misc/jquery.once.js?v=1.2"></script>
   <script src="/misc/drupal.js"></script>
-  <script src="/profiles/loopdk/modules/features/loop_search/handlebars-v1.2.0.js?n0gzs0"></script>
-  <script src="/profiles/loopdk/modules/features/loop_search/typeahead.bundle.js?n05ree"></script>
-  <script src="/profiles/loopdk/modules/features/loop_search/loop_search.js?n05ree"></script>
+  <script src="/profiles/loopdk/modules/features/loop_search/handlebars-v1.2.0.js"></script>
+  <script src="/profiles/loopdk/modules/features/loop_search/typeahead.bundle.js"></script>
+  <script src="/profiles/loopdk/modules/features/loop_search/loop_search.js"></script>
   <script src="/profiles/loopdk/modules/contrib/panels/js/panels.js"></script>
   <script src="/profiles/loopdk/themes/loop/scripts/mobile-nav.js"></script>
