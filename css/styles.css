@@ -2193,6 +2193,12 @@ label {
   position: relative;
   margin-top: -1.5em;
 }
+/* line 19, ../sass/modules/_twitter-typeahead.scss */
+.typeahead-block .form-item {
+  border: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
 @media only screen and (min-width: 75em) {
   /* line 9, ../sass/modules/_twitter-typeahead.scss */
   .typeahead-block {
@@ -2204,11 +2210,11 @@ label {
   }
 }
 
-/* line 23, ../sass/modules/_twitter-typeahead.scss */
+/* line 30, ../sass/modules/_twitter-typeahead.scss */
 .typeahead-block--wrapper {
   position: relative;
 }
-/* line 27, ../sass/modules/_twitter-typeahead.scss */
+/* line 34, ../sass/modules/_twitter-typeahead.scss */
 .typeahead-block--wrapper .tt-hint,
 .typeahead-block--wrapper .typeahead {
   margin-bottom: 1em;
@@ -2219,15 +2225,16 @@ label {
   height: 65px;
   background-color: white;
 }
-/* line 38, ../sass/modules/_twitter-typeahead.scss */
+/* line 45, ../sass/modules/_twitter-typeahead.scss */
 .typeahead-block--wrapper .tt-hint:focus,
 .typeahead-block--wrapper .typeahead:focus {
   outline: none;
 }
 @media only screen and (min-width: 28em) {
-  /* line 27, ../sass/modules/_twitter-typeahead.scss */
+  /* line 34, ../sass/modules/_twitter-typeahead.scss */
   .typeahead-block--wrapper .tt-hint,
   .typeahead-block--wrapper .typeahead {
+    margin-bottom: 0;
     padding-right: 6em;
     width: 90%;
     -webkit-border-radius: 0.4em 0 0 0.4em;
@@ -2238,7 +2245,7 @@ label {
   }
 }
 
-/* line 51, ../sass/modules/_twitter-typeahead.scss */
+/* line 59, ../sass/modules/_twitter-typeahead.scss */
 .typeahead-block--icon {
   position: absolute;
   top: 1.2em;
@@ -2248,7 +2255,7 @@ label {
   z-index: 1;
 }
 
-/* line 62, ../sass/modules/_twitter-typeahead.scss */
+/* line 70, ../sass/modules/_twitter-typeahead.scss */
 .twitter-typeahead {
   display: block !important;
   background-color: white;
@@ -2259,13 +2266,13 @@ label {
   border-radius: 0.4em;
 }
 
-/* line 70, ../sass/modules/_twitter-typeahead.scss */
+/* line 78, ../sass/modules/_twitter-typeahead.scss */
 .typeahead-block--button {
   height: 65px;
   width: 100%;
 }
 @media only screen and (min-width: 28em) {
-  /* line 70, ../sass/modules/_twitter-typeahead.scss */
+  /* line 78, ../sass/modules/_twitter-typeahead.scss */
   .typeahead-block--button {
     position: absolute;
     bottom: 0;
@@ -2284,7 +2291,7 @@ label {
 
 /* Suggestions
    ========================================================================== */
-/* line 96, ../sass/modules/_twitter-typeahead.scss */
+/* line 104, ../sass/modules/_twitter-typeahead.scss */
 .tt-dropdown-menu {
   position: absolute;
   z-index: 90;
@@ -2303,13 +2310,13 @@ label {
   box-sizing: border-box;
 }
 @media only screen and (min-width: 28em) {
-  /* line 96, ../sass/modules/_twitter-typeahead.scss */
+  /* line 104, ../sass/modules/_twitter-typeahead.scss */
   .tt-dropdown-menu {
     top: 7.5em;
   }
 }
 
-/* line 116, ../sass/modules/_twitter-typeahead.scss */
+/* line 124, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion-header {
   border-bottom: 1px solid #f2f2f2;
   margin-bottom: 1em;
@@ -2318,7 +2325,7 @@ label {
   font-weight: bold;
 }
 
-/* line 125, ../sass/modules/_twitter-typeahead.scss */
+/* line 133, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion {
   border-bottom: 1px solid #e6e6e6;
   color: #41ab51;
@@ -2327,15 +2334,15 @@ label {
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 134, ../sass/modules/_twitter-typeahead.scss */
+/* line 142, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion:link, .tt-suggestion:visited {
   text-decoration: none;
 }
-/* line 139, ../sass/modules/_twitter-typeahead.scss */
+/* line 147, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion:hover, .tt-suggestion:active {
   text-decoration: underline;
 }
-/* line 143, ../sass/modules/_twitter-typeahead.scss */
+/* line 151, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion:last-child {
   border-bottom: 0;
   margin-bottom: 0;
