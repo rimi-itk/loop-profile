@@ -14,12 +14,17 @@ function loop_preprocess_html(&$variables) {
  * Override or insert variables into the page template.
  */
 function loop_preprocess_page(&$variables) {
+  $arg0 = arg(0);
   // Prepare system search block for page.tpl.
   $variables['search'] = module_invoke('search', 'block_view', 'form');
 
-  if ( (arg(0) == 'search') && (!isset($variables['page']['no_result'])) ) {
+  if ( ($arg0 == 'search') && (!isset($variables['page']['no_result'])) ) {
     // No search results, change title.
     $variables['title'] = t('Ask question');
+  }
+
+  if ($arg0 == 'user') {
+    $variables['loop_user_my_content'] = module_invoke('loop_user', 'block_view', 'loop_user_my_content');
   }
 
   // Load LOOP primary menu.
@@ -181,19 +186,72 @@ function _loop_menu_styling($variables, $class, $nolink_class = FALSE, $below_cl
 }
 
 /**
- * Returns HTML for a user menu link.
- *
- * Cleans up markup for Loop user menu.
+ * Implements theme_menu_local_task().
  */
-function loop_menu_link__user_menu($variables) {
-  $element = $variables['element'];
-  $element['#localized_options']['attributes']['class'] = $element['#attributes']['class'];
-  // Make sure text string is treated as html by l function.
-  $element['#localized_options']['html'] = TRUE;
+function loop_menu_local_task($variables) {
+  $link = $variables['element']['#link'];
+  $list_class = 'block-module--user-links-item';
 
-  $output = '<li class="block-module--user-links-item ">' . l($element['#title'], $element['#href'], $element['#localized_options']) . '</li>';
+  if ($link['page_callback'] == 'page_manager_user_view_page') {
+    $link['title'] = t('My account');
+  }
+
+  if ($link['page_callback'] == 'messaging_simple_user_page') {
+    $link['title'] = t('Notifications');
+  }
+
+  if ($link['path'] == 'user/%/notifications') {
+    $link['title'] = t('Subscriptions');
+  }
+
+  if ($link['page_callback'] == 'statistics_user_tracker' || $link['path'] == 'user/%/shortcuts') {
+    return;
+  }
+
+  if(!empty($variables['element']['#active'])) {
+    $list_class .= ' active';
+  }
+
+  $link_text = $link['title'];
+
+  if (!empty($variables['element']['#active'])) {
+    // Add text to indicate active tab for non-visual users.
+    $active = '<span class="element-invisible">' . t('(active tab)') . '</span>';
+
+    // If the link does not contain HTML already, check_plain() it now.
+    // After we set 'html'=TRUE the link will not be sanitized by l().
+    if (empty($link['localized_options']['html'])) {
+      $link['title'] = check_plain($link['title']);
+    }
+    $link['localized_options']['html'] = TRUE;
+    $link_text = t('!local-task-title!active', array('!local-task-title' => $link['title'], '!active' => $active));
+  }
+
+  return '<li class=" ' .$list_class. ' ">' . l($link_text, $link['href'], $link['localized_options']) . "</li>\n";
+}
+
+/**
+ * Implements theme_menu_local_task().
+ */
+function loop_menu_local_tasks($variables) {
+  $output = '';
+
+  if (!empty($variables['primary'])) {
+    $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
+    $variables['primary']['#prefix'] .= '<ul class="block-module--user-links-list">';
+    $variables['primary']['#suffix'] = '<li class="block-module--user-links-item"><a href="/user/logout">' . t('Logout') . '</a></li></ul>';
+    $output .= drupal_render($variables['primary']);
+  }
+  if (!empty($variables['secondary'])) {
+    $variables['secondary']['#prefix'] = '<h2 class="element-invisible">' . t('Secondary tabs') . '</h2>';
+    $variables['secondary']['#prefix'] .= '<ul class="block-module-user-links-list-sub secondary">';
+    $variables['secondary']['#suffix'] = '</ul>';
+    $output .= drupal_render($variables['secondary']);
+  }
+
   return $output;
 }
+
 
 /**
  * Returns HTML for a fieldset form element and its children.
@@ -222,6 +280,7 @@ function loop_fieldset($variables) {
   $output .= "</fieldset>\n";
   return $output;
 }
+
 
 /**
  * Implements template_preprocess_user_profile().
