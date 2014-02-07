@@ -272,6 +272,49 @@ function loop_menu_local_tasks($variables) {
 
 
 /**
+ * Implements theme_links__system_main_menu().
+ *
+ * Theme function for main menu.
+ */
+function loop_links__system_main_menu($variables) {
+  $primary_menu_access = '';
+  $menu = '<nav class="nav">';
+  foreach ($variables['links'] as $value) {
+    if ($value['identifier'] != 'main-menu_menu:<front>') {
+      $menu.= l($value['title'], $value['href'], array('attributes' => array('class' => array('nav--link'))));
+    }
+    else {
+      $img = array(
+        'path' => '/profiles/loopdk/themes/loop/images/nav-arrow-down-icon.png',
+        'attributes' => array('class' => 'nav-dropdown--icon'),
+      );
+
+      $primary_menu = menu_navigation_links('menu-loop-primary-menu');
+      $primary_menu_rendered = theme('links__primary_menu_dropdown', array('links' => $primary_menu));
+      $primary_menu_access = '<nav class="nav-dropdown"><div class="nav-dropdown--wrapper">' . l($value['title'], $value['href'], array('attributes' => array('class' => array('nav-dropdown--header')))) . theme_image($img) . $primary_menu_rendered .'</div></nav>';
+    }
+  }
+  $menu .= '</nav>';
+  $menu .= $primary_menu_access;
+  return $menu;
+}
+
+/**
+ * Implements theme_links__system_main_menu().
+ *
+ * Theme function for primary menu when displayed as dropdown.
+ */
+function loop_links__primary_menu_dropdown($variables) {
+  $primary_menu = '<div class="nav-dropdown--item">';
+  foreach ($variables['links'] as $value) {
+    $primary_menu .= l($value['title'], $value['href'], array('attributes' => array('class' => array('nav-dropdown--link'))));
+  }
+  $primary_menu .= '</div>';
+  return $primary_menu;
+}
+
+
+/**
  * Returns HTML for a fieldset form element and its children.
  *
  * Changes the class added to fieldsets, so it differs from the wrapper added inside.

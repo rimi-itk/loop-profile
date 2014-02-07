@@ -92,7 +92,7 @@ if (isset($loop_primary_menu)): ?>
     <?php endif; ?>
     <?php print render($page['header']); ?>
     <div class="nav--wrapper">
-      <?php print render($page['navigation']); ?>
+      <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('class' => array('nav')))); ?>
     </div>
   </div>
 </header>
