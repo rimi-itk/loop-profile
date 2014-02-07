@@ -255,3 +255,18 @@ function loop_preprocess_user_profile(&$variables) {
   // Preprocess fields.
   field_attach_preprocess('user', $account, $variables['elements'], $variables);
 }
+
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Adds custom class names and placeholder attribute and icon prefix to search field.
+ */
+function loop_form_search_api_page_search_form_default_alter(&$form, &$form_state, $form_id) {
+  // Change title text and make sure the label is displayed.
+  $form['keys_1']['#title_display'] = 'before';
+  $form['keys_1']['#title'] = t('Search for an answer');
+
+  // Add icon markup as a prefix to field.
+  $form['keys_1']['#field_prefix'] = '<i class="typeahead-block--icon icon-search"></i>';
+}
