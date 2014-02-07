@@ -30,6 +30,7 @@ function loop_preprocess_page(&$variables) {
 
   if ($arg0 == 'user') {
     $variables['loop_user_my_content'] = module_invoke('loop_user', 'block_view', 'loop_user_my_content');
+    hide($variables['tabs']['#secondary']);
   }
 
   // Load LOOP primary menu.
@@ -194,6 +195,7 @@ function _loop_menu_styling($variables, $class, $nolink_class = FALSE, $below_cl
  * Implements theme_menu_local_task().
  */
 function loop_menu_local_task($variables) {
+  $secondary = '';
   $link = $variables['element']['#link'];
   $list_class = 'block-module--user-links-item';
 
@@ -207,8 +209,13 @@ function loop_menu_local_task($variables) {
 
   if ($link['path'] == 'user/%/notifications') {
     $link['title'] = t('Subscriptions');
+
+
+    // Add the secondary menu.
+    $secondary = menu_secondary_local_tasks();
   }
 
+  // Dont print shortcuts and statistics.
   if ($link['page_callback'] == 'statistics_user_tracker' || $link['path'] == 'user/%/shortcuts') {
     return;
   }
@@ -216,6 +223,12 @@ function loop_menu_local_task($variables) {
   if(!empty($variables['element']['#active'])) {
     $list_class .= ' active';
   }
+
+  $sub_menu = '';
+  if ($secondary) {
+    $sub_menu = '<ul class="block-module-user-links-list-sub ">' . drupal_render($secondary) . '</ul>';
+  }
+
 
   $link_text = $link['title'];
 
@@ -232,7 +245,7 @@ function loop_menu_local_task($variables) {
     $link_text = t('!local-task-title!active', array('!local-task-title' => $link['title'], '!active' => $active));
   }
 
-  return '<li class=" ' .$list_class. ' ">' . l($link_text, $link['href'], $link['localized_options']) . "</li>\n";
+  return '<li class=" ' .$list_class. ' ">' . l($link_text, $link['href'], $link['localized_options']) . "</li>\n" . $sub_menu;
 }
 
 /**
@@ -244,7 +257,7 @@ function loop_menu_local_tasks($variables) {
   if (!empty($variables['primary'])) {
     $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
     $variables['primary']['#prefix'] .= '<ul class="block-module--user-links-list">';
-    $variables['primary']['#suffix'] = '<li class="block-module--user-links-item"><a href="/user/logout">' . t('Logout') . '</a></li></ul>';
+    $variables['primary']['#suffix'] = '<li class="block-module--user-links-item-last"><a href="/user/logout">' . t('Logout') . '</a></li></ul>';
     $output .= drupal_render($variables['primary']);
   }
   if (!empty($variables['secondary'])) {

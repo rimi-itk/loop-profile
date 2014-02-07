@@ -70,7 +70,7 @@
   }
 
   .block-module-user-links-list-sub {
-    padding: 1em 0 0 1em;
+    padding: 0 0 0 1em;
   }
 }
 
@@ -91,15 +91,17 @@
 
   @include custom-menu-links($white);
 
-  &:last-child {
-    border-bottom: 0;
-    margin-bottom: 0;
-    padding-bottom: 0;
-  }
-
   &.active {
     font-weight: bold;
   }
+}
+
+.block-module--user-links-item-last {
+  @extend .block-module--user-links-item;
+
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 /* My content block
