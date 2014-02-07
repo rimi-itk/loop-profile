@@ -45,33 +45,6 @@ function loop_frontend_preprocess_html(&$variables) {
 
 
 /**
- * Implements hook_form_alter().
- *
- * Adds custom class names and placeholder attribute and icon prefix to search field.
- */
-function loop_frontend_form_search_block_form_alter(&$form, &$form_state, $form_id) {
-  // Change title text and make sure the label is displayed.
-  $form['search_block_form']['#title_display'] = 'before';
-  $form['search_block_form']['#title'] = t('Search for an answer');
-
-  // Add field title as placeholder attribute.
-  $form['search_block_form']['#attributes']['placeholder'] = t('E.g. "How do you document a subject"');
-
-  // Disable autocomplete for search field.
-  $form['search_block_form']['#attributes']['autocomplete'] = 'off';
-
-  // Add icon markup as a prefix to field.
-  $form['search_block_form']['#field_prefix'] = '<i class="search--icon icon-search"></i>';
-
-  // Add class name to field.
-  $form['search_block_form']['#attributes']['class'][] = 'search--field';
-
-  // Add class name to form submit button.
-  $form['actions']['submit']['#attributes']['class'][] = 'search--button';
-}
-
-
-/**
  * Helper function gets the path to a libraries file.
  *
  * @param string $libpath
