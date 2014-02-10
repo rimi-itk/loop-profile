@@ -60,24 +60,21 @@
  */
 ?>
 
-
-<div class="comments--comment">
-  <div class="meta-data--author">
-    <?php if (isset($picture)): ?>
-      <div class="meta-data--author-image">
-        <?php print $picture; ?>
-      </div>
+<div class="meta-data--author">
+<?php if (isset($picture)): ?>
+  <div class="meta-data--author-image">
+    <?php print $picture; ?>
+  </div>
+<?php endif ?>
+  <div class="meta-data--author-wrapper">
+    <?php if (isset($node->name) && isset($node->uid)): ?>
+      <span class="meta-data--author-link"><?php print l($node->name, 'user/' . $node->uid); ?></span>
     <?php endif ?>
-    <div class="meta-data--author-wrapper">
-      <?php if (isset($node->name) && isset($node->uid)): ?>
-        <span class="meta-data--author-link"><?php print l($node->name, 'user/' . $node->uid); ?></span>
-      <?php endif ?>
-      <span class="meta-data--author-title">SOSU, AUH, HUH</span>
-    </div>
+    <span class="meta-data--author-title">SOSU, AUH, HUH</span>
   </div>
-  <span class="comments--comment-meta-data"><?php print t('Submitted') . ' ' . format_date($comment->created, $type = 'medium'); ?></span>
-  <div class="comments--comment-content">
-    <?php print render($content); ?>
-  </div>
-  <a href="#" class="flag">Dette svar er nyttigt (12)</a>
 </div>
+<span class="comments--comment-meta-data"><?php print t('Submitted') . ' ' . format_date($comment->created, $type = 'medium'); ?></span>
+<div class="comments--comment-content">
+  <?php print render($content); ?>
+</div>
+<a href="#" class="flag">Dette svar er nyttigt (12)</a>
