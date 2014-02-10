@@ -51,6 +51,7 @@ features[variable][] = node_options_post
 features[variable][] = node_preview_post
 features[variable][] = node_submitted_post
 features[variable][] = page_manager_node_view_disabled
+features[variable][] = pathauto_node_post_pattern
 features[views_view][] = loop_node_comments
 features[views_view][] = loop_user_comments
 features[views_view][] = loop_user_nodes
