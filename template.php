@@ -485,3 +485,7 @@ function loop_theme($existing, $type, $theme, $path) {
       ),
   );
 }
+
+function loop_preprocess_comment(&$variables) {
+  $a = 0;
+}
