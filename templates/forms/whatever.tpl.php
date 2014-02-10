@@ -1,3 +1,1 @@
-HELLO WHATEVAH!!!
-
-<?php print 'Wh00t'; ?>
+<?php print drupal_render_children($form); ?>
