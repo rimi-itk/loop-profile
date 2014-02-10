@@ -23,6 +23,11 @@ function loop_preprocess_page(&$variables) {
     $variables['search'] = module_invoke('search', 'block_view', 'form');
   }
 
+  // Remove search form when no search results are found.
+  if ( (isset($variables['page']['content']['system_main']['results'])) &&  ($variables['page']['content']['system_main']['results']['#results']['result count'] == 0)) {
+    unset($variables['page']['content']['system_main']['form']);
+  }
+
   if ( ($arg0 == 'search') && (!isset($variables['page']['no_result'])) ) {
     // No search results, change title.
     $variables['title'] = t('Ask question');
@@ -79,31 +84,19 @@ function loop_preprocess_panels_pane(&$variables) {
 }
 
 /**
- * Implements template_preprocess_search_results().
+ * Implements hook_search_api_page_results().
  */
-function loop_apachesolr_search_page_alter(&$build, $search_page) {
-  if (!isset($build['search_results']['#results'])) {
+function loop_preprocess_search_api_page_results(&$variables) {
+  if ($variables['result_count'] == 0) {
     // No hits. Send formular to template.
     module_load_include('inc', 'node', 'node.pages');
     $node = new stdClass();
     $node->type = 'post';
 
-    // Add no search results message.
-    $build['no_result'] = array(
-      '#prefix' => '<div class="loop-no-search-results">',
-      '#suffix' => '</div>',
-      '#markup' => t('No search results found!'),
-    );
-
     // Add the post.
-    $node->field_description['und'][0]['value'] = arg(2);
+    $node->field_description['und'][0]['value'] = arg(1);
     $form = drupal_get_form('node_form', $node);
-    $build['form'] = $form;
-
-    // Remove suggestions and other related information.
-    unset($build['search_form']);
-    unset($build['suggestions']);
-    unset($build['search_results']);
+    $variables['node_form'] = $form;
   }
 }
 
@@ -481,4 +474,27 @@ function loop_panels_default_style_render_region($vars) {
   $output = '';
   $output .= implode('', $vars['panes']);
   return $output;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function loop_form_comment_form_alter(&$form, $form_state)  {
+  unset($form['author']['_author']['#title']);
+  $form['comment_body']['und'][0]['#wysiwyg'] = FALSE;
+  $form['comment_body']['und'][0]['#type'] = 'textarea';
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function loop_theme($existing, $type, $theme, $path) {
+  return array(
+    'comment_form' => array(
+        'render element' => 'form',
+        'path' => drupal_get_path('theme', 'loop') . '/templates/forms',
+        'template' => 'whatever',
+      ),
+  );
 }

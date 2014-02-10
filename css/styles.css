@@ -819,7 +819,7 @@ label {
   background-color: #5dc26d;
   border: 1px solid #41ab51;
   color: white;
-  text-shadow: 0.05em 0.05em 0 #33863f;
+  text-shadow: 1px 1px 0 #33863f;
 }
 /* line 38, ../sass/theme/_buttons.scss */
 .button--action:link, .form-submit:link, .block-follow-question .block-module--link:link, .typeahead-block--button:link, .button--action:visited, .form-submit:visited, .block-follow-question .block-module--link:visited, .typeahead-block--button:visited {
@@ -836,7 +836,7 @@ label {
   background-color: #ff6138;
   border: 1px solid #ff3905;
   color: white;
-  text-shadow: 0.05em 0.05em 0 #d12b00;
+  text-shadow: 1px 1px 0 #d12b00;
 }
 /* line 58, ../sass/theme/_buttons.scss */
 .button--warning:link, .block-unfollow-question .block-module--link:link, .button--warning:visited, .block-unfollow-question .block-module--link:visited {

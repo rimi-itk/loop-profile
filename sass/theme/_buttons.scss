@@ -32,7 +32,7 @@
   border: 1px solid $green;
   color: $white;
 
-  @include text-shadow(.05em .05em 0 darken($green, 10%));
+  @include text-shadow(1px 1px 0 darken($green, 10%));
 
   &:link,
   &:visited {
@@ -52,7 +52,7 @@
   border: 1px solid darken($red, 10%);
   color: $white;
 
-  @include text-shadow(.05em .05em 0 darken($red, 20%));
+  @include text-shadow(1px 1px 0 darken($red, 20%));
 
   &:link,
   &:visited {
