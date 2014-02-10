@@ -457,3 +457,15 @@ function loop_form_search_api_page_search_form_default_alter(&$form, &$form_stat
   // Add icon markup as a prefix to field.
   $form['keys_1']['#field_prefix'] = '<i class="typeahead-block--icon icon-search"></i>';
 }
+
+
+/**
+ * Implements theme_panels_default_style_render_region().
+ *
+ * Remove the panel separator from the default rendering method.
+ */
+function loop_panels_default_style_render_region($vars) {
+  $output = '';
+  $output .= implode('', $vars['panes']);
+  return $output;
+}
