@@ -8,7 +8,6 @@ dependencies[] = ctools
 dependencies[] = features
 dependencies[] = filter
 dependencies[] = loop_field_bases
-dependencies[] = node
 dependencies[] = strongarm
 dependencies[] = text
 dependencies[] = wysiwyg
