@@ -59,9 +59,7 @@
  * @ingroup themeable
  */
 ?>
-<?php
-  hide($content['links']);
-?>
+
 
 <div class="comments--comment">
   <div class="meta-data--author">
@@ -77,7 +75,7 @@
       <span class="meta-data--author-title">SOSU, AUH, HUH</span>
     </div>
   </div>
-  <span class="comments--comment-meta-data"><?php print t('Submitted') . ' ' . format_date($created, $type = 'medium'); ?></span>
+  <span class="comments--comment-meta-data"><?php print t('Submitted') . ' ' . format_date($comment->created, $type = 'medium'); ?></span>
   <div class="comments--comment-content">
     <?php print render($content); ?>
   </div>
