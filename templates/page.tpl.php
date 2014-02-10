@@ -79,9 +79,9 @@
  */
 if (isset($loop_primary_menu)): ?>
   <nav class="nav-mobile js-mobile-nav">
-    <?php print render($loop_primary_menu); ?>
+    <?php print theme('links__system_primary_menu_mobile', array('links' => $loop_primary_menu)); ?>
   </nav>
-<?php endif ?>
+<?php endif; ?>
 
 <header class="header">
   <div class="header--inner">
@@ -92,18 +92,18 @@ if (isset($loop_primary_menu)): ?>
     <?php endif; ?>
     <?php print render($page['header']); ?>
     <div class="nav--wrapper">
-      <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('class' => array('nav')))); ?>
+      <?php print theme('links__system_primary_menu', array('links' => $main_menu, 'attributes' => array('class' => array('nav')))); ?>
     </div>
   </div>
 </header>
 
 <?php if (isset($search)): ?>
-<div class="typeahead-block">
-  <div class="typeahead-block--wrapper">
-    <?php print render($search); ?>
+  <div class="typeahead-block">
+    <div class="typeahead-block--wrapper">
+      <?php print render($search); ?>
+    </div>
   </div>
-</div>
-<?php endif ?>
+<?php endif; ?>
 
 <?php if ($no_panel || $is_front) : ?>
   <div class="layout-no-wrapper">

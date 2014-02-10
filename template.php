@@ -40,7 +40,7 @@ function loop_preprocess_page(&$variables) {
 
   // Load LOOP primary menu.
   if (module_exists('loop_navigation')) {
-    $variables['loop_primary_menu'] = module_invoke('menu', 'block_view', 'menu-loop-primary-menu');
+    $variables['loop_primary_menu'] = menu_navigation_links('menu-loop-primary-menu');
   }
 
   // Check if we are using a panel page to define layout.
@@ -247,7 +247,7 @@ function loop_menu_local_task($variables) {
 }
 
 /**
- * Implements theme_menu_local_task().
+ * Implements theme_menu_local_tasks().
  */
 function loop_menu_local_tasks($variables) {
   $output = '';
@@ -270,35 +270,107 @@ function loop_menu_local_tasks($variables) {
 
 
 /**
- * Implements theme_links__system_main_menu().
+ * Implements theme_links__system_primary_menu().
  *
- * Theme function for main menu.
+ * Theme function for primary menu.
  */
-function loop_links__system_main_menu($variables) {
-  $primary_menu_access = '';
+function loop_links__system_primary_menu($variables) {
+  $theme_path = drupal_get_path('theme', 'loop');
+  $primary_navigation_dropdown = '';
+  $toggle_mobile_menu_link = '';
   $menu = '<nav class="nav">';
+
+  // Run through each link in the primary menu and do different stuff...
   foreach ($variables['links'] as $value) {
-    if ($value['identifier'] != 'main-menu_menu:<front>') {
-      $menu.= l($value['title'], $value['href'], array('attributes' => array('class' => array('nav--link'))));
+    if (!empty($value['identifier']) && $value['identifier'] != 'main-menu_menu:<front>') {
+
+      // Images for the different menu items.
+      switch ($value['identifier']) {
+        case 'main-menu_my-account:user':
+          $img = array(
+            'path' => '/' . $theme_path . '/images/nav-user-icon.png',
+            'attributes' => array('class' => 'nav--icon'),
+          );
+          break;
+        case 'main-menu_create-post:node/add/post':
+          $img = array(
+            'path' => '/' . $theme_path . '/images/nav-add-icon.png',
+            'attributes' => array('class' => 'nav--icon'),
+          );
+          break;
+      }
+
+      // We use menu tokens, so the identifier includes user id, we use token path to identify instead.
+      if (!empty($value['menu_token_link_path']) && $value['menu_token_link_path'] == 'user/[current-user:uid]/messages') {
+        $img = array(
+          'path' => '/' . $theme_path . '/images/nav-mail-icon.png',
+          'attributes' => array('class' => 'nav--icon'),
+        );
+      }
+
+      // Create the title with image icon.
+      $title = theme_image($img) . '<span class="nav--text">' . $value['title'] . '</span>';
+      $menu.= l($title, $value['href'], array('attributes' => array('class' => array('nav--link')), 'html' => 'TRUE'));
     }
+
+    // If the link is pointing at frontpage it is the navigation dropdown menu link.
     else {
+      // If 'main-menu_menu:<front>' exists we add an additional toggle-mobile-nav mobile menu link.
+      $img_toggle_mobile_menu = array(
+        'path' => '/profiles/loopdk/themes/loop/images/nav-menu-icon.png',
+        'attributes' => array('class' => 'nav--icon'),
+      );
+
+      // Title dropdown link
+      $toggle_mobile_menu_title = theme_image($img_toggle_mobile_menu) . '<span class="nav--text">Menu</span>';
+
+      $toggle_mobile_menu_link = l($toggle_mobile_menu_title, '#', array('attributes' => array('class' => array('last leaf nav--toggle-mobile-nav js-toggle-mobile-nav nolink')), 'html' => 'TRUE', 'external' => TRUE));
+
+      // Img icon for dropdown menu item.
       $img = array(
         'path' => '/profiles/loopdk/themes/loop/images/nav-arrow-down-icon.png',
         'attributes' => array('class' => 'nav-dropdown--icon'),
       );
 
+      // Fetch primary menu links and render them.
       $primary_menu = menu_navigation_links('menu-loop-primary-menu');
       $primary_menu_rendered = theme('links__primary_menu_dropdown', array('links' => $primary_menu));
-      $primary_menu_access = '<nav class="nav-dropdown"><div class="nav-dropdown--wrapper">' . l($value['title'], $value['href'], array('attributes' => array('class' => array('nav-dropdown--header')))) . theme_image($img) . $primary_menu_rendered .'</div></nav>';
+
+      // Set title for dropdown.
+      $title = theme_image($img) . $value['title'];
+
+      // Set full dropdown menu.
+      $primary_navigation_dropdown = '<nav class="nav-dropdown"><div class="nav-dropdown--wrapper">' . l($title, '#', array('attributes' => array('class' => array('nav-dropdown--header')), 'html' => TRUE, 'external' => TRUE)) . $primary_menu_rendered .'</div></nav>';
     }
   }
+
+  // Dropdown link at the end of navigation menu.
+  $menu .= $toggle_mobile_menu_link;
+
   $menu .= '</nav>';
-  $menu .= $primary_menu_access;
+
+  // Dropdown menu for broad display.
+  $menu .= $primary_navigation_dropdown;
+
+  // THe full navigation menu.
   return $menu;
 }
 
 /**
- * Implements theme_links__system_main_menu().
+ * Implements theme_links__system_primary_menu_mobile().
+ *
+ * Theme function for primary menu mobile.
+ */
+function loop_links__system_primary_menu_mobile($variables) {
+  $menu = '';
+  foreach ($variables['links'] as $value) {
+    $menu .= l($value['title'], $value['href'], array('attributes' => array('class' => array('nav-mobile--link'))));
+  }
+  return $menu;
+}
+
+/**
+ * Implements theme_links__primary_menu_dropdown().
  *
  * Theme function for primary menu when displayed as dropdown.
  */
@@ -382,4 +454,16 @@ function loop_form_search_api_page_search_form_default_alter(&$form, &$form_stat
 
   // Add icon markup as a prefix to field.
   $form['keys_1']['#field_prefix'] = '<i class="typeahead-block--icon icon-search"></i>';
+}
+
+
+/**
+ * Implements theme_panels_default_style_render_region().
+ *
+ * Remove the panel separator from the default rendering method.
+ */
+function loop_panels_default_style_render_region($vars) {
+  $output = '';
+  $output .= implode('', $vars['panes']);
+  return $output;
 }
