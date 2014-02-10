@@ -342,7 +342,7 @@ function loop_links__system_primary_menu($variables) {
       $title = theme_image($img) . $value['title'];
 
       // Set full dropdown menu.
-      $primary_navigation_dropdown = '<nav class="nav-dropdown"><div class="nav-dropdown--wrapper">' . l($title, $value['href'], array('attributes' => array('class' => array('nav-dropdown--header')), 'html' => 'TRUE')) . $primary_menu_rendered .'</div></nav>';
+      $primary_navigation_dropdown = '<nav class="nav-dropdown"><div class="nav-dropdown--wrapper">' . l($title, '#', array('attributes' => array('class' => array('nav-dropdown--header')), 'html' => TRUE, 'external' => TRUE)) . $primary_menu_rendered .'</div></nav>';
     }
   }
 
