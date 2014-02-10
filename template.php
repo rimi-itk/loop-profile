@@ -97,11 +97,6 @@ function loop_preprocess_search_api_page_results(&$variables) {
     $node->field_description['und'][0]['value'] = arg(1);
     $form = drupal_get_form('node_form', $node);
     $variables['node_form'] = $form;
-
-    // Remove suggestions and other related information.
-    //unset($build['search_form']);
-    //unset($build['suggestions']);
-    //unset($build['search_results']);
   }
 }
 
