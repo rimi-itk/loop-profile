@@ -276,7 +276,7 @@ function loop_links__system_primary_menu($variables) {
   $menu = '<nav class="nav">';
 
   // Run through each link in the primary menu and do different stuff...
-  foreach ($variables['links'] as $value) {
+  foreach ($variables['links'] as $key => $value) {
     if (!empty($value['identifier']) && $value['identifier'] != 'main-menu_menu:<front>') {
 
       // Images for the different menu items.
@@ -295,21 +295,28 @@ function loop_links__system_primary_menu($variables) {
           break;
       }
 
-      // We use menu tokens, so the identifier includes user id, we use token path to identify instead.
-      if (!empty($value['menu_token_link_path']) && $value['menu_token_link_path'] == 'user/[current-user:uid]/messages') {
-        $img = array(
-          'path' => '/' . $theme_path . '/images/nav-mail-icon.png',
-          'attributes' => array('class' => 'nav--icon'),
-        );
-      }
-
       // Create the title with image icon.
       $title = theme_image($img) . '<span class="nav--text">' . $value['title'] . '</span>';
-      $menu.= l($title, $value['href'], array('attributes' => array('class' => array('nav--link')), 'html' => 'TRUE'));
+
+      // Add item to main menu links.
+      $menu .= l($title, $value['href'], array('attributes' => array('class' => array('nav--link')), 'html' => 'TRUE'));
+    }
+
+    // We use menu tokens, so the identifier includes user id, we use token path to identify instead.
+    elseif (!empty($value['href']) && $value['href'] == 'user/' . $GLOBALS['user']->uid . '/messages') {
+      $img = array(
+        'path' => '/' . $theme_path . '/images/nav-mail-icon.png',
+        'attributes' => array('class' => 'nav--icon'),
+      );
+
+      $title = theme_image($img) . '<span class="nav--text">' . $value['title'] . '</span>';
+
+      // Add item to main menu links.
+      $menu .= l($title, $value['href'], array('attributes' => array('class' => array('nav--link')), 'html' => 'TRUE'));
     }
 
     // If the link is pointing at frontpage it is the navigation dropdown menu link.
-    else {
+    elseif (!empty($value['identifier']) && $value['identifier'] == 'main-menu_menu:<front>') {
       // If 'main-menu_menu:<front>' exists we add an additional toggle-mobile-nav mobile menu link.
       $img_toggle_mobile_menu = array(
         'path' => '/profiles/loopdk/themes/loop/images/nav-menu-icon.png',
@@ -336,6 +343,8 @@ function loop_links__system_primary_menu($variables) {
 
       // Set full dropdown menu.
       $primary_navigation_dropdown = '<nav class="nav-dropdown"><div class="nav-dropdown--wrapper">' . l($title, '#', array('attributes' => array('class' => array('nav-dropdown--header')), 'html' => TRUE, 'external' => TRUE)) . $primary_menu_rendered .'</div></nav>';
+
+      unset($value);
     }
   }
 
@@ -370,13 +379,17 @@ function loop_links__system_primary_menu_mobile($variables) {
  * Theme function for primary menu when displayed as dropdown.
  */
 function loop_links__primary_menu_dropdown($variables) {
-  $primary_menu = '<div class="nav-dropdown--item">';
-  foreach ($variables['links'] as $value) {
-    $primary_menu .= l($value['title'], $value['href'], array('attributes' => array('class' => array('nav-dropdown--link'))));
+  if (!empty($variables['links'])) {
+    $primary_menu = '<div class="nav-dropdown--item">';
+    foreach ($variables['links'] as $value) {
+      $primary_menu .= l($value['title'], $value['href'], array('attributes' => array('class' => array('nav-dropdown--link'))));
+    }
+    $primary_menu .= '</div>';
+    return $primary_menu;
   }
-  $primary_menu .= '</div>';
-  return $primary_menu;
+  return FALSE;
 }
+
 
 
 /**
