@@ -499,6 +499,11 @@ function loop_theme($existing, $type, $theme, $path) {
   );
 }
 
+/**
+ * Implements hook_preprocess_comment().
+ *
+ * Load user for every comment.
+ */
 function loop_preprocess_comment(&$variables) {
-  $a = 0;
+  $variables['comment']->account = user_load($variables['comment']->uid);
 }
