@@ -397,3 +397,41 @@ function loop_panels_default_style_render_region($vars) {
   $output .= implode('', $vars['panes']);
   return $output;
 }
+
+
+/**
+ * Implements form_alter().
+ */
+function loop_form_alter(&$form, $form_state, $form_id)  {
+//  switch ($form_id)  {
+//    case 'comment_node_post_form':
+//      $form['author']['#prefix'] = '<div class="meta-data--author">';
+//      $form['author']['#markup'] = '<div class="meta-data--author-image">';
+//      $form['author']['#markup'].= '<a href="#"><img src="https://s3.amazonaws.com/uifaces/faces/twitter/jackiesaik/128.jpg"></a>';
+//      $form['author']['#markup'].= '</div>';
+//      $form['author']['#suffix'] = '</div>';
+//
+//      // Unset label.
+//      unset($form['author']['_author']);
+//
+//      break;
+//  }
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function loop_theme($existing, $type, $theme, $path) {
+  $t = 1;
+
+  $base = array(
+    'render element' => 'form',
+    'path' => drupal_get_path('theme', 'loop') . '/templates/forms',
+  );
+  return array(
+    'comment_node_post_form' => $base + array(
+        'template' => 'whatever',
+      ),
+  );
+}
