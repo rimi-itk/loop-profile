@@ -34,3 +34,20 @@
     margin-bottom: -1.5em;
   }
 }
+
+
+/* Comments list on user page
+   ================================================================================================================== */
+.comments--user-page-comments-element {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid $border-color;
+
+  &:last-child {
+    @extend %reset-element-spacing;
+  }
+}
+
+.comments--user-page-comments-new {
+  @extend %tag;
+}

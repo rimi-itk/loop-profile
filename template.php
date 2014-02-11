@@ -495,8 +495,7 @@ function loop_panels_default_style_render_region($vars) {
  */
 function loop_form_comment_form_alter(&$form, $form_state)  {
   unset($form['author']['_author']['#title']);
-  $form['comment_body']['und'][0]['#wysiwyg'] = FALSE;
-  $form['comment_body']['und'][0]['#type'] = 'textarea';
+  $form['comment_body'][LANGUAGE_NONE][0]['#wysiwyg'] = FALSE;
 }
 
 

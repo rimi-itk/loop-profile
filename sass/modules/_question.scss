@@ -54,3 +54,24 @@
 .question--term {
   @extend %tag;
 }
+
+
+/* Questions list on user page
+   ================================================================================================================== */
+.question--user-page-nodes-element {
+  margin-bottom: 1em;
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 1em;
+
+  &:last-child {
+    @extend %reset-element-spacing;
+  }
+}
+
+.question--number-of-comments {
+  @extend .search-result--comments;
+}
+
+.question--user-page-nodes-new {
+  @extend %tag;
+} 
