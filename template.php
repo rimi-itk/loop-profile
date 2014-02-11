@@ -192,6 +192,11 @@ function loop_menu_local_task($variables) {
   $link = $variables['element']['#link'];
   $list_class = 'block-module--user-links-item';
 
+  // Tabs on login pages.
+  if ($GLOBALS['user']-> uid == 0) {
+    $list_class = 'tabs-anonymous';
+  }
+
   if ($link['page_callback'] == 'page_manager_user_view_page') {
     $link['title'] = t('My account');
   }
@@ -210,7 +215,7 @@ function loop_menu_local_task($variables) {
 
   // Dont print shortcuts and statistics.
   if ($link['page_callback'] == 'statistics_user_tracker' || $link['path'] == 'user/%/shortcuts') {
-    return;
+    return FALSE;
   }
 
   if(!empty($variables['element']['#active'])) {
@@ -238,7 +243,7 @@ function loop_menu_local_task($variables) {
     $link_text = t('!local-task-title!active', array('!local-task-title' => $link['title'], '!active' => $active));
   }
 
-  return '<li class=" ' .$list_class. ' ">' . l($link_text, $link['href'], $link['localized_options']) . "</li>\n" . $sub_menu;
+  return '<li class="' .$list_class. '">' . l($link_text, $link['href'], $link['localized_options']) . "</li>\n" . $sub_menu;
 }
 
 /**
@@ -246,20 +251,29 @@ function loop_menu_local_task($variables) {
  */
 function loop_menu_local_tasks($variables) {
   $output = '';
-
-  if (!empty($variables['primary'])) {
-    $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
-    $variables['primary']['#prefix'] .= '<ul class="block-module--user-links-list">';
-    $variables['primary']['#suffix'] = '<li class="block-module--user-links-item-last"><a href="/user/logout">' . t('Logout') . '</a></li></ul>';
-    $output .= drupal_render($variables['primary']);
+  // Tabs for login pages.
+  if ($GLOBALS['user']-> uid > 0) {
+    if (!empty($variables['primary'])) {
+      $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
+      $variables['primary']['#prefix'] .= '<ul class="block-module--user-links-list">';
+      $variables['primary']['#suffix'] = '<li class="block-module--user-links-item-last"><a href="/user/logout">' . t('Logout') . '</a></li></ul>';
+      $output .= drupal_render($variables['primary']);
+    }
+    if (!empty($variables['secondary'])) {
+      $variables['secondary']['#prefix'] = '<h2 class="element-invisible">' . t('Secondary tabs') . '</h2>';
+      $variables['secondary']['#prefix'] .= '<ul class="block-module-user-links-list-sub secondary">';
+      $variables['secondary']['#suffix'] = '</ul>';
+      $output .= drupal_render($variables['secondary']);
+    }
   }
-  if (!empty($variables['secondary'])) {
-    $variables['secondary']['#prefix'] = '<h2 class="element-invisible">' . t('Secondary tabs') . '</h2>';
-    $variables['secondary']['#prefix'] .= '<ul class="block-module-user-links-list-sub secondary">';
-    $variables['secondary']['#suffix'] = '</ul>';
-    $output .= drupal_render($variables['secondary']);
+  else {
+    if (!empty($variables['primary'])) {
+      $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
+      $variables['primary']['#prefix'] .= '<ul class="tabs">';
+      $variables['primary']['#suffix'] = '</ul>';
+      $output .= drupal_render($variables['primary']);
+    }
   }
-
   return $output;
 }
 

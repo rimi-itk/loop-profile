@@ -5,3 +5,8 @@
 .logo--link {
   max-width: 10em;
 }
+
+/* line 11, ../sass/ie8.scss */
+.nav-dropdown--header {
+  padding-right: 2.5em !important;
+}
