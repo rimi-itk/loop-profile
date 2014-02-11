@@ -77,4 +77,4 @@
 <div class="comments--comment-content">
   <?php print render($content); ?>
 </div>
-<a href="#" class="flag">Dette svar er nyttigt (12)</a>
+<?php print flag_create_link('ranking', $comment->cid); ?>
