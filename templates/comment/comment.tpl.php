@@ -68,9 +68,9 @@
 <?php endif ?>
   <div class="meta-data--author-wrapper">
     <?php if (isset($node->name) && isset($node->uid)): ?>
-      <span class="meta-data--author-link"><?php print l($node->name, 'user/' . $node->uid); ?></span>
+      <span class="meta-data--author-link"><?php print l($comment_author_name, 'user/' . $comment->account->uid); ?></span>
     <?php endif ?>
-    <span class="meta-data--author-title"><?php print $comment->account->field_job_title['und'][0]['safe_value']; ?></span>
+    <span class="meta-data--author-title"><?php print render($job_title); ?></span>
   </div>
 </div>
 <span class="comments--comment-meta-data"><?php print t('Submitted') . ' ' . format_date($comment->created, $type = 'medium'); ?></span>

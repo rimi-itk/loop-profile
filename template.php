@@ -505,10 +505,10 @@ function loop_form_comment_form_alter(&$form, $form_state)  {
 function loop_theme($existing, $type, $theme, $path) {
   return array(
     'comment_form' => array(
-        'render element' => 'form',
-        'path' => drupal_get_path('theme', 'loop') . '/templates/forms',
-        'template' => 'whatever',
-      ),
+      'render element' => 'form',
+      'path' => drupal_get_path('theme', 'loop') . '/templates/forms',
+      'template' => 'whatever',
+    ),
   );
 }
 
@@ -518,5 +518,23 @@ function loop_theme($existing, $type, $theme, $path) {
  * Load user for every comment.
  */
 function loop_preprocess_comment(&$variables) {
+  // Make the content author object available.
   $variables['comment']->account = user_load($variables['comment']->uid);
+
+  // Set a default author name.
+  $variables['comment_author_name'] = $variables['comment']->account->name;
+
+  // Fetch the fields needed.
+  $fetched_first_name = field_get_items('user', $variables['comment']->account, 'field_first_name');
+  $fetched_last_name = field_get_items('user', $variables['comment']->account, 'field_last_name');
+  $fullname = render(field_view_value('user', $variables['comment']->account, 'field_first_name', $fetched_first_name[0], array())) .' '. render(field_view_value('user', $variables['comment']->account, 'field_last_name', $fetched_last_name[0], array()));
+
+  // Change authorname if both first and surname are set.
+  if ($fetched_first_name && $fetched_last_name) {
+    $variables['comment_author_name'] = $fullname;
+  }
+
+  // Fetch the fields needed.
+  $fetched_job_title = field_get_items('user', $variables['comment']->account, 'field_job_title');
+  $variables['job_title'] = field_view_value('user', $variables['comment']->account, 'field_job_title', $fetched_job_title[0], array());
 }
