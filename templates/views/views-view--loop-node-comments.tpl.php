@@ -27,7 +27,7 @@
  * @ingroup views_templates
  */
 ?>
-<div class="comments--comment <?php print $classes; ?>">
+<div class="comments--comment">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <?php print $title; ?>
