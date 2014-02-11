@@ -70,7 +70,7 @@
     <?php if (isset($node->name) && isset($node->uid)): ?>
       <span class="meta-data--author-link"><?php print l($node->name, 'user/' . $node->uid); ?></span>
     <?php endif ?>
-    <span class="meta-data--author-title">SOSU, AUH, HUH</span>
+    <span class="meta-data--author-title"><?php print $comment->account->field_job_title['und'][0]['safe_value']; ?></span>
   </div>
 </div>
 <span class="comments--comment-meta-data"><?php print t('Submitted') . ' ' . format_date($comment->created, $type = 'medium'); ?></span>
