@@ -59,8 +59,8 @@ function loop_notification_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'notifications_option_subscription_types_content_type';
   $strongarm->value = array(
-    'enabled' => 0,
-    'subscriptions_block' => 0,
+    'enabled' => 1,
+    'subscriptions_block' => 1,
     'node_links' => 0,
     'teaser_links' => 0,
   );
