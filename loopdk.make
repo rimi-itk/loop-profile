@@ -130,9 +130,6 @@ projects[rules][version] = "2.6"
 projects[search_api][subdir] = "contrib"
 projects[search_api][version] = "1.11"
 
-projects[search_api_autocomplete][subdir] = "contrib"
-projects[search_api_autocomplete][version] = "1.0"
-
 projects[search_api_page][subdir] = "contrib"
 projects[search_api_page][version] = "1.0"
 
