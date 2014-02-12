@@ -68,10 +68,9 @@ function loop_example_content_uuid_features_default_terms() {
     'name' => 'Husassistent',
     'description' => '',
     'format' => 'editor',
-    'weight' => 0,
+    'weight' => 10,
     'uuid' => '21915d62-61f7-40ab-9ada-b50debfdfc78',
     'vocabulary_machine_name' => 'profession',
-    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -87,10 +86,9 @@ function loop_example_content_uuid_features_default_terms() {
     'name' => 'Leder',
     'description' => '',
     'format' => 'editor',
-    'weight' => 0,
+    'weight' => 13,
     'uuid' => '322d0ec1-b072-4425-9e9c-abd65e72711d',
     'vocabulary_machine_name' => 'profession',
-    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -124,10 +122,9 @@ function loop_example_content_uuid_features_default_terms() {
     'name' => 'Teknisk servicemedarbejder/pedel/håndværker',
     'description' => '',
     'format' => 'editor',
-    'weight' => 0,
+    'weight' => 16,
     'uuid' => '374fc3b1-7193-4d02-838d-3d3069e3128a',
     'vocabulary_machine_name' => 'profession',
-    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -197,10 +194,9 @@ function loop_example_content_uuid_features_default_terms() {
     'name' => 'Visitator/Borgerkonsulent',
     'description' => '',
     'format' => 'editor',
-    'weight' => 0,
+    'weight' => 17,
     'uuid' => '551a13f2-5cf9-4a72-adc6-4cce2d569862',
     'vocabulary_machine_name' => 'profession',
-    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -219,6 +215,15 @@ function loop_example_content_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => '590c342e-541e-477c-b558-a845b87a79ed',
     'vocabulary_machine_name' => 'keyword',
+    'metatags' => array(),
+  );
+  $terms[] = array(
+    'name' => 'Fysioterapeut',
+    'description' => '',
+    'format' => 'editor',
+    'weight' => 5,
+    'uuid' => '593bde07-09d9-4e1c-b6f9-7b13b54df37d',
+    'vocabulary_machine_name' => 'profession',
     'metatags' => array(),
   );
   $terms[] = array(
@@ -255,7 +260,6 @@ function loop_example_content_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => '64e910aa-b1d7-4f05-a91a-beea007e58b9',
     'vocabulary_machine_name' => 'profession',
-    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -265,6 +269,15 @@ function loop_example_content_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => '66fda5fa-e6a9-419d-b5e7-154c3544f2f8',
     'vocabulary_machine_name' => 'keyword',
+    'metatags' => array(),
+  );
+  $terms[] = array(
+    'name' => 'Teamleder',
+    'description' => '',
+    'format' => 'editor',
+    'weight' => 15,
+    'uuid' => '679721b0-2015-4aa7-92e3-daae9b1b20b0',
+    'vocabulary_machine_name' => 'profession',
     'metatags' => array(),
   );
   $terms[] = array(
@@ -286,22 +299,21 @@ function loop_example_content_uuid_features_default_terms() {
     'metatags' => array(),
   );
   $terms[] = array(
+    'name' => 'Ergoterapeut',
+    'description' => '',
+    'format' => 'editor',
+    'weight' => 3,
+    'uuid' => '6ba2475e-041e-40c9-b3dc-0f873f4148d5',
+    'vocabulary_machine_name' => 'profession',
+    'metatags' => array(),
+  );
+  $terms[] = array(
     'name' => 'Magtanvendelse',
     'description' => '',
     'format' => 'editor',
     'weight' => 0,
     'uuid' => '7087bc42-b7ac-42ec-b29e-2b433fa491ba',
     'vocabulary_machine_name' => 'subject',
-    'metatags' => array(),
-  );
-  $terms[] = array(
-    'name' => 'Disponeringsfordeler',
-    'description' => '',
-    'format' => 'editor',
-    'weight' => 0,
-    'uuid' => '7097a5f1-c0ca-4f8a-a5e8-93639dcd1191',
-    'vocabulary_machine_name' => 'profession',
-    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -353,10 +365,9 @@ function loop_example_content_uuid_features_default_terms() {
     'name' => 'Sygeplejerske',
     'description' => '',
     'format' => 'editor',
-    'weight' => 0,
+    'weight' => 14,
     'uuid' => '75c6a0d5-2ffe-40c2-afee-20bde83d3f37',
     'vocabulary_machine_name' => 'profession',
-    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -381,10 +392,9 @@ function loop_example_content_uuid_features_default_terms() {
     'name' => 'Elev/studerende',
     'description' => '',
     'format' => 'editor',
-    'weight' => 0,
+    'weight' => 8,
     'uuid' => '7ca29a3c-0d9b-4362-bee2-028247d218c4',
     'vocabulary_machine_name' => 'profession',
-    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -433,13 +443,21 @@ function loop_example_content_uuid_features_default_terms() {
     'metatags' => array(),
   );
   $terms[] = array(
+    'name' => 'Konsulent',
+    'description' => '',
+    'format' => 'editor',
+    'weight' => 12,
+    'uuid' => '8a8fd137-ca1b-46b2-bb17-1a37aed1b267',
+    'vocabulary_machine_name' => 'profession',
+    'metatags' => array(),
+  );
+  $terms[] = array(
     'name' => 'Administrativ medarbejder',
     'description' => '',
     'format' => 'editor',
-    'weight' => 0,
+    'weight' => 4,
     'uuid' => '93c2ad6e-d669-4a97-ab5c-68f8aec48276',
     'vocabulary_machine_name' => 'profession',
-    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -503,6 +521,15 @@ function loop_example_content_uuid_features_default_terms() {
     'weight' => 0,
     'uuid' => 'a7d975db-8c37-45f8-ba07-01af2b2eb72e',
     'vocabulary_machine_name' => 'keyword',
+    'metatags' => array(),
+  );
+  $terms[] = array(
+    'name' => 'Andet',
+    'description' => '',
+    'format' => 'editor',
+    'weight' => 19,
+    'uuid' => 'a8b77425-9dbc-4e19-908a-1e99d4362de6',
+    'vocabulary_machine_name' => 'profession',
     'metatags' => array(),
   );
   $terms[] = array(
@@ -608,10 +635,9 @@ function loop_example_content_uuid_features_default_terms() {
     'name' => 'Social- og sundhedshjælper',
     'description' => '',
     'format' => 'editor',
-    'weight' => 0,
+    'weight' => 2,
     'uuid' => 'c3c8ab9e-c53b-40fd-b446-b85b2ad6647c',
     'vocabulary_machine_name' => 'profession',
-    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -669,6 +695,15 @@ function loop_example_content_uuid_features_default_terms() {
     'metatags' => array(),
   );
   $terms[] = array(
+    'name' => 'Borgerkonsulent',
+    'description' => '',
+    'format' => 'editor',
+    'weight' => 6,
+    'uuid' => 'd288c5a5-67a6-4873-9f40-a9393f3a062c',
+    'vocabulary_machine_name' => 'profession',
+    'metatags' => array(),
+  );
+  $terms[] = array(
     'name' => 'Dosisdispenseret',
     'description' => '',
     'format' => 'editor',
@@ -681,10 +716,9 @@ function loop_example_content_uuid_features_default_terms() {
     'name' => 'Økonomaer/køkkenassistent/Ernæringsassistent',
     'description' => '',
     'format' => 'editor',
-    'weight' => 0,
+    'weight' => 18,
     'uuid' => 'd835fa8a-16be-46ab-826a-d4338ab5c66c',
     'vocabulary_machine_name' => 'profession',
-    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -700,10 +734,9 @@ function loop_example_content_uuid_features_default_terms() {
     'name' => 'Diætist',
     'description' => '',
     'format' => 'editor',
-    'weight' => 0,
+    'weight' => 7,
     'uuid' => 'dadbc379-0018-4730-96cb-0fb945ba5548',
     'vocabulary_machine_name' => 'profession',
-    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -728,10 +761,9 @@ function loop_example_content_uuid_features_default_terms() {
     'name' => 'Social- og sundhedsassistent',
     'description' => '',
     'format' => 'editor',
-    'weight' => 0,
+    'weight' => 1,
     'uuid' => 'db8553a4-69cc-4c8d-93d2-1f95746d81e0',
     'vocabulary_machine_name' => 'profession',
-    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
@@ -765,20 +797,18 @@ function loop_example_content_uuid_features_default_terms() {
     'name' => 'IT-koordinator',
     'description' => '',
     'format' => 'editor',
-    'weight' => 0,
+    'weight' => 11,
     'uuid' => 'eff40111-8f10-4ff7-9b81-24a4771a533f',
     'vocabulary_machine_name' => 'profession',
-    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
     'name' => 'Frivilligkoordinator',
     'description' => '',
     'format' => 'editor',
-    'weight' => 0,
+    'weight' => 9,
     'uuid' => 'f039f55a-5a2b-468b-bc1e-b999220a78d9',
     'vocabulary_machine_name' => 'profession',
-    'field_subject_reference' => array(),
     'metatags' => array(),
   );
   $terms[] = array(
