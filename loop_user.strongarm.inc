@@ -27,7 +27,32 @@ function loop_user_strongarm() {
       ),
     ),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'googleanalytics' => array(
+          'weight' => '3',
+        ),
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'redirect' => array(
+          'weight' => '30',
+        ),
+        'account' => array(
+          'weight' => '-10',
+        ),
+        'timezone' => array(
+          'weight' => '6',
+        ),
+        'picture' => array(
+          'weight' => '5',
+        ),
+        'locale' => array(
+          'weight' => '5',
+        ),
+        'wysiwyg' => array(
+          'weight' => '5',
+        ),
+      ),
       'display' => array(
         'summary' => array(
           'default' => array(

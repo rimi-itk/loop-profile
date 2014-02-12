@@ -94,6 +94,37 @@ function loop_user_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_location|user|user|form';
+  $field_group->group_name = 'group_location';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_personal_information';
+  $field_group->data = array(
+    'label' => 'Location',
+    'weight' => '48',
+    'children' => array(
+      0 => 'field_location_place',
+      1 => 'field_location_address',
+      2 => 'field_location_postal_code',
+      3 => 'field_location_city',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Location',
+      'instance_settings' => array(
+        'required_fields' => 1,
+        'classes' => 'group-location field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_location|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_personal_information|user|user|default';
   $field_group->group_name = 'group_personal_information';
   $field_group->entity_type = 'user';
@@ -132,12 +163,12 @@ function loop_user_field_group_info() {
     'label' => 'Personal information',
     'weight' => '1',
     'children' => array(
-      0 => 'field_profession',
+      0 => 'field_biography',
       1 => 'field_first_name',
-      2 => 'field_last_name',
-      3 => 'field_job_title',
-      4 => 'field_location',
-      5 => 'field_biography',
+      2 => 'field_job_title',
+      3 => 'field_last_name',
+      4 => 'field_profession',
+      5 => 'group_location',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

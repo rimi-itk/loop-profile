@@ -47,7 +47,7 @@ function loop_user_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 49,
+      'weight' => 50,
     ),
   );
 
@@ -174,31 +174,24 @@ function loop_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_location'
-  $field_instances['user-user-field_location'] = array(
+  // Exported field_instance: 'user-user-field_location_address'
+  $field_instances['user-user-field_location_address'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 6,
-      ),
-      'full' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'user',
-    'field_name' => 'field_location',
-    'label' => 'Location',
+    'field_name' => 'field_location_address',
+    'label' => 'Address',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -211,7 +204,109 @@ function loop_user_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 48,
+      'weight' => 51,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_location_city'
+  $field_instances['user-user-field_location_city'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 12,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_location_city',
+    'label' => 'City',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 53,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_location_place'
+  $field_instances['user-user-field_location_place'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_location_place',
+    'label' => 'Place',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 50,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_location_postal_code'
+  $field_instances['user-user-field_location_postal_code'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 11,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_location_postal_code',
+    'label' => 'Postal code',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 52,
     ),
   );
 
@@ -255,11 +350,14 @@ function loop_user_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Address');
   t('Biography');
+  t('City');
   t('First name');
   t('Job title');
   t('Last name');
-  t('Location');
+  t('Place');
+  t('Postal code');
   t('Profession');
 
   return $field_instances;
