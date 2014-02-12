@@ -91,18 +91,22 @@ if (isset($loop_primary_menu)): ?>
       </a>
     <?php endif; ?>
     <?php print render($page['header']); ?>
-    <div class="nav--wrapper">
-      <?php print theme('links__system_primary_menu', array('links' => $main_menu, 'attributes' => array('class' => array('nav')))); ?>
-    </div>
+    <?php if ($user->uid > 0): ?>
+      <div class="nav--wrapper">
+        <?php print theme('links__system_primary_menu', array('links' => $main_menu, 'attributes' => array('class' => array('nav')))); ?>
+      </div>
+    <?php endif; ?>
   </div>
 </header>
 
-<?php if (isset($search)): ?>
-  <div class="typeahead-block"">
-    <div class="typeahead-block--wrapper">
-      <?php print render($search); ?>
+<?php if ($user->uid > 0): ?>
+  <?php if (isset($search)): ?>
+    <div class="typeahead-block">
+      <div class="typeahead-block--wrapper">
+        <?php print render($search); ?>
+      </div>
     </div>
-  </div>
+  <?php endif; ?>
 <?php endif; ?>
 
 <?php if ($no_panel || $is_front) : ?>
