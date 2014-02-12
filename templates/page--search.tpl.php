@@ -113,6 +113,7 @@ if (isset($loop_primary_menu)): ?>
   <?php print render($title_prefix); ?>
   <?php print render($title_suffix); ?>
   <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+  <?php hide($page['content']['system_main']['form']); ?>
   <?php print render($page['content']); ?>
 </div>
 

@@ -41,7 +41,10 @@
     <div class="layout-element-alpha">
       <h1 class="page-title"><?php print t('Search results');?></h1>
       <?php //print render($search_performance); ?>
-      <?php print render($spellcheck); ?>
+      <div class="search-result--lead">
+        <?php print t('You searched for:');?> <strong><?php print $keys;?></strong>
+        <?php print render($spellcheck); ?>
+      </div>
       <div class="search-result">
         <?php print render($search_results); ?>
       </div>
