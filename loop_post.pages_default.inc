@@ -201,6 +201,27 @@ function loop_post_default_page_manager_handlers() {
     $display->panels['alpha'][2] = 'new-4';
     $pane = new stdClass();
     $pane->pid = 'new-5';
+    $pane->panel = 'beta';
+    $pane->type = 'block';
+    $pane->subtype = 'notifications_ui-subscriptions';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $display->content['new-5'] = $pane;
+    $display->panels['beta'][0] = 'new-5';
+    $pane = new stdClass();
+    $pane->pid = 'new-6';
     $pane->panel = 'gamma';
     $pane->type = 'node_comment_form';
     $pane->subtype = 'node_comment_form';
@@ -221,8 +242,8 @@ function loop_post_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-5'] = $pane;
-    $display->panels['gamma'][0] = 'new-5';
+    $display->content['new-6'] = $pane;
+    $display->panels['gamma'][0] = 'new-6';
   $display->hide_title = PANELS_TITLE_PANE;
   $display->title_pane = 'new-2';
   $handler->conf['display'] = $display;
