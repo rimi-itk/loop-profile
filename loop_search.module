@@ -121,17 +121,18 @@ function loop_search_form_search_api_page_search_form_default_alter(&$form, &$fo
   if ($arg[0] == "node" && is_numeric($arg[1])) {
     // Load currect node.
     $node = node_load($arg[1]);
+    if ($node -> type == 'post') {
+      // Load entity wrapper.
+      $wrapper = entity_metadata_wrapper('node', $node);
 
-    // Load entity wrapper.
-    $wrapper = entity_metadata_wrapper('node', $node);
+      // Get description field.
+      $description = $wrapper->field_description->value();
 
-    // Get description field.
-    $description = $wrapper->field_description->value();
-
-    // Verify its a string.
-    if (is_string($description)) {
-      // Change default value.
-      $form['keys_1']['#default_value'] = $wrapper->field_description->value();
+      // Verify its a string.
+      if (is_string($description)) {
+        // Change default value.
+        $form['keys_1']['#default_value'] = $wrapper->field_description->value();
+      }
     }
   }
 }
