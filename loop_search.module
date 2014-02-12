@@ -119,6 +119,19 @@ function loop_search_form_search_api_page_search_form_default_alter(&$form, &$fo
   // Figure out if we need a default value.
   $arg = arg(1);
   if (isset($arg)) {
-    $form['keys_1']['#default_value'] = $arg;
+    // Load currect node.
+    $node = node_load($arg);
+
+    // Load entity wrapper.
+    $wrapper = entity_metadata_wrapper('node', $node);
+
+    // Get description field.
+    $description = $wrapper->field_description->value();
+
+    // Verify its a string.
+    if (is_string($description)) {
+      // Change default value.
+      $form['keys_1']['#default_value'] = $wrapper->field_description->value();
+    }
   }
 }
