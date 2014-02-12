@@ -77,7 +77,10 @@ function loop_user_field_group_info() {
     'label' => 'Location',
     'weight' => '4',
     'children' => array(
-      0 => 'field_location',
+      0 => 'field_location_place',
+      1 => 'field_location_address',
+      2 => 'field_location_postal_code',
+      3 => 'field_location_city',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

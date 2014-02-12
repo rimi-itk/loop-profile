@@ -182,10 +182,10 @@ function loop_user_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'text_plain',
         'weight' => 10,
       ),
     ),
@@ -216,10 +216,10 @@ function loop_user_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'text_plain',
         'weight' => 12,
       ),
     ),
@@ -250,10 +250,10 @@ function loop_user_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'text_plain',
         'weight' => 9,
       ),
     ),
@@ -284,10 +284,10 @@ function loop_user_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'text_plain',
         'weight' => 11,
       ),
     ),
