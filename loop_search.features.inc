@@ -5,27 +5,6 @@
  */
 
 /**
- * Implements hook_default_search_api_autocomplete_search().
- */
-function loop_search_default_search_api_autocomplete_search() {
-  $items = array();
-  $items['search_api_page_default'] = entity_import('search_api_autocomplete_search', '{
-    "machine_name" : "search_api_page_default",
-    "name" : "Default",
-    "index_id" : "post",
-    "type" : "search_api_page",
-    "enabled" : "0",
-    "options" : {
-      "custom" : { "page_id" : "default" },
-      "result count" : true,
-      "fields" : [ "field_description" ],
-      "results" : 0
-    }
-  }');
-  return $items;
-}
-
-/**
  * Implements hook_default_search_api_index().
  */
 function loop_search_default_search_api_index() {
@@ -127,18 +106,18 @@ function loop_search_default_search_api_page() {
   $items = array();
   $items['default'] = entity_import('search_api_page', '{
     "index_id" : "post",
-    "path" : "default_search",
+    "path" : "search",
     "name" : "Default",
     "machine_name" : "default",
-    "description" : null,
+    "description" : "",
     "options" : {
       "mode" : "terms",
       "fields" : [],
       "per_page" : "10",
-      "get_per_page" : 0,
       "result_page_search_form" : 1,
+      "get_per_page" : 0,
       "view_mode" : "search_api_page_result",
-      "language_filter" : []
+      "search_api_spellcheck" : 1
     },
     "enabled" : "1"
   }');
