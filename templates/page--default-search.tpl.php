@@ -91,38 +91,30 @@ if (isset($loop_primary_menu)): ?>
       </a>
     <?php endif; ?>
     <?php print render($page['header']); ?>
-    <div class="nav--wrapper">
+    <div class="nav--wrapper" id="search-block-form">
       <?php print theme('links__system_primary_menu', array('links' => $main_menu, 'attributes' => array('class' => array('nav')))); ?>
     </div>
   </div>
 </header>
 
 <?php if (isset($search)): ?>
-  <div class="typeahead-block"">
+  <div class="typeahead-block">
     <div class="typeahead-block--wrapper">
       <?php print render($search); ?>
     </div>
   </div>
 <?php endif; ?>
 
-<?php if ($no_panel || $is_front) : ?>
-  <div class="layout-no-wrapper">
-    <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
-    <div class="layout--inner">
-      <?php if ($messages): ?>
-        <?php print $messages; ?>
-      <?php endif; ?>
-      <?php print render($title_prefix); ?>
-      <?php print render($title_suffix); ?>
-      <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-      <?php print render($page['content']); ?>
-      <?php print $feed_icons; ?>
-    </div>
-  </div>
-<?php else : ?>
+<div class="layout-default">
+  <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
+  <?php if ($messages): ?>
+    <?php print $messages; ?>
+  <?php endif; ?>
+  <?php print render($title_prefix); ?>
+  <?php print render($title_suffix); ?>
   <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
   <?php print render($page['content']); ?>
-<?php endif;?>
+</div>
 
 
 <footer class="footer">

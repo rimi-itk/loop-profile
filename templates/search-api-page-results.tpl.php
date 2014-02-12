@@ -36,18 +36,41 @@
 
 ?>
 
-<div class="<?php print $classes;?>">
-  <?php if ($result_count) : ?>
-    <?php print render($search_performance); ?>
-    <?php print render($spellcheck); ?>
-    <h2><?php print t('Search results');?></h2>
-    <ol class="search-results">
-      <?php print render($search_results); ?>
-    </ol>
-    <?php print render($pager); ?>
-  <?php else : ?>
-    <h2><?php print t('Your search yielded no results.');?></h2>
-    <?php print $no_results_help; ?>
-    <?php print render($node_form); ?>
-  <?php endif; ?>
-</div>
+<?php if ($result_count) : ?>
+  <div class="layout--inner">
+    <div class="layout-element-alpha">
+      <h1 class="page-title"><?php print t('Search results');?></h1>
+      <?php //print render($search_performance); ?>
+      <?php print render($spellcheck); ?>
+      <div class="search-result">
+        <?php print render($search_results); ?>
+      </div>
+      <?php print render($pager); ?>
+    </div>
+    <div class="layout-element-beta">
+    </div>
+  </div>
+<?php else : ?>
+  <div class="layout--inner">
+    <div class="layout-element-alpha">
+      <h1 class="page-title"><?php print t('Search results');?></h1>
+      <?php //print render($search_performance); ?>
+      <div class="search-result">
+        <div class="search-result--lead">
+          <p><?php print t('You searched for:');?> <strong><?php print $keys;?></strong></p>
+          <div class="messages warning"><?php print t('No results found');?></div>
+          <?php print render($spellcheck); ?>
+        </div>
+        Hvis du ikke mener dit spørgsmål er besvaret før, kan du <a href="#ask-question">oprette spørgsmålet</a> i formularen. Du kan også prøve at <a href="#search-block-form">søge igen</a>.
+      </div>
+    </div>
+    <div class="layout-element-beta">
+    </div>
+  </div>
+  <div class="layout--inner" id="ask-question">
+    <div class="layout-element-epsilon">
+      <h3 class="page-title"><?php print t('Create question');?></h3>
+      <?php print render($node_form); ?>
+    </div>
+  </div>
+<?php endif; ?>

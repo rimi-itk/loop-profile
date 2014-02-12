@@ -28,11 +28,6 @@ function loop_preprocess_page(&$variables) {
     unset($variables['page']['content']['system_main']['form']);
   }
 
-  if ( ($arg0 == 'search') && (!isset($variables['page']['no_result'])) ) {
-    // No search results, change title.
-    $variables['title'] = t('Ask question');
-  }
-
   if ($arg0 == 'user') {
     $variables['loop_user_my_content'] = module_invoke('loop_user', 'block_view', 'loop_user_my_content');
     hide($variables['tabs']['#secondary']);

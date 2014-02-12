@@ -41,17 +41,11 @@
  * @see template_preprocess_search_api_page_result()
  */
 ?>
-
-<li class="search-result">
-  <h3 class="title">
-    <?php print $url ? l($title, $url['path'], $url['options']) : check_plain($title); ?>
-  </h3>
-  <div class="search-snippet-info">
-    <?php if ($snippet) : ?>
-      <p class="search-snippet"><?php print $snippet; ?></p>
-    <?php endif; ?>
-    <?php if ($info) : ?>
-      <p class="search-info"><?php print $info; ?></p>
-    <?php endif; ?>
-  </div>
-</li>
+<?php $url['options']['attributes']['class'] = 'search-result--link';?>
+<div class="search-result--item">
+  <?php if ($info) : ?>
+    <div class="meta-data--date"><?php print 'Created ' . format_date($item->created, $type = 'medium'); ?></div>
+  <?php endif; ?>
+  <?php print $url ? l($title, $url['path'], $url['options']) : check_plain($title); ?>
+  <?php print $url ? l($item->comment_count . ' ' . t('Answers'), $url['path'], array('attributes' => array('class' => array('search-result--comments')))) : check_plain($item->comment_count); ?>
+</div>
