@@ -136,6 +136,9 @@ projects[search_api_page][version] = "1.0"
 projects[search_api_solr][subdir] = "contrib"
 projects[search_api_solr][version] = "1.4"
 
+projects[search_api_spellcheck][subdir] = "contrib"
+projects[search_api_spellcheck][version] = "1.0"
+
 projects[secure_permissions][type] = "module"
 projects[secure_permissions][subdir] = "contrib"
 projects[secure_permissions][download][type] = "git"
