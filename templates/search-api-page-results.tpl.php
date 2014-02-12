@@ -64,7 +64,7 @@
           <div class="messages warning"><?php print t('No results found');?></div>
           <?php print render($spellcheck); ?>
         </div>
-        Hvis du ikke mener dit spørgsmål er besvaret før, kan du <a href="#ask-question">oprette spørgsmålet</a> i formularen. Du kan også prøve at <a href="#search-block-form">søge igen</a>.
+        <?php print t('If you think your question has not been answered before, you can <a href="#ask-question">create the question</a> in the form. You can also try to <a href="#search-block-form">search again</a>.');?>
       </div>
     </div>
     <div class="layout-element-beta">
