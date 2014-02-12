@@ -118,7 +118,7 @@ function loop_search_form_search_api_page_search_form_default_alter(&$form, &$fo
 
   // Figure out if we need a default value.
   $arg = arg();
-  if ($arg[0] == "node" && isset($arg[1])) {
+  if ($arg[0] == "node" && is_numeric($arg[1])) {
     // Load currect node.
     $node = node_load($arg[1]);
 
