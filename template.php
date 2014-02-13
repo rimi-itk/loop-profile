@@ -188,10 +188,11 @@ function loop_menu_local_task($variables) {
   $list_class = 'block-module--user-links-item';
 
   // Tabs on login pages.
-  if ($GLOBALS['user']-> uid == 0) {
+  if ($GLOBALS['user']-> uid == 0 || (arg(0) == 'notifications' && arg(1) == 'subscription')) {
     $list_class = 'tabs-anonymous';
   }
 
+  // User account tabs (Left menu)
   if ($link['page_callback'] == 'page_manager_user_view_page') {
     $link['title'] = t('My account');
   }
@@ -247,7 +248,7 @@ function loop_menu_local_task($variables) {
 function loop_menu_local_tasks($variables) {
   $output = '';
   // Tabs for login pages.
-  if ($GLOBALS['user']-> uid > 0) {
+  if ($GLOBALS['user']-> uid > 0 && arg(0) == 'user') {
     if (!empty($variables['primary'])) {
       $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
       $variables['primary']['#prefix'] .= '<ul class="block-module--user-links-list">';
@@ -492,6 +493,29 @@ function loop_form_comment_form_alter(&$form, $form_state)  {
   unset($form['author']['_author']['#title']);
   $form['comment_body'][LANGUAGE_NONE][0]['#wysiwyg'] = FALSE;
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ * For display on user/[uid]/notifications/subscription.
+ */
+function loop_form_notifications_account_manage_subscriptions_form_alter(&$form, $form_state)  {
+  // Hide filtering.
+  $form['filters']['#access'] = FALSE;
+
+  // Remove unneeded info about the users subscriptions and clean up the table.
+  unset($form['admin']['options']['#prefix']);
+  unset($form['admin']['options']['#suffix']);
+  unset($form['admin']['subscriptions']['#header']['sid']);
+  unset($form['admin']['subscriptions']['#header']['type']);
+  unset($form['admin']['subscriptions']['#header']['status']);
+  unset($form['admin']['subscriptions']['#header']['created']);
+  unset($form['admin']['subscriptions']['#header']['send_method']);
+  unset($form['admin']['subscriptions']['#header']['send_interval']);
+
+  // Add a class to the form.
+  $form['admin']['subscriptions']['#attributes']['class'][] = 'notification--user-subscriptions';
+}
+
 
 
 /**

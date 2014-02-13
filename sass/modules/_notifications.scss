@@ -29,3 +29,28 @@ $notification-dimensions: 2em;
 
   @include border-radius(100%);
 }
+
+.notification--user-subscriptions {
+  th {
+    padding-bottom: 1em;
+  }
+
+  tr {
+    border-bottom: 1px solid $border-color;
+  }
+
+  .form-type-checkbox {
+    border: 0;
+    margin-bottom: 0;
+  }
+
+  .links {
+    list-style: none;
+    padding: 0;
+  }
+
+  .empty {
+    padding: 1em;
+  }
+}
+
