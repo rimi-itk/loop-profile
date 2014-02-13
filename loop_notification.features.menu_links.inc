@@ -14,7 +14,7 @@ function loop_notification_menu_default_menu_links() {
   $menu_links['main-menu_messages:user/1/messages'] = array(
     'menu_name' => 'main-menu',
     'link_path' => 'user/1/messages',
-    'router_path' => 'user/%/messages',
+    'router_path' => 'user/%',
     'link_title' => 'Messages',
     'options' => array(
       'menu_token_link_path' => 'user/[current-user:uid]/messages',
