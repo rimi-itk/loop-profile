@@ -76,7 +76,7 @@ function loop_post_theme($existing, $type, $theme, $path) {
       'variables' => array(
         'link' => NULL,
       ),
-      'template' => 'templates/loop-post-subscription-list'
+      'template' => 'templates/loop-post-subscription-list',
     ),
   );
 }
