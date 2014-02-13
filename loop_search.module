@@ -67,9 +67,14 @@ function loop_search_nodes() {
  * Include search JS for every pageload!
  */
 function loop_search_init() {
-  drupal_add_js(drupal_get_path('module', 'loop_search') . '/handlebars-v1.2.0.js');
-  drupal_add_js(drupal_get_path('module', 'loop_search') . '/typeahead.bundle.js');
-  drupal_add_js(drupal_get_path('module', 'loop_search') . '/loop_search.js');
+  global $user;
+
+  // Chec if it's a registered user.
+  if ($user->uid > 0) {
+    drupal_add_js(drupal_get_path('module', 'loop_search') . '/handlebars-v1.2.0.js');
+    drupal_add_js(drupal_get_path('module', 'loop_search') . '/typeahead.bundle.js');
+    drupal_add_js(drupal_get_path('module', 'loop_search') . '/loop_search.js');
+  }
 }
 
 /**
