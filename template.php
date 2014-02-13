@@ -557,3 +557,20 @@ function loop_preprocess_comment(&$variables) {
   $fetched_job_title = field_get_items('user', $variables['comment']->account, 'field_job_title');
   $variables['job_title'] = field_view_value('user', $variables['comment']->account, 'field_job_title', $fetched_job_title[0], array());
 }
+
+/**
+ * Implements hook_preprocess_loop_post_subscription_list().
+ *
+ * Preprocesss function for displaying subscribe/unsubscribe on nodes
+ */
+function loop_preprocess_loop_post_subscription_list(&$vars) {
+  $vars['custom_link'] = l($vars['link']['#text'], $vars['link']['#path'], array('attributes' => array('class' => array('block-module--link')), 'html' => 'TRUE', 'query' => array($vars['link']['#query'])));
+
+  if($vars['link']['#text'] == 'Subscribe') {
+    $vars['current_type_css'] = 'block-follow-question';
+  }
+  else {
+    $vars['current_type_css'] = 'block-unfollow-question';
+  }
+
+}
