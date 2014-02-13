@@ -203,7 +203,7 @@ function loop_post_default_page_manager_handlers() {
     $pane->pid = 'new-5';
     $pane->panel = 'beta';
     $pane->type = 'block';
-    $pane->subtype = 'notifications_ui-subscriptions';
+    $pane->subtype = 'loop_post-subscriptions';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
