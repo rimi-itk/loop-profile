@@ -101,6 +101,7 @@ projects[node_export][version] = "3.0"
 
 projects[notifications][subdir] = "contrib"
 projects[notifications][version] = "1.0-alpha2"
+projects[notifications][patch][] = "https://drupal.org/files/notifications-direct-subscribe-1441242-7.patch"
 
 projects[oauth][subdir] = "contrib"
 projects[oauth][version] = "3.2"
