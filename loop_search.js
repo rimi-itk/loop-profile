@@ -18,7 +18,8 @@ jQuery(document).ready(function($) {
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     prefetch:  {
       // URL for prefetch!
-      url: '/loop_search_nodes'
+      url: '/loop_search_nodes',
+      ttl: 300000
     },
     name: 'search'
   });
