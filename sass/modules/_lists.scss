@@ -21,3 +21,27 @@
   }
 }
 
+/* We use the default pager list html Auch!! */
+.pager {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+
+  li {
+    display: inline;
+  }
+
+  a {
+    padding: 1em;
+    line-height: 2.5em;
+    background: $gray-lightest;
+    text-decoration: none;
+  }
+
+  .pager-current {
+    background: $gray-light;
+    padding: 1em;
+    line-height: 2.5em;
+  }
+}
