@@ -125,3 +125,22 @@ function loop_post_generate_link($subscription) {
     ),
   );
 }
+
+/**
+ * Implements hook_node_insert().
+ *
+ * Auto subscribe newly created content to user.
+ */
+function loop_post_node_insert($node) {
+  global $user;
+  $sub = new Notifications_Content_Subscription();
+
+  $sub->type = 'content_thread';
+
+  $subscription = $sub
+    ->instance()
+    ->set_user($user)
+    ->set_node($node);
+
+  $subscription->save();
+}
