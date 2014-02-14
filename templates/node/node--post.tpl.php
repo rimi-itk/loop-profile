@@ -81,34 +81,32 @@
  */
 ?>
 
-
-  <section class="question--wrapper">
-    <div class="meta-data--author">
-      <?php if (isset($user_picture)): ?>
-        <div class="meta-data--author-image">
-          <?php print $user_picture; ?>
-        </div>
-      <?php endif ?>
-      <?php if ((isset($node->name) && isset($node->uid)) || isset($content['field_profession'])): ?>
-        <div class="meta-data--author-wrapper">
-          <?php if (isset($node->name) && isset($node->uid)): ?>
-            <span class="meta-data--author-link"><?php print l($node->name, 'user/' . $node->uid); ?></span>
-          <?php endif ?>
-
-          <?php if (isset($content['field_profession'])): ?>
-            <span class="meta-data--author-title"><?php print render($content['field_profession']);?></span>
-          <?php endif ?>
-        </div>
-      <?php endif ?>
-    </div>
-    <div class="question--meta-data">
-      <div class="question--meta-data-date"><?php print t('Submitted') . ' ' . format_date($created, $type = 'medium'); ?></div>
-      <?php print render($content['field_subject']);?>
-    </div>
-    <div class="question--inner">
-      <?php print render($content['field_description']);?>
-    </div>
-    <div class="question--terms">
-      <?php print render($content['field_keyword']);?>
-    </div>
-  </section>
+<section class="question--wrapper">
+  <div class="meta-data--author">
+    <?php if (isset($user_picture)): ?>
+      <div class="meta-data--author-image">
+        <?php print $user_picture; ?>
+      </div>
+    <?php endif ?>
+    <?php if ((isset($author_name) && isset($uid)) || isset($job_title)) : ?>
+      <div class="meta-data--author-wrapper">
+        <?php if (isset($node->name) && isset($node->uid)): ?>
+          <span class="meta-data--author-link"><?php print l($author_name, 'user/' . $uid); ?></span>
+        <?php endif ?>
+        <?php if (isset($job_title)): ?>
+          <span class="meta-data--author-title"><?php print render($job_title);?></span>
+        <?php endif ?>
+      </div>
+    <?php endif ?>
+  </div>
+  <div class="question--meta-data">
+    <div class="question--meta-data-date"><?php print t('Submitted') . ' ' . format_date($created, $type = 'medium'); ?></div>
+    <?php print render($content['field_subject']);?>
+  </div>
+  <div class="question--inner">
+    <?php print render($content['field_description']);?>
+  </div>
+  <div class="question--terms">
+    <?php print render($content['field_keyword']);?>
+  </div>
+</section>

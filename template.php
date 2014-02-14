@@ -58,6 +58,10 @@ function loop_preprocess_region(&$variables) {
  * Override or insert variables into the node template.
  */
 function loop_preprocess_node(&$variables) {
+  $author = user_load($variables['node']->uid);
+  $variables['author_name'] = fetch_full_name($author);
+  $fetched_job_title = field_get_items('user', $author, 'field_job_title');
+  $variables['job_title'] = field_view_value('user', $author, 'field_job_title', $fetched_job_title[0], array());
 }
 
 /**
@@ -437,18 +441,7 @@ function loop_fieldset($variables) {
 function loop_preprocess_user_profile(&$variables) {
   $account = $variables['elements']['#account'];
 
-  // Provide a full name to the template if both first name and surname exists.
-  $first_name = field_get_items('user', $variables['elements']['#account'], 'field_first_name');
-  $surname = field_get_items('user', $variables['elements']['#account'], 'field_last_name');
-  if(!empty($first_name)) {
-    $variables['first_name'] = field_view_value('user', $variables['elements']['#account'], 'field_first_name', $first_name['0']);
-  }
-  if(!empty($surname)) {
-    $variables['surname'] = field_view_value('user', $variables['elements']['#account'], 'field_last_name', $surname['0']);
-  }
-  if(!empty($first_name) && !empty($surname)) {
-    $variables['full_name'] = $variables['first_name']['#markup'] . ' ' . $variables['surname']['#markup'];
-  }
+  $variables['full_name'] = fetch_full_name($account);
 
   // Helpful $user_profile variable for templates.
   foreach (element_children($variables['elements']) as $key) {
@@ -517,7 +510,6 @@ function loop_form_notifications_account_manage_subscriptions_form_alter(&$form,
 }
 
 
-
 /**
  * Implements hook_theme().
  */
@@ -531,6 +523,7 @@ function loop_theme($existing, $type, $theme, $path) {
   );
 }
 
+
 /**
  * Implements hook_preprocess_comment().
  *
@@ -540,23 +533,13 @@ function loop_preprocess_comment(&$variables) {
   // Make the content author object available.
   $variables['comment']->account = user_load($variables['comment']->uid);
 
-  // Set a default author name.
-  $variables['comment_author_name'] = $variables['comment']->account->name;
-
-  // Fetch the fields needed.
-  $fetched_first_name = field_get_items('user', $variables['comment']->account, 'field_first_name');
-  $fetched_last_name = field_get_items('user', $variables['comment']->account, 'field_last_name');
-  $fullname = render(field_view_value('user', $variables['comment']->account, 'field_first_name', $fetched_first_name[0], array())) .' '. render(field_view_value('user', $variables['comment']->account, 'field_last_name', $fetched_last_name[0], array()));
-
-  // Change authorname if both first and surname are set.
-  if ($fetched_first_name && $fetched_last_name) {
-    $variables['comment_author_name'] = $fullname;
-  }
+  $variables['comment_author_name'] = fetch_full_name($variables['comment']->account);
 
   // Fetch the fields needed.
   $fetched_job_title = field_get_items('user', $variables['comment']->account, 'field_job_title');
   $variables['job_title'] = field_view_value('user', $variables['comment']->account, 'field_job_title', $fetched_job_title[0], array());
 }
+
 
 /**
  * Implements hook_preprocess_loop_post_subscription_list().
@@ -572,5 +555,35 @@ function loop_preprocess_loop_post_subscription_list(&$vars) {
   else {
     $vars['current_type_css'] = 'block-unfollow-question';
   }
+}
 
+
+/**
+ * Fetch the full name from a user object, if both first name and last name is set.
+ *
+ * @param $uid
+ *
+ * @return $name
+ */
+function fetch_full_name ($user_obj) {
+  $name = '';
+
+  // Make sure we are dealing with an object.
+  if(is_object($user_obj)) {
+
+    // Load entity wrapper.
+    $wrapper = entity_metadata_wrapper('user', $user_obj);
+
+    // Get first name and last name.
+    $first_name = $wrapper->field_first_name->value();
+    $last_name = $wrapper->field_last_name->value();
+
+    // Set name.
+    if ($first_name && $last_name) {
+      $name = $first_name . ' ' . $last_name;
+    } else {
+      $name = $user_obj->name;
+    }
+  }
+  return $name;
 }
