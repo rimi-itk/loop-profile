@@ -10,6 +10,7 @@
 function loop_preprocess_html(&$variables) {
 }
 
+
 /**
  * Override or insert variables into the page template.
  */
@@ -54,6 +55,7 @@ function loop_preprocess_page(&$variables) {
 function loop_preprocess_region(&$variables) {
 }
 
+
 /**
  * Override or insert variables into the node template.
  */
@@ -64,11 +66,13 @@ function loop_preprocess_node(&$variables) {
   $variables['job_title'] = field_view_value('user', $author, 'field_job_title', $fetched_job_title[0], array());
 }
 
+
 /**
  * Override or insert variables into the field template.
  */
 function loop_preprocess_field(&$variables) {
 }
+
 
 /**
  * Override or insert variables into the block template.
@@ -76,11 +80,13 @@ function loop_preprocess_field(&$variables) {
 function loop_preprocess_block(&$variables) {
 }
 
+
 /**
  * Override or insert variables into the panel pane template.
  */
 function loop_preprocess_panels_pane(&$variables) {
 }
+
 
 /**
  * Implements hook_search_api_page_results().
@@ -99,37 +105,6 @@ function loop_preprocess_search_api_page_results(&$variables) {
   }
 }
 
-// Main menu
-function loop_menu_tree__menu_block__1($variables) {
-  return $variables['tree'];
-}
-
-// Secondary menu
-function loop_menu_tree__menu_block__2($variables) {
-  return $variables['tree'];
-}
-
-/**
- * Implements theme_menu_link().
- */
-function loop_menu_link($variables) {
-  $element = $variables['element'];
-
-  // Dropdown menu.
-  if ($element['#theme'][0] == 'menu_link__menu_block__1') {
-    return _loop_menu_styling($variables, 'nav-dropdown--link', 'nav-dropdown--header', 'nav-dropdown--item');
-  }
-
-  // Main menu.
-  if ($element['#theme'][0]  == 'menu_link__menu_block__2') {
-    return _loop_menu_styling($variables, 'nav--link', FALSE, FALSE, 'nav--icon', 'nav--text');
-  }
-
-  // Mobile menu.
-  if ($element['#theme'][0] == 'menu_link__menu_block__3') {
-    return _loop_menu_styling($variables, 'nav-mobile--link', FALSE, FALSE, FALSE, 'nav-mobile--text');
-  }
-}
 
 /**
  * Helper function for menu blocks
@@ -162,7 +137,7 @@ function _loop_menu_styling($variables, $class, $nolink_class = FALSE, $below_cl
     $element['#localized_options']['attributes']['class'][] = $class;
   }
 
-  // Make sure text string is treated as html by l function.
+    // Make sure text string is treated as html by l function.
   $element['#localized_options']['html'] = true;
 
   // Add an icon.
@@ -182,6 +157,7 @@ function _loop_menu_styling($variables, $class, $nolink_class = FALSE, $below_cl
 
   return $output . $sub_menu . "\n";
 }
+
 
 /**
  * Implements theme_menu_local_task().
@@ -245,6 +221,7 @@ function loop_menu_local_task($variables) {
 
   return '<li class="' .$list_class. '">' . l($link_text, $link['href'], $link['localized_options']) . "</li>\n" . $sub_menu;
 }
+
 
 /**
  * Implements theme_menu_local_tasks().
@@ -374,6 +351,7 @@ function loop_links__system_primary_menu($variables) {
   return $menu;
 }
 
+
 /**
  * Implements theme_links__system_primary_menu_mobile().
  *
@@ -403,7 +381,6 @@ function loop_links__primary_menu_dropdown($variables) {
   }
   return FALSE;
 }
-
 
 
 /**
@@ -479,13 +456,30 @@ function loop_panels_default_style_render_region($vars) {
   return $output;
 }
 
+
 /**
  * Implements hook_form_FORM_ID_alter().
  */
 function loop_form_comment_form_alter(&$form, $form_state)  {
-  unset($form['author']['_author']['#title']);
+  $variables['user_obj'] = user_load($GLOBALS['user']->uid);
+  if (!empty($variables['user_obj'])) {
+    $variables['user_name'] = fetch_full_name($variables['user_obj']);
+
+    // Load entity wrapper.
+    $wrapper = entity_metadata_wrapper('user', $variables['user_obj']);
+
+    // Get job title.
+    $variables['jobtitle'] = $wrapper->field_job_title->value();
+  }
+
+
+  $form['#prefix'] = theme('comment_form_prefix', $variables);
+  $form['#prefix'] .= '<div class="form-module">';
+  hide($form['author']);
   $form['comment_body'][LANGUAGE_NONE][0]['#wysiwyg'] = FALSE;
+  $form['#suffix'] = '</div>';
 }
+
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -515,10 +509,10 @@ function loop_form_notifications_account_manage_subscriptions_form_alter(&$form,
  */
 function loop_theme($existing, $type, $theme, $path) {
   return array(
-    'comment_form' => array(
-      'render element' => 'form',
+    'comment_form_prefix' => array(
+      'variables' => array(),
       'path' => drupal_get_path('theme', 'loop') . '/templates/forms',
-      'template' => 'whatever',
+      'template' => 'comment-form-prefix',
     ),
   );
 }
