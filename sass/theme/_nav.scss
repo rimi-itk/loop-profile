@@ -70,7 +70,24 @@
 .nav--toggle-mobile-nav {
   @extend .nav--link;
 
-  @include breakpoint($breakpoint-4) {
+  @include breakpoint(45em) {
+    display: inline-block;
+    min-height: 2.5em;
+    vertical-align: bottom;
+
+    .nav--icon {
+      position: relative;
+      top: .5em;
+
+      display: block;
+    }
+
+    .nav--text {
+      display: none;
+    }
+  }
+
+  @include breakpoint($layout-max-width) {
     display: none;
   }
 }
@@ -98,9 +115,10 @@
 .nav-dropdown {
   @extend .nav;
 
+  margin-left: 4px;
   display: none;
 
-  @include breakpoint($breakpoint-4) {
+  @include breakpoint($layout-max-width) {
     display: block;
   }
 }
@@ -148,8 +166,12 @@
   @include border-radius(0 0 $border-radius $border-radius);
 }
 
-// Nesting because we use hover to show the sub menu
+// Nesting because we use hover to show the sub menu.
 .nav-dropdown--wrapper {
+  position: relative;
+
+  display: inline-block;
+
   &:hover {
     .nav-dropdown--item {
       display: block;
