@@ -41,6 +41,17 @@
             <a href="#" title="" class="nav-dropdown--link">Log af</a>
           </div>
         </div>
+        <div class="nav-dropdown--wrapper">
+          <a href="#" title="" class="nav-dropdown--header">
+            Something else
+            <img class="nav-dropdown--icon" src="<?php echo $path_to_theme; ?>images/nav-arrow-down-icon.png">
+          </a>
+          <div class="nav-dropdown--item">
+            <a href="#" title="" class="nav-dropdown--link">First link</a>
+            <a href="#" title="" class="nav-dropdown--link">Another link</a>
+            <a href="#" title="" class="nav-dropdown--link">Last link</a>
+          </div>
+        </div>
       </nav>
     </div>
   </div>

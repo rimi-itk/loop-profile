@@ -1446,30 +1446,48 @@ label {
   }
 }
 
-@media only screen and (min-width: 43em) {
+@media only screen and (min-width: 45em) {
+  /* line 70, ../sass/theme/_nav.scss */
+  .nav--toggle-mobile-nav {
+    display: inline-block;
+    min-height: 2.5em;
+    vertical-align: bottom;
+  }
+  /* line 78, ../sass/theme/_nav.scss */
+  .nav--toggle-mobile-nav .nav--icon {
+    position: relative;
+    top: .5em;
+    display: block;
+  }
+  /* line 85, ../sass/theme/_nav.scss */
+  .nav--toggle-mobile-nav .nav--text {
+    display: none;
+  }
+}
+@media only screen and (min-width: 75em) {
   /* line 70, ../sass/theme/_nav.scss */
   .nav--toggle-mobile-nav {
     display: none;
   }
 }
 
-/* line 78, ../sass/theme/_nav.scss */
+/* line 95, ../sass/theme/_nav.scss */
 .nav--icon {
   max-width: 1.5em;
 }
 @media only screen and (min-width: 43em) {
-  /* line 78, ../sass/theme/_nav.scss */
+  /* line 95, ../sass/theme/_nav.scss */
   .nav--icon {
     display: none;
   }
 }
 
-/* line 86, ../sass/theme/_nav.scss */
+/* line 103, ../sass/theme/_nav.scss */
 .nav--text {
   display: none;
 }
 @media only screen and (min-width: 43em) {
-  /* line 86, ../sass/theme/_nav.scss */
+  /* line 103, ../sass/theme/_nav.scss */
   .nav--text {
     display: inline;
   }
@@ -1477,33 +1495,34 @@ label {
 
 /* Dropdown menu
    ================================================================================================================== */
-/* line 98, ../sass/theme/_nav.scss */
+/* line 115, ../sass/theme/_nav.scss */
 .nav-dropdown {
+  margin-left: 4px;
   display: none;
 }
-@media only screen and (min-width: 43em) {
-  /* line 98, ../sass/theme/_nav.scss */
+@media only screen and (min-width: 75em) {
+  /* line 115, ../sass/theme/_nav.scss */
   .nav-dropdown {
     display: block;
   }
 }
 
-/* line 108, ../sass/theme/_nav.scss */
+/* line 126, ../sass/theme/_nav.scss */
 .nav-dropdown--header {
   position: relative;
   padding-right: 2.5em;
 }
-/* line 116, ../sass/theme/_nav.scss */
+/* line 134, ../sass/theme/_nav.scss */
 .nav-dropdown--header:link, .nav-dropdown--header:visited {
   color: white;
   text-decoration: none;
 }
-/* line 121, ../sass/theme/_nav.scss */
+/* line 139, ../sass/theme/_nav.scss */
 .nav-dropdown--header:hover {
   background-color: #5dc26d;
 }
 
-/* line 126, ../sass/theme/_nav.scss */
+/* line 144, ../sass/theme/_nav.scss */
 .nav-dropdown--icon {
   position: absolute;
   top: .85em;
@@ -1511,7 +1530,7 @@ label {
   max-width: .85em;
 }
 
-/* line 134, ../sass/theme/_nav.scss */
+/* line 152, ../sass/theme/_nav.scss */
 .nav-dropdown--item {
   position: absolute;
   top: 2.5em;
@@ -1530,12 +1549,17 @@ label {
   border-radius: 0 0 0.4em 0.4em;
 }
 
-/* line 154, ../sass/theme/_nav.scss */
+/* line 170, ../sass/theme/_nav.scss */
+.nav-dropdown--wrapper {
+  position: relative;
+  display: inline-block;
+}
+/* line 176, ../sass/theme/_nav.scss */
 .nav-dropdown--wrapper:hover .nav-dropdown--item {
   display: block;
 }
 
-/* line 160, ../sass/theme/_nav.scss */
+/* line 182, ../sass/theme/_nav.scss */
 .nav-dropdown--link {
   border-bottom: 1px solid #82d08e;
   margin-bottom: .5em;
@@ -1544,16 +1568,16 @@ label {
   min-width: 10em;
   text-align: right;
 }
-/* line 171, ../sass/theme/_nav.scss */
+/* line 193, ../sass/theme/_nav.scss */
 .nav-dropdown--link:link, .nav-dropdown--link:visited {
   color: white;
   text-decoration: none;
 }
-/* line 176, ../sass/theme/_nav.scss */
+/* line 198, ../sass/theme/_nav.scss */
 .nav-dropdown--link:hover {
   text-decoration: underline;
 }
-/* line 180, ../sass/theme/_nav.scss */
+/* line 202, ../sass/theme/_nav.scss */
 .nav-dropdown--link:last-child {
   border: 0;
   margin-bottom: 0;
@@ -1564,7 +1588,7 @@ label {
  * See specific IE9 styles in separate stylesheet
  *
    ================================================================================================================== */
-/* line 193, ../sass/theme/_nav.scss */
+/* line 215, ../sass/theme/_nav.scss */
 .nav-mobile {
   position: absolute;
   top: 0;
@@ -1593,26 +1617,26 @@ label {
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-/* line 213, ../sass/theme/_nav.scss */
+/* line 235, ../sass/theme/_nav.scss */
 .nav-mobile a:link {
   color: white;
   text-decoration: none;
 }
-/* line 218, ../sass/theme/_nav.scss */
+/* line 240, ../sass/theme/_nav.scss */
 .nav-mobile a:visited {
   color: white;
 }
-/* line 222, ../sass/theme/_nav.scss */
+/* line 244, ../sass/theme/_nav.scss */
 .nav-mobile a:hover {
   color: white;
   text-decoration: underline;
 }
-/* line 227, ../sass/theme/_nav.scss */
+/* line 249, ../sass/theme/_nav.scss */
 .nav-mobile a:focus {
   color: white;
 }
 
-/* line 233, ../sass/theme/_nav.scss */
+/* line 255, ../sass/theme/_nav.scss */
 .nav-mobile--link {
   border-bottom-color: #5dc26d;
   display: block;
