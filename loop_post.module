@@ -132,8 +132,8 @@ function loop_post_generate_link($subscription) {
  * Auto subscribe newly created content to user.
  */
 function loop_post_node_insert($node) {
-  include_once(drupal_get_path('module', 'notifications') . '/notifications_content/notifications_content.inc');
-  include_once(drupal_get_path('module', 'notifications') . '/notifications_subscription.inc');
+  include_once(DRUPAL_ROOT . '/' . drupal_get_path('module', 'notifications') . '/notifications_content/notifications_content.inc');
+  include_once(DRUPAL_ROOT . '/' . drupal_get_path('module', 'notifications') . '/notifications.subscription.inc');
   global $user;
   $sub = new Notifications_Content_Subscription();
 
