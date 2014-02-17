@@ -13,6 +13,7 @@ dependencies[] = loop_flag
 dependencies[] = loop_taxonomy
 dependencies[] = loop_user
 dependencies[] = menu
+dependencies[] = node
 dependencies[] = options
 dependencies[] = page_manager
 dependencies[] = strongarm
