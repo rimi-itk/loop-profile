@@ -61,6 +61,31 @@ class DITAParser {
   }
 
   /**
+   * Processes a Dita zip file
+   *
+   * @param $filename
+   * @throws Exception
+   */
+  public function process($filename) {
+    $xml = simplexml_load_file($filename);
+
+    foreach ($xml->children() as $child) {
+      $this->traverseNode($child, 0);
+    }
+  }
+}
+
+class Parser {
+  public function parse($filename, $pathToDirectory) {
+    if ($this->extractZip($filename, $pathToDirectory)) {
+      // Zip file extracted. Search for correct parser.
+      list($parserName, $filename) = $this->search($pathToDirectory);
+      $parser = new $parserName();
+      $parser->process($filename);
+    }
+  }
+
+  /**
    * Extracts a zip file to a directory.
    *
    * @param $filename
@@ -81,30 +106,16 @@ class DITAParser {
   }
 
   /**
-   * Processes a Dita zip file
+   * Search $pathToDirectory that our registered parsers know of.
    *
-   * @param $filename
-   * @throws Exception
+   * @param $pathToDirectory
+   *   Path to extracted files.
+   *
+   * @return string
+   *   Parser name.
    */
-  public function processDitaZip($filename) {
-    $path = pathinfo(realpath($filename . '.zip'), PATHINFO_DIRNAME);
-    $pathToDirectory = $path . '/zip-extracts/' . $filename;
-
-    if (!$this->extractZip($filename . '.zip', $pathToDirectory)) {
-      throw new Exception("Unzip failed!");
-    }
-
-    $xml = simplexml_load_file($pathToDirectory . '/' . $filename . '/Ditamap.ditamap');
-
-    foreach ($xml->children() as $child) {
-      $this->traverseNode($child, 0);
-    }
+  private function search($pathToDirectory) {
+    // TODO: We need a little more logic here.
+    return array('DITAParser', $pathToDirectory . '/DITA/Ditamap.ditamap');
   }
 }
-
-$parser = new DITAParser();
-
-header("Content-Type: text/html; charset=UTF-8");
-
-$parser->processDitaZip('DITA');
-
