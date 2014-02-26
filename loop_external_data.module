@@ -14,7 +14,6 @@ include_once 'loop_external_data.features.inc';
  * parser that will figure out what internal parser is required.
  */
 function loop_external_data_file_insert($file) {
-  $a = 0;
   if (($file->filemime == 'application/zip') && (strstr($file->uri, 'index_file') !== TRUE)) {
     // We got a ZIP file and the correct CT is used for uploading.
     include 'parser.php';
