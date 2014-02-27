@@ -1,87 +1,56 @@
 <?php
 
-class DITAParser {
-  /**
-   * Print a number of whitespaces
-   *
-   * @param $number
-   */
-  private function printLines($number) {
-    for ($i = 0; $i < $number; $i++) {
-      printf('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
-    }
-  }
+class ZipParsingException extends Exception {}
+class NoParserFoundException extends Exception {}
 
-  /**
-   * Prints a topichead, and handles child nodes
-   *
-   * @param $node
-   * @param $nesting
-   */
-  private function printList($node, $nesting) {
-    $this->printLines($nesting);
-    printf('<b>' . $node['navtitle'] . '</b><br/>');
-    foreach ($node->children() as $child) {
-      $this->traverseNode($child, $nesting + 1);
-    }
-  }
-
-  /**
-   * Prints a topicref node
-   *
-   * @param $node
-   * @param $nesting
-   */
-  private function printReference($node, $nesting) {
-    $this->printLines($nesting);
-    printf('' . $node['navtitle'] . ': <a href="' . $node['href'] . '">'. $node['href'] .'</a>');
-    printf('<br/>');
-  }
-
-  private function getReference($node) {
-    $node['href'];
-  }
-
-
-  /**
-   * Traverses a topichead node
-   *
-   * @param $node
-   * @param $nesting
-   */
-  private function traverseNode($node, $nesting) {
-    $nodeType = $node->getName();
-    if ($nodeType == 'topicref') {
-      $this->printReference($node, $nesting);
-
-      $this->getReference($node);
-    } else {
-      $this->printList($node, $nesting);
-    }
-  }
-
-  /**
-   * Processes a Dita zip file
-   *
-   * @param $filename
-   * @throws Exception
-   */
-  public function process($filename) {
-    $xml = simplexml_load_file($filename);
-
-    foreach ($xml->children() as $child) {
-      $this->traverseNode($child, 0);
-    }
+/*
+function include_all_php($folder){
+  foreach (glob("{$folder}/*.php") as $filename)
+  {
+    include $filename;
   }
 }
 
+include_all_php("parsers");
+*/
+
+
+/**
+ * Class Parser
+ *
+ */
 class Parser {
+  /**
+   * Parses a zip file.
+   *
+   * @param $filename
+   *  The name of the zip file
+   * @param $pathToDirectory
+   *  The path to the directory to unzip into.
+   *
+   * @throws ZipExtractionException
+   * @throws NoParserFoundException
+   *
+   * @returns $data
+   *  The data formatted as XML.
+   */
   public function parse($filename, $pathToDirectory) {
+    $pathToExtractedDirectory = $pathToDirectory . '/' . basename($filename, '.zip');
+
     if ($this->extractZip($filename, $pathToDirectory)) {
       // Zip file extracted. Search for correct parser.
-      list($parserName, $filename) = $this->search($pathToDirectory);
-      $parser = new $parserName();
-      $parser->process($filename);
+      $parser = $this->search($pathToExtractedDirectory);
+
+      if (is_null($parser)) {
+        throw new NoParserFoundException();
+      }
+
+      // Get output data.
+      $data = $parser->process($pathToExtractedDirectory);
+
+      return $data;
+    } else {
+      throw new ZipExtractionException();
     }
   }
 
@@ -91,12 +60,12 @@ class Parser {
    * @param $filename
    * @param $pathToDirectory
    * @return bool
+   *  Did the extraction succeed?
    */
   private function extractZip($filename, $pathToDirectory) {
     $zip = new ZipArchive;
     $res = $zip->open($filename);
     if ($res === TRUE) {
-      // extract it to the path we determined above
       $zip->extractTo($pathToDirectory);
       $zip->close();
     } else {
@@ -106,16 +75,36 @@ class Parser {
   }
 
   /**
-   * Search $pathToDirectory that our registered parsers know of.
+   * Search $pathToDirectory for a match with known parsers.
    *
    * @param $pathToDirectory
    *   Path to extracted files.
    *
-   * @return string
-   *   Parser name.
+   * @return parser
    */
   private function search($pathToDirectory) {
-    // TODO: We need a little more logic here.
-    return array('DITAParser', $pathToDirectory . '/DITA/Ditamap.ditamap');
+    $parser = null;
+
+    foreach (glob("parsers/*.php") as $filename) {
+      include $filename;
+
+      $className = basename($filename, '.php');
+
+      $testParser = new $className();
+
+      if ($testParser->identifyFormat($pathToDirectory)) {
+        $parser = $testParser;
+        break;
+      }
+    }
+
+    return $parser;
   }
 }
+
+$filename = 'DITA.zip';
+$path = pathinfo(realpath($filename), PATHINFO_DIRNAME);
+$pathToDirectory = $path . '/test';
+
+$parser = new Parser();
+$parser->parse($filename, $pathToDirectory);
