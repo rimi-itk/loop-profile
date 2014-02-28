@@ -10,6 +10,48 @@
 function loop_external_data_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-index-field_file'
+  $field_instances['node-index-field_file'] = array(
+    'bundle' => 'index',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_file',
+    'label' => 'File',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => 'index_file',
+      'file_extensions' => 'zip',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => -2,
+    ),
+  );
+
   // Exported field_instance: 'node-index-field_tree'
   $field_instances['node-index-field_tree'] = array(
     'bundle' => 'index',
@@ -179,6 +221,7 @@ function loop_external_data_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('File');
   t('Leaf');
   t('Tree');
 
