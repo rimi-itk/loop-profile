@@ -1,8 +1,6 @@
 <?php
 
-include_once 'tree.php';
-
-class Index {
+class LoopIndex {
   private $children;
 
   public function __construct($children) {

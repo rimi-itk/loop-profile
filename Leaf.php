@@ -1,8 +1,6 @@
 <?php
 
-include_once 'node.php';
-
-class Leaf extends Node {
+class Leaf extends LoopNode {
   private $body;
 
   public function __construct($title, $body) {

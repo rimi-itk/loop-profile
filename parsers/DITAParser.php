@@ -1,10 +1,11 @@
 <?php
 
-include_once 'iParser.inc';
-include_once 'leaf.php';
-include_once 'tree.php';
-include_once 'index.php';
+include 'iParser.inc';
+include 'leaf.php';
+include 'tree.php';
+include 'index.php';
 
+/*
 function renameTag( DOMElement $oldTag, $newTagName ) {
   $document = $oldTag->ownerDocument;
 
@@ -19,6 +20,7 @@ function renameTag( DOMElement $oldTag, $newTagName ) {
   }
   return $newTag;
 }
+*/
 
 class DITAParser implements iParser {
   private function danishChars($text) {
@@ -116,7 +118,7 @@ class DITAParser implements iParser {
       }
     }
 
-    $index = new Index($children);
+    $index = new LoopIndex($children);
 
     return $index;
   }

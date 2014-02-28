@@ -1,8 +1,6 @@
 <?php
 
-include_once 'node.php';
-
-class Tree extends Node {
+class Tree extends LoopNode {
   private $children;
 
   public function __construct($title, $children) {
