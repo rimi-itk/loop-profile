@@ -24,29 +24,30 @@ class DITAParser implements iParser {
 
       // Get the reference
       $body = simplexml_load_file($pathToDirectory . '/' . $href);
-/*      $domnode = dom_import_simplexml($body);
+      $domnode = dom_import_simplexml($body);
       $dom = new DOMDocument();
       $domnode = $dom->importNode($domnode, true);
       $dom->appendChild($domnode);
 
-      // Replace all <ph> with text
-      foreach ($body->xpath('//ph') as $ph) {
-        $conref = explode('#', $ph['conref']);
+      $xpath = new DOMXPath($dom);
+
+      foreach ($xpath->query('//ph') as $ph) {
+        $conref = explode('#', $ph->getAttribute('conref'));
+
         $file = $conref[0];
 
         $id = explode('/', $conref[1]);
         $id = $id[count($id) - 1];
 
         $varXML = simplexml_load_file($pathToDirectory . '/' . dirname($href) . '/' . $file);
-
         $phText = $varXML->xpath('//ph[@id="' . $id . '"]');
 
-        $ph = dom_import_simplexml($ph);
-        $phText = dom_import_simplexml(simplexml_load_string('<span>' . $phText[0] . '</span>'));
-        $dom->replaceChild($ph, $phText);
+        $phText = $dom->createTextNode($phText[0]);
+
+        $ph->parentNode->replaceChild($phText, $ph);
       }
-*/
-      
+
+      $body = $dom->saveHTML();
 
       $leaf = new Leaf($node['navtitle'], $body);
       return $leaf;
