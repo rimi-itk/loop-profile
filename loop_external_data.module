@@ -5,7 +5,12 @@
  */
 
 include_once 'loop_external_data.features.inc';
-
+include 'parser.php';
+include 'iParser.inc';
+include 'Node.php';
+include 'LoopIndex.php';
+include 'Leaf.php';
+include 'Tree.php';
 
 /*
  * Implements hook_file_insert().
@@ -16,8 +21,77 @@ include_once 'loop_external_data.features.inc';
 function loop_external_data_file_insert($file) {
   if (($file->filemime == 'application/zip') && (strstr($file->uri, 'index_file') !== TRUE)) {
     // We got a ZIP file and the correct CT is used for uploading.
-    include 'parser.php';
     $parser = new Parser();
-    $parser->parse(drupal_realpath($file->uri), drupal_realpath('public://index_file/' . $file->fid));
+    $data = $parser->parse(drupal_realpath($file->uri), drupal_realpath('public://index_file/' . $file->fid));
+
+    // Check if data is returned.
+    if (!empty($data)) {
+      // Figure out what node id the file is attached to.
+      $nid = db_select('file_usage', 'f')
+        ->fields('f', array('id'))
+        ->condition('fid', $file->fid)
+        ->execute()
+        ->fetchAssoc();
+
+      // Send data and node id to parser.
+      _loop_external_data_parser($data, $nid);
+    }
   }
 }
+
+function _loop_external_data_parser($data, $parent = NULL) {
+  foreach ($data as $index) {
+    switch ($index->type) {
+      case 'tree':
+        _loop_external_data_parser_tree($index, $parent);
+        break;
+
+      case 'leaf':
+        _loop_external_data_parser_leaf($index, $parent);
+        break;
+    }
+  }
+}
+
+function _loop_external_data_parser_tree($tree, $parent = NULL) {
+  global $user;
+  $node = new Stdclass();
+
+  $node->type = 'tree';
+  $node->status = 1;
+  $node->uid = $user->uid;
+  $node->title = $tree->title;
+
+  node_save($node);
+
+  foreach ($tree->childern as $child) {
+    _loop_external_data_parser($child, $node->nid);
+  }
+
+  // Load parent node and add the leaf.
+  $parentNode = node_load($parent);
+  $wrapper = entity_metadata_wrapper('node', $parentNode);
+  $wrapper->field_leaf->set($node->nid);
+  node_save($parentNode);
+}
+
+function _loop_external_data_parser_leaf($leaf, $parent = NULL) {
+  global $user;
+  $node = new Stdclass();
+
+  $node->type = 'leaf';
+  $node->status = 1;
+  $node->uid = $user->uid;
+  $node->title = $leaf->title;
+
+  $wrapper = entity_metadata_wrapper('node', $node);
+  $wrapper->body->set($leaf->body);
+  node_save($node);
+
+  // Load parent node and add the leaf.
+  $parentNode = node_load($parent);
+  $wrapper = entity_metadata_wrapper('node', $parentNode);
+  $wrapper->field_leaf->set($node->nid);
+  node_save($parentNode);
+}
+

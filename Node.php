@@ -1,6 +1,6 @@
 <?php
 
-class Node {
+class LoopNode {
   private $title;
 
   public function __construct($title) {

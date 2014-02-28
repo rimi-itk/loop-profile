@@ -1,10 +1,5 @@
 <?php
 
-include_once 'iParser.inc';
-include_once 'leaf.php';
-include_once 'tree.php';
-include_once 'index.php';
-
 class DITAParser implements iParser {
   private function danishChars($text) {
     $text = preg_replace('/å/', '%86', $text);
@@ -84,7 +79,7 @@ class DITAParser implements iParser {
       }
     }
 
-    $index = new Index($children);
+    $index = new LoopIndex($children);
 
     return $index;
   }

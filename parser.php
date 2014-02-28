@@ -23,22 +23,24 @@ class Parser {
    *  The data formatted as XML.
    */
   public function parse($filename, $pathToDirectory) {
-    $pathToExtractedDirectory = $pathToDirectory . '/' . basename($filename, '.zip');
-
     if ($this->extractZip($filename, $pathToDirectory)) {
-      // Zip file extracted. Search for correct parser.
-      $parser = $this->search($pathToExtractedDirectory);
+      // Zip file extracted. Find folder.
+      if ( (is_dir($pathToDirectory)) && ($dh = opendir($pathToDirectory)) ) {
+        while (($directory = readdir($dh)) !== FALSE) {
+          if (is_readable($pathToDirectory . '/' . $directory) && is_dir($pathToDirectory . '/' . $directory) && (!in_array($directory, array('.', '..')))) {
+            $parser = $this->search($pathToDirectory . '/' . $directory);
 
-      if (is_null($parser)) {
-        throw new NoParserFoundException();
+            if (is_null($parser)) {
+              throw new NoParserFoundException();
+            }
+
+            // Get output data.
+            $data = $parser->process($pathToDirectory . '/' . $directory);
+
+            return $data;
+          }
+        }
       }
-
-      // Get output data.
-      $data = $parser->process($pathToExtractedDirectory);
-
-      return $data;
-    } else {
-      throw new ZipExtractionException();
     }
   }
 
@@ -73,19 +75,25 @@ class Parser {
   private function search($pathToDirectory) {
     $parser = null;
 
-    foreach (glob("parsers/*.php") as $filename) {
-      include_once $filename;
+    $path = drupal_get_path('module', 'loop_external_data');
+    $path .= '/parsers/';
 
-      $className = basename($filename, '.php');
+    if ( (is_dir($path)) && ($dh = opendir($path)) ) {
+      while (($file = readdir($dh)) !== FALSE) {
+        if (fnmatch("*.php", $file) && is_readable($path . $file)) {
+          include $path . $file;
 
-      $testParser = new $className();
+          $className = basename($file, '.php');
 
-      if ($testParser->identifyFormat($pathToDirectory)) {
-        $parser = $testParser;
-        break;
+          $testParser = new $className();
+
+          if ($testParser->identifyFormat($pathToDirectory)) {
+            $parser = $testParser;
+            break;
+          }
+        }
       }
     }
-
     return $parser;
   }
 }
