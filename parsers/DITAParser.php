@@ -23,7 +23,7 @@ class DITAParser implements iParser {
       $href = $this->danishChars($node['href']);
 
       // Get the reference
-      $body = simplexml_load_file($pathToDirectory . '/' . $href);
+      $body = simplexml_load_file($pathToDirectory . '/' . $href)->body;
       $domnode = dom_import_simplexml($body);
       $dom = new DOMDocument();
       $domnode = $dom->importNode($domnode, true);
@@ -31,6 +31,7 @@ class DITAParser implements iParser {
 
       $xpath = new DOMXPath($dom);
 
+      // Replace all ph with the referenced
       foreach ($xpath->query('//ph') as $ph) {
         $conref = explode('#', $ph->getAttribute('conref'));
 
@@ -48,6 +49,9 @@ class DITAParser implements iParser {
       }
 
       $body = $dom->saveHTML();
+
+      $body = preg_replace('/<body>/', '', $body);
+      $body = preg_replace('/<\/body>/', '', $body);
 
       $leaf = new Leaf($node['navtitle'], $body);
       return $leaf;
