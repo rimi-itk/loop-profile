@@ -77,7 +77,11 @@ class DITAParser implements iParser {
 
     $children = array();
     foreach ($xml->children() as $child) {
-      $children[] = $this->traverseNode($child, $pathToDirectory);
+      $nodeType = $child->getName();
+
+      if ($nodeType == 'topichead') {
+        $children[] = $this->traverseNode($child, $pathToDirectory);
+      }
     }
 
     $index = new Index($children);
