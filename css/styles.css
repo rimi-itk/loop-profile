@@ -2031,14 +2031,14 @@ label {
 }
 
 /**
- *
  * Page module
  *
+ * @author magnify
  */
 /* line 8, ../sass/modules/_page.scss */
 .page-wrapper {
   position: relative;
-  overflow-y: scroll;
+  overflow: hidden;
   height: 100%;
   width: 100%;
 }
@@ -2054,7 +2054,6 @@ label {
 /* line 22, ../sass/modules/_page.scss */
 .page-inner {
   position: relative;
-  overflow: hidden;
   min-height: 100%;
   width: 100%;
   -webkit-transition: -webkit-transform 500ms ease;
@@ -2064,7 +2063,7 @@ label {
   transition: transform 500ms ease 0s;
 }
 
-/* line 32, ../sass/modules/_page.scss */
+/* line 31, ../sass/modules/_page.scss */
 .page-title {
   font-size: 200%;
   font-weight: bold;

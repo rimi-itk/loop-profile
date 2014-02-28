@@ -1,13 +1,13 @@
 /**
- *
  * Page module
  *
+ * @author magnify
  */
 
 
 .page-wrapper {
   position: relative;
-  overflow-y: scroll;
+  overflow: hidden;
 
   height: 100%;
   width: 100%;
@@ -21,7 +21,6 @@
 
 .page-inner {
   position: relative;
-  overflow: hidden;
 
   min-height: 100%;
   width: 100%;
