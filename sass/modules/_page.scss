@@ -1,13 +1,13 @@
 /**
+ *
  * Page module
  *
- * @author magnify
  */
 
 
 .page-wrapper {
   position: relative;
-  overflow-y: visible;
+  overflow-y: scroll;
 
   height: 100%;
   width: 100%;

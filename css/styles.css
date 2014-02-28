@@ -2031,14 +2031,14 @@ label {
 }
 
 /**
+ *
  * Page module
  *
- * @author magnify
  */
 /* line 8, ../sass/modules/_page.scss */
 .page-wrapper {
   position: relative;
-  overflow-y: visible;
+  overflow-y: scroll;
   height: 100%;
   width: 100%;
 }
