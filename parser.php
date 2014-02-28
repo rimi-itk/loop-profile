@@ -90,7 +90,7 @@ class Parser {
   }
 }
 
-/*
+
 // TEST
 header('Content-Type: text/xhtml; charset=utf-8');
 $filename = 'DITA.zip';
@@ -100,4 +100,4 @@ $pathToDirectory = $path . '/test';
 $parser = new Parser();
 $xml = $parser->parse($filename, $pathToDirectory);
 print_r($xml);
-*/
+

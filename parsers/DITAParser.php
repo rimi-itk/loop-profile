@@ -5,6 +5,21 @@ include_once 'leaf.php';
 include_once 'tree.php';
 include_once 'index.php';
 
+function renameTag( DOMElement $oldTag, $newTagName ) {
+  $document = $oldTag->ownerDocument;
+
+  $newTag = $document->createElement($newTagName);
+  $oldTag->parentNode->replaceChild($newTag, $oldTag);
+
+  foreach ($oldTag->attributes as $attribute) {
+    $newTag->setAttribute($attribute->name, $attribute->value);
+  }
+  foreach (iterator_to_array($oldTag->childNodes) as $child) {
+    $newTag->appendChild($oldTag->removeChild($child));
+  }
+  return $newTag;
+}
+
 class DITAParser implements iParser {
   private function danishChars($text) {
     $text = preg_replace('/å/', '%86', $text);
@@ -47,6 +62,19 @@ class DITAParser implements iParser {
 
         $ph->parentNode->replaceChild($phText, $ph);
       }
+
+      /*
+      // Replace xrefs
+      foreach ($xpath->query('//xref') as $xhref) {
+        $refToXref = $pathToDirectory . '/' . dirname($href) . '/' . basename($xhref->getAttribute('href'));
+        $refToXrefSplit = explode('#', $this->danishChars($refToXref));
+        $refToXref = $refToXrefSplit[0];
+        $xhref->setAttribute('href', $refToXref);
+        $xhref = renameTag($xhref, 'a');
+      }
+      */
+
+      // Replace image paths
 
       $body = $dom->saveHTML();
 
