@@ -98,7 +98,6 @@ class Parser {
   }
 }
 
-
 /*
 // TEST
 header('Content-Type: text/xhtml; charset=utf-8');
