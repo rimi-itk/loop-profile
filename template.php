@@ -534,7 +534,6 @@ function loop_preprocess_comment(&$variables) {
   $variables['job_title'] = field_view_value('user', $variables['comment']->account, 'field_job_title', $fetched_job_title[0], array());
 }
 
-
 /**
  * Implements hook_preprocess_loop_post_subscription_list().
  *

@@ -77,6 +77,11 @@ label {
 
 .form-module {
   clear: both;
+
+  // Not pretty, but much, much easier!
+  .filter-wrapper {
+    display: none;
+  }
 }
 
 .form-item {

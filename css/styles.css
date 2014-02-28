@@ -698,8 +698,12 @@ label {
 .form-module {
   clear: both;
 }
-
 /* line 82, ../sass/theme/_forms.scss */
+.form-module .filter-wrapper {
+  display: none;
+}
+
+/* line 87, ../sass/theme/_forms.scss */
 .form-item {
   border: 1px solid #f2f2f2;
   margin-bottom: 1.5em;
@@ -710,18 +714,18 @@ label {
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-/* line 90, ../sass/theme/_forms.scss */
+/* line 95, ../sass/theme/_forms.scss */
 .form-item .description {
   padding-top: .5em;
   color: #b3b3b3;
 }
 
-/* line 98, ../sass/theme/_forms.scss */
+/* line 103, ../sass/theme/_forms.scss */
 .form-required {
   color: #ff6138;
 }
 
-/* line 102, ../sass/theme/_forms.scss */
+/* line 107, ../sass/theme/_forms.scss */
 .form-select {
   border: 1px solid #cccccc;
   padding: .75em;
@@ -741,34 +745,34 @@ label {
   box-sizing: border-box;
 }
 
-/* line 119, ../sass/theme/_forms.scss */
+/* line 124, ../sass/theme/_forms.scss */
 .form-textarea-question {
   height: 6em;
 }
 @media only screen and (min-width: 30em) {
-  /* line 119, ../sass/theme/_forms.scss */
+  /* line 124, ../sass/theme/_forms.scss */
   .form-textarea-question {
     height: 3.25em;
   }
 }
 
-/* line 127, ../sass/theme/_forms.scss */
+/* line 132, ../sass/theme/_forms.scss */
 .form-actions {
   text-align: right;
 }
 
-/* line 131, ../sass/theme/_forms.scss */
+/* line 136, ../sass/theme/_forms.scss */
 .form-submit {
   width: 100%;
 }
 @media only screen and (min-width: 30em) {
-  /* line 131, ../sass/theme/_forms.scss */
+  /* line 136, ../sass/theme/_forms.scss */
   .form-submit {
     width: auto;
   }
 }
 
-/* line 141, ../sass/theme/_forms.scss */
+/* line 146, ../sass/theme/_forms.scss */
 .field-group-fieldset, .user-profile-module--field-group-fieldset, .user-profile-module--field-group-fieldset-personal-info {
   border: 1px solid #cccccc;
   margin-bottom: 2em;
@@ -781,7 +785,7 @@ label {
   border-radius: 0.4em;
 }
 
-/* line 150, ../sass/theme/_forms.scss */
+/* line 155, ../sass/theme/_forms.scss */
 .fieldset-legend, .user-profile-module--fieldset-legend {
   padding-right: .5em;
   padding-left: .5em;
@@ -1810,6 +1814,32 @@ label {
 /* line 19, ../sass/modules/_lists.scss */
 .content-list--item.is-last {
   margin-bottom: 0;
+}
+
+/* We use the default pager list html Auch!! */
+/* line 25, ../sass/modules/_lists.scss */
+.pager {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  text-align: center;
+}
+/* line 31, ../sass/modules/_lists.scss */
+.pager li {
+  display: inline;
+}
+/* line 35, ../sass/modules/_lists.scss */
+.pager a {
+  padding: 1em;
+  line-height: 2.5em;
+  background: #f2f2f2;
+  text-decoration: none;
+}
+/* line 42, ../sass/modules/_lists.scss */
+.pager .pager-current {
+  background: #cccccc;
+  padding: 1em;
+  line-height: 2.5em;
 }
 
 /**
