@@ -3,18 +3,6 @@
 class ZipParsingException extends Exception {}
 class NoParserFoundException extends Exception {}
 
-/*
-function include_all_php($folder){
-  foreach (glob("{$folder}/*.php") as $filename)
-  {
-    include $filename;
-  }
-}
-
-include_all_php("parsers");
-*/
-
-
 /**
  * Class Parser
  *
@@ -63,7 +51,7 @@ class Parser {
    *  Did the extraction succeed?
    */
   private function extractZip($filename, $pathToDirectory) {
-    $zip = new ZipArchive;
+    $zip = new ZipArchive();
     $res = $zip->open($filename);
     if ($res === TRUE) {
       $zip->extractTo($pathToDirectory);
@@ -86,7 +74,7 @@ class Parser {
     $parser = null;
 
     foreach (glob("parsers/*.php") as $filename) {
-      include $filename;
+      include_once $filename;
 
       $className = basename($filename, '.php');
 
@@ -101,7 +89,7 @@ class Parser {
     return $parser;
   }
 }
-
+header('Content-Type: text/html; charset=utf-8');
 $filename = 'DITA.zip';
 $path = pathinfo(realpath($filename), PATHINFO_DIRNAME);
 $pathToDirectory = $path . '/test';
