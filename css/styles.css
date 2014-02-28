@@ -2039,7 +2039,7 @@ label {
 .page-wrapper {
   position: relative;
   overflow-x: hidden;
-  overflow-y: visible;
+  overflow-y: auto;
   height: 100%;
   width: 100%;
 }
