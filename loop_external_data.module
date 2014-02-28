@@ -12,30 +12,38 @@ include 'LoopIndex.php';
 include 'Leaf.php';
 include 'Tree.php';
 
-/*
- * Implements hook_file_insert().
- *
- * This function will check for correct content and forward ZIP content to our
- * parser that will figure out what internal parser is required.
+
+/**
+ * Implements hook_node_insert().
  */
-function loop_external_data_file_insert($file) {
-  if (($file->filemime == 'application/zip') && (strstr($file->uri, 'index_file') !== TRUE)) {
-    // We got a ZIP file and the correct CT is used for uploading.
-    $parser = new Parser();
-    $data = $parser->parse(drupal_realpath($file->uri), drupal_realpath('public://index_file/' . $file->fid));
+function loop_external_data_node_insert($node) {
+  if ($node->type == 'index') {
+    _loop_external_data_file_load($node);
+  }
+}
 
-    // Check if data is returned.
-    if (!empty($data)) {
-      // Figure out what node id the file is attached to.
-      $nid = db_select('file_usage', 'f')
-        ->fields('f', array('id'))
-        ->condition('fid', $file->fid)
-        ->execute()
-        ->fetchAssoc();
+/**
+ * Implements hook_node_update().
+ */
+function loop_external_data_node_update($node) {
+  if ($node->type == 'index') {
+    _loop_external_data_file_load($node);
+  }
+}
 
-      // Send data and node id to parser.
-      _loop_external_data_parser($data, $nid);
-    }
+function _loop_external_data_file_load($node) {
+  $wrapper = entity_metadata_wrapper('node', $node);
+  $file_fid = $wrapper->field_file->value();
+
+  $file = file_load($file_fid['fid']);
+
+  $parser = new Parser();
+  $data = $parser->parse(drupal_realpath($file->uri), drupal_realpath('public://index_file/' . $file->fid));
+
+  // Check if data is returned.
+  if (!empty($data)) {
+    // Send data and node id to parser.
+    _loop_external_data_parser($data, $node->nid);
   }
 }
 
