@@ -1,10 +1,5 @@
 <?php
 
-include 'iParser.inc';
-include 'leaf.php';
-include 'tree.php';
-include 'index.php';
-
 /*
 function renameTag( DOMElement $oldTag, $newTagName ) {
   $document = $oldTag->ownerDocument;
