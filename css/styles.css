@@ -2038,7 +2038,7 @@ label {
 /* line 8, ../sass/modules/_page.scss */
 .page-wrapper {
   position: relative;
-  overflow-y: visible;
+  overflow: hidden;
   height: 100%;
   width: 100%;
 }
