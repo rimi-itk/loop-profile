@@ -39,19 +39,14 @@
 
   text-align: center;
 
-  @include breakpoint($breakpoint-1) {
+  @include breakpoint(22.875em) {
     max-width: 5.625em;
   }
 }
 
 .logo--image {
-  max-width: 75%;
   margin-right: auto;
   margin-left: auto;
-
-  @include breakpoint($breakpoint-1) {
-    max-width: 100%;
-  }
 }
 
 
