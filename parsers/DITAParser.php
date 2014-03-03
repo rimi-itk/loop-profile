@@ -1,23 +1,21 @@
 <?php
 
-/*
-function renameTag( DOMElement $oldTag, $newTagName ) {
-  $document = $oldTag->ownerDocument;
-
-  $newTag = $document->createElement($newTagName);
-  $oldTag->parentNode->replaceChild($newTag, $oldTag);
-
-  foreach ($oldTag->attributes as $attribute) {
-    $newTag->setAttribute($attribute->name, $attribute->value);
-  }
-  foreach (iterator_to_array($oldTag->childNodes) as $child) {
-    $newTag->appendChild($oldTag->removeChild($child));
-  }
-  return $newTag;
-}
-*/
-
 class DITAParser implements iParser {
+  private function renameTag( DOMElement $oldTag, $newTagName ) {
+    $document = $oldTag->ownerDocument;
+
+    $newTag = $document->createElement($newTagName);
+    $oldTag->parentNode->replaceChild($newTag, $oldTag);
+
+    foreach ($oldTag->attributes as $attribute) {
+      $newTag->setAttribute($attribute->name, $attribute->value);
+    }
+    foreach (iterator_to_array($oldTag->childNodes) as $child) {
+      $newTag->appendChild($oldTag->removeChild($child));
+    }
+    return $newTag;
+  }
+
   private function danishChars($text) {
     $text = preg_replace('/å/', '%86', $text);
     $text = preg_replace('/Å/', '%87', $text);
@@ -28,7 +26,7 @@ class DITAParser implements iParser {
     return $text;
   }
 
-  private function traverseNode($node, $pathToDirectory) {
+  private function traverseNode($node, $pathToDirectory, $references) {
     $nodeType = $node->getName();
 
     if ($nodeType == 'topicref') {
@@ -67,11 +65,24 @@ class DITAParser implements iParser {
         $refToXrefSplit = explode('#', $this->danishChars($refToXref));
         $refToXref = $refToXrefSplit[0];
         $xhref->setAttribute('href', $refToXref);
-        $xhref = renameTag($xhref, 'a');
+        $xhref = $this->renameTag($xhref, 'a');
       }
       */
 
       // Replace image paths
+      foreach ($xpath->query('//image') as $image) {
+        $ref = $pathToDirectory . '/' . dirname($href) . '/' . $image->getAttribute('href');
+
+        // Save file
+        $fileName = basename($image->getAttribute('href'));
+        $fileContent = file_get_contents($ref);
+        $file = file_save_data($fileContent, 'public://' . $fileName, FILE_EXISTS_RENAME);
+        $filePath = file_create_url($file->uri);
+
+        $image->removeAttribute('href');
+        $image->setAttribute('src', $filePath);
+        $this->renameTag($image, 'img');
+      }
 
       $body = $dom->saveHTML();
 
@@ -83,7 +94,7 @@ class DITAParser implements iParser {
     } else if ($nodeType == 'topichead') {
       $children = array();
       foreach ($node->children() as $child) {
-        $children[] = $this->traverseNode($child, $pathToDirectory);
+        $children[] = $this->traverseNode($child, $pathToDirectory, $references);
       }
 
       $tree = new Tree($node['navtitle'], $children);
@@ -105,11 +116,13 @@ class DITAParser implements iParser {
     $xml = simplexml_load_file($pathToDirectory . '/' . 'Ditamap.ditamap');
 
     $children = array();
+    $references = array();
+
     foreach ($xml->children() as $child) {
       $nodeType = $child->getName();
 
       if ($nodeType == 'topichead') {
-        $children[] = $this->traverseNode($child, $pathToDirectory);
+        $children[] = $this->traverseNode($child, $pathToDirectory, $references);
       }
     }
 
