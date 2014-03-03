@@ -10,7 +10,7 @@
 
   text-align: center;
 
-  @include breakpoint(25em) {
+  @include breakpoint(35em) {
     bottom: .85em;
   }
 
@@ -50,7 +50,7 @@
 
   @include border-radius(100%);
 
-  @include breakpoint(25em) {
+  @include breakpoint(35em) {
     height: 3.25em;
     margin-left: 1em;
     width: 3.25em;
@@ -98,7 +98,7 @@
 .nav--icon {
   max-width: 1.25em;
 
-  @include breakpoint(25em) {
+  @include breakpoint(35em) {
     max-width: 1.5em;
   }
 

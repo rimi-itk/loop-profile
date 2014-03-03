@@ -1376,7 +1376,7 @@ label {
   bottom: 1.1em;
   text-align: center;
 }
-@media only screen and (min-width: 25em) {
+@media only screen and (min-width: 35em) {
   /* line 6, ../sass/theme/_nav.scss */
   .nav--wrapper {
     bottom: .85em;
@@ -1420,7 +1420,7 @@ label {
 .nav--link:hover, .nav--toggle-mobile-nav:hover, .nav-dropdown--header:hover {
   background-color: #82d08e;
 }
-@media only screen and (min-width: 25em) {
+@media only screen and (min-width: 35em) {
   /* line 29, ../sass/theme/_nav.scss */
   .nav--link, .nav--toggle-mobile-nav, .nav-dropdown--header {
     height: 3.25em;
@@ -1474,7 +1474,7 @@ label {
 .nav--icon {
   max-width: 1.25em;
 }
-@media only screen and (min-width: 25em) {
+@media only screen and (min-width: 35em) {
   /* line 98, ../sass/theme/_nav.scss */
   .nav--icon {
     max-width: 1.5em;
