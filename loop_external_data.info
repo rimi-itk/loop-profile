@@ -17,7 +17,6 @@ features[field_base][] = field_tree
 features[field_instance][] = node-index-field_file
 features[field_instance][] = node-index-field_tree
 features[field_instance][] = node-leaf-body
-features[field_instance][] = node-tree-body
 features[field_instance][] = node-tree-field_leaf
 features[node][] = index
 features[node][] = leaf
