@@ -1376,7 +1376,7 @@ label {
   bottom: 1.1em;
   text-align: center;
 }
-@media only screen and (min-width: 22em) {
+@media only screen and (min-width: 25em) {
   /* line 6, ../sass/theme/_nav.scss */
   .nav--wrapper {
     bottom: .85em;
