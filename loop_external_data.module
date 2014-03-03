@@ -12,6 +12,58 @@ include 'LoopIndex.php';
 include 'Leaf.php';
 include 'Tree.php';
 
+function loop_external_data_menu() {
+  $items['index/%node'] = array(
+    'title' => 'Node',
+    'page callback' => 'loop_external_data_index',
+    'access arguments' => array('access content'),
+    'page arguments' => array(1),
+    'type' => MENU_SUGGESTED_ITEM,
+  );
+
+  return $items;
+}
+
+function loop_external_data_index($node) {
+  if ($node->type == 'index') {
+    $forest = array();
+    drupal_set_title($node->title);
+    $forest['title'] = $node->title;
+
+    $forest['trees'] = _loop_external_data_build_tree($node);
+
+    return print_r($forest, TRUE);
+  }
+  else {
+    return FALSE;
+  }
+}
+
+function _loop_external_data_build_tree($item) {
+  $wrapper = entity_metadata_wrapper('node', $item);
+
+  $items = array();
+  switch ($item->type) {
+    case 'index':
+      $trees = $wrapper->field_tree->value();
+      foreach ($trees as $tree) {
+        $items = array_merge($items, _loop_external_data_build_tree($tree));
+      }
+      break;
+    case 'tree':
+      $leafs = $wrapper->field_leaf->value();
+      foreach ($leafs as $child) {
+        if ($child->type == 'tree') {
+          $items[] = array_merge($items, _loop_external_data_build_tree($child));
+        }
+        else {
+          $items[] = $child;
+        }
+      }
+  }
+
+  return $items;
+}
 
 /**
  * Implements hook_node_insert().
