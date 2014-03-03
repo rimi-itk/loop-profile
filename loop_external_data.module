@@ -27,7 +27,7 @@ function loop_external_data_node_insert($node) {
  */
 function loop_external_data_node_update($node) {
   if ($node->type == 'index') {
-    _loop_external_data_file_load($node);
+    //_loop_external_data_file_load($node);
   }
 }
 
@@ -48,15 +48,28 @@ function _loop_external_data_file_load($node) {
 }
 
 function _loop_external_data_parser($data, $parent = NULL) {
-  foreach ($data as $index) {
-    switch ($index->type) {
-      case 'tree':
-        _loop_external_data_parser_tree($index, $parent);
-        break;
+  // Figure out what type we got.
+  $class_type = get_class($data);
+  switch ($class_type) {
+    case 'LoopIndex':
+      return _loop_external_data_parser_index($data, $parent);
+    case 'Tree':
+      return _loop_external_data_parser_tree($data, $parent);
+      break;
 
-      case 'leaf':
-        _loop_external_data_parser_leaf($index, $parent);
-        break;
+    case 'Leaf':
+      return _loop_external_data_parser_leaf($data, $parent);
+      break;
+  }
+
+  return $data;
+}
+
+function _loop_external_data_parser_index($index, $parent) {
+  $children = $index->getChildren();
+  if (!empty($children)) {
+    foreach ($children as $child) {
+      _loop_external_data_parser($child, $parent);
     }
   }
 }
@@ -66,21 +79,19 @@ function _loop_external_data_parser_tree($tree, $parent = NULL) {
   $node = new Stdclass();
 
   $node->type = 'tree';
+  $node->language = LANGUAGE_NONE;
   $node->status = 1;
   $node->uid = $user->uid;
-  $node->title = $tree->title;
+  $node->title = $tree->getTitle();
 
   node_save($node);
 
-  foreach ($tree->childern as $child) {
+  $children = $tree->getChildren();
+  foreach ($children as $child) {
     _loop_external_data_parser($child, $node->nid);
   }
 
-  // Load parent node and add the leaf.
-  $parentNode = node_load($parent);
-  $wrapper = entity_metadata_wrapper('node', $parentNode);
-  $wrapper->field_leaf->set($node->nid);
-  node_save($parentNode);
+  _loop_external_data_add_child($parent, $node);
 }
 
 function _loop_external_data_parser_leaf($leaf, $parent = NULL) {
@@ -88,18 +99,32 @@ function _loop_external_data_parser_leaf($leaf, $parent = NULL) {
   $node = new Stdclass();
 
   $node->type = 'leaf';
+  $node->language = LANGUAGE_NONE;
   $node->status = 1;
   $node->uid = $user->uid;
-  $node->title = $leaf->title;
+  $node->title = $leaf->getTitle();
 
-  $wrapper = entity_metadata_wrapper('node', $node);
-  $wrapper->body->set($leaf->body);
   node_save($node);
 
-  // Load parent node and add the leaf.
-  $parentNode = node_load($parent);
-  $wrapper = entity_metadata_wrapper('node', $parentNode);
-  $wrapper->field_leaf->set($node->nid);
-  node_save($parentNode);
+  $wrapper = entity_metadata_wrapper('node', $node);
+  $wrapper->body = array(
+    'value' => $leaf->getBody(),
+    'format' => 'filtered_html'
+  );
+  $wrapper->save();
+
+  _loop_external_data_add_child($parent, $node);
 }
 
+function _loop_external_data_add_child($node, $child) {
+  $parentNode = node_load($node);
+  $wrapper = entity_metadata_wrapper('node', $parentNode);
+  if ($parentNode->type == 'tree') {
+    $wrapper->field_leaf[] = intval($child->nid);
+  }
+  else if ($parentNode->type == 'index') {
+    $wrapper->field_tree[] = intval($child->nid);
+  }
+
+  $wrapper->save();
+}
