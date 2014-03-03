@@ -34,13 +34,14 @@
 
 .logo--link {
   display: inline-block;
-  max-width: 100%;
-  padding-top: 1.25em;
+  max-width: 3.5em;
+  padding-top: 1.75em;
 
   text-align: center;
 
-  @include breakpoint(22.875em) {
-    max-width: 5.625em;
+  @include breakpoint(22em) {
+    max-width: 5em;
+    padding-top: 1.25em;
   }
 }
 

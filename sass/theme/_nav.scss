@@ -4,16 +4,14 @@
 
 
 .nav--wrapper {
-  margin-bottom: 1em;
-  margin-left: -1em;
+  position: absolute;
+  right: 1em;
+  bottom: 1.1em;
 
-  @include breakpoint(22.875em) {
-    position: absolute;
-    right: 1em;
-    bottom: .8em;
-    margin: 0;
+  text-align: center;
 
-    text-align: center;
+  @include breakpoint(22em) {
+    bottom: .85em;
   }
 
   @include breakpoint($breakpoint-4) {
@@ -33,7 +31,7 @@
 
   display: inline-block;
   height: 2.75em;
-  margin-left: 1em;
+  margin-left: .7em;
   width: 2.75em;
 
   background-color: $green-light;
