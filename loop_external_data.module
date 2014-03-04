@@ -276,7 +276,7 @@ function _loop_external_data_parser_leaf($leaf, $parent = NULL) {
   $wrapper = entity_metadata_wrapper('node', $node);
   $wrapper->body = array(
     'value' => $leaf->getBody(),
-    'format' => 'filtered_html'
+    'format' => 'editor'
   );
   $wrapper->save();
 
