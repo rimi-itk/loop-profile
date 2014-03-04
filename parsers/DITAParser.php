@@ -91,11 +91,12 @@ class DITAParser implements iParser {
    *
    * @param $node
    * @param $pathToDirectory
+   * @param $indexNodeID
    * @param $objectReferences
    * @param $xrefReferences
    * @return Leaf|null|Tree
    */
-  private function traverseNode($node, $pathToDirectory, &$objectReferences, &$xrefReferences) {
+  private function traverseNode($node, $pathToDirectory, $indexNodeID, &$objectReferences, &$xrefReferences) {
     $nodeType = $node->getName();
 
     if ($nodeType == 'topicref') {
@@ -111,8 +112,8 @@ class DITAParser implements iParser {
 
       // Replace all ph with the referenced
       foreach ($xpath->query('//ph') as $ph) {
+        // Split conref into file path and variable name
         $conref = explode('#', $ph->getAttribute('conref'));
-
         $file = $conref[0];
 
         $id = explode('/', $conref[1]);
@@ -133,7 +134,10 @@ class DITAParser implements iParser {
         // Save file
         $fileName = basename($image->getAttribute('href'));
         $fileContent = file_get_contents($ref);
-        $file = file_save_data($fileContent, 'public://' . $fileName, FILE_EXISTS_RENAME);
+
+        $dir = 'public://external_data/' . $indexNodeID;
+        file_prepare_directory($dir, FILE_CREATE_DIRECTORY);
+        $file = file_save_data($fileContent, $dir . '/' . $fileName, FILE_EXISTS_RENAME);
         $filePath = file_create_url($file->uri);
 
         $image->removeAttribute('href');
@@ -165,7 +169,7 @@ class DITAParser implements iParser {
     } else if ($nodeType == 'topichead') {
       $children = array();
       foreach ($node->children() as $child) {
-        $children[] = $this->traverseNode($child, $pathToDirectory, $objectReferences, $xrefReferences);
+        $children[] = $this->traverseNode($child, $pathToDirectory, $indexNodeID, $objectReferences, $xrefReferences);
       }
 
       $tree = new Tree($node['navtitle'], $children);
@@ -174,47 +178,57 @@ class DITAParser implements iParser {
     return null;
   }
 
-  private function replaceReferences($objectReferences, $xrefReferences, &$indexReferences) {
+  /**
+   * Merges the arrays $objectReferences and $xrefReferences into a new array,
+   * that from referenceIndex => Leaf object.
+   *
+   * @param $objectReferences
+   * @param $xrefReferences
+   *
+   * @return array
+   */
+  private function replaceReferences($objectReferences, $xrefReferences) {
+    $indexReferences = array();
+
     foreach ($xrefReferences as $ref=>$index) {
       $object = $objectReferences[$ref];
       $indexReferences[$index] = $object;
     }
+
+    return $indexReferences;
   }
 
   /**
-   * Processes a DITA folder
+   * Processes a DITA folder.
    *
    * @param $pathToDirectory
+   * @param $indexNodeID
    * @throws Exception
    *
-   * @returns Index
+   * @return Index
    *  The index root node
    */
-  public function process($pathToDirectory) {
+  public function process($pathToDirectory, $indexNodeID = '0') {
+    // Load the table of references
     $xml = simplexml_load_file($pathToDirectory . '/' . 'Ditamap.ditamap');
 
     $children = array();
     $objectReferences = array();
     $xrefReferences = array();
-    $indexReferences = array();
 
+    // Process each child and add to Index as children
     foreach ($xml->children() as $child) {
       $nodeType = $child->getName();
 
       if ($nodeType == 'topichead') {
-        $children[] = $this->traverseNode($child, $pathToDirectory, $objectReferences, $xrefReferences);
+        $children[] = $this->traverseNode($child, $pathToDirectory, $indexNodeID, $objectReferences, $xrefReferences);
       }
     }
 
-    watchdog('xrefRefs: ', print_r($xrefReferences, 1));
-    watchdog('objRefs: ', print_r($objectReferences, 1));
-
-    $this->replaceReferences($objectReferences, $xrefReferences, $indexReferences);
-
-    watchdog('refs: ', print_r($indexReferences, 1));
+    // Merge references into reference overview.
+    $indexReferences = $this->replaceReferences($objectReferences, $xrefReferences);
 
     $index = new LoopIndex($children, $indexReferences);
-
     return $index;
   }
 
@@ -234,24 +248,3 @@ class DITAParser implements iParser {
     return false;
   }
 }
-
-
-
-
-
-// Adds reference to $references
-/*foreach ($xpath->query('//xref') as $xref) {
-  $xhref = $pathToDirectory . '/' . dirname($href) . '/' . $this->danishChars(basename($xref->getAttribute('href')));
-  $id = count($references);
-  $references[$id] = $xhref;
-}*/
-/*
-// Replace xrefs
-foreach ($xpath->query('//xref') as $xhref) {
-  $refToXref = $pathToDirectory . '/' . dirname($href) . '/' . basename($xhref->getAttribute('href'));
-  $refToXrefSplit = explode('#', $this->danishChars($refToXref));
-  $refToXref = $refToXrefSplit[0];
-  $xhref->setAttribute('href', $refToXref);
-  $xhref = $this->renameTag($xhref, 'a');
-}
-*/

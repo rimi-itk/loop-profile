@@ -23,5 +23,5 @@ interface iParser {
    *
    * @param $pathToDirectory
    */
-  public function process($pathToDirectory);
+  public function process($pathToDirectory, $indexNodeID);
 }
