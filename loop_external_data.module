@@ -88,18 +88,19 @@ function _loop_external_data_build_tree($item) {
     case 'index':
       $trees = $wrapper->field_tree->value();
       foreach ($trees as $tree) {
-        $items[] = _loop_external_data_build_tree($tree);
+        $items['childs'][] = _loop_external_data_build_tree($tree);
       }
       break;
     case 'tree':
       $items['title'] = $item->title;
+      $items['nid'] = $item->nid;
       $leafs = $wrapper->field_leaf->value();
       foreach ($leafs as $child) {
         if ($child->type == 'tree') {
-          $items[] = _loop_external_data_build_tree($child);
+          $items['childs'][] = _loop_external_data_build_tree($child);
         }
         else {
-          $items[] = $child;
+          $items['childs'][] = $child;
         }
       }
       break;
@@ -121,8 +122,33 @@ function loop_external_data_node_insert($node) {
  * Implements hook_node_update().
  */
 function loop_external_data_node_update($node) {
-  if ($node->type == 'index') {
-    //_loop_external_data_file_load($node);
+  if (!isset($_SESSION['loop_external_data_node_update'])) {
+    if ( ($node->created < $node->changed) && ($node->type == 'index') ) {
+      $_SESSION['loop_external_data_node_update'] = time() + 10;
+      // This is an update, remove old data.
+      $trees = _loop_external_data_build_tree($node);
+      _loop_external_data_delete_tree($trees);
+
+      // Build new data.
+      _loop_external_data_file_load($node);
+    }
+  }
+  else {
+    if (time() < $_SESSION['loop_external_data_node_update']) {
+      unset ($_SESSION['loop_external_data_node_update']);
+    }
+  }
+}
+
+function _loop_external_data_delete_tree($trees) {
+  foreach ($trees['childs'] as $tree) {
+    if (is_object($tree)) {
+      node_delete($tree->nid);
+    }
+    else if (is_array($tree['childs'])) {
+      node_delete($tree['nid']);
+      _loop_external_data_delete_tree($tree);
+    }
   }
 }
 
