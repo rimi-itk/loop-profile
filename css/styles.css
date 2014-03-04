@@ -2632,22 +2632,22 @@ label {
 }
 
 /* line 57, ../sass/drupal-modules/_autocomplete-deluxe.scss */
-div.autocomplete-deluxe-throbber {
+.autocomplete-deluxe-throbber {
   width: 16px;
   float: right;
   position: absolute;
-  top: 13px;
+  top: 16px;
   right: 10px;
 }
 
 /* line 65, ../sass/drupal-modules/_autocomplete-deluxe.scss */
 .autocomplete-deluxe-closed {
-  background: url("../images/throbber.gif") no-repeat 100% 6px;
+  background: url("../images/throbber-closed.gif") no-repeat 100% 0;
 }
 
 /* line 69, ../sass/drupal-modules/_autocomplete-deluxe.scss */
 .autocomplete-deluxe-open {
-  background: url("../images/throbber.gif") no-repeat 100% -14px;
+  background: url("../images/throbber.gif") no-repeat 100% 0;
 }
 
 /* line 73, ../sass/drupal-modules/_autocomplete-deluxe.scss */

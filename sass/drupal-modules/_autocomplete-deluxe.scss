@@ -54,20 +54,20 @@
   cursor: text;
 }
 
-div.autocomplete-deluxe-throbber {
+.autocomplete-deluxe-throbber {
   width: 16px;
   float: right;
   position: absolute;
-  top: 13px;
+  top: 16px;
   right: 10px
 }
 
 .autocomplete-deluxe-closed {
-  background: url("../images/throbber.gif") no-repeat 100% 6px;
+  background: url("../images/throbber-closed.gif") no-repeat 100% 0;
 }
 
 .autocomplete-deluxe-open {
-  background: url("../images/throbber.gif") no-repeat 100% -14px;
+  background: url("../images/throbber.gif") no-repeat 100% 0;
 }
 
 .autocomplete-deluxe-item {
@@ -80,7 +80,7 @@ div.autocomplete-deluxe-throbber {
   line-height: 13px;
 
   background-color: $gray-lightest;
-  box-shadow: 0 0 2px #FFFFFF inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 2px $white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
   border: 1px solid $gray-dark;
   cursor: default;
 }
