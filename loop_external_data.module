@@ -165,7 +165,7 @@ function _loop_external_data_file_load($node) {
   $file = file_load($file_fid['fid']);
 
   $parser = new Parser();
-  $data = $parser->parse(drupal_realpath($file->uri), drupal_realpath('public://index_file/' . $file->fid));
+  $data = $parser->parse(drupal_realpath($file->uri), drupal_realpath('public://index_file/' . $file->fid), $node->nid);
 
   // Check if data is returned.
   if (!empty($data)) {
