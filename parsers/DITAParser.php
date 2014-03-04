@@ -66,14 +66,19 @@ class DITAParser implements iParser {
 
     $resultPath = '';
     $i = 0;
+    $arrayMaxIndex = count($pathArray);
     // Assemble to string
     foreach ($pathArray as $part) {
       $i++;
 
+      $resultPath = $resultPath . $part;
 
+      if ($i < $arrayMaxIndex) {
+        $resultPath = $resultPath . '/';
+      }
     }
 
-    return $path;
+    return $resultPath;
   }
 
   /**
@@ -170,9 +175,9 @@ class DITAParser implements iParser {
   }
 
   private function replaceReferences($objectReferences, $xrefReferences, &$indexReferences) {
-    foreach ($objectReferences as $ref=>$obj) {
-      $id = $xrefReferences[$ref];
-      $indexReferences[$id] = $obj;
+    foreach ($xrefReferences as $ref=>$index) {
+      $object = $objectReferences[$ref];
+      $indexReferences[$index] = $object;
     }
   }
 
@@ -204,9 +209,9 @@ class DITAParser implements iParser {
     watchdog('xrefRefs: ', print_r($xrefReferences, 1));
     watchdog('objRefs: ', print_r($objectReferences, 1));
 
-    //$this->replaceReferences($objectReferences, $xrefReferences, $indexReferences);
+    $this->replaceReferences($objectReferences, $xrefReferences, $indexReferences);
 
-    //watchdog('refs: ', print_r($indexReferences, 1));
+    watchdog('refs: ', print_r($indexReferences, 1));
 
     $index = new LoopIndex($children, $indexReferences);
 
