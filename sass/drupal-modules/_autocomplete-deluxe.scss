@@ -11,6 +11,40 @@
 .ui-autocomplete {
   overflow-x: hidden;
   overflow-y: scroll;
+
+  /* Override inline styling */
+  width: 70% !important;
+
+  @include box-sizing(border-box);
+}
+
+.ui-widget-content {
+  border: 1px solid $border-color;
+
+  background: $white;
+  color: inherit;
+}
+
+.ui-widget {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+  border: 0;
+
+  background: transparent;
+  color: $green;
+}
+
+.ui-menu .ui-menu-item a.ui-state-focus,
+.ui-menu .ui-menu-item a.ui-state-active {
+  margin: 0;
 }
 
 .autocomplete-deluxe-single:hover {
@@ -75,31 +109,31 @@
 
   float: left;
   position: relative;
-  padding: 0.2em 1.25em 0.2em 0.5em;
-  margin: 3px 5px 0 0;
+  padding: 0.3em 1.25em 0.3em 0.5em;
+  margin: 0 5px 0 0;
   line-height: 13px;
 
-  background-color: $gray-lightest;
-  box-shadow: 0 0 2px $white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
-  border: 1px solid $gray-dark;
+  background-color: $white;
+  border: 1px solid $gray-light;
   cursor: default;
+  font-size: .85em;
 }
 
 .autocomplete-deluxe-item-delete {
-  background: url("../images/x.gif");
+  background: url("../images/x.png");
   display: block;
   font-size: 1px;
   height: 13px;
   position: absolute;
   right: 3px;
-  top: 3px;
+  top: 5px;
   width: 12px;
 }
 
 .autocomplete-deluxe-value-delete {
   display: inline-block;
   float: right;
-  background:url('../images/x.gif') no-repeat center;
+  background:url('../images/x.png') no-repeat center;
   width: 18px;
   width: 18px;
 
