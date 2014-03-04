@@ -11,4 +11,8 @@ class Leaf extends LoopNode {
   public function getBody() {
     return $this->body;
   }
+
+  public function setBody($body) {
+    $this->body = $body;
+  }
 } 
