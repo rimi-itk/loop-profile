@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the Loop External data feature.
+ * Code for the Loop External data functionality.
  */
 
 include_once 'loop_external_data.features.inc';
@@ -41,6 +41,15 @@ function loop_external_data_theme($existing, $type, $theme, $path) {
   );
 }
 
+/**
+ * Build render array with index.
+ *
+ * @param $node
+ *   The Index node.
+ *
+ * @return array
+ *   Array ready to render.
+ */
 function loop_external_data_index($node) {
   if ($node->type == 'index') {
     $forest = array();
@@ -54,12 +63,22 @@ function loop_external_data_index($node) {
     );
   }
   else {
-    return FALSE;
+    return array(
+      '#theme' => 'loop_external_data_index',
+      '#forest' => array()
+    );
   }
 }
 
-
-
+/**
+ * Internal function to build fully tree recursive.
+ *
+ * @param $item
+ *   Index/tree/leaf object.
+ *
+ * @return array
+ *   Fully recursive tree.
+ */
 function _loop_external_data_build_tree($item) {
   $wrapper = entity_metadata_wrapper('node', $item);
 
@@ -107,6 +126,12 @@ function loop_external_data_node_update($node) {
   }
 }
 
+/**
+ * Load uploaded file and send it to our parser.
+ *
+ * @param $node
+ *   Index node.
+ */
 function _loop_external_data_file_load($node) {
   $wrapper = entity_metadata_wrapper('node', $node);
   $file_fid = $wrapper->field_file->value();
@@ -123,6 +148,15 @@ function _loop_external_data_file_load($node) {
   }
 }
 
+/**
+ * Recursive data parser.
+ *
+ * @param $data
+ *   Index/tree/leaf object.
+ *
+ * @param int $parent
+ *   Parent node ID.
+ */
 function _loop_external_data_parser($data, $parent = NULL) {
   // Figure out what type we got.
   $class_type = get_class($data);
@@ -141,6 +175,15 @@ function _loop_external_data_parser($data, $parent = NULL) {
   return $data;
 }
 
+/**
+ * Parse index object.
+ *
+ * @param $index
+ *   Index object.
+ *
+ * @param $parent
+ *   Parent node ID.
+ */
 function _loop_external_data_parser_index($index, $parent) {
   $children = $index->getChildren();
   if (!empty($children)) {
@@ -150,6 +193,17 @@ function _loop_external_data_parser_index($index, $parent) {
   }
 }
 
+/**
+ * Parse tree object.
+ *
+ * Creates a tree node and recursively parse childs.
+ *
+ * @param $tree
+ *   Tree object.
+ *
+ * @param int $parent
+ *  Parent node ID.
+ */
 function _loop_external_data_parser_tree($tree, $parent = NULL) {
   global $user;
   $node = new Stdclass();
@@ -170,6 +224,17 @@ function _loop_external_data_parser_tree($tree, $parent = NULL) {
   _loop_external_data_add_child($parent, $node);
 }
 
+/**
+ * Parse leaf object.
+ *
+ * Creates a leaf node.
+ *
+ * @param $leaf
+ *   Leaf object.
+ *
+ * @param int $parent
+ *  Parent node ID.
+ */
 function _loop_external_data_parser_leaf($leaf, $parent = NULL) {
   global $user;
   $node = new Stdclass();
@@ -192,6 +257,15 @@ function _loop_external_data_parser_leaf($leaf, $parent = NULL) {
   _loop_external_data_add_child($parent, $node);
 }
 
+/**
+ * Adds nodes to parent
+ *
+ * @param $node
+ *   Node object.
+ *
+ * @param $child
+ *   Node object.
+ */
 function _loop_external_data_add_child($node, $child) {
   $parentNode = node_load($node);
   $wrapper = entity_metadata_wrapper('node', $parentNode);
