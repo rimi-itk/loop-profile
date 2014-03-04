@@ -12,6 +12,9 @@ include 'LoopIndex.php';
 include 'Leaf.php';
 include 'Tree.php';
 
+/**
+ * Implements hook_menu().
+ */
 function loop_external_data_menu() {
   $items['index/%node'] = array(
     'title' => 'Node',
@@ -24,42 +27,63 @@ function loop_external_data_menu() {
   return $items;
 }
 
+/**
+ * Implements hook_theme().
+ */
+function loop_external_data_theme($existing, $type, $theme, $path) {
+  return array(
+    'loop_external_data_index' => array(
+      'variables' => array(
+        'forest' => NULL,
+      ),
+      'template' => 'templates/loop-external-data-index',
+    ),
+  );
+}
+
 function loop_external_data_index($node) {
   if ($node->type == 'index') {
     $forest = array();
     drupal_set_title($node->title);
-    $forest['title'] = $node->title;
+    $forest['#trees'] = _loop_external_data_build_tree($node);
 
-    $forest['trees'] = _loop_external_data_build_tree($node);
-
-    return print_r($forest, TRUE);
+    // Return render array.
+    return array(
+      '#theme' => 'loop_external_data_index',
+      '#forest' => $forest
+    );
   }
   else {
     return FALSE;
   }
 }
 
+
+
 function _loop_external_data_build_tree($item) {
   $wrapper = entity_metadata_wrapper('node', $item);
 
   $items = array();
+
   switch ($item->type) {
     case 'index':
       $trees = $wrapper->field_tree->value();
       foreach ($trees as $tree) {
-        $items = array_merge($items, _loop_external_data_build_tree($tree));
+        $items[] = _loop_external_data_build_tree($tree);
       }
       break;
     case 'tree':
+      $items['title'] = $item->title;
       $leafs = $wrapper->field_leaf->value();
       foreach ($leafs as $child) {
         if ($child->type == 'tree') {
-          $items[] = array_merge($items, _loop_external_data_build_tree($child));
+          $items[] = _loop_external_data_build_tree($child);
         }
         else {
           $items[] = $child;
         }
       }
+      break;
   }
 
   return $items;
