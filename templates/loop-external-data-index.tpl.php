@@ -1,13 +1,13 @@
 <ul>
-  <?php foreach ($forest['#trees'] as $tree): ?>
+  <?php foreach ($forest['#trees']['childs'] as $tree): ?>
     <li>
       <?php if (is_array($tree)): ?>
         <ul>
-          <?php foreach ($tree as $child): ?>
+          <?php foreach ($tree['childs'] as $child): ?>
             <li>
               <?php if (is_array($child)): ?>
                 <ul>
-                  <?php foreach ($child as $leaf): ?>
+                  <?php foreach ($child['childs'] as $leaf): ?>
                     <li>
                       <?php if (is_string($leaf)): ?>
                         <?php print $leaf; ?>
