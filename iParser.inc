@@ -22,6 +22,7 @@ interface iParser {
    * Processes the directory.
    *
    * @param $pathToDirectory
+   * @param $indexNodeID
    */
   public function process($pathToDirectory, $indexNodeID);
 }

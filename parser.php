@@ -12,9 +12,11 @@ class Parser {
    * Parses a zip file.
    *
    * @param $filename
-   *  The name of the zip file
+   *  The name of the zip file.
    * @param $pathToDirectory
    *  The path to the directory to unzip into.
+   * @param $indexNodeID
+   *  The id of the Index node added to Drupal.
    *
    * @throws ZipExtractionException
    * @throws NoParserFoundException
@@ -22,7 +24,7 @@ class Parser {
    * @returns $data
    *  The data formatted as XML.
    */
-  public function parse($filename, $pathToDirectory) {
+  public function parse($filename, $pathToDirectory, $indexNodeID = '0') {
     if ($this->extractZip($filename, $pathToDirectory)) {
       // Zip file extracted. Find folder.
       if ( (is_dir($pathToDirectory)) && ($dh = opendir($pathToDirectory)) ) {
@@ -35,7 +37,7 @@ class Parser {
             }
 
             // Get output data.
-            $data = $parser->process($pathToDirectory . '/' . $directory);
+            $data = $parser->process($pathToDirectory . '/' . $directory, $indexNodeID);
 
             return $data;
           }
