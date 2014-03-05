@@ -1,7 +1,7 @@
 /**
+ *
  * Mobile navigation
  *
- * @author magnify
  */
 
 (function($) {
