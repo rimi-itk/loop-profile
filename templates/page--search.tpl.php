@@ -106,7 +106,6 @@ if (isset($loop_primary_menu)): ?>
 <?php endif; ?>
 
 <div class="layout-default">
-  <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
   <?php if ($messages): ?>
     <?php print $messages; ?>
   <?php endif; ?>

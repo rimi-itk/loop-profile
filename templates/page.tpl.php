@@ -111,7 +111,6 @@ if (isset($loop_primary_menu)): ?>
 
 <?php if ($no_panel || $is_front) : ?>
   <div class="layout-no-wrapper">
-    <?php if ($tabs): ?><div class="tabs"><?php print render($tabs); ?></div><?php endif; ?>
     <div class="layout--inner">
       <?php if ($messages): ?>
         <?php print $messages; ?>
