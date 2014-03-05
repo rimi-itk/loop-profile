@@ -1,7 +1,5 @@
-<ul>
+<select>
   <?php foreach ($forest['childs'] as $tree): ?>
-    <li>
-      <?php print render($tree); ?>
-    </li>
+    <?php print render($tree); ?>
   <?php endforeach; ?>
-</ul>
+</select>

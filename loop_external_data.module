@@ -38,7 +38,121 @@ function loop_external_data_theme($existing, $type, $theme, $path) {
       ),
       'template' => 'templates/loop-external-data-index',
     ),
+    'loop_external_data_trees' => array(
+      'variables' => array(
+        'title' => NULL,
+        'nid' => NULL,
+        'childs' => array(),
+      ),
+      'template' => 'templates/loop-external-data-trees',
+    ),
+    'loop_external_data_leaf' => array(
+      'variables' => array(
+        'title' => NULL,
+        'nid' => NULL,
+        'body' => NULL,
+      ),
+      'template' => 'templates/loop-external-data-leaf',
+    ),
+    'loop_external_data_dropdown_block' => array(
+      'variables' => array(
+        'forest' => NULL,
+      ),
+      'template' => 'templates/loop-external-data-dropdown-block',
+    ),
+    'loop_external_data_dropdown_trees' => array(
+      'variables' => array(
+        'title' => NULL,
+        'nid' => NULL,
+        'childs' => NULL,
+      ),
+      'template' => 'templates/loop-external-data-dropdown-trees',
+    ),
+    'loop_external_data_dropdown_leaf' => array(
+      'variables' => array(
+        'title' => NULL,
+        'nid' => NULL,
+        'childs' => NULL,
+      ),
+      'template' => 'templates/loop-external-data-dropdown-leaf',
+    ),
   );
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function loop_external_data_block_info() {
+  $blocks['index'] = array(
+    'info' => t('Index'),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function loop_external_data_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'index':
+      $node_id = arg(1);
+      $node = node_load($node_id);
+      $block['subject'] = t('Index');
+      $block['content'] = array(
+        '#theme' => 'loop_external_data_dropdown_block',
+        '#forest' => _loop_external_data_build_dropdown($node)
+      );
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Internal function to build fully tree recursive.
+ *
+ * @param $item
+ *   Index/tree/leaf object.
+ *
+ * @return array
+ *   Fully recursive tree.
+ */
+function _loop_external_data_build_dropdown($item) {
+  $wrapper = entity_metadata_wrapper('node', $item);
+
+  $items = array();
+
+  switch ($item->type) {
+    case 'index':
+      $trees = $wrapper->field_tree->value();
+      foreach ($trees as $tree) {
+        $items['childs'][] = _loop_external_data_build_dropdown($tree);
+        $items['#theme'] = 'loop_external_data_dropdown_trees';
+      }
+      break;
+    case 'tree':
+      $items['#title'] = $item->title;
+      $items['#nid'] = $item->nid;
+      $leafs = $wrapper->field_leaf->value();
+      foreach ($leafs as $child) {
+        if ($child->type == 'tree') {
+          $items['#childs'][] = _loop_external_data_build_dropdown($child);
+          $items['#theme'] = 'loop_external_data_dropdown_trees';
+        }
+        else {
+          $new_child['#theme'] = 'loop_external_data_dropdown_leaf';
+          $new_child['#title'] = $child->title;
+          $new_child['#nid'] = $child->nid;
+          $items['#childs'][] = $new_child;
+          $items['#theme'] = 'loop_external_data_dropdown_trees';
+        }
+      }
+      break;
+  }
+
+  return $items;
 }
 
 /**
@@ -52,9 +166,8 @@ function loop_external_data_theme($existing, $type, $theme, $path) {
  */
 function loop_external_data_index($node) {
   if ($node->type == 'index') {
-    $forest = array();
     drupal_set_title($node->title);
-    $forest['#trees'] = _loop_external_data_build_tree($node);
+    $forest = _loop_external_data_build_tree($node);
 
     // Return render array.
     return array(
@@ -89,18 +202,26 @@ function _loop_external_data_build_tree($item) {
       $trees = $wrapper->field_tree->value();
       foreach ($trees as $tree) {
         $items['childs'][] = _loop_external_data_build_tree($tree);
+        $items['#theme'] = 'loop_external_data_trees';
       }
       break;
     case 'tree':
-      $items['title'] = $item->title;
-      $items['nid'] = $item->nid;
+      $items['#title'] = $item->title;
+      $items['#nid'] = $item->nid;
       $leafs = $wrapper->field_leaf->value();
       foreach ($leafs as $child) {
         if ($child->type == 'tree') {
-          $items['childs'][] = _loop_external_data_build_tree($child);
+          $items['#childs'][] = _loop_external_data_build_tree($child);
+          $items['#theme'] = 'loop_external_data_trees';
         }
         else {
-          $items['childs'][] = $child;
+          $new_child['#theme'] = 'loop_external_data_leaf';
+          $new_child['#title'] = $child->title;
+          $display = array('label' => 'hidden');
+          $new_child['#body'] = field_view_field('node', $child, 'body', $display);
+          $new_child['#nid'] = $child->nid;
+          $items['#childs'][] = $new_child;
+          $items['#theme'] = 'loop_external_data_trees';
         }
       }
       break;
