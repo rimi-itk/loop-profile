@@ -35,7 +35,7 @@ function loop_post_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Descending';
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '100';
-  $handler->display->display_options['pager']['options']['offset'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
@@ -107,6 +107,37 @@ function loop_post_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Comment: Approved */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'comment';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_node']['id'] = 'status_node';
+  $handler->display->display_options['filters']['status_node']['table'] = 'node';
+  $handler->display->display_options['filters']['status_node']['field'] = 'status';
+  $handler->display->display_options['filters']['status_node']['relationship'] = 'nid';
+  $handler->display->display_options['filters']['status_node']['value'] = 1;
+  $handler->display->display_options['filters']['status_node']['group'] = 1;
+  $handler->display->display_options['filters']['status_node']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'nid';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'post' => 'post',
+  );
+  /* Filter criterion: Flags: Flag counter */
+  $handler->display->display_options['filters']['count']['id'] = 'count';
+  $handler->display->display_options['filters']['count']['table'] = 'flag_counts';
+  $handler->display->display_options['filters']['count']['field'] = 'count';
+  $handler->display->display_options['filters']['count']['relationship'] = 'flag_count_rel';
+  $handler->display->display_options['filters']['count']['operator'] = 'not empty';
   $handler->display->display_options['allow']['use_pager'] = 0;
   $handler->display->display_options['allow']['items_per_page'] = 0;
   $handler->display->display_options['allow']['offset'] = 0;
