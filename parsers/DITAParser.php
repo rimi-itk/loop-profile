@@ -217,10 +217,16 @@ class DITAParser implements iParser {
         $table->parentNode->replaceChild($div, $table);
       }
 
+      // Rename body to div
+      foreach($xpath->query('//body') as $b) {
+        $b->setAttribute('class', 'external-content');
+        $this->renameTag($b, 'div');
+      }
+
       $body = $dom->saveHTML();
 
-      $body = preg_replace('/<body>/', '', $body);
-      $body = preg_replace('/<\/body>/', '', $body);
+//      $body = preg_replace('/<body>/', '', $body);
+//      $body = preg_replace('/<\/body>/', '', $body);
 
       $leaf = new Leaf($node['navtitle'], $body);
 
