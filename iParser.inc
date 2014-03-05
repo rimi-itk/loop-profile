@@ -22,7 +22,9 @@ interface iParser {
    * Processes the directory.
    *
    * @param $pathToDirectory
+   *  path to the directory to import.
    * @param $indexNodeID
+   *  the nid of the Index node in Drupal.
    */
   public function process($pathToDirectory, $indexNodeID);
 }
