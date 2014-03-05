@@ -23,8 +23,7 @@
   <link rel="stylesheet" href="/profiles/loopdk/themes/loop/css/lt-ie10.css" />
   <![endif]-->
 
-  <script src="/profiles/loopdk/libraries/html5shiv/html5shiv.js"></script>
-  <script src="/profiles/loopdk/libraries/html5shiv/html5shiv-printshiv.js"></script>
+  <script src="/profiles/loopdk/themes/loop/scripts/modernizr.js"></script>
   <script src="/profiles/loopdk/libraries/respondjs/respond.min.js"></script>
   <script src="/profiles/loopdk/modules/contrib/jquery_update/replace/jquery/1.9/jquery.min.js?v=1.9.1"></script>
   <script src="/misc/jquery.once.js?v=1.2"></script>

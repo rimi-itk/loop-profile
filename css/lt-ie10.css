@@ -16,7 +16,3 @@
 .nav-mobile {
   right: -76%;
 }
-/* line 27, ../sass/lt-ie10.scss */
-.nav-mobile.is-open {
-  right: 0;
-}
