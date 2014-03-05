@@ -29,6 +29,18 @@ class DITAParser implements iParser {
   }
 
   /**
+   * Removes all attributes from element.
+   *
+   * @param DOMElement $element
+   */
+  private function removeAttributes(DOMElement $element) {
+    $attributes = $element->attributes;
+    while ($attributes->length) {
+      $element->removeAttribute($attributes->item(0)->name);
+    }
+  }
+
+  /**
    * Replaces danish characters
    *
    * @param $text
@@ -145,21 +157,76 @@ class DITAParser implements iParser {
         $this->renameTag($image, 'img');
       }
 
+      // Replace references
       foreach ($xpath->query('//xref') as $xref) {
-        $xhref = dirname($href) . '/' . $this->danishChars($xref->getAttribute('href'));
-        $nextIndex = count($xrefReferences);
+        $scope = $xref->getAttribute('scope');
 
-        $xhref = explode('#', $xhref);
-        $xrefReferences[$this->collapsePath($xhref[0])] = $nextIndex;
+        if ($scope != 'external') {
+          $xhref = dirname($href) . '/' . $this->danishChars($xref->getAttribute('href'));
+          $nextIndex = count($xrefReferences);
 
-        $xref->setAttribute('href', $nextIndex);
+          $xhref = explode('#', $xhref);
+          $xrefReferences[$this->collapsePath($xhref[0])] = $nextIndex;
+
+          $xref->setAttribute('href', $nextIndex);
+        } else {
+          $xref->setAttribute('target',  '_blank');
+        }
+
         $this->renameTag($xref, 'a');
+      }
+
+      // Handle tables.
+      // Remove colspec nodes.
+      foreach ($xpath->query('//table//colspec') as $tableColspec) {
+        $tableColspec->parentNode->removeChild($tableColspec);
+      }
+      // Move content out of tgroup to table.
+      foreach ($xpath->query('//table//tgroup') as $tableTgroup) {
+        foreach($tableTgroup->childNodes as $child) {
+          $tableTgroup->parentNode->appendChild($child->cloneNode(true));
+        }
+        $tableTgroup->parentNode->removeChild($tableTgroup);
+      }
+      // Rename title to caption.
+      foreach ($xpath->query('//table//title') as $tableTitle) {
+        $this->renameTag($tableTitle, 'caption');
+      }
+      // Rename row to tr.
+      foreach ($xpath->query('//table//row') as $tableRow) {
+        $this->renameTag($tableRow, 'tr');
+      }
+      // Rename tbody//entry to td.
+      foreach ($xpath->query('//table//tbody//entry') as $tableEntry) {
+        $this->renameTag($tableEntry, 'td');
+      }
+      // Rename thead//entry to th.
+      foreach ($xpath->query('//table//thead//entry') as $tableEntry) {
+        $this->renameTag($tableEntry, 'th');
+      }
+      // Remove all attributes from table elements
+      foreach ($xpath->query('//*[self::table or self::thead or self::tbody or self::tr or self::td or self::th]') as $child) {
+        $this->removeAttributes($child);
+      }
+
+      // Wrap all table elements in a div with the class table-wrapper.
+      foreach($xpath->query('//table') as $table) {
+        $div = $dom->createElement('div');
+        $div->setAttribute('class', 'table-wrapper');
+        $div->appendChild($table->cloneNode(true));
+        $table->parentNode->replaceChild($div, $table);
+      }
+
+      // Rename body to div
+      foreach($xpath->query('//body') as $b) {
+        $b->setAttribute('class', 'external-content');
+        $this->renameTag($b, 'div');
       }
 
       $body = $dom->saveHTML();
 
-      $body = preg_replace('/<body>/', '', $body);
-      $body = preg_replace('/<\/body>/', '', $body);
+//      $body = preg_replace('/<body>/', '', $body);
+//      $body = preg_replace('/<\/body>/', '', $body);
 
       $leaf = new Leaf($node['navtitle'], $body);
 
@@ -231,6 +298,7 @@ class DITAParser implements iParser {
     $index = new LoopIndex($children, $indexReferences);
     return $index;
   }
+
 
   /**
    * Identify if this is a DITA folder
