@@ -145,15 +145,45 @@ class DITAParser implements iParser {
         $this->renameTag($image, 'img');
       }
 
+      // Replace references
       foreach ($xpath->query('//xref') as $xref) {
-        $xhref = dirname($href) . '/' . $this->danishChars($xref->getAttribute('href'));
-        $nextIndex = count($xrefReferences);
+        $scope = $xref->getAttribute('scope');
 
-        $xhref = explode('#', $xhref);
-        $xrefReferences[$this->collapsePath($xhref[0])] = $nextIndex;
+        if ($scope != 'external') {
+          $xhref = dirname($href) . '/' . $this->danishChars($xref->getAttribute('href'));
+          $nextIndex = count($xrefReferences);
 
-        $xref->setAttribute('href', $nextIndex);
+          $xhref = explode('#', $xhref);
+          $xrefReferences[$this->collapsePath($xhref[0])] = $nextIndex;
+
+          $xref->setAttribute('href', $nextIndex);
+        } else {
+          $xref->setAttribute('target',  '_blank');
+        }
+
         $this->renameTag($xref, 'a');
+      }
+
+      // Replace table tags
+      
+
+      foreach ($xpath->query('//table//colspec') as $tableColspec) {
+        $tableColspec->parentNode->removeChild($tableColspec);
+      }
+      foreach ($xpath->query('//table//tgroup') as $tableTgroup) {
+        foreach($tableTgroup->childNodes as $child) {
+          $tableTgroup->parentNode->appendChild($child->cloneNode(true));
+        }
+        $tableTgroup->parentNode->removeChild($tableTgroup);
+      }
+      foreach ($xpath->query('//table//title') as $tableTitle) {
+        $this->renameTag($tableTitle, 'caption');
+      }
+      foreach ($xpath->query('//table//row') as $tableRow) {
+        $this->renameTag($tableRow, 'tr');
+      }
+      foreach ($xpath->query('//table//entry') as $tableEntry) {
+        $this->renameTag($tableEntry, 'td');
       }
 
       $body = $dom->saveHTML();
@@ -231,6 +261,7 @@ class DITAParser implements iParser {
     $index = new LoopIndex($children, $indexReferences);
     return $index;
   }
+
 
   /**
    * Identify if this is a DITA folder
