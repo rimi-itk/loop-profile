@@ -24,7 +24,7 @@ function loop_admin_views_query_alter(&$view, &$query) {
  * Removes leaf and tree in exposed form.
  */
 function loop_admin_form_views_exposed_form_alter(&$form, &$form_state) {
-  if (isset($form['type'])) {
+  if (isset($form['type']['#options']['leaf'])) {
     unset($form['type']['#options']['leaf']);
     unset($form['type']['#options']['tree']);
   }
