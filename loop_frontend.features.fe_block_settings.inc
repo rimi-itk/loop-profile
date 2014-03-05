@@ -28,10 +28,10 @@ function loop_frontend_default_fe_block_settings() {
         'weight' => 0,
       ),
       'loop' => array(
-        'region' => 'navigation',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'loop',
-        'weight' => -11,
+        'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
@@ -40,7 +40,7 @@ function loop_frontend_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '<none>',
+    'title' => '',
     'visibility' => 0,
   );
 
@@ -60,10 +60,10 @@ function loop_frontend_default_fe_block_settings() {
         'weight' => 0,
       ),
       'loop' => array(
-        'region' => 'navigation',
-        'status' => 1,
+        'region' => '',
+        'status' => 0,
         'theme' => 'loop',
-        'weight' => -12,
+        'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
@@ -72,7 +72,7 @@ function loop_frontend_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '<none>',
+    'title' => '',
     'visibility' => 0,
   );
 
