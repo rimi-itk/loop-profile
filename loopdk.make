@@ -175,11 +175,10 @@ projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][version] = "2.2"
 
 ; LOOP modules
-projects[loop_content][type] = "module"
-projects[loop_content][subdir] = "features"
-projects[loop_content][download][type] = "git"
-projects[loop_content][download][url] = "git@github.com:loopdk/loop_content.git"
-projects[loop_content][branch] = "development"
+projects[loop_external_data][type] = "module"
+projects[loop_external_data][download][type] = "git"
+projects[loop_external_data][download][url] = "git@github.com:loopdk/loop_external_data.git"
+projects[loop_external_data][branch] = "development"
 
 ; LOOP features
 projects[loop_admin][type] = "module"
@@ -187,6 +186,12 @@ projects[loop_example_content][subdir] = "features"
 projects[loop_admin][download][type] = "git"
 projects[loop_admin][download][url] = "git@github.com:loopdk/loop_admin.git"
 projects[loop_admin][branch] = "development"
+
+projects[loop_content][type] = "module"
+projects[loop_content][subdir] = "features"
+projects[loop_content][download][type] = "git"
+projects[loop_content][download][url] = "git@github.com:loopdk/loop_content.git"
+projects[loop_content][branch] = "development"
 
 projects[loop_example_content][type] = "module"
 projects[loop_example_content][subdir] = "features"
