@@ -1,11 +1,6 @@
 <?php
 
-/**
- * Implements hook_views_api().
- */
-function loop_admin_views_api() {
-  return array('api' => 3.0);
-}
+include_once 'loop_admin.features.inc';
 
 /**
  * Implements hook_views_default_views().
