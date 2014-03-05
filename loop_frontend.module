@@ -15,23 +15,6 @@ include_once 'loop_frontend.features.inc';
  * Implements template_preprocess_html().
  */
 function loop_frontend_preprocess_html(&$variables) {
-  // Load Html5 Shiv library.
-  drupal_add_js(loop_frontend_get_library_file('html5shiv', 'html5shiv.js'), array(
-    'type' => 'external',
-    'scope' => 'header',
-    'group' => JS_LIBRARY,
-    'preprocess' => FALSE,
-    'every_page' => TRUE,
-    'weight' => -999,
-  ));
-  drupal_add_js(loop_frontend_get_library_file('html5shiv', 'html5shiv-printshiv.js'), array(
-    'type' => 'external',
-    'scope' => 'header',
-    'group' => JS_LIBRARY,
-    'preprocess' => FALSE,
-    'every_page' => TRUE,
-    'weight' => -998,
-  ));
   // Load Respond.js library.
   drupal_add_js(loop_frontend_get_library_file('respondjs', 'respond.min.js'), array(
     'type' => 'external',
