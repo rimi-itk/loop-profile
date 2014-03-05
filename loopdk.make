@@ -174,7 +174,6 @@ projects[views_bulk_operations][version] = "3.2"
 projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][version] = "2.2"
 
-
 ; LOOP modules
 projects[loop_content][type] = "module"
 projects[loop_content][subdir] = "features"
