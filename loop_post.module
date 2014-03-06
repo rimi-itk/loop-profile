@@ -51,7 +51,7 @@ function loop_post_block_view($delta = '') {
   switch ($delta) {
     case 'subscriptions':
       // Get currect subscription status.
-      $list = notifications_subscription_list('page subscriptions')
+      /*$list = notifications_subscription_list('page subscriptions')
         ->filter_option('subscriptions_block');
       if ($list->count()) {
         $block['subject'] = t('Subscriptions');
@@ -61,7 +61,7 @@ function loop_post_block_view($delta = '') {
           $items[] = loop_post_generate_link($subscription);
         }
         $block['content'] = $items;
-      }
+      }*/
       break;
   }
   return $block;
@@ -90,7 +90,7 @@ function loop_post_theme($existing, $type, $theme, $path) {
  * @return array
  *   Render array.
  */
-function loop_post_generate_link($subscription) {
+/*function loop_post_generate_link($subscription) {
   $item = array();
 
   // Build query for signature.
@@ -124,14 +124,14 @@ function loop_post_generate_link($subscription) {
       '#url' => l($item['type'], $item['url'], array('query' => $item['query'])),
     ),
   );
-}
+}*/
 
 /**
  * Implements hook_node_insert().
  *
  * Auto subscribe newly created content to user.
  */
-function loop_post_node_insert($node) {
+/*function loop_post_node_insert($node) {
   include_once(DRUPAL_ROOT . '/' . drupal_get_path('module', 'notifications') . '/notifications_content/notifications_content.inc');
   include_once(DRUPAL_ROOT . '/' . drupal_get_path('module', 'notifications') . '/notifications.subscription.inc');
   global $user;
@@ -145,4 +145,4 @@ function loop_post_node_insert($node) {
     ->set_node($node);
 
   $subscription->save();
-}
+}*/
