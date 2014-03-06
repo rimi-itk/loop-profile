@@ -7,7 +7,7 @@
 include_once 'loop_external_data.features.inc';
 include 'parser.php';
 include 'iParser.inc';
-include 'Node.php';
+include 'LoopNode.php';
 include 'LoopIndex.php';
 include 'Leaf.php';
 include 'Tree.php';
@@ -234,6 +234,8 @@ function _loop_external_data_build_tree($item) {
 
 /**
  * Implements hook_node_insert().
+ *
+ * @param $node
  */
 function loop_external_data_node_insert($node) {
   if ($node->type == 'index') {
@@ -243,6 +245,8 @@ function loop_external_data_node_insert($node) {
 
 /**
  * Implements hook_node_update().
+ *
+ * @param $node
  */
 function loop_external_data_node_update($node) {
   if (!isset($_SESSION['loop_external_data_node_update'])) {
@@ -263,6 +267,11 @@ function loop_external_data_node_update($node) {
   }
 }
 
+/**
+ * Recursively deletes a tree of nodes.
+ *
+ * @param $trees
+ */
 function _loop_external_data_delete_tree($trees) {
   foreach ($trees['childs'] as $tree) {
     if (is_object($tree)) {
@@ -287,6 +296,7 @@ function _loop_external_data_file_load($node) {
 
   $file = file_load($file_fid['fid']);
 
+  // Set up parser and parse the zip file.
   $parser = new Parser();
   $data = $parser->parse(drupal_realpath($file->uri), drupal_realpath('public://index_file/' . $file->fid), $node->nid);
 
@@ -295,6 +305,9 @@ function _loop_external_data_file_load($node) {
     // Send data and node id to parser.
     _loop_external_data_parser($data, $node->nid);
   }
+
+  // Remove the unzip directory.
+  file_unmanaged_delete_recursive('public://index_file/' . $file->fid . '/');
 }
 
 /**
@@ -311,13 +324,13 @@ function _loop_external_data_parser($data, $parent = NULL) {
   $class_type = get_class($data);
   switch ($class_type) {
     case 'LoopIndex':
-      return _loop_external_data_parser_index($data, $parent);
-    case 'Tree':
-      return _loop_external_data_parser_tree($data, $parent);
+      _loop_external_data_parser_index($data, $parent);
       break;
-
+    case 'Tree':
+      _loop_external_data_parser_tree($data, $parent);
+      break;
     case 'Leaf':
-      return _loop_external_data_parser_leaf($data, $parent);
+      _loop_external_data_parser_leaf($data, $parent);
       break;
   }
 
@@ -407,7 +420,7 @@ function _loop_external_data_parser_leaf($leaf, $parent = NULL) {
 }
 
 /**
- * Adds nodes to parent
+ * Adds nodes to parent.
  *
  * @param $node
  *   Node object.

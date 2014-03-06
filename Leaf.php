@@ -1,5 +1,12 @@
 <?php
+/**
+ * @file
+ * A part of the loop_external_data module.
+ */
 
+/**
+ * Class Leaf
+ */
 class Leaf extends LoopNode {
   private $body;
 

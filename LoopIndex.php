@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * A part of the loop_external_data module.
+ */
 
 class LoopIndex {
   private $children;

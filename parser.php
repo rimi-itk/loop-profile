@@ -1,11 +1,23 @@
 <?php
+/**
+ * @file
+ * A part of the loop_external_data module.
+ */
 
+/**
+ * Class ZipParsingException
+ */
 class ZipParsingException extends Exception {}
+
+/**
+ * Class NoParserFoundException
+ */
 class NoParserFoundException extends Exception {}
 
 /**
  * Class Parser
  *
+ * Standard parser class. Selects relevant parser when calling parse().
  */
 class Parser {
   /**
