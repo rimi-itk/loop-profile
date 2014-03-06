@@ -8,3 +8,4 @@ dependencies[] = comment
 dependencies[] = flag
 features[features_api][] = api:2
 features[flag][] = ranking
+features[flag][] = subscribe_node
