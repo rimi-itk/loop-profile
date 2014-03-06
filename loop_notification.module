@@ -1,74 +1,7 @@
 <?php
 /**
  * @file
- * Code for the Loop Notificaiton feature.
+ * Code for the Loop Notification feature.
  */
 
 include_once 'loop_notification.features.inc';
-
-/**
- * Implements hook_menu().
- */
-function loop_notification_menu() {
-  $items['user/%user/notifications/json'] = array(
-    'title' => 'Notifications returned in JSON',
-    'page callback' => 'loop_notification_get_comments',
-    'page arguments' => array(1),
-    'access arguments' => array('access content'),
-    'type' => MENU_CALLBACK,
-  );
-  return $items;
-}
-
-/**
- * Implements hook_form_ID_alter().
- *
- * Add new comments to every subscription list.
- */
-function loop_notification_form_notifications_account_subscription_list_form_alter(&$form, $form_state) {
-  // Add comments column.
-  $form['subscriptions']['#header']['comments'] = array(
-    'data' => t('Comments'),
-  );
-
-  foreach ($form['subscriptions']['#options'] as $sid => $value) {
-    // Load every subscription the user got, and figure out if any new comments
-    // happens to be there.
-    $ns = new Notifications_Subscription();
-    $nns = $ns->load($sid);
-
-    $comments = comment_num_new($nns->fields[0]->value);
-
-    $form['subscriptions']['#options'][$sid]['comments'] = $comments;
-  }
-}
-
-/**
- * Find new events for a given user.
- *
- * @param $user object
- *   Loaded user object.
- *
- * @return json
- *   JSON formatted string.
- */
-function loop_notification_get_comments($user) {
-  // Build our query from notificiation tabels.
-  $query = db_select('notifications_subscription', 's')
-    ->condition('s.uid', $user->uid);
-
-  // Join to get node ID.
-  $query->join('notifications_subscription_fields', 'f', 's.sid = f.sid');
-  $query->fields('f', array('value'));
-
-  // Execute our query!
-  $result = $query->execute();
-
-  $nids = array();
-  while ($record = $result->fetchAssoc()) {
-    // Add comment count to key (node ID).
-    $nids[$record['value']] = comment_num_new($record['value']);
-  }
-
-  drupal_json_output($nids);
-}
