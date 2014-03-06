@@ -7,7 +7,6 @@ project = loop_post
 dependencies[] = auto_entitylabel
 dependencies[] = autocomplete_deluxe
 dependencies[] = ctools
-dependencies[] = entity_view_mode
 dependencies[] = features
 dependencies[] = loop_field_bases
 dependencies[] = loop_flag
