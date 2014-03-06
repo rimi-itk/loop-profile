@@ -182,7 +182,7 @@ projects[loop_external_data][branch] = "development"
 
 ; LOOP features
 projects[loop_admin][type] = "module"
-projects[loop_example_content][subdir] = "features"
+projects[loop_admin][subdir] = "features"
 projects[loop_admin][download][type] = "git"
 projects[loop_admin][download][url] = "git@github.com:loopdk/loop_admin.git"
 projects[loop_admin][branch] = "development"
