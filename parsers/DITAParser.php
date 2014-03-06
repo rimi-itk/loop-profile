@@ -7,13 +7,13 @@
  */
 class DITAParser implements iParser {
   /**
-   * Rename a DOMElement
+   * Rename a DOMElement.
    *
-   * @param DOMElement $oldTag
+   * @param $oldTag
    * @param $newTagName
    * @return DOMElement
    */
-  private function renameTag( DOMElement $oldTag, $newTagName ) {
+  private function renameTag($oldTag, $newTagName ) {
     $document = $oldTag->ownerDocument;
 
     $newTag = $document->createElement($newTagName);
@@ -31,9 +31,9 @@ class DITAParser implements iParser {
   /**
    * Removes all attributes from element.
    *
-   * @param DOMElement $element
+   * @param $element
    */
-  private function removeAttributes(DOMElement $element) {
+  private function removeAttributes($element) {
     $attributes = $element->attributes;
     while ($attributes->length) {
       $element->removeAttribute($attributes->item(0)->name);
@@ -41,7 +41,7 @@ class DITAParser implements iParser {
   }
 
   /**
-   * Replaces danish characters
+   * Replaces danish characters.
    *
    * @param $text
    * @return mixed
@@ -68,6 +68,8 @@ class DITAParser implements iParser {
     // Split $path at /
     $split = preg_split('/\//', $path);
 
+    // Iterate through parts and assemble new path array.
+    // Pop the top element when ".." is encountered.
     foreach ($split as $part) {
       if ($part == '..') {
         array_pop($pathArray);
@@ -79,7 +81,7 @@ class DITAParser implements iParser {
     $resultPath = '';
     $i = 0;
     $arrayMaxIndex = count($pathArray);
-    // Assemble to string
+    // Assemble the new path array to a string
     foreach ($pathArray as $part) {
       $i++;
 
@@ -109,20 +111,25 @@ class DITAParser implements iParser {
    * @return Leaf|null|Tree
    */
   private function traverseNode($node, $pathToDirectory, $indexNodeID, &$objectReferences, &$xrefReferences) {
+    // Get the type of the given node.
     $nodeType = $node->getName();
 
     if ($nodeType == 'topicref') {
+      // Get the reference to the topicref file.
       $href = $this->danishChars($node['href']);
 
+      // Load body of topic into DOM.
       $body = simplexml_load_file($pathToDirectory . '/' . $href)->body;
       $domnode = dom_import_simplexml($body);
       $dom = new DOMDocument();
       $domnode = $dom->importNode($domnode, true);
       $dom->appendChild($domnode);
 
+      // Setup XPath for DOM.
       $xpath = new DOMXPath($dom);
 
       // Replace all ph with the referenced
+      // TODO: Correct conrefs to apply to all types of elements.
       foreach ($xpath->query('//ph') as $ph) {
         // Split conref into file path and variable name
         $conref = explode('#', $ph->getAttribute('conref'));
@@ -139,19 +146,22 @@ class DITAParser implements iParser {
         $ph->parentNode->replaceChild($phText, $ph);
       }
 
-      // Replace image paths
+      // Replace image paths.
       foreach ($xpath->query('//image') as $image) {
+        // Contruct path to image file.
         $ref = $pathToDirectory . '/' . dirname($href) . '/' . $this->danishChars($image->getAttribute('href'));
 
-        // Save file
+        // Read file from  disk.
         $fileName = basename($image->getAttribute('href'));
         $fileContent = file_get_contents($ref);
 
+        // Save file into Drupal.
         $dir = 'public://external_data/' . $indexNodeID;
         file_prepare_directory($dir, FILE_CREATE_DIRECTORY);
         $file = file_save_data($fileContent, $dir . '/' . $fileName, FILE_EXISTS_RENAME);
         $filePath = file_create_url($file->uri);
 
+        // Set up new image html element.
         $image->removeAttribute('href');
         $image->setAttribute('src', $filePath);
         $this->renameTag($image, 'img');
@@ -159,6 +169,7 @@ class DITAParser implements iParser {
 
       // Replace references
       foreach ($xpath->query('//xref') as $xref) {
+        // External links have the scope attribute set to external
         $scope = $xref->getAttribute('scope');
 
         if ($scope != 'external') {
@@ -173,6 +184,7 @@ class DITAParser implements iParser {
           $xref->setAttribute('target',  '_blank');
         }
 
+        // Change name of node to a
         $this->renameTag($xref, 'a');
       }
 
@@ -223,18 +235,20 @@ class DITAParser implements iParser {
         $this->renameTag($b, 'div');
       }
 
+      // Convert dom to html.
       $body = $dom->saveHTML();
 
-//      $body = preg_replace('/<body>/', '', $body);
-//      $body = preg_replace('/<\/body>/', '', $body);
-
+      // Make leaf from title of the node and the body.
       $leaf = new Leaf($node['navtitle'], $body);
 
+      // Save href to leaf reference.
       $objectReferences[$href] = $leaf;
 
       return $leaf;
     } else if ($nodeType == 'topichead') {
       $children = array();
+
+      // Iterate through children, and add the result of traversing each.
       foreach ($node->children() as $child) {
         $children[] = $this->traverseNode($child, $pathToDirectory, $indexNodeID, $objectReferences, $xrefReferences);
       }
@@ -302,6 +316,7 @@ class DITAParser implements iParser {
 
   /**
    * Identify if this is a DITA folder
+   * Look through the folder for a Ditamap.ditamap file.
    *
    * @param $pathToDirectory
    * @return bool
