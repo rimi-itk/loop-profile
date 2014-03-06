@@ -77,4 +77,3 @@
 <div class="comments--comment-content">
   <?php print render($content); ?>
 </div>
-<?php print flag_create_link('ranking', $comment->cid); ?>

@@ -85,4 +85,5 @@
     </div>
   <?php endif; ?>
 
+  <span class="comment--flag is-sticky"><?php print t('Most useful answer'); ?></span>
 </div><?php /* class view */ ?>
