@@ -27,7 +27,7 @@
  * @ingroup views_templates
  */
 ?>
-<div class="comments--comment">
+<div class="comments--comment is-sticky">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <?php print $title; ?>

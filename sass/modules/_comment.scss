@@ -1,7 +1,7 @@
 /**
+ *
  * Comment module
  *
- * @author magnify
  */
 
 
@@ -16,6 +16,16 @@
   position: relative;
 
   margin-bottom: 1.5em;
+
+  &.is-sticky {
+    border: 1px solid $green;
+    margin-bottom: 2em;
+    padding: 1.5em;
+
+    background-color: lighten($green-lighter, 15%);
+
+    @include border-radius($border-radius);
+  }
 
   &:last-child {
     @extend %reset-element-spacing;
@@ -37,6 +47,13 @@
 
 .comment--flag {
   @extend .flag;
+
+  &.is-sticky {
+    top: 1em;
+    right: 1em;
+
+    background-color: $white;
+  }
 
   /* Breakpoints */
   @include breakpoint($breakpoint-4) {

@@ -1001,12 +1001,12 @@ label {
   *position: relative;
   *zoom: 1;
 }
-/* line 46, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+/* line 46, ../../../../../../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
 .header:before, .header:after {
   content: "";
   display: table;
 }
-/* line 50, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+/* line 50, ../../../../../../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
 .header:after {
   clear: both;
 }
@@ -1910,9 +1910,9 @@ label {
 }
 
 /**
+ *
  * Comment module
  *
- * @author magnify
  */
 /* Comments
    ================================================================================================================== */
@@ -1921,24 +1921,42 @@ label {
   position: relative;
   margin-bottom: 1.5em;
 }
+/* line 20, ../sass/modules/_comment.scss */
+.comments--comment.is-sticky {
+  border: 1px solid #41ab51;
+  margin-bottom: 2em;
+  padding: 1.5em;
+  background-color: #f5ffe7;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+}
 
-/* line 29, ../sass/modules/_comment.scss */
+/* line 39, ../sass/modules/_comment.scss */
 .comments--comment-content {
   margin-bottom: 1em;
 }
 @media only screen and (min-width: 43em) {
-  /* line 29, ../sass/modules/_comment.scss */
+  /* line 39, ../sass/modules/_comment.scss */
   .comments--comment-content {
     margin-bottom: -1.5em;
   }
 }
 
-/* line 38, ../sass/modules/_comment.scss */
+/* line 48, ../sass/modules/_comment.scss */
 .comment--flag {
   /* Breakpoints */
 }
+/* line 51, ../sass/modules/_comment.scss */
+.comment--flag.is-sticky {
+  top: 1em;
+  right: 1em;
+  background-color: white;
+}
 @media only screen and (min-width: 43em) {
-  /* line 38, ../sass/modules/_comment.scss */
+  /* line 48, ../sass/modules/_comment.scss */
   .comment--flag {
     position: absolute;
     right: 0;
@@ -1949,7 +1967,7 @@ label {
 
 /* Comments list on user page
    ================================================================================================================== */
-/* line 54, ../sass/modules/_comment.scss */
+/* line 71, ../sass/modules/_comment.scss */
 .comments--user-page-comments-element {
   margin-bottom: 1em;
   padding-bottom: 1em;
