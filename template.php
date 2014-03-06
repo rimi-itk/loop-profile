@@ -93,10 +93,12 @@ function loop_preprocess_panels_pane(&$variables) {
  */
 function loop_preprocess_search_api_page_results(&$variables) {
   if ($variables['result_count'] == 0) {
+    global $user;
     // No hits. Send formular to template.
     module_load_include('inc', 'node', 'node.pages');
     $node = new stdClass();
     $node->type = 'post';
+    $node->uid = $user->uid;
 
     // Add the post.
     $node->field_description['und'][0]['value'] = arg(1);
