@@ -273,14 +273,20 @@ function loop_links__system_primary_menu($variables) {
     if (!empty($value['identifier']) && $value['identifier'] != 'main-menu_menu:<front>') {
 
       // Images for the different menu items.
-      switch ($value['identifier']) {
-        case 'main-menu_my-account:user':
+      switch ($value['href']) {
+        case 'user':
           $img = array(
             'path' => '/' . $theme_path . '/images/nav-user-icon.png',
             'attributes' => array('class' => 'nav--icon'),
           );
           break;
-        case 'main-menu_create-post:node/add/post':
+        case 'user/' . $GLOBALS['user']->uid . '/messages':
+          $img = array(
+            'path' => '/' . $theme_path . '/images/nav-mail-icon.png',
+            'attributes' => array('class' => 'nav--icon'),
+          );
+          break;
+        case 'node/add/post':
           $img = array(
             'path' => '/' . $theme_path . '/images/nav-add-icon.png',
             'attributes' => array('class' => 'nav--icon'),
@@ -289,19 +295,6 @@ function loop_links__system_primary_menu($variables) {
       }
 
       // Create the title with image icon.
-      $title = theme_image($img) . '<span class="nav--text">' . $value['title'] . '</span>';
-
-      // Add item to main menu links.
-      $menu .= l($title, $value['href'], array('attributes' => array('class' => array('nav--link')), 'html' => 'TRUE'));
-    }
-
-    // We use menu tokens, so the identifier includes user id, we use token path to identify instead.
-    elseif (!empty($value['href']) && $value['href'] == 'user/' . $GLOBALS['user']->uid . '/messages') {
-      $img = array(
-        'path' => '/' . $theme_path . '/images/nav-mail-icon.png',
-        'attributes' => array('class' => 'nav--icon'),
-      );
-
       $title = theme_image($img) . '<span class="nav--text">' . $value['title'] . '</span>';
 
       // Add item to main menu links.

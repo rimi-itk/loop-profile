@@ -10,7 +10,8 @@ regions[content] = Content
 regions[footer] = Footer
 
 ; Scripts
-scripts[] = scripts/mobile-nav.js
+scripts[] = scripts/mobile-nav.min.js
+scripts[] = scripts/modernizr.min.js
 
 ; Stylesheets
 stylesheets[all][] = css/styles.css

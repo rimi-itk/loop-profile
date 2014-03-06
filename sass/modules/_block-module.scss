@@ -61,16 +61,22 @@
 .block-user-links {
   @extend .block-module;
 
-  background-color: $green;
+  display: none;
 
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
+  @include breakpoint(45em) {
+    display: block;
 
-  .block-module-user-links-list-sub {
-    padding: 0 0 0 1em;
+    background-color: $green;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .block-module-user-links-list-sub {
+      padding: 0 0 0 1em;
+    }
   }
 }
 
@@ -106,6 +112,14 @@
 
 /* My content block
    ================================================================================================================== */
+
+.block-my-content {
+  display: none;
+
+  @include breakpoint(45em) {
+    display: block;
+  }
+}
 
 .block-module--my-content-header {
   @extend .block-module--header;
