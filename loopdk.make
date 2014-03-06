@@ -277,16 +277,6 @@ libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEd
 libraries[ckeditor][directory_name] = "ckeditor"
 libraries[ckeditor][destination] = "libraries"
 
-libraries[html5shiv][download][type] = "get"
-libraries[html5shiv][download][url] = "https://raw.github.com/aFarkas/html5shiv/master/dist/html5shiv.js"
-libraries[html5shiv][directory_name] = "html5shiv"
-libraries[html5shiv][destination] = "libraries"
-
-libraries[html5shiv_printshiv][download][type] = "get"
-libraries[html5shiv_printshiv][download][url] = "https://raw.github.com/aFarkas/html5shiv/master/dist/html5shiv-printshiv.js"
-libraries[html5shiv_printshiv][directory_name] = "html5shiv"
-libraries[html5shiv_printshiv][destination] = "libraries"
-
 libraries[respondjs][download][type] = "get"
 libraries[respondjs][download][url] = "https://raw.github.com/scottjehl/Respond/master/dest/respond.min.js"
 libraries[respondjs][directory_name] = "respondjs"
