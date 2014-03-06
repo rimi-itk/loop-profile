@@ -202,12 +202,14 @@ function loop_post_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-5';
     $pane->panel = 'beta';
-    $pane->type = 'block';
-    $pane->subtype = 'loop_post-subscriptions';
+    $pane->type = 'entity_field_extra';
+    $pane->subtype = 'node:flag_subscribe_node';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'override_title' => 1,
+      'view_mode' => 'full',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
       'override_title_text' => '',
     );
     $pane->cache = array();
