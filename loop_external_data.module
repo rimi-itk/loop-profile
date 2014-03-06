@@ -99,12 +99,14 @@ function loop_external_data_block_view($delta = '') {
   switch ($delta) {
     case 'index':
       $node_id = arg(1);
-      $node = node_load($node_id);
-      $block['subject'] = t('Index');
-      $block['content'] = array(
-        '#theme' => 'loop_external_data_dropdown_block',
-        '#forest' => _loop_external_data_build_dropdown($node)
-      );
+      if ($node_id) {
+        $node = node_load($node_id);
+        $block['subject'] = t('Index');
+        $block['content'] = array(
+          '#theme' => 'loop_external_data_dropdown_block',
+          '#forest' => _loop_external_data_build_dropdown($node)
+        );
+      }
       break;
   }
   return $block;
