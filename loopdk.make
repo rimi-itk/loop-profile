@@ -87,21 +87,23 @@ projects[menu_block][version] = "2.3"
 projects[menu_token][subdir] = "contrib"
 projects[menu_token][version] = "1.0-beta5"
 
-projects[messaging][subdir] = "contrib"
-projects[messaging][version] = "1.0-alpha2"
-
 projects[metatag][subdir] = "contrib"
 projects[metatag][version] = "1.0-beta9"
+
+projects[message][subdir] = "contrib"
+projects[message][version] = "1.9"
+
+projects[message_notify][subdir] = "contrib"
+projects[message_notify][version] = "2.5"
+
+projects[message_subscribe][subdir] = "contrib"
+projects[message_subscribe][version] = "1.0-rc1"
 
 projects[module_filter][subdir] = "contrib"
 projects[module_filter][version] = "1.8"
 
 projects[node_export][subdir] = "contrib"
 projects[node_export][version] = "3.0"
-
-projects[notifications][subdir] = "contrib"
-projects[notifications][version] = "1.0-alpha2"
-projects[notifications][patch][] = "https://drupal.org/files/notifications-direct-subscribe-1441242-7.patch"
 
 projects[oauth][subdir] = "contrib"
 projects[oauth][version] = "3.2"
