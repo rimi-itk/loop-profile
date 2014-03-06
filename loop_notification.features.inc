@@ -34,7 +34,7 @@ function loop_notification_default_message_type() {
         {
           "value" : "\\u003Cp\\u003EA new comment has been added to the question: \\u003Ca href=\\u0022[current-page:url:absolute]\\u0022\\u003E[current-page:title]\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EThis message is an automated message sent because you are subscribing to updates on the before mentioned question.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003E\\u003Ca href=\\u0022[site:url]\\u0022\\u003E[site:name]\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n",
           "format" : "editor",
-          "safe_value" : "\\u003Cp\\u003EA new comment has been added to the question: \\u003Ca href=\\u0022absolute]\\u0022\\u003E[current-page:title]\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n\\u003Cp\\u003EThis message is an automated message sent because you are subscribing to updates on the before mentioned question.\\u003C\\/p\\u003E\\n\\u003Cp\\u003E\\u003Ca href=\\u0022url]\\u0022\\u003E[site:name]\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003EA new comment has been added to the question: \\u003Ca href=\\u0022absolute]\\u0022\\u003E[current-page:title]\\u003C\\/a\\u003E\\u003Cbr \\/\\u003E\\nThis message is an automated message sent because you are subscribing to updates on the before mentioned question.\\u003Cbr \\/\\u003E\\u003Ca href=\\u0022url]\\u0022\\u003E[site:name]\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n"
         }
       ]
     }
