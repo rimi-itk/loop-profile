@@ -30,9 +30,6 @@ projects[entity][version] = "1.3"
 projects[entityreference][subdir] = "contrib"
 projects[entityreference][version] = "1.1"
 
-projects[entity_view_mode][subdir] = "contrib"
-projects[entity_view_mode][version] = "1.0-rc1"
-
 projects[facetapi][subdir] = "contrib"
 projects[facetapi][version] = "1.3"
 
