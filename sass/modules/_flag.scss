@@ -85,3 +85,9 @@ a.flag {
     }
   }
 }
+
+
+// Flag needs this wrapper to work, adding float so it does not take up space.
+.flag-wrapper {
+  float: left;
+}

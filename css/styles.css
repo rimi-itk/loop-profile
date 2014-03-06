@@ -2039,6 +2039,11 @@ a.flag.is-active:hover, a.is-active.comment--flag:hover, a.flag.is-sticky:hover,
   color: #33863f;
 }
 
+/* line 91, ../sass/modules/_flag.scss */
+.flag-wrapper {
+  float: left;
+}
+
 /**
  * Tag
  *
