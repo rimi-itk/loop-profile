@@ -90,6 +90,15 @@ projects[menu_token][version] = "1.0-beta5"
 projects[metatag][subdir] = "contrib"
 projects[metatag][version] = "1.0-beta9"
 
+projects[message][subdir] = "contrib"
+projects[message][version] = "1.9"
+
+projects[message_notify][subdir] = "contrib"
+projects[message_notify][version] = "2.5"
+
+projects[message_subscribe][subdir] = "contrib"
+projects[message_subscribe][version] = "1.0-rc1"
+
 projects[module_filter][subdir] = "contrib"
 projects[module_filter][version] = "1.8"
 
