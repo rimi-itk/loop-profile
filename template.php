@@ -98,7 +98,9 @@ function loop_preprocess_search_api_page_results(&$variables) {
     module_load_include('inc', 'node', 'node.pages');
     $node = new stdClass();
     $node->type = 'post';
+    $node->langauge = LANGUAGE_NONE;
     $node->uid = $user->uid;
+    $node->name = $user->name;
 
     // Add the post.
     $node->field_description['und'][0]['value'] = arg(1);
