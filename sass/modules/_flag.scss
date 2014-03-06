@@ -16,7 +16,33 @@
 
   @include border-radius($border-radius);
 
-  /* Pseudo classes */
+  &:before {
+    @extend %icon-like;
+    @extend %icon-before;
+
+    font-size: 150%;
+    vertical-align: top;
+  }
+
+  /* States */
+  &.is-active,
+  &.is-sticky {
+    border: 1px solid $link-color;
+
+    color: $link-color;
+  }
+
+  &.is-sticky {
+    margin-bottom: 1em;
+
+    &:before {
+      @extend %icon-check;
+    }
+  }
+}
+
+// If it's a link add pseudo styles.
+a.flag {
   &:link,
   &:visited,
   &:hover,
@@ -31,41 +57,29 @@
     color: $gray-dark;
   }
 
-  &:before {
-    @extend %icon-like;
-    @extend %icon-before;
-
-    font-size: 150%;
-  }
-
   /* States */
   &.is-active,
   &.is-sticky {
-    border: 1px solid $link-color;
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+      border: 1px solid $link-color;
 
-    color: $link-color;
+      color: $link-color;
+      text-decoration: none;
+    }
+
+    &:hover {
+      border: 1px solid $gray-dark;
+
+      color: $gray-dark;
+    }
 
     &:hover {
       border: 1px solid $link-color-hover;
 
       color: $link-color-hover;
     }
-  }
-
-  &.is-sticky {
-    margin-bottom: 1em;
-
-    &:before {
-      @extend %icon-check;
-    }
-  }
-
-  /* Breakpoints */
-  @include breakpoint($breakpoint-4) {
-    position: absolute;
-    right: 0;
-    top: 0;
-
-    display: inline-block;
   }
 }

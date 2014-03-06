@@ -77,4 +77,4 @@
 <div class="comments--comment-content">
   <?php print render($content); ?>
 </div>
-<span class="flag is-sticky" href="#">Mest nyttige svar</span>
+<span class="comment--flag is-sticky"><?php print t('Most useful answer'); ?></span>

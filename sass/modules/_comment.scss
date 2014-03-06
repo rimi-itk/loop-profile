@@ -35,6 +35,19 @@
   }
 }
 
+.comment--flag {
+  @extend .flag;
+
+  /* Breakpoints */
+  @include breakpoint($breakpoint-4) {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    display: inline-block;
+  }
+}
+
 
 /* Comments list on user page
    ================================================================================================================== */
