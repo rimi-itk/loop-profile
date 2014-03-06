@@ -39,6 +39,41 @@ function loop_flag_flag_default_flags() {
       0 => 'name',
     ),
   );
+  // Exported flag: "Subscribe to post".
+  $flags['subscribe_node'] = array(
+      'entity_type' => 'node',
+      'title' => 'Subscribe to post',
+      'global' => 0,
+      'types' => array(
+          0 => 'post',
+      ),
+      'flag_short' => 'Subscribe',
+      'flag_long' => '',
+      'flag_message' => 'You are now subscribed to this item.',
+      'unflag_short' => 'Unsubscribe',
+      'unflag_long' => '',
+      'unflag_message' => 'You are no longer subscribed to this item.',
+      'unflag_denied_text' => '',
+      'link_type' => 'toggle',
+      'weight' => 0,
+      'show_in_links' => array(
+          'full' => 'full',
+          'teaser' => 0,
+          'rss' => 0,
+          'diff_standard' => 0,
+          'token' => 0,
+      ),
+      'show_as_field' => 1,
+      'show_on_form' => 0,
+      'access_author' => '',
+      'show_contextual_link' => 0,
+      'i18n' => 0,
+      'module' => 'message_subscribe',
+      'locked' => array(
+          'name' => 'name',
+      ),
+      'api_version' => 3,
+  );
   return $flags;
 
 }
