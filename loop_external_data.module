@@ -99,7 +99,7 @@ function loop_external_data_block_view($delta = '') {
   switch ($delta) {
     case 'index':
       $node_id = arg(1);
-      if ($node_id) {
+      if (is_int($node_id)) {
         $node = node_load($node_id);
         $block['subject'] = t('Index');
         $block['content'] = array(
