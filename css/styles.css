@@ -1975,9 +1975,9 @@ label {
 }
 
 /**
+ *
  * Flag module
  *
- * @author magnify
  */
 /* line 9, ../sass/modules/_flag.scss */
 .flag, .comment--flag {
@@ -1998,43 +1998,43 @@ label {
   font-size: 150%;
   vertical-align: top;
 }
-/* line 29, ../sass/modules/_flag.scss */
-.flag.is-active, .is-active.comment--flag, .flag.is-sticky, .is-sticky.comment--flag {
+/* line 30, ../sass/modules/_flag.scss */
+.flag.is-active, .is-active.comment--flag, .flag.is-sticky, .is-sticky.comment--flag, .flag.unflag-action, .unflag-action.comment--flag {
   border: 1px solid #41ab51;
   color: #41ab51;
 }
-/* line 35, ../sass/modules/_flag.scss */
+/* line 36, ../sass/modules/_flag.scss */
 .flag.is-sticky, .is-sticky.comment--flag {
   margin-bottom: 1em;
 }
 
-/* line 45, ../sass/modules/_flag.scss */
+/* line 46, ../sass/modules/_flag.scss */
 a.flag, a.comment--flag {
   /* States */
 }
-/* line 49, ../sass/modules/_flag.scss */
+/* line 50, ../sass/modules/_flag.scss */
 a.flag:link, a.comment--flag:link, a.flag:visited, a.comment--flag:visited, a.flag:hover, a.comment--flag:hover, a.flag:active, a.comment--flag:active {
   color: #b3b3b3;
   text-decoration: none;
 }
-/* line 54, ../sass/modules/_flag.scss */
+/* line 55, ../sass/modules/_flag.scss */
 a.flag:hover, a.comment--flag:hover {
   border: 1px solid #737373;
   color: #737373;
 }
-/* line 66, ../sass/modules/_flag.scss */
-a.flag.is-active:link, a.is-active.comment--flag:link, a.flag.is-active:visited, a.is-active.comment--flag:visited, a.flag.is-active:hover, a.is-active.comment--flag:hover, a.flag.is-active:active, a.is-active.comment--flag:active, a.flag.is-sticky:link, a.is-sticky.comment--flag:link, a.flag.is-sticky:visited, a.is-sticky.comment--flag:visited, a.flag.is-sticky:hover, a.is-sticky.comment--flag:hover, a.flag.is-sticky:active, a.is-sticky.comment--flag:active {
+/* line 68, ../sass/modules/_flag.scss */
+a.flag.is-active:link, a.is-active.comment--flag:link, a.flag.is-active:visited, a.is-active.comment--flag:visited, a.flag.is-active:hover, a.is-active.comment--flag:hover, a.flag.is-active:active, a.is-active.comment--flag:active, a.flag.is-sticky:link, a.is-sticky.comment--flag:link, a.flag.is-sticky:visited, a.is-sticky.comment--flag:visited, a.flag.is-sticky:hover, a.is-sticky.comment--flag:hover, a.flag.is-sticky:active, a.is-sticky.comment--flag:active, a.flag.unflag-action:link, a.unflag-action.comment--flag:link, a.flag.unflag-action:visited, a.unflag-action.comment--flag:visited, a.flag.unflag-action:hover, a.unflag-action.comment--flag:hover, a.flag.unflag-action:active, a.unflag-action.comment--flag:active {
   border: 1px solid #41ab51;
   color: #41ab51;
   text-decoration: none;
 }
-/* line 73, ../sass/modules/_flag.scss */
-a.flag.is-active:hover, a.is-active.comment--flag:hover, a.flag.is-sticky:hover, a.is-sticky.comment--flag:hover {
+/* line 75, ../sass/modules/_flag.scss */
+a.flag.is-active:hover, a.is-active.comment--flag:hover, a.flag.is-sticky:hover, a.is-sticky.comment--flag:hover, a.flag.unflag-action:hover, a.unflag-action.comment--flag:hover {
   border: 1px solid #737373;
   color: #737373;
 }
-/* line 79, ../sass/modules/_flag.scss */
-a.flag.is-active:hover, a.is-active.comment--flag:hover, a.flag.is-sticky:hover, a.is-sticky.comment--flag:hover {
+/* line 81, ../sass/modules/_flag.scss */
+a.flag.is-active:hover, a.is-active.comment--flag:hover, a.flag.is-sticky:hover, a.is-sticky.comment--flag:hover, a.flag.unflag-action:hover, a.unflag-action.comment--flag:hover {
   border: 1px solid #33863f;
   color: #33863f;
 }
