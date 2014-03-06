@@ -30,12 +30,13 @@
 .meta-data--author-image {
   position: absolute;
 
-  display: inline;
   border: 1px solid $border-color;
   display: inline-block;
   overflow: hidden;
   margin-right: .5em;
   max-width: 3em;
+
+  background-color: $white;
 
   @include border-radius($border-radius);
 

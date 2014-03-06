@@ -1877,12 +1877,12 @@ label {
 /* line 30, ../sass/modules/_meta-data.scss */
 .meta-data--author-image {
   position: absolute;
-  display: inline;
   border: 1px solid #e6e6e6;
   display: inline-block;
   overflow: hidden;
   margin-right: .5em;
   max-width: 3em;
+  background-color: white;
   -webkit-border-radius: 0.4em;
   -moz-border-radius: 0.4em;
   -ms-border-radius: 0.4em;
@@ -1890,19 +1890,19 @@ label {
   border-radius: 0.4em;
 }
 
-/* line 48, ../sass/modules/_meta-data.scss */
+/* line 49, ../sass/modules/_meta-data.scss */
 .meta-data--author-wrapper {
   vertical-align: top;
   display: inline-block;
   margin-left: 4em;
 }
 
-/* line 55, ../sass/modules/_meta-data.scss */
+/* line 56, ../sass/modules/_meta-data.scss */
 .meta-data--author-link {
   font-weight: bold;
 }
 
-/* line 59, ../sass/modules/_meta-data.scss */
+/* line 60, ../sass/modules/_meta-data.scss */
 .meta-data--author-title {
   display: block;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
