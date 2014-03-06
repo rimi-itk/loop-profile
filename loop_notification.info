@@ -1,0 +1,11 @@
+name = Loop Notification
+core = 7.x
+package = LOOP
+version = 7.x-1.0
+project = loop_notification
+dependencies[] = message
+dependencies[] = message_notify
+dependencies[] = message_subscribe
+dependencies[] = message_subscribe_ui
+features[features_api][] = api:2
+project path = profiles/loopdk/modules/features/
