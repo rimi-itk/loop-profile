@@ -128,9 +128,10 @@ class DITAParser implements iParser {
       // Setup XPath for DOM.
       $xpath = new DOMXPath($dom);
 
+
       // Replace all ph with the referenced
       // TODO: Correct conrefs to apply to all types of elements.
-      foreach ($xpath->query('//ph') as $ph) {
+/*      foreach ($xpath->query('//ph') as $ph) {
         // Split conref into file path and variable name
         $conref = explode('#', $ph->getAttribute('conref'));
         $file = $conref[0];
@@ -145,6 +146,62 @@ class DITAParser implements iParser {
 
         $ph->parentNode->replaceChild($phText, $ph);
       }
+*/
+
+      // Replace conrefs
+      // From these cases: http://docs.oasis-open.org/dita/v1.1/OS/langspec/common/theconrefattribute.html
+      // Only implemented "Using conref to refer to an element within a topic"
+      foreach ($xpath->query('//*[@conref]') as $conrefElement) {
+        $conref = $conrefElement->getAttribute('conref');
+        $conrefSplit = explode('#', $conref);
+
+        $countConrefSplit = count($conrefSplit);
+
+        $filePath = $conrefSplit[0];
+        $varXML = simplexml_load_file($pathToDirectory . '/' . dirname($href) . '/' . $filePath);
+        if (!$varXML) {
+          $msg = array(
+            "message" => "import error: file not found",
+            "ref" => $pathToDirectory . '/' . dirname($href) . '/' . $filePath
+          );
+          watchdog('loop_external_data', print_r($msg, 1));
+          continue;
+        }
+
+
+        if ($countConrefSplit == 2) {
+          $idArray = explode('/', $conrefSplit[1]);
+          $id = $idArray[1];
+          $containId = $idArray[0];
+
+          // This is not complete correct, but matches the Flare Dita output
+          // Correct syntax - $sxml = $varXML->xpath('(//*[@id="' . $containId . '"]//*[@id="' . $id . '"])[last()]');
+          $sxml = $varXML->xpath('(//topic//*[@id="' . $id . '"])[last()]');
+          if (!$sxml) {
+            $msg = array(
+              "message" => "import error: entry not found",
+              "conref" => '"' . $conref . '"',
+              "ref" => '"' . $pathToDirectory . '/' . dirname($href) . '/' . $filePath . '"',
+              "containerid" => '"' . $containId . '"',
+              "id" =>  '"' . $id . '"');
+            watchdog('loop_external_data', print_r($msg, 1));
+            continue;
+          }
+
+          $xml = dom_import_simplexml($sxml[0]);
+
+          $domXML = $dom->importNode($xml, true);
+
+          // Replace with neutral html element
+          $newElement = $dom->createElement('span');
+          foreach ($domXML->childNodes as $child) {
+            $newElement->appendChild($child);
+          }
+
+          $conrefElement->parentNode->replaceChild($newElement, $conrefElement);
+        }
+      }
+
 
       // Replace image paths.
       foreach ($xpath->query('//image') as $image) {
