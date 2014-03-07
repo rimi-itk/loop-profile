@@ -14,11 +14,12 @@
   position: relative;
 
   border-bottom: 1px solid $border-color;
-  padding-bottom: 1.5em;
   margin-bottom: 2em;
+  padding-bottom: 1.5em;
 
   &.is-sticky {
     border: 1px solid $green;
+    margin-bottom: 2.5em;
     padding: 1.5em;
 
     background-color: lighten($green-lighter, 15%);
