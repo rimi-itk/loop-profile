@@ -1769,7 +1769,7 @@ label {
 /* line 33, ../sass/modules/_question.scss */
 .question--inner {
   clear: both;
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 
 /* line 39, ../sass/modules/_question.scss */
@@ -1788,7 +1788,7 @@ label {
 
 /* line 53, ../sass/modules/_question.scss */
 .question--terms {
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 
 /* Questions list on user page
