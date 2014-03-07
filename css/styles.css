@@ -535,7 +535,7 @@ img {
 }
 
 /* line 49, ../sass/theme/_placeholders.scss */
-.nav-mobile--link, .search-result--lead, .search-result--item, .comments--comment, .block-module--user-links-item, .block-module--user-links-item-last, .block-module--my-content-item {
+.nav-mobile--link, .search-result--lead, .search-result--item, .block-module--user-links-item, .block-module--user-links-item-last, .block-module--my-content-item {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 1em;
   padding-bottom: 1em;
@@ -1919,12 +1919,13 @@ label {
 /* line 13, ../sass/modules/_comment.scss */
 .comments--comment {
   position: relative;
-  margin-bottom: 1.5em;
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 /* line 20, ../sass/modules/_comment.scss */
 .comments--comment.is-sticky {
   border: 1px solid #41ab51;
-  margin-bottom: 2em;
   padding: 1.5em;
   background-color: #f5ffe7;
   -webkit-border-radius: 0.4em;
@@ -1933,34 +1934,34 @@ label {
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
 }
+/* line 30, ../sass/modules/_comment.scss */
+.comments--comment .flag-wrapper {
+  float: left;
+}
 
-/* line 39, ../sass/modules/_comment.scss */
+/* line 43, ../sass/modules/_comment.scss */
 .comments--comment-content {
   margin-bottom: 1em;
 }
 @media only screen and (min-width: 43em) {
-  /* line 39, ../sass/modules/_comment.scss */
+  /* line 43, ../sass/modules/_comment.scss */
   .comments--comment-content {
     margin-bottom: -1.5em;
   }
 }
 
-/* line 48, ../sass/modules/_comment.scss */
+/* line 52, ../sass/modules/_comment.scss */
 .comment--flag {
   /* Breakpoints */
 }
-/* line 51, ../sass/modules/_comment.scss */
+/* line 55, ../sass/modules/_comment.scss */
 .comment--flag.is-sticky {
   top: 1em;
   right: 1em;
   background-color: white;
 }
-/* line 59, ../sass/modules/_comment.scss */
-.comment--flag .flag-wrapper {
-  float: left;
-}
 @media only screen and (min-width: 43em) {
-  /* line 48, ../sass/modules/_comment.scss */
+  /* line 52, ../sass/modules/_comment.scss */
   .comment--flag {
     position: absolute;
     right: 0;
@@ -1971,7 +1972,7 @@ label {
 
 /* Comments list on user page
    ================================================================================================================== */
-/* line 76, ../sass/modules/_comment.scss */
+/* line 75, ../sass/modules/_comment.scss */
 .comments--user-page-comments-element {
   margin-bottom: 1em;
   padding-bottom: 1em;
