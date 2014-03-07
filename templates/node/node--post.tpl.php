@@ -106,7 +106,9 @@
   <div class="question--inner">
     <?php print render($content['field_description']);?>
   </div>
-  <div class="question--terms">
-    <?php print render($content['field_keyword']);?>
-  </div>
+  <?php if (!empty($content['field_keyword'])): ?>
+    <div class="question--terms">
+      <?php print render($content['field_keyword']);?>
+    </div>
+  <?php endif; ?>
 </section>

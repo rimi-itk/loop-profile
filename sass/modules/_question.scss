@@ -12,7 +12,6 @@
   border-bottom: 1px solid $border-color;
 
   margin-bottom: $margin-bottom;
-  padding-bottom: $padding-bottom;
 }
 
 .question--meta-data {
@@ -49,6 +48,10 @@
   margin-bottom: 0;
 
   font-size: 125%;
+}
+
+.question--terms {
+  margin-bottom: 1.5em;
 }
 
 .question--term {
