@@ -2050,6 +2050,31 @@ a.flag.is-active:hover, a.is-active.comment--flag:hover, a.flag.is-sticky:hover,
   color: #33863f;
 }
 
+/* line 91, ../sass/modules/_flag.scss */
+.flag-outer-subscribe-node {
+  margin-bottom: -1.5em;
+}
+/* line 94, ../sass/modules/_flag.scss */
+.flag-outer-subscribe-node .flag, .flag-outer-subscribe-node .comment--flag {
+  margin-bottom: 1.5em;
+}
+
+/* line 99, ../sass/modules/_flag.scss */
+.flag-message {
+  display: block;
+  margin-bottom: 1.5em;
+  padding: 1.5em;
+  background-color: #d6ff9a;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 /**
  * Tag
  *

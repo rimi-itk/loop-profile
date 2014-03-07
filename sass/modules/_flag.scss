@@ -86,3 +86,23 @@ a.flag {
     }
   }
 }
+
+// Adding margin bottom to the flag link so there are spacing below when the message appears.
+.flag-outer-subscribe-node {
+  margin-bottom: -1.5em;
+
+  .flag {
+    margin-bottom: 1.5em;
+  }
+}
+
+.flag-message {
+  display: block;
+  margin-bottom: 1.5em;
+  padding: 1.5em;
+
+  background-color: $green-lighter;
+
+  @include border-radius($border-radius);
+  @include box-sizing(border-box);
+}
