@@ -108,7 +108,6 @@ if (isset($loop_primary_menu)): ?>
     </div>
   <?php endif; ?>
 <?php endif; ?>
-
 <?php if ($no_panel || $is_front) : ?>
   <div class="layout-no-wrapper">
     <div class="layout--inner">

@@ -21,14 +21,14 @@
         </div>
       <?php endif; ?>
       <?php if (!empty($content['beta'])): ?>
-        <div class="layout-element-beta">!!
+        <div class="layout-element-beta">
           <?php print $content['beta']; ?>
         </div>
       <?php endif; ?>
     </div>
     <?php if (!empty($content['gamma'])): ?>
       <div class="layout--inner">
-        <div class="layout-element-gamma">!!!
+        <div class="layout-element-gamma">
           <?php print $content['gamma']; ?>
         </div>
       </div>
