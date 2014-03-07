@@ -551,7 +551,7 @@ img {
 /* Icons
    ================================================================================================================== */
 /* line 65, ../sass/theme/_placeholders.scss */
-.flag.is-sticky:before, .is-sticky.comment--flag:before, .messages.status:before, .flag:before, .comment--flag:before, .at-term:after, .messages.error:before, .search-result--comments:before, .question--number-of-comments:before, .messages.warning:before, .nav-mobile--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before {
+.flag.is-sticky:before, .is-sticky.comment--flag:before, .flag.unflag-action:before, .unflag-action.comment--flag:before, .messages.status:before, .flag:before, .comment--flag:before, .at-term:after, .messages.error:before, .search-result--comments:before, .question--number-of-comments:before, .messages.warning:before, .nav-mobile--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before {
   display: inline-block;
   font-family: "loop-icons";
   line-height: 100%;
@@ -568,7 +568,7 @@ img {
 }
 
 /* line 80, ../sass/theme/_placeholders.scss */
-.flag.is-sticky:before, .is-sticky.comment--flag:before {
+.flag.is-sticky:before, .is-sticky.comment--flag:before, .flag.unflag-action:before, .unflag-action.comment--flag:before {
   content: '\e804';
 }
 
@@ -2014,52 +2014,52 @@ label {
   border: 1px solid #41ab51;
   color: #41ab51;
 }
-/* line 37, ../sass/modules/_flag.scss */
-.flag.is-sticky, .is-sticky.comment--flag {
+/* line 38, ../sass/modules/_flag.scss */
+.flag.is-sticky, .is-sticky.comment--flag, .flag.unflag-action, .unflag-action.comment--flag {
   margin-bottom: 1em;
 }
 
-/* line 47, ../sass/modules/_flag.scss */
+/* line 48, ../sass/modules/_flag.scss */
 a.flag, a.comment--flag {
   /* States */
 }
-/* line 51, ../sass/modules/_flag.scss */
+/* line 52, ../sass/modules/_flag.scss */
 a.flag:link, a.comment--flag:link, a.flag:visited, a.comment--flag:visited, a.flag:hover, a.comment--flag:hover, a.flag:active, a.comment--flag:active {
   color: #b3b3b3;
   text-decoration: none;
 }
-/* line 56, ../sass/modules/_flag.scss */
+/* line 57, ../sass/modules/_flag.scss */
 a.flag:hover, a.comment--flag:hover {
   border: 1px solid #737373;
   color: #737373;
 }
-/* line 69, ../sass/modules/_flag.scss */
+/* line 70, ../sass/modules/_flag.scss */
 a.flag.is-active:link, a.is-active.comment--flag:link, a.flag.is-active:visited, a.is-active.comment--flag:visited, a.flag.is-active:hover, a.is-active.comment--flag:hover, a.flag.is-active:active, a.is-active.comment--flag:active, a.flag.is-sticky:link, a.is-sticky.comment--flag:link, a.flag.is-sticky:visited, a.is-sticky.comment--flag:visited, a.flag.is-sticky:hover, a.is-sticky.comment--flag:hover, a.flag.is-sticky:active, a.is-sticky.comment--flag:active, a.flag.unflag-action:link, a.unflag-action.comment--flag:link, a.flag.unflag-action:visited, a.unflag-action.comment--flag:visited, a.flag.unflag-action:hover, a.unflag-action.comment--flag:hover, a.flag.unflag-action:active, a.unflag-action.comment--flag:active {
   border: 1px solid #41ab51;
   color: #41ab51;
   text-decoration: none;
 }
-/* line 76, ../sass/modules/_flag.scss */
+/* line 77, ../sass/modules/_flag.scss */
 a.flag.is-active:hover, a.is-active.comment--flag:hover, a.flag.is-sticky:hover, a.is-sticky.comment--flag:hover, a.flag.unflag-action:hover, a.unflag-action.comment--flag:hover {
   border: 1px solid #737373;
   color: #737373;
 }
-/* line 82, ../sass/modules/_flag.scss */
+/* line 83, ../sass/modules/_flag.scss */
 a.flag.is-active:hover, a.is-active.comment--flag:hover, a.flag.is-sticky:hover, a.is-sticky.comment--flag:hover, a.flag.unflag-action:hover, a.unflag-action.comment--flag:hover {
   border: 1px solid #33863f;
   color: #33863f;
 }
 
-/* line 91, ../sass/modules/_flag.scss */
+/* line 92, ../sass/modules/_flag.scss */
 .flag-outer-subscribe-node {
   margin-bottom: -1.5em;
 }
-/* line 94, ../sass/modules/_flag.scss */
+/* line 95, ../sass/modules/_flag.scss */
 .flag-outer-subscribe-node .flag, .flag-outer-subscribe-node .comment--flag {
   margin-bottom: 1.5em;
 }
 
-/* line 99, ../sass/modules/_flag.scss */
+/* line 100, ../sass/modules/_flag.scss */
 .flag-message {
   display: block;
   margin-bottom: 1.5em;

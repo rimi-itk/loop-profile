@@ -34,7 +34,8 @@
     color: $link-color;
   }
 
-  &.is-sticky {
+  &.is-sticky,
+  &.unflag-action {
     margin-bottom: 1em;
 
     &:before {
