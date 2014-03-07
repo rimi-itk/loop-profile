@@ -1001,12 +1001,12 @@ label {
   *position: relative;
   *zoom: 1;
 }
-/* line 46, ../../../../../../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+/* line 46, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
 .header:before, .header:after {
   content: "";
   display: table;
 }
-/* line 50, ../../../../../../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+/* line 50, ../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
 .header:after {
   clear: both;
 }
@@ -1955,6 +1955,10 @@ label {
   right: 1em;
   background-color: white;
 }
+/* line 59, ../sass/modules/_comment.scss */
+.comment--flag .flag-wrapper {
+  float: left;
+}
 @media only screen and (min-width: 43em) {
   /* line 48, ../sass/modules/_comment.scss */
   .comment--flag {
@@ -1967,7 +1971,7 @@ label {
 
 /* Comments list on user page
    ================================================================================================================== */
-/* line 71, ../sass/modules/_comment.scss */
+/* line 76, ../sass/modules/_comment.scss */
 .comments--user-page-comments-element {
   margin-bottom: 1em;
   padding-bottom: 1em;
@@ -2037,11 +2041,6 @@ a.flag.is-active:hover, a.is-active.comment--flag:hover, a.flag.is-sticky:hover,
 a.flag.is-active:hover, a.is-active.comment--flag:hover, a.flag.is-sticky:hover, a.is-sticky.comment--flag:hover, a.flag.unflag-action:hover, a.unflag-action.comment--flag:hover {
   border: 1px solid #33863f;
   color: #33863f;
-}
-
-/* line 91, ../sass/modules/_flag.scss */
-.flag-wrapper {
-  float: left;
 }
 
 /**

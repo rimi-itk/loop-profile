@@ -55,6 +55,11 @@
     background-color: $white;
   }
 
+  // Flag needs this wrapper to work, adding float so it does not take up space.
+  .flag-wrapper {
+    float: left;
+  }
+
   /* Breakpoints */
   @include breakpoint($breakpoint-4) {
     position: absolute;
