@@ -28,7 +28,7 @@ function loop_notification_default_rules_configuration() {
               { "entity_create" : {
                   "USING" : {
                     "type" : "message",
-                    "param_type" : "yet_another",
+                    "param_type" : "comment_added_to_post",
                     "param_user" : [ "list-item" ]
                   },
                   "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
