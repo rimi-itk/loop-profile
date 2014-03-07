@@ -115,15 +115,10 @@ if (isset($loop_primary_menu)): ?>
       <?php if ($messages): ?>
         <?php print $messages; ?>
       <?php endif; ?>
-      <?php print render($title_prefix); ?>
-      <?php print render($title_suffix); ?>
-      <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
       <?php print render($page['content']); ?>
-      <?php print $feed_icons; ?>
     </div>
   </div>
 <?php else : ?>
-  <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
   <?php print render($page['content']); ?>
 <?php endif;?>
 
