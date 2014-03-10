@@ -2332,25 +2332,26 @@ a.flag.is-active:hover, a.is-active.comment--flag:hover, a.flag.is-sticky:hover,
 .user-profile-module--field, .user-profile-module--field-personal-info {
   padding-bottom: 1em;
   margin-bottom: 1em;
+  border-bottom: 1px solid #e6e6e6;
 }
-/* line 55, ../sass/modules/_user-profile.scss */
+/* line 56, ../sass/modules/_user-profile.scss */
 .user-profile-module--field:last-child, .user-profile-module--field-personal-info:last-child {
   padding-bottom: 0;
   margin-bottom: 0;
   border: 0;
 }
 
-/* line 63, ../sass/modules/_user-profile.scss */
+/* line 64, ../sass/modules/_user-profile.scss */
 .user-profile-module--field-personal-info {
   border-bottom: 1px solid #e6e6e6;
 }
 
-/* line 69, ../sass/modules/_user-profile.scss */
+/* line 70, ../sass/modules/_user-profile.scss */
 .user-profile-module--fieldset-legend {
   font-weight: bold;
 }
 
-/* line 75, ../sass/modules/_user-profile.scss */
+/* line 76, ../sass/modules/_user-profile.scss */
 .user-profile-module--field-label {
   display: inline-block;
   font-weight: bold;
