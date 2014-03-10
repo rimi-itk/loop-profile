@@ -128,26 +128,6 @@ class DITAParser implements iParser {
       // Setup XPath for DOM.
       $xpath = new DOMXPath($dom);
 
-
-      // Replace all ph with the referenced
-      // TODO: Correct conrefs to apply to all types of elements.
-/*      foreach ($xpath->query('//ph') as $ph) {
-        // Split conref into file path and variable name
-        $conref = explode('#', $ph->getAttribute('conref'));
-        $file = $conref[0];
-
-        $id = explode('/', $conref[1]);
-        $id = $id[count($id) - 1];
-
-        $varXML = simplexml_load_file($pathToDirectory . '/' . dirname($href) . '/' . $file);
-        $phText = $varXML->xpath('//ph[@id="' . $id . '"]');
-
-        $phText = $dom->createTextNode($phText[0]);
-
-        $ph->parentNode->replaceChild($phText, $ph);
-      }
-*/
-
       // Replace conrefs
       // From these cases: http://docs.oasis-open.org/dita/v1.1/OS/langspec/common/theconrefattribute.html
       // Only implemented "Using conref to refer to an element within a topic"
@@ -174,7 +154,7 @@ class DITAParser implements iParser {
           $id = $idArray[1];
           $containId = $idArray[0];
 
-          // This is not complete correct, but matches the Flare Dita output
+          // TODO: This is not complete correct, but matches the Flare Dita output
           // Correct syntax - $sxml = $varXML->xpath('(//*[@id="' . $containId . '"]//*[@id="' . $id . '"])[last()]');
           $sxml = $varXML->xpath('(//topic//*[@id="' . $id . '"])[last()]');
           if (!$sxml) {
@@ -201,7 +181,6 @@ class DITAParser implements iParser {
           $conrefElement->parentNode->replaceChild($newElement, $conrefElement);
         }
       }
-
 
       // Replace image paths.
       foreach ($xpath->query('//image') as $image) {
@@ -236,6 +215,15 @@ class DITAParser implements iParser {
           $xhref = explode('#', $xhref);
           $xrefReferences[$this->collapsePath($xhref[0])] = $nextIndex;
 
+          // Check for empty content, insert title from references topic as text.
+          if ($xref->nodeValue === '') {
+            $refXML = simplexml_load_file($pathToDirectory . '/' . $xhref[0]);
+
+            foreach ($refXML->xpath("//topic/title") as $title) {
+              $xref->nodeValue = (string)$title;
+              break;
+            }
+          }
           $xref->setAttribute('href', $nextIndex);
         } else {
           $xref->setAttribute('target',  '_blank');
@@ -295,11 +283,14 @@ class DITAParser implements iParser {
       // Convert dom to html.
       $body = $dom->saveHTML();
 
+      // Get next leaf id
+      $nextLeafID = count($objectReferences);
+
       // Make leaf from title of the node and the body.
-      $leaf = new Leaf($node['navtitle'], $body);
+      $leaf = new Leaf($node['navtitle'], $body, $nextLeafID);
 
       // Save href to leaf reference.
-      $objectReferences[$href] = $leaf;
+      $objectReferences[$href] = $nextLeafID;
 
       return $leaf;
     } else if ($nodeType == 'topichead') {
@@ -329,8 +320,12 @@ class DITAParser implements iParser {
     $indexReferences = array();
 
     foreach ($xrefReferences as $ref=>$index) {
-      $object = $objectReferences[$ref];
-      $indexReferences[$index] = $object;
+      $leafID = $objectReferences[$ref];
+      $arr = array(
+        'leafID'=>$leafID,
+        'nid'=>-1
+      );
+      $indexReferences[$index] = $arr;
     }
 
     return $indexReferences;

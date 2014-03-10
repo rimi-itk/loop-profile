@@ -318,8 +318,10 @@ function _loop_external_data_file_load($node) {
  *
  * @param int $parent
  *   Parent node ID.
+ * @param array $references
+ *   Array of references.
  */
-function _loop_external_data_parser($data, $parent = NULL) {
+function _loop_external_data_parser($data, $parent = NULL, &$references = NULL) {
   // Figure out what type we got.
   $class_type = get_class($data);
   switch ($class_type) {
@@ -327,10 +329,10 @@ function _loop_external_data_parser($data, $parent = NULL) {
       _loop_external_data_parser_index($data, $parent);
       break;
     case 'Tree':
-      _loop_external_data_parser_tree($data, $parent);
+      _loop_external_data_parser_tree($data, $parent, $references);
       break;
     case 'Leaf':
-      _loop_external_data_parser_leaf($data, $parent);
+      _loop_external_data_parser_leaf($data, $parent, $references);
       break;
   }
 
@@ -348,11 +350,98 @@ function _loop_external_data_parser($data, $parent = NULL) {
  */
 function _loop_external_data_parser_index($index, $parent) {
   $children = $index->getChildren();
+  $references = $index->getReferences();
+
   if (!empty($children)) {
     foreach ($children as $child) {
-      _loop_external_data_parser($child, $parent);
+      _loop_external_data_parser($child, $parent, $references);
+    }
+
+    $msg = array(
+      'message'=>'references printout',
+      'references'=>$references
+    );
+    watchdog('loop_external_data', print_r($msg, 1));
+
+    // Fix references
+    foreach ($children as $child) {
+      $class_type = get_class($child);
+      switch ($class_type) {
+        case 'Tree':
+          _loop_external_data_fix_references_tree($child, $references);
+          break;
+        case 'Leaf':
+          _loop_external_data_fix_references_leaf($child, $references);
+          break;
+      }
     }
   }
+}
+
+/**
+ * Fixes references for a Tree.
+ *
+ * @param $loopTree
+ * @param $references
+ */
+function _loop_external_data_fix_references_tree($loopTree, $references) {
+  $children = $loopTree->getChildren();
+  foreach($children as $child) {
+    $class_type = get_class($child);
+    switch ($class_type) {
+      case 'Tree':
+        _loop_external_data_fix_references_tree($child, $references);
+        break;
+      case 'Leaf':
+        _loop_external_data_fix_references_leaf($child, $references);
+        break;
+    }
+  }
+}
+
+/**
+ * Fixes the references for the body of a Leaf.
+ * Uses the $references array to make the links between nodes.
+ *
+ * @param $loopLeaf
+ * @param $references
+ * @throws Exception
+ */
+function _loop_external_data_fix_references_leaf($loopLeaf, $references) {
+  $node = node_load($loopLeaf->getDrupalNID());
+
+  $wrapper = entity_metadata_wrapper('node', $node);
+  $body = $wrapper->body->value();
+
+  $xml = new DOMDocument('1.0', 'utf-8');
+  libxml_use_internal_errors(true);
+  if (!$xml->loadHTML($body['value'])) {
+    throw new Exception("Error loading Leaf body.");
+  }
+  libxml_clear_errors();
+  $xpath = new DOMXPath($xml);
+
+  foreach ($xpath->query('//a') as $a) {
+    $href = $a->getAttribute('href');
+
+    $ref = $references[$href];
+    if (isset($ref)) {
+      $newPath = '/node/' . $ref['nid'];
+
+      $a->setAttribute('href', $newPath);
+      $a->setAttribute('class', 'external-data-link');
+    }
+  }
+
+  $body = $xpath->query('//body');
+
+  $bodyArr = array(
+    'value' => $xml->saveXML($body->item(0)),
+    'format' => 'editor'
+  );
+
+  $wrapper->body = $bodyArr;
+  $wrapper->save();
 }
 
 /**
@@ -365,8 +454,10 @@ function _loop_external_data_parser_index($index, $parent) {
  *
  * @param int $parent
  *  Parent node ID.
+ * @param array $references
+ *  Array of references.
  */
-function _loop_external_data_parser_tree($tree, $parent = NULL) {
+function _loop_external_data_parser_tree($tree, $parent = NULL, &$references) {
   global $user;
   $node = new Stdclass();
 
@@ -380,7 +471,7 @@ function _loop_external_data_parser_tree($tree, $parent = NULL) {
 
   $children = $tree->getChildren();
   foreach ($children as $child) {
-    _loop_external_data_parser($child, $node->nid);
+    _loop_external_data_parser($child, $node->nid, $references);
   }
 
   _loop_external_data_add_child($parent, $node);
@@ -396,8 +487,10 @@ function _loop_external_data_parser_tree($tree, $parent = NULL) {
  *
  * @param int $parent
  *  Parent node ID.
+ * @param array $references
+ *  Array of references.
  */
-function _loop_external_data_parser_leaf($leaf, $parent = NULL) {
+function _loop_external_data_parser_leaf($leaf, $parent = NULL, &$references) {
   global $user;
   $node = new Stdclass();
 
@@ -408,6 +501,16 @@ function _loop_external_data_parser_leaf($leaf, $parent = NULL) {
   $node->title = $leaf->getTitle();
 
   node_save($node);
+
+  // If this leaf matches one of the references, set the node id of the reference.
+  for ($i = 0; $i < count($references); $i++) {
+    if ($references[$i]['leafID'] == $leaf->getLeafID()) {
+      $references[$i]['nid'] = $node->nid;
+    }
+  }
+
+  // Add Node ID to leaf.
+  $leaf->setDrupalNID($node->nid);
 
   $wrapper = entity_metadata_wrapper('node', $node);
   $wrapper->body = array(
