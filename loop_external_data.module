@@ -229,7 +229,7 @@ function _loop_external_data_build_tree($item) {
     case 'index':
       $trees = $wrapper->field_tree->value();
       foreach ($trees as $tree) {
-        $items['childs'][] = _loop_external_data_build_tree($tree);
+        $items['#childs'][] = _loop_external_data_build_tree($tree);
         $items['#theme'] = 'loop_external_data_trees';
       }
       break;
@@ -269,6 +269,14 @@ function loop_external_data_node_insert($node) {
   }
 }
 
+function loop_external_data_node_delete($node) {
+  if ($node->type == 'index') {
+    // Remove leafs and trees.
+    $trees = _loop_external_data_build_tree($node);
+    _loop_external_data_delete_tree($trees);
+  }
+}
+
 /**
  * Implements hook_node_update().
  *
@@ -299,14 +307,15 @@ function loop_external_data_node_update($node) {
  * @param $trees
  */
 function _loop_external_data_delete_tree($trees) {
-  foreach ($trees['childs'] as $tree) {
-    if (is_object($tree)) {
-      node_delete($tree->nid);
+  if ($trees['#theme'] == 'loop_external_data_trees') {
+    foreach ($trees['#childs'] as $child) {
+      _loop_external_data_delete_tree($child);
     }
-    else if (is_array($tree['childs'])) {
-      node_delete($tree['nid']);
-      _loop_external_data_delete_tree($tree);
+    if (isset($trees['#nid'])) {
+      node_delete($trees['#nid']);
     }
+  } else if ($trees['#theme'] == 'loop_external_data_leaf') {
+    node_delete($trees['#nid']);
   }
 }
 
@@ -382,12 +391,6 @@ function _loop_external_data_parser_index($index, $parent) {
     foreach ($children as $child) {
       _loop_external_data_parser($child, $parent, $references);
     }
-
-    $msg = array(
-      'message'=>'references printout',
-      'references'=>$references
-    );
-    watchdog('loop_external_data', print_r($msg, 1));
 
     // Fix references
     foreach ($children as $child) {

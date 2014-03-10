@@ -287,7 +287,7 @@ class DITAParser implements iParser {
       $nextLeafID = count($objectReferences);
 
       // Make leaf from title of the node and the body.
-      $leaf = new Leaf($node['navtitle'], $body, $nextLeafID);
+      $leaf = new Leaf((string)$node['navtitle'], $body, $nextLeafID);
 
       // Save href to leaf reference.
       $objectReferences[$href] = $nextLeafID;
@@ -301,7 +301,7 @@ class DITAParser implements iParser {
         $children[] = $this->traverseNode($child, $pathToDirectory, $indexNodeID, $objectReferences, $xrefReferences);
       }
 
-      $tree = new Tree($node['navtitle'], $children);
+      $tree = new Tree((string)$node['navtitle'], $children);
       return $tree;
     }
     return null;
