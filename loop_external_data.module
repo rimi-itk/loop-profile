@@ -98,9 +98,10 @@ function loop_external_data_block_view($delta = '') {
 
   switch ($delta) {
     case 'index':
-      $node_id = arg(1);
-      if (is_int($node_id)) {
+      $node_id = (int)arg(1);
+      if ( (is_int($node_id)) && ($node_id > 0) ) {
         $node = node_load($node_id);
+        $node = _loop_external_data_find_index($node);
         $block['subject'] = t('Index');
         $block['content'] = array(
           '#theme' => 'loop_external_data_dropdown_block',
@@ -155,6 +156,31 @@ function _loop_external_data_build_dropdown($item) {
   }
 
   return $items;
+}
+
+function _loop_external_data_find_index($item) {
+  // Find index.
+  if ($item->type != 'index') {
+    $tree = db_select('field_data_field_leaf', 'l')
+      ->fields('l', array('entity_id'))
+      ->condition('field_leaf_target_id', $item->nid)
+      ->execute()
+      ->fetchAssoc();
+
+    if ($tree == FALSE) {
+      $tree = db_select('field_data_field_tree', 'l')
+        ->fields('l', array('entity_id'))
+        ->condition('field_tree_target_id', $item->nid)
+        ->execute()
+        ->fetchAssoc();
+    }
+
+    $item = node_load($tree['entity_id']);
+    return _loop_external_data_find_index($item);
+  }
+  else {
+    return $item;
+  }
 }
 
 /**
