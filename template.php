@@ -584,7 +584,7 @@ function fetch_full_name ($user_obj) {
 
 
 /**
- * Implements hook_textarea.
+ * Implements hook_textarea().
  *
  * Remove grippie from textarea.
  */
