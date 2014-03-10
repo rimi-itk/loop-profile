@@ -32,9 +32,9 @@ function loop_notification_default_message_type() {
     "arguments" : null,
     "message_text" : { "en" : [
         {
-          "value" : "\\u003Cp\\u003EA new comment has been added to the question: \\u003Ca href=\\u0022[current-page:url:absolute]\\u0022\\u003E[current-page:title]\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EThis message is an automated message sent because you are subscribing to updates on the before mentioned question.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003E\\u003Ca href=\\u0022[site:url]\\u0022\\u003E[site:name]\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n",
+          "value" : "\\u003Cp\\u003ENyt svar p\\u00e5 sp\\u00f8rgsm\\u00e5let \\u0022\\u003Ca href=\\u0022\\/node\\/[message:field-message-node-reference:nid]\\u0022\\u003E[message:field-message-node-reference:title]\\u003C\\/a\\u003E\\u0022\\u003C\\/p\\u003E",
           "format" : "editor",
-          "safe_value" : "\\u003Cp\\u003EA new comment has been added to the question: \\u003Ca href=\\u0022absolute]\\u0022\\u003E[current-page:title]\\u003C\\/a\\u003E\\u003Cbr \\/\\u003E\\nThis message is an automated message sent because you are subscribing to updates on the before mentioned question.\\u003Cbr \\/\\u003E\\u003Ca href=\\u0022url]\\u0022\\u003E[site:name]\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003ENyt svar p\\u00e5 sp\\u00f8rgsm\\u00e5let \\u0022\\u003Ca href=\\u0022\\/node\\/[message:field-message-node-reference:nid]\\u0022\\u003E[message:field-message-node-reference:title]\\u003C\\/a\\u003E\\u0022\\u003C\\/p\\u003E\\n"
         }
       ]
     }

@@ -18,11 +18,11 @@ function loop_notification_default_rules_configuration() {
       "DO" : [
         { "flag_fetch_users_node" : {
             "USING" : { "flag" : "subscribe_node", "node" : [ "comment:node" ] },
-            "PROVIDE" : { "users" : { "users" : "Users who flagged" } }
+            "PROVIDE" : { "users" : { "users_who_flagged" : "Users who flagged" } }
           }
         },
         { "LOOP" : {
-            "USING" : { "list" : [ "users" ] },
+            "USING" : { "list" : [ "users-who-flagged" ] },
             "ITEM" : { "list_item" : "Current list item" },
             "DO" : [
               { "entity_create" : {
@@ -34,7 +34,12 @@ function loop_notification_default_rules_configuration() {
                   "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
                 }
               },
-              { "entity_save" : { "data" : [ "entity-created" ] } }
+              { "data_set" : {
+                  "data" : [ "entity-created:field-message-node-reference" ],
+                  "value" : [ "comment:node" ]
+                }
+              },
+              { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } }
             ]
           }
         }
