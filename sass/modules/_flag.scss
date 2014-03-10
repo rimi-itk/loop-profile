@@ -96,7 +96,8 @@ a.flag {
 }
 
 .flag-message {
-  display: block;
+  // jQuery adds inline styling, we use !important to make sure the flag message is only displayed when needed.
+  display: none !important;
   margin-bottom: 1.5em;
   padding: 1.5em;
 
@@ -104,4 +105,12 @@ a.flag {
 
   @include border-radius($border-radius);
   @include box-sizing(border-box);
+}
+
+.block-follow-question {
+  .flag-message {
+    // jQuery adds inline styling and because we used !important earlier we have to use !important again to show the
+    // flag.
+    display: block !important;
+  }
 }

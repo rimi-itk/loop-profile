@@ -1982,7 +1982,7 @@ a.flag.is-active:hover, a.is-active.comment--flag:hover, a.flag.is-sticky:hover,
 
 /* line 98, ../sass/modules/_flag.scss */
 .flag-message {
-  display: block;
+  display: none !important;
   margin-bottom: 1.5em;
   padding: 1.5em;
   background-color: #d6ff9a;
@@ -1992,6 +1992,11 @@ a.flag.is-active:hover, a.is-active.comment--flag:hover, a.flag.is-sticky:hover,
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+/* line 111, ../sass/modules/_flag.scss */
+.block-follow-question .flag-message {
+  display: block !important;
 }
 
 /**
