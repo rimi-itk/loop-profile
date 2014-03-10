@@ -11,20 +11,27 @@
    ================================================================================================================== */
 
 .comments--comment {
-  @extend %element-spacing;
-
   position: relative;
 
-  margin-bottom: 1.5em;
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 2em;
+  padding-bottom: 1.5em;
 
   &.is-sticky {
     border: 1px solid $green;
-    margin-bottom: 2em;
+    margin-bottom: 2.5em;
     padding: 1.5em;
 
     background-color: lighten($green-lighter, 15%);
 
     @include border-radius($border-radius);
+  }
+
+  // Flag needs flag-wrapper to work, adding float so it does not take up space.
+  .flag-wrapper {
+    @include breakpoint($breakpoint-4) {
+      float: left;
+    }
   }
 
   &:last-child {
@@ -40,8 +47,7 @@
   margin-bottom: 1em;
 
   @include breakpoint($breakpoint-4) {
-    // Compensate for <p> margin bottom.
-    margin-bottom: -1.5em;
+    margin-bottom: 0;
   }
 }
 

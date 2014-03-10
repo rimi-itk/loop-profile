@@ -81,34 +81,21 @@
  */
 ?>
 
-<section class="question--wrapper">
-  <div class="meta-data--author">
-    <?php if (isset($user_picture)): ?>
-      <div class="meta-data--author-image">
-        <?php print $user_picture; ?>
-      </div>
-    <?php endif ?>
-    <?php if ((isset($author_name) && isset($uid)) || isset($job_title)) : ?>
-      <div class="meta-data--author-wrapper">
-        <?php if (isset($node->name) && isset($node->uid)): ?>
-          <span class="meta-data--author-link"><?php print l($author_name, 'user/' . $uid); ?></span>
-        <?php endif ?>
-        <?php if (isset($job_title)): ?>
-          <span class="meta-data--author-title"><?php print render($job_title);?></span>
-        <?php endif ?>
-      </div>
-    <?php endif ?>
-  </div>
-  <div class="question--meta-data">
-    <div class="question--meta-data-date"><?php print t('Submitted') . ' ' . format_date($created, $type = 'medium'); ?></div>
-    <?php print render($content['field_subject']);?>
-  </div>
-  <div class="question--inner">
-    <?php print render($content['field_description']);?>
-  </div>
-  <?php if (!empty($content['field_keyword'])): ?>
-    <div class="question--terms">
-      <?php print render($content['field_keyword']);?>
-    </div>
-  <?php endif; ?>
-</section>
+<h1 class="page-title">
+  <?php print $title; ?>
+  <?php
+    // Check if the user is allowed to edit the page.
+    if ($router_item = menu_get_item('node/' . $node->nid . '/edit')) {
+      if ($router_item['access']) {
+        print '<span class="page-title--edit-link">(<a href="/node/' . $node->nid . '/edit">' . t('edit page') . '</a>)</span>';
+      }
+    }
+  ?>
+</h1>
+
+<?php
+  // We hide the comments and links now so that we can render them later.
+  hide($content['comments']);
+  hide($content['links']);
+  print render($content);
+?>

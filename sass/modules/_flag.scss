@@ -11,6 +11,7 @@
   display: block;
   padding: .5em 1em;
 
+  background-color: $white;
   font-weight: bold;
   text-align: center;
 
@@ -33,9 +34,8 @@
     color: $link-color;
   }
 
-  &.is-sticky {
-    margin-bottom: 1em;
-
+  &.is-sticky,
+  &.unflag-action {
     &:before {
       @extend %icon-check;
     }
@@ -86,8 +86,31 @@ a.flag {
   }
 }
 
+// Adding margin bottom to the flag link so there are spacing below when the message appears.
+.flag-outer-subscribe-node {
+  margin-bottom: -1.5em;
 
-// Flag needs this wrapper to work, adding float so it does not take up space.
-.flag-wrapper {
-  float: left;
+  .flag {
+    margin-bottom: 1.5em;
+  }
+}
+
+.flag-message {
+  // jQuery adds inline styling, we use !important to make sure the flag message is only displayed when needed.
+  display: none !important;
+  margin-bottom: 1.5em;
+  padding: 1.5em;
+
+  background-color: $green-lighter;
+
+  @include border-radius($border-radius);
+  @include box-sizing(border-box);
+}
+
+.block-follow-question {
+  .flag-message {
+    // jQuery adds inline styling and because we used !important earlier we have to use !important again to show the
+    // flag.
+    display: block !important;
+  }
 }
