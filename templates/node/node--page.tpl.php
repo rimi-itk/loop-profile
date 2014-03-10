@@ -83,8 +83,14 @@
 
 <h1 class="page-title">
   <?php print $title; ?>
-  <?php // TODO: Check if user is logged in. ?>
-  <span class="page-title--edit-link">(<a href="/node/<?php print $node->nid; ?>/edit"><?php print t('edit page'); ?></a>)</span>
+  <?php
+    // Check if the user is allowed to edit the page.
+    if ($router_item = menu_get_item('node/' . $node->nid . '/edit')) {
+      if ($router_item['access']) {
+        print '<span class="page-title--edit-link">(<a href="/node/' . $node->nid . '/edit">' . t('edit page') . '</a>)</span>';
+      }
+    }
+  ?>
 </h1>
 
 <?php
