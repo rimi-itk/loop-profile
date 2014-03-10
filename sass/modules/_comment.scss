@@ -29,7 +29,9 @@
 
   // Flag needs flag-wrapper to work, adding float so it does not take up space.
   .flag-wrapper {
-    float: left;
+    @include breakpoint($breakpoint-4) {
+      float: left;
+    }
   }
 
   &:last-child {
@@ -45,8 +47,7 @@
   margin-bottom: 1em;
 
   @include breakpoint($breakpoint-4) {
-    // Compensate for <p> margin bottom.
-    margin-bottom: -1.5em;
+    margin-bottom: 0;
   }
 }
 

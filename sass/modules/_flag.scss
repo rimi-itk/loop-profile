@@ -36,8 +36,6 @@
 
   &.is-sticky,
   &.unflag-action {
-    margin-bottom: 1em;
-
     &:before {
       @extend %icon-check;
     }
