@@ -1814,6 +1814,7 @@ label {
   display: inline-block;
   overflow: hidden;
   margin-right: .5em;
+  max-height: 3em;
   max-width: 3em;
   background-color: white;
   -moz-border-radius: 0.4em;
@@ -1821,19 +1822,19 @@ label {
   border-radius: 0.4em;
 }
 
-/* line 49, ../sass/modules/_meta-data.scss */
+/* line 50, ../sass/modules/_meta-data.scss */
 .meta-data--author-wrapper {
   vertical-align: top;
   display: inline-block;
   margin-left: 4em;
 }
 
-/* line 56, ../sass/modules/_meta-data.scss */
+/* line 57, ../sass/modules/_meta-data.scss */
 .meta-data--author-link {
   font-weight: bold;
 }
 
-/* line 60, ../sass/modules/_meta-data.scss */
+/* line 61, ../sass/modules/_meta-data.scss */
 .meta-data--author-title {
   display: block;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
