@@ -24,6 +24,7 @@ stylesheets[all][] = flag.css
 stylesheets[all][] = system.menus.css
 stylesheets[all][] = system.messages.css
 stylesheets[all][] = autocomplete_deluxe.css
+stylesheets[all][] = filter.css
 
 ; Panels layouts. You can place multiple layouts under the "layouts" folder.
 plugins[panels][layouts] = templates/panels/layouts
