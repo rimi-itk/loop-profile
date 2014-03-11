@@ -51,6 +51,7 @@
 .user-profile-module--field {
   padding-bottom: 1em;
   margin-bottom: 1em;
+  border-bottom: 1px solid $border-color;
 
   &:last-child {
     padding-bottom: 0;
@@ -77,4 +78,9 @@
   font-weight: bold;
   width: 10em;
   margin-right: 1em;
+}
+
+.user-profile-module--footer {
+  padding: 2em 1em 0;
+  text-align: center;
 }

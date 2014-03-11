@@ -5,8 +5,8 @@
  */
 
 
-
-.flag {
+.node--flag,
+.comment--flag {
   border: 1px solid $gray;
   display: block;
   padding: .5em 1em;
@@ -43,7 +43,8 @@
 }
 
 // If it's a link add pseudo styles.
-a.flag {
+a.node--flag,
+a.comment--flag {
   &:link,
   &:visited,
   &:hover,
@@ -112,5 +113,17 @@ a.flag {
     // jQuery adds inline styling and because we used !important earlier we have to use !important again to show the
     // flag.
     display: block !important;
+  }
+}
+
+.message--flag-wrapper {
+  float: left;
+  margin-right: 1em;
+}
+
+.message--flag {
+  &:before {
+    @extend %icon-check;
+    margin-right:0.2em;
   }
 }
