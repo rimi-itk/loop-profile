@@ -118,12 +118,17 @@ a.comment--flag {
 
 .message--flag-wrapper {
   float: left;
-  margin-right: 1em;
+  margin-right: .25em;
 }
 
 .message--flag {
+  height: 1.2em;
+  width: 1em;
+
+  display: inline-block;
+  overflow: hidden;
+
   &:before {
-    @extend %icon-check;
-    margin-right:0.2em;
+    @extend %icon-cancel;
   }
 }

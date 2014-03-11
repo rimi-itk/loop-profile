@@ -98,6 +98,12 @@
 %icon-cancel {
   @extend %icon-base;
 
+  content: '\e800';
+}
+
+%icon-cancel-circled {
+  @extend %icon-base;
+
   content: '\e80b';
 }
 

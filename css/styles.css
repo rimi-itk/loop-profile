@@ -557,8 +557,8 @@ img {
 /* line 65, ../sass/theme/_placeholders.scss */
 .node--flag.is-sticky:before, .node--flag.unflag-action:before,
 .comment--flag.is-sticky:before,
-.comment--flag.unflag-action:before, .message--flag:before, .messages.status:before, .node--flag:before,
-.comment--flag:before, .at-term:after, .messages.error:before, .search-result--comments:before, .question--number-of-comments:before, .messages.warning:before, .nav-mobile--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before {
+.comment--flag.unflag-action:before, .messages.status:before, .node--flag:before,
+.comment--flag:before, .message--flag:before, .at-term:after, .messages.error:before, .search-result--comments:before, .question--number-of-comments:before, .messages.warning:before, .nav-mobile--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before {
   display: inline-block;
   font-family: "loop-icons";
   line-height: 100%;
@@ -578,7 +578,7 @@ img {
 /* line 80, ../sass/theme/_placeholders.scss */
 .node--flag.is-sticky:before, .node--flag.unflag-action:before,
 .comment--flag.is-sticky:before,
-.comment--flag.unflag-action:before, .message--flag:before {
+.comment--flag.unflag-action:before {
   content: '\e804';
 }
 
@@ -594,21 +594,21 @@ img {
 }
 
 /* line 98, ../sass/theme/_placeholders.scss */
-.at-term:after, .messages.error:before {
-  content: '\e80b';
+.message--flag:before, .at-term:after, .messages.error:before {
+  content: '\e800';
 }
 
-/* line 104, ../sass/theme/_placeholders.scss */
+/* line 110, ../sass/theme/_placeholders.scss */
 .search-result--comments:before, .question--number-of-comments:before {
   content: '\e80a';
 }
 
-/* line 110, ../sass/theme/_placeholders.scss */
+/* line 116, ../sass/theme/_placeholders.scss */
 .messages.warning:before {
   content: '\e80c';
 }
 
-/* line 116, ../sass/theme/_placeholders.scss */
+/* line 122, ../sass/theme/_placeholders.scss */
 .nav-mobile--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before {
   content: '\e807';
 }
@@ -2121,12 +2121,15 @@ a.comment--flag.unflag-action:hover {
 /* line 119, ../sass/modules/_flag.scss */
 .message--flag-wrapper {
   float: left;
-  margin-right: 1em;
+  margin-right: .25em;
 }
 
-/* line 125, ../sass/modules/_flag.scss */
-.message--flag:before {
-  margin-right: 0.2em;
+/* line 124, ../sass/modules/_flag.scss */
+.message--flag {
+  height: 1.2em;
+  width: 1em;
+  display: inline-block;
+  overflow: hidden;
 }
 
 /**
