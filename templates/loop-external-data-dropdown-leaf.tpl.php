@@ -1,1 +1,1 @@
-<option value="<?php print $nid; ?>"><?php print $title; ?></option>
+<li class="guide--nav-list-item"><?php print l($title, 'node/' . $nid)?></li>
