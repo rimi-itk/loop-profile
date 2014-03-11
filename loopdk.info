@@ -35,7 +35,6 @@ dependencies[] = menu
 dependencies[] = menu_block
 dependencies[] = metatag
 dependencies[] = module_filter
-dependencies[] = og
 dependencies[] = panels
 dependencies[] = page_title
 dependencies[] = pathauto
