@@ -46,5 +46,41 @@ function loop_notification_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_remove_subscription'] = entity_import('rules_config', '{ "rules_remove_subscription" : {
+      "LABEL" : "Remove subscription",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "Subscriptions" ],
+      "REQUIRES" : [ "flag" ],
+      "USES VARIABLES" : { "node" : { "label" : "node", "type" : "node" } },
+      "DO" : [
+        { "flag_unflagnode" : {
+            "flag" : "subscribe_node",
+            "node" : [ "node" ],
+            "flagging_user" : [ "site:current-user" ],
+            "permission_check" : 0
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_set_message_read'] = entity_import('rules_config', '{ "rules_set_message_read" : {
+      "LABEL" : "Set message read",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "notification" ],
+      "REQUIRES" : [ "flag" ],
+      "USES VARIABLES" : { "message_read" : { "label" : "Set message read", "type" : "message" } },
+      "DO" : [
+        { "flag_flagmessage" : {
+            "flag" : "message_read",
+            "message" : [ "message-read" ],
+            "flagging_user" : [ "site:current-user" ],
+            "permission_check" : 0
+          }
+        }
+      ]
+    }
+  }');
   return $items;
 }
