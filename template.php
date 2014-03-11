@@ -197,7 +197,12 @@ function loop_menu_local_task($variables) {
     $secondary = menu_secondary_local_tasks();
   }
 
-  // Dont print shortcuts and statistics.
+  if ($link['path'] == 'user/%/messages') {
+    // Add the secondary menu.
+    $secondary = menu_secondary_local_tasks();
+  }
+
+  // Don't print shortcuts and statistics.
   if ($link['page_callback'] == 'statistics_user_tracker' || $link['path'] == 'user/%/shortcuts') {
     return FALSE;
   }
@@ -242,20 +247,6 @@ function loop_menu_local_tasks($variables) {
       $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
       $variables['primary']['#prefix'] .= '<ul class="block-module--user-links-list">';
       $variables['primary']['#suffix'] = '<li class="block-module--user-links-item-last"><a href="/user/logout">' . t('Logout') . '</a></li></ul>';
-      $output .= drupal_render($variables['primary']);
-    }
-    if (!empty($variables['secondary'])) {
-      $variables['secondary']['#prefix'] = '<h2 class="element-invisible">' . t('Secondary tabs') . '</h2>';
-      $variables['secondary']['#prefix'] .= '<ul class="block-module-user-links-list-sub secondary">';
-      $variables['secondary']['#suffix'] = '</ul>';
-      $output .= drupal_render($variables['secondary']);
-    }
-  }
-  else {
-    if (!empty($variables['primary'])) {
-      $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
-      $variables['primary']['#prefix'] .= '<ul class="tabs">';
-      $variables['primary']['#suffix'] = '</ul>';
       $output .= drupal_render($variables['primary']);
     }
   }

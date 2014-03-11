@@ -42,7 +42,7 @@
 <?php if ($needs_wrapping_element): ?>
   <div class="flag-outer flag-outer-<?php print $flag_name_css; ?>">
 <?php endif; ?>
-<span class="<?php print $flag_wrapper_classes; ?>">
+<span class="<?php print $flag_wrapper_classes; ?> <?php print $flag->entity_type; ?>--flag-wrapper">
   <?php if ($link_href): ?>
     <a href="<?php print $link_href; ?>" title="<?php print $link_title; ?>" class="<?php print $flag_classes ?> <?php print $flag->entity_type; ?>--flag" rel="nofollow"><?php print $link_text; ?></a>
   <?php else: ?>

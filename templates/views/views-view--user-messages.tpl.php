@@ -72,13 +72,13 @@
   <?php endif; ?>
 
   <?php if ($more): ?>
-    <?php print $more; ?>
+    <div class="user-profile-module--footer">
+      <?php print $more; ?>
+    </div>
   <?php endif; ?>
 
   <?php if ($footer): ?>
-    <div class="view-footer">
-      <?php print $footer; ?>
-    </div>
+    <?php print $footer; ?>
   <?php endif; ?>
 
   <?php if ($feed_icon): ?>
