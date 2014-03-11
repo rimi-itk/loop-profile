@@ -333,7 +333,7 @@ function loop_notification_views_default_views() {
   $handler->display->display_options['fields']['message_render']['element_wrapper_class'] = 'user-profile-module--field-text';
   $handler->display->display_options['fields']['message_render']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['message_render']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['message_render']['partials'] = 0;
+  $handler->display->display_options['fields']['message_render']['partials'] = 1;
   $handler->display->display_options['fields']['message_render']['partials_delta'] = '0';
   /* Sort criterion: Message: Timestamp */
   $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
@@ -400,7 +400,7 @@ function loop_notification_views_default_views() {
   $handler->display->display_options['fields']['message_render']['label'] = '';
   $handler->display->display_options['fields']['message_render']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['message_render']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['message_render']['partials'] = 0;
+  $handler->display->display_options['fields']['message_render']['partials'] = 1;
   $handler->display->display_options['fields']['message_render']['partials_delta'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
