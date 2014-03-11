@@ -13,7 +13,7 @@ function loop_notification_default_rules_configuration() {
       "LABEL" : "Create\\/send message on comment creation",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "flag", "rules", "comment" ],
+      "REQUIRES" : [ "flag", "rules", "message_notify", "comment" ],
       "ON" : { "comment_insert" : [] },
       "DO" : [
         { "flag_fetch_users_node" : {
@@ -39,7 +39,8 @@ function loop_notification_default_rules_configuration() {
                   "value" : [ "comment:node" ]
                 }
               },
-              { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } }
+              { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } },
+              { "message_notify_process" : { "message" : [ "entity-created" ], "mail" : "[list-item:mail]" } }
             ]
           }
         }
