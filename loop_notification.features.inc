@@ -88,9 +88,9 @@ function loop_notification_default_message_type() {
           "safe_value" : "\\u003Cp\\u003ENyt svar p\\u00e5 sp\\u00f8rgsm\\u00e5let \\u0022\\u003Ca href=\\u0022\\/node\\/[message:field-message-node-reference:nid]\\u0022\\u003E[message:field-message-node-reference:title]\\u003C\\/a\\u003E\\u0022\\u003C\\/p\\u003E\\n"
         },
         {
-          "value" : "\\u003Cp\\u003EDer er kommet et nyt svar til sp\\u00f8rgsm\\u00e5let:\\u003Cspan style=\\u0022line-height: 1.538em;\\u0022\\u003E\\u0026nbsp;\\u0026quot;\\u003C\\/span\\u003E\\u003Ca href=\\u0022\\/node\\/[message:field-message-node-reference:nid]\\u0022 style=\\u0022line-height: 1.538em;\\u0022\\u003E[message:field-message-node-reference:title]\\u003C\\/a\\u003E\\u003Cspan style=\\u0022line-height: 1.538em;\\u0022\\u003E\\u0026quot;\\u003C\\/span\\u003E\\u003C\\/p\\u003E\\u003Cp\\u003EMvh LOOP\\u003C\\/p\\u003E\\u003Cp\\u003E\\u0026nbsp;\\u003C\\/p\\u003E\\u003Cp\\u003EDette er en automatisk besked sendt fra\\u0026nbsp;\\u003Ca style=\\u0022line-height: 1.538em; white-space: nowrap;\\u0022 title=\\u0022Insert this token into your form\\u0022\\u003E[site:url]\\u003C\\/a\\u003E\\u003C\\/p\\u003E",
+          "value" : "\\u003Cp\\u003EDer er kommet et nyt svar til sp\\u00f8rgsm\\u00e5let: [message:field-message-node-reference:title]\\u003C\\/p\\u003E\\u003Cp\\u003EMvh LOOP\\u003C\\/p\\u003E\\u003Cp\\u003EDette er en automatisk besked sendt fra [site:url]\\u003C\\/p\\u003E",
           "format" : "editor",
-          "safe_value" : "\\u003Cp\\u003EDer er kommet et nyt svar til sp\\u00f8rgsm\\u00e5let:\\u00a0\\u0022\\u003Ca href=\\u0022\\/node\\/[message:field-message-node-reference:nid]\\u0022\\u003E[message:field-message-node-reference:title]\\u003C\\/a\\u003E\\u0022Mvh LOOP\\u00a0Dette er en automatisk besked sendt fra\\u00a0\\u003Ca title=\\u0022Insert this token into your form\\u0022\\u003E[site:url]\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003EDer er kommet et nyt svar til sp\\u00f8rgsm\\u00e5let: [message:field-message-node-reference:title]Mvh LOOPDette er en automatisk besked sendt fra [site:url]\\u003C\\/p\\u003E\\n"
         }
       ]
     }
