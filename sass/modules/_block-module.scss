@@ -42,8 +42,9 @@
 
 }
 
-
 .block-follow-question {
+  margin-bottom: 0;
+
   .block-module--link {
     @extend .button--action;
   }
@@ -89,12 +90,11 @@
 }
 
 .block-module--user-links-item {
-  @extend %element-spacing;
-
   display: block;
 
   border-bottom-color: $green-light;
 
+  @include element-spacing(1em);
   @include custom-menu-links($white);
 
   &.active {
@@ -135,18 +135,15 @@
 }
 
 .block-module--my-content-item {
-  @extend %element-spacing;
-
   display: block;
 
   border-bottom-color: $gray-light;
 
+  @include element-spacing(1em);
   @include custom-menu-links($green);
 
   &:last-child {
-    border-bottom: 0;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    @include reset-element-spacing();
   }
 
   &.active {
