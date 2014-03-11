@@ -1,1 +1,1 @@
-<option><?php print $title; ?></option>
+<option value="<?php print $nid; ?>"><?php print $title; ?></option>
