@@ -2069,8 +2069,41 @@ a.comment--flag.unflag-action:hover {
  *
  */
 /* line 8, ../sass/modules/_guide.scss */
-.guide--nav {
-  width: 100%;
+.guide--nav-wrapper {
+  padding-top: 1em;
+  padding-left: 1.5em;
+  background-color: #f2f2f2;
+  -moz-border-radius: 0.4em;
+  -webkit-border-radius: 0.4em;
+  border-radius: 0.4em;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 18, ../sass/modules/_guide.scss */
+.guide--nav-wrapper-inner {
+  overflow-y: scroll;
+  height: 20em;
+  padding-right: 1.5em;
+  padding-bottom: 1em;
+}
+
+/* line 26, ../sass/modules/_guide.scss */
+.guide--nav-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+/* line 32, ../sass/modules/_guide.scss */
+.guide--nav-list > .guide--nav-list {
+  padding-left: 1em;
+}
+
+/* line 37, ../sass/modules/_guide.scss */
+.guide--nav-list-item {
+  margin-top: .25em;
+  margin-bottom: .25em;
 }
 
 /**
