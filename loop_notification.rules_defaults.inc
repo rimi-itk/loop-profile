@@ -53,6 +53,7 @@ function loop_notification_default_rules_configuration() {
       "OWNER" : "rules",
       "TAGS" : [ "Subscriptions" ],
       "REQUIRES" : [ "flag" ],
+      "ACCESS_EXPOSED" : "1",
       "USES VARIABLES" : { "node" : { "label" : "node", "type" : "node" } },
       "DO" : [
         { "flag_unflagnode" : {
