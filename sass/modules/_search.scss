@@ -8,14 +8,14 @@
    ========================================================================== */
 
 .search-result--lead {
-  @extend %element-spacing;
+  @include element-spacing(1em);
 }
 
 .search-result--item {
-  @extend %element-spacing;
+  @include element-spacing(1em);
 
   &:last-child {
-    @extend %reset-element-spacing;
+    @include reset-element-spacing();
   }
 }
 

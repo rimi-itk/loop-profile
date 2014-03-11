@@ -14,7 +14,7 @@
     margin-left: 0;
   }
 
-  @include breakpoint(40em) {
+  @include breakpoint(51em) {
     float: left;
   }
 }
@@ -34,16 +34,12 @@
   display: inline-block;
   overflow: hidden;
   margin-right: .5em;
+  max-height: 3em;
   max-width: 3em;
 
   background-color: $white;
 
   @include border-radius($border-radius);
-
-  // We have to style directly on <a> because of Drupal's output
-  a {
-
-  }
 }
 
 .meta-data--author-wrapper {

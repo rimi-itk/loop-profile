@@ -538,23 +538,9 @@ img {
   box-sizing: border-box;
 }
 
-/* line 49, ../sass/theme/_placeholders.scss */
-.nav-mobile--link, .search-result--lead, .search-result--item, .block-module--user-links-item, .block-module--user-links-item-last, .block-module--my-content-item {
-  border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 1em;
-  padding-bottom: 1em;
-}
-
-/* line 55, ../sass/theme/_placeholders.scss */
-.search-result--item:last-child, .question--user-page-nodes-element:last-child, .comments--comment:last-child, .comments--user-page-comments-element:last-child {
-  border-bottom: 0;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
 /* Icons
    ================================================================================================================== */
-/* line 65, ../sass/theme/_placeholders.scss */
+/* line 52, ../sass/theme/_placeholders.scss */
 .node--flag.is-sticky:before, .node--flag.unflag-action:before,
 .comment--flag.is-sticky:before,
 .comment--flag.unflag-action:before, .messages.status:before, .node--flag:before,
@@ -564,51 +550,51 @@ img {
   line-height: 100%;
 }
 
-/* line 72, ../sass/theme/_placeholders.scss */
+/* line 59, ../sass/theme/_placeholders.scss */
 .nav-mobile--link:before, .search-result--comments:before, .question--number-of-comments:before, .node--flag:before,
 .comment--flag:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before, .messages.status:before, .messages.warning:before, .messages.error:before {
   margin-right: .35em;
 }
 
-/* line 76, ../sass/theme/_placeholders.scss */
+/* line 63, ../sass/theme/_placeholders.scss */
 .at-term:after {
   margin-left: .35em;
 }
 
-/* line 80, ../sass/theme/_placeholders.scss */
+/* line 67, ../sass/theme/_placeholders.scss */
 .node--flag.is-sticky:before, .node--flag.unflag-action:before,
 .comment--flag.is-sticky:before,
 .comment--flag.unflag-action:before {
   content: '\e804';
 }
 
-/* line 86, ../sass/theme/_placeholders.scss */
+/* line 73, ../sass/theme/_placeholders.scss */
 .messages.status:before {
   content: '\e80d';
 }
 
-/* line 92, ../sass/theme/_placeholders.scss */
+/* line 79, ../sass/theme/_placeholders.scss */
 .node--flag:before,
 .comment--flag:before {
   content: '\e805';
 }
 
-/* line 98, ../sass/theme/_placeholders.scss */
+/* line 85, ../sass/theme/_placeholders.scss */
 .message--flag:before, .at-term:after, .messages.error:before {
   content: '\e800';
 }
 
-/* line 110, ../sass/theme/_placeholders.scss */
+/* line 97, ../sass/theme/_placeholders.scss */
 .search-result--comments:before, .question--number-of-comments:before {
   content: '\e80a';
 }
 
-/* line 116, ../sass/theme/_placeholders.scss */
+/* line 103, ../sass/theme/_placeholders.scss */
 .messages.warning:before {
   content: '\e80c';
 }
 
-/* line 122, ../sass/theme/_placeholders.scss */
+/* line 109, ../sass/theme/_placeholders.scss */
 .nav-mobile--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before {
   content: '\e807';
 }
@@ -1117,6 +1103,12 @@ label {
   box-sizing: border-box;
 }
 
+/* line 97, ../sass/theme/_layout.scss */
+.layout-default .layout-element-alpha {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+}
 @media only screen and (min-width: 45em) {
   /* line 97, ../sass/theme/_layout.scss */
   .layout-default .layout-element-alpha {
@@ -1134,11 +1126,14 @@ label {
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible;
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
     padding-left: 0;
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 105, ../sass/theme/_layout.scss */
+  /* line 108, ../sass/theme/_layout.scss */
   .layout-default .layout-element-beta {
     float: right;
     width: 29.16667%;
@@ -1158,7 +1153,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 115, ../sass/theme/_layout.scss */
+  /* line 118, ../sass/theme/_layout.scss */
   .layout-default .layout-element-gamma,
   .layout-default .layout-element-delta,
   .layout-default .layout-element-epsilon {
@@ -1183,7 +1178,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 135, ../sass/theme/_layout.scss */
+  /* line 138, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-alpha {
     float: left;
     width: 29.16667%;
@@ -1203,7 +1198,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 143, ../sass/theme/_layout.scss */
+  /* line 146, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-beta {
     float: right;
     width: 70.83333%;
@@ -1223,7 +1218,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 151, ../sass/theme/_layout.scss */
+  /* line 154, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-gamma {
     clear: both;
     float: left;
@@ -1243,7 +1238,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 159, ../sass/theme/_layout.scss */
+  /* line 162, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-delta {
     float: right;
     width: 50%;
@@ -1262,7 +1257,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 165, ../sass/theme/_layout.scss */
+  /* line 168, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1281,7 +1276,7 @@ label {
     _overflow-y: visible;
   }
 }
-/* line 175, ../sass/theme/_layout.scss */
+/* line 178, ../sass/theme/_layout.scss */
 .layout-default-inverted .layout-element-gamma,
 .layout-default-inverted .layout-element-delta,
 .layout-default-inverted .layout-element-epsilon {
@@ -1290,7 +1285,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 186, ../sass/theme/_layout.scss */
+  /* line 189, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-alpha {
     float: left;
     width: 100%;
@@ -1309,7 +1304,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 192, ../sass/theme/_layout.scss */
+  /* line 195, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-beta {
     clear: both;
     float: left;
@@ -1329,7 +1324,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 200, ../sass/theme/_layout.scss */
+  /* line 203, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-gamma {
     clear: both;
     float: left;
@@ -1349,7 +1344,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 208, ../sass/theme/_layout.scss */
+  /* line 211, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-delta {
     float: right;
     width: 50%;
@@ -1368,7 +1363,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 214, ../sass/theme/_layout.scss */
+  /* line 217, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1388,12 +1383,12 @@ label {
   }
 }
 
-/* line 228, ../sass/theme/_layout.scss */
+/* line 231, ../sass/theme/_layout.scss */
 .layout-no-wrapper .layout--inner {
   padding: 1.5em;
 }
 
-/* line 241, ../sass/theme/_layout.scss */
+/* line 244, ../sass/theme/_layout.scss */
 .layout-alternative .layout-element-alpha,
 .layout-alternative .layout-element-beta,
 .layout-alternative .layout-element-gamma,
@@ -1685,6 +1680,9 @@ label {
 
 /* line 262, ../sass/theme/_nav.scss */
 .nav-mobile--link {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
   border-bottom-color: #5dc26d;
   display: block;
 }
@@ -1747,6 +1745,26 @@ label {
  */
 /* Search result
    ========================================================================== */
+/* line 10, ../sass/modules/_search.scss */
+.search-result--lead {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+/* line 14, ../sass/modules/_search.scss */
+.search-result--item {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+/* line 17, ../sass/modules/_search.scss */
+.search-result--item:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
 /* line 22, ../sass/modules/_search.scss */
 .search-result--link {
   display: block;
@@ -1801,7 +1819,7 @@ label {
   -o-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 51em) {
   /* line 17, ../sass/modules/_question.scss */
   .question--meta-data {
     float: right;
@@ -1840,6 +1858,12 @@ label {
   margin-bottom: 1em;
   border-bottom: 1px solid #e6e6e6;
   padding-bottom: 1em;
+}
+/* line 69, ../sass/modules/_question.scss */
+.question--user-page-nodes-element:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 /**
@@ -1905,7 +1929,7 @@ label {
     margin-left: 0;
   }
 }
-@media only screen and (min-width: 40em) {
+@media only screen and (min-width: 51em) {
   /* line 9, ../sass/modules/_meta-data.scss */
   .meta-data--author {
     float: left;
@@ -1927,6 +1951,7 @@ label {
   display: inline-block;
   overflow: hidden;
   margin-right: .5em;
+  max-height: 3em;
   max-width: 3em;
   background-color: white;
   -webkit-border-radius: 0.4em;
@@ -1936,19 +1961,19 @@ label {
   border-radius: 0.4em;
 }
 
-/* line 49, ../sass/modules/_meta-data.scss */
+/* line 45, ../sass/modules/_meta-data.scss */
 .meta-data--author-wrapper {
   vertical-align: top;
   display: inline-block;
   margin-left: 4em;
 }
 
-/* line 56, ../sass/modules/_meta-data.scss */
+/* line 52, ../sass/modules/_meta-data.scss */
 .meta-data--author-link {
   font-weight: bold;
 }
 
-/* line 60, ../sass/modules/_meta-data.scss */
+/* line 56, ../sass/modules/_meta-data.scss */
 .meta-data--author-title {
   display: block;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
@@ -1986,6 +2011,12 @@ label {
   .comments--comment .flag-wrapper {
     float: left;
   }
+}
+/* line 37, ../sass/modules/_comment.scss */
+.comments--comment:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 /* line 46, ../sass/modules/_comment.scss */
@@ -2026,6 +2057,12 @@ label {
   margin-bottom: 1em;
   padding-bottom: 1em;
   border-bottom: 1px solid #e6e6e6;
+}
+/* line 82, ../sass/modules/_comment.scss */
+.comments--user-page-comments-element:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 /**
@@ -2278,41 +2315,49 @@ a.comment--flag.unflag-action:hover {
   box-sizing: border-box;
 }
 
+/* line 45, ../sass/modules/_block-module.scss */
+.block-follow-question {
+  margin-bottom: 0;
+}
+
 /* User links block
    ================================================================================================================== */
-/* line 61, ../sass/modules/_block-module.scss */
+/* line 62, ../sass/modules/_block-module.scss */
 .block-user-links {
   display: none;
 }
 @media only screen and (min-width: 45em) {
-  /* line 61, ../sass/modules/_block-module.scss */
+  /* line 62, ../sass/modules/_block-module.scss */
   .block-user-links {
     display: block;
     background-color: #41ab51;
   }
-  /* line 71, ../sass/modules/_block-module.scss */
+  /* line 72, ../sass/modules/_block-module.scss */
   .block-user-links ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
   }
-  /* line 77, ../sass/modules/_block-module.scss */
+  /* line 78, ../sass/modules/_block-module.scss */
   .block-user-links .block-module-user-links-list-sub {
     padding: 0 0 0 1em;
   }
 }
 
-/* line 83, ../sass/modules/_block-module.scss */
+/* line 84, ../sass/modules/_block-module.scss */
 .block-module--user-links-header {
   border-bottom: 1px solid #5dc26d;
   color: white;
   padding-bottom: 0.5em;
 }
 
-/* line 91, ../sass/modules/_block-module.scss */
+/* line 92, ../sass/modules/_block-module.scss */
 .block-module--user-links-item, .block-module--user-links-item-last {
   display: block;
   border-bottom-color: #5dc26d;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
 }
 /* line 8, ../sass/theme/_mixins.scss */
 .block-module--user-links-item a:link, .block-module--user-links-item-last a:link {
@@ -2374,6 +2419,9 @@ a.comment--flag.unflag-action:hover {
 .block-module--my-content-item {
   display: block;
   border-bottom-color: #cccccc;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
 }
 /* line 8, ../sass/theme/_mixins.scss */
 .block-module--my-content-item a:link {
@@ -2393,13 +2441,13 @@ a.comment--flag.unflag-action:hover {
 .block-module--my-content-item a:focus {
   color: #41ab51;
 }
-/* line 146, ../sass/modules/_block-module.scss */
+/* line 145, ../sass/modules/_block-module.scss */
 .block-module--my-content-item:last-child {
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
 }
-/* line 152, ../sass/modules/_block-module.scss */
+/* line 149, ../sass/modules/_block-module.scss */
 .block-module--my-content-item.active {
   font-weight: bold;
 }

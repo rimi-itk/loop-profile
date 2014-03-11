@@ -24,7 +24,7 @@
 
   @include border-radius($border-radius);
 
-  @include breakpoint(40em) {
+  @include breakpoint(51em) {
     float: right;
   }
 }
@@ -67,7 +67,7 @@
   padding-bottom: 1em;
 
   &:last-child {
-    @extend %reset-element-spacing;
+    @include reset-element-spacing();
   }
 }
 

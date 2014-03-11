@@ -260,7 +260,7 @@
 }
 
 .nav-mobile--link {
-  @extend %element-spacing;
+  @include element-spacing(1em);
 
   border-bottom-color: $green-light;
 

@@ -1,4 +1,4 @@
-@mixin custom-menu-links($color){
+@mixin custom-menu-links($color) {
   a {
     &:before {
       @extend %icon-arrow-right;
@@ -23,4 +23,16 @@
       color: $color;
     }
   }
+}
+
+@mixin element-spacing($amount) {
+  border-bottom: 1px solid $border-color;
+  margin-bottom: $amount;
+  padding-bottom: $amount;
+}
+
+@mixin reset-element-spacing() {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
