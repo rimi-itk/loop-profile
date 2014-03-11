@@ -99,7 +99,6 @@ label {
   }
 }
 
-
 .form-required {
   color: $red;
 }
@@ -157,4 +156,39 @@ label {
   padding-left: .5em;
 
   font-size: 125%;
+}
+
+
+// Views bulk operations need specific form styling.
+.vbo-views-form {
+  .form-item {
+    border: 0;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  .vbo-fieldset-select-all {
+    border: 0;
+    padding: 0 0 2em;
+    margin: 0;
+    width: auto;
+  }
+
+  label,
+  .form-type-checkbox {
+    float: left;
+    margin-right: .5em;
+  }
+
+  .form-checkbox {
+    float: left;
+    margin: 0.4em 0.5em 0 0;
+  }
+
+  .form-item-operation {
+    float: left;
+    width: 60%;
+
+    padding-right: 1em;
+  }
 }

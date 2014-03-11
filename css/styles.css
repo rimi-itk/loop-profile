@@ -731,12 +731,12 @@ label {
   color: #b3b3b3;
 }
 
-/* line 103, ../sass/theme/_forms.scss */
+/* line 102, ../sass/theme/_forms.scss */
 .form-required {
   color: #ff6138;
 }
 
-/* line 107, ../sass/theme/_forms.scss */
+/* line 106, ../sass/theme/_forms.scss */
 .form-select {
   border: 1px solid #cccccc;
   padding: .75em;
@@ -756,34 +756,34 @@ label {
   box-sizing: border-box;
 }
 
-/* line 124, ../sass/theme/_forms.scss */
+/* line 123, ../sass/theme/_forms.scss */
 .form-textarea-question {
   height: 6em;
 }
 @media only screen and (min-width: 30em) {
-  /* line 124, ../sass/theme/_forms.scss */
+  /* line 123, ../sass/theme/_forms.scss */
   .form-textarea-question {
     height: 3.25em;
   }
 }
 
-/* line 132, ../sass/theme/_forms.scss */
+/* line 131, ../sass/theme/_forms.scss */
 .form-actions {
   text-align: right;
 }
 
-/* line 136, ../sass/theme/_forms.scss */
+/* line 135, ../sass/theme/_forms.scss */
 .form-submit {
   width: 100%;
 }
 @media only screen and (min-width: 30em) {
-  /* line 136, ../sass/theme/_forms.scss */
+  /* line 135, ../sass/theme/_forms.scss */
   .form-submit {
     width: auto;
   }
 }
 
-/* line 146, ../sass/theme/_forms.scss */
+/* line 145, ../sass/theme/_forms.scss */
 .field-group-fieldset, .user-profile-module--field-group-fieldset, .user-profile-module--field-group-fieldset-personal-info {
   border: 1px solid #cccccc;
   margin-bottom: 2em;
@@ -796,11 +796,42 @@ label {
   border-radius: 0.4em;
 }
 
-/* line 155, ../sass/theme/_forms.scss */
+/* line 154, ../sass/theme/_forms.scss */
 .fieldset-legend, .user-profile-module--fieldset-legend {
   padding-right: .5em;
   padding-left: .5em;
   font-size: 125%;
+}
+
+/* line 164, ../sass/theme/_forms.scss */
+.vbo-views-form .form-item {
+  border: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+/* line 170, ../sass/theme/_forms.scss */
+.vbo-views-form .vbo-fieldset-select-all {
+  border: 0;
+  padding: 0 0 2em;
+  margin: 0;
+  width: auto;
+}
+/* line 178, ../sass/theme/_forms.scss */
+.vbo-views-form label,
+.vbo-views-form .form-type-checkbox {
+  float: left;
+  margin-right: .5em;
+}
+/* line 183, ../sass/theme/_forms.scss */
+.vbo-views-form .form-checkbox {
+  float: left;
+  margin: 0.4em 0.5em 0 0;
+}
+/* line 188, ../sass/theme/_forms.scss */
+.vbo-views-form .form-item-operation {
+  float: left;
+  width: 60%;
+  padding-right: 1em;
 }
 
 /**

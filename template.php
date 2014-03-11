@@ -191,10 +191,6 @@ function loop_menu_local_task($variables) {
 
   if ($link['path'] == 'user/%/notifications') {
     $link['title'] = t('Subscriptions');
-
-
-    // Add the secondary menu.
-    $secondary = menu_secondary_local_tasks();
   }
 
   if ($link['path'] == 'user/%/messages') {
@@ -203,7 +199,7 @@ function loop_menu_local_task($variables) {
   }
 
   // Don't print shortcuts and statistics.
-  if ($link['page_callback'] == 'statistics_user_tracker' || $link['path'] == 'user/%/shortcuts') {
+  if ($link['page_callback'] == 'statistics_user_tracker' || $link['path'] == 'user/%/shortcuts' || $link['path'] == 'user/%/message-subscribe') {
     return FALSE;
   }
 
