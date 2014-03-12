@@ -606,20 +606,30 @@ function loop_textarea($variables) {
  *
  * Function for printing the notification tab. Since the page already exists we don't use hook menu.
  *
+ * @return html for the notification tab or false if module does not exist or user is not logged in.
  */
 function printNotificationTab() {
-  $theme_path = drupal_get_path('theme', 'loop');
   if (module_exists('loop_notification') && $GLOBALS['user']->uid > 0) {
+    $theme_path = drupal_get_path('theme', 'loop');
+
+    // Fetch all current users messages from the message table.
     $all_message_count = db_query('SELECT uid FROM message WHERE uid = :uid', array(':uid' => $GLOBALS['user']->uid))->rowCount();
+
+    // Fetch all flags of type message_read (fid) that the current user made.
     $flagged_read_message_count = db_query('SELECT entity_id FROM flagging WHERE uid = :uid AND fid = :fid', array(':uid' => $GLOBALS['user']->uid, ':fid' => 3))->rowCount();
+
+    // Compare the two.
     $new_message_count = $all_message_count - $flagged_read_message_count;
-    if ($new_message_count > 0) {
+
+    // If new messages exist
+    if ($new_message_count > 0 && !(arg(0) == 'user' && arg(2) == 'messages')) {
       $new_messages = '<span class="notification">' . $new_message_count . '</span>';
     }
     else {
       $new_messages = '';
     }
 
+    // Add the link image for mobile.
     $img = array(
       'path' => '/' . $theme_path . '/images/nav-mail-icon.png',
       'attributes' => array('class' => 'nav--icon'),
@@ -628,9 +638,10 @@ function printNotificationTab() {
     $title = theme_image($img) . '<span class="nav--text">' . t('Notifications') . '</span>' . $new_messages;
 
     $menutab = l($title, 'user/' . $GLOBALS['user']->uid . '/messages', array('attributes' => array('class' => array('nav--link')), 'html' => 'TRUE'));
-    return $menutab;
+
   }
   else {
-    return FALSE;
+    $menutab = FALSE;
   }
+  return $menutab;
 }
