@@ -614,7 +614,7 @@ function printNotificationTab() {
     $flagged_read_message_count = db_query('SELECT entity_id FROM flagging WHERE uid = :uid AND fid = :fid', array(':uid' => $GLOBALS['user']->uid, ':fid' => 3))->rowCount();
     $new_message_count = $all_message_count - $flagged_read_message_count;
     if ($new_message_count > 0) {
-      $new_messages = ' (' . $new_message_count . ')';
+      $new_messages = '<span class="notification">' . $new_message_count . '</span>';
     }
     else {
       $new_messages = '';
