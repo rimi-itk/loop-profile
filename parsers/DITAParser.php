@@ -335,7 +335,10 @@ class DITAParser implements iParser {
 
     // Process each child and add to Index as children
     foreach ($xml->children() as $child) {
-      $children[] = $this->traverseNode($child, $pathToDirectory, $indexNodeID, $objectReferences, $xrefReferences);
+      $nodeType = $child->getName();
+      if ($nodeType == 'topichead') {
+        $children[] = $this->traverseNode($child, $pathToDirectory, $indexNodeID, $objectReferences, $xrefReferences);
+      }
     }
 
     // Merge references into reference overview.
