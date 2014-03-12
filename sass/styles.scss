@@ -50,18 +50,19 @@ $zen-gutter-width: 30px;
 
 
 // Modules
-@import "modules/_notifications";
-@import "modules/_search";
-@import "modules/_question";
-@import "modules/_lists";
-@import "modules/_meta-data";
-@import "modules/_comment";
-@import "modules/_flag";
-@import "modules/_tag";
-@import "modules/_page";
 @import "modules/_block-module";
-@import "modules/_user-profile";
+@import "modules/_comment";
+@import "modules/_lists";
+@import "modules/_flag";
+@import "modules/_guide";
+@import "modules/_meta-data";
+@import "modules/_notifications";
+@import "modules/_page";
+@import "modules/_question";
+@import "modules/_search";
+@import "modules/_tag";
 @import "modules/_twitter-typeahead";
+@import "modules/_user-profile";
 
 
 // Drupal modules

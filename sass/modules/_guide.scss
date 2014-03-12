@@ -1,0 +1,40 @@
+/**
+ *
+ * Guide
+ *
+ */
+
+
+.guide--nav-wrapper {
+  padding-top: 1em;
+  padding-left: 1.5em;
+
+  background-color: $gray-lightest;
+
+  @include border-radius($border-radius);
+  @include box-sizing(border-box);
+}
+
+.guide--nav-wrapper-inner {
+  overflow-y: scroll;
+
+  height: 20em;
+  padding-right: 1.5em;
+  padding-bottom: 1em;
+}
+
+.guide--nav-list {
+  margin: 0;
+  padding-left: 0;
+
+  list-style: none;
+
+  > .guide--nav-list {
+    padding-left: 1em;
+  }
+}
+
+.guide--nav-list-item {
+  margin-top: .25em;
+  margin-bottom: .25em;
+}
