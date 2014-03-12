@@ -5,11 +5,6 @@
  */
 
 /**
- * Class ZipParsingException
- */
-class ZipParsingException extends Exception {}
-
-/**
  * Class NoParserFoundException
  */
 class NoParserFoundException extends Exception {}
@@ -30,7 +25,6 @@ class Parser {
    * @param $indexNodeID
    *  The id of the Index node added to Drupal.
    *
-   * @throws ZipExtractionException
    * @throws NoParserFoundException
    *
    * @returns $data
@@ -59,7 +53,24 @@ class Parser {
   }
 
   /**
+   * Convert the CP437 characters in $text to UTF-8.
+   *
+   * @param $text
+   * @return mixed
+   */
+  private function CP437toUTF8($text) {
+    $text = preg_replace('/%86/', 'å', $text);
+    $text = preg_replace('/%87/', 'Å', $text);
+    $text = preg_replace('/%91/', 'æ', $text);
+    $text = preg_replace('/%92/', 'Æ', $text);
+    $text = preg_replace('/%9B/', 'ø', $text);
+    $text = preg_replace('/%9C/', 'Ø', $text);
+    return $text;
+  }
+
+  /**
    * Extracts a zip file to a directory.
+   * Makes sure CP437 characters do not appear in file/directory names.
    *
    * @param $filename
    * @param $pathToDirectory
@@ -67,14 +78,25 @@ class Parser {
    *  Did the extraction succeed?
    */
   private function extractZip($filename, $pathToDirectory) {
-    $zip = new ZipArchive();
-    $res = $zip->open($filename);
-    if ($res === TRUE) {
-      $zip->extractTo($pathToDirectory);
-      $zip->close();
-    } else {
-      return false;
+    file_prepare_directory($pathToDirectory, FILE_CREATE_DIRECTORY);
+
+    $za = new ZipArchive();
+
+    $za->open($filename);
+
+    for( $i = 0; $i < $za->numFiles; $i++ ){
+      $stat = $za->statIndex( $i );
+      $entryname = $this->CP437toUTF8($stat['name']);
+      // if getFromIndex returns false it is a directory
+      if ($content = $za->getFromIndex($i)) {
+        file_put_contents($pathToDirectory . '/' . $entryname, $content);
+      } else {
+        $path = $pathToDirectory . '/' . $entryname;
+        file_prepare_directory($path, FILE_CREATE_DIRECTORY);
+      }
     }
+    $za->close();
+
     return true;
   }
 

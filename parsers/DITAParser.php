@@ -41,22 +41,6 @@ class DITAParser implements iParser {
   }
 
   /**
-   * Replaces danish characters.
-   *
-   * @param $text
-   * @return mixed
-   */
-  private function danishChars($text) {
-    $text = preg_replace('/å/', '%86', $text);
-    $text = preg_replace('/Å/', '%87', $text);
-    $text = preg_replace('/æ/', '%91', $text);
-    $text = preg_replace('/Æ/', '%92', $text);
-    $text = preg_replace('/ø/', '%9B', $text);
-    $text = preg_replace('/Ø/', '%9C', $text);
-    return $text;
-  }
-
-  /**
    * Collapses ../ in paths
    *
    * @param $path
@@ -116,7 +100,7 @@ class DITAParser implements iParser {
 
     if ($nodeType == 'topicref') {
       // Get the reference to the topicref file.
-      $href = $this->danishChars($node['href']);
+      $href = $node['href'];
 
       // Load body of topic into DOM.
       $body = simplexml_load_file($pathToDirectory . '/' . $href)->body;
@@ -185,7 +169,7 @@ class DITAParser implements iParser {
       // Replace image paths.
       foreach ($xpath->query('//image') as $image) {
         // Contruct path to image file.
-        $ref = $pathToDirectory . '/' . dirname($href) . '/' . $this->danishChars($image->getAttribute('href'));
+        $ref = $pathToDirectory . '/' . dirname($href) . '/' . $image->getAttribute('href');
 
         // Read file from  disk.
         $fileName = basename($image->getAttribute('href'));
@@ -209,7 +193,7 @@ class DITAParser implements iParser {
         $scope = $xref->getAttribute('scope');
 
         if ($scope != 'external') {
-          $xhref = dirname($href) . '/' . $this->danishChars($xref->getAttribute('href'));
+          $xhref = dirname($href) . '/' . $xref->getAttribute('href');
           $nextIndex = count($xrefReferences);
 
           $xhref = explode('#', $xhref);
@@ -351,11 +335,7 @@ class DITAParser implements iParser {
 
     // Process each child and add to Index as children
     foreach ($xml->children() as $child) {
-      $nodeType = $child->getName();
-
-      if ($nodeType == 'topichead') {
-        $children[] = $this->traverseNode($child, $pathToDirectory, $indexNodeID, $objectReferences, $xrefReferences);
-      }
+      $children[] = $this->traverseNode($child, $pathToDirectory, $indexNodeID, $objectReferences, $xrefReferences);
     }
 
     // Merge references into reference overview.
