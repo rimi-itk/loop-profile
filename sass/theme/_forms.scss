@@ -148,6 +148,10 @@ label {
   padding-bottom: 1em;
   padding-left: 1em;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   @include border-radius($border-radius);
 }
 

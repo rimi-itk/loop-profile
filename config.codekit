@@ -707,14 +707,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/template.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/template.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsSetByUser": 0
-		},
 	"\/templates\/blocks\/block--menu--menu-loop-primary-menu.tpl.php": {
 		"fileType": 8192,
 		"ignore": 0,
