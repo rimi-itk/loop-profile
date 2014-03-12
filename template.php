@@ -263,39 +263,36 @@ function loop_links__system_primary_menu($variables) {
 
   // Run through each link in the primary menu and do different stuff...
   foreach ($variables['links'] as $key => $value) {
-    if (!empty($value['identifier']) && $value['identifier'] != 'main-menu_menu:<front>') {
 
-      // Images for the different menu items.
-      switch ($value['href']) {
-        case 'user':
-          $img = array(
-            'path' => '/' . $theme_path . '/images/nav-user-icon.png',
-            'attributes' => array('class' => 'nav--icon'),
-          );
-          break;
-        case 'user/' . $GLOBALS['user']->uid . '/messages':
-          $img = array(
-            'path' => '/' . $theme_path . '/images/nav-mail-icon.png',
-            'attributes' => array('class' => 'nav--icon'),
-          );
-          break;
-        case 'node/add/post':
-          $img = array(
-            'path' => '/' . $theme_path . '/images/nav-add-icon.png',
-            'attributes' => array('class' => 'nav--icon'),
-          );
-          break;
-      }
-
-      // Create the title with image icon.
-      $title = theme_image($img) . '<span class="nav--text">' . $value['title'] . '</span>';
-
-      // Add item to main menu links.
-      $menu .= l($title, $value['href'], array('attributes' => array('class' => array('nav--link')), 'html' => 'TRUE'));
+    // Images for the different menu items.
+    switch ($value['href']) {
+      case 'user':
+        $img = array(
+          'path' => '/' . $theme_path . '/images/nav-user-icon.png',
+          'attributes' => array('class' => 'nav--icon'),
+        );
+        break;
+      case 'user/' . $GLOBALS['user']->uid . '/messages':
+        $img = array(
+          'path' => '/' . $theme_path . '/images/nav-mail-icon.png',
+          'attributes' => array('class' => 'nav--icon'),
+        );
+        break;
+      case 'node/add/post':
+        $img = array(
+          'path' => '/' . $theme_path . '/images/nav-add-icon.png',
+          'attributes' => array('class' => 'nav--icon'),
+        );
+        break;
     }
+    // Create the title with image icon.
+    $title = theme_image($img) . '<span class="nav--text">' . $value['title'] . '</span>';
+
+    // Add item to main menu links.
+    $menu .= l($title, $value['href'], array('attributes' => array('class' => array('nav--link')), 'html' => 'TRUE'));
 
     // If the link is pointing at frontpage it is the navigation dropdown menu link.
-    elseif (!empty($value['identifier']) && $value['identifier'] == 'main-menu_menu:<front>') {
+    if (!empty($value['identifier']) && $value['identifier'] == 'main-menu_menu:<front>') {
       // If 'main-menu_menu:<front>' exists we add an additional toggle-mobile-nav mobile menu link.
       $img_toggle_mobile_menu = array(
         'path' => '/profiles/loopdk/themes/loop/images/nav-menu-icon.png',
@@ -325,6 +322,11 @@ function loop_links__system_primary_menu($variables) {
 
       unset($value);
     }
+  }
+
+  // Notificaiton link
+  if (printNotificationTab()) {
+    $menu .= printNotificationTab();
   }
 
   // Dropdown link at the end of navigation menu.
@@ -596,4 +598,39 @@ function loop_textarea($variables) {
   $output .= '<textarea' . drupal_attributes($element['#attributes']) . '>' . check_plain($element['#value']) . '</textarea>';
   $output .= '</div>';
   return $output;
+}
+
+
+/**
+ * Implements printNotificationTab().
+ *
+ * Function for printing the notification tab. Since the page already exists we don't use hook menu.
+ *
+ */
+function printNotificationTab() {
+  $theme_path = drupal_get_path('theme', 'loop');
+  if (module_exists('loop_notification') && $GLOBALS['user']->uid > 0) {
+    $all_message_count = db_query('SELECT uid FROM message WHERE uid = :uid', array(':uid' => $GLOBALS['user']->uid))->rowCount();
+    $flagged_read_message_count = db_query('SELECT entity_id FROM flagging WHERE uid = :uid AND fid = :fid', array(':uid' => $GLOBALS['user']->uid, ':fid' => 3))->rowCount();
+    $new_message_count = $all_message_count - $flagged_read_message_count;
+    if ($new_message_count > 0) {
+      $new_messages = ' (' . $new_message_count . ')';
+    }
+    else {
+      $new_messages = '';
+    }
+
+    $img = array(
+      'path' => '/' . $theme_path . '/images/nav-mail-icon.png',
+      'attributes' => array('class' => 'nav--icon'),
+    );
+
+    $title = theme_image($img) . '<span class="nav--text">' . t('Notifications') . '</span>' . $new_messages;
+
+    $menutab = l($title, 'user/' . $GLOBALS['user']->uid . '/messages', array('attributes' => array('class' => array('nav--link')), 'html' => 'TRUE'));
+    return $menutab;
+  }
+  else {
+    return FALSE;
+  }
 }
