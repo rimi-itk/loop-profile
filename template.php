@@ -271,38 +271,47 @@ function loop_links__system_primary_menu($variables) {
           'path' => '/' . $theme_path . '/images/nav-user-icon.png',
           'attributes' => array('class' => 'nav--icon'),
         );
+        // Create the title with image icon.
+        $title = theme_image($img) . '<span class="nav--text">' . $value['title'] . '</span>';
+
+        // Add item to main menu links.
+        $menu .= l($title, $value['href'], array('attributes' => array('class' => array('nav--link')), 'html' => 'TRUE'));
         break;
       case 'user/' . $GLOBALS['user']->uid . '/messages':
         $img = array(
           'path' => '/' . $theme_path . '/images/nav-mail-icon.png',
           'attributes' => array('class' => 'nav--icon'),
         );
+        // Create the title with image icon.
+        $title = theme_image($img) . '<span class="nav--text">' . $value['title'] . '</span>';
+
+        // Add item to main menu links.
+        $menu .= l($title, $value['href'], array('attributes' => array('class' => array('nav--link')), 'html' => 'TRUE'));
         break;
       case 'node/add/post':
         $img = array(
           'path' => '/' . $theme_path . '/images/nav-add-icon.png',
           'attributes' => array('class' => 'nav--icon'),
         );
+        // Create the title with image icon.
+        $title = theme_image($img) . '<span class="nav--text">' . $value['title'] . '</span>';
+
+        // Add item to main menu links.
+        $menu .= l($title, $value['href'], array('attributes' => array('class' => array('nav--link')), 'html' => 'TRUE'));
         break;
     }
-    // Create the title with image icon.
-    $title = theme_image($img) . '<span class="nav--text">' . $value['title'] . '</span>';
-
-    // Add item to main menu links.
-    $menu .= l($title, $value['href'], array('attributes' => array('class' => array('nav--link')), 'html' => 'TRUE'));
 
     // If the link is pointing at frontpage it is the navigation dropdown menu link.
     if (!empty($value['identifier']) && $value['identifier'] == 'main-menu_menu:<front>') {
+
       // If 'main-menu_menu:<front>' exists we add an additional toggle-mobile-nav mobile menu link.
       $img_toggle_mobile_menu = array(
         'path' => '/profiles/loopdk/themes/loop/images/nav-menu-icon.png',
         'attributes' => array('class' => 'nav--icon'),
       );
-
-      // Title dropdown link
       $toggle_mobile_menu_title = theme_image($img_toggle_mobile_menu) . '<span class="nav--text">Menu</span>';
-
       $toggle_mobile_menu_link = l($toggle_mobile_menu_title, '#', array('attributes' => array('class' => array('last leaf nav--toggle-mobile-nav js-toggle-mobile-nav nolink')), 'html' => 'TRUE', 'external' => TRUE));
+
 
       // Img icon for dropdown menu item.
       $img = array(
@@ -319,9 +328,8 @@ function loop_links__system_primary_menu($variables) {
 
       // Set full dropdown menu.
       $primary_navigation_dropdown = '<nav class="nav-dropdown"><div class="nav-dropdown--wrapper">' . l($title, '#', array('attributes' => array('class' => array('nav-dropdown--header')), 'html' => TRUE, 'external' => TRUE)) . $primary_menu_rendered .'</div></nav>';
-
-      unset($value);
     }
+    unset($value);
   }
 
   // Notificaiton link
