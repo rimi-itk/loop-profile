@@ -6,4 +6,3 @@
     <?php endforeach; ?>
   </div>
 </div>
-

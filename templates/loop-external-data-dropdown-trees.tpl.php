@@ -1,5 +1,10 @@
 <ul class="guide--nav-list">
-  <?php foreach ($childs as $child): ?>
-    <?php print render($child); ?>
-  <?php endforeach; ?>
+  <li>
+    <?php print $title; ?>
+    <ul>
+      <?php foreach ($childs as $child): ?>
+        <?php print render($child); ?>
+      <?php endforeach; ?>
+    </ul>
+  </li>
 </ul>
