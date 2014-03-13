@@ -1734,10 +1734,10 @@ table td:empty {
 /* line 92, ../sass/modules/_block-module.scss */
 .block-module--user-links-item, .block-module--user-links-item-last {
   display: block;
-  border-bottom-color: #5dc26d;
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 1em;
   padding-bottom: 1em;
+  border-bottom-color: #5dc26d;
 }
 /* line 8, ../sass/theme/_mixins.scss */
 .block-module--user-links-item a:link, .block-module--user-links-item-last a:link {
@@ -1757,12 +1757,12 @@ table td:empty {
 .block-module--user-links-item a:focus, .block-module--user-links-item-last a:focus {
   color: white;
 }
-/* line 100, ../sass/modules/_block-module.scss */
+/* line 101, ../sass/modules/_block-module.scss */
 .block-module--user-links-item.active, .active.block-module--user-links-item-last {
   font-weight: bold;
 }
 
-/* line 105, ../sass/modules/_block-module.scss */
+/* line 106, ../sass/modules/_block-module.scss */
 .block-module--user-links-item-last {
   border-bottom: 0;
   margin-bottom: 0;
@@ -1771,31 +1771,31 @@ table td:empty {
 
 /* My content block
    ================================================================================================================== */
-/* line 116, ../sass/modules/_block-module.scss */
+/* line 117, ../sass/modules/_block-module.scss */
 .block-my-content {
   display: none;
 }
 @media only screen and (min-width: 45em) {
-  /* line 116, ../sass/modules/_block-module.scss */
+  /* line 117, ../sass/modules/_block-module.scss */
   .block-my-content {
     display: block;
   }
 }
 
-/* line 124, ../sass/modules/_block-module.scss */
+/* line 125, ../sass/modules/_block-module.scss */
 .block-module--my-content-header {
   border-bottom: 1px solid #cccccc;
   padding-bottom: 0.5em;
 }
 
-/* line 131, ../sass/modules/_block-module.scss */
+/* line 132, ../sass/modules/_block-module.scss */
 .block-module--my-content-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* line 137, ../sass/modules/_block-module.scss */
+/* line 138, ../sass/modules/_block-module.scss */
 .block-module--my-content-item {
   display: block;
   border-bottom-color: #cccccc;
@@ -1821,13 +1821,13 @@ table td:empty {
 .block-module--my-content-item a:focus {
   color: #41ab51;
 }
-/* line 145, ../sass/modules/_block-module.scss */
+/* line 146, ../sass/modules/_block-module.scss */
 .block-module--my-content-item:last-child {
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
 }
-/* line 149, ../sass/modules/_block-module.scss */
+/* line 150, ../sass/modules/_block-module.scss */
 .block-module--my-content-item.active {
   font-weight: bold;
 }

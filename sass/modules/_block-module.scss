@@ -92,10 +92,11 @@
 .block-module--user-links-item {
   display: block;
 
-  border-bottom-color: $green-light;
-
   @include element-spacing(1em);
   @include custom-menu-links($white);
+
+  // Override the border color from element-spacing mixin.
+  border-bottom-color: $green-light;
 
   &.active {
     font-weight: bold;
