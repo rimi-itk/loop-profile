@@ -2232,7 +2232,7 @@ a.comment--flag.unflag-action:hover {
   font-size: 65%;
   font-weight: bold;
   text-decoration: none;
-  line-height: 195%;
+  line-height: 1.95em;
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
@@ -2240,30 +2240,30 @@ a.comment--flag.unflag-action:hover {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 23, ../sass/modules/_notifications.scss */
+/* line 25, ../sass/modules/_notifications.scss */
 .notification:link, .notification:visited {
   text-decoration: none;
 }
 
-/* line 33, ../sass/modules/_notifications.scss */
+/* line 35, ../sass/modules/_notifications.scss */
 .notification--user-subscriptions th {
   padding-bottom: 1em;
 }
-/* line 37, ../sass/modules/_notifications.scss */
+/* line 39, ../sass/modules/_notifications.scss */
 .notification--user-subscriptions tr {
   border-bottom: 1px solid #e6e6e6;
 }
-/* line 41, ../sass/modules/_notifications.scss */
+/* line 43, ../sass/modules/_notifications.scss */
 .notification--user-subscriptions .form-type-checkbox {
   border: 0;
   margin-bottom: 0;
 }
-/* line 46, ../sass/modules/_notifications.scss */
+/* line 48, ../sass/modules/_notifications.scss */
 .notification--user-subscriptions .links {
   list-style: none;
   padding: 0;
 }
-/* line 51, ../sass/modules/_notifications.scss */
+/* line 53, ../sass/modules/_notifications.scss */
 .notification--user-subscriptions .empty {
   padding: 1em;
 }

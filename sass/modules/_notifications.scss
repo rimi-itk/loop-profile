@@ -12,13 +12,15 @@
   right: -.5em;
 
   height: 2em;
+  // Tweaking width for Android.
   width: 2.05em;
 
   background-color: $red;
   font-size: 65%;
   font-weight: bold;
   text-decoration: none;
-  line-height: 195%;
+  // Tweaking line height for Android.
+  line-height: 1.95em;
 
   &:link,
   &:visited {
