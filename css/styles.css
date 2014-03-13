@@ -1657,6 +1657,18 @@ table td:empty {
 
 /**
  *
+ * Typography
+ *
+ */
+/* line 7, ../sass/theme/_typography.scss */
+.header--big,
+.header--medium,
+.header--small {
+  font-weight: bold;
+}
+
+/**
+ *
  * Block module
  *
  */
