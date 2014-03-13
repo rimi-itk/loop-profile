@@ -81,7 +81,7 @@ function loop_notification_default_rules_configuration() {
         { "data_is" : { "data" : [ "user:message-subscribe-email" ], "value" : 1 } }
       ],
       "DO" : [
-        { "message_notify_process" : { "message" : [ "message" ], "mail" : "[message:user]" } }
+        { "message_notify_process" : { "message" : [ "message" ], "mail" : "[message:user:mail]" } }
       ]
     }
   }');
