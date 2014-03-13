@@ -58,7 +58,7 @@ function loop_permissions_secure_permissions($role) {
       'unflag subscribe_node',
       'use search_api_autocomplete for search_api_page_default',
       'use Rules component rules_remove_subscription',
-      'use Rules component rules_send_mail'
+      'use Rules component rules_send_mail',
       'use Rules component rules_remove_subscription',
       'view own unpublished content',
       'view post access counter',
