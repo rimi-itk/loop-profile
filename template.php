@@ -332,7 +332,7 @@ function loop_links__system_primary_menu($variables) {
     unset($value);
   }
 
-  // Notificaiton link
+  // Add notificaiton link
   if (printNotificationTab()) {
     $menu .= printNotificationTab();
   }
@@ -608,6 +608,22 @@ function loop_textarea($variables) {
   return $output;
 }
 
+function loop_preprocess_views_view(&$vars) {
+  // We run the new message count in this function since the view updates with ajax.
+  if ($vars['view']->name == 'user_messages') {
+    // Fetch all current users messages from the message table.
+    $all_message_count = db_query('SELECT uid FROM message WHERE uid = :uid', array(':uid' => $GLOBALS['user']->uid))->rowCount();
+
+    // Fetch all flags of type message_read (fid) that the current user made.
+    $flagged_read_message_count = db_query('SELECT entity_id FROM flagging WHERE uid = :uid AND fid = :fid', array(':uid' => $GLOBALS['user']->uid, ':fid' => 3))->rowCount();
+
+    // Compare the two.
+    $new_message_count = $all_message_count - $flagged_read_message_count;
+  }
+  $update_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() .'/scripts/update-new-notifications.js';
+  drupal_add_js($update_script_path, 'file');
+  $vars['user_messages'] = $new_message_count;
+}
 
 /**
  * Implements printNotificationTab().
@@ -617,6 +633,7 @@ function loop_textarea($variables) {
  * @return html for the notification tab or false if module does not exist or user is not logged in.
  */
 function printNotificationTab() {
+  // We run the new message count in this function called from loop_links__system_primary_menu() since it should display on all pages.
   if (module_exists('loop_notification') && $GLOBALS['user']->uid > 0) {
     $theme_path = drupal_get_path('theme', 'loop');
 
@@ -629,8 +646,8 @@ function printNotificationTab() {
     // Compare the two.
     $new_message_count = $all_message_count - $flagged_read_message_count;
 
-    // If new messages exist
-    if ($new_message_count > 0 && !(arg(0) == 'user' && arg(2) == 'messages')) {
+    // If new messages exist.
+    if ($new_message_count > 0) {
       $new_messages = '<span class="notification">' . $new_message_count . '</span>';
     }
     else {

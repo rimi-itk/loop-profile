@@ -27,7 +27,8 @@
  * @ingroup views_templates
  */
 ?>
-<div class="<?php print $classes; ?>">
+
+<div data-new-message-count="<?php print $user_messages; ?>" class="<?php print $classes; ?>">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
     <?php print $title; ?>
