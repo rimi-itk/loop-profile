@@ -90,7 +90,7 @@ function loop_notification_default_message_type() {
         {
           "value" : "\\u003Cp\\u003EDer er kommet et nyt svar til sp\\u00f8rgsm\\u00e5let: [message:field-message-node-reference:title]\\u003C\\/p\\u003E\\u003Cp\\u003EMvh LOOP\\u003C\\/p\\u003E\\u003Cp\\u003EDette er en automatisk besked sendt fra [site:url]\\u003C\\/p\\u003E",
           "format" : "editor",
-          "safe_value" : "\\u003Cp\\u003EDer er kommet et nyt svar til sp\\u00f8rgsm\\u00e5let: [message:field-message-node-reference:title]\u003C\/p\u003E\n\u003Cp\u003EMvh LOOP\u003C\/p\u003E\n\u003Cp\u003EDette er en automatisk besked sendt fra [site:url]\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003EDer er kommet et nyt svar til sp\\u00f8rgsm\\u00e5let: [message:field-message-node-reference:title]Mvh LOOPDette er en automatisk besked sendt fra [site:url]\\u003C\\/p\\u003E\\n"
         }
       ]
     }

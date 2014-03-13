@@ -13,7 +13,7 @@ function loop_notification_default_rules_configuration() {
       "LABEL" : "Create\\/send message on comment creation",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "flag", "rules", "message_notify", "comment" ],
+      "REQUIRES" : [ "flag", "rules", "comment" ],
       "ON" : { "comment_insert" : [] },
       "DO" : [
         { "flag_fetch_users_node" : {
@@ -40,7 +40,7 @@ function loop_notification_default_rules_configuration() {
                 }
               },
               { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } },
-              { "message_notify_process" : { "message" : [ "entity-created" ], "mail" : "[list-item:mail]" } }
+              { "component_rules_send_mail" : { "user" : [ "list-item" ], "message" : [ "entity-created" ] } }
             ]
           }
         }
@@ -63,6 +63,24 @@ function loop_notification_default_rules_configuration() {
             "permission_check" : 0
           }
         }
+      ]
+    }
+  }');
+  $items['rules_send_mail'] = entity_import('rules_config', '{ "rules_send_mail" : {
+      "LABEL" : "Send mail",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "message_notify" ],
+      "USES VARIABLES" : {
+        "user" : { "label" : "user", "type" : "entity" },
+        "message" : { "label" : "message", "type" : "message" }
+      },
+      "IF" : [
+        { "entity_has_field" : { "entity" : [ "user" ], "field" : "message_subscribe_email" } },
+        { "data_is" : { "data" : [ "user:message-subscribe-email" ], "value" : 1 } }
+      ],
+      "DO" : [
+        { "message_notify_process" : { "message" : [ "message" ], "mail" : "[message:user]" } }
       ]
     }
   }');
