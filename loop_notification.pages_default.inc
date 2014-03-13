@@ -504,15 +504,14 @@ function loop_notification_default_page_manager_pages() {
     $pane->pid = 'new-13';
     $pane->panel = 'beta';
     $pane->type = 'views_panes';
-    $pane->subtype = 'user_messages-panel_pane_1';
+    $pane->subtype = 'user_messages-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
+      'more_link' => 0,
       'use_pager' => 1,
       'pager_id' => '0',
       'items_per_page' => '10',
-      'offset' => '0',
-      'more_link' => 0,
     );
     $pane->cache = array();
     $pane->style = array(
