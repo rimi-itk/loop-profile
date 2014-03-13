@@ -10,44 +10,65 @@
  * Start typeahead.
  */
 jQuery(document).ready(function($) {
-  var loopSearch = new Bloodhound({
+  var loopQuestions = new Bloodhound({
     datumTokenizer: function(d) {
       // Tokenize by splitting whitespace.
       return Bloodhound.tokenizers.whitespace(d.value);
     },
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     prefetch:  {
-      // URL for prefetch!
+      // URL to fetch.
       url: '/loop_search_nodes',
+      // TTL 5 min.
       ttl: 300000
     },
-    name: 'search'
   });
 
-  loopSearch.initialize();
+  var loopDocuments = new Bloodhound({
+    datumTokenizer: function(d) {
+      // Tokenize by splitting whitespace.
+      return Bloodhound.tokenizers.whitespace(d.value);
+    },
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    prefetch:  {
+      // URL to fetch.
+      url: '/loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,æ,ø,å',
+      // TTL 1 day.
+      ttl: 86400000
+    },
+  });
+
+  // Fire up our badboys!
+  loopQuestions.initialize();
+  loopDocuments.initialize();
 
   jQuery('.typeahead').typeahead(
     {
       highlight: true,
     },
     {
-      // Bloodhound source.
-      source: loopSearch.ttAdapter(),
-
-      // Name of search.
-      name: 'search',
-
+      // Pick source.
+      source: loopQuestions.ttAdapter(),
       // Display field.
       displayKey: 'title',
-
+      // HTML template for output.
       templates: {
-        suggestion: Handlebars.compile(
-          '{{title}}'
-        )
+        header: '<h3>Questions</h3>',
+        suggestion: Handlebars.compile('{{title}}')
+      }
+    },
+    {
+      // Pick source.
+      source: loopDocuments.ttAdapter(),
+      // Display field.
+      displayKey: 'title',
+      // HTML template for output.
+      templates: {
+        header: '<h3>Documents</h3>',
+        suggestion: Handlebars.compile('{{title}}')
       }
     }
   );
-
 
   $('.typeahead').on('typeahead:selected', function (object, datum) {
     // If suggestion contains a link. Redirect.
