@@ -53,24 +53,19 @@ class Parser {
   }
 
   /**
-   * Convert the CP437 characters in $text to UTF-8.
+   * Convert from CP865 to UTF8 characters in $text to UTF-8.
    *
    * @param $text
    * @return mixed
    */
-  private function CP437toUTF8($text) {
-    $text = preg_replace('/%86/', 'å', $text);
-    $text = preg_replace('/%87/', 'Å', $text);
-    $text = preg_replace('/%91/', 'æ', $text);
-    $text = preg_replace('/%92/', 'Æ', $text);
-    $text = preg_replace('/%9B/', 'ø', $text);
-    $text = preg_replace('/%9C/', 'Ø', $text);
+  private function convertCP865ToUTF8($text) {
+    $text = iconv("CP865", "UTF-8", rawurldecode($text));
+
     return $text;
   }
 
   /**
    * Extracts a zip file to a directory.
-   * Makes sure CP437 characters do not appear in file/directory names.
    *
    * @param $filename
    * @param $pathToDirectory
@@ -86,7 +81,7 @@ class Parser {
 
     for( $i = 0; $i < $za->numFiles; $i++ ){
       $stat = $za->statIndex( $i );
-      $entryname = $this->CP437toUTF8($stat['name']);
+      $entryname = $this->convertCP865ToUTF8($stat['name']);
       // if getFromIndex returns false it is a directory
       if ($content = $za->getFromIndex($i)) {
         file_put_contents($pathToDirectory . '/' . $entryname, $content);
