@@ -338,7 +338,7 @@ function loop_notification_default_page_manager_pages() {
     $pane->pid = 'new-9';
     $pane->panel = 'beta';
     $pane->type = 'views_panes';
-    $pane->subtype = 'user_messages-panel_pane_2';
+    $pane->subtype = 'user_messages-panel_pane_4';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
