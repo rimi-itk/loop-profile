@@ -2100,15 +2100,29 @@ a.comment--flag.unflag-action:hover {
   padding-left: 0;
   list-style: none;
 }
-/* line 33, ../sass/modules/_guide.scss */
-.guide--nav-list > .guide--nav-list {
-  padding-left: 1em;
+
+/* line 34, ../sass/modules/_guide.scss */
+.guide--nav-list-title {
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: .5em;
+  font-weight: bold;
 }
 
-/* line 38, ../sass/modules/_guide.scss */
+/* line 41, ../sass/modules/_guide.scss */
+.guide--nav-list-sublist {
+  padding-left: 1em;
+  list-style: none;
+}
+
+/* line 47, ../sass/modules/_guide.scss */
 .guide--nav-list-item {
   margin-top: .25em;
   margin-bottom: .25em;
+}
+/* line 52, ../sass/modules/_guide.scss */
+.guide--nav-list-item.has-sublist {
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 /**
