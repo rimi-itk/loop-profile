@@ -1631,6 +1631,32 @@ label {
 
 /**
  *
+ * Tables
+ *
+ */
+/* line 8, ../sass/theme/_tables.scss */
+table {
+  width: 100%;
+}
+/* line 11, ../sass/theme/_tables.scss */
+table th {
+  background-color: #f2f2f2;
+}
+/* line 15, ../sass/theme/_tables.scss */
+table th,
+table td {
+  padding: .5em;
+  text-align: left;
+  border: 1px solid #e6e6e6;
+}
+/* line 22, ../sass/theme/_tables.scss */
+table th:empty,
+table td:empty {
+  border: none;
+}
+
+/**
+ *
  * Block module
  *
  */
@@ -2074,7 +2100,7 @@ a.comment--flag.unflag-action:hover {
  */
 /* line 8, ../sass/modules/_guide.scss */
 .guide--nav-wrapper {
-  padding-top: 1.5em;
+  padding-top: 1em;
   padding-bottom: 1.5em;
   padding-left: 1.5em;
   background-color: #f2f2f2;
@@ -2091,35 +2117,34 @@ a.comment--flag.unflag-action:hover {
   overflow-y: scroll;
   height: 20em;
   padding-right: 1.5em;
-  padding-bottom: 1em;
 }
 
-/* line 27, ../sass/modules/_guide.scss */
+/* line 26, ../sass/modules/_guide.scss */
 .guide--nav-list {
   margin: 0;
   padding-left: 0;
   list-style: none;
 }
 
-/* line 34, ../sass/modules/_guide.scss */
+/* line 33, ../sass/modules/_guide.scss */
 .guide--nav-list-title {
   border-bottom: 1px solid #e6e6e6;
   padding-bottom: .5em;
   font-weight: bold;
 }
 
-/* line 41, ../sass/modules/_guide.scss */
+/* line 40, ../sass/modules/_guide.scss */
 .guide--nav-list-sublist {
   padding-left: 1em;
   list-style: none;
 }
 
-/* line 47, ../sass/modules/_guide.scss */
+/* line 46, ../sass/modules/_guide.scss */
 .guide--nav-list-item {
   margin-top: .25em;
   margin-bottom: .25em;
 }
-/* line 52, ../sass/modules/_guide.scss */
+/* line 51, ../sass/modules/_guide.scss */
 .guide--nav-list-item.has-sublist {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -2356,54 +2381,56 @@ a.comment--flag.unflag-action:hover {
 }
 
 /**
+ *
  * Search module
+ *
  */
 /* Search result
    ========================================================================== */
-/* line 10, ../sass/modules/_search.scss */
+/* line 12, ../sass/modules/_search.scss */
 .search-result--lead {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
 
-/* line 14, ../sass/modules/_search.scss */
+/* line 16, ../sass/modules/_search.scss */
 .search-result--item {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 17, ../sass/modules/_search.scss */
+/* line 19, ../sass/modules/_search.scss */
 .search-result--item:last-child {
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-/* line 22, ../sass/modules/_search.scss */
+/* line 24, ../sass/modules/_search.scss */
 .search-result--link {
   display: block;
   margin-bottom: .5em;
 }
-/* line 26, ../sass/modules/_search.scss */
+/* line 28, ../sass/modules/_search.scss */
 .search-result--link:link, .search-result--link:visited {
   text-decoration: none;
 }
-/* line 31, ../sass/modules/_search.scss */
+/* line 33, ../sass/modules/_search.scss */
 .search-result--link:hover, .search-result--link:active {
   text-decoration: underline;
 }
 
-/* line 37, ../sass/modules/_search.scss */
+/* line 39, ../sass/modules/_search.scss */
 .search-result--comments, .question--number-of-comments {
   display: block;
 }
-/* line 40, ../sass/modules/_search.scss */
+/* line 42, ../sass/modules/_search.scss */
 .search-result--comments:link, .question--number-of-comments:link, .search-result--comments:visited, .question--number-of-comments:visited {
   color: #737373;
   text-decoration: none;
 }
-/* line 46, ../sass/modules/_search.scss */
+/* line 48, ../sass/modules/_search.scss */
 .search-result--comments:hover, .question--number-of-comments:hover, .search-result--comments:active, .question--number-of-comments:active {
   color: #404040;
 }
