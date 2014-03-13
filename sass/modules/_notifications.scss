@@ -5,22 +5,20 @@
  */
 
 
-$notification-dimensions: 2em;
-
 .notification {
-  display: inline-block;
+  display: block;
   position: absolute;
   top: -.5em;
   right: -.5em;
-  height: $notification-dimensions;
-  width: $notification-dimensions;
+
+  height: 2em;
+  width: 2.05em;
 
   background-color: $red;
   font-size: 65%;
+  font-weight: bold;
   text-decoration: none;
-  line-height: $notification-dimensions;
-  text-align: center;
-  vertical-align: middle;
+  line-height: 195%;
 
   &:link,
   &:visited {
@@ -28,6 +26,7 @@ $notification-dimensions: 2em;
   }
 
   @include border-radius(100%);
+  @include box-sizing(border-box);
 }
 
 .notification--user-subscriptions {
