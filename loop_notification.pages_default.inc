@@ -153,7 +153,7 @@ function loop_notification_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'more_link' => 0,
+      'more_link' => 1,
       'use_pager' => 0,
       'pager_id' => '0',
       'items_per_page' => '3',
@@ -176,7 +176,7 @@ function loop_notification_default_page_manager_pages() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'more_link' => 0,
+      'more_link' => 1,
       'use_pager' => 0,
       'pager_id' => '0',
       'items_per_page' => '3',
