@@ -71,6 +71,7 @@ function loop_notification_default_rules_configuration() {
       "PLUGIN" : "rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "rules", "message_notify" ],
+      "ACCESS_EXPOSED" : "1",
       "USES VARIABLES" : {
         "user" : { "label" : "user", "type" : "entity" },
         "message" : { "label" : "message", "type" : "message" }
