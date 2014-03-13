@@ -63,4 +63,5 @@
 </fieldset>
 <?php hide($user_profile['group_personal_information']); ?>
 <?php hide($user_profile['user_picture']); ?>
+<?php hide($user_profile['message_subscribe_email']); ?>
 <?php print render($user_profile); ?>
