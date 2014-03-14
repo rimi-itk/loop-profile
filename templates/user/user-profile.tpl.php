@@ -41,11 +41,11 @@
     <?php print $elements['#account']->name; ?>
   <?php endif; ?>
   <?php if ($user->uid == $elements['#account']->uid) : ?>
-    <span class="user-profile-module--edit-link">(<a href="/user/<?php print $elements['#account']->uid ;?>/edit">redigér</a>)</span>
+    <span class="user-profile-module--edit-link">(<a href="/user/<?php print $elements['#account']->uid ;?>/edit"><?php print t('Edit'); ?></a>)</span>
   <?php endif; ?>
 </h1>
 <fieldset class="user-profile-module--field-group-fieldset-personal-info">
-  <legend class="fieldset-legend">Personlige informationer</legend>
+  <legend class="fieldset-legend"><?php print t('Personal informations'); ?></legend>
   <div class="user-profile-module--personal-info-text">
     <div class="user-profile-module--field-personal-info">
       <span class="user-profile-module--field-label"><?php print t('First name') . ':'; ?></span><span class="user-profile-module--field-value"><?php print render($elements['field_first_name']); ?></span>
