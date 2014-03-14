@@ -8,29 +8,6 @@
 include_once 'loop_search.features.inc';
 
 /**
- * Implements hook_install().
- *
- * jQuery version check.
- */
-function loop_search_install() {
-  // Check jQuery version.
-  $jquery_version = variable_get('jquery_update_jquery_version', 1.5);
-
-  // Update jQuery version to version 1.9.
-  if ($jquery_version < 1.9) {
-    variable_set('jquery_update_jquery_version', 1.9);
-  }
-
-  // Check jQuery admin pages version.
-  $jquery_admin_version = variable_get('jquery_update_jquery_admin_version', 1.5);
-
-  // Update jQuery admin pages to version 1.8.
-  if ($jquery_admin_version < 1.8) {
-    variable_set('jquery_update_jquery_admin_version', 1.8);
-  }
-}
-
-/**
  * Return every node of type post in JSON format.
  *
  * @return string
@@ -53,7 +30,7 @@ function loop_search_nodes() {
       // Fine human output.
       'title' => trim($node->title),
       // Use internal path.
-      'link' => '/'. drupal_get_path_alias('node/' . $node->nid),
+      'link' => '/' . drupal_get_path_alias('node/' . $node->nid),
     );
   }
 
@@ -100,9 +77,9 @@ function loop_search_menu() {
 }
 
 /**
- * Find documents (leafs) and output as JSON
+ * Find documents (leafs) and output as JSON.
  *
- * @param $scope
+ * @param string $scope
  *   Comma separated list to search for.
  *
  * @return string
@@ -124,7 +101,6 @@ function loop_search_documents($scope) {
     ->condition('type', 'leaf')
     ->condition('status', 1)
     ->condition($or)
-    //->__toString();
     ->execute();
 
   $data = array();
@@ -135,7 +111,7 @@ function loop_search_documents($scope) {
       // Fine human output.
       'title' => trim($node->title),
       // Use internal path.
-      'link' => '/'. drupal_get_path_alias('node/' . $node->nid),
+      'link' => '/' . drupal_get_path_alias('node/' . $node->nid),
     );
   }
 
@@ -143,8 +119,10 @@ function loop_search_documents($scope) {
   drupal_json_output($data);
 }
 
-
-function loop_search_theme($vars) {
+/**
+ * Implements hook_theme().
+ */
+function loop_search_theme() {
   return array(
     'loop_search_theme' => array(
       'render element' => 'form',
@@ -153,13 +131,12 @@ function loop_search_theme($vars) {
   );
 }
 
-
 /**
  * Implements hook_form_FORM_ID_alter().
  *
  * Alter search form for Twitter Typeahead.
  */
-function loop_search_form_search_api_page_search_form_default_alter(&$form, &$form_state) {
+function loop_search_form_search_api_page_search_form_default_alter(&$form) {
   // Add class to submit.
   $form['submit_1']['#attributes']['class'][] = 'typeahead-block--button';
 
@@ -167,7 +144,7 @@ function loop_search_form_search_api_page_search_form_default_alter(&$form, &$fo
   $form['keys_1']['#attributes']['style'] = "position: relative; vertical-align: top; background-color: transparent;";
 
   // Default placeholder.
-  $form['keys_1']['#attributes']['placeholder'] =  t('E.g. "How do you document a subject"');
+  $form['keys_1']['#attributes']['placeholder'] = t('E.g. "How do you document a subject"');
 
   // Yet again, some id and classes for Twitter Typehead.
   $form['keys_1']['#attributes']['id'][] = 'typeahead';
@@ -179,7 +156,7 @@ function loop_search_form_search_api_page_search_form_default_alter(&$form, &$fo
   if ($arg[0] == "node" && is_numeric($arg[1])) {
     // Load correct node.
     $node = node_load($arg[1]);
-    if ($node -> type == 'post') {
+    if ($node->type == 'post') {
       // Load entity wrapper.
       $wrapper = entity_metadata_wrapper('node', $node);
 
