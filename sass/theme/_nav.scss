@@ -4,6 +4,7 @@
  * We cannot affect the classes depending on context, so we nest instead.
  */
 
+
 .nav--wrapper {
   position: absolute;
   right: 1em;
@@ -28,7 +29,7 @@
 
 
 // We use the same menu as in mobile, where we just want ordinary links. This results in some needed nesting.
-.nav--wrapper {
+.nav--wrapper{
   .nav--link {
     position: relative;
 
@@ -72,33 +73,34 @@
       @include border-radius($border-radius $border-radius 0 0);
     }
   }
-}
 
 
-.nav--toggle-mobile-nav {
-  @extend .nav--link;
+  .nav--toggle-mobile-nav {
+    @extend .nav--link;
 
-  @include breakpoint(45em) {
-    display: inline-block;
-    min-height: 2.5em;
-    vertical-align: bottom;
+    @include breakpoint(45em) {
+      display: inline-block;
+      min-height: 2.5em;
+      vertical-align: bottom;
 
-    .nav--icon {
-      position: relative;
-      top: .5em;
+      .nav--icon {
+        position: relative;
+        top: .5em;
 
-      display: block;
+        display: block;
+      }
+
+      .nav--text {
+        display: none;
+      }
     }
 
-    .nav--text {
+    @include breakpoint($layout-max-width) {
       display: none;
     }
   }
-
-  @include breakpoint($layout-max-width) {
-    display: none;
-  }
 }
+
 
 .nav--icon {
   max-width: 1.25em;
