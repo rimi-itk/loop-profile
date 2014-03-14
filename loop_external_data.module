@@ -98,14 +98,14 @@ function loop_external_data_block_view($delta = '') {
 
   switch ($delta) {
     case 'index':
-      $node_id = (int)arg(1);
-      if ( (is_int($node_id)) && ($node_id > 0) ) {
+      $node_id = (int) arg(1);
+      if ((is_int($node_id)) && ($node_id > 0)) {
         $node = node_load($node_id);
         $node = _loop_external_data_find_index($node);
         $block['subject'] = t('Index');
         $block['content'] = array(
           '#theme' => 'loop_external_data_dropdown_block',
-          '#forest' => _loop_external_data_build_dropdown($node)
+          '#forest' => _loop_external_data_build_dropdown($node),
         );
       }
       break;
@@ -116,7 +116,7 @@ function loop_external_data_block_view($delta = '') {
 /**
  * Internal function to build fully tree recursive.
  *
- * @param $item
+ * @param mixed $item
  *   Index/tree/leaf object.
  *
  * @return array
@@ -135,6 +135,7 @@ function _loop_external_data_build_dropdown($item) {
         $items['#theme'] = 'loop_external_data_dropdown_trees';
       }
       break;
+
     case 'tree':
       $items['#title'] = $item->title;
       $items['#nid'] = $item->nid;
@@ -158,6 +159,15 @@ function _loop_external_data_build_dropdown($item) {
   return $items;
 }
 
+/**
+ * Internal function to find index.
+ *
+ * @param mixed $item
+ *   Item.
+ *
+ * @return bool|mixed
+ *   Returns index.
+ */
 function _loop_external_data_find_index($item) {
   // Find index.
   if ($item->type != 'index') {
@@ -186,7 +196,7 @@ function _loop_external_data_find_index($item) {
 /**
  * Build render array with index.
  *
- * @param $node
+ * @param mixed $node
  *   The Index node.
  *
  * @return array
@@ -200,13 +210,13 @@ function loop_external_data_index($node) {
     // Return render array.
     return array(
       '#theme' => 'loop_external_data_index',
-      '#forest' => $forest
+      '#forest' => $forest,
     );
   }
   else {
     return array(
       '#theme' => 'loop_external_data_index',
-      '#forest' => array()
+      '#forest' => array(),
     );
   }
 }
@@ -214,7 +224,7 @@ function loop_external_data_index($node) {
 /**
  * Internal function to build fully tree recursive.
  *
- * @param $item
+ * @param mixed $item
  *   Index/tree/leaf object.
  *
  * @return array
@@ -233,6 +243,7 @@ function _loop_external_data_build_tree($item) {
         $items['#theme'] = 'loop_external_data_trees';
       }
       break;
+
     case 'tree':
       $items['#title'] = $item->title;
       $items['#nid'] = $item->nid;
@@ -260,8 +271,6 @@ function _loop_external_data_build_tree($item) {
 
 /**
  * Implements hook_node_insert().
- *
- * @param $node
  */
 function loop_external_data_node_insert($node) {
   if ($node->type == 'index') {
@@ -269,6 +278,9 @@ function loop_external_data_node_insert($node) {
   }
 }
 
+/**
+ * Implements hook_node_delete().
+ */
 function loop_external_data_node_delete($node) {
   if ($node->type == 'index') {
     // Remove leafs and trees.
@@ -279,12 +291,10 @@ function loop_external_data_node_delete($node) {
 
 /**
  * Implements hook_node_update().
- *
- * @param $node
  */
 function loop_external_data_node_update($node) {
   if (!isset($_SESSION['loop_external_data_node_update'])) {
-    if ( ($node->created < $node->changed) && ($node->type == 'index') ) {
+    if (($node->created < $node->changed) && ($node->type == 'index')) {
       $_SESSION['loop_external_data_node_update'] = time() + 10;
       // This is an update, remove old data.
       $trees = _loop_external_data_build_tree($node);
@@ -302,9 +312,12 @@ function loop_external_data_node_update($node) {
 }
 
 /**
+ * Internal function.
+ *
  * Recursively deletes a tree of nodes.
  *
- * @param $trees
+ * @param mixed $trees
+ *   The trees to delete.
  */
 function _loop_external_data_delete_tree($trees) {
   if ($trees['#theme'] == 'loop_external_data_trees') {
@@ -314,7 +327,8 @@ function _loop_external_data_delete_tree($trees) {
     if (isset($trees['#nid'])) {
       node_delete($trees['#nid']);
     }
-  } else if ($trees['#theme'] == 'loop_external_data_leaf') {
+  }
+  elseif ($trees['#theme'] == 'loop_external_data_leaf') {
     node_delete($trees['#nid']);
   }
 }
@@ -322,7 +336,7 @@ function _loop_external_data_delete_tree($trees) {
 /**
  * Load uploaded file and send it to our parser.
  *
- * @param $node
+ * @param mixed $node
  *   Index node.
  */
 function _loop_external_data_file_load($node) {
@@ -348,9 +362,8 @@ function _loop_external_data_file_load($node) {
 /**
  * Recursive data parser.
  *
- * @param $data
+ * @param mixed $data
  *   Index/tree/leaf object.
- *
  * @param int $parent
  *   Parent node ID.
  * @param array $references
@@ -363,25 +376,24 @@ function _loop_external_data_parser($data, $parent = NULL, &$references = NULL) 
     case 'LoopIndex':
       _loop_external_data_parser_index($data, $parent);
       break;
+
     case 'Tree':
-      _loop_external_data_parser_tree($data, $parent, $references);
+      _loop_external_data_parser_tree($data, $references, $parent);
       break;
+
     case 'Leaf':
-      _loop_external_data_parser_leaf($data, $parent, $references);
+      _loop_external_data_parser_leaf($data, $references, $parent);
       break;
   }
-
-  return $data;
 }
 
 /**
  * Parse index object.
  *
- * @param $index
+ * @param mixed $index
  *   Index object.
- *
- * @param $parent
- *   Parent node ID.
+ * @param mixed $parent
+ *   Parent node.
  */
 function _loop_external_data_parser_index($index, $parent) {
   $children = $index->getChildren();
@@ -392,13 +404,14 @@ function _loop_external_data_parser_index($index, $parent) {
       _loop_external_data_parser($child, $parent, $references);
     }
 
-    // Fix references
+    // Fix references.
     foreach ($children as $child) {
       $class_type = get_class($child);
       switch ($class_type) {
         case 'Tree':
           _loop_external_data_fix_references_tree($child, $references);
           break;
+
         case 'Leaf':
           _loop_external_data_fix_references_leaf($child, $references);
           break;
@@ -410,17 +423,20 @@ function _loop_external_data_parser_index($index, $parent) {
 /**
  * Fixes references for a Tree.
  *
- * @param $loopTree
- * @param $references
+ * @param mixed $loop_tree
+ *   Tree/Leaf.
+ * @param array $references
+ *   Array of references.
  */
-function _loop_external_data_fix_references_tree($loopTree, $references) {
-  $children = $loopTree->getChildren();
-  foreach($children as $child) {
+function _loop_external_data_fix_references_tree($loop_tree, $references) {
+  $children = $loop_tree->getChildren();
+  foreach ($children as $child) {
     $class_type = get_class($child);
     switch ($class_type) {
       case 'Tree':
         _loop_external_data_fix_references_tree($child, $references);
         break;
+
       case 'Leaf':
         _loop_external_data_fix_references_leaf($child, $references);
         break;
@@ -430,20 +446,24 @@ function _loop_external_data_fix_references_tree($loopTree, $references) {
 
 /**
  * Fixes the references for the body of a Leaf.
+ *
  * Uses the $references array to make the links between nodes.
  *
- * @param $loopLeaf
- * @param $references
+ * @param Leaf $loop_leaf
+ *   Leaf.
+ * @param array $references
+ *   Array of references.
+ *
  * @throws Exception
  */
-function _loop_external_data_fix_references_leaf($loopLeaf, $references) {
-  $node = node_load($loopLeaf->getDrupalNID());
+function _loop_external_data_fix_references_leaf($loop_leaf, $references) {
+  $node = node_load($loop_leaf->getDrupalNID());
 
   $wrapper = entity_metadata_wrapper('node', $node);
   $body = $wrapper->body->value();
 
   $xml = new DOMDocument('1.0', 'utf-8');
-  libxml_use_internal_errors(true);
+  libxml_use_internal_errors(TRUE);
   if (!$xml->loadHTML($body['value'])) {
     throw new Exception("Error loading Leaf body.");
   }
@@ -455,21 +475,21 @@ function _loop_external_data_fix_references_leaf($loopLeaf, $references) {
 
     $ref = $references[$href];
     if (isset($ref)) {
-      $newPath = '/node/' . $ref['nid'];
+      $new_path = '/node/' . $ref['nid'];
 
-      $a->setAttribute('href', $newPath);
+      $a->setAttribute('href', $new_path);
       $a->setAttribute('class', 'external-data-link');
     }
   }
 
   $body = $xpath->query('//body');
 
-  $bodyArr = array(
+  $body_arr = array(
     'value' => $xml->saveXML($body->item(0)),
-    'format' => 'editor'
+    'format' => 'editor',
   );
 
-  $wrapper->body = $bodyArr;
+  $wrapper->body = $body_arr;
   $wrapper->save();
 }
 
@@ -478,15 +498,14 @@ function _loop_external_data_fix_references_leaf($loopLeaf, $references) {
  *
  * Creates a tree node and recursively parse childs.
  *
- * @param $tree
+ * @param mixed $tree
  *   Tree object.
- *
- * @param int $parent
- *  Parent node ID.
  * @param array $references
- *  Array of references.
+ *   Array of references.
+ * @param mixed $parent
+ *   Parent node.
  */
-function _loop_external_data_parser_tree($tree, $parent = NULL, &$references) {
+function _loop_external_data_parser_tree($tree, &$references, $parent = NULL) {
   global $user;
   $node = new Stdclass();
 
@@ -511,15 +530,14 @@ function _loop_external_data_parser_tree($tree, $parent = NULL, &$references) {
  *
  * Creates a leaf node.
  *
- * @param $leaf
+ * @param mixed $leaf
  *   Leaf object.
- *
- * @param int $parent
- *  Parent node ID.
  * @param array $references
- *  Array of references.
+ *   Array of references.
+ * @param mixed $parent
+ *   Parent node.
  */
-function _loop_external_data_parser_leaf($leaf, $parent = NULL, &$references) {
+function _loop_external_data_parser_leaf($leaf, &$references, $parent = NULL) {
   global $user;
   $node = new Stdclass();
 
@@ -531,7 +549,7 @@ function _loop_external_data_parser_leaf($leaf, $parent = NULL, &$references) {
 
   node_save($node);
 
-  // If this leaf matches one of the references, set the node id of the reference.
+  // If this leaf matches one of the references, set node id of the reference.
   for ($i = 0; $i < count($references); $i++) {
     if ($references[$i]['leafID'] == $leaf->getLeafID()) {
       $references[$i]['nid'] = $node->nid;
@@ -544,7 +562,7 @@ function _loop_external_data_parser_leaf($leaf, $parent = NULL, &$references) {
   $wrapper = entity_metadata_wrapper('node', $node);
   $wrapper->body = array(
     'value' => $leaf->getBody(),
-    'format' => 'editor'
+    'format' => 'editor',
   );
   $wrapper->save();
 
@@ -554,19 +572,18 @@ function _loop_external_data_parser_leaf($leaf, $parent = NULL, &$references) {
 /**
  * Adds nodes to parent.
  *
- * @param $node
+ * @param mixed $node
  *   Node object.
- *
- * @param $child
+ * @param mixed $child
  *   Node object.
  */
 function _loop_external_data_add_child($node, $child) {
-  $parentNode = node_load($node);
-  $wrapper = entity_metadata_wrapper('node', $parentNode);
-  if ($parentNode->type == 'tree') {
+  $parent_node = node_load($node);
+  $wrapper = entity_metadata_wrapper('node', $parent_node);
+  if ($parent_node->type == 'tree') {
     $wrapper->field_leaf[] = intval($child->nid);
   }
-  else if ($parentNode->type == 'index') {
+  elseif ($parent_node->type == 'index') {
     $wrapper->field_tree[] = intval($child->nid);
   }
 
