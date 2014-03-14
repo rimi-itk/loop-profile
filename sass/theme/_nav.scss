@@ -117,6 +117,7 @@
 
 
 /* Dropdown menu
+ * We use the same menu as in mobile, where we don't want any of this stuff. This results in some needed nesting.
    ================================================================================================================== */
 
 .nav-dropdown {
@@ -128,94 +129,97 @@
   @include breakpoint($layout-max-width) {
     display: inline-block;
   }
-}
 
-.nav-dropdown--header {
-  @extend .nav--link;
+  .nav-dropdown--header {
+    @extend .nav--link;
 
-  position: relative;
+    position: relative;
 
-  padding-right: 2.5em;
+    padding-right: 2.5em;
 
-  &:link,
-  &:visited {
-    color: $white;
-    text-decoration: none;
+    &:link,
+    &:visited {
+      color: $white;
+      text-decoration: none;
+    }
+
+    &:hover {
+      background-color: $green-light;
+    }
   }
 
-  &:hover {
+  .nav-dropdown--icon {
+    position: absolute;
+    top: .85em;
+    right: 1em;
+
+    max-width: .85em;
+  }
+
+  .nav-dropdown--item {
+    position: absolute;
+    top: 2.5em;
+    right: 0;
+    z-index: 99;
+
+    display: none;
+    padding-top: .5em;
+    padding-right: 1.25em;
+    padding-left: 1.25em;
+
     background-color: $green-light;
+    line-height: 2.5em;
+
+    @include border-radius(0 0 $border-radius $border-radius);
   }
-}
 
-.nav-dropdown--icon {
-  position: absolute;
-  top: .85em;
-  right: 1em;
+  // Nesting because we use hover to show the sub menu.
+  .nav-dropdown--wrapper {
+    position: relative;
 
-  max-width: .85em;
-}
+    display: inline-block;
 
-.nav-dropdown--item {
-  position: absolute;
-  top: 2.5em;
-  right: 0;
-  z-index: 99;
+    &:hover {
+      .nav-dropdown--item {
+        display: block;
+      }
+    }
+  }
 
-  display: none;
-  padding-top: .5em;
-  padding-right: 1.25em;
-  padding-left: 1.25em;
+  .nav-dropdown--link {
+    border-bottom: 1px solid lighten($green-light, 10%);
+    margin-bottom: .5em;
+    padding-bottom: .5em;
 
-  background-color: $green-light;
-  line-height: 2.5em;
+    display: block;
+    min-width: 10em;
 
-  @include border-radius(0 0 $border-radius $border-radius);
-}
+    text-align: right;
 
-// Nesting because we use hover to show the sub menu.
-.nav-dropdown--wrapper {
-  position: relative;
+    &:link,
+    &:visited {
+      color: $white;
+      text-decoration: none;
+    }
 
-  display: inline-block;
+    &:hover {
+      text-decoration: underline;
+    }
 
-  &:hover {
-    .nav-dropdown--item {
-      display: block;
+    &:last-child {
+      border: 0;
+      margin-bottom: 0;
     }
   }
 }
 
-.nav-dropdown--link {
-  border-bottom: 1px solid lighten($green-light, 10%);
-  margin-bottom: .5em;
-  padding-bottom: .5em;
 
-  display: block;
-  min-width: 10em;
-
-  text-align: right;
-
-  &:link,
-  &:visited {
-    color: $white;
-    text-decoration: none;
-  }
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  &:last-child {
-    border: 0;
-    margin-bottom: 0;
-  }
-}
 
 
 /* Mobile navigation
  *
  * See specific IE9 styles in separate stylesheet
+ * We use the same menu as in the header, and thus the same html. This results in some needed nesting.
  *
    ================================================================================================================== */
 
@@ -257,17 +261,30 @@
       color: $white;
     }
   }
-}
 
-.nav-mobile--link {
-  @include element-spacing(1em);
+  .nav-dropdown--header,
+  .nav-dropdown--link {
+    @include element-spacing(1em);
 
-  border-bottom-color: $green-light;
+    border-bottom-color: $green-light;
 
-  display: block;
+    display: block;
 
-  &:before {
-    @extend %icon-arrow-right;
-    @extend %icon-before;
+    &:before {
+      @extend %icon-arrow-right;
+      @extend %icon-before;
+    }
+  }
+
+  .nav-dropdown--item {
+    padding-left: 1.25em;
+  }
+
+  .nav--text {
+    display: inline-block;
+  }
+
+  .nav-dropdown--icon {
+    display: none;
   }
 }

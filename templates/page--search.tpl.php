@@ -79,7 +79,9 @@
  */
 if (isset($loop_primary_menu)): ?>
   <nav class="nav-mobile js-mobile-nav">
-    <?php print theme('links__system_primary_menu_mobile', array('links' => $loop_primary_menu)); ?>
+    <?php if ($main_menu_block) : ?>
+      <?php print render($main_menu_block); ?>
+    <?php endif; ?>
   </nav>
 <?php endif; ?>
 
@@ -92,7 +94,9 @@ if (isset($loop_primary_menu)): ?>
     <?php endif; ?>
     <?php print render($page['header']); ?>
     <div class="nav--wrapper" id="search-block-form">
-      <?php print theme('links__system_primary_menu', array('links' => $main_menu, 'attributes' => array('class' => array('nav')))); ?>
+      <?php if ($main_menu_block) : ?>
+        <?php print render($main_menu_block); ?>
+      <?php endif; ?>
     </div>
   </div>
 </header>

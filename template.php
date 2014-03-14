@@ -4,12 +4,6 @@
  * Preprocess and Process Functions.
  */
 
-/**
- * Override or insert variables into the html template.
- */
-function loop_preprocess_html(&$variables) {
-}
-
 
 /**
  * Override or insert variables into the page template.
@@ -36,7 +30,8 @@ function loop_preprocess_page(&$variables) {
 
   // Load LOOP primary menu.
   if (module_exists('loop_navigation')) {
-    $variables['loop_primary_menu'] = menu_navigation_links('menu-loop-primary-menu');
+    $variables['main_menu_block'] = module_invoke('system', 'block_view', 'main-menu');
+    $variables['primary_menu_block'] = module_invoke('menu', 'block_view', 'menu-loop-primary-menu');
   }
 
   // Check if we are using a panel page to define layout.
@@ -50,13 +45,6 @@ function loop_preprocess_page(&$variables) {
 
 
 /**
- * Override or insert variables into the region template.
- */
-function loop_preprocess_region(&$variables) {
-}
-
-
-/**
  * Override or insert variables into the node template.
  */
 function loop_preprocess_node(&$variables) {
@@ -64,20 +52,6 @@ function loop_preprocess_node(&$variables) {
   $variables['author_name'] = fetch_full_name($author);
   $fetched_job_title = field_get_items('user', $author, 'field_job_title');
   $variables['job_title'] = field_view_value('user', $author, 'field_job_title', $fetched_job_title[0], array());
-}
-
-
-/**
- * Override or insert variables into the field template.
- */
-function loop_preprocess_field(&$variables) {
-}
-
-
-/**
- * Override or insert variables into the block template.
- */
-function loop_preprocess_block(&$variables) {
 }
 
 
@@ -112,60 +86,6 @@ function loop_preprocess_search_api_page_results(&$variables) {
     $variables['node_form'] = $form;
   }
 }
-
-
-/**
- * Helper function for menu blocks
- */
-function _loop_menu_styling($variables, $class, $nolink_class = FALSE, $below_class = FALSE, $icon = FALSE, $span_class = FALSE) {
-  // Path to theme variable.
-  $path_to_theme = '/' . drupal_get_path('theme', 'loop');
-
-  $element = $variables['element'];
-
-  $sub_menu = '';
-
-  // Check if <nolink> is present (used for parent menu items).
-  if ($element['#href'] == '<nolink>') {
-    // Add header class to parent item.
-    $element['#localized_options']['attributes']['class'][] = $nolink_class;
-
-    if (isset($element['#below'])) {
-      // Add a wrapper class.
-      if ($below_class) {
-        $sub_menu = '<div class="' . $below_class . '">' . drupal_render($element['#below']) . '</div>';
-      }
-      else {
-        $sub_menu = drupal_render($element['#below']);
-      }
-    }
-  }
-  else {
-    // Add default class to a tag.
-    $element['#localized_options']['attributes']['class'][] = $class;
-  }
-
-    // Make sure text string is treated as html by l function.
-  $element['#localized_options']['html'] = true;
-
-  // Add an icon.
-  $icon_output = '';
-
-  if (isset($icon) && isset($element['#localized_options']['attributes']['rel'])) {
-    $icon_output = '<img src="'. $path_to_theme. '/images/' . $element['#localized_options']['attributes']['rel'] . '.png ' . '" class="' . $icon . '">';
-  }
-
-  // Add a span.
-  if ($span_class) {
-    $output = l($icon_output . '<span class="' . $span_class . '">'. $element['#title'] . '</span>', $element['#href'], $element['#localized_options']);
-  }
-  else {
-    $output = l($element['#title'], $element['#href'], $element['#localized_options']);
-  }
-
-  return $output . $sub_menu . "\n";
-}
-
 
 /**
  * Implements theme_menu_local_task().
@@ -251,133 +171,134 @@ function loop_menu_local_tasks($variables) {
 
 
 /**
- * Implements theme_links__system_primary_menu().
+ * Implements theme_menu_tree__main_menu().
  *
- * Theme function for primary menu.
+ * System generated menu links from different modules. Menu not to be changed by users.
+ * Forms the header menu together with primary menu.
  */
-function loop_links__system_primary_menu($variables) {
+function loop_menu_tree__main_menu ($variables) {
   $theme_path = drupal_get_path('theme', 'loop');
-  $primary_navigation_dropdown = '';
-  $toggle_mobile_menu_link = '';
-  $menu = '<nav class="nav">';
-
-  // Run through each link in the primary menu and do different stuff...
-  foreach ($variables['links'] as $key => $value) {
-
-    // Images for the different menu items.
-    switch ($value['href']) {
-      case 'user':
-        $img = array(
-          'path' => '/' . $theme_path . '/images/nav-user-icon.png',
-          'attributes' => array('class' => 'nav--icon'),
-        );
-        // Create the title with image icon.
-        $title = theme_image($img) . '<span class="nav--text">' . $value['title'] . '</span>';
-
-        // Add item to main menu links.
-        $menu .= l($title, $value['href'], array('attributes' => array('class' => array('nav--link')), 'html' => 'TRUE'));
-        break;
-      case 'user/' . $GLOBALS['user']->uid . '/messages':
-        $img = array(
-          'path' => '/' . $theme_path . '/images/nav-mail-icon.png',
-          'attributes' => array('class' => 'nav--icon'),
-        );
-        // Create the title with image icon.
-        $title = theme_image($img) . '<span class="nav--text">' . $value['title'] . '</span>';
-
-        // Add item to main menu links.
-        $menu .= l($title, $value['href'], array('attributes' => array('class' => array('nav--link')), 'html' => 'TRUE'));
-        break;
-      case 'node/add/post':
-        $img = array(
-          'path' => '/' . $theme_path . '/images/nav-add-icon.png',
-          'attributes' => array('class' => 'nav--icon'),
-        );
-        // Create the title with image icon.
-        $title = theme_image($img) . '<span class="nav--text">' . $value['title'] . '</span>';
-
-        // Add item to main menu links.
-        $menu .= l($title, $value['href'], array('attributes' => array('class' => array('nav--link')), 'html' => 'TRUE'));
-        break;
-    }
-
-    // If the link is pointing at frontpage it is the navigation dropdown menu link.
-    if (!empty($value['identifier']) && $value['identifier'] == 'main-menu_menu:<front>') {
-
-      // If 'main-menu_menu:<front>' exists we add an additional toggle-mobile-nav mobile menu link.
-      $img_toggle_mobile_menu = array(
-        'path' => '/profiles/loopdk/themes/loop/images/nav-menu-icon.png',
-        'attributes' => array('class' => 'nav--icon'),
-      );
-      $toggle_mobile_menu_title = theme_image($img_toggle_mobile_menu) . '<span class="nav--text">Menu</span>';
-      $toggle_mobile_menu_link = l($toggle_mobile_menu_title, '#', array('attributes' => array('class' => array('last leaf nav--toggle-mobile-nav js-toggle-mobile-nav nolink')), 'html' => 'TRUE', 'external' => TRUE));
-
-
-      // Img icon for dropdown menu item.
-      $img = array(
-        'path' => '/profiles/loopdk/themes/loop/images/nav-arrow-down-icon.png',
-        'attributes' => array('class' => 'nav-dropdown--icon'),
-      );
-
-      // Fetch primary menu links and render them.
-      $primary_menu = menu_navigation_links('menu-loop-primary-menu');
-      $primary_menu_rendered = theme('links__primary_menu_dropdown', array('links' => $primary_menu));
-
-      // Set title for dropdown.
-      $title = theme_image($img) . $value['title'];
-
-      // Set full dropdown menu.
-      $primary_navigation_dropdown = '<nav class="nav-dropdown"><div class="nav-dropdown--wrapper">' . l($title, '#', array('attributes' => array('class' => array('nav-dropdown--header')), 'html' => TRUE, 'external' => TRUE)) . $primary_menu_rendered .'</div></nav>';
-    }
-    unset($value);
-  }
 
   // Add notificaiton link
   if (printNotificationTab()) {
-    $menu .= printNotificationTab();
+    $variables['tree'] = $variables['tree'] . printNotificationTab();
   }
 
-  // Dropdown link at the end of navigation menu.
-  $menu .= $toggle_mobile_menu_link;
+  // If loop navigation exists add a mobile dropdown navigation.
+  if (module_exists('loop_navigation')) {
+    $element['#localized_options']['attributes']['class'][] = 'last leaf nav--toggle-mobile-nav js-toggle-mobile-nav nolink';
 
-  $menu .= '</nav>';
+    // Allow images in the links.
+    $element['#localized_options']['html'][] = TRUE;
 
-  // Dropdown menu for broad display.
-  $menu .= $primary_navigation_dropdown;
+    // Allow no path (path = #)
+    $element['#localized_options']['external'][] = TRUE;
 
-  // THe full navigation menu.
-  return $menu;
+    $img = array(
+      'path' => '/' . $theme_path . '/images/nav-menu-icon.png',
+      'attributes' => array('class' => 'nav--icon'),
+    );
+    // Create the title with image icon.
+    $element['#title'] = theme_image($img) . '<span class="nav--text">Menu</span>';
+
+    $variables['tree'] = $variables['tree'] . l($element['#title'], '#', $element['#localized_options']);
+  }
+
+  // If the menu contains <li> tag add a ul tag.
+  return $variables['tree'];
 }
 
 
 /**
- * Implements theme_links__system_primary_menu_mobile().
+ * Implements theme_menu_tree__menu_loop_primary_menu().
  *
- * Theme function for primary menu mobile.
+ * User generated link.
+ * Forms the header menu together with main menu.
  */
-function loop_links__system_primary_menu_mobile($variables) {
-  $menu = '';
-  foreach ($variables['links'] as $value) {
-    $menu .= l($value['title'], $value['href'], array('attributes' => array('class' => array('nav-mobile--link'))));
-  }
-  return $menu;
+function loop_menu_tree__menu_loop_primary_menu($variables) {
+  // If the menu contains <li> tag add a ul tag.
+  return $variables['tree'];
 }
 
+
 /**
- * Implements theme_links__primary_menu_dropdown().
- *
- * Theme function for primary menu when displayed as dropdown.
+ * Implements theme_menu_link().
  */
-function loop_links__primary_menu_dropdown($variables) {
-  if (!empty($variables['links'])) {
-    $primary_menu = '<div class="nav-dropdown--item">';
-    foreach ($variables['links'] as $value) {
-      $primary_menu .= l($value['title'], $value['href'], array('attributes' => array('class' => array('nav-dropdown--link'))));
-    }
-    $primary_menu .= '</div>';
-    return $primary_menu;
+function loop_menu_link__main_menu($variables){
+  $theme_path = drupal_get_path('theme', 'loop');
+  $element = $variables['element'];
+
+  // Add images to links depending on the path of the link
+  switch ($element['#href']) {
+    case 'user':
+      $img = array(
+        'path' => '/' . $theme_path . '/images/nav-user-icon.png',
+        'attributes' => array('class' => 'nav--icon'),
+      );
+      // Create the title with image icon.
+      $element['#title'] = theme_image($img) . '<span class="nav--text">' . $element['#title'] . '</span>';
+      break;
+    case 'node/add/post':
+      $img = array(
+        'path' => '/' . $theme_path . '/images/nav-add-icon.png',
+        'attributes' => array('class' => 'nav--icon'),
+      );
+      // Create the title with image icon.
+      $element['#title'] = theme_image($img) . '<span class="nav--text">' . $element['#title'] . '</span>';
+      break;
   }
-  return FALSE;
+
+  $element['#localized_options']['attributes']['class'][] = 'nav--link';
+
+  // Allow images in the links.
+  $element['#localized_options']['html'][] = TRUE;
+
+  $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  return $output . "\n";
+}
+
+
+/**
+ * Implements theme_menu_link().
+ */
+function loop_menu_link__menu_loop_primary_menu($variables){
+  $theme_path = drupal_get_path('theme', 'loop');
+  $element = $variables['element'];
+
+  // Sub item exist (Element is parent).
+  if (!empty($variables['element']['#below'])) {
+    $img = array(
+      'path' => '/' . $theme_path . '/images/nav-arrow-down-icon.png',
+      'attributes' => array('class' => 'nav-dropdown--icon'),
+    );
+    // Create the title with image icon.
+    $element['#title'] = theme_image($img) . '<span class="nav--text">' . $element['#title'] . '</span>';
+
+    // Wrap the sub menu.
+    $sub_menu = '<div class="nav-dropdown--item">' . drupal_render($element['#below']) . '</div>';
+
+    $element['#localized_options']['attributes']['class'][] = 'nav-dropdown--header';
+
+    // Allow images in the links.
+    $element['#localized_options']['html'][] = TRUE;
+
+    $output = '<div class="nav-dropdown--wrapper">' . l($element['#title'], $element['#href'], $element['#localized_options']) . $sub_menu . '</div>';
+  }
+
+  // Element has parent.
+  elseif ($element['#original_link']['plid'] > 0) {
+    $element['#localized_options']['attributes']['class'][] = 'nav-dropdown--link';
+    $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+    return  $output;
+  }
+
+  // Default main menu link, not parent and not child.
+  else {
+    $element['#localized_options']['attributes']['class'][] = 'nav--link';
+    $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+
+  }
+  return $output . "\n";
 }
 
 

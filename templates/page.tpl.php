@@ -77,9 +77,11 @@
  * Insert Loop primary menu if module is enabled.
  * Must be placed here to work on small screen devices.
  */
-if (isset($loop_primary_menu)): ?>
+if (isset($primary_menu_block)): ?>
   <nav class="nav-mobile js-mobile-nav">
-    <?php print theme('links__system_primary_menu_mobile', array('links' => $loop_primary_menu)); ?>
+    <?php if ($primary_menu_block) : ?>
+      <?php print render($primary_menu_block); ?>
+    <?php endif; ?>
   </nav>
 <?php endif; ?>
 
@@ -93,7 +95,16 @@ if (isset($loop_primary_menu)): ?>
     <?php print render($page['header']); ?>
     <?php if ($user->uid > 0): ?>
       <div class="nav--wrapper">
-        <?php print theme('links__system_primary_menu', array('links' => $main_menu, 'attributes' => array('class' => array('nav')))); ?>
+        <nav class="nav">
+          <?php if ($main_menu_block) : ?>
+            <?php print render($main_menu_block); ?>
+          <?php endif; ?>
+        </nav>
+        <nav class="nav-dropdown">
+          <?php if ($primary_menu_block) : ?>
+            <?php print render($primary_menu_block); ?>
+          <?php endif; ?>
+        </nav>
       </div>
     <?php endif; ?>
   </div>
