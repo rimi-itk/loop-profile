@@ -1,7 +1,8 @@
 /**
  * Navigation
+ * This file includes multiple nesting elements. This is due to the fact that we use the same primary menu twice (Mobile and header.)
+ * We cannot affect the classes depending on context, so we nest instead.
  */
-
 
 .nav--wrapper {
   position: absolute;
@@ -26,49 +27,53 @@
 }
 
 
-.nav--link {
-  position: relative;
+// We use the same menu as in mobile, where we just want ordinary links. This results in some needed nesting.
+.nav--wrapper {
+  .nav--link {
+    position: relative;
 
-  display: inline-block;
-  height: 2.75em;
-  margin-left: .7em;
-  width: 2.75em;
+    display: inline-block;
+    height: 2.75em;
+    margin-left: .7em;
+    width: 2.75em;
 
-  background-color: $green-light;
-  line-height: 2em;
-  text-align: center;
+    background-color: $green-light;
+    line-height: 2em;
+    text-align: center;
 
-  &:link,
-  &:visited {
-    color: $white;
-    text-decoration: none;
-  }
+    &:link,
+    &:visited {
+      color: $white;
+      text-decoration: none;
+    }
 
-  &:hover {
-    background-color: lighten($green-light, 10%);
-  }
+    &:hover {
+      background-color: lighten($green-light, 10%);
+    }
 
-  @include border-radius(100%);
+    @include border-radius(100%);
 
-  @include breakpoint(35em) {
-    height: 3.25em;
-    margin-left: 1em;
-    width: 3.25em;
+    @include breakpoint(35em) {
+      height: 3.25em;
+      margin-left: 1em;
+      width: 3.25em;
 
-    line-height: 2.35em;
-  }
+      line-height: 2.35em;
+    }
 
-  @include breakpoint($breakpoint-4) {
-    padding-right: 1.25em;
-    padding-left: 1.25em;
-    height: auto;
-    width: auto;
+    @include breakpoint($breakpoint-4) {
+      padding-right: 1.25em;
+      padding-left: 1.25em;
+      height: auto;
+      width: auto;
 
-    line-height: 2.5em;
+      line-height: 2.5em;
 
-    @include border-radius($border-radius $border-radius 0 0);
+      @include border-radius($border-radius $border-radius 0 0);
+    }
   }
 }
+
 
 .nav--toggle-mobile-nav {
   @extend .nav--link;
@@ -262,6 +267,7 @@
     }
   }
 
+  .nav--link,
   .nav-dropdown--header,
   .nav-dropdown--link {
     @include element-spacing(1em);
@@ -283,7 +289,7 @@
   .nav--text {
     display: inline-block;
   }
- 
+
   .nav-dropdown--icon {
     display: none;
   }
