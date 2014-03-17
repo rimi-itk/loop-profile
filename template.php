@@ -33,6 +33,10 @@ function loop_preprocess_page(&$variables) {
     $variables['main_menu_block'] = module_invoke('system', 'block_view', 'main-menu');
     $variables['primary_menu_block'] = module_invoke('menu', 'block_view', 'menu-loop-primary-menu');
   }
+  else {
+    $variables['main_menu_block'] = FALSE;
+    $variables['primary_menu_block'] = FALSE;
+  }
 
   // Check if we are using a panel page to define layout.
   $variables['no_panel'] = FALSE;
