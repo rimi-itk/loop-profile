@@ -362,7 +362,31 @@ function loop_preprocess_user_profile(&$variables) {
 
 
 /**
- * Implements hook_form_alter().
+ * Implements theme_panels_default_style_render_region().
+ *
+ * Remove the panel separator from the default rendering method.
+ */
+function loop_panels_default_style_render_region($vars) {
+  $output = '';
+  $output .= implode('', $vars['panes']);
+  return $output;
+}
+
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function loop_form_user_login_alter(&$form, &$form_state, $form_id) {
+  $form['#prefix'] = '<h2>' . t('User login') . '</h2>';
+  $form['pass']['#suffix'] = '<ul class="user-form--password-link"><li><a href="/user/password">' . t('Request new password') . '</a></li></ul>';
+  $form['name']['#description'] = FALSE;
+  $form['name']['#title'] = t('Username or e-mail');
+  $form['pass']['#description'] = FALSE;
+}
+
+
+/**
+ * Implements hook_form_FORM_ID_alter().
  *
  * Adds custom class names and placeholder attribute and icon prefix to search field.
  */
@@ -373,18 +397,6 @@ function loop_form_search_api_page_search_form_default_alter(&$form, &$form_stat
 
   // Add icon markup as a prefix to field.
   $form['keys_1']['#field_prefix'] = '<i class="typeahead-block--icon icon-search"></i>';
-}
-
-
-/**
- * Implements theme_panels_default_style_render_region().
- *
- * Remove the panel separator from the default rendering method.
- */
-function loop_panels_default_style_render_region($vars) {
-  $output = '';
-  $output .= implode('', $vars['panes']);
-  return $output;
 }
 
 

@@ -2849,6 +2849,12 @@ a.comment--flag.unflag-action:hover {
   text-align: center;
 }
 
+/* line 88, ../sass/modules/_user-profile.scss */
+.user-form--password-link {
+  padding-left: 0;
+  list-style: none;
+}
+
 /**
  * Active Tags module
  *
