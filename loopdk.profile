@@ -108,7 +108,7 @@ function loopdk_setup_filter_and_wysiwyg() {
       'weight' => -48,
       'status' => 1,
       'settings' => array(
-        'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd>',
+        'allowed_html' => '<h2> <h3> <h4> <a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <p> <img> <br> <table> <tbody> <tr> <th> <td>',
         'filter_html_help' => 1,
         'filter_html_nofollow' => 0,
       ),
