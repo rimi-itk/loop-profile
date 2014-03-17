@@ -1721,8 +1721,14 @@ label {
   padding: 1em 0;
 }
 /* line 304, ../sass/theme/_nav.scss */
-.nav-mobile .nav-mobile--user-links-list {
+.nav-mobile .block-module--user-links-list {
   padding-left: 0;
+}
+/* line 308, ../sass/theme/_nav.scss */
+.nav-mobile .nav-mobile--user-links-header {
+  color: #ffF;
+  font-size: 130%;
+  font-weight: bold;
 }
 
 /**

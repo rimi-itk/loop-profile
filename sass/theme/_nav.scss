@@ -301,7 +301,13 @@
     padding: 1em 0;
   }
 
-  .nav-mobile--user-links-list {
+  .block-module--user-links-list {
     padding-left: 0;
+  }
+
+  .nav-mobile--user-links-header {
+    color: #ffF;
+    font-size: 130%;
+    font-weight: bold;
   }
 }
