@@ -20,6 +20,7 @@ dependencies[] = rules
 dependencies[] = strongarm
 dependencies[] = text
 dependencies[] = views
+dependencies[] = views_flag_refresh
 dependencies[] = views_content
 features[ctools][] = page_manager:pages_default:1
 features[ctools][] = strongarm:strongarm:1
