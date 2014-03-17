@@ -77,11 +77,19 @@
  * Insert Loop primary menu if module is enabled.
  * Must be placed here to work on small screen devices.
  */
-if (isset($loop_primary_menu)): ?>
+if (isset($primary_menu_block)): ?>
   <nav class="nav-mobile js-mobile-nav">
-    <?php print theme('links__system_primary_menu_mobile', array('links' => $main_menu)); ?>
+    <?php if ($primary_menu_block) : ?>
+      <?php print render($primary_menu_block); ?>
+    <?php endif; ?>
+    <?php if (arg(0) == 'user'): ?>
+      <div class="nav-mobile--user-links">
+        <h2 class="nav-mobile--user-links-header"><?php print t('User links');?></h2>
+        <?php print render($tabs); ?>
+      </div>
+    <?php endif;?>
   </nav>
-<?php endif ?>
+<?php endif; ?>
 
 <header class="header">
   <div class="header--inner">
