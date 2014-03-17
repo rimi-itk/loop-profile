@@ -30,24 +30,58 @@ function loop_taxonomy_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'search-result--item';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['label'] = 'Created';
+  $handler->display->display_options['fields']['created']['element_type'] = '0';
+  $handler->display->display_options['fields']['created']['element_label_type'] = '0';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['created']['date_format'] = 'html5_tools_iso8601';
+  $handler->display->display_options['fields']['created']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['created']['element_wrapper_class'] = 'meta-data--date';
+  $handler->display->display_options['fields']['created']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'long';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['title']['alter']['link_class'] = 'search-result--link';
+  $handler->display->display_options['fields']['title']['element_type'] = '0';
+  $handler->display->display_options['fields']['title']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Comment count */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['label'] = '';
+  $handler->display->display_options['fields']['comment_count']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['comment_count']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['comment_count']['alter']['link_class'] = 'search-result--comments';
+  $handler->display->display_options['fields']['comment_count']['element_type'] = '0';
+  $handler->display->display_options['fields']['comment_count']['element_label_type'] = '0';
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['comment_count']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['comment_count']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['comment_count']['separator'] = '';
   /* Sort criterion: Content: Sticky */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
@@ -115,9 +149,8 @@ function loop_taxonomy_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('Title'),
+    t('Created'),
     t('.'),
-    t(','),
     t('All'),
     t('%1'),
     t('Content pane'),
