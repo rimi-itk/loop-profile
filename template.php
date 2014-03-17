@@ -38,6 +38,14 @@ function loop_preprocess_page(&$variables) {
     $variables['primary_menu_block'] = FALSE;
   }
 
+  // Load LOOP primary menu.
+  if (module_exists('loop_user') && arg(0) == 'user') {
+    $variables['user_public_block'] = module_invoke('loop_user', 'block_view', 'loop_user_my_content');
+  }
+  else {
+    $variables['user_public_block'] = FALSE;
+  }
+
   // Check if we are using a panel page to define layout.
   $variables['no_panel'] = FALSE;
   $panel = panels_get_current_page_display();

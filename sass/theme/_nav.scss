@@ -295,4 +295,10 @@
   .nav-dropdown--icon {
     display: none;
   }
+
+  // User private menu.
+  .block-module--inner,
+  .block-module--user-links-list {
+    padding-left: 0;
+  }
 }

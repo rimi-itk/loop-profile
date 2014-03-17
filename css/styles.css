@@ -1716,6 +1716,11 @@ label {
 .nav-mobile .nav-dropdown--icon {
   display: none;
 }
+/* line 301, ../sass/theme/_nav.scss */
+.nav-mobile .block-module--inner,
+.nav-mobile .block-module--user-links-list {
+  padding-left: 0;
+}
 
 /**
  *
