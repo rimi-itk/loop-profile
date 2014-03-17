@@ -296,9 +296,12 @@
     display: none;
   }
 
-  // User private menu.
-  .block-module--inner,
-  .block-module--user-links-list {
+  // User private menu mobile.
+  .nav-mobile--user-links {
+    padding: 1em 0;
+  }
+
+  .nav-mobile--user-links-list {
     padding-left: 0;
   }
 }

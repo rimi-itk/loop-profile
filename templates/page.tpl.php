@@ -83,8 +83,8 @@ if (isset($primary_menu_block)): ?>
       <?php print render($primary_menu_block); ?>
     <?php endif; ?>
     <?php if (arg(0) == 'user'): ?>
-      <div class="block-module--inner">
-        <h2 class="block-module--user-links-header"><?php print t('User links');?></h2>
+      <div class="nav-mobile--user-links">
+        <h2 class="nav-mobile--user-links-header"><?php print t('User links');?></h2>
         <?php print render($tabs); ?>
       </div>
     <?php endif;?>
