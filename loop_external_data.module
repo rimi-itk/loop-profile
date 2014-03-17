@@ -341,6 +341,15 @@ function loop_external_data_node_delete($node) {
     // Remove leafs and trees.
     $trees = _loop_external_data_build_tree($node);
     _loop_external_data_delete_tree($trees);
+
+    // Remove public://external_data/{nid} directory.
+    foreach (file_scan_directory('public://external_data/' . $node->nid, '*.*') as $file) {
+      // Remove from file_managed table.
+      $result = db_query('SELECT f.fid FROM {file_managed} f WHERE f.uri = :uri', array(':uri' => $file->uri));
+      $result = $result->fetchAssoc();
+      file_delete(file_load($result['fid']));
+    }
+    file_unmanaged_delete_recursive('public://external_data/' . $node->nid . '/');
   }
 }
 
