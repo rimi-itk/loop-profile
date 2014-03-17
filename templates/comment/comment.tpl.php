@@ -59,7 +59,6 @@
  * @ingroup themeable
  */
 ?>
-
 <div class="meta-data--author">
 <?php if (isset($picture)): ?>
   <div class="meta-data--author-image">

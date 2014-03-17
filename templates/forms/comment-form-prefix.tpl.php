@@ -1,3 +1,4 @@
+<h3><?php print t('Your reply'); ?></h3>
 <div class="meta-data--author">
   <div class="meta-data--author-image">
     <a href="/user/<?php print $user->uid;?>"><img src="<?php print image_style_url('profile', $user_obj->picture->uri); ?>"/></a>
