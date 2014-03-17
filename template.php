@@ -539,8 +539,11 @@ function loop_preprocess_views_view(&$vars) {
     // Fetch all current users messages from the message table.
     $all_message_count = db_query('SELECT uid FROM message WHERE uid = :uid', array(':uid' => $GLOBALS['user']->uid))->rowCount();
 
+    // Fetch flag id (fid) for the message_read flag.
+    $flag_id = db_query('SELECT fid FROM flag WHERE name = :machine_name', array(':machine_name' => "message_read"))->fetchField();
+
     // Fetch all flags of type message_read (fid) that the current user made.
-    $flagged_read_message_count = db_query('SELECT entity_id FROM flagging WHERE uid = :uid AND fid = :fid', array(':uid' => $GLOBALS['user']->uid, ':fid' => 3))->rowCount();
+    $flagged_read_message_count = db_query('SELECT entity_id FROM flagging WHERE uid = :uid AND fid = :fid', array(':uid' => $GLOBALS['user']->uid, ':fid' => $flag_id))->rowCount();
 
     // Compare the two.
     $new_message_count = $all_message_count - $flagged_read_message_count;
@@ -565,8 +568,11 @@ function printNotificationTab() {
     // Fetch all current users messages from the message table.
     $all_message_count = db_query('SELECT uid FROM message WHERE uid = :uid', array(':uid' => $GLOBALS['user']->uid))->rowCount();
 
+    // Fetch flag id (fid) for the message_read flag.
+    $flag_id = db_query('SELECT fid FROM flag WHERE name = :machine_name', array(':machine_name' => "message_read"))->fetchField();
+
     // Fetch all flags of type message_read (fid) that the current user made.
-    $flagged_read_message_count = db_query('SELECT entity_id FROM flagging WHERE uid = :uid AND fid = :fid', array(':uid' => $GLOBALS['user']->uid, ':fid' => 3))->rowCount();
+    $flagged_read_message_count = db_query('SELECT entity_id FROM flagging WHERE uid = :uid AND fid = :fid', array(':uid' => $GLOBALS['user']->uid, ':fid' => $flag_id))->rowCount();
 
     // Compare the two.
     $new_message_count = $all_message_count - $flagged_read_message_count;
