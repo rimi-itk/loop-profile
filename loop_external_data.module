@@ -16,6 +16,8 @@ include 'Tree.php';
  * Implements hook_menu().
  */
 function loop_external_data_menu() {
+  $items = array();
+
   $items['index/%node'] = array(
     'title' => 'Node',
     'page callback' => 'loop_external_data_index',
@@ -23,8 +25,61 @@ function loop_external_data_menu() {
     'page arguments' => array(1),
     'type' => MENU_SUGGESTED_ITEM,
   );
+  $items['add_indexes'] = array(
+    'title' => 'Add indexes from a-z',
+    'page callback' => '_loop_external_data_add_indexes',
+    'access callback' => array(1),
+  );
 
   return $items;
+}
+
+/**
+ * Adds indexes with names from prefixed by A-Z.
+ */
+function _loop_external_data_add_indexes() {
+  $path = 'public://index_file/test/';
+  file_prepare_directory($path, FILE_CREATE_DIRECTORY);
+
+  $alphabet = array(
+    'A','B','C','D','E','F','G','H','I','J','K','L','M',
+    'N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+  );
+
+  if (!$da = file_get_contents(drupal_realpath('public://external_data/dita.zip'))) {
+    throw new Exception("Error opening file");
+  }
+
+  for ($i = 0; $i < 25; $i++) {
+    $name = $alphabet[$i] . " Index";
+
+    if (!$file = file_save_data($da, 'public://index_file/dita.zip', FILE_EXISTS_RENAME)) {
+      throw new Exception("Error saving file");
+    }
+
+    $node = new Stdclass();
+
+    $node->type = 'index';
+    $node->language = LANGUAGE_NONE;
+    $node->status = 1;
+    $node->uid = 1;
+    $node->title = $name;
+    $node->field_file = array(
+      'und' => array(
+        array(
+          'fid' => $file->fid,
+          'display' => 1,
+          'description' => "",
+          'upload_button' => "Upload",
+          'remove_button' => "Remove",
+          'upload' => "",
+        ),
+      ),
+    );
+    node_save($node);
+  }
+
+  return "Added indexes from A - Z";
 }
 
 /**

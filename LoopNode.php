@@ -10,12 +10,24 @@
  * Represents a node of external data.
  */
 class LoopNode {
-  private $title;
+  protected $title;
 
+  /**
+   * Constructor.
+   *
+   * @param string $title
+   *   The title of the node.
+   */
   public function __construct($title) {
     $this->title = $title;
   }
 
+  /**
+   * Get the title of the node.
+   *
+   * @return string
+   *   The title of the node.
+   */
   public function getTitle() {
     return $this->title;
   }

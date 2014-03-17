@@ -9,25 +9,25 @@
  *
  * Specifies the functions a Parser must contain.
  */
-interface iParser {
+interface ParserInterface {
   /**
    * Identifies whether a directory matches the format of the parser.
    *
-   * @param $pathToDirectory
-   *  path to the directory
+   * @param string $path_to_directory
+   *   Path to the directory.
    *
    * @return bool
-   *  true if directory identified, false otherwise.
+   *   True if directory identified, false otherwise.
    */
-  public function identifyFormat($pathToDirectory);
+  public function identifyFormat($path_to_directory);
 
   /**
    * Processes the directory.
    *
-   * @param $pathToDirectory
-   *  path to the directory to import.
-   * @param $indexNodeID
-   *  the nid of the Index node in Drupal.
+   * @param string $path_to_directory
+   *   Path to the directory to import.
+   * @param int $index_node_id
+   *   The nid of the Index node in Drupal.
    */
-  public function process($pathToDirectory, $indexNodeID);
+  public function process($path_to_directory, $index_node_id);
 }
