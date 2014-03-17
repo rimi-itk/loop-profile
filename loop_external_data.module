@@ -50,7 +50,7 @@ function _loop_external_data_add_indexes() {
     throw new Exception("Error opening file");
   }
 
-  for ($i = 0; $i < 25; $i++) {
+  for ($i = 0; $i <= 25; $i++) {
     $name = $alphabet[$i] . " Index";
 
     if (!$file = file_save_data($da, 'public://index_file/dita.zip', FILE_EXISTS_RENAME)) {
