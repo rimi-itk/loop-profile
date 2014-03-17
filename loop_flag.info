@@ -6,6 +6,6 @@ version = 7.x-1.0
 project = loop_flag
 dependencies[] = comment
 dependencies[] = flag
+dependencies[] = message_subscribe
 features[features_api][] = api:2
 features[flag][] = ranking
-features[flag][] = subscribe_node
