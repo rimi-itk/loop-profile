@@ -142,6 +142,7 @@ function loopdk_setup_filter_and_wysiwyg() {
         'NumberedList' => 1,
         'Link' => 1,
         'PasteText' => 1,
+        'Styles' => 1,
       ),
     ),
     'toolbar_loc' => 'top',
@@ -157,7 +158,9 @@ function loopdk_setup_filter_and_wysiwyg() {
     'block_formats' => 'p,address,pre,h2,h3,h4,h5,h6,div',
     'css_setting' => 'theme',
     'css_path' => '',
-    'css_classes' => '',
+    'css_classes' => 'Header (h2)=h2.header--big
+    Header (h3)=h3.header--medium
+    Header (h4)=h4.header--small',
   );
 
   db_merge('wysiwyg')
