@@ -105,12 +105,12 @@ function loop_user_field_group_info() {
   $field_group->parent_name = 'group_personal_information';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '48',
+    'weight' => '49',
     'children' => array(
-      0 => 'field_location_place',
-      1 => 'field_location_address',
-      2 => 'field_location_postal_code',
-      3 => 'field_location_city',
+      0 => 'field_location_address',
+      1 => 'field_location_city',
+      2 => 'field_location_place',
+      3 => 'field_location_postal_code',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -171,7 +171,8 @@ function loop_user_field_group_info() {
       2 => 'field_job_title',
       3 => 'field_last_name',
       4 => 'field_profession',
-      5 => 'group_location',
+      5 => 'field_area_of_expertise',
+      6 => 'group_location',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

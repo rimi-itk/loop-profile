@@ -10,6 +10,37 @@
 function loop_user_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'user-user-field_area_of_expertise'
+  $field_instances['user-user-field_area_of_expertise'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Select a maximum of 5 areas of expertise. Hold CTRL (Windows) or CMD (Mac) to select multiple areas.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 14,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_area_of_expertise',
+    'label' => 'Area of expertise',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 48,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_biography'
   $field_instances['user-user-field_biography'] = array(
     'bundle' => 'user',
@@ -351,6 +382,7 @@ function loop_user_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Address');
+  t('Area of expertise');
   t('Biography');
   t('City');
   t('First name');
@@ -359,6 +391,7 @@ function loop_user_field_default_field_instances() {
   t('Place');
   t('Postal code');
   t('Profession');
+  t('Select a maximum of 5 areas of expertise. Hold CTRL (Windows) or CMD (Mac) to select multiple areas.');
 
   return $field_instances;
 }

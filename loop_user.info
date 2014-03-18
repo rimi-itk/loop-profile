@@ -32,6 +32,7 @@ features[field_group][] = group_location|user|user|form
 features[field_group][] = group_personal_information|user|user|default
 features[field_group][] = group_personal_information|user|user|form
 features[field_group][] = group_profession|user|user|default
+features[field_instance][] = user-user-field_area_of_expertise
 features[field_instance][] = user-user-field_biography
 features[field_instance][] = user-user-field_first_name
 features[field_instance][] = user-user-field_job_title
