@@ -49,15 +49,10 @@
 }
 
 .user-profile-module--field {
-  padding-bottom: 1em;
-  margin-bottom: 1em;
-  border-bottom: 1px solid $border-color;
+  @include element-spacing(1em);
 
   &:last-child {
-    padding-bottom: 0;
-    margin-bottom: 0;
-
-    border: 0;
+    @include reset-element-spacing();
   }
 }
 

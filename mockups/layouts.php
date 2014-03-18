@@ -11,7 +11,9 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
   <div class="page-inner">
     <?php include 'inc/header.inc'; ?>
     <?php include('inc/search-block.inc') ?>
-    <h1 style="border-bottom: 1px solid gray; margin-right: .5em; margin: 0 0 1em; margin-left: .5em; padding-bottom: .5em; text-align: center;">Ask question</h1>
+    <h1 style="border-bottom: 1px solid gray; margin-right: .5em; margin: 0 0 1em; margin-left: .5em; padding-bottom: .5em; text-align: center;">Frontpage</h1>
+    <?php include('inc/page-frontpage.inc') ?>
+    <h1 style="border-bottom: 1px solid gray; margin-right: .5em; margin: 1em 0 1em; margin-left: .5em; padding-bottom: .5em; text-align: center;">Ask question</h1>
     <?php include('inc/page-ask-question.inc') ?>
     <h1 style="border-bottom: 1px solid gray; margin-right: .5em; margin: 1em ; margin-left: .5em; padding-bottom: .5em; text-align: center;">Question</h1>
     <?php include('inc/page-question.inc') ?>

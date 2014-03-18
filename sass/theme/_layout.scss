@@ -89,6 +89,40 @@
 }
 
 
+// Frontpage layout
+
+.layout-frontpage {
+  @extend %layout--wrapper;
+
+  .layout-element-alpha {
+    @include breakpoint(45em) {
+      @include zen-grid-item(12, 1);
+
+      padding-left: 0;
+    }
+  }
+
+  .layout-element-beta {
+    @include element-spacing(2em);
+
+    @include breakpoint($layout-max-width) {
+      @include zen-grid-item(6, 1);
+      @include reset-element-spacing();
+
+      padding-left: 0;
+    }
+  }
+
+  .layout-element-gamma {
+    @include breakpoint($layout-max-width) {
+      @include zen-grid-item(6, 1, right);
+
+      padding-right: 0;
+    }
+  }
+}
+
+
 // Default layout
 
 .layout-default {
@@ -122,11 +156,6 @@
       @include zen-grid-item(12, 1);
       @include zen-nested-container;
     }
-  }
-
-  .layout-element-gamma,
-  .layout-element-delta,
-  .layout-element-epsilon {
   }
 }
 

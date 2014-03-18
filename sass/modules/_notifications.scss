@@ -55,3 +55,10 @@
   }
 }
 
+.notification--list-item {
+  @include element-spacing(1em);
+
+  &:last-child {
+    @include reset-element-spacing();
+  }
+}

@@ -11,7 +11,7 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
     <?php include 'inc/header.inc'; ?>
     <?php $is_front = TRUE; ?>
     <?php include 'inc/search-block.inc'; ?>
-    <div style="min-height:600px;"></div>
+    <?php include('inc/page-frontpage.inc') ?>
   </div>
 </div>
 </body>
