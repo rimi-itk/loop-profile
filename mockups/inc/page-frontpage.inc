@@ -42,7 +42,7 @@
     <div class="layout-element-beta">
       <div class="block-questions--wrapper">
         <div class="block-questions--header-wrapper">
-          <h2 class="block-questions--header">Hjælp en kollega</h2>
+          <h2 class="block-questions--header">Hjælp en kollega!</h2>
           <h4 class="block-questions--sub-header">Spørgsmål indenfor: <em>Ledelse</em></h4>
         </div>
         <div class="block-questions--list">
@@ -127,7 +127,7 @@
     <div class="layout-element-gamma">
       <div class="block-questions--wrapper">
         <div class="block-questions--header-wrapper">
-          <h2 class="block-questions--header">Hjælp en kollega</h2>
+          <h2 class="block-questions--header">Du er eksperten! Kan du hjælpe?</h2>
           <h4 class="block-questions--sub-header">Spørgsmål indenfor: <em>Funktionsvurdering</em>, <em>Medicin</em>, <em>Planlægning (Booking, Disponering)</em></h4>
         </div>
         <div class="block-questions--list">
