@@ -55,6 +55,13 @@
   }
 }
 
+.notification--list-header {
+  @include element-spacing(.5em);
+
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
 .notification--list-item {
   @include element-spacing(1em);
 

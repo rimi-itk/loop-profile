@@ -1,7 +1,7 @@
 <div class="layout-frontpage">
   <div class="layout--inner">
     <div class="layout-element-alpha">
-      <h2 class="page-title">Du har nye beskeder</h2>
+      <h2 class="notification--list-header">Du har ulæste beskeder</h2>
       <div class="view view-user-messages view-id-user_messages view-display-id-panel_pane_1 view-dom-id-8f8717ae42781cb1588efa399709ebd4 jquery-once-1-processed" data-new-message-count="1">
         <div class="view-content">
           <div class="notification--list-item">
@@ -61,7 +61,7 @@
             <span class="meta-data--date">Oprettet den 28. marts 2013</span>
             <a href="question.php" class="block-questions--link">Hvordan dokumenteres delvis aktindsigt? Og findes der en vejledning i dokumentation af aktindsigt?</a>
           </div>
-          <div class="search-result--item">
+          <div class="block-questions--item">
             <div class="meta-data--author">
               <div class="meta-data--author-image">
                 <a href="#">
