@@ -14,6 +14,5 @@ dependencies[] = uuid_features
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[menu_custom][] = menu-loop-primary-menu
-features[menu_links][] = main-menu_menu:<front>
 features[variable][] = menu_block_ids
 features[variable][] = special_menu_items_nolink_tag
