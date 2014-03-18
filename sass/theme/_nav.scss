@@ -5,7 +5,8 @@
  */
 
 
-.nav--wrapper {
+// We use the same menu as in mobile, where we just want ordinary links. This results in some needed nesting.
+.nav--wrapper{
   position: absolute;
   right: 1em;
   bottom: 1.1em;
@@ -19,17 +20,15 @@
   @include breakpoint($breakpoint-4) {
     bottom: 0;
   }
-}
 
-.nav {
-  display: inline-block;
+  .nav {
+    display: inline-block;
 
-  text-align: center;
-}
+    text-align: center;
+  }
 
-
-// We use the same menu as in mobile, where we just want ordinary links. This results in some needed nesting.
-.nav--wrapper{
+  .nav-dropdown--header,
+  .nav--toggle-mobile-nav,
   .nav--link {
     position: relative;
 
@@ -74,10 +73,7 @@
     }
   }
 
-
   .nav--toggle-mobile-nav {
-    @extend .nav--link;
-
     @include breakpoint(45em) {
       display: inline-block;
       min-height: 2.5em;
@@ -128,7 +124,6 @@
    ================================================================================================================== */
 
 .nav-dropdown {
-  @extend .nav;
 
   margin-left: 4px;
   display: none;
@@ -138,21 +133,7 @@
   }
 
   .nav-dropdown--header {
-    @extend .nav--link;
-
-    position: relative;
-
     padding-right: 2.5em;
-
-    &:link,
-    &:visited {
-      color: $white;
-      text-decoration: none;
-    }
-
-    &:hover {
-      background-color: $green-light;
-    }
   }
 
   .nav-dropdown--icon {
