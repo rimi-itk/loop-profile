@@ -68,6 +68,19 @@ function loop_preprocess_node(&$variables) {
 
 
 /**
+ * Override or insert variables into the node template.
+ */
+function loop_preprocess_block(&$variables) {
+  // Are we dealing with the access denied or page not found block?
+  if ($variables['user']->uid == 0 && arg(0) != 'user' && $variables['is_front'] == FALSE) {
+    if ($variables['block']->module == 'system' && $variables['block']->delta == 'main') {
+      $variables['content'] = '<div class="messages error">' . $variables['content'] . '</div>';
+    }
+  }
+}
+
+
+/**
  * Override or insert variables into the panel pane template.
  */
 function loop_preprocess_panels_pane(&$variables) {
