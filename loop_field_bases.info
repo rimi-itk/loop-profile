@@ -11,6 +11,7 @@ dependencies[] = taxonomy
 dependencies[] = text
 features[features_api][] = api:2
 features[field_base][] = body
+features[field_base][] = field_area_of_expertise
 features[field_base][] = field_biography
 features[field_base][] = field_description
 features[field_base][] = field_first_name
