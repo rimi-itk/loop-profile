@@ -138,7 +138,7 @@
       </div>
       <div class="form-module">
         <form action="ask-question.php">
-          <div class="form-item">
+          <div class="form-item form-type-textarea">
             <label for="comment-textarea">Skriv svar <span class="form-required">*</span></label>
             <textarea rows="5" class="form-textarea required" id="comment-textarea"></textarea>
           </div>

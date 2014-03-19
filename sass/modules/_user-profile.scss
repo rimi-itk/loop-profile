@@ -49,11 +49,25 @@
 }
 
 .user-profile-module--field {
+  position: relative;
+
+  line-height: 1.75em;
+
   @include element-spacing(1em);
 
   &:last-child {
-    @include reset-element-spacing();
+    border-bottom: 0;
+    // Needed to vertical align the icon.
+    margin-bottom: -1em;
+    padding-bottom: 1em;
   }
+}
+
+// Views or Flag module add a <p> tag that is difficult to override.
+.user-profile-module--field-text,
+.user-profile-module--field-text p {
+  display: inline;
+  padding-right: 1.75em;
 }
 
 .user-profile-module--field-personal-info {

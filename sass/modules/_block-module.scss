@@ -38,10 +38,6 @@
   @extend .block-module;
 }
 
-.block-module--my-content-links {
-
-}
-
 .block-follow-question {
   margin-bottom: 0;
 
@@ -125,7 +121,7 @@
 .block-module--my-content-header {
   @extend .block-module--header;
 
-  border-bottom: 1px solid $gray-light;
+  border-bottom: 1px solid $gray-lighter;
   padding-bottom: 0.5em;
 }
 
