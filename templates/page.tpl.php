@@ -125,7 +125,7 @@ if (isset($primary_menu_block)): ?>
     </div>
   <?php endif; ?>
 <?php endif; ?>
-<?php if ($no_panel || $is_front) : ?>
+<?php if ($no_panel) : ?>
   <div class="layout-no-wrapper">
     <div class="layout--inner">
       <?php if ($messages): ?>

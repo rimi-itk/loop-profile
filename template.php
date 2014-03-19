@@ -580,10 +580,10 @@ function loop_preprocess_views_view(&$vars) {
 
     // Compare the two.
     $new_message_count = $all_message_count - $flagged_read_message_count;
+    $update_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() .'/scripts/update-new-notifications.js';
+    drupal_add_js($update_script_path, 'file');
+    $vars['user_messages'] = $new_message_count;
   }
-  $update_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() .'/scripts/update-new-notifications.js';
-  drupal_add_js($update_script_path, 'file');
-  $vars['user_messages'] = $new_message_count;
 }
 
 /**
