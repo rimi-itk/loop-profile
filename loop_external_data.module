@@ -534,7 +534,12 @@ function _loop_external_data_fix_references_leaf($loop_leaf, $references) {
   libxml_clear_errors();
   $xpath = new DOMXPath($xml);
 
-  foreach ($xpath->query('//a') as $a) {
+  $as = $xpath->query('//a');
+  if ($as->length == 0) {
+    return;
+  }
+
+  foreach ($as as $a) {
     $href = $a->getAttribute('href');
 
     $ref = $references[$href];
