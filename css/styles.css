@@ -705,8 +705,16 @@ label {
   display: none;
 }
 
-/* line 87, ../sass/theme/_forms.scss */
-.form-item {
+/* line 89, ../sass/theme/_forms.scss */
+.form-item .description {
+  padding-top: .5em;
+  color: #b3b3b3;
+}
+
+/* line 96, ../sass/theme/_forms.scss */
+.form-type-textarea,
+.form-type-select,
+.form-type-autocomplete-deluxe {
   border: 1px solid #f2f2f2;
   margin-bottom: 1.5em;
   padding: 1em;
@@ -714,24 +722,17 @@ label {
   -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-/* line 95, ../sass/theme/_forms.scss */
-.form-item .description {
-  padding-top: .5em;
-  color: #b3b3b3;
-}
 
-/* line 102, ../sass/theme/_forms.scss */
+/* line 106, ../sass/theme/_forms.scss */
 .form-required {
   color: #ff6138;
 }
 
-/* line 106, ../sass/theme/_forms.scss */
+/* line 110, ../sass/theme/_forms.scss */
 .form-select {
   border: 1px solid #cccccc;
   padding: .75em;
   width: 100%;
-  /* Set height for chrome */
-  height: 3em;
   /* For Chrome */
   height: 3em;
   background-color: #f2f2f2;
@@ -743,36 +744,36 @@ label {
   box-sizing: border-box;
 }
 
-/* line 123, ../sass/theme/_forms.scss */
+/* line 124, ../sass/theme/_forms.scss */
 .form-textarea-question {
   height: 6em;
 }
 @media only screen and (min-width: 30em) {
-  /* line 123, ../sass/theme/_forms.scss */
+  /* line 124, ../sass/theme/_forms.scss */
   .form-textarea-question {
     height: 3.25em;
   }
 }
 
-/* line 131, ../sass/theme/_forms.scss */
+/* line 132, ../sass/theme/_forms.scss */
 .form-actions {
   text-align: right;
 }
 
-/* line 135, ../sass/theme/_forms.scss */
+/* line 136, ../sass/theme/_forms.scss */
 .form-submit {
   width: 100%;
 }
 @media only screen and (min-width: 30em) {
-  /* line 135, ../sass/theme/_forms.scss */
+  /* line 136, ../sass/theme/_forms.scss */
   .form-submit {
     width: auto;
   }
 }
 
-/* line 145, ../sass/theme/_forms.scss */
+/* line 146, ../sass/theme/_forms.scss */
 .field-group-fieldset, .user-profile-module--field-group-fieldset, .user-profile-module--field-group-fieldset-personal-info {
-  border: 1px solid #cccccc;
+  border: 1px solid #e6e6e6;
   margin-bottom: 2em;
   padding-bottom: 1em;
   padding-left: 1em;
@@ -780,50 +781,58 @@ label {
   -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-/* line 151, ../sass/theme/_forms.scss */
+/* line 152, ../sass/theme/_forms.scss */
+.field-group-fieldset .form-item, .user-profile-module--field-group-fieldset .form-item, .user-profile-module--field-group-fieldset-personal-info .form-item {
+  margin-bottom: 1em;
+}
+/* line 155, ../sass/theme/_forms.scss */
+.field-group-fieldset .form-item:last-child, .user-profile-module--field-group-fieldset .form-item:last-child, .user-profile-module--field-group-fieldset-personal-info .form-item:last-child {
+  margin-bottom: 0;
+}
+/* line 160, ../sass/theme/_forms.scss */
 .field-group-fieldset:last-child, .user-profile-module--field-group-fieldset:last-child, .user-profile-module--field-group-fieldset-personal-info:last-child {
   margin-bottom: 0;
 }
 
-/* line 158, ../sass/theme/_forms.scss */
+/* line 167, ../sass/theme/_forms.scss */
 .fieldset-legend, .user-profile-module--fieldset-legend {
   padding-right: .5em;
   padding-left: .5em;
   font-size: 125%;
 }
 
-/* line 168, ../sass/theme/_forms.scss */
+/* line 177, ../sass/theme/_forms.scss */
 .vbo-views-form .form-item {
   border: 0;
   margin-bottom: 0;
   padding: 0;
 }
-/* line 174, ../sass/theme/_forms.scss */
+/* line 183, ../sass/theme/_forms.scss */
 .vbo-views-form .vbo-fieldset-select-all {
   border: 0;
   padding: 0 0 2em;
   margin: 0;
   width: auto;
 }
-/* line 181, ../sass/theme/_forms.scss */
+/* line 190, ../sass/theme/_forms.scss */
 .vbo-views-form label,
 .vbo-views-form .form-type-checkbox {
   float: left;
   margin-right: .5em;
 }
-/* line 187, ../sass/theme/_forms.scss */
+/* line 196, ../sass/theme/_forms.scss */
 .vbo-views-form .form-checkbox {
   float: left;
   margin: 0.4em 0.5em 0 0;
 }
-/* line 192, ../sass/theme/_forms.scss */
+/* line 201, ../sass/theme/_forms.scss */
 .vbo-views-form .form-item-operation {
   width: 100%;
   display: block;
   padding-bottom: 1em;
 }
 @media only screen and (min-width: 50em) {
-  /* line 192, ../sass/theme/_forms.scss */
+  /* line 201, ../sass/theme/_forms.scss */
   .vbo-views-form .form-item-operation {
     float: left;
     width: 60%;
@@ -1803,43 +1812,43 @@ table td:empty {
   box-sizing: border-box;
 }
 
-/* line 45, ../sass/modules/_block-module.scss */
+/* line 41, ../sass/modules/_block-module.scss */
 .block-follow-question {
   margin-bottom: 0;
 }
 
 /* User links block
    ================================================================================================================== */
-/* line 62, ../sass/modules/_block-module.scss */
+/* line 58, ../sass/modules/_block-module.scss */
 .block-user-links {
   display: none;
 }
 @media only screen and (min-width: 45em) {
-  /* line 62, ../sass/modules/_block-module.scss */
+  /* line 58, ../sass/modules/_block-module.scss */
   .block-user-links {
     display: block;
     background-color: #41ab51;
   }
-  /* line 72, ../sass/modules/_block-module.scss */
+  /* line 68, ../sass/modules/_block-module.scss */
   .block-user-links ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
   }
-  /* line 78, ../sass/modules/_block-module.scss */
+  /* line 74, ../sass/modules/_block-module.scss */
   .block-user-links .block-module-user-links-list-sub {
     padding: 0 0 0 1em;
   }
 }
 
-/* line 84, ../sass/modules/_block-module.scss */
+/* line 80, ../sass/modules/_block-module.scss */
 .block-module--user-links-header {
   border-bottom: 1px solid #5dc26d;
   color: white;
   padding-bottom: 0.5em;
 }
 
-/* line 92, ../sass/modules/_block-module.scss */
+/* line 88, ../sass/modules/_block-module.scss */
 .block-module--user-links-item, .block-module--user-links-item-last {
   display: block;
   border-bottom: 1px solid #e6e6e6;
@@ -1865,12 +1874,12 @@ table td:empty {
 .block-module--user-links-item a:focus, .block-module--user-links-item-last a:focus {
   color: white;
 }
-/* line 101, ../sass/modules/_block-module.scss */
+/* line 97, ../sass/modules/_block-module.scss */
 .block-module--user-links-item.active, .active.block-module--user-links-item-last {
   font-weight: bold;
 }
 
-/* line 106, ../sass/modules/_block-module.scss */
+/* line 102, ../sass/modules/_block-module.scss */
 .block-module--user-links-item-last {
   border-bottom: 0;
   margin-bottom: 0;
@@ -1879,31 +1888,31 @@ table td:empty {
 
 /* My content block
    ================================================================================================================== */
-/* line 117, ../sass/modules/_block-module.scss */
+/* line 113, ../sass/modules/_block-module.scss */
 .block-my-content {
   display: none;
 }
 @media only screen and (min-width: 45em) {
-  /* line 117, ../sass/modules/_block-module.scss */
+  /* line 113, ../sass/modules/_block-module.scss */
   .block-my-content {
     display: block;
   }
 }
 
-/* line 125, ../sass/modules/_block-module.scss */
+/* line 121, ../sass/modules/_block-module.scss */
 .block-module--my-content-header {
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #e6e6e6;
   padding-bottom: 0.5em;
 }
 
-/* line 132, ../sass/modules/_block-module.scss */
+/* line 128, ../sass/modules/_block-module.scss */
 .block-module--my-content-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* line 138, ../sass/modules/_block-module.scss */
+/* line 134, ../sass/modules/_block-module.scss */
 .block-module--my-content-item {
   display: block;
   border-bottom-color: #cccccc;
@@ -1929,13 +1938,13 @@ table td:empty {
 .block-module--my-content-item a:focus {
   color: #41ab51;
 }
-/* line 146, ../sass/modules/_block-module.scss */
+/* line 142, ../sass/modules/_block-module.scss */
 .block-module--my-content-item:last-child {
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
 }
-/* line 150, ../sass/modules/_block-module.scss */
+/* line 146, ../sass/modules/_block-module.scss */
 .block-module--my-content-item.active {
   font-weight: bold;
 }

@@ -85,18 +85,22 @@ label {
 }
 
 .form-item {
-  border: 1px solid $gray-lightest;
-  margin-bottom: $margin-bottom;
-  padding: 1em;
-
-  @include border-radius($border-radius);
-
   // Too comprehensive to change the class so we nest instead
   .description {
     padding-top: .5em;
 
     color: $gray;
   }
+}
+
+.form-type-textarea,
+.form-type-select,
+.form-type-autocomplete-deluxe {
+  border: 1px solid $gray-lightest;
+  margin-bottom: $margin-bottom;
+  padding: 1em;
+
+  @include border-radius($border-radius);
 }
 
 .form-required {
@@ -108,9 +112,6 @@ label {
   padding: .75em;
   width: 100%;
   
-  /* Set height for chrome */
-  height: 3em;
-
   /* For Chrome */
   height: 3em;
 
@@ -143,10 +144,18 @@ label {
 }
 
 .field-group-fieldset {
-  border: 1px solid $gray-light;
+  border: 1px solid $gray-lighter;
   margin-bottom: 2em;
   padding-bottom: 1em;
   padding-left: 1em;
+
+  .form-item {
+    margin-bottom: 1em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
   &:last-child {
     margin-bottom: 0;

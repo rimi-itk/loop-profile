@@ -14,7 +14,9 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
     <h1 style="border-bottom: 1px solid gray; margin-right: .5em; margin: 0 0 1em; margin-left: .5em; padding-bottom: .5em; text-align: center;">Frontpage</h1>
     <?php include('inc/page-frontpage.inc') ?>
     <h1 style="border-bottom: 1px solid gray; margin-right: .5em; margin: 1em 0 1em; margin-left: .5em; padding-bottom: .5em; text-align: center;">Ask question</h1>
-    <?php include('inc/page-ask-question.inc') ?>
+    <div class="layout-alternative">
+      <?php include('inc/page-ask-question.inc') ?>
+    </div>
     <h1 style="border-bottom: 1px solid gray; margin-right: .5em; margin: 1em ; margin-left: .5em; padding-bottom: .5em; text-align: center;">Question</h1>
     <?php include('inc/page-question.inc') ?>
     <h1 style="border-bottom: 1px solid gray; margin-right: .5em; margin: 1em 0; margin-left: .5em; padding-bottom: .5em; text-align: center;">Search results</h1>
@@ -23,6 +25,8 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
     <?php include('inc/page-no-search-results.inc') ?>
     <h1 style="border-bottom: 1px solid gray; margin-right: .5em; margin: 1em 0; margin-left: .5em; padding-bottom: .5em; text-align: center;">User profile</h1>
     <?php include('inc/user-profile-logged-in-page.inc') ?>
+    <h1 style="border-bottom: 1px solid gray; margin-right: .5em; margin: 1em 0; margin-left: .5em; padding-bottom: .5em; text-align: center;">Edit user profile</h1>
+    <?php include('inc/edit-user-profile-page.inc') ?>
   </div>
 </div>
 </body>
