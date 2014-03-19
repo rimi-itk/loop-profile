@@ -29,7 +29,9 @@ function loop_user_related_content_profession_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'block-questions--item';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
@@ -221,13 +223,6 @@ function loop_user_related_content_profession_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
     t('term from field_profession'),
     t('field_profession'),
     t('author'),
