@@ -540,7 +540,7 @@ img {
 .node--flag.is-sticky:before, .node--flag.unflag-action:before,
 .comment--flag.is-sticky:before,
 .comment--flag.unflag-action:before, .messages.status:before, .node--flag:before,
-.comment--flag:before, .message--flag:before, .at-term:after, .messages.error:before, .search-result--comments:before, .question--number-of-comments:before, .messages.warning:before, .nav-mobile .nav--link:before,
+.comment--flag:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .messages.warning:before, .nav-mobile .nav--link:before,
 .nav-mobile .nav-dropdown--header:before,
 .nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before {
   display: inline-block;
@@ -580,8 +580,13 @@ img {
 }
 
 /* line 85, ../sass/theme/_placeholders.scss */
-.message--flag:before, .at-term:after, .messages.error:before {
+.at-term:after, .messages.error:before {
   content: '\e800';
+}
+
+/* line 91, ../sass/theme/_placeholders.scss */
+.message--flag:before {
+  content: '\e80b';
 }
 
 /* line 97, ../sass/theme/_placeholders.scss */
@@ -2237,16 +2242,32 @@ a.comment--flag.unflag-action:hover {
 
 /* line 119, ../sass/modules/_flag.scss */
 .message--flag-wrapper {
-  float: left;
-  margin-right: .25em;
+  position: absolute;
+  top: .8em;
+  right: 0;
+  padding-bottom: 1em;
+  text-align: center;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-/* line 124, ../sass/modules/_flag.scss */
+/* line 131, ../sass/modules/_flag.scss */
 .message--flag {
-  height: 1.2em;
-  width: 1em;
-  display: inline-block;
+  position: relative;
+  top: 50%;
+  display: block;
+  height: 1.5em;
   overflow: hidden;
+  width: 1.5em;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 142, ../sass/modules/_flag.scss */
+.message--flag:before {
+  font-size: 1.5em;
 }
 
 /**
@@ -2377,18 +2398,18 @@ a.comment--flag.unflag-action:hover {
  *
  */
 /* line 8, ../sass/modules/_notifications.scss */
-.notification {
-  display: block;
-  position: absolute;
-  top: -.5em;
-  right: -.5em;
+.notification, .notification--inline {
+  display: inline-block;
   height: 2em;
   width: 2.05em;
   background-color: #ff6138;
+  color: white;
   font-size: 65%;
   font-weight: bold;
-  text-decoration: none;
   line-height: 1.95em;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: top;
   -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
   border-radius: 100%;
@@ -2396,35 +2417,42 @@ a.comment--flag.unflag-action:hover {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 25, ../sass/modules/_notifications.scss */
-.notification:link, .notification:visited {
+/* line 24, ../sass/modules/_notifications.scss */
+.notification:link, .notification--inline:link, .notification:visited, .notification--inline:visited {
   text-decoration: none;
 }
 
-/* line 35, ../sass/modules/_notifications.scss */
+/* line 33, ../sass/modules/_notifications.scss */
+.notification {
+  position: absolute;
+  top: -.5em;
+  right: -.5em;
+}
+
+/* line 46, ../sass/modules/_notifications.scss */
 .notification--user-subscriptions th {
   padding-bottom: 1em;
 }
-/* line 39, ../sass/modules/_notifications.scss */
+/* line 50, ../sass/modules/_notifications.scss */
 .notification--user-subscriptions tr {
   border-bottom: 1px solid #e6e6e6;
 }
-/* line 43, ../sass/modules/_notifications.scss */
+/* line 54, ../sass/modules/_notifications.scss */
 .notification--user-subscriptions .form-type-checkbox {
   border: 0;
   margin-bottom: 0;
 }
-/* line 48, ../sass/modules/_notifications.scss */
+/* line 59, ../sass/modules/_notifications.scss */
 .notification--user-subscriptions .links {
   list-style: none;
   padding: 0;
 }
-/* line 53, ../sass/modules/_notifications.scss */
+/* line 64, ../sass/modules/_notifications.scss */
 .notification--user-subscriptions .empty {
   padding: 1em;
 }
 
-/* line 58, ../sass/modules/_notifications.scss */
+/* line 69, ../sass/modules/_notifications.scss */
 .notification--list-header {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 0.5em;
@@ -2433,17 +2461,25 @@ a.comment--flag.unflag-action:hover {
   font-weight: bold;
 }
 
-/* line 65, ../sass/modules/_notifications.scss */
+/* line 76, ../sass/modules/_notifications.scss */
 .notification--list-item {
+  position: relative;
+  line-height: 1.75em;
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 68, ../sass/modules/_notifications.scss */
+/* line 83, ../sass/modules/_notifications.scss */
 .notification--list-item:last-child {
   border-bottom: 0;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  margin-bottom: -1em;
+  padding-bottom: 1em;
+}
+
+/* line 91, ../sass/modules/_notifications.scss */
+.notification--list-text {
+  display: block;
+  padding-right: 1.75em;
 }
 
 /**
@@ -2849,28 +2885,37 @@ a.comment--flag.unflag-action:hover {
 
 /* line 51, ../sass/modules/_user-profile.scss */
 .user-profile-module--field, .user-profile-module--field-personal-info {
+  position: relative;
+  line-height: 1.75em;
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 54, ../sass/modules/_user-profile.scss */
+/* line 58, ../sass/modules/_user-profile.scss */
 .user-profile-module--field:last-child, .user-profile-module--field-personal-info:last-child {
   border-bottom: 0;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  margin-bottom: -1em;
+  padding-bottom: 1em;
 }
 
-/* line 59, ../sass/modules/_user-profile.scss */
+/* line 67, ../sass/modules/_user-profile.scss */
+.user-profile-module--field-text,
+.user-profile-module--field-text p {
+  display: inline;
+  padding-right: 1.75em;
+}
+
+/* line 73, ../sass/modules/_user-profile.scss */
 .user-profile-module--field-personal-info {
   border-bottom: 1px solid #e6e6e6;
 }
 
-/* line 65, ../sass/modules/_user-profile.scss */
+/* line 79, ../sass/modules/_user-profile.scss */
 .user-profile-module--fieldset-legend {
   font-weight: bold;
 }
 
-/* line 71, ../sass/modules/_user-profile.scss */
+/* line 85, ../sass/modules/_user-profile.scss */
 .user-profile-module--field-label {
   display: inline-block;
   font-weight: bold;
@@ -2878,13 +2923,13 @@ a.comment--flag.unflag-action:hover {
   margin-right: 1em;
 }
 
-/* line 78, ../sass/modules/_user-profile.scss */
+/* line 92, ../sass/modules/_user-profile.scss */
 .user-profile-module--footer {
   padding: 2em 1em 0;
   text-align: center;
 }
 
-/* line 83, ../sass/modules/_user-profile.scss */
+/* line 97, ../sass/modules/_user-profile.scss */
 .user-form--password-link {
   padding-left: 0;
   list-style: none;

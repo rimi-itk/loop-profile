@@ -117,18 +117,31 @@ a.comment--flag {
 }
 
 .message--flag-wrapper {
-  float: left;
-  margin-right: .25em;
+  position: absolute;
+  top: .8em;
+  right: 0;
+
+  padding-bottom: 1em;
+
+  text-align: center;
+
+  @include box-sizing(border-box);
 }
 
 .message--flag {
-  height: 1.2em;
-  width: 1em;
+  position: relative;
+  top: 50%;
 
-  display: inline-block;
+  display: block;
+  height: 1.5em;
   overflow: hidden;
+  width: 1.5em;
+
+  @include translateY(-50%);
 
   &:before {
-    @extend %icon-cancel;
+    @extend %icon-cancel-circled;
+
+    font-size: 1.5em;
   }
 }

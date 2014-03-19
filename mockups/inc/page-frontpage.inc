@@ -1,38 +1,38 @@
 <div class="layout-frontpage">
   <div class="layout--inner">
     <div class="layout-element-alpha">
-      <h2 class="notification--list-header">Du har ulæste beskeder</h2>
+      <h2 class="notification--list-header">Du har <span class="notification--inline">5</span> notifikationer</h2>
       <div class="view view-user-messages view-id-user_messages view-display-id-panel_pane_1 view-dom-id-8f8717ae42781cb1588efa399709ebd4 jquery-once-1-processed" data-new-message-count="1">
         <div class="view-content">
           <div class="notification--list-item">
             <span class="flag-wrapper flag-message-read flag-message-read-55 message--flag-wrapper">
               <a rel="nofollow" class="flag flag-action flag-link-toggle message--flag flag-processed" title="" href="#">Mark as read</a>
             </span>
-            <p>Nyt svar på spørgsmålet "<a href="#">Hvordan dokumenteres delvis aktindsigt?</a>"</p>
+            <p class="notification--list-text">Nyt svar på spørgsmålet "<a href="#">Hvordan dokumenteres delvis aktindsigt?</a>"</p>
           </div>
           <div class="notification--list-item">
             <span class="flag-wrapper flag-message-read flag-message-read-55 message--flag-wrapper">
               <a rel="nofollow" class="flag flag-action flag-link-toggle message--flag flag-processed" title="" href="#">Mark as read</a>
             </span>
-            <p>Nyt svar på spørgsmålet "<a href="#">Skal der tilføjes prosa i Funktionsvurderingen, hvis borger under et punkt scorer 1 eller 4?</a>"</p>
+            <p class="notification--list-text">Nyt svar på spørgsmålet "<a href="#">Skal der tilføjes prosa i Funktionsvurderingen, hvis borger under et punkt scorer 1 eller 4?</a>"</p>
           </div>
           <div class="notification--list-item">
             <span class="flag-wrapper flag-message-read flag-message-read-55 message--flag-wrapper">
               <a rel="nofollow" class="flag flag-action flag-link-toggle message--flag flag-processed" title="" href="#">Mark as read</a>
             </span>
-            <p>Nyt svar på spørgsmålet "<a href="#">Hvordan finder jeg oplysninger på samarbejdspartnere i jounalen fx BK</a>"</p>
+            <p class="notification--list-text">Nyt svar på spørgsmålet "<a href="#">Hvordan finder jeg oplysninger på samarbejdspartnere i jounalen fx BK</a>"</p>
           </div>
           <div class="notification--list-item">
             <span class="flag-wrapper flag-message-read flag-message-read-55 message--flag-wrapper">
               <a rel="nofollow" class="flag flag-action flag-link-toggle message--flag flag-processed" title="" href="#">Mark as read</a>
             </span>
-            <p>Nyt svar på spørgsmålet "<a href="#">Hvordan dokumenteres delvis aktindsigt?</a>"</p>
+            <p class="notification--list-text">Nyt svar på spørgsmålet "<a href="#">Hvordan dokumenteres delvis aktindsigt?</a>"</p>
           </div>
           <div class="notification--list-item">
             <span class="flag-wrapper flag-message-read flag-message-read-55 message--flag-wrapper">
               <a rel="nofollow" class="flag flag-action flag-link-toggle message--flag flag-processed" title="" href="#">Mark as read</a>
             </span>
-            <p>Nyt svar på spørgsmålet "<a href="#">Hvordan dokumenteres delvis aktindsigt?</a>"</p>
+            <p class="notification--list-text">Nyt svar på spørgsmålet "<a href="#">Hvordan dokumenteres delvis aktindsigt?</a>"</p>
           </div>
         </div>
       </div>

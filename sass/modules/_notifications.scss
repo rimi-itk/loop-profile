@@ -5,22 +5,21 @@
  */
 
 
-.notification {
-  display: block;
-  position: absolute;
-  top: -.5em;
-  right: -.5em;
-
+%notification {
+  display: inline-block;
   height: 2em;
   // Tweaking width for Android.
   width: 2.05em;
 
   background-color: $red;
+  color: $white;
   font-size: 65%;
   font-weight: bold;
-  text-decoration: none;
   // Tweaking line height for Android.
   line-height: 1.95em;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: top;
 
   &:link,
   &:visited {
@@ -29,6 +28,18 @@
 
   @include border-radius(100%);
   @include box-sizing(border-box);
+}
+
+.notification {
+  @extend %notification;
+
+  position: absolute;
+  top: -.5em;
+  right: -.5em;
+}
+
+.notification--inline {
+  @extend %notification;
 }
 
 .notification--user-subscriptions {
@@ -63,9 +74,21 @@
 }
 
 .notification--list-item {
+  position: relative;
+
+  line-height: 1.75em;
+
   @include element-spacing(1em);
 
   &:last-child {
-    @include reset-element-spacing();
+    border-bottom: 0;
+    // Needed to vertical align the icon.
+    margin-bottom: -1em;
+    padding-bottom: 1em;
   }
+}
+
+.notification--list-text {
+  display: block;
+  padding-right: 1.75em;
 }
