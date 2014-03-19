@@ -276,6 +276,18 @@ projects[loop_user][download][type] = "git"
 projects[loop_user][download][url] = "git@github.com:loopdk/loop_user.git"
 projects[loop_user][branch] = "development"
 
+projects[loop_user][type] = "module"
+projects[loop_user][subdir] = "features/views_and_addons"
+projects[loop_user][download][type] = "git"
+projects[loop_user][download][url] = "git@github.com:loopdk/loop_user_related_content_competence.git"
+projects[loop_user][branch] = "development"
+
+projects[loop_user][type] = "module"
+projects[loop_user][subdir] = "features/views_and_addons"
+projects[loop_user][download][type] = "git"
+projects[loop_user][download][url] = "git@github.com:loopdk/loop_user_related_content_profession.git"
+projects[loop_user][branch] = "development"
+
 ; LOOP themes
 projects[loop][type] = "theme"
 projects[loop][download][type] = "git"
