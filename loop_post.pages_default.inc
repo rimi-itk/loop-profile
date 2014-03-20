@@ -137,12 +137,12 @@ function loop_post_default_page_manager_handlers() {
     $pane = new stdClass();
     $pane->pid = 'new-4';
     $pane->panel = 'beta';
-    $pane->type = 'entity_field_extra';
-    $pane->subtype = 'node:flag_subscribe_node';
+    $pane->type = 'flag_link';
+    $pane->subtype = 'node';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'view_mode' => 'full',
+      'flag_name' => 'subscribe_node',
       'context' => 'argument_entity_id:node_1',
       'override_title' => 0,
       'override_title_text' => '',
