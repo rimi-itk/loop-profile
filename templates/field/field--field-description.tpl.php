@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file field.tpl.php
+ * @file field--field-description.tpl.php
  * Default template implementation to display the value of a field.
  *
  * This file is not used and is here as a starting point for customization only.
@@ -44,14 +44,16 @@
  * @ingroup themeable
  */
 ?>
-<!--
-THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
-See http://api.drupal.org/api/function/theme_field/7 for details.
-After copying this file to your theme's folder and customizing it, remove this
-HTML comment.
--->
+
 <?php if (!$label_hidden): ?>
-  <span class="question--label"><?php print $label ?>:</span>
+  <span class="question--label">
+    <?php print $label ?>:
+    <?php if ($element['#object']->uid == $user->uid) : ?>
+      <span class="question--label-edit-link">
+        (<?php print l(t('edit'), 'node/' . $element['#object']->nid . '/edit');?>)
+      </span>
+    <?php endif; ?>
+  </span>
 <?php endif; ?>
 <?php foreach ($items as $delta => $item): ?>
   <h1 class="question"><?php print render($item); ?></h1>
