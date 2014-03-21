@@ -410,9 +410,6 @@ function loop_form_search_api_page_search_form_default_alter(&$form, &$form_stat
   // Change title text and make sure the label is displayed.
   $form['keys_1']['#title_display'] = 'before';
   $form['keys_1']['#title'] = t('Search for an answer');
-
-  // Add icon markup as a prefix to field.
-  $form['keys_1']['#field_prefix'] = '<i class="typeahead-block--icon icon-search"></i>';
 }
 
 
