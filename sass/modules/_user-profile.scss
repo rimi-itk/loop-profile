@@ -63,6 +63,11 @@
   }
 }
 
+.user-profile-module--edit-link {
+  float: right;
+  padding: 0.5em;
+}
+
 // Views or Flag module add a <p> tag that is difficult to override.
 .user-profile-module--field-text,
 .user-profile-module--field-text p {

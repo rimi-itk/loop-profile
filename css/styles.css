@@ -2087,6 +2087,39 @@ table td:empty {
 
 /**
  *
+ * Editing
+ *
+ */
+/* line 7, ../sass/modules/_editing.scss */
+.editing--block {
+  margin-bottom: 2em;
+}
+/* line 10, ../sass/modules/_editing.scss */
+.editing--block:last-child {
+  margin-bottom: 0;
+}
+
+/* line 15, ../sass/modules/_editing.scss */
+.editing--row {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+/* line 18, ../sass/modules/_editing.scss */
+.editing--row:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* line 23, ../sass/modules/_editing.scss */
+.editing--edit-link {
+  font-size: 0.8em;
+  float: right;
+}
+
+/**
+ *
  * Lists
  *
  */
@@ -2579,25 +2612,30 @@ a.comment--flag.unflag-action:hover {
 }
 
 /* line 47, ../sass/modules/_question.scss */
+.question--label-edit-link {
+  font-weight: normal;
+}
+
+/* line 51, ../sass/modules/_question.scss */
 .question {
   margin-bottom: 0;
   font-size: 125%;
 }
 
-/* line 53, ../sass/modules/_question.scss */
+/* line 57, ../sass/modules/_question.scss */
 .question--terms {
   margin-bottom: 2em;
 }
 
 /* Questions list on user page
    ================================================================================================================== */
-/* line 64, ../sass/modules/_question.scss */
+/* line 68, ../sass/modules/_question.scss */
 .question--user-page-nodes-element {
   margin-bottom: 1em;
   border-bottom: 1px solid #e6e6e6;
   padding-bottom: 1em;
 }
-/* line 69, ../sass/modules/_question.scss */
+/* line 73, ../sass/modules/_question.scss */
 .question--user-page-nodes-element:last-child {
   border-bottom: 0;
   margin-bottom: 0;
@@ -2907,24 +2945,30 @@ a.comment--flag.unflag-action:hover {
   padding-bottom: 1em;
 }
 
-/* line 67, ../sass/modules/_user-profile.scss */
+/* line 66, ../sass/modules/_user-profile.scss */
+.user-profile-module--edit-link {
+  float: right;
+  padding: 0.5em;
+}
+
+/* line 72, ../sass/modules/_user-profile.scss */
 .user-profile-module--field-text,
 .user-profile-module--field-text p {
   display: inline;
   padding-right: 1.75em;
 }
 
-/* line 73, ../sass/modules/_user-profile.scss */
+/* line 78, ../sass/modules/_user-profile.scss */
 .user-profile-module--field-personal-info {
   border-bottom: 1px solid #e6e6e6;
 }
 
-/* line 79, ../sass/modules/_user-profile.scss */
+/* line 84, ../sass/modules/_user-profile.scss */
 .user-profile-module--fieldset-legend {
   font-weight: bold;
 }
 
-/* line 85, ../sass/modules/_user-profile.scss */
+/* line 90, ../sass/modules/_user-profile.scss */
 .user-profile-module--field-label {
   display: inline-block;
   font-weight: bold;
@@ -2932,25 +2976,25 @@ a.comment--flag.unflag-action:hover {
   margin-right: 1em;
 }
 
-/* line 92, ../sass/modules/_user-profile.scss */
+/* line 97, ../sass/modules/_user-profile.scss */
 .user-profile-module--footer {
   padding: 2em 1em 0;
   text-align: center;
 }
 
-/* line 97, ../sass/modules/_user-profile.scss */
+/* line 102, ../sass/modules/_user-profile.scss */
 .user-form--password-link {
   padding-left: 0;
   list-style: none;
 }
 
-/* line 102, ../sass/modules/_user-profile.scss */
+/* line 107, ../sass/modules/_user-profile.scss */
 .edit-user--image-fieldset {
   position: relative;
   height: 15em;
 }
 
-/* line 108, ../sass/modules/_user-profile.scss */
+/* line 113, ../sass/modules/_user-profile.scss */
 .edit-user--image {
   position: absolute;
   top: 3em;
@@ -2959,7 +3003,7 @@ a.comment--flag.unflag-action:hover {
   width: 25%;
 }
 
-/* line 117, ../sass/modules/_user-profile.scss */
+/* line 122, ../sass/modules/_user-profile.scss */
 .edit-user--image-buttons {
   position: relative;
   top: 50%;
@@ -2971,7 +3015,7 @@ a.comment--flag.unflag-action:hover {
   transform: translateY(-50%);
 }
 
-/* line 131, ../sass/modules/_user-profile.scss */
+/* line 136, ../sass/modules/_user-profile.scss */
 .edit-user--image-button-remove {
   margin-right: .5em;
 }
