@@ -537,7 +537,7 @@ img {
 /* Icons
    ================================================================================================================== */
 /* line 52, ../sass/theme/_placeholders.scss */
-.comment--flag.is-sticky:before, .comment--flag.unflag-action:before, .messages.status:before, .comment--flag:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .messages.warning:before, .nav-mobile .nav--link:before,
+.comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .messages.warning:before, .nav-mobile .nav--link:before,
 .nav-mobile .nav-dropdown--header:before,
 .nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before {
   display: inline-block;
@@ -558,7 +558,7 @@ img {
 }
 
 /* line 67, ../sass/theme/_placeholders.scss */
-.comment--flag.is-sticky:before, .comment--flag.unflag-action:before {
+.comment--flag.is-sticky:before {
   content: '\e804';
 }
 
@@ -2173,43 +2173,47 @@ table td:empty {
   font-size: 1em;
 }
 /* line 33, ../sass/modules/_flag.scss */
-.comment--flag.is-active, .comment--flag.is-sticky, .comment--flag.unflag-action {
+.comment--flag.is-active, .comment--flag.is-sticky {
   border: 1px solid #41ab51;
   color: #41ab51;
 }
 
-/* line 50, ../sass/modules/_flag.scss */
+/* line 48, ../sass/modules/_flag.scss */
 a.comment--flag {
   /* States */
 }
-/* line 51, ../sass/modules/_flag.scss */
+/* line 49, ../sass/modules/_flag.scss */
 a.comment--flag:link, a.comment--flag:visited, a.comment--flag:hover, a.comment--flag:active {
   color: #b3b3b3;
   text-decoration: none;
 }
-/* line 59, ../sass/modules/_flag.scss */
+/* line 57, ../sass/modules/_flag.scss */
 a.comment--flag:hover {
   border: 1px solid #737373;
   color: #737373;
 }
-/* line 69, ../sass/modules/_flag.scss */
-a.comment--flag.is-active:link, a.comment--flag.is-active:visited, a.comment--flag.is-active:hover, a.comment--flag.is-active:active, a.comment--flag.is-sticky:link, a.comment--flag.is-sticky:visited, a.comment--flag.is-sticky:hover, a.comment--flag.is-sticky:active, a.comment--flag.unflag-action:link, a.comment--flag.unflag-action:visited, a.comment--flag.unflag-action:hover, a.comment--flag.unflag-action:active {
+/* line 66, ../sass/modules/_flag.scss */
+a.comment--flag.is-active:link, a.comment--flag.is-active:visited, a.comment--flag.is-active:hover, a.comment--flag.is-active:active, a.comment--flag.is-sticky:link, a.comment--flag.is-sticky:visited, a.comment--flag.is-sticky:hover, a.comment--flag.is-sticky:active {
   border: 1px solid #41ab51;
   color: #41ab51;
   text-decoration: none;
 }
-/* line 79, ../sass/modules/_flag.scss */
-a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--flag.unflag-action:hover {
+/* line 76, ../sass/modules/_flag.scss */
+a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover {
   border: 1px solid #737373;
   color: #737373;
 }
-/* line 85, ../sass/modules/_flag.scss */
-a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--flag.unflag-action:hover {
+/* line 82, ../sass/modules/_flag.scss */
+a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover {
   border: 1px solid #33863f;
   color: #33863f;
 }
 
-/* line 96, ../sass/modules/_flag.scss */
+/* line 93, ../sass/modules/_flag.scss */
+.block-follow-question .flag-message {
+  display: block !important;
+}
+/* line 99, ../sass/modules/_flag.scss */
 .block-follow-question .node--flag {
   width: 100%;
   font-size: 1em;
@@ -2218,16 +2222,16 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   box-sizing: border-box;
 }
 
-/* line 115, ../sass/modules/_flag.scss */
+/* line 118, ../sass/modules/_flag.scss */
 .flag-outer-subscribe-node {
   margin-bottom: -1.5em;
 }
-/* line 118, ../sass/modules/_flag.scss */
+/* line 121, ../sass/modules/_flag.scss */
 .flag-outer-subscribe-node .flag, .flag-outer-subscribe-node .comment--flag {
   margin-bottom: 1.5em;
 }
 
-/* line 123, ../sass/modules/_flag.scss */
+/* line 126, ../sass/modules/_flag.scss */
 .flag-message {
   display: none !important;
   margin-bottom: 1.5em;
@@ -2241,12 +2245,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   box-sizing: border-box;
 }
 
-/* line 136, ../sass/modules/_flag.scss */
-.block-follow-question .flag-message {
-  display: block !important;
-}
-
-/* line 143, ../sass/modules/_flag.scss */
+/* line 138, ../sass/modules/_flag.scss */
 .message--flag-wrapper {
   position: absolute;
   top: .8em;
@@ -2258,7 +2257,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   box-sizing: border-box;
 }
 
-/* line 155, ../sass/modules/_flag.scss */
+/* line 150, ../sass/modules/_flag.scss */
 .message--flag {
   position: relative;
   top: 50%;
@@ -2271,7 +2270,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 166, ../sass/modules/_flag.scss */
+/* line 161, ../sass/modules/_flag.scss */
 .message--flag:before {
   font-size: 1.5em;
 }
