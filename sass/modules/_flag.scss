@@ -5,13 +5,13 @@
  */
 
 
-.node--flag,
 .comment--flag {
   border: 1px solid $gray;
   display: block;
   padding: .5em 1em;
 
   background-color: $white;
+  font-size: .85em;
   font-weight: bold;
   text-align: center;
 
@@ -26,16 +26,18 @@
   }
 
   /* States */
+  &.is-sticky {
+    font-size: 1em;
+  }
+
   &.is-active,
-  &.is-sticky,
-  &.unflag-action {
+  &.is-sticky {
     border: 1px solid $link-color;
 
     color: $link-color;
   }
 
-  &.is-sticky,
-  &.unflag-action {
+  &.is-sticky {
     &:before {
       @extend %icon-check;
     }
@@ -43,7 +45,6 @@
 }
 
 // If it's a link add pseudo styles.
-a.node--flag,
 a.comment--flag {
   &:link,
   &:visited,
@@ -61,8 +62,7 @@ a.comment--flag {
 
   /* States */
   &.is-active,
-  &.is-sticky,
-  &.unflag-action {
+  &.is-sticky {
     &:link,
     &:visited,
     &:hover,
@@ -87,6 +87,33 @@ a.comment--flag {
   }
 }
 
+
+// Block follow question.
+.block-follow-question {
+  .flag-message {
+    // jQuery adds inline styling and because we used !important earlier we have to use !important again to show the
+    // flag.
+    display: block !important;
+  }
+
+  .node--flag {
+    width: 100%;
+
+    font-size: 1em;
+
+    @include box-sizing(border-box);
+  }
+
+  .flag-action {
+    @extend .button--action;
+  }
+
+  .unflag-action {
+    @extend .button--warning;
+  }
+}
+
+
 // Adding margin bottom to the flag link so there are spacing below when the message appears.
 .flag-outer-subscribe-node {
   margin-bottom: -1.5em;
@@ -106,14 +133,6 @@ a.comment--flag {
 
   @include border-radius($border-radius);
   @include box-sizing(border-box);
-}
-
-.block-follow-question {
-  .flag-message {
-    // jQuery adds inline styling and because we used !important earlier we have to use !important again to show the
-    // flag.
-    display: block !important;
-  }
 }
 
 .message--flag-wrapper {

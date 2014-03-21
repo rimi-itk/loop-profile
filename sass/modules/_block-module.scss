@@ -26,31 +26,12 @@
   margin-bottom: 1em;
 }
 
-.block-module--link {
-  width: 100%;
-
-  @include box-sizing(border-box);
-}
 
 .block-my-content,
-.block-follow-question,
-.block-unfollow-question {
+.block-follow-question {
   @extend .block-module;
 }
 
-.block-follow-question {
-  margin-bottom: 0;
-
-  .block-module--link {
-    @extend .button--action;
-  }
-}
-
-.block-unfollow-question {
-  .block-module--link {
-    @extend .button--warning;
-  }
-}
 
 /* User links block
    ================================================================================================================== */
