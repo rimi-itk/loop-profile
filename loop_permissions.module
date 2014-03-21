@@ -179,7 +179,9 @@ function secure_permissions_data_secure_permissions($role) {
           'view the administration theme',
       ),
       'documentation coordinator' => array(
+          'access administration pages',
           'access content overview',
+          'access toolbar',
           'access user profiles',
           'administer comments',
           'administer nodes',
