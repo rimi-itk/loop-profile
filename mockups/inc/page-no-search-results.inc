@@ -6,7 +6,6 @@
           <div class="messages warning">Du søgte på: <strong>Dokumen</strong>, der blev ikke fundet nogen resultater</div>
           Mente du: <a href="<?php echo $path_to_theme; ?>mockups/search-result.php">Dokumentation</a>
         </div>
-        Hvis du ikke mener dit spørgsmål er besvaret før, kan du <a href="#ask-question">oprette spørgsmålet</a> i formularen. Du kan også prøve at <a href="#search-block-form">søge igen</a>.
       </div>
     </div>
     <div class="layout-element-beta">

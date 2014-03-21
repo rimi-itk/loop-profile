@@ -2613,49 +2613,42 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover {
 /* Search result
    ========================================================================== */
 /* line 12, ../sass/modules/_search.scss */
-.search-result--lead {
-  border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 1em;
-  padding-bottom: 1em;
-}
-
-/* line 16, ../sass/modules/_search.scss */
 .search-result--item {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 19, ../sass/modules/_search.scss */
+/* line 15, ../sass/modules/_search.scss */
 .search-result--item:last-child {
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-/* line 24, ../sass/modules/_search.scss */
+/* line 20, ../sass/modules/_search.scss */
 .search-result--link {
   display: block;
   margin-bottom: .5em;
 }
-/* line 28, ../sass/modules/_search.scss */
+/* line 24, ../sass/modules/_search.scss */
 .search-result--link:link, .search-result--link:visited {
   text-decoration: none;
 }
-/* line 33, ../sass/modules/_search.scss */
+/* line 29, ../sass/modules/_search.scss */
 .search-result--link:hover, .search-result--link:active {
   text-decoration: underline;
 }
 
-/* line 39, ../sass/modules/_search.scss */
+/* line 35, ../sass/modules/_search.scss */
 .search-result--comments, .question--number-of-comments {
   display: block;
 }
-/* line 42, ../sass/modules/_search.scss */
+/* line 38, ../sass/modules/_search.scss */
 .search-result--comments:link, .question--number-of-comments:link, .search-result--comments:visited, .question--number-of-comments:visited {
   color: #737373;
   text-decoration: none;
 }
-/* line 48, ../sass/modules/_search.scss */
+/* line 44, ../sass/modules/_search.scss */
 .search-result--comments:hover, .question--number-of-comments:hover, .search-result--comments:active, .question--number-of-comments:active {
   color: #404040;
 }
