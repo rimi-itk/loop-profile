@@ -9,44 +9,6 @@
  */
 function loop_notification_default_rules_configuration() {
   $items = array();
-  $items['rules_create_send_message_on_comment_creation'] = entity_import('rules_config', '{ "rules_create_send_message_on_comment_creation" : {
-      "LABEL" : "Create\\/send message on comment creation",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "flag", "rules", "comment" ],
-      "ON" : { "comment_insert" : [] },
-      "DO" : [
-        { "flag_fetch_users_node" : {
-            "USING" : { "flag" : "subscribe_node", "node" : [ "comment:node" ] },
-            "PROVIDE" : { "users" : { "users_who_flagged" : "Users who flagged" } }
-          }
-        },
-        { "LOOP" : {
-            "USING" : { "list" : [ "users-who-flagged" ] },
-            "ITEM" : { "list_item" : "Current list item" },
-            "DO" : [
-              { "entity_create" : {
-                  "USING" : {
-                    "type" : "message",
-                    "param_type" : "comment_added_to_post",
-                    "param_user" : [ "list-item" ]
-                  },
-                  "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
-                }
-              },
-              { "data_set" : {
-                  "data" : [ "entity-created:field-message-node-reference" ],
-                  "value" : [ "comment:node" ]
-                }
-              },
-              { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } },
-              { "component_rules_send_mail" : { "user" : [ "list-item" ], "message" : [ "entity-created" ] } }
-            ]
-          }
-        }
-      ]
-    }
-  }');
   $items['rules_remove_subscription'] = entity_import('rules_config', '{ "rules_remove_subscription" : {
       "LABEL" : "Remove subscription",
       "PLUGIN" : "rule",
@@ -66,22 +28,30 @@ function loop_notification_default_rules_configuration() {
       ]
     }
   }');
-  $items['rules_send_mail'] = entity_import('rules_config', '{ "rules_send_mail" : {
-      "LABEL" : "Send mail",
+  $items['rules_send_mail_on_message_created'] = entity_import('rules_config', '{ "rules_send_mail_on_message_created" : {
+      "LABEL" : "Send mail on message created",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "message_notify" ],
-      "ACCESS_EXPOSED" : "1",
+      "REQUIRES" : [ "rules", "mimemail" ],
       "USES VARIABLES" : {
-        "user" : { "label" : "user", "type" : "entity" },
+        "node" : { "label" : "node", "type" : "node" },
+        "user" : { "label" : "user", "type" : "user" },
         "message" : { "label" : "message", "type" : "message" }
       },
       "IF" : [
-        { "entity_has_field" : { "entity" : [ "user" ], "field" : "message_subscribe_email" } },
-        { "data_is" : { "data" : [ "user:message-subscribe-email" ], "value" : 1 } }
+        { "NOT data_is" : { "data" : [ "user:uid" ], "value" : [ "site:current-user:uid" ] } }
       ],
       "DO" : [
-        { "message_notify_process" : { "message" : [ "message" ], "mail" : "[message:user:mail]" } }
+        { "mimemail" : {
+            "key" : "Mail on message creation",
+            "to" : "[message:user:mail]",
+            "from_mail" : "[site:mail]",
+            "subject" : "Nyt svar til sp\\u00f8rgsm\\u00e5let [node:title]",
+            "body" : "\\u003Ch2\\u003ENyt svar til et sp\\u00f8rgsm\\u00e5let [node:title]\\u003C\\/h2\\u003E\\r\\n\\u003Cp\\u003EK\\u00e6re [user:field-first-name] [user:field-last-name]\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EDer er kommet nyt svar til sp\\u00f8rgsm\\u00e5let \\u003Ca href=\\u0022\\/node\\/[node:nid]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EMed venlig hilsen\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003E[site:name]\\u003C\\/p\\u003E\\r\\n\\u003C\\/br\\u003E\\r\\n\\u003C\\/br\\u003E\\r\\n\\u003Cp\\u003EDette er en automatisk meddelelse fra [site:url]\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EDu kan styre dine abonnementer fra din \\u003Ca href=\\u0022\\/user\\/[user:uid]\\/subscriptions\\u0022\\u003Ebrugerprofil\\u003C\\/a\\u003E\\u003C\\/p\\u003E",
+            "attachments" : [ "" ],
+            "language" : [ "" ]
+          }
+        }
       ]
     }
   }');
