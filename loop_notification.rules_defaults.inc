@@ -9,6 +9,23 @@
  */
 function loop_notification_default_rules_configuration() {
   $items = array();
+  $items['rules_autosubscribe_node_post_author'] = entity_import('rules_config', '{ "rules_autosubscribe_node_post_author" : {
+      "LABEL" : "Autosubscribe node post author",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "flag", "rules" ],
+      "ON" : { "node_insert--post" : { "bundle" : "post" } },
+      "DO" : [
+        { "flag_flagnode" : {
+            "flag" : "subscribe_node",
+            "node" : [ "node" ],
+            "flagging_user" : [ "node:author" ],
+            "permission_check" : 0
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_create_message'] = entity_import('rules_config', '{ "rules_create_message" : {
       "LABEL" : "Create message",
       "PLUGIN" : "reaction rule",
