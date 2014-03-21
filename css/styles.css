@@ -847,7 +847,7 @@ label {
  * @author magnify
  */
 /* line 8, ../sass/theme/_buttons.scss */
-.button--action, .form-submit, .block-follow-question .block-module--link, .typeahead-block--button, .button--warning, .block-unfollow-question .block-module--link, .at-add-btn {
+.button--action, .form-submit, .block-follow-question .block-module--link, .typeahead-block--button, .edit-user--image-button-add, .button--warning, .block-unfollow-question .block-module--link, .edit-user--image-button-remove, .at-add-btn {
   display: inline-block;
   font-size: 125%;
   padding: .4em 1.5em .5em;
@@ -861,41 +861,41 @@ label {
   border-radius: 0.4em;
 }
 /* line 19, ../sass/theme/_buttons.scss */
-.button--action:focus, .form-submit:focus, .block-follow-question .block-module--link:focus, .typeahead-block--button:focus, .button--warning:focus, .block-unfollow-question .block-module--link:focus, .at-add-btn:focus, .button--action:hover, .form-submit:hover, .block-follow-question .block-module--link:hover, .typeahead-block--button:hover, .button--warning:hover, .block-unfollow-question .block-module--link:hover, .at-add-btn:hover, .button--action:active, .form-submit:active, .block-follow-question .block-module--link:active, .typeahead-block--button:active, .button--warning:active, .block-unfollow-question .block-module--link:active, .at-add-btn:active {
+.button--action:focus, .form-submit:focus, .block-follow-question .block-module--link:focus, .typeahead-block--button:focus, .edit-user--image-button-add:focus, .button--warning:focus, .block-unfollow-question .block-module--link:focus, .edit-user--image-button-remove:focus, .at-add-btn:focus, .button--action:hover, .form-submit:hover, .block-follow-question .block-module--link:hover, .typeahead-block--button:hover, .edit-user--image-button-add:hover, .button--warning:hover, .block-unfollow-question .block-module--link:hover, .edit-user--image-button-remove:hover, .at-add-btn:hover, .button--action:active, .form-submit:active, .block-follow-question .block-module--link:active, .typeahead-block--button:active, .edit-user--image-button-add:active, .button--warning:active, .block-unfollow-question .block-module--link:active, .edit-user--image-button-remove:active, .at-add-btn:active {
   text-decoration: none;
 }
 
 /* line 28, ../sass/theme/_buttons.scss */
-.button--action, .form-submit, .block-follow-question .block-module--link, .typeahead-block--button {
+.button--action, .form-submit, .block-follow-question .block-module--link, .typeahead-block--button, .edit-user--image-button-add {
   background-color: #5dc26d;
   border: 1px solid #41ab51;
   color: white;
   text-shadow: 1px 1px 0 #33863f;
 }
 /* line 37, ../sass/theme/_buttons.scss */
-.button--action:link, .form-submit:link, .block-follow-question .block-module--link:link, .typeahead-block--button:link, .button--action:visited, .form-submit:visited, .block-follow-question .block-module--link:visited, .typeahead-block--button:visited {
+.button--action:link, .form-submit:link, .block-follow-question .block-module--link:link, .typeahead-block--button:link, .edit-user--image-button-add:link, .button--action:visited, .form-submit:visited, .block-follow-question .block-module--link:visited, .typeahead-block--button:visited, .edit-user--image-button-add:visited {
   color: white;
   text-decoration: none;
 }
 /* line 43, ../sass/theme/_buttons.scss */
-.button--action:hover, .form-submit:hover, .block-follow-question .block-module--link:hover, .typeahead-block--button:hover {
+.button--action:hover, .form-submit:hover, .block-follow-question .block-module--link:hover, .typeahead-block--button:hover, .edit-user--image-button-add:hover {
   background-color: #41ab51;
 }
 
 /* line 48, ../sass/theme/_buttons.scss */
-.button--warning, .block-unfollow-question .block-module--link {
+.button--warning, .block-unfollow-question .block-module--link, .edit-user--image-button-remove {
   background-color: #ff6138;
   border: 1px solid #ff3905;
   color: white;
   text-shadow: 1px 1px 0 #d12b00;
 }
 /* line 57, ../sass/theme/_buttons.scss */
-.button--warning:link, .block-unfollow-question .block-module--link:link, .button--warning:visited, .block-unfollow-question .block-module--link:visited {
+.button--warning:link, .block-unfollow-question .block-module--link:link, .edit-user--image-button-remove:link, .button--warning:visited, .block-unfollow-question .block-module--link:visited, .edit-user--image-button-remove:visited {
   color: white;
   text-decoration: none;
 }
 /* line 63, ../sass/theme/_buttons.scss */
-.button--warning:hover, .block-unfollow-question .block-module--link:hover {
+.button--warning:hover, .block-unfollow-question .block-module--link:hover, .edit-user--image-button-remove:hover {
   background-color: #ff3905;
 }
 
@@ -2942,6 +2942,38 @@ a.comment--flag.unflag-action:hover {
 .user-form--password-link {
   padding-left: 0;
   list-style: none;
+}
+
+/* line 102, ../sass/modules/_user-profile.scss */
+.edit-user--image-fieldset {
+  position: relative;
+  height: 15em;
+}
+
+/* line 108, ../sass/modules/_user-profile.scss */
+.edit-user--image {
+  position: absolute;
+  top: 3em;
+  left: 0;
+  max-height: 12em;
+  width: 25%;
+}
+
+/* line 117, ../sass/modules/_user-profile.scss */
+.edit-user--image-buttons {
+  position: relative;
+  top: 50%;
+  display: inline-block;
+  margin-left: 25%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* line 131, ../sass/modules/_user-profile.scss */
+.edit-user--image-button-remove {
+  margin-right: .5em;
 }
 
 /**

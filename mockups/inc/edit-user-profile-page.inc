@@ -37,6 +37,14 @@
         <textarea class="form-textarea" required>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ab illo tempore, ab est sed immemorabili. Unam incolunt Belgae, aliam Aquitani, tertiam.
         </textarea>
       </div>
+      <fieldset id="edit-picture" class="field-group-fieldset edit-user--image-fieldset">
+        <legend class="fieldset-legend">Picture</legend>
+        <img width="500" height="500" title="testuser3's picture" alt="testuser3's picture" src="http://loop.etek.dk/sites/loop.etek.dk/files/styles/profile/public/pictures/picture-6-1392707743.png?itok=oT7mVmo-" class="edit-user--image">
+        <div class="edit-user--image-buttons">
+          <input type="submit" value="Slet billede" class="edit-user--image-button-remove">
+          <input type="submit" value="Upload nyt" class="edit-user--image-button-add">
+        </div>
+      </fieldset>
       <div class="form-actions">
         <input type="submit" value="Gem" class="form-submit">
       </div>

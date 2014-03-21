@@ -98,3 +98,43 @@
   padding-left: 0;
   list-style: none;
 }
+
+.edit-user--image-fieldset {
+  position: relative;
+
+  height: 15em;
+}
+
+.edit-user--image {
+  position: absolute;
+  top: 3em;
+  left: 0;
+
+  max-height: 12em;
+  width: 25%;
+}
+
+.edit-user--image-buttons {
+  position: relative;
+  top: 50%;
+
+  display: inline-block;
+  margin-left: 25%;
+
+  @include translateY(-50%);
+}
+
+.edit-user--image-button-remove,
+.edit-user--image-button-add {
+}
+
+.edit-user--image-button-remove {
+  @extend .button--warning;
+
+  margin-right: .5em;
+}
+
+.edit-user--image-button-add {
+  @extend .button--action;
+}
+
