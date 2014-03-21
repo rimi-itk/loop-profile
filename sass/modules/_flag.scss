@@ -5,13 +5,13 @@
  */
 
 
-.node--flag,
 .comment--flag {
   border: 1px solid $gray;
   display: block;
   padding: .5em 1em;
 
   background-color: $white;
+  font-size: .85em;
   font-weight: bold;
   text-align: center;
 
@@ -26,6 +26,10 @@
   }
 
   /* States */
+  &.is-sticky {
+    font-size: 1em;
+  }
+
   &.is-active,
   &.is-sticky,
   &.unflag-action {
@@ -43,7 +47,6 @@
 }
 
 // If it's a link add pseudo styles.
-a.node--flag,
 a.comment--flag {
   &:link,
   &:visited,
@@ -86,6 +89,27 @@ a.comment--flag {
     }
   }
 }
+
+
+// Block follow question.
+.block-follow-question {
+  .node--flag {
+    width: 100%;
+
+    font-size: 1em;
+
+    @include box-sizing(border-box);
+  }
+
+  .flag-action {
+    @extend .button--action;
+  }
+
+  .unflag-action {
+    @extend .button--warning;
+  }
+}
+
 
 // Adding margin bottom to the flag link so there are spacing below when the message appears.
 .flag-outer-subscribe-node {
