@@ -36,6 +36,7 @@ features[page_manager_pages][] = messages
 features[page_manager_pages][] = messages_read
 features[page_manager_pages][] = messages_unread
 features[page_manager_pages][] = user_notifications
+features[rules_config][] = rules_create_message
 features[rules_config][] = rules_remove_subscription
 features[rules_config][] = rules_send_mail_on_message_created
 features[rules_config][] = rules_set_message_read

@@ -9,6 +9,49 @@
  */
 function loop_notification_default_rules_configuration() {
   $items = array();
+  $items['rules_create_message'] = entity_import('rules_config', '{ "rules_create_message" : {
+      "LABEL" : "Create message",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "flag", "rules", "comment" ],
+      "ON" : { "comment_insert" : [] },
+      "DO" : [
+        { "flag_fetch_users_node" : {
+            "USING" : { "flag" : "subscribe_node", "node" : [ "comment:node" ] },
+            "PROVIDE" : { "users" : { "users" : "Users who flagged" } }
+          }
+        },
+        { "LOOP" : {
+            "USING" : { "list" : [ "users" ] },
+            "ITEM" : { "list_item" : "Current list item" },
+            "DO" : [
+              { "entity_create" : {
+                  "USING" : {
+                    "type" : "message",
+                    "param_type" : "comment_added_to_post",
+                    "param_user" : [ "list-item" ]
+                  },
+                  "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+                }
+              },
+              { "data_set" : {
+                  "data" : [ "entity-created:field-message-node-reference" ],
+                  "value" : [ "comment:node" ]
+                }
+              },
+              { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } },
+              { "component_rules_send_mail_on_message_created" : {
+                  "node" : [ "comment:node" ],
+                  "user" : [ "list-item" ],
+                  "message" : [ "entity-created" ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_remove_subscription'] = entity_import('rules_config', '{ "rules_remove_subscription" : {
       "LABEL" : "Remove subscription",
       "PLUGIN" : "rule",
