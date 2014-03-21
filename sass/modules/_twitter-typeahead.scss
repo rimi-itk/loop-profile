@@ -56,23 +56,25 @@
   }
 }
 
-.typeahead-block--icon {
-  position: absolute;
-  top: 1.2em;
-  left: .35em;
-
-  color: $gray;
-  font-size: 200%;
-
-  z-index: 1;
-}
-
 .twitter-typeahead {
   display: block !important;
 
   background-color: $white;
 
   @include border-radius($border-radius);
+
+  &:before {
+    @extend %icon-search;
+
+    position: absolute;
+    top: .5em;
+    left: .49em;
+
+    color: $gray;
+    font-size: 200%;
+
+    z-index: 99;
+  }
 }
 
 .typeahead-block--button {

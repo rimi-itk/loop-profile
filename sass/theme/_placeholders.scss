@@ -103,11 +103,17 @@
 %icon-attention {
   @extend %icon-base;
 
-  content: '\e80c';
+  content: '\e801';
 }
 
 %icon-arrow-right {
   @extend %icon-base;
 
   content: '\e807';
+}
+
+%icon-search {
+  @extend %icon-base;
+
+  content: '\e803';
 }
