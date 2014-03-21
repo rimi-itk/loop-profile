@@ -2172,6 +2172,39 @@ table td:empty {
 
 /**
  *
+ * Editing
+ *
+ */
+/* line 7, ../sass/modules/_editing.scss */
+.editing--block {
+  margin-bottom: 2em;
+}
+/* line 10, ../sass/modules/_editing.scss */
+.editing--block:last-child {
+  margin-bottom: 0;
+}
+
+/* line 15, ../sass/modules/_editing.scss */
+.editing--row {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+/* line 18, ../sass/modules/_editing.scss */
+.editing--row:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* line 23, ../sass/modules/_editing.scss */
+.editing--edit-link {
+  font-size: 0.8em;
+  float: right;
+}
+
+/**
+ *
  * Lists
  *
  */

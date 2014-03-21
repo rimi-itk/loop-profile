@@ -84,6 +84,9 @@ function loop_preprocess_block(&$variables) {
  * Override or insert variables into the panel pane template.
  */
 function loop_preprocess_panels_pane(&$variables) {
+  if (arg(0) == 'editor') {
+    $variables['theme_hook_suggestions'][] = 'panels_pane__editor';
+  }
   // Add template for flag subscribe button on post node.
   if ($variables['pane']->subtype == 'node:flag_subscribe_node') {
     $variables['theme_hook_suggestions'][] = 'panels_pane__flag_subscribe';
