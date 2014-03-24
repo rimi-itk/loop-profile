@@ -5,6 +5,7 @@ package = LOOP
 version = 7.x-1.0
 project = loop_frontpage
 dependencies[] = ctools
+dependencies[] = loop_taxonomy_views
 dependencies[] = loop_user_related_content_competence
 dependencies[] = loop_user_related_content_profession
 dependencies[] = page_manager
