@@ -508,37 +508,6 @@ function loop_preprocess_loop_post_subscription_list(&$vars) {
 
 
 /**
- * Fetch the full name from a user object, if both first name and last name is set.
- *
- * @param $uid
- *
- * @return $name
- */
-function fetch_full_name ($user_obj) {
-  $name = '';
-
-  // Make sure we are dealing with an object.
-  if(is_object($user_obj)) {
-
-    // Load entity wrapper.
-    $wrapper = entity_metadata_wrapper('user', $user_obj);
-
-    // Get first name and last name.
-    $first_name = $wrapper->field_first_name->value();
-    $last_name = $wrapper->field_last_name->value();
-
-    // Set name.
-    if ($first_name && $last_name) {
-      $name = $first_name . ' ' . $last_name;
-    } else {
-      $name = $user_obj->name;
-    }
-  }
-  return $name;
-}
-
-
-/**
  * Implements hook_textarea().
  *
  * Remove grippie from textarea.
@@ -583,6 +552,19 @@ function loop_preprocess_views_view(&$vars) {
     $update_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() .'/scripts/update-new-notifications.js';
     drupal_add_js($update_script_path, 'file');
     $vars['user_messages'] = $new_message_count;
+  }
+
+  if ($vars['view']->name == 'loop_questions_by_user_profession' || $vars['view']->name == 'loop_questions_by_user_competence') {
+    if ($vars['user']->uid > 0) {
+      // Fetch full user obj.
+      $user_obj = user_load ($vars['user']->uid);
+
+      // Load entity wrapper.
+      $wrapper = entity_metadata_wrapper('user', $user_obj);
+
+      $vars['user__area_of_expertise'] = $wrapper->field_area_of_expertise->value();
+      $vars['user__profession'] = $wrapper->field_profession->value();
+    }
   }
 }
 
@@ -633,4 +615,37 @@ function printNotificationTab() {
     $menutab = FALSE;
   }
   return $menutab;
+}
+
+
+/**
+ * Implements fetch_full_name().
+ *
+ * Fetch the full name from a user object, if both first name and last name is set.
+ *
+ * @param $user_obj
+ *
+ * @return $name
+ */
+function fetch_full_name ($user_obj) {
+  $name = '';
+
+  // Make sure we are dealing with an object.
+  if(is_object($user_obj)) {
+
+    // Load entity wrapper.
+    $wrapper = entity_metadata_wrapper('user', $user_obj);
+
+    // Get first name and last name.
+    $first_name = $wrapper->field_first_name->value();
+    $last_name = $wrapper->field_last_name->value();
+
+    // Set name.
+    if ($first_name && $last_name) {
+      $name = $first_name . ' ' . $last_name;
+    } else {
+      $name = $user_obj->name;
+    }
+  }
+  return $name;
 }
