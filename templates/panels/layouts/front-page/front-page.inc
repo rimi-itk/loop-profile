@@ -12,6 +12,7 @@ $plugin = array(
   'regions' => array(
     'alpha' => t('Alpha'),
     'beta' => t('Beta'),
-    'gamma' => t('Gamma')
+    'gamma' => t('Gamma'),
+    'delta' => t('Delta')
   ),
 );

@@ -14,24 +14,31 @@
 ?>
 <?php if (!empty($content['alpha']) || !empty($content['beta']) || !empty($content['gamma'])): ?>
   <div class="layout-frontpage">
-    <div class="layout--inner">
-      <?php if (!empty($content['alpha'])): ?>
+    <?php if (!empty($content['alpha'])): ?>
+      <div class="layout--inner">
         <div class="layout-element-alpha">
           <?php print $content['alpha']; ?>
         </div>
-      <?php endif; ?>
-    </div>
+      </div>
+    <?php endif; ?>
+    <?php if (!empty($content['beta'])): ?>
     <div class="layout--inner">
-      <?php if (!empty($content['beta'])): ?>
-        <div class="layout-element-beta">
-          <?php print $content['beta']; ?>
-        </div>
+      <div class="layout-element-beta">
+        <?php print $content['beta']; ?>
+      </div>
       <?php endif; ?>
       <?php if (!empty($content['gamma'])): ?>
         <div class="layout-element-gamma">
           <?php print $content['gamma']; ?>
         </div>
-      <?php endif; ?>
+      </div>
+    <?php endif; ?>
+    <?php if (!empty($content['delta'])): ?>
+    <div class="layout--inner">
+      <div class="layout-element-delta">
+        <?php print $content['delta']; ?>
+      </div>
     </div>
+    <?php endif; ?>
   </div>
 <?php endif; ?>
