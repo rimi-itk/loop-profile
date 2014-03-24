@@ -23,6 +23,9 @@ function loop_search_default_search_api_index() {
         "comments" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "comment" },
         "field_description" : { "type" : "text" },
         "search_api_language" : { "type" : "string" },
+        "field_keyword:name" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_profession:name" : { "type" : "text" },
+        "field_subject:name" : { "type" : "text" },
         "comments:comment_body:value" : { "type" : "list\\u003Ctext\\u003E" }
       },
       "data_alter_callbacks" : {
@@ -42,13 +45,26 @@ function loop_search_default_search_api_index() {
         "search_api_case_ignore" : {
           "status" : 1,
           "weight" : "0",
-          "settings" : { "fields" : { "field_description" : true, "comments:comment_body:value" : true } }
+          "settings" : { "fields" : {
+              "field_description" : true,
+              "field_keyword:name" : true,
+              "field_profession:name" : true,
+              "field_subject:name" : true,
+              "comments:comment_body:value" : true
+            }
+          }
         },
         "search_api_html_filter" : {
           "status" : 1,
           "weight" : "10",
           "settings" : {
-            "fields" : { "field_description" : true, "comments:comment_body:value" : true },
+            "fields" : {
+              "field_description" : true,
+              "field_keyword:name" : true,
+              "field_profession:name" : true,
+              "field_subject:name" : true,
+              "comments:comment_body:value" : true
+            },
             "title" : 0,
             "alt" : 1,
             "tags" : "h1 = 5\\r\\nh2 = 3\\r\\nh3 = 2\\r\\nstrong = 2\\r\\nb = 2\\r\\nem = 1.5\\r\\nu = 1.5"
@@ -63,7 +79,13 @@ function loop_search_default_search_api_index() {
           "status" : 1,
           "weight" : "20",
           "settings" : {
-            "fields" : { "field_description" : true, "comments:comment_body:value" : true },
+            "fields" : {
+              "field_description" : true,
+              "field_keyword:name" : true,
+              "field_profession:name" : true,
+              "field_subject:name" : true,
+              "comments:comment_body:value" : true
+            },
             "spaces" : "[^[:alnum:]]",
             "ignorable" : "[\\u0027]"
           }
