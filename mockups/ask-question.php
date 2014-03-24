@@ -10,7 +10,9 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
   <div class="page-inner">
     <?php include 'inc/header.inc'; ?>
     <?php include('inc/search-block.inc') ?>
-    <?php include('inc/page-ask-question.inc') ?>
+    <div class="layout-alternative">
+      <?php include('inc/page-ask-question.inc') ?>
+    </div>
   </div>
 </div>
 </body>
