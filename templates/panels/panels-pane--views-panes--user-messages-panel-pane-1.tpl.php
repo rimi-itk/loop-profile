@@ -17,7 +17,7 @@
  *   data including the contexts and all of the other panes being displayed.
  */
 ?>
-<fieldset class="user-profile-module--field-group-fieldset js-notification-count">
+<div class="user-profile-module--field-group-fieldset js-notification-count">
   <?php if ($pane_prefix): ?>
     <?php print $pane_prefix; ?>
   <?php endif; ?>
@@ -28,7 +28,7 @@
 
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
-    <legend class="fieldset-legend"><?php print $title; ?></legend>
+    <h2 class="notification--list-header"><?php print t('You have'); ?> <span class="notification--inline js-notification-tab-count"><?php print $message_count?></span> <?php print t('notifications'); ?></h2>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 
@@ -55,4 +55,4 @@
   <?php if ($pane_suffix): ?>
     <?php print $pane_suffix; ?>
   <?php endif; ?>
-</fieldset>
+</div>

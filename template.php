@@ -91,6 +91,13 @@ function loop_preprocess_panels_pane(&$variables) {
   if ($variables['pane']->type == 'flag_link') {
     $variables['theme_hook_suggestions'][] = 'panels_pane__flag_subscribe';
   }
+
+  // Add message variable for panel pane.
+  if ($variables['pane']->subtype == 'user_messages-panel_pane_1') {
+    $variables['message_count'] = fetch_user_new_notifications();
+    $update_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() .'/scripts/update-new-notifications.js';
+    drupal_add_js($update_script_path, 'file');
+  }
 }
 
 
@@ -538,17 +545,7 @@ function loop_textarea($variables) {
 function loop_preprocess_views_view(&$vars) {
   // We run the new message count in this function since the view updates with ajax.
   if ($vars['view']->name == 'user_messages') {
-    // Fetch all current users messages from the message table.
-    $all_message_count = db_query('SELECT uid FROM message WHERE uid = :uid', array(':uid' => $GLOBALS['user']->uid))->rowCount();
-
-    // Fetch flag id (fid) for the message_read flag.
-    $flag_id = db_query('SELECT fid FROM flag WHERE name = :machine_name', array(':machine_name' => "message_read"))->fetchField();
-
-    // Fetch all flags of type message_read (fid) that the current user made.
-    $flagged_read_message_count = db_query('SELECT entity_id FROM flagging WHERE uid = :uid AND fid = :fid', array(':uid' => $GLOBALS['user']->uid, ':fid' => $flag_id))->rowCount();
-
-    // Compare the two.
-    $new_message_count = $all_message_count - $flagged_read_message_count;
+    $new_message_count = fetch_user_new_notifications();
     $update_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() .'/scripts/update-new-notifications.js';
     drupal_add_js($update_script_path, 'file');
     $vars['user_messages'] = $new_message_count;
@@ -578,19 +575,7 @@ function loop_preprocess_views_view(&$vars) {
 function printNotificationTab() {
   // We run the new message count in this function called from loop_links__system_primary_menu() since it should display on all pages.
   if (module_exists('loop_notification') && $GLOBALS['user']->uid > 0) {
-    $theme_path = drupal_get_path('theme', 'loop');
-
-    // Fetch all current users messages from the message table.
-    $all_message_count = db_query('SELECT uid FROM message WHERE uid = :uid', array(':uid' => $GLOBALS['user']->uid))->rowCount();
-
-    // Fetch flag id (fid) for the message_read flag.
-    $flag_id = db_query('SELECT fid FROM flag WHERE name = :machine_name', array(':machine_name' => "message_read"))->fetchField();
-
-    // Fetch all flags of type message_read (fid) that the current user made.
-    $flagged_read_message_count = db_query('SELECT entity_id FROM flagging WHERE uid = :uid AND fid = :fid', array(':uid' => $GLOBALS['user']->uid, ':fid' => $flag_id))->rowCount();
-
-    // Compare the two.
-    $new_message_count = $all_message_count - $flagged_read_message_count;
+    $new_message_count = fetch_user_new_notifications();
 
     // If new messages exist.
     if ($new_message_count > 0) {
@@ -648,4 +633,28 @@ function fetch_full_name ($user_obj) {
     }
   }
   return $name;
+}
+
+/**
+ * Implements fetch_user_new_notifications().
+ *
+ * Fetches notifications related to current user.
+ *
+ * @return $new_notifications
+ */
+
+function fetch_user_new_notifications() {
+  // Fetch all current users messages from the message table.
+  $all_message_count = db_query('SELECT uid FROM message WHERE uid = :uid', array(':uid' => $GLOBALS['user']->uid))->rowCount();
+
+  // Fetch flag id (fid) for the message_read flag.
+  $flag_id = db_query('SELECT fid FROM flag WHERE name = :machine_name', array(':machine_name' => "message_read"))->fetchField();
+
+  // Fetch all flags of type message_read (fid) that the current user made.
+  $flagged_read_message_count = db_query('SELECT entity_id FROM flagging WHERE uid = :uid AND fid = :fid', array(':uid' => $GLOBALS['user']->uid, ':fid' => $flag_id))->rowCount();
+
+  // Compare the two.
+  $new_notifications = $all_message_count - $flagged_read_message_count;
+
+  return $new_notifications;
 }
