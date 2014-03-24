@@ -12,7 +12,7 @@ function loop_user_related_content_profession_views_default_views() {
 
   $view = new view();
   $view->name = 'loop_questions_by_user_profession';
-  $view->description = 'List of questions based on users professions';
+  $view->description = 'List of questions based on users competences';
   $view->tag = 'default';
   $view->base_table = 'users';
   $view->human_name = 'Loop questions by user profession';
