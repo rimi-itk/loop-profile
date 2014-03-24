@@ -78,6 +78,9 @@ projects[logintoboggan][version] = "1.3"
 projects[memcache][subdir] = "contrib"
 projects[memcache][version] = "1.0"
 
+projects[mailsystem][subdir] = "contrib"
+projects[mailsystem][version] = "2.34"
+
 projects[menu_attributes][subdir] = "contrib"
 projects[menu_attributes][version] = "1.0-rc2"
 
@@ -98,6 +101,9 @@ projects[message_notify][version] = "2.5"
 
 projects[message_subscribe][subdir] = "contrib"
 projects[message_subscribe][version] = "1.0-rc1"
+
+projects[mimemail][subdir] = "contrib"
+projects[mimemail][version] = "1.0-beta3"
 
 projects[module_filter][subdir] = "contrib"
 projects[module_filter][version] = "1.8"
