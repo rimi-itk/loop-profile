@@ -41,7 +41,16 @@ function loop_frontpage_default_page_manager_pages() {
     'body_classes_to_add' => 'loop--front',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(),
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'User',
+        'keyword' => 'user',
+        'name' => 'user',
+        'type' => 'current',
+        'uid' => '',
+        'id' => 1,
+      ),
+    ),
     'relationships' => array(),
     'access' => array(
       'logic' => 'and',
@@ -77,6 +86,9 @@ function loop_frontpage_default_page_manager_pages() {
       'use_pager' => 0,
       'pager_id' => '0',
       'items_per_page' => '5',
+      'arguments' => array(
+        'uid' => '%user:uid',
+      ),
     );
     $pane->cache = array();
     $pane->style = array(
