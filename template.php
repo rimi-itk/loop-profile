@@ -594,7 +594,7 @@ function printNotificationTab() {
 
     // If new messages exist.
     if ($new_message_count > 0) {
-      $new_messages = '<span class="notification">' . $new_message_count . '</span>';
+      $new_messages = '<span class="notification js-notification-tab-count">' . $new_message_count . '</span>';
     }
     else {
       $new_messages = '';

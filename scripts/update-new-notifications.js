@@ -11,9 +11,9 @@
   // Toggle mobile navigation.
   function change_new_message_count() {
     // Attach click function.
-    $('.js-notification-count').on("click", ".message--flag", function() {
-      var message_count = $('.view-user-messages').data("new-message-count") - 1;
-      $('.nav--link .notification').text(message_count);
+    $('.js-notification-count').on("click", ".js-message--flag", function() {
+      var message_count = $('.js-user-message-count').data("new-message-count") - 1;
+      $('.js-notification-tab-count').text(message_count);
     });
   }
 
