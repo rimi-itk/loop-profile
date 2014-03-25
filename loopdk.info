@@ -14,6 +14,7 @@ dependencies[] = contextual
 dependencies[] = ctools
 dependencies[] = elements
 dependencies[] = entity
+dependencies[] = entitycache
 dependencies[] = entityreference
 dependencies[] = diff
 dependencies[] = facetapi

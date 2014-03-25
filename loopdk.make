@@ -28,6 +28,9 @@ projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.3"
 projects[entity][patch][] = "https://drupal.org/files/entity-add-comments-property-1414688-9.patch"
 
+projects[entitycache][subdir] = "contrib"
+projects[entitycache][version] = "1.2"
+
 projects[entityreference][subdir] = "contrib"
 projects[entityreference][version] = "1.1"
 
