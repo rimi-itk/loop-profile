@@ -42,6 +42,7 @@ features[rules_config][] = rules_remove_subscription
 features[rules_config][] = rules_send_mail_on_message_created
 features[rules_config][] = rules_set_message_read
 features[variable][] = field_bundle_settings_message__comment_added_to_post
+features[variable][] = flag_default_flag_status
 features[variable][] = mail_system
 features[variable][] = mailsystem_theme
 features[variable][] = mimemail_engine

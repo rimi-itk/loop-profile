@@ -47,6 +47,15 @@ function loop_notification_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'flag_default_flag_status';
+  $strongarm->value = array(
+    'subscribe_node' => TRUE,
+  );
+  $export['flag_default_flag_status'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'mailsystem_theme';
   $strongarm->value = 'loop';
   $export['mailsystem_theme'] = $strongarm;
@@ -57,6 +66,7 @@ function loop_notification_strongarm() {
   $strongarm->name = 'mail_system';
   $strongarm->value = array(
     'default-system' => 'MimeMailSystem',
+    'mimemail' => 'MimeMailSystem',
   );
   $export['mail_system'] = $strongarm;
 

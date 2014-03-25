@@ -376,7 +376,7 @@ function loop_notification_default_page_manager_pages() {
     'type' => 'tab',
     'title' => 'Messages unread',
     'name' => 'navigation',
-    'weight' => '0',
+    'weight' => '-1',
     'parent' => array(
       'type' => 'none',
       'title' => 'Messages',
