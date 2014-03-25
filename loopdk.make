@@ -79,6 +79,9 @@ projects[logintoboggan][version] = "1.3"
 projects[memcache][subdir] = "contrib"
 projects[memcache][version] = "1.0"
 
+projects[mailsystem][subdir] = "contrib"
+projects[mailsystem][version] = "2.34"
+
 projects[menu_attributes][subdir] = "contrib"
 projects[menu_attributes][version] = "1.0-rc2"
 
@@ -99,6 +102,9 @@ projects[message_notify][version] = "2.5"
 
 projects[message_subscribe][subdir] = "contrib"
 projects[message_subscribe][version] = "1.0-rc1"
+
+projects[mimemail][subdir] = "contrib"
+projects[mimemail][version] = "1.0-beta3"
 
 projects[module_filter][subdir] = "contrib"
 projects[module_filter][version] = "1.8"
@@ -309,6 +315,13 @@ projects[loop_editor_pages][subdir] = "features/views_and_addons"
 projects[loop_editor_pages][download][type] = "git"
 projects[loop_editor_pages][download][url] = "git@github.com:loopdk/loop_editor_pages.git"
 projects[loop_editor_pages][branch] = "development"
+
+projects[loop_taxonomy_views][type] = "module"
+projects[loop_taxonomy_views][subdir] = "features/views_and_addons"
+projects[loop_taxonomy_views][download][type] = "git"
+projects[loop_taxonomy_views][download][url] = "git@github.com:loopdk/loop_taxonomy_views.git"
+projects[loop_taxonomy_views][branch] = "development"
+
 
 ; LOOP themes
 projects[loop][type] = "theme"
