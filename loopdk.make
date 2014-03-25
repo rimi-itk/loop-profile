@@ -26,6 +26,7 @@ projects[elements][version] = "1.4"
 
 projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.3"
+projects[entity][patch][] = "https://drupal.org/files/entity-add-comments-property-1414688-9.patch"
 
 projects[entityreference][subdir] = "contrib"
 projects[entityreference][version] = "1.1"
@@ -107,9 +108,6 @@ projects[node_export][version] = "3.0"
 
 projects[oauth][subdir] = "contrib"
 projects[oauth][version] = "3.2"
-
-projects[og][subdir] = "contrib"
-projects[og][version] = "2.4"
 
 projects[page_title][subdir] = "contrib"
 projects[page_title][version] = "2.7"
