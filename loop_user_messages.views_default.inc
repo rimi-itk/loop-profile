@@ -37,7 +37,7 @@ function loop_user_messages_views_default_views() {
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -136,7 +136,7 @@ function loop_user_messages_views_default_views() {
   /* Display: Read messages */
   $handler = $view->new_display('panel_pane', 'Read messages', 'panel_pane_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Read messages';
+  $handler->display->display_options['title'] = 'Messages read';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -226,7 +226,7 @@ function loop_user_messages_views_default_views() {
   /* Display: Read messages - full */
   $handler = $view->new_display('panel_pane', 'Read messages - full', 'panel_pane_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Read messages';
+  $handler->display->display_options['title'] = 'Messages read';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -274,6 +274,39 @@ function loop_user_messages_views_default_views() {
   $handler->display->display_options['allow']['title_override'] = 0;
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 0;
+
+  /* Display: Unread messages front */
+  $handler = $view->new_display('panel_pane', 'Unread messages front', 'panel_pane_5');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['empty'] = FALSE;
+  $handler->display->display_options['use_ajax_flags'] = array(
+    'message_read' => 'message_read',
+    'subscribe_node' => 0,
+    'ranking' => 0,
+  );
+  $handler->display->display_options['use_ajax_flags_widget'] = 'throbber';
+  $handler->display->display_options['allow']['use_pager'] = 0;
+  $handler->display->display_options['allow']['items_per_page'] = 0;
+  $handler->display->display_options['allow']['offset'] = 0;
+  $handler->display->display_options['allow']['link_to_view'] = 0;
+  $handler->display->display_options['allow']['more_link'] = 0;
+  $handler->display->display_options['allow']['path_override'] = 0;
+  $handler->display->display_options['allow']['title_override'] = 'title_override';
+  $handler->display->display_options['allow']['exposed_form'] = 0;
+  $handler->display->display_options['allow']['fields_override'] = 0;
+  $handler->display->display_options['argument_input'] = array(
+    'uid' => array(
+      'type' => 'user',
+      'context' => 'entity:comment.author',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'User: Uid',
+    ),
+  );
   $translatables['user_messages'] = array(
     t('Defaults'),
     t('Unread messages'),
@@ -290,6 +323,7 @@ function loop_user_messages_views_default_views() {
     t('more'),
     t('View panes'),
     t('Read messages'),
+    t('Messages read'),
     t('View all read notifications'),
     t('Unread messages - full'),
     t('Items per page'),
@@ -300,6 +334,7 @@ function loop_user_messages_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Read messages - full'),
+    t('Unread messages front'),
   );
   $export['user_messages'] = $view;
 
