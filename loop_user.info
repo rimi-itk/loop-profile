@@ -46,6 +46,7 @@ features[field_instance][] = user-user-field_location_place
 features[field_instance][] = user-user-field_location_postal_code
 features[field_instance][] = user-user-field_profession
 features[field_instance][] = user-user-field_user_image
+features[image][] = preview
 features[image][] = profile
 features[menu_custom][] = main-menu
 features[menu_links][] = main-menu_my-account:user
