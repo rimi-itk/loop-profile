@@ -15,7 +15,7 @@ function loop_user_field_default_field_instances() {
     'bundle' => 'user',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Select a maximum of 5 areas of expertise. Hold CTRL (Windows) or CMD (Mac) to select multiple areas.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -37,7 +37,7 @@ function loop_user_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 48,
+      'weight' => 49,
     ),
   );
 
@@ -78,7 +78,7 @@ function loop_user_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 50,
+      'weight' => 4,
     ),
   );
 
@@ -160,7 +160,7 @@ function loop_user_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 44,
+      'weight' => 47,
     ),
   );
 
@@ -375,7 +375,47 @@ function loop_user_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 47,
+      'weight' => 48,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_user_image'
+  $field_instances['user-user-field_user_image'] = array(
+    'bundle' => 'user',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_user_image',
+    'label' => 'User image',
+    'required' => 0,
+    'settings' => array(
+      'alt_field' => 0,
+      'default_image' => 0,
+      'file_directory' => 'images/user_profiles',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '200x200',
+      'title_field' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'image',
+      'settings' => array(
+        'preview_image_style' => 'preview',
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'image_image',
+      'weight' => 6,
     ),
   );
 
@@ -391,7 +431,7 @@ function loop_user_field_default_field_instances() {
   t('Place');
   t('Postal code');
   t('Profession');
-  t('Select a maximum of 5 areas of expertise. Hold CTRL (Windows) or CMD (Mac) to select multiple areas.');
+  t('User image');
 
   return $field_instances;
 }

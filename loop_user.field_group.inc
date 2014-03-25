@@ -129,23 +129,28 @@ function loop_user_field_group_info() {
   $field_group->entity_type = 'user';
   $field_group->bundle = 'user';
   $field_group->mode = 'form';
-  $field_group->parent_name = 'group_personal_information';
+  $field_group->parent_name = 'group_work_related_information';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '49',
+    'weight' => '50',
     'children' => array(
       0 => 'field_location_address',
       1 => 'field_location_city',
       2 => 'field_location_place',
       3 => 'field_location_postal_code',
     ),
-    'format_type' => 'fieldset',
+    'format_type' => 'div',
     'format_settings' => array(
       'label' => 'Location',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => 'group-location field-group-fieldset',
+        'id' => '',
+        'classes' => '',
         'description' => '',
+        'show_label' => '1',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
       ),
       'formatter' => 'open',
     ),
@@ -191,27 +196,51 @@ function loop_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Personal information',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
-      0 => 'field_biography',
-      1 => 'field_first_name',
-      2 => 'field_job_title',
-      3 => 'field_last_name',
-      4 => 'field_profession',
-      5 => 'field_area_of_expertise',
-      6 => 'group_location',
+      0 => 'field_first_name',
+      1 => 'field_last_name',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
-      'formatter' => 'collapsible',
+      'label' => 'Personal information',
       'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-personal-information field-group-fieldset',
         'required_fields' => 1,
+        'classes' => 'user-profile-module--field-group-fieldset',
+        'description' => '',
       ),
+      'formatter' => 'open',
     ),
   );
   $export['group_personal_information|user|user|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_picture|user|user|form';
+  $field_group->group_name = 'group_picture';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Picture',
+    'weight' => '5',
+    'children' => array(
+      0 => 'field_user_image',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Picture',
+      'instance_settings' => array(
+        'required_fields' => 0,
+        'classes' => 'user-profile-module--field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_picture|user|user|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -239,6 +268,37 @@ function loop_user_field_group_info() {
     ),
   );
   $export['group_profession|user|user|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_work_related_information|user|user|form';
+  $field_group->group_name = 'group_work_related_information';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Work related information',
+    'weight' => '3',
+    'children' => array(
+      0 => 'field_area_of_expertise',
+      1 => 'field_job_title',
+      2 => 'field_profession',
+      3 => 'group_location',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Work related information',
+      'instance_settings' => array(
+        'required_fields' => 0,
+        'classes' => 'user-profile-module--field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_work_related_information|user|user|form'] = $field_group;
 
   return $export;
 }
