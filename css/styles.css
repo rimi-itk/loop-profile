@@ -824,25 +824,27 @@ label {
   margin: 0;
   width: auto;
 }
-/* line 191, ../sass/theme/_forms.scss */
-.vbo-views-form label,
+/* line 189, ../sass/theme/_forms.scss */
+.vbo-views-form .vbo-fieldset-select-all label {
+  text-align: left;
+}
+/* line 194, ../sass/theme/_forms.scss */
 .vbo-views-form .form-type-checkbox {
-  float: left;
   margin-right: .5em;
 }
-/* line 196, ../sass/theme/_forms.scss */
+/* line 198, ../sass/theme/_forms.scss */
 .vbo-views-form .form-checkbox {
   float: left;
   margin: 0.4em 0.5em 0 0;
 }
-/* line 201, ../sass/theme/_forms.scss */
+/* line 203, ../sass/theme/_forms.scss */
 .vbo-views-form .form-item-operation {
   width: 100%;
   display: block;
   padding-bottom: 1em;
 }
 @media only screen and (min-width: 50em) {
-  /* line 201, ../sass/theme/_forms.scss */
+  /* line 203, ../sass/theme/_forms.scss */
   .vbo-views-form .form-item-operation {
     float: left;
     width: 60%;

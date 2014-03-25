@@ -185,11 +185,13 @@ label {
     padding: 0 0 2em;
     margin: 0;
     width: auto;
+
+    label {
+      text-align: left;
+    }
   }
 
-  label,
   .form-type-checkbox {
-    float: left;
     margin-right: .5em;
   }
 
