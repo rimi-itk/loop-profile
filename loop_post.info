@@ -43,6 +43,7 @@ features[variable][] = comment_form_location_post
 features[variable][] = comment_post
 features[variable][] = comment_preview_post
 features[variable][] = comment_subject_field_post
+features[variable][] = field_bundle_settings_comment__comment_node_post
 features[variable][] = field_bundle_settings_node__post
 features[variable][] = language_content_type_post
 features[variable][] = menu_options_post
