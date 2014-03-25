@@ -45,7 +45,7 @@
   <?php endif; ?>
 </h1>
 <fieldset class="user-profile-module--field-group-fieldset-personal-info">
-  <legend class="fieldset-legend"><?php print t('Personal informations'); ?></legend>
+  <legend class="fieldset-legend"><?php print t('Personal information'); ?></legend>
   <div class="user-profile-module--personal-info-text">
     <div class="user-profile-module--field-personal-info">
       <span class="user-profile-module--field-label"><?php print t('First name') . ':'; ?></span><span class="user-profile-module--field-value"><?php print render($elements['field_first_name']); ?></span>
