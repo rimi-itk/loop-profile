@@ -93,10 +93,13 @@ function loop_preprocess_panels_pane(&$variables) {
   }
 
   // Add message variable for panel pane.
-  if ($variables['pane']->subtype == 'user_messages-panel_pane_1') {
+  if ($variables['pane']->subtype == 'user_messages-panel_pane_1' || $variables['pane']->subtype == 'user_messages-panel_pane_5') {
     $variables['message_count'] = fetch_user_new_notifications();
     $update_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() .'/scripts/update-new-notifications.js';
     drupal_add_js($update_script_path, 'file');
+    if (arg(0) == 'user') {
+      $variables['theme_hook_suggestions'][] = 'panels_pane__user_page_unread_messages';
+    }
   }
 }
 
