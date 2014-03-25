@@ -587,7 +587,7 @@ function printNotificationTab() {
 
     // Add the link image for mobile.
     $img = array(
-      'path' => '/' . $theme_path . '/images/nav-mail-icon.png',
+      'path' => '/' . path_to_theme() . '/images/nav-mail-icon.png',
       'attributes' => array('class' => 'nav--icon'),
     );
 

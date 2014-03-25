@@ -17,7 +17,7 @@
  *   data including the contexts and all of the other panes being displayed.
  */
 ?>
-<div class="user-profile-module--field-group-fieldset js-notification-count">
+<div class="user-profile-module--notifications js-notification-count">
   <?php if ($pane_prefix): ?>
     <?php print $pane_prefix; ?>
   <?php endif; ?>

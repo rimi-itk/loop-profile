@@ -17,7 +17,7 @@
  *   data including the contexts and all of the other panes being displayed.
  */
 ?>
-<fieldset class="user-profile-module--field-group-fieldset">
+<fieldset class="user-profile-module--notifications">
   <?php if ($pane_prefix): ?>
     <?php print $pane_prefix; ?>
   <?php endif; ?>
