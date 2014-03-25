@@ -53,7 +53,7 @@ jQuery(document).ready(function($) {
       displayKey: 'title',
       // HTML template for output.
       templates: {
-        header: '<h3>Questions</h3>',
+        header: '<h3 class="tt-suggestion-header">' + Drupal.t('Questions') + '</h3>',
         suggestion: Handlebars.compile('{{title}}')
       }
     },
@@ -64,7 +64,7 @@ jQuery(document).ready(function($) {
       displayKey: 'title',
       // HTML template for output.
       templates: {
-        header: '<h3>Documents</h3>',
+        header: '<h3 class="tt-suggestion-header">' + Drupal.t('Documents') + '</h3>',
         suggestion: Handlebars.compile('{{title}}')
       }
     }
