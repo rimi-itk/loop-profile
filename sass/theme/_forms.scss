@@ -84,6 +84,13 @@ label {
   }
 }
 
+.form-wrapper {
+  margin-bottom: 1em;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .form-item {
   // Too comprehensive to change the class so we nest instead
   .description {
@@ -119,6 +126,10 @@ label {
 
   @include border-radius($border-radius);
   @include box-sizing(border-box);
+}
+
+.form-select[multiple] {
+  height: 8em;
 }
 
 .form-textarea-question {
@@ -210,6 +221,70 @@ label {
       width: 60%;
       padding-right: 1em;
       padding-bottom: 0;
+    }
+  }
+}
+
+// User profile form styling.
+// We nest it all inside the user profile form class.
+.user-profile-form {
+  .form-type-select {
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  // We use ID since it's the only unique identifier, and the html is ajax generated through core.
+
+  #edit-field-user-image-und-0-upload-button{
+    display: block;
+    margin: 1em auto;
+    width: 8em;
+  }
+
+  #edit-field-user-image-und-0-remove-button {
+    background-color: #ff6138;
+    border: 1px solid #ff3905;
+    color: white;
+    text-shadow: 1px 1px 0 #d12b00;
+
+    display: block;
+    margin: 1em auto;
+    width: 8em;
+  }
+
+  // We hide through styling since the html is generated through ajax in core.
+  .file,
+  .file-size {
+    display: none;
+  }
+
+  .form-file {
+    display: block;
+    margin: 0 auto;
+    width: 13em;
+  }
+
+  .image-preview {
+    margin: 0 auto;
+    width: 192px;
+  }
+
+
+  @include breakpoint(45em) {
+    .image-preview,
+    #edit-field-user-image-und-0-upload,
+    #edit-field-user-image-und-0-remove {
+      float: left;
+    }
+
+
+    #edit-field-user-image-und-0-upload-button,
+    #edit-field-user-image-und-0-remove-button {
+      position: relative;
+      margin: 0;
+      float: right;
+      overflow: hidden;
     }
   }
 }

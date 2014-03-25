@@ -446,6 +446,22 @@ function loop_form_comment_form_alter(&$form, $form_state)  {
 
 /**
  * Implements hook_form_FORM_ID_alter().
+ * The user profile form.
+ */
+function loop_form_user_profile_form_alter(&$form)  {
+  $form['account']['#access'] = FALSE;
+  $form['timezone']['#access'] = FALSE;
+  $form['#attributes']['class'] = 'user-profile-form';
+
+  // Image field.
+  $user_image_field_lang = $form['field_user_image']['#language'];
+  unset($form['field_user_image'][$user_image_field_lang]['0']['#description']);
+  unset($form['field_user_image'][$user_image_field_lang]['0']['#title']);
+}
+
+
+/**
+ * Implements hook_form_FORM_ID_alter().
  * For display on user/[uid]/notifications/subscription.
  */
 function loop_form_notifications_account_manage_subscriptions_form_alter(&$form, $form_state)  {
