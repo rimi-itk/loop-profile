@@ -13,6 +13,33 @@ function loop_user_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_areas_of_expertise|user|user|default';
+  $field_group->group_name = 'group_areas_of_expertise';
+  $field_group->entity_type = 'user';
+  $field_group->bundle = 'user';
+  $field_group->mode = 'default';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Areas of expertise',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_area_of_expertise',
+    ),
+    'format_type' => 'fieldset',
+    'format_settings' => array(
+      'label' => 'Areas of expertise',
+      'instance_settings' => array(
+        'classes' => 'user-profile-module--field-group-fieldset',
+        'description' => '',
+      ),
+      'formatter' => 'open',
+    ),
+  );
+  $export['group_areas_of_expertise|user|user|default'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_description|user|user|default';
   $field_group->group_name = 'group_description';
   $field_group->entity_type = 'user';
@@ -21,7 +48,7 @@ function loop_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Description',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_biography',
     ),
@@ -75,12 +102,12 @@ function loop_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
-      0 => 'field_location_place',
-      1 => 'field_location_address',
-      2 => 'field_location_postal_code',
-      3 => 'field_location_city',
+      0 => 'field_location_address',
+      1 => 'field_location_city',
+      2 => 'field_location_place',
+      3 => 'field_location_postal_code',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
