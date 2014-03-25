@@ -78,17 +78,15 @@ function loop_frontpage_default_page_manager_pages() {
     $pane->pid = 'new-1';
     $pane->panel = 'alpha';
     $pane->type = 'views_panes';
-    $pane->subtype = 'user_messages-panel_pane_1';
+    $pane->subtype = 'user_messages-panel_pane_5';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'more_link' => 0,
-      'use_pager' => 0,
-      'pager_id' => '0',
-      'items_per_page' => '5',
       'arguments' => array(
         'uid' => '%user:uid',
       ),
+      'override_title' => 0,
+      'override_title_text' => '',
     );
     $pane->cache = array();
     $pane->style = array(
