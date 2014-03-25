@@ -43,6 +43,7 @@ dependencies[] = redirect
 dependencies[] = rules
 dependencies[] = strongarm
 dependencies[] = taxonomy
+dependencies[] = taxonomy_manager
 dependencies[] = token
 dependencies[] = toolbar
 dependencies[] = transliteration
