@@ -109,15 +109,19 @@ function loop_user_related_content_competence_views_default_views() {
   $handler->display->display_options['fields']['field_last_name']['relationship'] = 'uid';
   $handler->display->display_options['fields']['field_last_name']['label'] = 'excluded';
   $handler->display->display_options['fields']['field_last_name']['exclude'] = TRUE;
-  /* Field: User: Picture */
-  $handler->display->display_options['fields']['picture']['id'] = 'picture';
-  $handler->display->display_options['fields']['picture']['table'] = 'users';
-  $handler->display->display_options['fields']['picture']['field'] = 'picture';
-  $handler->display->display_options['fields']['picture']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['picture']['label'] = 'excluded';
-  $handler->display->display_options['fields']['picture']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'profile';
+  /* Field: User: User image */
+  $handler->display->display_options['fields']['field_user_image']['id'] = 'field_user_image';
+  $handler->display->display_options['fields']['field_user_image']['table'] = 'field_data_field_user_image';
+  $handler->display->display_options['fields']['field_user_image']['field'] = 'field_user_image';
+  $handler->display->display_options['fields']['field_user_image']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_user_image']['label'] = 'excluded';
+  $handler->display->display_options['fields']['field_user_image']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_image']['settings'] = array(
+    'image_style' => 'preview',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_user_image']['group_column'] = 'entity_id';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -140,7 +144,7 @@ function loop_user_related_content_competence_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="meta-data--author">
 <div class="meta-data--author-image">
-<a href="/user/[uid]">[picture]</a>
+<a href="/user/[uid]">[field_user_image]</a>
 </div>
 <div class="meta-data--author-wrapper">
 <a class="meta-data--author-link" href="/user/[uid]">[field_first_name] [field_last_name]</a>
@@ -235,7 +239,7 @@ function loop_user_related_content_competence_views_default_views() {
     t('excluded'),
     t('<div class="meta-data--author">
 <div class="meta-data--author-image">
-<a href="/user/[uid]">[picture]</a>
+<a href="/user/[uid]">[field_user_image]</a>
 </div>
 <div class="meta-data--author-wrapper">
 <a class="meta-data--author-link" href="/user/[uid]">[field_first_name] [field_last_name]</a>
