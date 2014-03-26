@@ -57,7 +57,7 @@
       <?php print $rows; ?>
     </div>
   <?php else : ?>
-    <?php print t('You have '); ?><span class="notification--inline">0</span><?php print t(' notifications'); ?>
+    <h4 class="notification--empty"><?php print t('You have '); ?><span class="notification--inline">0</span><?php print t(' notifications'); ?></h4>
   <?php endif; ?>
 
   <?php if ($pager): ?>
