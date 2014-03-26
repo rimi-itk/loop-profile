@@ -893,7 +893,7 @@ label {
 /* line 268, ../sass/theme/_forms.scss */
 .user-profile-form .form-file {
   display: block;
-  margin: 0 auto;
+  margin-bottom: 1em;
   width: 13em;
 }
 /* line 274, ../sass/theme/_forms.scss */
