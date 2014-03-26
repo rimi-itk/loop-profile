@@ -2311,10 +2311,6 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover {
 }
 
 /* line 93, ../sass/modules/_flag.scss */
-.block-follow-question .flag-message {
-  display: block !important;
-}
-/* line 99, ../sass/modules/_flag.scss */
 .block-follow-question .node--flag {
   width: 100%;
   font-size: 1em;
@@ -2322,20 +2318,10 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
-/* line 118, ../sass/modules/_flag.scss */
-.flag-outer-subscribe-node {
-  margin-bottom: -1.5em;
-}
-/* line 121, ../sass/modules/_flag.scss */
-.flag-outer-subscribe-node .flag, .flag-outer-subscribe-node .comment--flag {
-  margin-bottom: 1.5em;
-}
-
-/* line 126, ../sass/modules/_flag.scss */
-.flag-message {
-  display: none !important;
-  margin-bottom: 1.5em;
+/* line 109, ../sass/modules/_flag.scss */
+.block-follow-question .flag-message {
+  display: block;
+  margin-top: 1em;
   padding: 1.5em;
   background-color: #d6ff9a;
   -moz-border-radius: 0.4em;
@@ -2346,7 +2332,16 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover {
   box-sizing: border-box;
 }
 
-/* line 138, ../sass/modules/_flag.scss */
+/* line 127, ../sass/modules/_flag.scss */
+.flag-outer-subscribe-node {
+  margin-bottom: -1.5em;
+}
+/* line 130, ../sass/modules/_flag.scss */
+.flag-outer-subscribe-node .flag, .flag-outer-subscribe-node .comment--flag {
+  margin-bottom: 1.5em;
+}
+
+/* line 135, ../sass/modules/_flag.scss */
 .message--flag-wrapper {
   position: absolute;
   top: .8em;
@@ -2358,7 +2353,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover {
   box-sizing: border-box;
 }
 
-/* line 150, ../sass/modules/_flag.scss */
+/* line 147, ../sass/modules/_flag.scss */
 .message--flag {
   position: relative;
   top: 50%;
@@ -2371,7 +2366,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 161, ../sass/modules/_flag.scss */
+/* line 158, ../sass/modules/_flag.scss */
 .message--flag:before {
   font-size: 1.5em;
 }
