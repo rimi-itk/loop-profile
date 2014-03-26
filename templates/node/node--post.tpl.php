@@ -83,11 +83,9 @@
 
 <section class="question--wrapper">
   <div class="meta-data--author">
-    <?php if (isset($user_picture)): ?>
-      <div class="meta-data--author-image">
-        <?php print $user_picture; ?>
-      </div>
-    <?php endif ?>
+    <div class="meta-data--author-image">
+      <a href="/user/<?php print $uid;?>"><?php print render($author_image);?></a>
+    </div>
     <?php if ((isset($author_name) && isset($uid)) || isset($job_title)) : ?>
       <div class="meta-data--author-wrapper">
         <?php if (isset($node->name) && isset($node->uid)): ?>

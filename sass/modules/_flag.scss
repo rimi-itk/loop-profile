@@ -90,12 +90,6 @@ a.comment--flag {
 
 // Block follow question.
 .block-follow-question {
-  .flag-message {
-    // jQuery adds inline styling and because we used !important earlier we have to use !important again to show the
-    // flag.
-    display: block !important;
-  }
-
   .node--flag {
     width: 100%;
 
@@ -111,6 +105,21 @@ a.comment--flag {
   .unflag-action {
     @extend .button--warning;
   }
+
+  .flag-message {
+    // jQuery adds inline styling and because we used !important earlier we have to use !important again to show the
+    // flag.
+    display: block;
+
+    // Using margin top because we don't have a class to use.
+    margin-top: 1em;
+    padding: 1.5em;
+
+    background-color: $green-lighter;
+
+    @include border-radius($border-radius);
+    @include box-sizing(border-box);
+  }
 }
 
 
@@ -121,18 +130,6 @@ a.comment--flag {
   .flag {
     margin-bottom: 1.5em;
   }
-}
-
-.flag-message {
-  // jQuery adds inline styling, we use !important to make sure the flag message is only displayed when needed.
-  display: none !important;
-  margin-bottom: 1.5em;
-  padding: 1.5em;
-
-  background-color: $green-lighter;
-
-  @include border-radius($border-radius);
-  @include box-sizing(border-box);
 }
 
 .message--flag-wrapper {

@@ -28,7 +28,7 @@
 
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
-    <h2 class="notification--list-header"><?php print $title; ?></h2>
+    <h2 class="notification--list-header"><?php print t('You have'); ?> <span class="notification--inline js-notification-tab-count"><?php print $message_count?></span> <?php print t('notifications'); ?></h2>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 

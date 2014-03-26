@@ -99,6 +99,15 @@
   text-align: center;
 }
 
+
+.user-profile-module--notifications {
+  margin-bottom: 3em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .user-form--password-link {
   padding-left: 0;
   list-style: none;
@@ -142,4 +151,3 @@
 .edit-user--image-button-add {
   @extend .button--action;
 }
-

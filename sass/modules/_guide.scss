@@ -21,6 +21,12 @@
 
   height: 20em;
   padding-right: 1.5em;
+
+  @include breakpoint($layout-max-width) {
+    overflow-y: visible;
+
+    height: auto;
+  }
 }
 
 .guide--nav-list {
