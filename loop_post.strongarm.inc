@@ -21,7 +21,7 @@ function loop_post_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_pattern_node_post';
-  $strongarm->value = '[node:field-description]';
+  $strongarm->value = '[node:field-description:value]';
   $export['auto_entitylabel_pattern_node_post'] = $strongarm;
 
   $strongarm = new stdClass();
