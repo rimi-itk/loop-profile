@@ -183,6 +183,9 @@ function loopdk_final_settings() {
     'loop_post',
   );
   loopdk_features_revert($features);
+
+  // Setup url path to use Transliteration module.
+  variable_set('pathauto_transliterate', 1);
 }
 
 /**
