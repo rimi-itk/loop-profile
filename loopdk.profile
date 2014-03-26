@@ -170,6 +170,38 @@ function loopdk_setup_filter_and_wysiwyg() {
       'settings' => serialize($settings),
     ))
     ->execute();
+
+  $format = new Stdclass();
+  $format->format = 'simple';
+  $format->name = 'Simple';
+  $format->cache = 1;
+  $format->status = 1;
+  $format->weight = -10;
+  $format->filters = array(
+    'filter_html' => array(
+      'weight' => 0,
+      'status' => 1,
+      'settings' => array(
+        'allowed_html' => '<br> <p> <a>',
+        'filter_html_help' => 0,
+        'filter_html_nofollow' => 0,
+      ),
+    ),
+    'filter_url' => array(
+      'weight' => 0,
+      'status' => 1,
+      'settings' => array(
+        'filter_url_length' => 72,
+      ),
+    ),
+    'filter_autop' => array(
+      'weight' => 0,
+      'status' => 1,
+      'settings' => array(),
+    ),
+  );
+
+  filter_format_save($format);
 }
 
 /*
