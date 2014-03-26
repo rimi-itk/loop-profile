@@ -64,6 +64,8 @@ function loop_preprocess_node(&$variables) {
   $variables['author_name'] = fetch_full_name($author);
   $fetched_job_title = field_get_items('user', $author, 'field_job_title');
   $variables['job_title'] = field_view_value('user', $author, 'field_job_title', $fetched_job_title[0], array());
+
+  $variables['author_image'] = fetch_author_image($author);
 }
 
 
@@ -436,6 +438,7 @@ function loop_form_comment_form_alter(&$form, $form_state)  {
 
     // Get job title.
     $variables['jobtitle'] = $wrapper->field_job_title->value();
+    $variables['author_image'] = fetch_author_image($variables['user_obj']);
   }
 
 
@@ -510,6 +513,7 @@ function loop_preprocess_comment(&$variables) {
   $variables['comment']->account = user_load($variables['comment']->uid);
 
   $variables['comment_author_name'] = fetch_full_name($variables['comment']->account);
+  $variables['comment_author_image'] = fetch_author_image($variables['comment']->account);
 
   // Fetch the fields needed.
   $fetched_job_title = field_get_items('user', $variables['comment']->account, 'field_job_title');
@@ -629,7 +633,7 @@ function printNotificationTab() {
  *
  * @param $user_obj
  *
- * @return $name
+ * @return name based on user fields.
  */
 function fetch_full_name ($user_obj) {
   $name = '';
@@ -676,4 +680,32 @@ function fetch_user_new_notifications() {
   $new_notifications = $all_message_count - $flagged_read_message_count;
 
   return $new_notifications;
+}
+
+
+/**
+ * Implements fetch_author_image().
+ *
+ * Fetches an image based on author.
+ *
+ * @param user object.
+ * @return themed image based on author.
+ */
+
+function fetch_author_image($author) {
+  if (is_object($author)) {
+    // Load entity wrapper.
+    $wrapper = entity_metadata_wrapper('user', $author);
+
+    // Get first name and last name.
+    $author_image_field = $wrapper->field_user_image->value();
+    $author_image = theme('image_style', array('style_name' => 'preview', 'path' => $author_image_field['uri']));
+    if (empty($author_image_field)) {
+      $field_info = field_info_field('field_user_image');
+      $fid = $field_info['settings']['default_image'];
+      $image = file_load($fid);
+      $author_image = theme('image_style', array('style_name' => 'preview', 'path' => $image->uri));
+    }
+    return $author_image;
+  }
 }

@@ -62,7 +62,7 @@
 <div class="meta-data--author">
 <?php if (isset($picture)): ?>
   <div class="meta-data--author-image">
-    <?php print $picture; ?>
+    <a href="/user/<?php print $comment->uid;?>"><?php print $comment_author_image; ?></a>
   </div>
 <?php endif ?>
   <div class="meta-data--author-wrapper">
