@@ -136,7 +136,7 @@ function loop_user_messages_views_default_views() {
   /* Display: Read messages */
   $handler = $view->new_display('panel_pane', 'Read messages', 'panel_pane_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Messages read';
+  $handler->display->display_options['title'] = 'Messages archive';
   $handler->display->display_options['defaults']['use_more'] = FALSE;
   $handler->display->display_options['use_more'] = TRUE;
   $handler->display->display_options['defaults']['use_more_always'] = FALSE;
@@ -323,7 +323,7 @@ function loop_user_messages_views_default_views() {
     t('more'),
     t('View panes'),
     t('Read messages'),
-    t('Messages read'),
+    t('Messages archive'),
     t('View all read notifications'),
     t('Unread messages - full'),
     t('Items per page'),
@@ -334,6 +334,7 @@ function loop_user_messages_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Read messages - full'),
+    t('Messages read'),
     t('Unread messages front'),
   );
   $export['user_messages'] = $view;
