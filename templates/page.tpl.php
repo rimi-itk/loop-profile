@@ -99,45 +99,72 @@ if (isset($primary_menu_block)): ?>
       </a>
     <?php endif; ?>
     <?php print render($page['header']); ?>
-    <?php if ($user->uid > 0): ?>
-      <div class="nav--wrapper">
-        <nav class="nav">
-          <?php if ($main_menu_block) : ?>
-            <?php print render($main_menu_block); ?>
-          <?php endif; ?>
-        </nav>
-        <nav class="nav-dropdown">
-          <?php if ($primary_menu_block) : ?>
-            <?php print render($primary_menu_block); ?>
-          <?php endif; ?>
-        </nav>
-      </div>
-    <?php endif; ?>
+    <div class="nav--wrapper">
+      <nav class="nav">
+        <?php if (isset($main_menu_block)) : ?>
+          <?php print render($main_menu_block); ?>
+        <?php endif; ?>
+      </nav>
+      <nav class="nav-dropdown">
+        <?php if (isset($primary_menu_block)) : ?>
+          <?php print render($primary_menu_block); ?>
+        <?php endif; ?>
+      </nav>
+    </div>
   </div>
 </header>
 
-<?php if ($user->uid > 0): ?>
-  <?php if (isset($search)): ?>
-    <div class="typeahead-block">
-      <div class="typeahead-block--wrapper">
-        <?php print render($search); ?>
-      </div>
+<?php if (isset($search)): ?>
+  <div class="typeahead-block">
+    <div class="typeahead-block--wrapper">
+      <?php print render($search); ?>
     </div>
-  <?php endif; ?>
+  </div>
 <?php endif; ?>
-<?php if ($no_panel || $user->uid == 0) : ?>
+
+<?php if ($user->uid == 0): ?>
+  <?php // User is not logged in ?>
   <div class="layout-no-wrapper">
+    <div class="layout--inner">
+      <?php if ($messages): ?>
+            <?php print $messages; ?>
+          <?php endif; ?>
+          <?php print render($page['content']); ?>
+    </div>
+  </div>
+<?php elseif (isset($no_panel)): ?>
+  <?php // No panel pages! ?>
+  <div class="layout-default-inverted">
     <div class="layout--inner">
       <?php if ($messages): ?>
         <?php print $messages; ?>
       <?php endif; ?>
-      <?php print render($page['content']); ?>
+      <?php if (isset($loop_user_my_content)): ?>
+        <div class="layout-element-alpha">
+          <?php if ($tabs): ?>
+            <aside class="block-user-links">
+              <div class="block-module--inner">
+                <h2 class="block-module--user-links-header"><?php print t('My account'); ?></h2>
+                <?php print render($tabs); ?>
+              </div>
+            </aside>
+            <?php print render($loop_user_my_content['content']); ?>
+          <?php endif; ?>
+        </div>
+      <div class="layout-element-beta">
+        <h1><?php print t('User edit'); ?></h1>
+        <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+        <?php print render($page['content']); ?>
+      </div>
+      <?php else: ?>
+        <?php print render($page['content']); ?>
+      <?php endif; ?>
     </div>
   </div>
-<?php else : ?>
+<?php else: ?>
+  <?php // Panel pages will get printed here. ?>
   <?php print render($page['content']); ?>
 <?php endif;?>
-
 
 <footer class="footer">
   <div class="section">
