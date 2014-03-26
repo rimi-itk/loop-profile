@@ -58,11 +58,11 @@
     </div>
   </div>
   <div class="user-profile-module--personal-info-image">
-    <?php print render($elements['user_picture']); ?>
+    <?php print render($elements['field_user_image']); ?>
   <div>
 </fieldset>
 <?php hide($user_profile['mimemail']); ?>
 <?php hide($user_profile['group_personal_information']); ?>
-<?php hide($user_profile['user_picture']); ?>
+<?php hide($user_profile['field_user_image']); ?>
 <?php hide($user_profile['message_subscribe_email']); ?>
 <?php print render($user_profile); ?>
