@@ -387,9 +387,13 @@ function loop_user_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'profile',
+        ),
+        'type' => 'image',
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'user',
@@ -398,12 +402,12 @@ function loop_user_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'alt_field' => 0,
-      'default_image' => 0,
+      'default_image' => 44,
       'file_directory' => 'images/user_profiles',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '200x200',
+      'min_resolution' => '',
       'title_field' => 0,
       'user_register_form' => 0,
     ),

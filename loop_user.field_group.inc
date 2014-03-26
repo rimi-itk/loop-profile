@@ -21,7 +21,7 @@ function loop_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Areas of expertise',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_area_of_expertise',
     ),
@@ -48,7 +48,7 @@ function loop_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Description',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_biography',
     ),
@@ -75,7 +75,7 @@ function loop_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Job title',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_job_title',
     ),
@@ -102,7 +102,7 @@ function loop_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Location',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_location_address',
       1 => 'field_location_city',
@@ -168,7 +168,7 @@ function loop_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Personal information',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'field_first_name',
       1 => 'field_last_name',
@@ -253,7 +253,7 @@ function loop_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Profession',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_profession',
     ),
