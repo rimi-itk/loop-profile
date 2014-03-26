@@ -550,11 +550,6 @@ function loop_textarea($variables) {
     'class' => array('form-textarea-wrapper'),
   );
 
-  // Add resizable behavior.
-  if (!empty($element['#resizable'])) {
-    $wrapper_attributes['class'][] = 'resizable';
-  }
-
   $output = '<div' . drupal_attributes($wrapper_attributes) . '>';
   $output .= '<textarea' . drupal_attributes($element['#attributes']) . '>' . check_plain($element['#value']) . '</textarea>';
   $output .= '</div>';
@@ -583,6 +578,7 @@ function loop_preprocess_views_view(&$vars) {
     }
   }
 }
+
 
 /**
  * Implements printNotificationTab().
