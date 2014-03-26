@@ -92,6 +92,12 @@ label {
 }
 
 .form-item {
+  margin-bottom: 1em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   // Too comprehensive to change the class so we nest instead
   .description {
     padding-top: .5em;
