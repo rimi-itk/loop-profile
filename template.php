@@ -9,13 +9,17 @@
  * Override or insert variables into the page template.
  */
 function loop_preprocess_page(&$variables) {
-  $arg0 = arg(0);
-  // Prepare system search block for page.tpl.
-  if (module_exists('search_api_page')) {
-    $variables['search'] = module_invoke('search_api_page', 'block_view', 'default');
-  }
-  else {
-    $variables['search'] = module_invoke('search', 'block_view', 'form');
+  global $user;
+  $arg = arg();
+
+  if ($user->uid > 0) {
+    // Prepare system search block for page.tpl.
+    if (module_exists('search_api_page')) {
+      $variables['search'] = module_invoke('search_api_page', 'block_view', 'default');
+    }
+    else {
+      $variables['search'] = module_invoke('search', 'block_view', 'form');
+    }
   }
 
   // Remove search form when no search results are found.
@@ -23,34 +27,26 @@ function loop_preprocess_page(&$variables) {
     unset($variables['page']['content']['system_main']['form']);
   }
 
-  if ($arg0 == 'user') {
+  if ($arg[0] == 'user') {
     $variables['loop_user_my_content'] = module_invoke('loop_user', 'block_view', 'loop_user_my_content');
     hide($variables['tabs']['#secondary']);
   }
 
   // Load LOOP primary menu.
-  if (module_exists('loop_navigation')) {
+  if (module_exists('loop_navigation') && ($user->uid > 0)) {
     $variables['main_menu_block'] = module_invoke('system', 'block_view', 'main-menu');
     $variables['primary_menu_block'] = module_invoke('menu', 'block_view', 'menu-loop-primary-menu');
   }
-  else {
-    $variables['main_menu_block'] = FALSE;
-    $variables['primary_menu_block'] = FALSE;
-  }
 
   // Load LOOP primary menu.
-  if (module_exists('loop_user') && arg(0) == 'user') {
+  if (module_exists('loop_user') && $arg[0] == 'user') {
     $variables['user_public_block'] = module_invoke('loop_user', 'block_view', 'loop_user_my_content');
-  }
-  else {
-    $variables['user_public_block'] = FALSE;
   }
 
   // Check if we are using a panel page to define layout.
-  $variables['no_panel'] = FALSE;
   $panel = panels_get_current_page_display();
 
-  if(empty($panel)) {
+  if (empty($panel))  {
     $variables['no_panel'] = TRUE;
   }
 }
@@ -681,7 +677,6 @@ function fetch_user_new_notifications() {
 
   return $new_notifications;
 }
-
 
 /**
  * Implements fetch_author_image().
