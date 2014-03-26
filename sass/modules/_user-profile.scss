@@ -101,7 +101,11 @@
 
 
 .user-profile-module--notifications {
-  margin-bottom: 1em;
+  margin-bottom: 3em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .user-form--password-link {
