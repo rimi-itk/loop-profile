@@ -31,7 +31,9 @@
   }
 
   &.is-active,
-  &.is-sticky {
+  &.is-sticky,
+  &.unflag-action {
+
     border: 1px solid $link-color;
 
     color: $link-color;
@@ -62,7 +64,8 @@ a.comment--flag {
 
   /* States */
   &.is-active,
-  &.is-sticky {
+  &.is-sticky,
+  &.unflag-action {
     &:link,
     &:visited,
     &:hover,
