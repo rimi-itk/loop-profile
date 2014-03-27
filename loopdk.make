@@ -15,6 +15,9 @@ projects[autocomplete_deluxe][download][url] = "http://git.drupal.org/project/au
 projects[autocomplete_deluxe][download][revision] = "70bdefe"
 projects[autocomplete_deluxe][patch][] = "https://drupal.org/files/issues/2175753-jquery-fix.patch"
 
+projects[better_formats][subdir] = "contrib"
+projects[better_formats][version] = "1.0-beta1"
+
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.3"
 
