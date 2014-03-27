@@ -208,13 +208,22 @@ label {
     }
   }
 
-  .form-type-checkbox {
-    margin-right: .5em;
+  .user-profile-module--field {
+    overflow: hidden;
+  }
+
+  .user-profile--notification-label {
+    float: left;
+    width: 90%;
+  }
+
+  .profile--notification-action {
+    float: right;
   }
 
   .form-checkbox {
-    float: left;
-    margin: 0.4em 0.5em 0 0;
+    float:right;
+    margin: 0.4em 0 0 0.5em;
   }
 
   .form-item-operation {
