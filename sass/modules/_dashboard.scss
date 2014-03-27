@@ -1,0 +1,23 @@
+/**
+ *
+ * Dashboard
+ *
+ */
+
+
+.dashboard-list--header {
+  @extend %simple-list--header;
+
+  &:after {
+    @extend %icon-after;
+    @extend %icon-arrow-down-medium;
+  }
+}
+
+.dashboard-list--item {
+  @extend %simple-list--item;
+}
+
+.dashboard-list--text {
+  @extend %simple-list--text;
+}

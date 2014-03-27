@@ -106,7 +106,7 @@
     },
     {
       "uid": "71633f2c2962f73bf1d9160ffbd7e137",
-      "css": "right-medium",
+      "css": "arrow-right-medium",
       "code": 59399,
       "src": "custom_icons",
       "selected": true,
@@ -120,7 +120,7 @@
     },
     {
       "uid": "c1c4b19ae91077016d05635c188e204f",
-      "css": "right-small",
+      "css": "arrow-right-small",
       "code": 59400,
       "src": "custom_icons",
       "selected": true,
@@ -134,7 +134,7 @@
     },
     {
       "uid": "d1bd2b675e7a29fd2a1619b932ce2b89",
-      "css": "right-big",
+      "css": "arrow-right-big",
       "code": 59401,
       "src": "custom_icons",
       "selected": true,
@@ -165,6 +165,12 @@
       "css": "cancel",
       "code": 59392,
       "src": "fontawesome"
+    },
+    {
+      "uid": "8704cd847a47b64265b8bb110c8b4d62",
+      "css": "arrow-down-medium",
+      "code": 59394,
+      "src": "entypo"
     }
   ]
 }

@@ -34,14 +34,6 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsSetByUser": 0
 		},
-	"\/icons\/loop-icons.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/icons\/loop-icons.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsSetByUser": 0
-		},
 	"\/images\/default-user-icon.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -49,6 +41,26 @@
 		"initialSize": 7590,
 		"inputAbbreviatedPath": "\/images\/default-user-icon.png",
 		"outputAbbreviatedPath": "\/images\/default-user-icon.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/loader-in-active.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1394,
+		"inputAbbreviatedPath": "\/images\/loader-in-active.png",
+		"outputAbbreviatedPath": "\/images\/loader-in-active.png",
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/loader.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 15618,
+		"inputAbbreviatedPath": "\/images\/loader.png",
+		"outputAbbreviatedPath": "\/images\/loader.png",
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
@@ -402,6 +414,21 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/sass\/modules\/_dashboard.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/modules\/_dashboard.scss",
+		"outputAbbreviatedPath": "\/css\/_dashboard.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/sass\/modules\/_editing.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -636,6 +663,21 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/sass\/theme\/_forms.scss",
 		"outputAbbreviatedPath": "\/css\/_forms.css",
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/theme\/_icons.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/theme\/_icons.scss",
+		"outputAbbreviatedPath": "\/css\/_icons.css",
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,

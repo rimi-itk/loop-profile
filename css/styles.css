@@ -1,7 +1,8 @@
+@charset "UTF-8";
 /**
+ *
  * Stylesheet import
  *
- * @author magnify
  */
 /* Compass */
 /* Zen Grids - http://zengrids.com */
@@ -482,37 +483,37 @@ img {
    *
    ================================================================================================================== */
 /**
+ *
  * Placeholders
  *
  * This contains placeholders used with @extend in rulesets
  *
- * @author magnify
  */
 /* Layout placeholders
    ========================================================================== */
 /* Used for centering an element */
 /* line 14, ../sass/theme/_placeholders.scss */
-.header--inner, .layout-frontpage, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .typeahead-block {
+.header--inner, .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .typeahead-block {
   margin-right: auto;
   margin-left: auto;
   clear: both;
 }
 @media only screen and (min-width: 18.75em) {
   /* line 14, ../sass/theme/_placeholders.scss */
-  .header--inner, .layout-frontpage, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .typeahead-block {
+  .header--inner, .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .typeahead-block {
     max-width: 75em;
   }
 }
 
 /* line 26, ../sass/theme/_placeholders.scss */
-.layout-frontpage, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
+.layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
   margin-bottom: 1.5em;
   padding: 1.25em;
   background-color: #f2f2f2;
 }
 @media only screen and (min-width: 75em) {
   /* line 26, ../sass/theme/_placeholders.scss */
-  .layout-frontpage, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
+  .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
     -moz-border-radius: 0.4em;
     -webkit-border-radius: 0.4em;
     border-radius: 0.4em;
@@ -532,76 +533,6 @@ img {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-}
-
-/* Icons
-   ================================================================================================================== */
-/* line 52, ../sass/theme/_placeholders.scss */
-.comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .messages.warning:before, .nav-mobile .nav--link:before,
-.nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before, .twitter-typeahead:before {
-  display: inline-block;
-  font-family: "loop-icons";
-  line-height: 100%;
-}
-
-/* line 59, ../sass/theme/_placeholders.scss */
-.nav-mobile .nav--link:before,
-.nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before, .comment--flag:before, .search-result--comments:before, .question--number-of-comments:before, .messages.status:before, .messages.warning:before, .messages.error:before {
-  margin-right: .35em;
-}
-
-/* line 63, ../sass/theme/_placeholders.scss */
-.at-term:after {
-  margin-left: .35em;
-}
-
-/* line 67, ../sass/theme/_placeholders.scss */
-.comment--flag.is-sticky:before {
-  content: '\e804';
-}
-
-/* line 73, ../sass/theme/_placeholders.scss */
-.messages.status:before {
-  content: '\e80d';
-}
-
-/* line 79, ../sass/theme/_placeholders.scss */
-.comment--flag:before {
-  content: '\e805';
-}
-
-/* line 85, ../sass/theme/_placeholders.scss */
-.at-term:after, .messages.error:before {
-  content: '\e800';
-}
-
-/* line 91, ../sass/theme/_placeholders.scss */
-.message--flag:before {
-  content: '\e80b';
-}
-
-/* line 97, ../sass/theme/_placeholders.scss */
-.search-result--comments:before, .question--number-of-comments:before {
-  content: '\e80a';
-}
-
-/* line 103, ../sass/theme/_placeholders.scss */
-.messages.warning:before {
-  content: '\e801';
-}
-
-/* line 109, ../sass/theme/_placeholders.scss */
-.nav-mobile .nav--link:before,
-.nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before {
-  content: '\e807';
-}
-
-/* line 115, ../sass/theme/_placeholders.scss */
-.twitter-typeahead:before {
-  content: '\e803';
 }
 
 /**
@@ -977,6 +908,199 @@ label {
 }
 
 /**
+ * Icons
+ *
+ * Generated with http://fontello.com/
+ *
+ */
+@font-face {
+  font-family: 'loop-icons';
+  src: url("../icons/loop-icons.eot?10453172");
+  src: url("../icons/loop-icons.eot?10453172#iefix") format("embedded-opentype"), url("../icons/loop-icons.woff?10453172") format("woff"), url("../icons/loop-icons.ttf?10453172") format("truetype"), url("../icons/loop-icons.svg?10453172#loop-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'loop-icons';
+    src: url('../font/loop-icons.svg?48744896#loop-icons') format('svg');
+  }
+}
+*/
+/* line 29, ../sass/theme/_icons.scss */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "loop-icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* For safety - reset parent styles, that can break glyph codes */
+  font-variant: normal;
+  line-height: 1;
+  text-transform: none;
+}
+
+/* line 47, ../sass/theme/_icons.scss */
+.icon-check-circled:before {
+  content: '\e80d';
+}
+
+/* '' */
+/* line 48, ../sass/theme/_icons.scss */
+.icon-check:before {
+  content: '\e804';
+}
+
+/* '' */
+/* line 49, ../sass/theme/_icons.scss */
+.icon-cancel-circled:before {
+  content: '\e80b';
+}
+
+/* '' */
+/* line 50, ../sass/theme/_icons.scss */
+.icon-thumbs:before {
+  content: '\e805';
+}
+
+/* '' */
+/* line 51, ../sass/theme/_icons.scss */
+.icon-search:before {
+  content: '\e803';
+}
+
+/* '' */
+/* line 52, ../sass/theme/_icons.scss */
+.icon-loading:before {
+  content: '\e806';
+}
+
+/* '' */
+/* line 53, ../sass/theme/_icons.scss */
+.icon-arrow-right-medium:before {
+  content: '\e807';
+}
+
+/* '' */
+/* line 54, ../sass/theme/_icons.scss */
+.icon-arrow-right-small:before {
+  content: '\e808';
+}
+
+/* '' */
+/* line 55, ../sass/theme/_icons.scss */
+.icon-arrow-right-big:before {
+  content: '\e809';
+}
+
+/* '' */
+/* line 56, ../sass/theme/_icons.scss */
+.icon-arrow-down-medium:before {
+  content: '\e802';
+}
+
+/* '' */
+/* line 57, ../sass/theme/_icons.scss */
+.icon-comment:before {
+  content: '\e80a';
+}
+
+/* '' */
+/* line 58, ../sass/theme/_icons.scss */
+.icon-cancel:before {
+  content: '\e800';
+}
+
+/* '' */
+/* line 59, ../sass/theme/_icons.scss */
+.icon-attention:before {
+  content: '\e801';
+}
+
+/* '' */
+/* Icon shadow classes
+   ================================================================================================================== */
+/* line 65, ../sass/theme/_icons.scss */
+.comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .messages.warning:before, .nav-mobile .nav--link:before,
+.nav-mobile .nav-dropdown--header:before,
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before, .dashboard-list--header:after, .twitter-typeahead:before {
+  display: inline-block;
+  font-family: "loop-icons";
+  line-height: 100%;
+}
+
+/* line 72, ../sass/theme/_icons.scss */
+.nav-mobile .nav--link:before,
+.nav-mobile .nav-dropdown--header:before,
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before, .comment--flag:before, .search-result--comments:before, .question--number-of-comments:before, .messages.status:before, .messages.warning:before, .messages.error:before {
+  margin-right: .35em;
+}
+
+/* line 76, ../sass/theme/_icons.scss */
+.dashboard-list--header:after, .at-term:after {
+  margin-left: .35em;
+}
+
+/* line 80, ../sass/theme/_icons.scss */
+.comment--flag.is-sticky:before {
+  content: '\e804';
+}
+
+/* line 86, ../sass/theme/_icons.scss */
+.messages.status:before {
+  content: '\e80d';
+}
+
+/* line 92, ../sass/theme/_icons.scss */
+.comment--flag:before {
+  content: '\e805';
+}
+
+/* line 98, ../sass/theme/_icons.scss */
+.at-term:after, .messages.error:before {
+  content: '\e800';
+}
+
+/* line 104, ../sass/theme/_icons.scss */
+.message--flag:before {
+  content: '\e80b';
+}
+
+/* line 110, ../sass/theme/_icons.scss */
+.search-result--comments:before, .question--number-of-comments:before {
+  content: '\e80a';
+}
+
+/* line 116, ../sass/theme/_icons.scss */
+.messages.warning:before {
+  content: '\e801';
+}
+
+/* line 122, ../sass/theme/_icons.scss */
+.nav-mobile .nav--link:before,
+.nav-mobile .nav-dropdown--header:before,
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before {
+  content: '\e807';
+}
+
+/* line 128, ../sass/theme/_icons.scss */
+.dashboard-list--header:after {
+  content: '\e802';
+}
+
+/* line 134, ../sass/theme/_icons.scss */
+.twitter-typeahead:before {
+  content: '\e803';
+}
+
+/**
  * Tabs
  */
 /* line 6, ../sass/theme/_tabs.scss */
@@ -1159,12 +1283,12 @@ label {
 /* Layouts
    ================================================================================================================== */
 /* line 58, ../sass/theme/_layout.scss */
-.layout-frontpage, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper {
+.layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper {
   overflow: hidden;
   margin-bottom: 0;
 }
 /* line 65, ../sass/theme/_layout.scss */
-.layout-frontpage .layout--inner:last-child, .layout-default .layout--inner:last-child, .layout-default-inverted .layout--inner:last-child, .layout-alternative .layout--inner:last-child, .layout-no-wrapper .layout--inner:last-child {
+.layout-frontpage .layout--inner:last-child, .layout-dashboard .layout--inner:last-child, .layout-default .layout--inner:last-child, .layout-default-inverted .layout--inner:last-child, .layout-alternative .layout--inner:last-child, .layout-no-wrapper .layout--inner:last-child {
   margin-bottom: 0;
 }
 
@@ -1268,13 +1392,60 @@ label {
 }
 
 /* line 139, ../sass/theme/_layout.scss */
+.layout-dashboard .layout-element-alpha,
+.layout-dashboard .layout-element-gamma {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+}
+@media only screen and (min-width: 75em) {
+  /* line 139, ../sass/theme/_layout.scss */
+  .layout-dashboard .layout-element-alpha,
+  .layout-dashboard .layout-element-gamma {
+    float: left;
+    width: 50%;
+    margin-left: 0%;
+    margin-right: -50%;
+    padding-left: 15px;
+    padding-right: 15px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+  }
+}
+@media only screen and (min-width: 75em) {
+  /* line 151, ../sass/theme/_layout.scss */
+  .layout-dashboard .layout-element-beta,
+  .layout-dashboard .layout-element-delta {
+    float: right;
+    width: 50%;
+    margin-right: 0%;
+    margin-left: -50%;
+    padding-left: 15px;
+    padding-right: 15px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-right: 0;
+  }
+}
+
+/* line 167, ../sass/theme/_layout.scss */
 .layout-default .layout-element-alpha {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 2em;
   padding-bottom: 2em;
 }
 @media only screen and (min-width: 45em) {
-  /* line 139, ../sass/theme/_layout.scss */
+  /* line 167, ../sass/theme/_layout.scss */
   .layout-default .layout-element-alpha {
     float: left;
     width: 70.83333%;
@@ -1294,7 +1465,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 150, ../sass/theme/_layout.scss */
+  /* line 178, ../sass/theme/_layout.scss */
   .layout-default .layout-element-beta {
     float: right;
     width: 29.16667%;
@@ -1311,7 +1482,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 158, ../sass/theme/_layout.scss */
+  /* line 186, ../sass/theme/_layout.scss */
   .layout-default .layout-element-gamma,
   .layout-default .layout-element-delta,
   .layout-default .layout-element-epsilon {
@@ -1333,7 +1504,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 175, ../sass/theme/_layout.scss */
+  /* line 203, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-alpha {
     float: left;
     width: 29.16667%;
@@ -1350,7 +1521,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 183, ../sass/theme/_layout.scss */
+  /* line 211, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-beta {
     float: right;
     width: 70.83333%;
@@ -1367,7 +1538,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 191, ../sass/theme/_layout.scss */
+  /* line 219, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-gamma {
     clear: both;
     float: left;
@@ -1384,7 +1555,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 199, ../sass/theme/_layout.scss */
+  /* line 227, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-delta {
     float: right;
     width: 50%;
@@ -1400,7 +1571,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 205, ../sass/theme/_layout.scss */
+  /* line 233, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1416,7 +1587,7 @@ label {
     word-wrap: break-word;
   }
 }
-/* line 213, ../sass/theme/_layout.scss */
+/* line 241, ../sass/theme/_layout.scss */
 .layout-default-inverted .layout-element-gamma,
 .layout-default-inverted .layout-element-delta,
 .layout-default-inverted .layout-element-epsilon {
@@ -1425,7 +1596,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 226, ../sass/theme/_layout.scss */
+  /* line 254, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-alpha {
     float: left;
     width: 100%;
@@ -1441,7 +1612,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 232, ../sass/theme/_layout.scss */
+  /* line 260, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-beta {
     clear: both;
     float: left;
@@ -1458,7 +1629,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 240, ../sass/theme/_layout.scss */
+  /* line 268, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-gamma {
     clear: both;
     float: left;
@@ -1475,7 +1646,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 248, ../sass/theme/_layout.scss */
+  /* line 276, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-delta {
     float: right;
     width: 50%;
@@ -1491,7 +1662,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 254, ../sass/theme/_layout.scss */
+  /* line 282, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1508,12 +1679,12 @@ label {
   }
 }
 
-/* line 268, ../sass/theme/_layout.scss */
+/* line 296, ../sass/theme/_layout.scss */
 .layout-no-wrapper .layout--inner {
   padding: 1.5em;
 }
 
-/* line 277, ../sass/theme/_layout.scss */
+/* line 305, ../sass/theme/_layout.scss */
 .layout-alternative .layout-element-alpha,
 .layout-alternative .layout-element-beta,
 .layout-alternative .layout-element-gamma,
@@ -2220,29 +2391,57 @@ table td:empty {
 }
 
 /* We use the default pager list html Auch!! */
-/* line 25, ../sass/modules/_lists.scss */
+/* line 26, ../sass/modules/_lists.scss */
 .pager {
   list-style-type: none;
   padding: 0;
   overflow: hidden;
   text-align: center;
 }
-/* line 31, ../sass/modules/_lists.scss */
+/* line 32, ../sass/modules/_lists.scss */
 .pager li {
   display: inline;
 }
-/* line 35, ../sass/modules/_lists.scss */
+/* line 36, ../sass/modules/_lists.scss */
 .pager a {
   padding: 1em;
   line-height: 2.5em;
   background: #f2f2f2;
   text-decoration: none;
 }
-/* line 42, ../sass/modules/_lists.scss */
+/* line 43, ../sass/modules/_lists.scss */
 .pager .pager-current {
   background: #cccccc;
   padding: 1em;
   line-height: 2.5em;
+}
+
+/* line 53, ../sass/modules/_lists.scss */
+.dashboard-list--item {
+  line-height: 1.75em;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+/* line 58, ../sass/modules/_lists.scss */
+.dashboard-list--item:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* line 63, ../sass/modules/_lists.scss */
+.dashboard-list--header {
+  font-weight: bold;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+/* line 69, ../sass/modules/_lists.scss */
+.dashboard-list--text {
+  display: block;
+  padding-right: 1.75em;
 }
 
 /**
@@ -3101,6 +3300,11 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   margin-right: .5em;
 }
 
+/**
+ *
+ * Dashboard
+ *
+ */
 /**
  * Active Tags module
  *
