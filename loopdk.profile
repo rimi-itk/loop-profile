@@ -35,11 +35,6 @@ if (!function_exists("system_form_install_configure_form_alter")) {
  */
 function loopdk_install_tasks(&$install_state) {
 
-  // Clean up if were finished.
-  if ($install_state['installation_finished']) {
-    loopdk_final_settings();
-  }
-
   $ret = array(
     // Update translations.
     /*'loopdk_import_translation' => array(
@@ -54,6 +49,12 @@ function loopdk_install_tasks(&$install_state) {
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
       'type' => 'batch'
     ),
+    'loopdk_final_settings' => array(
+      'display_name' => st('Round up installation'),
+      'display' => TRUE,
+      'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+      'type' => 'normal',
+    )
   );
   return $ret;
 }
@@ -176,35 +177,21 @@ function loopdk_setup_filter_and_wysiwyg() {
  * Revert features.
  */
 function loopdk_final_settings() {
-  // Revert features to ensure they are all installed as default.
-  $features = array(
-    'loop_frontend',
-    'loop_user',
-    'loop_post',
-  );
-  loopdk_features_revert($features);
+  module_load_include('inc', 'features', 'features.export');
+
+  $features = array();
+  foreach (features_get_features(NULL, TRUE) as $module) {
+    switch (features_get_storage($module->name)) {
+      case FEATURES_OVERRIDDEN:
+      case FEATURES_NEEDS_REVIEW:
+      case FEATURES_REBUILDABLE:
+        $features[$module->name] = $module->components;
+        break;
+    }
+  }
+
+  features_revert($features);
 
   // Setup url path to use Transliteration module.
   variable_set('pathauto_transliterate', 1);
-}
-
-/**
- * Reverts a given set of feature modules.
- *
- * @param array $modules
- *   Names of the modules to revert.
- */
-function loopdk_features_revert($modules = array()) {
-  foreach ($modules as $module) {
-    // Load the feature.
-    if (($feature = features_load_feature($module, TRUE)) && module_exists($module)) {
-      // Get all components of the feature.
-      foreach (array_keys($feature->info['features']) as $component) {
-        if (features_hook($component, 'features_revert')) {
-          // Revert each component (force).
-          features_revert(array($module => array($component)));
-        }
-      }
-    }
-  }
 }
