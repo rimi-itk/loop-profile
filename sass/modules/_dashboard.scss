@@ -8,16 +8,75 @@
 .dashboard-list--header {
   @extend %simple-list--header;
 
-  &:after {
-    @extend %icon-after;
-    @extend %icon-arrow-down-medium;
+  margin-bottom: .75em;
+}
+
+.dashboard-list--header-icon {
+  bottom: -.25em;
+  position: relative;
+
+  max-width: 1.5em;
+}
+
+.dashboard-list--filter {
+  @include element-spacing(.5em);
+
+  position: relative;
+
+  border-bottom: 0;
+
+  .dashboard-list--filter-image {
+    position: absolute;
+    top: 1em;
+    left: .9em;
+
+    max-width: 1em;
+
+    @include opacity(.25);
+  }
+
+  // Nesting to override default padding
+  .dashboard-list--filter-field {
+    padding-left: 2.5em;
   }
 }
 
 .dashboard-list--item {
   @extend %simple-list--item;
+
+  position: relative;
 }
 
-.dashboard-list--text {
+.dashboard-list--info {
+  @include opacity(.5);
+}
+
+.dashboard-list--icon {
+  position: absolute;
+  top: .75em;
+  right: 0;
+
+  max-width: 1.25em;
+
+  line-height: 1em;
+
+  @include opacity(.5);
+
+  &:hover {
+    @include opacity(1);
+  }
+}
+
+
+.dashboard-list--text,
+.dashboard-user-list--text {
   @extend %simple-list--text;
+
+  @include breakpoint($breakpoint-2) {
+    line-height: 3em;
+  }
+}
+
+.dashboard-user-list--text {
+  padding-left: 4em;
 }

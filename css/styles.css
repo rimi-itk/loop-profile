@@ -1030,7 +1030,7 @@ label {
 /* line 65, ../sass/theme/_icons.scss */
 .comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .messages.warning:before, .nav-mobile .nav--link:before,
 .nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before, .dashboard-list--header:after, .twitter-typeahead:before {
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before, .twitter-typeahead:before {
   display: inline-block;
   font-family: "loop-icons";
   line-height: 100%;
@@ -1044,7 +1044,7 @@ label {
 }
 
 /* line 76, ../sass/theme/_icons.scss */
-.dashboard-list--header:after, .at-term:after {
+.at-term:after {
   margin-left: .35em;
 }
 
@@ -1088,11 +1088,6 @@ label {
 .nav-mobile .nav-dropdown--header:before,
 .nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before {
   content: '\e807';
-}
-
-/* line 128, ../sass/theme/_icons.scss */
-.dashboard-list--header:after {
-  content: '\e802';
 }
 
 /* line 134, ../sass/theme/_icons.scss */
@@ -2417,20 +2412,6 @@ table td:empty {
 }
 
 /* line 53, ../sass/modules/_lists.scss */
-.dashboard-list--item {
-  line-height: 1.75em;
-  border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 1em;
-  padding-bottom: 1em;
-}
-/* line 58, ../sass/modules/_lists.scss */
-.dashboard-list--item:last-child {
-  border-bottom: 0;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-
-/* line 63, ../sass/modules/_lists.scss */
 .dashboard-list--header {
   font-weight: bold;
   border-bottom: 1px solid #e6e6e6;
@@ -2438,9 +2419,25 @@ table td:empty {
   padding-bottom: 0.5em;
 }
 
+/* line 59, ../sass/modules/_lists.scss */
+.dashboard-list--item {
+  line-height: 1.75em;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+/* line 64, ../sass/modules/_lists.scss */
+.dashboard-list--item:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
 /* line 69, ../sass/modules/_lists.scss */
-.dashboard-list--text {
+.dashboard-list--text,
+.dashboard-user-list--text {
   display: block;
+  margin-bottom: 0;
   padding-right: 1.75em;
 }
 
@@ -3305,6 +3302,80 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
  * Dashboard
  *
  */
+/* line 8, ../sass/modules/_dashboard.scss */
+.dashboard-list--header {
+  margin-bottom: .75em;
+}
+
+/* line 14, ../sass/modules/_dashboard.scss */
+.dashboard-list--header-icon {
+  bottom: -.25em;
+  position: relative;
+  max-width: 1.5em;
+}
+
+/* line 21, ../sass/modules/_dashboard.scss */
+.dashboard-list--filter {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  position: relative;
+  border-bottom: 0;
+}
+/* line 28, ../sass/modules/_dashboard.scss */
+.dashboard-list--filter .dashboard-list--filter-image {
+  position: absolute;
+  top: 1em;
+  left: .9em;
+  max-width: 1em;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
+  opacity: 0.25;
+}
+/* line 39, ../sass/modules/_dashboard.scss */
+.dashboard-list--filter .dashboard-list--filter-field {
+  padding-left: 2.5em;
+}
+
+/* line 44, ../sass/modules/_dashboard.scss */
+.dashboard-list--item {
+  position: relative;
+}
+
+/* line 50, ../sass/modules/_dashboard.scss */
+.dashboard-list--info {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+
+/* line 54, ../sass/modules/_dashboard.scss */
+.dashboard-list--icon {
+  position: absolute;
+  top: .75em;
+  right: 0;
+  max-width: 1.25em;
+  line-height: 1em;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+}
+/* line 65, ../sass/modules/_dashboard.scss */
+.dashboard-list--icon:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+
+@media only screen and (min-width: 22.5em) {
+  /* line 71, ../sass/modules/_dashboard.scss */
+  .dashboard-list--text,
+  .dashboard-user-list--text {
+    line-height: 3em;
+  }
+}
+
+/* line 80, ../sass/modules/_dashboard.scss */
+.dashboard-user-list--text {
+  padding-left: 4em;
+}
+
 /**
  * Active Tags module
  *
