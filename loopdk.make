@@ -159,6 +159,9 @@ projects[secure_permissions][download][url] = "http://git.drupal.org/project/sec
 projects[secure_permissions][download][revision] = "ef5eec5"
 projects[secure_permissions][patch][] = "https://drupal.org/files/issues/2188491-features-multilingual-2.patch"
 
+projects[shorten][subdir] = "contrib"
+projects[shorten][version] = "1.2"
+
 projects[special_menu_items][subdir] = "contrib"
 projects[special_menu_items][version] = "2.0"
 
