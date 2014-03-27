@@ -89,19 +89,19 @@
 }
 
 .autocomplete-deluxe-throbber {
-  width: 16px;
+  width: 20px;
   float: right;
   position: absolute;
-  top: 16px;
+  top: 11px;
   right: 10px
 }
 
 .autocomplete-deluxe-closed {
-  background: url("../images/throbber-closed.gif") no-repeat 100% 0;
+  background: url("../images/loader-in-active.png") no-repeat 100% 0;
 }
 
 .autocomplete-deluxe-open {
-  background: url("../images/throbber.gif") no-repeat 100% 0;
+  background: url("../images/loader.png") no-repeat 100% 0;
 }
 
 .autocomplete-deluxe-item {
