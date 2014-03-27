@@ -137,19 +137,22 @@ function loop_search_theme() {
  * Alter search form for Twitter Typeahead.
  */
 function loop_search_form_search_api_page_search_form_default_alter(&$form) {
+  // Fetch search page id
+  $default_page_id = db_query("SELECT id FROM {search_api_page} WHERE index_id = 'post'")->fetchField();
+
   // Add class to submit.
-  $form['submit_1']['#attributes']['class'][] = 'typeahead-block--button';
+  $form['submit_' . $default_page_id]['#attributes']['class'][] = 'typeahead-block--button';
 
   // Inline styling needed for Twitter Typeahead.
-  $form['keys_1']['#attributes']['style'] = "position: relative; vertical-align: top; background-color: transparent;";
+  $form['keys_' . $default_page_id]['#attributes']['style'] = "position: relative; vertical-align: top; background-color: transparent;";
 
   // Default placeholder.
-  $form['keys_1']['#attributes']['placeholder'] = t('E.g. "How do you document a subject"');
+  $form['keys_' . $default_page_id]['#attributes']['placeholder'] = t('E.g. "How do you document a subject"');
 
   // Yet again, some id and classes for Twitter Typehead.
-  $form['keys_1']['#attributes']['id'][] = 'typeahead';
-  $form['keys_1']['#attributes']['class'][] = 'typeahead';
-  $form['keys_1']['#attributes']['class'][] = 'tt-query';
+  $form['keys_' . $default_page_id]['#attributes']['id'][] = 'typeahead';
+  $form['keys_' . $default_page_id]['#attributes']['class'][] = 'typeahead';
+  $form['keys_' . $default_page_id]['#attributes']['class'][] = 'tt-query';
 
   // Figure out if we need a default value.
   $arg = arg();
@@ -166,7 +169,7 @@ function loop_search_form_search_api_page_search_form_default_alter(&$form) {
       // Verify its a string.
       if (is_string($description)) {
         // Change default value.
-        $form['keys_1']['#default_value'] = $wrapper->field_description->value();
+        $form['keys_' . $default_page_id]['#default_value'] = $wrapper->field_description->value();
       }
     }
   }
