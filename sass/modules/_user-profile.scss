@@ -108,6 +108,22 @@
   }
 }
 
+.user-profile--notification-actions {
+  margin-bottom: $margin-bottom;
+
+  background-color: $gray-lightest;
+
+  @include border-radius($border-radius);
+}
+
+.user-profile--notification-actions-inner {
+  padding: 2em 1em 1em;
+}
+
+.user-profile--notification-actions--button {
+  margin: 0 2em 1em 0;
+}
+
 .user-form--password-link {
   padding-left: 0;
   list-style: none;
