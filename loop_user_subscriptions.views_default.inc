@@ -50,14 +50,27 @@ function loop_user_subscriptions_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'subscribe_node';
   $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['title']['element_wrapper_class'] = 'user-profile--notification-label';
   /* Field: Bulk operations: Content */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_type'] = '0';
   $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['views_bulk_operations']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_wrapper_class'] = 'user-profile--notification-action';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '1';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
@@ -157,7 +170,7 @@ function loop_user_subscriptions_views_default_views() {
     'rules_component::rules_remove_subscription' => array(
       'selected' => 1,
       'postpone_processing' => 0,
-      'skip_confirmation' => 1,
+      'skip_confirmation' => 0,
       'override_label' => 0,
       'label' => '',
     ),
@@ -169,6 +182,13 @@ function loop_user_subscriptions_views_default_views() {
       'label' => '',
     ),
     'action::system_send_email_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_send_mail_on_message_created' => array(
       'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
@@ -204,13 +224,6 @@ function loop_user_subscriptions_views_default_views() {
       'label' => '',
     ),
   );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
