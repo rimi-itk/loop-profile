@@ -80,4 +80,9 @@ jQuery(document).ready(function($) {
       $('.typeahead').blur().focus();
     }
   });
+
+  // On search form submit disable submit button.
+  $('form.js--search').submit(function () {
+    $(this).find('[type=submit]').attr('disabled', true);
+  });
 });

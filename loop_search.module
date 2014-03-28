@@ -140,6 +140,8 @@ function loop_search_form_search_api_page_search_form_default_alter(&$form) {
   // Fetch search page id
   $default_page_id = db_query("SELECT id FROM {search_api_page} WHERE index_id = 'post'")->fetchField();
 
+  $form['#attributes']['class'] = 'js--search';
+
   // Add class to submit.
   $form['submit_' . $default_page_id]['#attributes']['class'][] = 'typeahead-block--button';
 
