@@ -9,7 +9,7 @@
     // Attach click function.
     $( ".js-user-profile-notification-select" ).click(function(){
       // Show actions.
-      $('.js-user-profile-notification-actions').addClass('js-slide-in')
+      $('.js-user-profile-notification-actions').show();
 
       // Count the number of boxes checked.
       var boxes_checked = 0;
@@ -39,6 +39,6 @@
   $(document).ready(function () {
     display_notification_actions();
     clear_selections();
-    //$('.js-user-profile-notification-actions').hide();
+    $('.js-user-profile-notification-actions').hide();
   });
 })(jQuery);
