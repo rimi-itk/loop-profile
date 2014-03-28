@@ -935,6 +935,19 @@ label {
   background-color: #ff3905;
 }
 
+/* line 68, ../sass/theme/_buttons.scss */
+.button--deactivated, .typeahead-block--button:disabled {
+  background-color: #cccccc;
+  border: 1px solid #b3b3b3;
+  color: white;
+  text-shadow: 1px 1px 0 #999999;
+}
+/* line 75, ../sass/theme/_buttons.scss */
+.button--deactivated:link, .typeahead-block--button:link:disabled, .button--deactivated:visited, .typeahead-block--button:visited:disabled {
+  color: #737373;
+  text-decoration: none;
+}
+
 /**
  * Icons
  *
@@ -3146,7 +3159,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
 
 /* Suggestions
    ========================================================================== */
-/* line 114, ../sass/modules/_twitter-typeahead.scss */
+/* line 117, ../sass/modules/_twitter-typeahead.scss */
 .tt-dropdown-menu {
   position: absolute;
   z-index: 90;
@@ -3163,13 +3176,13 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   box-sizing: border-box;
 }
 @media only screen and (min-width: 28em) {
-  /* line 114, ../sass/modules/_twitter-typeahead.scss */
+  /* line 117, ../sass/modules/_twitter-typeahead.scss */
   .tt-dropdown-menu {
     top: 7.5em;
   }
 }
 
-/* line 133, ../sass/modules/_twitter-typeahead.scss */
+/* line 136, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion-header {
   font-size: 110%;
   font-weight: bold;
@@ -3178,7 +3191,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   padding-bottom: 1em;
 }
 
-/* line 140, ../sass/modules/_twitter-typeahead.scss */
+/* line 143, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion {
   color: #41ab51;
   cursor: pointer;
@@ -3187,15 +3200,15 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 147, ../sass/modules/_twitter-typeahead.scss */
+/* line 150, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion:link, .tt-suggestion:visited {
   text-decoration: none;
 }
-/* line 152, ../sass/modules/_twitter-typeahead.scss */
+/* line 155, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion:hover, .tt-suggestion:active {
   text-decoration: underline;
 }
-/* line 157, ../sass/modules/_twitter-typeahead.scss */
+/* line 160, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion:last-child {
   border-bottom: 0;
   margin-bottom: 0;
