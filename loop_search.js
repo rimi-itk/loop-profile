@@ -83,6 +83,8 @@ jQuery(document).ready(function($) {
 
   // On search form submit disable submit button.
   $('form.js--search').submit(function () {
-    $(this).find('[type=submit]').attr('disabled', true);
+    $(this).find('[type=submit]')
+      .attr('disabled', true)
+      .val(Drupal.t('Searching ...'));
   });
 });
