@@ -98,13 +98,6 @@ function loopdk_setup_filter_and_wysiwyg() {
   $format->status = 1;
   $format->weight = 0;
   $format->filters = array(
-    'filter_url' => array(
-      'weight' => -49,
-      'status' => 1,
-      'settings' => array(
-        'filter_url_length' => 72,
-      ),
-    ),
     'filter_html' => array(
       'weight' => -48,
       'status' => 1,
@@ -124,6 +117,14 @@ function loopdk_setup_filter_and_wysiwyg() {
       'status' => 1,
       'settings' => array(),
     ),
+    'shortener' => array(
+      'weight' => -44,
+      'status' => 1,
+      'settings' => array(
+        'shortener_url_behavior' => 'strict',
+        'shortener_url_length" => "72'
+      )
+    )
   );
 
   filter_format_save($format);
@@ -188,21 +189,29 @@ function loopdk_setup_filter_and_wysiwyg() {
         'filter_html_nofollow' => 0,
       ),
     ),
-    'filter_url' => array(
-      'weight' => 0,
-      'status' => 1,
-      'settings' => array(
-        'filter_url_length' => 72,
-      ),
-    ),
     'filter_autop' => array(
       'weight' => 0,
       'status' => 1,
       'settings' => array(),
     ),
+    'shortener' => array(
+      'weight' => -45,
+      'status' => 1,
+      'settings' => array(
+        'shortener_url_behavior' => 'strict',
+        'shortener_url_length" => "72'
+      )
+    )
   );
 
   filter_format_save($format);
+
+  // URL shorten.
+  variable_set('shorten_service', 'ShURLy');
+  variable_set('shorten_service_backup', 'none');
+  variable_set('shorten_generate_token', 0);
+  variable_set('shorten_show_service', 0);
+  variable_set('shorten_use_alias', 0);
 }
 
 /*
