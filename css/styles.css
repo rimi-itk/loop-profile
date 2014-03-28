@@ -943,8 +943,8 @@ label {
  */
 @font-face {
   font-family: 'loop-icons';
-  src: url("../icons/loop-icons.eot?10453172");
-  src: url("../icons/loop-icons.eot?10453172#iefix") format("embedded-opentype"), url("../icons/loop-icons.woff?10453172") format("woff"), url("../icons/loop-icons.ttf?10453172") format("truetype"), url("../icons/loop-icons.svg?10453172#loop-icons") format("svg");
+  src: url("../icons/loop-icons.eot?62162620");
+  src: url("../icons/loop-icons.eot?62162620#iefix") format("embedded-opentype"), url("../icons/loop-icons.woff?62162620") format("woff"), url("../icons/loop-icons.ttf?62162620") format("truetype"), url("../icons/loop-icons.svg?62162620#loop-icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -982,72 +982,84 @@ label {
 
 /* '' */
 /* line 48, ../sass/theme/_icons.scss */
+.icon-filter:before {
+  content: '\e80c';
+}
+
+/* '' */
+/* line 49, ../sass/theme/_icons.scss */
 .icon-check:before {
   content: '\e804';
 }
 
 /* '' */
-/* line 49, ../sass/theme/_icons.scss */
+/* line 50, ../sass/theme/_icons.scss */
 .icon-cancel-circled:before {
   content: '\e80b';
 }
 
 /* '' */
-/* line 50, ../sass/theme/_icons.scss */
+/* line 51, ../sass/theme/_icons.scss */
 .icon-thumbs:before {
   content: '\e805';
 }
 
 /* '' */
-/* line 51, ../sass/theme/_icons.scss */
+/* line 52, ../sass/theme/_icons.scss */
 .icon-search:before {
   content: '\e803';
 }
 
 /* '' */
-/* line 52, ../sass/theme/_icons.scss */
+/* line 53, ../sass/theme/_icons.scss */
 .icon-loading:before {
   content: '\e806';
 }
 
 /* '' */
-/* line 53, ../sass/theme/_icons.scss */
+/* line 54, ../sass/theme/_icons.scss */
 .icon-arrow-right-medium:before {
   content: '\e807';
 }
 
 /* '' */
-/* line 54, ../sass/theme/_icons.scss */
+/* line 55, ../sass/theme/_icons.scss */
 .icon-arrow-right-small:before {
   content: '\e808';
 }
 
 /* '' */
-/* line 55, ../sass/theme/_icons.scss */
+/* line 56, ../sass/theme/_icons.scss */
 .icon-arrow-right-big:before {
   content: '\e809';
 }
 
 /* '' */
-/* line 56, ../sass/theme/_icons.scss */
+/* line 57, ../sass/theme/_icons.scss */
 .icon-arrow-down-medium:before {
   content: '\e802';
 }
 
 /* '' */
-/* line 57, ../sass/theme/_icons.scss */
+/* line 58, ../sass/theme/_icons.scss */
 .icon-comment:before {
   content: '\e80a';
 }
 
 /* '' */
-/* line 58, ../sass/theme/_icons.scss */
+/* line 59, ../sass/theme/_icons.scss */
+.icon-pencil:before {
+  content: '\e80e';
+}
+
+/* '' */
+/* line 60, ../sass/theme/_icons.scss */
 .icon-cancel:before {
   content: '\e800';
 }
 
 /* '' */
-/* line 59, ../sass/theme/_icons.scss */
+/* line 61, ../sass/theme/_icons.scss */
 .icon-attention:before {
   content: '\e801';
 }
@@ -1055,72 +1067,82 @@ label {
 /* '' */
 /* Icon shadow classes
    ================================================================================================================== */
-/* line 65, ../sass/theme/_icons.scss */
+/* line 67, ../sass/theme/_icons.scss */
 .comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .messages.warning:before, .nav-mobile .nav--link:before,
 .nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before, .twitter-typeahead:before {
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before, .twitter-typeahead:before, .dashboard-list--filter:before, .dashboard-list--icon:before {
   display: inline-block;
   font-family: "loop-icons";
   line-height: 100%;
 }
 
-/* line 72, ../sass/theme/_icons.scss */
+/* line 74, ../sass/theme/_icons.scss */
 .nav-mobile .nav--link:before,
 .nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before, .comment--flag:before, .search-result--comments:before, .question--number-of-comments:before, .messages.status:before, .messages.warning:before, .messages.error:before {
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before, .comment--flag:before, .search-result--comments:before, .question--number-of-comments:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .messages.status:before, .messages.warning:before, .messages.error:before {
   margin-right: .35em;
 }
 
-/* line 76, ../sass/theme/_icons.scss */
+/* line 78, ../sass/theme/_icons.scss */
 .at-term:after {
   margin-left: .35em;
 }
 
-/* line 80, ../sass/theme/_icons.scss */
+/* line 82, ../sass/theme/_icons.scss */
 .comment--flag.is-sticky:before {
   content: '\e804';
 }
 
-/* line 86, ../sass/theme/_icons.scss */
+/* line 88, ../sass/theme/_icons.scss */
 .messages.status:before {
   content: '\e80d';
 }
 
-/* line 92, ../sass/theme/_icons.scss */
+/* line 94, ../sass/theme/_icons.scss */
 .comment--flag:before {
   content: '\e805';
 }
 
-/* line 98, ../sass/theme/_icons.scss */
+/* line 100, ../sass/theme/_icons.scss */
 .at-term:after, .messages.error:before {
   content: '\e800';
 }
 
-/* line 104, ../sass/theme/_icons.scss */
+/* line 106, ../sass/theme/_icons.scss */
 .message--flag:before {
   content: '\e80b';
 }
 
-/* line 110, ../sass/theme/_icons.scss */
+/* line 112, ../sass/theme/_icons.scss */
 .search-result--comments:before, .question--number-of-comments:before {
   content: '\e80a';
 }
 
-/* line 116, ../sass/theme/_icons.scss */
+/* line 118, ../sass/theme/_icons.scss */
 .messages.warning:before {
   content: '\e801';
 }
 
-/* line 122, ../sass/theme/_icons.scss */
+/* line 124, ../sass/theme/_icons.scss */
 .nav-mobile .nav--link:before,
 .nav-mobile .nav-dropdown--header:before,
 .nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before {
   content: '\e807';
 }
 
-/* line 134, ../sass/theme/_icons.scss */
+/* line 136, ../sass/theme/_icons.scss */
 .twitter-typeahead:before {
   content: '\e803';
+}
+
+/* line 142, ../sass/theme/_icons.scss */
+.dashboard-list--filter:before {
+  content: '\e80c';
+}
+
+/* line 148, ../sass/theme/_icons.scss */
+.dashboard-list--icon:before {
+  content: '\e80e';
 }
 
 /**
@@ -3357,13 +3379,6 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
 }
 
 /* line 14, ../sass/modules/_dashboard.scss */
-.dashboard-list--header-icon {
-  bottom: -.25em;
-  position: relative;
-  max-width: 1.5em;
-}
-
-/* line 21, ../sass/modules/_dashboard.scss */
 .dashboard-list--filter {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 1em;
@@ -3371,58 +3386,55 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   position: relative;
   border-bottom: 0;
 }
-/* line 28, ../sass/modules/_dashboard.scss */
-.dashboard-list--filter .dashboard-list--filter-image {
+/* line 22, ../sass/modules/_dashboard.scss */
+.dashboard-list--filter .dashboard-list--filter-field {
+  padding-left: 2.5em;
+}
+/* line 26, ../sass/modules/_dashboard.scss */
+.dashboard-list--filter:before {
   position: absolute;
-  top: 1em;
+  top: 1.1em;
   left: .9em;
   max-width: 1em;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
   opacity: 0.25;
 }
-/* line 39, ../sass/modules/_dashboard.scss */
-.dashboard-list--filter .dashboard-list--filter-field {
-  padding-left: 2.5em;
-}
 
-/* line 44, ../sass/modules/_dashboard.scss */
+/* line 40, ../sass/modules/_dashboard.scss */
 .dashboard-list--item, .dashboard-image-list--item,
 .dashboard-user-list--item {
   position: relative;
 }
 
-/* line 54, ../sass/modules/_dashboard.scss */
+/* line 50, ../sass/modules/_dashboard.scss */
 .dashboard-list--item .dashboard-list--meta-data, .dashboard-image-list--item .dashboard-list--meta-data,
 .dashboard-user-list--item .dashboard-list--meta-data {
   color: #cccccc;
   font-size: 12px;
 }
 
-/* line 75, ../sass/modules/_dashboard.scss */
+/* line 71, ../sass/modules/_dashboard.scss */
 .dashboard-image-list--item .dashboard-list--text,
 .dashboard-user-list--item .dashboard-list--text {
   padding-left: 4em;
 }
-/* line 81, ../sass/modules/_dashboard.scss */
+/* line 77, ../sass/modules/_dashboard.scss */
 .dashboard-image-list--item .dashboard-list--meta-data,
 .dashboard-user-list--item .dashboard-list--meta-data {
   display: block;
 }
 
-/* line 88, ../sass/modules/_dashboard.scss */
+/* line 84, ../sass/modules/_dashboard.scss */
 .dashboard-list--icon {
   position: absolute;
   top: .75em;
   right: 0;
   max-width: 1.25em;
   line-height: 1em;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-  opacity: 0.5;
 }
-/* line 99, ../sass/modules/_dashboard.scss */
-.dashboard-list--icon:hover {
-  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
-  opacity: 1;
+/* line 93, ../sass/modules/_dashboard.scss */
+.dashboard-list--icon:before {
+  font-size: 1.25em;
 }
 
 /**
