@@ -64,3 +64,17 @@
     background-color: darken($red, 10%);
   }
 }
+
+.button--deactivated {
+  background-color: $gray-light;
+  border: 1px solid $gray;
+  color: $white;
+
+  @include text-shadow(1px 1px 0 darken($gray, 10%));
+
+  &:link,
+  &:visited {
+    color: $gray-dark;
+    text-decoration: none;
+  }
+}

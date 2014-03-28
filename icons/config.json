@@ -167,10 +167,22 @@
       "src": "fontawesome"
     },
     {
+      "uid": "c77fd2fd065b5fe16d6f2b41e190b266",
+      "css": "pencil",
+      "code": 59406,
+      "src": "entypo"
+    },
+    {
       "uid": "8704cd847a47b64265b8bb110c8b4d62",
       "css": "arrow-down-medium",
       "code": 59394,
       "src": "entypo"
+    },
+    {
+      "uid": "5048fb5dd929882d2bac1ad3777b0b7d",
+      "css": "filter",
+      "code": 59404,
+      "src": "elusive"
     }
   ]
 }
