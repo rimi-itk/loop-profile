@@ -67,52 +67,52 @@
         <div class="dashboard-list--item">
           <a href="#" class="dashboard-list--icon"></a>
           <p class="dashboard-list--text"><a href="#">Hvordan dokumenteres delvis aktindsigt?</a></p>
-          <span class="dashboard-list--meta-data">Spørgsmål, oprettet den 28. marts 2013</span>
+          <span class="dashboard-list--meta-data">Side, oprettet den 28. marts 2013</span>
         </div>
         <div class="dashboard-list--item">
           <a href="#" class="dashboard-list--icon"></a>
           <p class="dashboard-list--text"><a href="#">Hvordan er det nu jeg får lukket et forløb ned når jeg afslutter borger?</a></p>
-          <span class="dashboard-list--meta-data">Spørgsmål, oprettet den 28. marts 2013</span>
+          <span class="dashboard-list--meta-data">Side, oprettet den 28. marts 2013</span>
         </div>
         <div class="dashboard-list--item">
           <a href="#" class="dashboard-list--icon"></a>
           <p class="dashboard-list--text"><a href="#">Hvordan dokumenteres delvis aktindsigt?</a></p>
-          <span class="dashboard-list--meta-data">Spørgsmål, oprettet den 28. marts 2013</span>
+          <span class="dashboard-list--meta-data">Side, oprettet den 28. marts 2013</span>
         </div>
         <div class="dashboard-list--item">
           <a href="#" class="dashboard-list--icon"></a>
           <p class="dashboard-list--text"><a href="#">Hvordan er det nu jeg får lukket et forløb ned når jeg afslutter borger?</a></p>
-          <span class="dashboard-list--meta-data">Spørgsmål, oprettet den 28. marts 2013</span>
+          <span class="dashboard-list--meta-data">Side, oprettet den 28. marts 2013</span>
         </div>
         <div class="dashboard-list--item">
           <a href="#" class="dashboard-list--icon"></a>
           <p class="dashboard-list--text"><a href="#">Hvordan dokumenteres delvis aktindsigt?</a></p>
-          <span class="dashboard-list--meta-data">Spørgsmål, oprettet den 28. marts 2013</span>
+          <span class="dashboard-list--meta-data">Side, oprettet den 28. marts 2013</span>
         </div>
         <div class="dashboard-list--item">
           <a href="#" class="dashboard-list--icon"></a>
           <p class="dashboard-list--text"><a href="#">Hvordan er det nu jeg får lukket et forløb ned når jeg afslutter borger?</a></p>
-          <span class="dashboard-list--meta-data">Spørgsmål, oprettet den 28. marts 2013</span>
+          <span class="dashboard-list--meta-data">Side, oprettet den 28. marts 2013</span>
         </div>
         <div class="dashboard-list--item">
           <a href="#" class="dashboard-list--icon"></a>
           <p class="dashboard-list--text"><a href="#">Hvordan dokumenteres delvis aktindsigt?</a></p>
-          <span class="dashboard-list--meta-data">Spørgsmål, oprettet den 28. marts 2013</span>
+          <span class="dashboard-list--meta-data">Side, oprettet den 28. marts 2013</span>
         </div>
         <div class="dashboard-list--item">
           <a href="#" class="dashboard-list--icon"></a>
           <p class="dashboard-list--text"><a href="#">Hvordan er det nu jeg får lukket et forløb ned når jeg afslutter borger?</a></p>
-          <span class="dashboard-list--meta-data">Spørgsmål, oprettet den 28. marts 2013</span>
+          <span class="dashboard-list--meta-data">Side, oprettet den 28. marts 2013</span>
         </div>
         <div class="dashboard-list--item">
           <a href="#" class="dashboard-list--icon"></a>
           <p class="dashboard-list--text"><a href="#">Hvordan dokumenteres delvis aktindsigt?</a></p>
-          <span class="dashboard-list--meta-data">Spørgsmål, oprettet den 28. marts 2013</span>
+          <span class="dashboard-list--meta-data">Side, oprettet den 28. marts 2013</span>
         </div>
         <div class="dashboard-list--item">
           <a href="#" class="dashboard-list--icon"></a>
           <p class="dashboard-list--text"><a href="#">Hvordan er det nu jeg får lukket et forløb ned når jeg afslutter borger?</a></p>
-          <span class="dashboard-list--meta-data">Spørgsmål, oprettet den 28. marts 2013</span>
+          <span class="dashboard-list--meta-data">Side, oprettet den 28. marts 2013</span>
         </div>
       </div>
     </div>
