@@ -1,0 +1,19 @@
+/*@include keyframes(header-big) {
+  0% {
+    right: 50%;
+
+    @include opacity(0);
+  }
+
+  50% {
+    right: 0;
+
+    @include opacity(1);
+  }
+
+  100% {
+    right: 0;
+
+    @include opacity(1);
+  }
+}*/
