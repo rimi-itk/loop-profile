@@ -30,6 +30,9 @@ $zen-gutter-width: 30px;
 @import "theme/_mixins";
 
 
+// Animations
+@import "animations/_animate";
+
 
 // Include base
 @import "base/_normalize";

@@ -114,6 +114,9 @@
   background-color: $gray-lightest;
 
   @include border-radius($border-radius);
+
+  &.js-slide-in {
+  }
 }
 
 .user-profile--notification-actions-inner {

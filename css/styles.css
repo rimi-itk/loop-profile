@@ -34,6 +34,25 @@
    ================================================================================================================== */
 /* Misc
    ================================================================================================================== */
+/*@include keyframes(header-big) {
+  0% {
+    right: 50%;
+
+    @include opacity(0);
+  }
+
+  50% {
+    right: 0;
+
+    @include opacity(1);
+  }
+
+  100% {
+    right: 0;
+
+    @include opacity(1);
+  }
+}*/
 /**
  * Normalize
  *
@@ -3277,29 +3296,29 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   border-radius: 0.4em;
 }
 
-/* line 119, ../sass/modules/_user-profile.scss */
+/* line 122, ../sass/modules/_user-profile.scss */
 .user-profile--notification-actions-inner {
   padding: 2em 1em 1em;
 }
 
-/* line 123, ../sass/modules/_user-profile.scss */
+/* line 126, ../sass/modules/_user-profile.scss */
 .user-profile--notification-actions--button {
   margin: 0 2em 1em 0;
 }
 
-/* line 127, ../sass/modules/_user-profile.scss */
+/* line 130, ../sass/modules/_user-profile.scss */
 .user-form--password-link {
   padding-left: 0;
   list-style: none;
 }
 
-/* line 132, ../sass/modules/_user-profile.scss */
+/* line 135, ../sass/modules/_user-profile.scss */
 .edit-user--image-fieldset {
   position: relative;
   height: 15em;
 }
 
-/* line 138, ../sass/modules/_user-profile.scss */
+/* line 141, ../sass/modules/_user-profile.scss */
 .edit-user--image {
   position: absolute;
   top: 3em;
@@ -3308,7 +3327,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   width: 25%;
 }
 
-/* line 147, ../sass/modules/_user-profile.scss */
+/* line 150, ../sass/modules/_user-profile.scss */
 .edit-user--image-buttons {
   position: relative;
   top: 50%;
@@ -3320,7 +3339,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   transform: translateY(-50%);
 }
 
-/* line 161, ../sass/modules/_user-profile.scss */
+/* line 164, ../sass/modules/_user-profile.scss */
 .edit-user--image-button-remove {
   margin-right: .5em;
 }

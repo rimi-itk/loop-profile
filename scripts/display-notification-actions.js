@@ -9,7 +9,7 @@
     // Attach click function.
     $( ".js-user-profile-notification-select" ).click(function(){
       // Show actions.
-      $('.js-user-profile-notification-actions').show("slow");
+      $('.js-user-profile-notification-actions').show();
 
       // Count the number of boxes checked.
       var boxes_checked = 0;
@@ -19,7 +19,7 @@
 
       // If no boxes are checked, hide the actions.
       if (boxes_checked == 0) {
-        $('.js-user-profile-notification-actions').hide("slow");
+        $('.js-user-profile-notification-actions').hide();
       }
     });
   }
@@ -31,15 +31,14 @@
       $('.js-user-profile-notification-select').attr('checked', false);
 
       // Hide actions.
-      $('.js-user-profile-notification-actions').hide("slow");
+      $('.js-user-profile-notification-actions').hide();
     });
   }
 
   // Start the show.
   $(document).ready(function () {
-    // Hide
-    $('.js-user-profile-notification-actions').hide();
     display_notification_actions();
     clear_selections();
+    $('.js-user-profile-notification-actions').hide();
   });
 })(jQuery);
