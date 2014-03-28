@@ -2448,22 +2448,24 @@ table td:empty {
 }
 
 /* line 59, ../sass/modules/_lists.scss */
-.dashboard-list--item {
+.dashboard-list--item, .dashboard-image-list--item,
+.dashboard-user-list--item {
   line-height: 1.75em;
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
 /* line 64, ../sass/modules/_lists.scss */
-.dashboard-list--item:last-child {
+.dashboard-list--item:last-child, .dashboard-image-list--item:last-child,
+.dashboard-user-list--item:last-child {
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
 /* line 69, ../sass/modules/_lists.scss */
-.dashboard-list--text,
-.dashboard-user-list--text {
+.dashboard-list--item .dashboard-list--text, .dashboard-image-list--item .dashboard-list--text,
+.dashboard-user-list--item .dashboard-list--text {
   display: block;
   margin-bottom: 0;
   padding-right: 1.75em;
@@ -2687,7 +2689,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   display: block;
   color: #cccccc;
   clear: both;
-  font-size: 80%;
+  font-size: .85em;
 }
 
 /* line 30, ../sass/modules/_meta-data.scss */
@@ -3364,8 +3366,8 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
 /* line 21, ../sass/modules/_dashboard.scss */
 .dashboard-list--filter {
   border-bottom: 1px solid #e6e6e6;
-  margin-bottom: 0.5em;
-  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
   position: relative;
   border-bottom: 0;
 }
@@ -3384,17 +3386,30 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
 }
 
 /* line 44, ../sass/modules/_dashboard.scss */
-.dashboard-list--item {
+.dashboard-list--item, .dashboard-image-list--item,
+.dashboard-user-list--item {
   position: relative;
 }
 
-/* line 50, ../sass/modules/_dashboard.scss */
-.dashboard-list--info {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-  opacity: 0.5;
+/* line 54, ../sass/modules/_dashboard.scss */
+.dashboard-list--item .dashboard-list--meta-data, .dashboard-image-list--item .dashboard-list--meta-data,
+.dashboard-user-list--item .dashboard-list--meta-data {
+  color: #cccccc;
+  font-size: 12px;
 }
 
-/* line 54, ../sass/modules/_dashboard.scss */
+/* line 75, ../sass/modules/_dashboard.scss */
+.dashboard-image-list--item .dashboard-list--text,
+.dashboard-user-list--item .dashboard-list--text {
+  padding-left: 4em;
+}
+/* line 81, ../sass/modules/_dashboard.scss */
+.dashboard-image-list--item .dashboard-list--meta-data,
+.dashboard-user-list--item .dashboard-list--meta-data {
+  display: block;
+}
+
+/* line 88, ../sass/modules/_dashboard.scss */
 .dashboard-list--icon {
   position: absolute;
   top: .75em;
@@ -3404,23 +3419,10 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
 }
-/* line 65, ../sass/modules/_dashboard.scss */
+/* line 99, ../sass/modules/_dashboard.scss */
 .dashboard-list--icon:hover {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
-}
-
-@media only screen and (min-width: 22.5em) {
-  /* line 71, ../sass/modules/_dashboard.scss */
-  .dashboard-list--text,
-  .dashboard-user-list--text {
-    line-height: 3em;
-  }
-}
-
-/* line 80, ../sass/modules/_dashboard.scss */
-.dashboard-user-list--text {
-  padding-left: 4em;
 }
 
 /**

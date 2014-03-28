@@ -19,7 +19,7 @@
 }
 
 .dashboard-list--filter {
-  @include element-spacing(.5em);
+  @include element-spacing(1em);
 
   position: relative;
 
@@ -41,14 +41,48 @@
   }
 }
 
-.dashboard-list--item {
+%dashboard-list--item {
   @extend %simple-list--item;
 
   position: relative;
 }
 
-.dashboard-list--info {
-  @include opacity(.5);
+%dashboard-list--text {
+  @extend %simple-list--text;
+}
+
+%dashboard-list--meta-data {
+  color: $gray-light;
+  font-size: 12px;
+}
+
+.dashboard-list--item {
+  @extend %dashboard-list--item;
+
+  .dashboard-list--text {
+    @extend %dashboard-list--text;
+  }
+
+  .dashboard-list--meta-data {
+    @extend %dashboard-list--meta-data;
+  }
+}
+
+.dashboard-image-list--item,
+.dashboard-user-list--item {
+  @extend %dashboard-list--item;
+
+  .dashboard-list--text {
+    @extend %dashboard-list--text;
+
+    padding-left: 4em;
+  }
+
+  .dashboard-list--meta-data {
+    @extend %dashboard-list--meta-data;
+
+    display: block;
+  }
 }
 
 .dashboard-list--icon {
@@ -65,18 +99,4 @@
   &:hover {
     @include opacity(1);
   }
-}
-
-
-.dashboard-list--text,
-.dashboard-user-list--text {
-  @extend %simple-list--text;
-
-  @include breakpoint($breakpoint-2) {
-    line-height: 3em;
-  }
-}
-
-.dashboard-user-list--text {
-  padding-left: 4em;
 }
