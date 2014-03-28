@@ -109,22 +109,37 @@
 }
 
 .user-profile--notification-actions {
-  margin-bottom: $margin-bottom;
-
   background-color: $gray-lightest;
+  overflow: hidden;
+  height: 0;
+
+  margin-bottom: $margin-bottom;
 
   @include border-radius($border-radius);
 
-  &.js-slide-in {
+  &.anim-open-notification-tab {
+    @include animation(open-notification-actions 1.5s);
+    animation-fill-mode:forwards;
+    -webkit-animation-fill-mode:forwards;
+  }
+
+  &.anim-close-notification-tab {
+    @include animation(close-notification-actions 1.5s);
+    animation-fill-mode:forwards;
+    -webkit-animation-fill-mode:forwards;
   }
 }
 
 .user-profile--notification-actions-inner {
-  padding: 2em 1em 1em;
+  padding: 1em;
 }
 
-.user-profile--notification-actions--button {
-  margin: 0 2em 1em 0;
+.user-profile--notification-actions--button-remove {
+  float: right;
+}
+
+.user-profile--notification-actions--button--confirm {
+  margin-right: 1em;
 }
 
 .user-form--password-link {

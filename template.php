@@ -419,15 +419,12 @@ function loop_form_views_form_loop_user_subscriptions_panel_pane_1_alter(&$form,
   // Copy button from field group.
   $form['rules_component::rules_remove_subscription'] = $form['select']['rules_component::rules_remove_subscription'];
 
-  // Create clear all link.
-  $custom_clear_all_link = l(t('Clear selection'), '#', array('external' => TRUE, 'attributes' => array('class' => array('js-user-profile--notification-clear-all user-profile--notification-actions--button button--action'))));
-
   // Add wrappers.
-  $form['rules_component::rules_remove_subscription']['#prefix'] = '<div class="js-user-profile-notification-actions user-profile--notification-actions"><div class="user-profile--notification-actions-inner">' . $custom_clear_all_link;
+  $form['rules_component::rules_remove_subscription']['#prefix'] = '<div class="js-user-profile-notification-actions user-profile--notification-actions"><div class="user-profile--notification-actions-inner">';
   $form['rules_component::rules_remove_subscription']['#suffix'] = '</div></div>';
 
   // Add warning class to button.
-  $form['rules_component::rules_remove_subscription']['#attributes']['class'][] = 'user-profile--notification-actions--button button--warning';
+  $form['rules_component::rules_remove_subscription']['#attributes']['class'][] = 'user-profile--notification-actions--button-remove button--warning';
 
   // Add js class to checkboxes.
   foreach ($form['views_bulk_operations'] as $key => $value) {
@@ -447,6 +444,12 @@ function loop_form_views_form_loop_user_subscriptions_panel_pane_1_alter(&$form,
   // Add custom js.
   $display_notification_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() .'/scripts/display-notification-actions.js';
   drupal_add_js($display_notification_script_path, 'file');
+
+  // If on confirmation step.
+  if ($form_state['step'] == 'views_bulk_operations_confirm_form') {
+    $form['actions']['submit']['#attributes']['class'][] = 'user-profile--notification-actions--button--confirm button--warning';
+    $form['actions']['cancel']['#attributes']['class'][] = 'user-profile--notification-actions--button button--action';
+  }
 }
 
 

@@ -1,19 +1,19 @@
-/*@include keyframes(header-big) {
+@include keyframes(open-notification-actions) {
   0% {
-    right: 50%;
-
-    @include opacity(0);
-  }
-
-  50% {
-    right: 0;
-
-    @include opacity(1);
+    height: 0;
   }
 
   100% {
-    right: 0;
-
-    @include opacity(1);
+    min-height: 80px;
   }
-}*/
+}
+
+@include keyframes(close-notification-actions) {
+  0% {
+    min-height: 80px;
+  }
+
+  100% {
+    min-height: 0;
+  }
+}
