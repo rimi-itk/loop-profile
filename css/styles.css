@@ -930,7 +930,7 @@ label {
  * @author magnify
  */
 /* line 8, ../sass/theme/_buttons.scss */
-.button--action, .form-submit, .block-follow-question .flag-action, .typeahead-block--button, .edit-user--image-button-add, .button--warning, .block-follow-question .unflag-action, .edit-user--image-button-remove, .at-add-btn {
+.button--action, .form-submit, .block-follow-question .flag-action, .typeahead-block--button, .button--neutral, .edit-user--image-button-add, .button--warning, .block-follow-question .unflag-action, .edit-user--image-button-remove, .at-add-btn {
   display: inline-block;
   font-size: 1.25em;
   padding: .4em 1.5em .5em;
@@ -944,52 +944,69 @@ label {
   border-radius: 0.4em;
 }
 /* line 19, ../sass/theme/_buttons.scss */
-.button--action:focus, .form-submit:focus, .block-follow-question .flag-action:focus, .typeahead-block--button:focus, .edit-user--image-button-add:focus, .button--warning:focus, .block-follow-question .unflag-action:focus, .edit-user--image-button-remove:focus, .at-add-btn:focus, .button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .typeahead-block--button:hover, .edit-user--image-button-add:hover, .button--warning:hover, .block-follow-question .unflag-action:hover, .edit-user--image-button-remove:hover, .at-add-btn:hover, .button--action:active, .form-submit:active, .block-follow-question .flag-action:active, .typeahead-block--button:active, .edit-user--image-button-add:active, .button--warning:active, .block-follow-question .unflag-action:active, .edit-user--image-button-remove:active, .at-add-btn:active {
+.button--action:focus, .form-submit:focus, .block-follow-question .flag-action:focus, .typeahead-block--button:focus, .button--neutral:focus, .edit-user--image-button-add:focus, .button--warning:focus, .block-follow-question .unflag-action:focus, .edit-user--image-button-remove:focus, .at-add-btn:focus, .button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .typeahead-block--button:hover, .button--neutral:hover, .edit-user--image-button-add:hover, .button--warning:hover, .block-follow-question .unflag-action:hover, .edit-user--image-button-remove:hover, .at-add-btn:hover, .button--action:active, .form-submit:active, .block-follow-question .flag-action:active, .typeahead-block--button:active, .button--neutral:active, .edit-user--image-button-add:active, .button--warning:active, .block-follow-question .unflag-action:active, .edit-user--image-button-remove:active, .at-add-btn:active {
   text-decoration: none;
 }
 
 /* line 28, ../sass/theme/_buttons.scss */
-.button--action, .form-submit, .block-follow-question .flag-action, .typeahead-block--button, .edit-user--image-button-add {
+.button--action, .form-submit, .block-follow-question .flag-action, .typeahead-block--button {
   background-color: #5dc26d;
   border: 1px solid #41ab51;
   color: white;
   text-shadow: 1px 1px 0 #33863f;
 }
 /* line 37, ../sass/theme/_buttons.scss */
-.button--action:link, .form-submit:link, .block-follow-question .flag-action:link, .typeahead-block--button:link, .edit-user--image-button-add:link, .button--action:visited, .form-submit:visited, .block-follow-question .flag-action:visited, .typeahead-block--button:visited, .edit-user--image-button-add:visited {
+.button--action:link, .form-submit:link, .block-follow-question .flag-action:link, .typeahead-block--button:link, .button--action:visited, .form-submit:visited, .block-follow-question .flag-action:visited, .typeahead-block--button:visited {
   color: white;
   text-decoration: none;
 }
 /* line 43, ../sass/theme/_buttons.scss */
-.button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .typeahead-block--button:hover, .edit-user--image-button-add:hover {
+.button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .typeahead-block--button:hover {
   background-color: #41ab51;
 }
 
 /* line 48, ../sass/theme/_buttons.scss */
+.button--neutral, .edit-user--image-button-add {
+  background-color: #595959;
+  border: 1px solid #404040;
+  color: white;
+  text-shadow: 1px 1px 0 #404040;
+}
+/* line 57, ../sass/theme/_buttons.scss */
+.button--neutral:link, .edit-user--image-button-add:link, .button--neutral:visited, .edit-user--image-button-add:visited {
+  color: white;
+  text-decoration: none;
+}
+/* line 63, ../sass/theme/_buttons.scss */
+.button--neutral:hover, .edit-user--image-button-add:hover {
+  background-color: #262626;
+}
+
+/* line 68, ../sass/theme/_buttons.scss */
 .button--warning, .block-follow-question .unflag-action, .edit-user--image-button-remove {
   background-color: #ff6138;
   border: 1px solid #ff3905;
   color: white;
   text-shadow: 1px 1px 0 #d12b00;
 }
-/* line 57, ../sass/theme/_buttons.scss */
+/* line 77, ../sass/theme/_buttons.scss */
 .button--warning:link, .block-follow-question .unflag-action:link, .edit-user--image-button-remove:link, .button--warning:visited, .block-follow-question .unflag-action:visited, .edit-user--image-button-remove:visited {
   color: white;
   text-decoration: none;
 }
-/* line 63, ../sass/theme/_buttons.scss */
+/* line 83, ../sass/theme/_buttons.scss */
 .button--warning:hover, .block-follow-question .unflag-action:hover, .edit-user--image-button-remove:hover {
   background-color: #ff3905;
 }
 
-/* line 68, ../sass/theme/_buttons.scss */
+/* line 88, ../sass/theme/_buttons.scss */
 .button--deactivated, .typeahead-block--button:disabled {
   background-color: #cccccc;
   border: 1px solid #b3b3b3;
   color: white;
   text-shadow: 1px 1px 0 #999999;
 }
-/* line 75, ../sass/theme/_buttons.scss */
+/* line 95, ../sass/theme/_buttons.scss */
 .button--deactivated:link, .typeahead-block--button:link:disabled, .button--deactivated:visited, .typeahead-block--button:visited:disabled {
   color: #737373;
   text-decoration: none;
@@ -3446,7 +3463,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   transform: translateY(-50%);
 }
 
-/* line 179, ../sass/modules/_user-profile.scss */
+/* line 175, ../sass/modules/_user-profile.scss */
 .edit-user--image-button-remove {
   margin-right: .5em;
 }

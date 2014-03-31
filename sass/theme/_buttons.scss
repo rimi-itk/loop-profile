@@ -45,6 +45,26 @@
   }
 }
 
+.button--neutral {
+  @extend %button;
+
+  background-color: $gray-darker;
+  border: 1px solid $gray-darkest;
+  color: $white;
+
+  @include text-shadow(1px 1px 0 darken($gray-darker, 10%));
+
+  &:link,
+  &:visited {
+    color: $white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: darken($gray-darkest, 10%);
+  }
+}
+
 .button--warning {
   @extend %button;
 

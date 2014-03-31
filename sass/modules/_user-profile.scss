@@ -172,10 +172,6 @@
   @include translateY(-50%);
 }
 
-.edit-user--image-button-remove,
-.edit-user--image-button-add {
-}
-
 .edit-user--image-button-remove {
   @extend .button--warning;
 
@@ -183,5 +179,5 @@
 }
 
 .edit-user--image-button-add {
-  @extend .button--action;
+  @extend .button--neutral;
 }
