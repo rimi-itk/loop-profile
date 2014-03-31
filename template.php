@@ -452,6 +452,18 @@ function loop_form_views_form_loop_user_subscriptions_panel_pane_1_alter(&$form,
   }
 }
 
+function loop_form_views_exposed_form_alter(&$form) {
+  if (arg(1) == 'dashboard') {
+    if ($form['#id'] == 'views-exposed-form-loop-editor-users-panel-pane-1') {
+      $form['combine']['#attributes']['placeholder'] = t('Type name, username, email or profession to filter the list');
+    } else {
+      $form['combine']['#attributes']['placeholder'] = t('Type text that is part of title or content to filter the list');
+    }
+    $form['#attributes']['class'][] = 'dashboard-list--form';
+    $form['combine']['#attributes']['class'][] = 'dashboard-list--filter-field';
+    $form['submit']['#attributes']['class'][] = 'dashboard-list--submit';
+  }
+}
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -620,6 +632,10 @@ function loop_preprocess_views_view(&$vars) {
       $vars['user__area_of_expertise'] = $wrapper->field_area_of_expertise->value();
       $vars['user__profession'] = $wrapper->field_profession->value();
     }
+  }
+
+  if ($vars['view']->name == 'loop_editor_content' || $vars['view']->name == 'loop_editor_users' || $vars['view']->name == 'loop_editor_comments') {
+    $vars['theme_hook_suggestions'][] = 'views_view__loop_custom_editor_views';
   }
 }
 

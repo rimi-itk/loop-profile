@@ -18,6 +18,7 @@ stylesheets[all][] = css/styles.css
 
 ; Disable stylesheets
 stylesheets[all][] = user.css
+stylesheets[all][] = views.css
 stylesheets[all][] = system.theme.css
 stylesheets[all][] = flag.css
 stylesheets[all][] = system.menus.css

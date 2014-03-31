@@ -35,6 +35,21 @@
 
     @include opacity(.25);
   }
+
+  // Nesting since the throbber is drupal core ajax construction.
+  .ajax-progress {
+    position: absolute;
+    top: 0.8em;
+    right: 0.6em;
+  }
+}
+
+
+.dashboard-list--submit {
+  float: right;
+  visibility: hidden;
+  height: 0;
+  width: 0;
 }
 
 %dashboard-list--item {

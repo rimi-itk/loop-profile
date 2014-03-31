@@ -76,7 +76,7 @@
   <?php print t('Submitted') . ' ' . format_date($comment->created, $type = 'medium'); ?>
 </span>
 <div class="comments--comment-content">
-  <?php print render($content); ?>
+  1<?php print render($content); ?>
 </div>
 <?php if ($comment->uid == $user->uid) : ?>
   <span class="comment--edit-link">
