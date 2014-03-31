@@ -567,6 +567,8 @@ function loop_preprocess_comment(&$variables) {
   $variables['comment_author_name'] = fetch_full_name($variables['comment']->account);
   $variables['comment_author_image'] = fetch_author_image($variables['comment']->account);
 
+  $variables['comment_body'] = loop_fetch_comment_body($variables['comment']);
+
   // Fetch the fields needed.
   $fetched_job_title = field_get_items('user', $variables['comment']->account, 'field_job_title');
   $variables['job_title'] = field_view_value('user', $variables['comment']->account, 'field_job_title', $fetched_job_title[0], array());
@@ -759,4 +761,20 @@ function fetch_author_image($author) {
     }
     return $author_image;
   }
+}
+
+/**
+ * Implements loop_fetch_comment_body().
+ *
+ * Fetches body of comment.
+ *
+ * @param comment.
+ * @return comment safe value.
+ */
+function loop_fetch_comment_body($comment) {
+  // Load entity wrapper.
+  $wrapper = entity_metadata_wrapper('comment', $comment);
+  $comment = $wrapper->comment_body->value();
+
+  return $comment['safe_value'];
 }
