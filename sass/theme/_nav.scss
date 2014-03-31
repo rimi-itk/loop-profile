@@ -260,7 +260,7 @@
     display: block;
 
     &:before {
-      @extend %icon-arrow-right;
+      @extend %icon-arrow-right-medium;
       @extend %icon-before;
     }
   }

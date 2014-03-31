@@ -91,6 +91,10 @@
   height: 65px;
   width: 100%;
 
+  &:disabled {
+    @extend .button--deactivated;
+  }
+
   @include breakpoint($breakpoint-3) {
     position: absolute;
     bottom: 0;
@@ -103,7 +107,6 @@
     font-size: 150%;
 
     @include border-radius(0 $border-radius $border-radius 0);
-
   }
 }
 

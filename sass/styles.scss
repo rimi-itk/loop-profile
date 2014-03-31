@@ -1,7 +1,7 @@
 /**
+ *
  * Stylesheet import
  *
- * @author magnify
  */
 
 
@@ -30,6 +30,9 @@ $zen-gutter-width: 30px;
 @import "theme/_mixins";
 
 
+// Animations
+@import "animations/_animate";
+
 
 // Include base
 @import "base/_normalize";
@@ -42,6 +45,7 @@ $zen-gutter-width: 30px;
 @import "theme/_placeholders";
 @import "theme/_forms";
 @import "theme/_buttons";
+@import "theme/_icons";
 @import "theme/_tabs";
 @import "theme/_layout";
 @import "theme/_nav";
@@ -66,6 +70,7 @@ $zen-gutter-width: 30px;
 @import "modules/_tag";
 @import "modules/_twitter-typeahead";
 @import "modules/_user-profile";
+@import "modules/_dashboard";
 
 
 // Drupal modules

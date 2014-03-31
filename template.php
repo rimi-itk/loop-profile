@@ -400,7 +400,7 @@ function loop_panels_default_style_render_region($vars) {
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function loop_form_user_login_alter(&$form, &$form_state, $form_id) {
+function loop_form_user_login_alter(&$form) {
   $form['#prefix'] = '<h2>' . t('User login') . '</h2>';
   $form['pass']['#suffix'] = '<ul class="user-form--password-link"><li><a href="/user/password">' . t('Request new password') . '</a></li></ul>';
   $form['name']['#description'] = FALSE;
@@ -411,10 +411,54 @@ function loop_form_user_login_alter(&$form, &$form_state, $form_id) {
 
 /**
  * Implements hook_form_FORM_ID_alter().
+ */
+function loop_form_views_form_loop_user_subscriptions_panel_pane_1_alter(&$form, &$form_state, $form_id) {
+  // Add form class.
+  $form['#attributes']['class'][] = 'vbo-views-form';
+
+  // Copy button from field group.
+  $form['rules_component::rules_remove_subscription'] = $form['select']['rules_component::rules_remove_subscription'];
+
+  // Add wrappers.
+  $form['rules_component::rules_remove_subscription']['#prefix'] = '<div class="js-user-profile-notification-actions user-profile--notification-actions"><div class="user-profile--notification-actions-inner">';
+  $form['rules_component::rules_remove_subscription']['#suffix'] = '</div></div>';
+
+  // Add warning class to button.
+  $form['rules_component::rules_remove_subscription']['#attributes']['class'][] = 'user-profile--notification-actions--button-remove button--warning';
+
+  // Add js class to checkboxes.
+  foreach ($form['views_bulk_operations'] as $key => $value) {
+    if(is_array($value)) {
+      $form['views_bulk_operations'][$key]['#attributes']['class'][] = 'js-user-profile-notification-select';
+    }
+  }
+
+  // Remove stuff from form.
+  unset($form['#prefix']);
+  unset($form['#suffix']);
+  unset($form['select_all_markup']);
+
+  // Remove fieldgroup containing actions.
+  unset($form['select']);
+
+  // Add custom js.
+  $display_notification_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() .'/scripts/display-notification-actions.js';
+  drupal_add_js($display_notification_script_path, 'file');
+
+  // If on confirmation step.
+  if ($form_state['step'] == 'views_bulk_operations_confirm_form') {
+    $form['actions']['submit']['#attributes']['class'][] = 'user-profile--notification-actions--button--confirm button--warning';
+    $form['actions']['cancel']['#attributes']['class'][] = 'user-profile--notification-actions--button button--action';
+  }
+}
+
+
+/**
+ * Implements hook_form_FORM_ID_alter().
  *
  * Adds custom class names and placeholder attribute and icon prefix to search field.
  */
-function loop_form_search_api_page_search_form_default_alter(&$form, &$form_state, $form_id) {
+function loop_form_search_api_page_search_form_default_alter(&$form) {
   // Change title text and make sure the label is displayed.
   $form['keys_1']['#title_display'] = 'before';
   $form['keys_1']['#title'] = t('Search for an answer');
@@ -424,7 +468,7 @@ function loop_form_search_api_page_search_form_default_alter(&$form, &$form_stat
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function loop_form_comment_form_alter(&$form, $form_state)  {
+function loop_form_comment_form_alter(&$form)  {
   $variables['user_obj'] = user_load($GLOBALS['user']->uid);
   if (!empty($variables['user_obj'])) {
     $variables['user_name'] = fetch_full_name($variables['user_obj']);
@@ -466,7 +510,7 @@ function loop_form_user_profile_form_alter(&$form)  {
  * Implements hook_form_FORM_ID_alter().
  * For display on user/[uid]/notifications/subscription.
  */
-function loop_form_notifications_account_manage_subscriptions_form_alter(&$form, $form_state)  {
+function loop_form_notifications_account_manage_subscriptions_form_alter(&$form)  {
   // Hide filtering.
   $form['filters']['#access'] = FALSE;
 

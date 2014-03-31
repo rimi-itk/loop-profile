@@ -15,7 +15,6 @@ scripts[] = scripts/modernizr.min.js
 
 ; Stylesheets
 stylesheets[all][] = css/styles.css
-stylesheets[all][] = icons/loop-icons.css
 
 ; Disable stylesheets
 stylesheets[all][] = user.css

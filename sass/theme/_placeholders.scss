@@ -1,9 +1,9 @@
 /**
+ *
  * Placeholders
  *
  * This contains placeholders used with @extend in rulesets
  *
- * @author magnify
  */
 
 
@@ -43,77 +43,4 @@
 
   @include border-radius($border-radius);
   @include box-sizing(border-box);
-}
-
-
-/* Icons
-   ================================================================================================================== */
-
-%icon-base {
-  display: inline-block;
-
-  font-family: "loop-icons";
-  line-height: 100%;
-}
-
-%icon-before {
-  margin-right: .35em;
-}
-
-%icon-after {
-  margin-left: .35em;
-}
-
-%icon-check {
-  @extend %icon-base;
-
-  content: '\e804';
-}
-
-%icon-check-circled {
-  @extend %icon-base;
-
-  content: '\e80d';
-}
-
-%icon-like {
-  @extend %icon-base;
-
-  content: '\e805';
-}
-
-%icon-cancel {
-  @extend %icon-base;
-
-  content: '\e800';
-}
-
-%icon-cancel-circled {
-  @extend %icon-base;
-
-  content: '\e80b';
-}
-
-%icon-comment {
-  @extend %icon-base;
-
-  content: '\e80a';
-}
-
-%icon-attention {
-  @extend %icon-base;
-
-  content: '\e801';
-}
-
-%icon-arrow-right {
-  @extend %icon-base;
-
-  content: '\e807';
-}
-
-%icon-search {
-  @extend %icon-base;
-
-  content: '\e803';
 }

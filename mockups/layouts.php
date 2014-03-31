@@ -13,6 +13,8 @@ $path_to_theme = "/profiles/loopdk/themes/loop/";
     <?php include('inc/search-block.inc') ?>
     <h1 style="border-bottom: 1px solid gray; margin-right: .5em; margin: 0 0 1em; margin-left: .5em; padding-bottom: .5em; text-align: center;">Frontpage</h1>
     <?php include('inc/page-frontpage.inc') ?>
+    <h1 style="border-bottom: 1px solid gray; margin-right: .5em; margin: 1em 0 1em; margin-left: .5em; padding-bottom: .5em; text-align: center;">Dashboard</h1>
+    <?php include('inc/page-dashboard.inc') ?>
     <h1 style="border-bottom: 1px solid gray; margin-right: .5em; margin: 1em 0 1em; margin-left: .5em; padding-bottom: .5em; text-align: center;">Ask question</h1>
     <div class="layout-alternative">
       <?php include('inc/page-ask-question.inc') ?>

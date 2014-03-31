@@ -1,0 +1,19 @@
+@include keyframes(open-notification-actions) {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    min-height: 80px;
+  }
+}
+
+@include keyframes(close-notification-actions) {
+  0% {
+    min-height: 80px;
+  }
+
+  100% {
+    min-height: 0;
+  }
+}

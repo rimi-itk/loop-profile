@@ -1,7 +1,7 @@
 @mixin custom-menu-links($color) {
   a {
     &:before {
-      @extend %icon-arrow-right;
+      @extend %icon-arrow-right-medium;
       @extend %icon-before;
     }
 

@@ -1,7 +1,8 @@
+@charset "UTF-8";
 /**
+ *
  * Stylesheet import
  *
- * @author magnify
  */
 /* Compass */
 /* Zen Grids - http://zengrids.com */
@@ -33,6 +34,72 @@
    ================================================================================================================== */
 /* Misc
    ================================================================================================================== */
+@-moz-keyframes open-notification-actions {
+  /* line 2, ../sass/animations/_animate.scss */
+  0% {
+    height: 0;
+  }
+
+  /* line 6, ../sass/animations/_animate.scss */
+  100% {
+    min-height: 80px;
+  }
+}
+@-webkit-keyframes open-notification-actions {
+  /* line 2, ../sass/animations/_animate.scss */
+  0% {
+    height: 0;
+  }
+
+  /* line 6, ../sass/animations/_animate.scss */
+  100% {
+    min-height: 80px;
+  }
+}
+@keyframes open-notification-actions {
+  /* line 2, ../sass/animations/_animate.scss */
+  0% {
+    height: 0;
+  }
+
+  /* line 6, ../sass/animations/_animate.scss */
+  100% {
+    min-height: 80px;
+  }
+}
+@-moz-keyframes close-notification-actions {
+  /* line 12, ../sass/animations/_animate.scss */
+  0% {
+    min-height: 80px;
+  }
+
+  /* line 16, ../sass/animations/_animate.scss */
+  100% {
+    min-height: 0;
+  }
+}
+@-webkit-keyframes close-notification-actions {
+  /* line 12, ../sass/animations/_animate.scss */
+  0% {
+    min-height: 80px;
+  }
+
+  /* line 16, ../sass/animations/_animate.scss */
+  100% {
+    min-height: 0;
+  }
+}
+@keyframes close-notification-actions {
+  /* line 12, ../sass/animations/_animate.scss */
+  0% {
+    min-height: 80px;
+  }
+
+  /* line 16, ../sass/animations/_animate.scss */
+  100% {
+    min-height: 0;
+  }
+}
 /**
  * Normalize
  *
@@ -482,37 +549,37 @@ img {
    *
    ================================================================================================================== */
 /**
+ *
  * Placeholders
  *
  * This contains placeholders used with @extend in rulesets
  *
- * @author magnify
  */
 /* Layout placeholders
    ========================================================================== */
 /* Used for centering an element */
 /* line 14, ../sass/theme/_placeholders.scss */
-.header--inner, .layout-frontpage, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .typeahead-block {
+.header--inner, .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .typeahead-block {
   margin-right: auto;
   margin-left: auto;
   clear: both;
 }
 @media only screen and (min-width: 18.75em) {
   /* line 14, ../sass/theme/_placeholders.scss */
-  .header--inner, .layout-frontpage, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .typeahead-block {
+  .header--inner, .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .typeahead-block {
     max-width: 75em;
   }
 }
 
 /* line 26, ../sass/theme/_placeholders.scss */
-.layout-frontpage, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
+.layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
   margin-bottom: 1.5em;
   padding: 1.25em;
   background-color: #f2f2f2;
 }
 @media only screen and (min-width: 75em) {
   /* line 26, ../sass/theme/_placeholders.scss */
-  .layout-frontpage, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
+  .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
     -moz-border-radius: 0.4em;
     -webkit-border-radius: 0.4em;
     border-radius: 0.4em;
@@ -532,76 +599,6 @@ img {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-}
-
-/* Icons
-   ================================================================================================================== */
-/* line 52, ../sass/theme/_placeholders.scss */
-.comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .messages.warning:before, .nav-mobile .nav--link:before,
-.nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before, .twitter-typeahead:before {
-  display: inline-block;
-  font-family: "loop-icons";
-  line-height: 100%;
-}
-
-/* line 59, ../sass/theme/_placeholders.scss */
-.nav-mobile .nav--link:before,
-.nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before, .comment--flag:before, .search-result--comments:before, .question--number-of-comments:before, .messages.status:before, .messages.warning:before, .messages.error:before {
-  margin-right: .35em;
-}
-
-/* line 63, ../sass/theme/_placeholders.scss */
-.at-term:after {
-  margin-left: .35em;
-}
-
-/* line 67, ../sass/theme/_placeholders.scss */
-.comment--flag.is-sticky:before {
-  content: '\e804';
-}
-
-/* line 73, ../sass/theme/_placeholders.scss */
-.messages.status:before {
-  content: '\e80d';
-}
-
-/* line 79, ../sass/theme/_placeholders.scss */
-.comment--flag:before {
-  content: '\e805';
-}
-
-/* line 85, ../sass/theme/_placeholders.scss */
-.at-term:after, .messages.error:before {
-  content: '\e800';
-}
-
-/* line 91, ../sass/theme/_placeholders.scss */
-.message--flag:before {
-  content: '\e80b';
-}
-
-/* line 97, ../sass/theme/_placeholders.scss */
-.search-result--comments:before, .question--number-of-comments:before {
-  content: '\e80a';
-}
-
-/* line 103, ../sass/theme/_placeholders.scss */
-.messages.warning:before {
-  content: '\e801';
-}
-
-/* line 109, ../sass/theme/_placeholders.scss */
-.nav-mobile .nav--link:before,
-.nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before {
-  content: '\e807';
-}
-
-/* line 115, ../sass/theme/_placeholders.scss */
-.twitter-typeahead:before {
-  content: '\e803';
 }
 
 /**
@@ -839,22 +836,31 @@ label {
   text-align: left;
 }
 /* line 211, ../sass/theme/_forms.scss */
-.vbo-views-form .form-type-checkbox {
-  margin-right: .5em;
+.vbo-views-form .user-profile-module--field, .vbo-views-form .user-profile-module--field-personal-info {
+  overflow: hidden;
 }
 /* line 215, ../sass/theme/_forms.scss */
-.vbo-views-form .form-checkbox {
+.vbo-views-form .user-profile--notification-label {
   float: left;
-  margin: 0.4em 0.5em 0 0;
+  width: 90%;
 }
 /* line 220, ../sass/theme/_forms.scss */
+.vbo-views-form .profile--notification-action {
+  float: right;
+}
+/* line 224, ../sass/theme/_forms.scss */
+.vbo-views-form .form-checkbox {
+  float: right;
+  margin: 0.4em 0 0 0.5em;
+}
+/* line 229, ../sass/theme/_forms.scss */
 .vbo-views-form .form-item-operation {
   width: 100%;
   display: block;
   padding-bottom: 1em;
 }
 @media only screen and (min-width: 50em) {
-  /* line 220, ../sass/theme/_forms.scss */
+  /* line 229, ../sass/theme/_forms.scss */
   .vbo-views-form .form-item-operation {
     float: left;
     width: 60%;
@@ -863,19 +869,19 @@ label {
   }
 }
 
-/* line 237, ../sass/theme/_forms.scss */
+/* line 246, ../sass/theme/_forms.scss */
 .user-profile-form .form-type-select {
   border: 0;
   padding: 0;
   margin: 0;
 }
-/* line 245, ../sass/theme/_forms.scss */
+/* line 254, ../sass/theme/_forms.scss */
 .user-profile-form #edit-field-user-image-und-0-upload-button {
   display: block;
   margin: 1em auto;
   width: 8em;
 }
-/* line 251, ../sass/theme/_forms.scss */
+/* line 260, ../sass/theme/_forms.scss */
 .user-profile-form #edit-field-user-image-und-0-remove-button {
   background-color: #ff6138;
   border: 1px solid #ff3905;
@@ -885,30 +891,30 @@ label {
   margin: 1em auto;
   width: 8em;
 }
-/* line 263, ../sass/theme/_forms.scss */
+/* line 272, ../sass/theme/_forms.scss */
 .user-profile-form .file,
 .user-profile-form .file-size {
   display: none;
 }
-/* line 268, ../sass/theme/_forms.scss */
+/* line 277, ../sass/theme/_forms.scss */
 .user-profile-form .form-file {
   display: block;
   margin-bottom: 1em;
   width: 13em;
 }
-/* line 274, ../sass/theme/_forms.scss */
+/* line 283, ../sass/theme/_forms.scss */
 .user-profile-form .image-preview {
   margin: 0 auto;
   width: 192px;
 }
 @media only screen and (min-width: 45em) {
-  /* line 281, ../sass/theme/_forms.scss */
+  /* line 290, ../sass/theme/_forms.scss */
   .user-profile-form .image-preview,
   .user-profile-form #edit-field-user-image-und-0-upload,
   .user-profile-form #edit-field-user-image-und-0-remove {
     float: left;
   }
-  /* line 288, ../sass/theme/_forms.scss */
+  /* line 297, ../sass/theme/_forms.scss */
   .user-profile-form #edit-field-user-image-und-0-upload-button,
   .user-profile-form #edit-field-user-image-und-0-remove-button {
     position: relative;
@@ -924,7 +930,7 @@ label {
  * @author magnify
  */
 /* line 8, ../sass/theme/_buttons.scss */
-.button--action, .form-submit, .block-follow-question .flag-action, .typeahead-block--button, .edit-user--image-button-add, .button--warning, .block-follow-question .unflag-action, .edit-user--image-button-remove, .at-add-btn {
+.button--action, .form-submit, .block-follow-question .flag-action, .typeahead-block--button, .button--neutral, .edit-user--image-button-add, .button--warning, .block-follow-question .unflag-action, .edit-user--image-button-remove, .at-add-btn {
   display: inline-block;
   font-size: 1.25em;
   padding: .4em 1.5em .5em;
@@ -938,42 +944,282 @@ label {
   border-radius: 0.4em;
 }
 /* line 19, ../sass/theme/_buttons.scss */
-.button--action:focus, .form-submit:focus, .block-follow-question .flag-action:focus, .typeahead-block--button:focus, .edit-user--image-button-add:focus, .button--warning:focus, .block-follow-question .unflag-action:focus, .edit-user--image-button-remove:focus, .at-add-btn:focus, .button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .typeahead-block--button:hover, .edit-user--image-button-add:hover, .button--warning:hover, .block-follow-question .unflag-action:hover, .edit-user--image-button-remove:hover, .at-add-btn:hover, .button--action:active, .form-submit:active, .block-follow-question .flag-action:active, .typeahead-block--button:active, .edit-user--image-button-add:active, .button--warning:active, .block-follow-question .unflag-action:active, .edit-user--image-button-remove:active, .at-add-btn:active {
+.button--action:focus, .form-submit:focus, .block-follow-question .flag-action:focus, .typeahead-block--button:focus, .button--neutral:focus, .edit-user--image-button-add:focus, .button--warning:focus, .block-follow-question .unflag-action:focus, .edit-user--image-button-remove:focus, .at-add-btn:focus, .button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .typeahead-block--button:hover, .button--neutral:hover, .edit-user--image-button-add:hover, .button--warning:hover, .block-follow-question .unflag-action:hover, .edit-user--image-button-remove:hover, .at-add-btn:hover, .button--action:active, .form-submit:active, .block-follow-question .flag-action:active, .typeahead-block--button:active, .button--neutral:active, .edit-user--image-button-add:active, .button--warning:active, .block-follow-question .unflag-action:active, .edit-user--image-button-remove:active, .at-add-btn:active {
   text-decoration: none;
 }
 
 /* line 28, ../sass/theme/_buttons.scss */
-.button--action, .form-submit, .block-follow-question .flag-action, .typeahead-block--button, .edit-user--image-button-add {
+.button--action, .form-submit, .block-follow-question .flag-action, .typeahead-block--button {
   background-color: #5dc26d;
   border: 1px solid #41ab51;
   color: white;
   text-shadow: 1px 1px 0 #33863f;
 }
 /* line 37, ../sass/theme/_buttons.scss */
-.button--action:link, .form-submit:link, .block-follow-question .flag-action:link, .typeahead-block--button:link, .edit-user--image-button-add:link, .button--action:visited, .form-submit:visited, .block-follow-question .flag-action:visited, .typeahead-block--button:visited, .edit-user--image-button-add:visited {
+.button--action:link, .form-submit:link, .block-follow-question .flag-action:link, .typeahead-block--button:link, .button--action:visited, .form-submit:visited, .block-follow-question .flag-action:visited, .typeahead-block--button:visited {
   color: white;
   text-decoration: none;
 }
 /* line 43, ../sass/theme/_buttons.scss */
-.button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .typeahead-block--button:hover, .edit-user--image-button-add:hover {
+.button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .typeahead-block--button:hover {
   background-color: #41ab51;
 }
 
 /* line 48, ../sass/theme/_buttons.scss */
+.button--neutral, .edit-user--image-button-add {
+  background-color: #595959;
+  border: 1px solid #404040;
+  color: white;
+  text-shadow: 1px 1px 0 #404040;
+}
+/* line 57, ../sass/theme/_buttons.scss */
+.button--neutral:link, .edit-user--image-button-add:link, .button--neutral:visited, .edit-user--image-button-add:visited {
+  color: white;
+  text-decoration: none;
+}
+/* line 63, ../sass/theme/_buttons.scss */
+.button--neutral:hover, .edit-user--image-button-add:hover {
+  background-color: #262626;
+}
+
+/* line 68, ../sass/theme/_buttons.scss */
 .button--warning, .block-follow-question .unflag-action, .edit-user--image-button-remove {
   background-color: #ff6138;
   border: 1px solid #ff3905;
   color: white;
   text-shadow: 1px 1px 0 #d12b00;
 }
-/* line 57, ../sass/theme/_buttons.scss */
+/* line 77, ../sass/theme/_buttons.scss */
 .button--warning:link, .block-follow-question .unflag-action:link, .edit-user--image-button-remove:link, .button--warning:visited, .block-follow-question .unflag-action:visited, .edit-user--image-button-remove:visited {
   color: white;
   text-decoration: none;
 }
-/* line 63, ../sass/theme/_buttons.scss */
+/* line 83, ../sass/theme/_buttons.scss */
 .button--warning:hover, .block-follow-question .unflag-action:hover, .edit-user--image-button-remove:hover {
   background-color: #ff3905;
+}
+
+/* line 88, ../sass/theme/_buttons.scss */
+.button--deactivated, .typeahead-block--button:disabled {
+  background-color: #cccccc;
+  border: 1px solid #b3b3b3;
+  color: white;
+  text-shadow: 1px 1px 0 #999999;
+}
+/* line 95, ../sass/theme/_buttons.scss */
+.button--deactivated:link, .typeahead-block--button:link:disabled, .button--deactivated:visited, .typeahead-block--button:visited:disabled {
+  color: #737373;
+  text-decoration: none;
+}
+
+/**
+ * Icons
+ *
+ * Generated with http://fontello.com/
+ *
+ */
+@font-face {
+  font-family: 'loop-icons';
+  src: url("../icons/loop-icons.eot?62162620");
+  src: url("../icons/loop-icons.eot?62162620#iefix") format("embedded-opentype"), url("../icons/loop-icons.woff?62162620") format("woff"), url("../icons/loop-icons.ttf?62162620") format("truetype"), url("../icons/loop-icons.svg?62162620#loop-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'loop-icons';
+    src: url('../font/loop-icons.svg?48744896#loop-icons') format('svg');
+  }
+}
+*/
+/* line 29, ../sass/theme/_icons.scss */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "loop-icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* For safety - reset parent styles, that can break glyph codes */
+  font-variant: normal;
+  line-height: 1;
+  text-transform: none;
+}
+
+/* line 47, ../sass/theme/_icons.scss */
+.icon-check-circled:before {
+  content: '\e80d';
+}
+
+/* '' */
+/* line 48, ../sass/theme/_icons.scss */
+.icon-filter:before {
+  content: '\e80c';
+}
+
+/* '' */
+/* line 49, ../sass/theme/_icons.scss */
+.icon-check:before {
+  content: '\e804';
+}
+
+/* '' */
+/* line 50, ../sass/theme/_icons.scss */
+.icon-cancel-circled:before {
+  content: '\e80b';
+}
+
+/* '' */
+/* line 51, ../sass/theme/_icons.scss */
+.icon-thumbs:before {
+  content: '\e805';
+}
+
+/* '' */
+/* line 52, ../sass/theme/_icons.scss */
+.icon-search:before {
+  content: '\e803';
+}
+
+/* '' */
+/* line 53, ../sass/theme/_icons.scss */
+.icon-loading:before {
+  content: '\e806';
+}
+
+/* '' */
+/* line 54, ../sass/theme/_icons.scss */
+.icon-arrow-right-medium:before {
+  content: '\e807';
+}
+
+/* '' */
+/* line 55, ../sass/theme/_icons.scss */
+.icon-arrow-right-small:before {
+  content: '\e808';
+}
+
+/* '' */
+/* line 56, ../sass/theme/_icons.scss */
+.icon-arrow-right-big:before {
+  content: '\e809';
+}
+
+/* '' */
+/* line 57, ../sass/theme/_icons.scss */
+.icon-arrow-down-medium:before {
+  content: '\e802';
+}
+
+/* '' */
+/* line 58, ../sass/theme/_icons.scss */
+.icon-comment:before {
+  content: '\e80a';
+}
+
+/* '' */
+/* line 59, ../sass/theme/_icons.scss */
+.icon-pencil:before {
+  content: '\e80e';
+}
+
+/* '' */
+/* line 60, ../sass/theme/_icons.scss */
+.icon-cancel:before {
+  content: '\e800';
+}
+
+/* '' */
+/* line 61, ../sass/theme/_icons.scss */
+.icon-attention:before {
+  content: '\e801';
+}
+
+/* '' */
+/* Icon shadow classes
+   ================================================================================================================== */
+/* line 67, ../sass/theme/_icons.scss */
+.comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .messages.warning:before, .nav-mobile .nav--link:before,
+.nav-mobile .nav-dropdown--header:before,
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before, .twitter-typeahead:before, .dashboard-list--filter:before, .dashboard-list--icon:before {
+  display: inline-block;
+  font-family: "loop-icons";
+  line-height: 100%;
+}
+
+/* line 74, ../sass/theme/_icons.scss */
+.nav-mobile .nav--link:before,
+.nav-mobile .nav-dropdown--header:before,
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before, .comment--flag:before, .search-result--comments:before, .question--number-of-comments:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .messages.status:before, .messages.warning:before, .messages.error:before {
+  margin-right: .35em;
+}
+
+/* line 78, ../sass/theme/_icons.scss */
+.at-term:after {
+  margin-left: .35em;
+}
+
+/* line 82, ../sass/theme/_icons.scss */
+.comment--flag.is-sticky:before {
+  content: '\e804';
+}
+
+/* line 88, ../sass/theme/_icons.scss */
+.messages.status:before {
+  content: '\e80d';
+}
+
+/* line 94, ../sass/theme/_icons.scss */
+.comment--flag:before {
+  content: '\e805';
+}
+
+/* line 100, ../sass/theme/_icons.scss */
+.at-term:after, .messages.error:before {
+  content: '\e800';
+}
+
+/* line 106, ../sass/theme/_icons.scss */
+.message--flag:before {
+  content: '\e80b';
+}
+
+/* line 112, ../sass/theme/_icons.scss */
+.search-result--comments:before, .question--number-of-comments:before {
+  content: '\e80a';
+}
+
+/* line 118, ../sass/theme/_icons.scss */
+.messages.warning:before {
+  content: '\e801';
+}
+
+/* line 124, ../sass/theme/_icons.scss */
+.nav-mobile .nav--link:before,
+.nav-mobile .nav-dropdown--header:before,
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--user-links-item-last a:before, .block-module--my-content-item a:before {
+  content: '\e807';
+}
+
+/* line 136, ../sass/theme/_icons.scss */
+.twitter-typeahead:before {
+  content: '\e803';
+}
+
+/* line 142, ../sass/theme/_icons.scss */
+.dashboard-list--filter:before {
+  content: '\e80c';
+}
+
+/* line 148, ../sass/theme/_icons.scss */
+.dashboard-list--icon:before {
+  content: '\e80e';
 }
 
 /**
@@ -1159,12 +1405,12 @@ label {
 /* Layouts
    ================================================================================================================== */
 /* line 58, ../sass/theme/_layout.scss */
-.layout-frontpage, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper {
+.layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper {
   overflow: hidden;
   margin-bottom: 0;
 }
 /* line 65, ../sass/theme/_layout.scss */
-.layout-frontpage .layout--inner:last-child, .layout-default .layout--inner:last-child, .layout-default-inverted .layout--inner:last-child, .layout-alternative .layout--inner:last-child, .layout-no-wrapper .layout--inner:last-child {
+.layout-frontpage .layout--inner:last-child, .layout-dashboard .layout--inner:last-child, .layout-default .layout--inner:last-child, .layout-default-inverted .layout--inner:last-child, .layout-alternative .layout--inner:last-child, .layout-no-wrapper .layout--inner:last-child {
   margin-bottom: 0;
 }
 
@@ -1268,13 +1514,60 @@ label {
 }
 
 /* line 139, ../sass/theme/_layout.scss */
+.layout-dashboard .layout-element-alpha,
+.layout-dashboard .layout-element-gamma {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+}
+@media only screen and (min-width: 75em) {
+  /* line 139, ../sass/theme/_layout.scss */
+  .layout-dashboard .layout-element-alpha,
+  .layout-dashboard .layout-element-gamma {
+    float: left;
+    width: 50%;
+    margin-left: 0%;
+    margin-right: -50%;
+    padding-left: 15px;
+    padding-right: 15px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+  }
+}
+@media only screen and (min-width: 75em) {
+  /* line 151, ../sass/theme/_layout.scss */
+  .layout-dashboard .layout-element-beta,
+  .layout-dashboard .layout-element-delta {
+    float: right;
+    width: 50%;
+    margin-right: 0%;
+    margin-left: -50%;
+    padding-left: 15px;
+    padding-right: 15px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-right: 0;
+  }
+}
+
+/* line 167, ../sass/theme/_layout.scss */
 .layout-default .layout-element-alpha {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 2em;
   padding-bottom: 2em;
 }
 @media only screen and (min-width: 45em) {
-  /* line 139, ../sass/theme/_layout.scss */
+  /* line 167, ../sass/theme/_layout.scss */
   .layout-default .layout-element-alpha {
     float: left;
     width: 70.83333%;
@@ -1294,7 +1587,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 150, ../sass/theme/_layout.scss */
+  /* line 178, ../sass/theme/_layout.scss */
   .layout-default .layout-element-beta {
     float: right;
     width: 29.16667%;
@@ -1311,7 +1604,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 158, ../sass/theme/_layout.scss */
+  /* line 186, ../sass/theme/_layout.scss */
   .layout-default .layout-element-gamma,
   .layout-default .layout-element-delta,
   .layout-default .layout-element-epsilon {
@@ -1333,7 +1626,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 175, ../sass/theme/_layout.scss */
+  /* line 203, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-alpha {
     float: left;
     width: 29.16667%;
@@ -1350,7 +1643,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 183, ../sass/theme/_layout.scss */
+  /* line 211, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-beta {
     float: right;
     width: 70.83333%;
@@ -1367,7 +1660,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 191, ../sass/theme/_layout.scss */
+  /* line 219, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-gamma {
     clear: both;
     float: left;
@@ -1384,7 +1677,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 199, ../sass/theme/_layout.scss */
+  /* line 227, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-delta {
     float: right;
     width: 50%;
@@ -1400,7 +1693,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 205, ../sass/theme/_layout.scss */
+  /* line 233, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1416,7 +1709,7 @@ label {
     word-wrap: break-word;
   }
 }
-/* line 213, ../sass/theme/_layout.scss */
+/* line 241, ../sass/theme/_layout.scss */
 .layout-default-inverted .layout-element-gamma,
 .layout-default-inverted .layout-element-delta,
 .layout-default-inverted .layout-element-epsilon {
@@ -1425,7 +1718,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 226, ../sass/theme/_layout.scss */
+  /* line 254, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-alpha {
     float: left;
     width: 100%;
@@ -1441,7 +1734,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 232, ../sass/theme/_layout.scss */
+  /* line 260, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-beta {
     clear: both;
     float: left;
@@ -1458,7 +1751,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 240, ../sass/theme/_layout.scss */
+  /* line 268, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-gamma {
     clear: both;
     float: left;
@@ -1475,7 +1768,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 248, ../sass/theme/_layout.scss */
+  /* line 276, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-delta {
     float: right;
     width: 50%;
@@ -1491,7 +1784,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 254, ../sass/theme/_layout.scss */
+  /* line 282, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1508,12 +1801,12 @@ label {
   }
 }
 
-/* line 268, ../sass/theme/_layout.scss */
+/* line 296, ../sass/theme/_layout.scss */
 .layout-no-wrapper .layout--inner {
   padding: 1.5em;
 }
 
-/* line 277, ../sass/theme/_layout.scss */
+/* line 305, ../sass/theme/_layout.scss */
 .layout-alternative .layout-element-alpha,
 .layout-alternative .layout-element-beta,
 .layout-alternative .layout-element-gamma,
@@ -2136,8 +2429,8 @@ table td:empty {
 }
 /* line 57, ../sass/modules/_comment.scss */
 .comment--flag.is-sticky {
-  top: 1em;
-  right: 1em;
+  top: 1.5em;
+  right: 1.5em;
   background-color: white;
 }
 @media only screen and (min-width: 43em) {
@@ -2220,29 +2513,61 @@ table td:empty {
 }
 
 /* We use the default pager list html Auch!! */
-/* line 25, ../sass/modules/_lists.scss */
+/* line 26, ../sass/modules/_lists.scss */
 .pager {
   list-style-type: none;
   padding: 0;
   overflow: hidden;
   text-align: center;
 }
-/* line 31, ../sass/modules/_lists.scss */
+/* line 32, ../sass/modules/_lists.scss */
 .pager li {
   display: inline;
 }
-/* line 35, ../sass/modules/_lists.scss */
+/* line 36, ../sass/modules/_lists.scss */
 .pager a {
   padding: 1em;
   line-height: 2.5em;
   background: #f2f2f2;
   text-decoration: none;
 }
-/* line 42, ../sass/modules/_lists.scss */
+/* line 43, ../sass/modules/_lists.scss */
 .pager .pager-current {
   background: #cccccc;
   padding: 1em;
   line-height: 2.5em;
+}
+
+/* line 53, ../sass/modules/_lists.scss */
+.dashboard-list--header {
+  font-weight: bold;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+/* line 59, ../sass/modules/_lists.scss */
+.dashboard-list--item, .dashboard-image-list--item,
+.dashboard-user-list--item {
+  line-height: 1.75em;
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+/* line 64, ../sass/modules/_lists.scss */
+.dashboard-list--item:last-child, .dashboard-image-list--item:last-child,
+.dashboard-user-list--item:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* line 69, ../sass/modules/_lists.scss */
+.dashboard-list--item .dashboard-list--text, .dashboard-image-list--item .dashboard-list--text,
+.dashboard-user-list--item .dashboard-list--text {
+  display: block;
+  margin-bottom: 0;
+  padding-right: 1.75em;
 }
 
 /**
@@ -2463,7 +2788,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   display: block;
   color: #cccccc;
   clear: both;
-  font-size: 80%;
+  font-size: .85em;
 }
 
 /* line 30, ../sass/modules/_meta-data.scss */
@@ -2898,7 +3223,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
 
 /* Suggestions
    ========================================================================== */
-/* line 114, ../sass/modules/_twitter-typeahead.scss */
+/* line 117, ../sass/modules/_twitter-typeahead.scss */
 .tt-dropdown-menu {
   position: absolute;
   z-index: 90;
@@ -2915,13 +3240,13 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   box-sizing: border-box;
 }
 @media only screen and (min-width: 28em) {
-  /* line 114, ../sass/modules/_twitter-typeahead.scss */
+  /* line 117, ../sass/modules/_twitter-typeahead.scss */
   .tt-dropdown-menu {
     top: 7.5em;
   }
 }
 
-/* line 133, ../sass/modules/_twitter-typeahead.scss */
+/* line 136, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion-header {
   font-size: 110%;
   font-weight: bold;
@@ -2930,7 +3255,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   padding-bottom: 1em;
 }
 
-/* line 140, ../sass/modules/_twitter-typeahead.scss */
+/* line 143, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion {
   color: #41ab51;
   cursor: pointer;
@@ -2939,15 +3264,15 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 147, ../sass/modules/_twitter-typeahead.scss */
+/* line 150, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion:link, .tt-suggestion:visited {
   text-decoration: none;
 }
-/* line 152, ../sass/modules/_twitter-typeahead.scss */
+/* line 155, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion:hover, .tt-suggestion:active {
   text-decoration: underline;
 }
-/* line 157, ../sass/modules/_twitter-typeahead.scss */
+/* line 160, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion:last-child {
   border-bottom: 0;
   margin-bottom: 0;
@@ -3064,18 +3389,60 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
 }
 
 /* line 111, ../sass/modules/_user-profile.scss */
+.user-profile--notification-actions {
+  background-color: #f2f2f2;
+  overflow: hidden;
+  height: 0;
+  margin-bottom: 1.5em;
+  -moz-border-radius: 0.4em;
+  -webkit-border-radius: 0.4em;
+  border-radius: 0.4em;
+}
+/* line 120, ../sass/modules/_user-profile.scss */
+.user-profile--notification-actions.anim-open-notification-tab {
+  -moz-animation: open-notification-actions 1.5s;
+  -webkit-animation: open-notification-actions 1.5s;
+  animation: open-notification-actions 1.5s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+/* line 126, ../sass/modules/_user-profile.scss */
+.user-profile--notification-actions.anim-close-notification-tab {
+  -moz-animation: close-notification-actions 1.5s;
+  -webkit-animation: close-notification-actions 1.5s;
+  animation: close-notification-actions 1.5s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+/* line 133, ../sass/modules/_user-profile.scss */
+.user-profile--notification-actions-inner {
+  padding: 1em;
+}
+
+/* line 137, ../sass/modules/_user-profile.scss */
+.user-profile--notification-actions--button-remove {
+  float: right;
+}
+
+/* line 141, ../sass/modules/_user-profile.scss */
+.user-profile--notification-actions--button--confirm {
+  margin-right: 1em;
+}
+
+/* line 145, ../sass/modules/_user-profile.scss */
 .user-form--password-link {
   padding-left: 0;
   list-style: none;
 }
 
-/* line 116, ../sass/modules/_user-profile.scss */
+/* line 150, ../sass/modules/_user-profile.scss */
 .edit-user--image-fieldset {
   position: relative;
   height: 15em;
 }
 
-/* line 122, ../sass/modules/_user-profile.scss */
+/* line 156, ../sass/modules/_user-profile.scss */
 .edit-user--image {
   position: absolute;
   top: 3em;
@@ -3084,7 +3451,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   width: 25%;
 }
 
-/* line 131, ../sass/modules/_user-profile.scss */
+/* line 165, ../sass/modules/_user-profile.scss */
 .edit-user--image-buttons {
   position: relative;
   top: 50%;
@@ -3096,9 +3463,78 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   transform: translateY(-50%);
 }
 
-/* line 145, ../sass/modules/_user-profile.scss */
+/* line 175, ../sass/modules/_user-profile.scss */
 .edit-user--image-button-remove {
   margin-right: .5em;
+}
+
+/**
+ *
+ * Dashboard
+ *
+ */
+/* line 8, ../sass/modules/_dashboard.scss */
+.dashboard-list--header {
+  margin-bottom: .75em;
+}
+
+/* line 14, ../sass/modules/_dashboard.scss */
+.dashboard-list--filter {
+  border-bottom: 1px solid #e6e6e6;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  position: relative;
+  border-bottom: 0;
+}
+/* line 22, ../sass/modules/_dashboard.scss */
+.dashboard-list--filter .dashboard-list--filter-field {
+  padding-left: 2.5em;
+}
+/* line 26, ../sass/modules/_dashboard.scss */
+.dashboard-list--filter:before {
+  position: absolute;
+  top: 1.1em;
+  left: .9em;
+  max-width: 1em;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
+  opacity: 0.25;
+}
+
+/* line 40, ../sass/modules/_dashboard.scss */
+.dashboard-list--item, .dashboard-image-list--item,
+.dashboard-user-list--item {
+  position: relative;
+}
+
+/* line 50, ../sass/modules/_dashboard.scss */
+.dashboard-list--item .dashboard-list--meta-data, .dashboard-image-list--item .dashboard-list--meta-data,
+.dashboard-user-list--item .dashboard-list--meta-data {
+  color: #cccccc;
+  font-size: 12px;
+}
+
+/* line 71, ../sass/modules/_dashboard.scss */
+.dashboard-image-list--item .dashboard-list--text,
+.dashboard-user-list--item .dashboard-list--text {
+  padding-left: 4em;
+}
+/* line 77, ../sass/modules/_dashboard.scss */
+.dashboard-image-list--item .dashboard-list--meta-data,
+.dashboard-user-list--item .dashboard-list--meta-data {
+  display: block;
+}
+
+/* line 84, ../sass/modules/_dashboard.scss */
+.dashboard-list--icon {
+  position: absolute;
+  top: .75em;
+  right: 0;
+  max-width: 1.25em;
+  line-height: 1em;
+}
+/* line 93, ../sass/modules/_dashboard.scss */
+.dashboard-list--icon:before {
+  font-size: 1.25em;
 }
 
 /**
