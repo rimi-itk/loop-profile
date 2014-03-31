@@ -74,12 +74,10 @@
 </div>
 <span class="comments--comment-meta-data">
   <?php print t('Submitted') . ' ' . format_date($comment->created, $type = 'medium'); ?>
+  <?php if ($comment->uid == $user->uid) : ?>
+    - (<?php print l(t('edit comment'), 'comment/' . $comment->cid . '/edit'); ?>)
+  <?php endif; ?>
 </span>
 <div class="comments--comment-content">
   <?php print render($content); ?>
 </div>
-<?php if ($comment->uid == $user->uid) : ?>
-  <span class="comment--edit-link">
-        <?php print l(t('edit comment'), 'comment/' . $comment->cid . '/edit');?>
-      </span>
-<?php endif; ?>
