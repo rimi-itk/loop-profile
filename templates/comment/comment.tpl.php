@@ -79,8 +79,5 @@
   <?php endif; ?>
 </span>
 <div class="comments--comment-content">
-  <!--<?php print render($content); ?>-->
-  <!--<?php print render($comment->comment_body['und'][0]['safe_value']); ?>-->
   <?php print $comment_body; ?>
-
 </div>
