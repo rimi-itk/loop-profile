@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  *
  * Stylesheet import
@@ -2411,8 +2412,8 @@ table td:empty {
 }
 /* line 57, ../sass/modules/_comment.scss */
 .comment--flag.is-sticky {
-  top: 1em;
-  right: 1em;
+  top: 1.5em;
+  right: 1.5em;
   background-color: white;
 }
 @media only screen and (min-width: 43em) {
