@@ -76,7 +76,10 @@
   <?php print t('Submitted') . ' ' . format_date($comment->created, $type = 'medium'); ?>
 </span>
 <div class="comments--comment-content">
-  <?php print render($content); ?>
+  <!--<?php print render($content); ?>-->
+  <!--<?php print render($comment->comment_body['und'][0]['safe_value']); ?>-->
+  <?php print $comment_body; ?>
+
 </div>
 <?php if ($comment->uid == $user->uid) : ?>
   <span class="comment--edit-link">
