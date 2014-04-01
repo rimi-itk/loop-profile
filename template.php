@@ -57,11 +57,11 @@ function loop_preprocess_page(&$variables) {
  */
 function loop_preprocess_node(&$variables) {
   $author = user_load($variables['node']->uid);
-  $variables['author_name'] = fetch_full_name($author);
+  $variables['author_name'] = _loop_fetch_full_name($author);
   $fetched_job_title = field_get_items('user', $author, 'field_job_title');
   $variables['job_title'] = field_view_value('user', $author, 'field_job_title', $fetched_job_title[0], array());
 
-  $variables['author_image'] = fetch_author_image($author);
+  $variables['author_image'] = _loop_fetch_author_image($author);
 }
 
 
@@ -92,7 +92,7 @@ function loop_preprocess_panels_pane(&$variables) {
 
   // Add message variable for panel pane.
   if ($variables['pane']->subtype == 'user_messages-panel_pane_1' || $variables['pane']->subtype == 'user_messages-panel_pane_5') {
-    $variables['message_count'] = fetch_user_new_notifications();
+    $variables['message_count'] = _loop_fetch_user_new_notifications();
     $update_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() .'/scripts/update-new-notifications.js';
     drupal_add_js($update_script_path, 'file');
     if (arg(0) == 'user') {
@@ -216,8 +216,8 @@ function loop_menu_tree__main_menu ($variables) {
   $theme_path = drupal_get_path('theme', 'loop');
 
   // Add notificaiton link
-  if (printNotificationTab()) {
-    $variables['tree'] = $variables['tree'] . printNotificationTab();
+  if (_loop_print_notification_tab()) {
+    $variables['tree'] = $variables['tree'] . _loop_print_notification_tab();
   }
 
   // If loop navigation exists add a mobile dropdown navigation.
@@ -373,7 +373,7 @@ function loop_fieldset($variables) {
 function loop_preprocess_user_profile(&$variables) {
   $account = $variables['elements']['#account'];
 
-  $variables['full_name'] = fetch_full_name($account);
+  $variables['full_name'] = _loop_fetch_full_name($account);
 
   // Helpful $user_profile variable for templates.
   foreach (element_children($variables['elements']) as $key) {
@@ -483,14 +483,14 @@ function loop_form_search_api_page_search_form_default_alter(&$form) {
 function loop_form_comment_form_alter(&$form)  {
   $variables['user_obj'] = user_load($GLOBALS['user']->uid);
   if (!empty($variables['user_obj'])) {
-    $variables['user_name'] = fetch_full_name($variables['user_obj']);
+    $variables['user_name'] = _loop_fetch_full_name($variables['user_obj']);
 
     // Load entity wrapper.
     $wrapper = entity_metadata_wrapper('user', $variables['user_obj']);
 
     // Get job title.
     $variables['jobtitle'] = $wrapper->field_job_title->value();
-    $variables['author_image'] = fetch_author_image($variables['user_obj']);
+    $variables['author_image'] = _loop_fetch_author_image($variables['user_obj']);
   }
 
 
@@ -564,10 +564,10 @@ function loop_preprocess_comment(&$variables) {
   // Make the content author object available.
   $variables['comment']->account = user_load($variables['comment']->uid);
 
-  $variables['comment_author_name'] = fetch_full_name($variables['comment']->account);
-  $variables['comment_author_image'] = fetch_author_image($variables['comment']->account);
+  $variables['comment_author_name'] = _loop_fetch_full_name($variables['comment']->account);
+  $variables['comment_author_image'] = _loop_fetch_author_image($variables['comment']->account);
 
-  $variables['comment_body'] = loop_fetch_comment_body($variables['comment']);
+  $variables['comment_body'] = _loop_fetch_comment_body($variables['comment']);
 
   // Fetch the fields needed.
   $fetched_job_title = field_get_items('user', $variables['comment']->account, 'field_job_title');
@@ -617,7 +617,7 @@ function loop_textarea($variables) {
 function loop_preprocess_views_view(&$vars) {
   // We run the new message count in this function since the view updates with ajax.
   if ($vars['view']->name == 'user_messages') {
-    $new_message_count = fetch_user_new_notifications();
+    $new_message_count = _loop_fetch_user_new_notifications();
     $update_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() .'/scripts/update-new-notifications.js';
     drupal_add_js($update_script_path, 'file');
     $vars['user_messages'] = $new_message_count;
@@ -643,16 +643,14 @@ function loop_preprocess_views_view(&$vars) {
 
 
 /**
- * Implements printNotificationTab().
- *
  * Function for printing the notification tab. Since the page already exists we don't use hook menu.
  *
  * @return html for the notification tab or false if module does not exist or user is not logged in.
  */
-function printNotificationTab() {
+function _loop_print_notification_tab() {
   // We run the new message count in this function called from loop_links__system_primary_menu() since it should display on all pages.
   if (module_exists('loop_notification') && $GLOBALS['user']->uid > 0) {
-    $new_message_count = fetch_user_new_notifications();
+    $new_message_count = _loop_fetch_user_new_notifications();
 
     // If new messages exist.
     if ($new_message_count > 0) {
@@ -681,15 +679,13 @@ function printNotificationTab() {
 
 
 /**
- * Implements fetch_full_name().
- *
  * Fetch the full name from a user object, if both first name and last name is set.
  *
  * @param $user_obj
  *
  * @return name based on user fields.
  */
-function fetch_full_name ($user_obj) {
+function _loop_fetch_full_name ($user_obj) {
   $name = '';
 
   // Make sure we are dealing with an object.
@@ -713,14 +709,12 @@ function fetch_full_name ($user_obj) {
 }
 
 /**
- * Implements fetch_user_new_notifications().
+ * Fetches notifications related to current user and returns the number of new notifications
  *
- * Fetches notifications related to current user.
- *
- * @return $new_notifications
+ * @return number of new notifications related to current user.
  */
 
-function fetch_user_new_notifications() {
+function _loop_fetch_user_new_notifications() {
   // Fetch all current users messages from the message table.
   $all_message_count = db_query('SELECT uid FROM message WHERE uid = :uid', array(':uid' => $GLOBALS['user']->uid))->rowCount();
 
@@ -737,15 +731,13 @@ function fetch_user_new_notifications() {
 }
 
 /**
- * Implements fetch_author_image().
- *
  * Fetches an image based on author.
  *
  * @param user object.
  * @return themed image based on author.
  */
 
-function fetch_author_image($author) {
+function _loop_fetch_author_image($author) {
   if (is_object($author)) {
     // Load entity wrapper.
     $wrapper = entity_metadata_wrapper('user', $author);
@@ -764,14 +756,12 @@ function fetch_author_image($author) {
 }
 
 /**
- * Implements loop_fetch_comment_body().
- *
  * Fetches body of comment.
  *
  * @param comment.
  * @return comment safe value.
  */
-function loop_fetch_comment_body($comment) {
+function _loop_fetch_comment_body($comment) {
   // Load entity wrapper.
   $wrapper = entity_metadata_wrapper('comment', $comment);
   $comment = $wrapper->comment_body->value();
