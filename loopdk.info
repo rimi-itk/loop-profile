@@ -1,6 +1,6 @@
 name = LOOP
 project = LOOP
-distribution_name = "LOOP install profile"
+distribution_name = "LOOP "
 description = "LOOPDK install profile"
 core = 7.x
 php_memory_limit = 128M
