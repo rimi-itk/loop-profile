@@ -22,7 +22,7 @@ function loop_editor_pages_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Comments (sorted by latest)';
+  $handler->display->display_options['title'] = 'Comments (Sorted by latest)';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -73,7 +73,6 @@ function loop_editor_pages_views_default_views() {
   $handler->display->display_options['fields']['edit_comment']['table'] = 'comment';
   $handler->display->display_options['fields']['edit_comment']['field'] = 'edit_comment';
   $handler->display->display_options['fields']['edit_comment']['label'] = '';
-  $handler->display->display_options['fields']['edit_comment']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['edit_comment']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['edit_comment']['alter']['link_class'] = 'dashboard-list--icon';
   $handler->display->display_options['fields']['edit_comment']['element_label_colon'] = FALSE;
@@ -149,7 +148,7 @@ function loop_editor_pages_views_default_views() {
   $handler->display->display_options['allow']['fields_override'] = 0;
   $translatables['loop_editor_comments'] = array(
     t('Master'),
-    t('Comments (sorted by latest)'),
+    t('Comments (Sorted by latest)'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -186,8 +185,9 @@ function loop_editor_pages_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'dashboard-list--item';
@@ -209,6 +209,7 @@ function loop_editor_pages_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = ' ';
+  $handler->display->display_options['fields']['edit_node']['destination'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -357,7 +358,7 @@ function loop_editor_pages_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'dashboard-image-list--item';
@@ -384,6 +385,13 @@ function loop_editor_pages_views_default_views() {
   $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: User: Uid */
+  $handler->display->display_options['fields']['uid']['id'] = 'uid';
+  $handler->display->display_options['fields']['uid']['table'] = 'users';
+  $handler->display->display_options['fields']['uid']['field'] = 'uid';
+  $handler->display->display_options['fields']['uid']['label'] = 'excluded';
+  $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
   /* Field: User: First name */
   $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
   $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';
@@ -410,10 +418,13 @@ function loop_editor_pages_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['table'] = 'users';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = '';
-  $handler->display->display_options['fields']['edit_node']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['edit_node']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['edit_node']['alter']['text'] = '<a href="/user/[uid]/edit" class="dashboard-list--icon"></a>';
+  $handler->display->display_options['fields']['edit_node']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['edit_node']['alter']['link_class'] = 'dashboard-list--icon';
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['edit_node']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['edit_node']['text'] = ' ';
   /* Field: User: User image */
   $handler->display->display_options['fields']['field_user_image']['id'] = 'field_user_image';
@@ -496,6 +507,7 @@ function loop_editor_pages_views_default_views() {
     t('Desc'),
     t('term from field_profession'),
     t('excluded'),
+    t('<a href="/user/[uid]/edit" class="dashboard-list--icon"></a>'),
     t(' '),
     t('[name]
 <span class="dashboard-list--meta-data">[field_first_name] [field_last_name], [name_1]</span>'),
