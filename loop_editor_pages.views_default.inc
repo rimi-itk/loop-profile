@@ -22,6 +22,7 @@ function loop_editor_pages_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -31,7 +32,7 @@ function loop_editor_pages_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'editing--row';
+  $handler->display->display_options['style_options']['row_class'] = 'dashboard-image-list--item';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -41,52 +42,97 @@ function loop_editor_pages_views_default_views() {
   $handler->display->display_options['relationships']['nid']['table'] = 'comment';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
   $handler->display->display_options['relationships']['nid']['required'] = TRUE;
+  /* Relationship: Comment: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'comment';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Field: User: User image */
+  $handler->display->display_options['fields']['field_user_image']['id'] = 'field_user_image';
+  $handler->display->display_options['fields']['field_user_image']['table'] = 'field_data_field_user_image';
+  $handler->display->display_options['fields']['field_user_image']['field'] = 'field_user_image';
+  $handler->display->display_options['fields']['field_user_image']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['field_user_image']['label'] = '';
+  $handler->display->display_options['fields']['field_user_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_user_image']['settings'] = array(
+    'image_style' => 'preview',
+    'image_link' => 'content',
+  );
+  /* Field: Comment: Comment */
+  $handler->display->display_options['fields']['comment_body']['id'] = 'comment_body';
+  $handler->display->display_options['fields']['comment_body']['table'] = 'field_data_comment_body';
+  $handler->display->display_options['fields']['comment_body']['field'] = 'comment_body';
+  $handler->display->display_options['fields']['comment_body']['label'] = 'excluded';
+  $handler->display->display_options['fields']['comment_body']['exclude'] = TRUE;
   /* Field: Comment: Edit link */
   $handler->display->display_options['fields']['edit_comment']['id'] = 'edit_comment';
   $handler->display->display_options['fields']['edit_comment']['table'] = 'comment';
   $handler->display->display_options['fields']['edit_comment']['field'] = 'edit_comment';
   $handler->display->display_options['fields']['edit_comment']['label'] = '';
+  $handler->display->display_options['fields']['edit_comment']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['edit_comment']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['edit_comment']['alter']['link_class'] = 'dashboard-list--icon';
   $handler->display->display_options['fields']['edit_comment']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['edit_comment']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['edit_comment']['element_wrapper_class'] = 'editing--edit-link';
   $handler->display->display_options['fields']['edit_comment']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['edit_comment']['text'] = ' ';
   /* Field: Comment: Title */
   $handler->display->display_options['fields']['subject']['id'] = 'subject';
   $handler->display->display_options['fields']['subject']['table'] = 'comment';
   $handler->display->display_options['fields']['subject']['field'] = 'subject';
-  $handler->display->display_options['fields']['subject']['label'] = '';
+  $handler->display->display_options['fields']['subject']['label'] = 'excluded';
+  $handler->display->display_options['fields']['subject']['exclude'] = TRUE;
   $handler->display->display_options['fields']['subject']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['subject']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['subject']['element_label_colon'] = FALSE;
   /* Field: Comment: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'comment';
   $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['label'] = 'excluded';
+  $handler->display->display_options['fields']['created']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['created']['element_label_type'] = '0';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['element_wrapper_type'] = 'span';
-  $handler->display->display_options['fields']['created']['element_wrapper_class'] = 'meta-data--date';
+  $handler->display->display_options['fields']['created']['element_wrapper_class'] = 'dashboard-list--meta-data';
   $handler->display->display_options['fields']['created']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'long';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[subject]
+<span class="dashboard-list--meta-data">Answer, created [created]</span>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'p';
+  $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'dashboard-list--text';
+  $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
   /* Sort criterion: Comment: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'comment';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Comment: Approved */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'comment';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status_node']['id'] = 'status_node';
-  $handler->display->display_options['filters']['status_node']['table'] = 'node';
-  $handler->display->display_options['filters']['status_node']['field'] = 'status';
-  $handler->display->display_options['filters']['status_node']['relationship'] = 'nid';
-  $handler->display->display_options['filters']['status_node']['value'] = 1;
-  $handler->display->display_options['filters']['status_node']['group'] = 1;
-  $handler->display->display_options['filters']['status_node']['expose']['operator'] = FALSE;
+  /* Filter criterion: Global: Combine fields filter */
+  $handler->display->display_options['filters']['combine']['id'] = 'combine';
+  $handler->display->display_options['filters']['combine']['table'] = 'views';
+  $handler->display->display_options['filters']['combine']['field'] = 'combine';
+  $handler->display->display_options['filters']['combine']['operator'] = 'contains';
+  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['combine']['fields'] = array(
+    'comment_body' => 'comment_body',
+  );
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
@@ -108,6 +154,11 @@ function loop_editor_pages_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Content'),
+    t('author'),
+    t('excluded'),
+    t(' '),
+    t('[subject]
+<span class="dashboard-list--meta-data">Answer, created [created]</span>'),
     t('Content pane'),
     t('View panes'),
   );
@@ -136,7 +187,7 @@ function loop_editor_pages_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'dashboard-list--item';
+  $handler->display->display_options['style_options']['row_class'] = 'dashboard-image-list--item';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -170,7 +221,7 @@ function loop_editor_pages_views_default_views() {
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = 'Question, created';
+  $handler->display->display_options['fields']['created']['label'] = 'Content, created';
   $handler->display->display_options['fields']['created']['element_label_type'] = '0';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['element_wrapper_type'] = 'span';
@@ -274,7 +325,7 @@ function loop_editor_pages_views_default_views() {
     t('Desc'),
     t('author'),
     t(' '),
-    t('Question, created'),
+    t('Content, created'),
     t('Latest questions'),
     t('View panes'),
     t('Latest other content'),
