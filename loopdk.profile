@@ -235,4 +235,18 @@ function loopdk_final_settings() {
 
   // Setup url path to use Transliteration module.
   variable_set('pathauto_transliterate', 1);
+
+
+  // Setup default user icon.
+  if (!$da = file_get_contents(drupal_get_path('theme', 'loop') . '/images/default-user-icon.png')) {
+    throw new Exception("Error opening file");
+  }
+
+  if (!$file = file_save_data($da, 'public://default-user-icon.png', FILE_EXISTS_RENAME)) {
+    throw new Exception("Error saving file");
+  }
+
+  $instance = field_info_instance('user', 'field_user_image', 'user');
+  $instance['settings']['default_image'] = $file->fid;
+  field_update_instance($instance);
 }
