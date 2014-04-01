@@ -22,7 +22,7 @@ function loop_editor_pages_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Comments (Sorted by latest)';
+  $handler->display->display_options['title'] = 'Comments (sorted by latest)';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -149,7 +149,7 @@ function loop_editor_pages_views_default_views() {
   $handler->display->display_options['allow']['fields_override'] = 0;
   $translatables['loop_editor_comments'] = array(
     t('Master'),
-    t('Comments (Sorted by latest)'),
+    t('Comments (sorted by latest)'),
     t('more'),
     t('Apply'),
     t('Reset'),
