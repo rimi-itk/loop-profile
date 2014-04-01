@@ -53,6 +53,9 @@ function loop_editor_pages_views_default_views() {
   $handler->display->display_options['fields']['field_user_image']['relationship'] = 'uid';
   $handler->display->display_options['fields']['field_user_image']['label'] = '';
   $handler->display->display_options['fields']['field_user_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_image']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_user_image']['element_wrapper_class'] = 'meta-data--author-image';
+  $handler->display->display_options['fields']['field_user_image']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_image']['settings'] = array(
     'image_style' => 'preview',
