@@ -170,9 +170,9 @@ function loop_editor_pages_default_page_manager_pages() {
     $pane->configuration = array(
       'use_pager' => 0,
       'pager_id' => '0',
-      'items_per_page' => '5',
+      'items_per_page' => '10',
       'offset' => '0',
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => 'Latest comments',
     );
     $pane->cache = array();

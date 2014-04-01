@@ -22,6 +22,7 @@ function loop_editor_pages_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Comments (Sorted by latest)';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -76,8 +77,6 @@ function loop_editor_pages_views_default_views() {
   $handler->display->display_options['fields']['edit_comment']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['edit_comment']['alter']['link_class'] = 'dashboard-list--icon';
   $handler->display->display_options['fields']['edit_comment']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['edit_comment']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['edit_comment']['element_wrapper_class'] = 'editing--edit-link';
   $handler->display->display_options['fields']['edit_comment']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['edit_comment']['text'] = ' ';
   /* Field: Comment: Title */
@@ -150,6 +149,7 @@ function loop_editor_pages_views_default_views() {
   $handler->display->display_options['allow']['fields_override'] = 0;
   $translatables['loop_editor_comments'] = array(
     t('Master'),
+    t('Comments (Sorted by latest)'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -190,7 +190,7 @@ function loop_editor_pages_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
-  $handler->display->display_options['style_options']['row_class'] = 'dashboard-image-list--item';
+  $handler->display->display_options['style_options']['row_class'] = 'dashboard-list--item';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
