@@ -32,6 +32,8 @@ function loop_editor_pages_default_page_manager_pages() {
       ),
     ),
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array(
     'type' => 'normal',
@@ -83,10 +85,11 @@ function loop_editor_pages_default_page_manager_pages() {
   );
   $display->cache = array();
   $display->title = 'Dashboard';
+  $display->uuid = '5c4610bd-d98d-4392-833f-1c60080f8cba';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-1';
+    $pane->pid = 'new-ea557ba6-d98e-4c10-ad61-0bdfe3812279';
     $pane->panel = 'alpha';
     $pane->type = 'views_panes';
     $pane->subtype = 'loop_editor_content-panel_pane_1';
@@ -108,10 +111,11 @@ function loop_editor_pages_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-1'] = $pane;
-    $display->panels['alpha'][0] = 'new-1';
+    $pane->uuid = 'ea557ba6-d98e-4c10-ad61-0bdfe3812279';
+    $display->content['new-ea557ba6-d98e-4c10-ad61-0bdfe3812279'] = $pane;
+    $display->panels['alpha'][0] = 'new-ea557ba6-d98e-4c10-ad61-0bdfe3812279';
     $pane = new stdClass();
-    $pane->pid = 'new-2';
+    $pane->pid = 'new-08dc774a-0d9f-4464-9b0c-fafef23c5657';
     $pane->panel = 'beta';
     $pane->type = 'views_panes';
     $pane->subtype = 'loop_editor_content-panel_pane_3';
@@ -133,10 +137,11 @@ function loop_editor_pages_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-2'] = $pane;
-    $display->panels['beta'][0] = 'new-2';
+    $pane->uuid = '08dc774a-0d9f-4464-9b0c-fafef23c5657';
+    $display->content['new-08dc774a-0d9f-4464-9b0c-fafef23c5657'] = $pane;
+    $display->panels['beta'][0] = 'new-08dc774a-0d9f-4464-9b0c-fafef23c5657';
     $pane = new stdClass();
-    $pane->pid = 'new-3';
+    $pane->pid = 'new-e97ff7b7-bed1-48d8-80b5-559396980454';
     $pane->panel = 'delta';
     $pane->type = 'views_panes';
     $pane->subtype = 'loop_editor_users-panel_pane_1';
@@ -158,10 +163,11 @@ function loop_editor_pages_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-3'] = $pane;
-    $display->panels['delta'][0] = 'new-3';
+    $pane->uuid = 'e97ff7b7-bed1-48d8-80b5-559396980454';
+    $display->content['new-e97ff7b7-bed1-48d8-80b5-559396980454'] = $pane;
+    $display->panels['delta'][0] = 'new-e97ff7b7-bed1-48d8-80b5-559396980454';
     $pane = new stdClass();
-    $pane->pid = 'new-4';
+    $pane->pid = 'new-4df95cc5-2bc8-4625-97af-ce17c0699b15';
     $pane->panel = 'gamma';
     $pane->type = 'views_panes';
     $pane->subtype = 'loop_editor_comments-panel_pane_1';
@@ -183,8 +189,9 @@ function loop_editor_pages_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-4'] = $pane;
-    $display->panels['gamma'][0] = 'new-4';
+    $pane->uuid = '4df95cc5-2bc8-4625-97af-ce17c0699b15';
+    $display->content['new-4df95cc5-2bc8-4625-97af-ce17c0699b15'] = $pane;
+    $display->panels['gamma'][0] = 'new-4df95cc5-2bc8-4625-97af-ce17c0699b15';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
