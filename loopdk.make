@@ -19,7 +19,7 @@ projects[better_formats][subdir] = "contrib"
 projects[better_formats][version] = "1.0-beta1"
 
 projects[ctools][subdir] = "contrib"
-projects[ctools][version] = "1.3"
+projects[ctools][version] = "1.4"
 
 projects[diff][subdir] = "contrib"
 projects[diff][version] = "3.2"
@@ -125,7 +125,7 @@ projects[page_title][subdir] = "contrib"
 projects[page_title][version] = "2.7"
 
 projects[panels][subdir] = "contrib"
-projects[panels][version] = "3.3"
+projects[panels][version] = "3.4"
 projects[panels][patch][] = "https://drupal.org/files/panels.code_.2114599-1.patch"
 
 projects[pathauto][subdir] = "contrib"
