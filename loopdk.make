@@ -126,7 +126,7 @@ projects[page_title][version] = "2.7"
 
 projects[panels][subdir] = "contrib"
 projects[panels][version] = "3.4"
-projects[panels][patch][] = "https://drupal.org/files/panels.code_.2114599-1.patch"
+;projects[panels][patch][] = "https://drupal.org/files/panels.code_.2114599-1.patch"
 
 projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = "1.2"
