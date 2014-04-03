@@ -17,6 +17,7 @@ function loop_post_menu_default_menu_links() {
     'router_path' => 'node/add/post',
     'link_title' => 'Create post',
     'options' => array(
+      'alter' => TRUE,
       'attributes' => array(),
       'identifier' => 'main-menu_create-post:node/add/post',
     ),
