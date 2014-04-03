@@ -107,7 +107,6 @@ if (isset($primary_menu_block)): ?>
         <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="logo--image">
       </a>
     <?php endif; ?>
-    <?php print render($page['header']); ?>
     <div class="nav--wrapper">
       <?php if (isset($main_menu_block)) : ?>
         <nav class="nav">
@@ -138,7 +137,6 @@ if (isset($primary_menu_block)): ?>
     </div>
   </div>
 <?php endif; ?>
-
 <?php if ($user->uid == 0): ?>
   <?php // User is not logged in ?>
   <div class="layout-no-wrapper">
@@ -153,6 +151,7 @@ if (isset($primary_menu_block)): ?>
   <?php // No panel pages! ?>
   <div class="layout-default-inverted">
     <div class="layout--inner">
+      <?php print render($page['header']); ?>
       <?php if ($messages): ?>
         <?php print $messages; ?>
       <?php endif; ?>
