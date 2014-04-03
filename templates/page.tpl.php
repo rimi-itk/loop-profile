@@ -71,7 +71,7 @@
  * @ingroup themeable
  */
 ?>
-
+12
 <?php
 /*
  * Insert Loop primary menu if module is enabled.
@@ -86,7 +86,7 @@ if (isset($primary_menu_block)): ?>
       <div class="nav-mobile--user-links">
         <h2 class="nav-mobile--links-header"><?php print t('User links');?></h2>
         <?php print render($tabs); ?>
-        <?php if ($logout_link) : ?>
+        <?php if (isset($logout_link)) : ?>
           <?php print $logout_link;?>
         <?php endif;?>
       </div>
@@ -124,7 +124,7 @@ if (isset($primary_menu_block)): ?>
           <?php print render($management_menu_block); ?>
         </nav>
       <?php endif; ?>
-      <?php if ($logout_link) : ?>
+      <?php if (isset($logout_link)) : ?>
         <?php print $logout_link;?>
       <?php endif;?>
     </div>
