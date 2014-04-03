@@ -37,7 +37,7 @@ function loopdk_install_tasks(&$install_state) {
 
   $ret = array(
     // Update translations.
-    /*'loopdk_import_translation' => array(
+/*    'loopdk_import_translation' => array(
       'display_name' => st('Set up translations'),
       'display' => TRUE,
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
@@ -74,6 +74,36 @@ function loopdk_import_translation() {
   // Enable danish language.
   include_once DRUPAL_ROOT . '/includes/locale.inc';
   locale_add_language('da', NULL, NULL, NULL, '', NULL, TRUE, TRUE);
+
+  // Import our own translations.
+  $file = new stdClass();
+  $file->uri = DRUPAL_ROOT . '/profiles/loopdk/translations/da.po';
+  $file->filename = basename($file->uri);
+  _locale_import_po($file, 'da', LOCALE_IMPORT_OVERWRITE, 'default');
+
+  // Import field translation group.
+  $file = new stdClass();
+  $file->uri = DRUPAL_ROOT . '/profiles/loopdk/translations/da_fields.po';
+  $file->filename = basename($file->uri);
+  _locale_import_po($file, 'da', LOCALE_IMPORT_OVERWRITE, 'field');
+
+  // Import menu translation group.
+  $file = new stdClass();
+  $file->uri = DRUPAL_ROOT . '/profiles/loopdk/translations/da_menu.po';
+  $file->filename = basename($file->uri);
+  _locale_import_po($file, 'da', LOCALE_IMPORT_OVERWRITE, 'menu');
+
+  // Import panels translation group.
+  $file = new stdClass();
+  $file->uri = DRUPAL_ROOT . '/profiles/loopdk/translations/da_panels.po';
+  $file->filename = basename($file->uri);
+  _locale_import_po($file, 'da', LOCALE_IMPORT_OVERWRITE, 'panels');
+
+  // Import views translation group.
+  $file = new stdClass();
+  $file->uri = DRUPAL_ROOT . '/profiles/loopdk/translations/da_views.po';
+  $file->filename = basename($file->uri);
+  _locale_import_po($file, 'da', LOCALE_IMPORT_OVERWRITE, 'views');
 
   // Build batch with l10n_update module.
   $history = l10n_update_get_history();
