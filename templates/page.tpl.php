@@ -92,7 +92,7 @@ if (isset($primary_menu_block)): ?>
       </div>
       <?php if (user_access('access administration pages')) : ?>
         <div class="nav-mobile--administration-links">
-          <h2 class="nav-mobile--links-header"><?php print t('Administration-links');?></h2>
+          <h2 class="nav-mobile--links-header"><?php print t('Administration links');?></h2>
           <?php print render($management_menu_block); ?>
         </div>
       <?php endif;?>
