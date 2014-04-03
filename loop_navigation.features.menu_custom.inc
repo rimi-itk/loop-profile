@@ -14,6 +14,7 @@ function loop_navigation_menu_default_menu_custom() {
   $menus['menu-loop-primary-menu'] = array(
     'menu_name' => 'menu-loop-primary-menu',
     'title' => 'Loop Primary Menu',
+    'language' => 'und',
     'description' => 'Primary menu with support for smaller screen and touch devices. Works as a submenu to Main Menu',
   );
   // Translatables
