@@ -50,6 +50,11 @@ function loop_preprocess_page(&$variables) {
   if (empty($panel))  {
     $variables['no_panel'] = TRUE;
   }
+
+  // We add logout link here to be able to always print it last. (Hence not part of any menu)
+  if($user->uid > 0) {
+    $variables['logout_link'] = l(t('Logout'), 'user/logout', array('attributes' => array('class' => array('nav--logout'))));
+  }
 }
 
 
@@ -199,7 +204,6 @@ function loop_menu_local_tasks($variables) {
     if (!empty($variables['primary'])) {
       $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
       $variables['primary']['#prefix'] .= '<ul class="block-module--user-links-list">';
-      $variables['primary']['#suffix'] = '<li class="block-module--user-links-item-last"><a href="/user/logout">' . t('Logout') . '</a></li></ul>';
       $output .= drupal_render($variables['primary']);
     }
   }

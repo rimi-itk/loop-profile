@@ -95,6 +95,16 @@
       display: none;
     }
   }
+
+  .nav--logout {
+    @extend .nav--link;
+
+    display: none;
+
+    @include breakpoint(75em) {
+      display: inline-block;
+    }
+  }
 }
 
 
@@ -291,4 +301,9 @@
     font-size: 130%;
     font-weight: bold;
   }
+
+  .nav--logout {
+    @extend .nav--link;
+  }
 }
+

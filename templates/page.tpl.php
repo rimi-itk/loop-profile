@@ -86,6 +86,9 @@ if (isset($primary_menu_block)): ?>
       <div class="nav-mobile--user-links">
         <h2 class="nav-mobile--links-header"><?php print t('User links');?></h2>
         <?php print render($tabs); ?>
+        <?php if ($logout_link) : ?>
+          <?php print $logout_link;?>
+        <?php endif;?>
       </div>
       <?php if (user_access('access administration pages')) : ?>
         <div class="nav-mobile--administration-links">
@@ -121,6 +124,9 @@ if (isset($primary_menu_block)): ?>
           <?php print render($management_menu_block); ?>
         </nav>
       <?php endif; ?>
+      <?php if ($logout_link) : ?>
+        <?php print $logout_link;?>
+      <?php endif;?>
     </div>
   </div>
 </header>
