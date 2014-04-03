@@ -71,7 +71,7 @@
  * @ingroup themeable
  */
 ?>
-12
+
 <?php
 /*
  * Insert Loop primary menu if module is enabled.
