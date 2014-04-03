@@ -21,6 +21,7 @@ function loop_user_menu_default_menu_links() {
         'title' => '',
       ),
       'identifier' => 'main-menu_my-account:user',
+      'alter' => TRUE,
     ),
     'module' => 'menu',
     'hidden' => 0,
