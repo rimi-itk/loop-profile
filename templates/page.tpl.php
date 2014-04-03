@@ -82,14 +82,20 @@ if (isset($primary_menu_block)): ?>
     <?php if ($primary_menu_block) : ?>
       <?php print render($primary_menu_block); ?>
     <?php endif; ?>
-    <?php if (arg(0) == 'user'): ?>
+    <?php if($user->uid > 0): ?>
       <div class="nav-mobile--user-links">
-        <h2 class="nav-mobile--user-links-header"><?php print t('User links');?></h2>
+        <h2 class="nav-mobile--links-header"><?php print t('User links');?></h2>
         <?php print render($tabs); ?>
       </div>
+      <?php if (user_access('access administration pages')) : ?>
+        <div class="nav-mobile--administration-links">
+          <h2 class="nav-mobile--links-header"><?php print t('Administration-links');?></h2>
+          <?php print render($management_menu_block); ?>
+        </div>
+      <?php endif;?>
     <?php endif;?>
   </nav>
-<?php endif; ?>
+<?php endif;?>
 
 <header class="header">
   <div class="header--inner">
@@ -100,16 +106,21 @@ if (isset($primary_menu_block)): ?>
     <?php endif; ?>
     <?php print render($page['header']); ?>
     <div class="nav--wrapper">
-      <nav class="nav">
-        <?php if (isset($main_menu_block)) : ?>
+      <?php if (isset($main_menu_block)) : ?>
+        <nav class="nav">
           <?php print render($main_menu_block); ?>
-        <?php endif; ?>
-      </nav>
-      <nav class="nav-dropdown">
-        <?php if (isset($primary_menu_block)) : ?>
+        </nav>
+      <?php endif; ?>
+      <?php if (isset($primary_menu_block)) : ?>
+        <nav class="nav-dropdown">
           <?php print render($primary_menu_block); ?>
-        <?php endif; ?>
-      </nav>
+        </nav>
+      <?php endif; ?>
+      <?php if (isset($management_menu_block)) : ?>
+        <nav class="nav-dropdown">
+          <?php print render($management_menu_block); ?>
+        </nav>
+      <?php endif; ?>
     </div>
   </div>
 </header>
@@ -127,9 +138,9 @@ if (isset($primary_menu_block)): ?>
   <div class="layout-no-wrapper">
     <div class="layout--inner">
       <?php if ($messages): ?>
-            <?php print $messages; ?>
-          <?php endif; ?>
-          <?php print render($page['content']); ?>
+        <?php print $messages; ?>
+      <?php endif; ?>
+      <?php print render($page['content']); ?>
     </div>
   </div>
 <?php elseif (isset($no_panel)): ?>

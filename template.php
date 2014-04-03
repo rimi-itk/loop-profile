@@ -11,7 +11,6 @@
 function loop_preprocess_page(&$variables) {
   global $user;
   $arg = arg();
-
   if ($user->uid > 0) {
     // Prepare system search block for page.tpl.
     if (module_exists('search_api_page')) {
@@ -35,11 +34,13 @@ function loop_preprocess_page(&$variables) {
   // Load LOOP primary menu.
   if (module_exists('loop_navigation') && ($user->uid > 0)) {
     $variables['main_menu_block'] = module_invoke('system', 'block_view', 'main-menu');
+    $variables['management_menu_block'] = module_invoke('system', 'block_view', 'management');
     $variables['primary_menu_block'] = module_invoke('menu', 'block_view', 'menu-loop-primary-menu');
   }
 
-  // Load LOOP primary menu.
+  // Load LOOP user menu.
   if (module_exists('loop_user') && $arg[0] == 'user') {
+    $variables['user_menu_block'] = module_invoke('system', 'block_view', 'user-menu');
     $variables['user_public_block'] = module_invoke('loop_user', 'block_view', 'loop_user_my_content');
   }
 
@@ -252,7 +253,17 @@ function loop_menu_tree__main_menu ($variables) {
  * Forms the header menu together with main menu.
  */
 function loop_menu_tree__menu_loop_primary_menu($variables) {
-  // If the menu contains <li> tag add a ul tag.
+  return $variables['tree'];
+}
+
+
+/**
+ * Implements theme_menu_tree__menu_loop_primary_menu().
+ *
+ * User generated link.
+ * Forms the header menu together with main menu.
+ */
+function loop_menu_tree__management($variables) {
   return $variables['tree'];
 }
 
@@ -332,7 +343,36 @@ function loop_menu_link__menu_loop_primary_menu($variables){
   else {
     $element['#localized_options']['attributes']['class'][] = 'nav--link';
     $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+  }
+  return $output . "\n";
+}
 
+/**
+ * Implements theme_menu_link().
+ */
+function loop_menu_link__management($variables){
+  $theme_path = drupal_get_path('theme', 'loop');
+  $element = $variables['element'];
+  if ($element['#href'] == 'admin') {
+    $img = array(
+      'path' => '/' . $theme_path . '/images/nav-arrow-down-icon.png',
+      'attributes' => array('class' => 'nav-dropdown--icon'),
+    );
+    // Create the title with image icon.
+    $element['#title'] = theme_image($img) . '<span class="nav--text">' . $element['#title'] . '</span>';
+
+    // Wrap the sub menu.
+    $sub_menu = '<div class="nav-dropdown--item">' . drupal_render($element['#below']) . '</div>';
+
+    $element['#localized_options']['attributes']['class'][] = 'nav-dropdown--header';
+
+    // Allow images in the links.
+    $element['#localized_options']['html'][] = TRUE;
+
+    $output = '<div class="nav-dropdown--wrapper">' . l($element['#title'], $element['#href'], $element['#localized_options']) . $sub_menu . '</div>';
+  } else {
+    $element['#localized_options']['attributes']['class'][] = 'nav-dropdown--link';
+    $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   }
   return $output . "\n";
 }
