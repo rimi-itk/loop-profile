@@ -68,7 +68,7 @@ projects[i18n][subdir] = "contrib"
 projects[i18n][version] = "1.10"
 
 projects[i18nviews][subdir] = "contrib"
-projects[i18nviews][version] = "dev"
+projects[i18nviews][version] = "3.x-dev"
 
 projects[jquery_update][type] = "module"
 projects[jquery_update][subdir] = "contrib"
