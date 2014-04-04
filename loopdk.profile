@@ -30,13 +30,13 @@ if (!function_exists("system_form_install_configure_form_alter")) {
 function loopdk_module_selection_form($form, &$form_state) {
   $form['translation'] = array(
       '#type' => 'checkbox',
-      '#title' => 'Enable translation',
+      '#title' => 'Translation',
       '#description' => 'Enable translation.',
       '#default_value' => FALSE,
     );
   $form['submit'] = array(
     '#type' => 'submit',
-    '#value' => st('Enable modules'),
+    '#value' => st('Continue installation'),
   );
   return $form;
 }
@@ -121,12 +121,6 @@ function loopdk_import_translation() {
   $file->uri = DRUPAL_ROOT . '/profiles/loopdk/translations/da_views.po';
   $file->filename = basename($file->uri);
   _locale_import_po($file, 'da', LOCALE_IMPORT_OVERWRITE, 'views');
-
-  // Refresh strings
-  module_load_include('inc', 'i18n', 'i18n_string/i18n_string.admin');
-  $groups = array("views"=>"Views", "panels"=>"Paneler", "menu"=>"Menu");
-  $batch = i18n_string_refresh_batch($groups, FALSE);
-  batch_set($batch);
 
   // Build batch with l10n_update module.
   $history = l10n_update_get_history();
