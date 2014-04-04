@@ -79,5 +79,5 @@
   <?php endif; ?>
 </span>
 <div class="comments--comment-content">
-  <?php print render($content); ?>
+  <?php print render($comment_body); ?>
 </div>
