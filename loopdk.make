@@ -198,6 +198,9 @@ projects[uuid][version] = "1.0-alpha5"
 projects[uuid_features][subdir] = "contrib"
 projects[uuid_features][version] = "1.0-alpha3"
 
+projects[variable][subdir] = "contrib"
+projects[variable][version] = "2.4"
+
 projects[views][subdir] = "contrib"
 projects[views][version] = "3.7"
 projects[views][patch][] = "https://drupal.org/files/views-make_destination_parameter_configurable-1239566-26.patch"
