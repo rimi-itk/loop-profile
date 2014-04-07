@@ -108,22 +108,22 @@ if (isset($primary_menu_block)): ?>
       </a>
     <?php endif; ?>
     <div class="nav--wrapper">
-      <?php if (isset($main_menu_block)) : ?>
+      <?php if (!empty($main_menu_block)) : ?>
         <nav class="nav">
           <?php print render($main_menu_block); ?>
         </nav>
       <?php endif; ?>
-      <?php if (isset($primary_menu_block)) : ?>
+      <?php if (!empty($primary_menu_block)) : ?>
         <nav class="nav-dropdown">
           <?php print render($primary_menu_block); ?>
         </nav>
       <?php endif; ?>
-      <?php if (isset($management_menu_block)) : ?>
-        <nav class="nav-dropdown">
+      <?php if (!empty($management_menu_block) && user_access('access administration pages')) : ?>
+        <nav class="nav-dropdown 2">
           <?php print render($management_menu_block); ?>
         </nav>
       <?php endif; ?>
-      <?php if (isset($logout_link)) : ?>
+      <?php if (!empty($logout_link)) : ?>
         <?php print $logout_link;?>
       <?php endif;?>
     </div>

@@ -12,7 +12,8 @@ regions[footer] = Footer
 ; Scripts
 scripts[] = scripts/mobile-nav.min.js
 scripts[] = scripts/modernizr.min.js
-scripts[] = scripts/chosen.jquery.min.js
+scripts[] = scripts/chosen.jquery.js
+scripts[] = scripts/use-chosen.min.js
 
 ; Stylesheets
 stylesheets[all][] = css/styles.css
