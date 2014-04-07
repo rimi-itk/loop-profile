@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-04-03 10:54+0200\n"
-"PO-Revision-Date: 2014-04-03 10:54+0200\n"
+"POT-Creation-Date: 2014-04-07 09:02+0200\n"
+"PO-Revision-Date: 2014-04-07 09:02+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -16,6 +16,16 @@ msgstr ""
 #: field:body:page:label
 msgctxt "body:page:label"
 msgid "Body"
+msgstr ""
+
+#: field:message_text:message_type:label
+msgctxt "message_text:message_type:label"
+msgid "Message text"
+msgstr ""
+
+#: field:message_text:message_type:description
+msgctxt "message_text:message_type:description"
+msgid "This is the text of all messages of this type."
 msgstr ""
 
 #: field:field_area_of_expertise:user:label
@@ -63,18 +73,8 @@ msgctxt "field_location_postal_code:user:label"
 msgid "Postal code"
 msgstr ""
 
-#: field:field_message_node_reference:comment_added_to_post:label
-msgctxt "field_message_node_reference:comment_added_to_post:label"
-msgid "Message node reference"
-msgstr ""
-
 #: field:field_profession:user:label
 msgctxt "field_profession:user:label"
-msgid "Profession"
-msgstr ""
-
-#: field:field_profession:post:label
-msgctxt "field_profession:post:label"
 msgid "Profession"
 msgstr ""
 
@@ -83,29 +83,14 @@ msgctxt "field_user_image:user:label"
 msgid "User image"
 msgstr ""
 
-#: field:message_text:message_type:label
-msgctxt "message_text:message_type:label"
-msgid "Message text"
+#: field:field_profession:post:label
+msgctxt "field_profession:post:label"
+msgid "Profession"
 msgstr ""
 
-#: field:message_text:message_type:description
-msgctxt "message_text:message_type:description"
-msgid "This is the text of all messages of this type."
-msgstr ""
-
-#: field:comment_body:comment_node_page:label
-msgctxt "comment_body:comment_node_page:label"
-msgid "Comment"
-msgstr ""
-
-#: field:comment_body:comment_node_post:label
-msgctxt "comment_body:comment_node_post:label"
-msgid "Comment"
-msgstr ""
-
-#: field:comment_body:comment_node_panel:label
-msgctxt "comment_body:comment_node_panel:label"
-msgid "Comment"
+#: field:field_message_node_reference:comment_added_to_post:label
+msgctxt "field_message_node_reference:comment_added_to_post:label"
+msgid "Message node reference"
 msgstr ""
 
 #: field:field_description:post:label
@@ -137,4 +122,14 @@ msgstr "Emne"
 msgctxt "field_subject:post:description"
 msgid "Select a subject."
 msgstr "Vælg et emne."
+
+#: field:comment_body:comment_node_page:label
+msgctxt "comment_body:comment_node_page:label"
+msgid "Comment"
+msgstr "Kommentar"
+
+#: field:comment_body:comment_node_post:label
+msgctxt "comment_body:comment_node_post:label"
+msgid "Comment"
+msgstr "Kommentar"
 

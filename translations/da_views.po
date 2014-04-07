@@ -4,14 +4,1519 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-04-03 10:53+0200\n"
-"PO-Revision-Date: 2014-04-03 10:53+0200\n"
+"POT-Creation-Date: 2014-04-07 09:02+0200\n"
+"PO-Revision-Date: 2014-04-07 09:02+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: views:comments_recent:default:title
+msgctxt "comments_recent:default:title"
+msgid "Seneste kommentarer"
+msgstr ""
+
+#: views:comments_recent:default:use_more_text
+msgctxt "comments_recent:default:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:comments_recent:default:exposed_form:submit_button
+msgctxt "comments_recent:default:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:comments_recent:default:exposed_form:reset_button_label
+msgctxt "comments_recent:default:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:comments_recent:default:exposed_form:exposed_sorts_label
+msgctxt "comments_recent:default:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:comments_recent:default:exposed_form:sort_asc_label
+msgctxt "comments_recent:default:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:comments_recent:default:exposed_form:sort_desc_label
+msgctxt "comments_recent:default:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:comments_recent:default:relationship:comment:nid:label
+msgctxt "comments_recent:default:relationship:comment:nid:label"
+msgid "Indhold"
+msgstr ""
+
+#: views:comments_recent:page:use_more_text
+msgctxt "comments_recent:page:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:comments_recent:page:exposed_form:submit_button
+msgctxt "comments_recent:page:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:comments_recent:page:exposed_form:reset_button_label
+msgctxt "comments_recent:page:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:comments_recent:page:exposed_form:exposed_sorts_label
+msgctxt "comments_recent:page:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:comments_recent:page:exposed_form:sort_asc_label
+msgctxt "comments_recent:page:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:comments_recent:page:exposed_form:sort_desc_label
+msgctxt "comments_recent:page:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:comments_recent:page:field:node:title:label
+msgctxt "comments_recent:page:field:node:title:label"
+msgid "Svar på"
+msgstr ""
+
+#: views:comments_recent:block:use_more_text
+msgctxt "comments_recent:block:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:comments_recent:block:exposed_form:submit_button
+msgctxt "comments_recent:block:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:comments_recent:block:exposed_form:reset_button_label
+msgctxt "comments_recent:block:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:comments_recent:block:exposed_form:exposed_sorts_label
+msgctxt "comments_recent:block:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:comments_recent:block:exposed_form:sort_asc_label
+msgctxt "comments_recent:block:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:comments_recent:block:exposed_form:sort_desc_label
+msgctxt "comments_recent:block:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:tracker:default:title
+msgctxt "tracker:default:title"
+msgid "Seneste indlæg"
+msgstr ""
+
+#: views:tracker:default:use_more_text
+msgctxt "tracker:default:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:tracker:default:exposed_form:submit_button
+msgctxt "tracker:default:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:tracker:default:exposed_form:reset_button_label
+msgctxt "tracker:default:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:tracker:default:exposed_form:exposed_sorts_label
+msgctxt "tracker:default:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:tracker:default:exposed_form:sort_asc_label
+msgctxt "tracker:default:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:tracker:default:exposed_form:sort_desc_label
+msgctxt "tracker:default:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:tracker:default:pager:expose:items_per_page_label
+msgctxt "tracker:default:pager:expose:items_per_page_label"
+msgid "Antal elementer"
+msgstr ""
+
+#: views:tracker:default:pager:expose:items_per_page_options_all_label
+msgctxt "tracker:default:pager:expose:items_per_page_options_all_label"
+msgid "- Alle -"
+msgstr ""
+
+#: views:tracker:default:pager:expose:offset_label
+msgctxt "tracker:default:pager:expose:offset_label"
+msgid "Forskydning"
+msgstr ""
+
+#: views:tracker:default:pager:tags:first
+msgctxt "tracker:default:pager:tags:first"
+msgid "« første"
+msgstr ""
+
+#: views:tracker:default:pager:tags:previous
+msgctxt "tracker:default:pager:tags:previous"
+msgid "‹ forrige"
+msgstr ""
+
+#: views:tracker:default:pager:tags:next
+msgctxt "tracker:default:pager:tags:next"
+msgid "næste ›"
+msgstr ""
+
+#: views:tracker:default:pager:tags:last
+msgctxt "tracker:default:pager:tags:last"
+msgid "sidste »"
+msgstr ""
+
+#: views:tracker:default:relationship:node:uid:label
+msgctxt "tracker:default:relationship:node:uid:label"
+msgid "forfatter"
+msgstr ""
+
+#: views:tracker:default:field:node:type:label
+msgctxt "tracker:default:field:node:type:label"
+msgid "Type"
+msgstr ""
+
+#: views:tracker:default:field:node:title:label
+msgctxt "tracker:default:field:node:title:label"
+msgid "Titel"
+msgstr ""
+
+#: views:tracker:default:field:users:name:label
+msgctxt "tracker:default:field:users:name:label"
+msgid "Forfatter"
+msgstr ""
+
+#: views:tracker:default:field:node_comment_statistics:comment_count:label
+msgctxt "tracker:default:field:node_comment_statistics:comment_count:label"
+msgid "Svar"
+msgstr ""
+
+#: views:tracker:default:field:node_comment_statistics:comment_count:decimal
+msgctxt "tracker:default:field:node_comment_statistics:comment_count:decimal"
+msgid "."
+msgstr ""
+
+#: views:tracker:default:field:node_comment_statistics:comment_count:separator
+msgctxt "tracker:default:field:node_comment_statistics:comment_count:separator"
+msgid ","
+msgstr ""
+
+#: views:tracker:default:field:node_comment_statistics:last_comment_timestamp:label
+msgctxt "tracker:default:field:node_comment_statistics:last_comment_timestamp:label"
+msgid "Seneste svar"
+msgstr ""
+
+#: views:tracker:default:field:node:new_comments:decimal
+msgctxt "tracker:default:field:node:new_comments:decimal"
+msgid "."
+msgstr ""
+
+#: views:tracker:default:field:node:new_comments:separator
+msgctxt "tracker:default:field:node:new_comments:separator"
+msgid ","
+msgstr ""
+
+#: views:tracker:default:field:node:new_comments:suffix
+msgctxt "tracker:default:field:node:new_comments:suffix"
+msgid " ny"
+msgstr ""
+
+#: views:tracker:default:argument:node:uid_touch:exception:title
+msgctxt "tracker:default:argument:node:uid_touch:exception:title"
+msgid "Alle"
+msgstr ""
+
+#: views:tracker:default:argument:node:uid_touch:title
+msgctxt "tracker:default:argument:node:uid_touch:title"
+msgid "Seneste indlæg for %1"
+msgstr ""
+
+#: views:tracker:page:use_more_text
+msgctxt "tracker:page:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:tracker:page:exposed_form:submit_button
+msgctxt "tracker:page:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:tracker:page:exposed_form:reset_button_label
+msgctxt "tracker:page:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:tracker:page:exposed_form:exposed_sorts_label
+msgctxt "tracker:page:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:tracker:page:exposed_form:sort_asc_label
+msgctxt "tracker:page:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:tracker:page:exposed_form:sort_desc_label
+msgctxt "tracker:page:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:tracker:page:pager:expose:items_per_page_label
+msgctxt "tracker:page:pager:expose:items_per_page_label"
+msgid "Antal elementer"
+msgstr ""
+
+#: views:tracker:page:pager:expose:items_per_page_options_all_label
+msgctxt "tracker:page:pager:expose:items_per_page_options_all_label"
+msgid "- Alle -"
+msgstr ""
+
+#: views:tracker:page:pager:expose:offset_label
+msgctxt "tracker:page:pager:expose:offset_label"
+msgid "Forskydning"
+msgstr ""
+
+#: views:tracker:page:pager:tags:first
+msgctxt "tracker:page:pager:tags:first"
+msgid "« første"
+msgstr ""
+
+#: views:tracker:page:pager:tags:previous
+msgctxt "tracker:page:pager:tags:previous"
+msgid "‹ forrige"
+msgstr ""
+
+#: views:tracker:page:pager:tags:next
+msgctxt "tracker:page:pager:tags:next"
+msgid "næste ›"
+msgstr ""
+
+#: views:tracker:page:pager:tags:last
+msgctxt "tracker:page:pager:tags:last"
+msgid "sidste »"
+msgstr ""
+
+#: views:archive:default:title
+msgctxt "archive:default:title"
+msgid "Månedsarkiv"
+msgstr ""
+
+#: views:archive:default:use_more_text
+msgctxt "archive:default:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:archive:default:exposed_form:submit_button
+msgctxt "archive:default:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:archive:default:exposed_form:reset_button_label
+msgctxt "archive:default:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:archive:default:exposed_form:exposed_sorts_label
+msgctxt "archive:default:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:archive:default:exposed_form:sort_asc_label
+msgctxt "archive:default:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:archive:default:exposed_form:sort_desc_label
+msgctxt "archive:default:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:archive:default:pager:expose:items_per_page_label
+msgctxt "archive:default:pager:expose:items_per_page_label"
+msgid "Antal elementer"
+msgstr ""
+
+#: views:archive:default:pager:expose:items_per_page_options_all_label
+msgctxt "archive:default:pager:expose:items_per_page_options_all_label"
+msgid "- Alle -"
+msgstr ""
+
+#: views:archive:default:pager:expose:offset_label
+msgctxt "archive:default:pager:expose:offset_label"
+msgid "Forskydning"
+msgstr ""
+
+#: views:archive:default:pager:tags:first
+msgctxt "archive:default:pager:tags:first"
+msgid "« første"
+msgstr ""
+
+#: views:archive:default:pager:tags:previous
+msgctxt "archive:default:pager:tags:previous"
+msgid "‹ forrige"
+msgstr ""
+
+#: views:archive:default:pager:tags:next
+msgctxt "archive:default:pager:tags:next"
+msgid "næste ›"
+msgstr ""
+
+#: views:archive:default:pager:tags:last
+msgctxt "archive:default:pager:tags:last"
+msgid "sidste »"
+msgstr ""
+
+#: views:archive:default:argument:node:created_year_month:exception:title
+msgctxt "archive:default:argument:node:created_year_month:exception:title"
+msgid "Alle"
+msgstr ""
+
+#: views:archive:default:argument:node:created_year_month:title
+msgctxt "archive:default:argument:node:created_year_month:title"
+msgid "%1"
+msgstr ""
+
+#: views:archive:page:use_more_text
+msgctxt "archive:page:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:archive:page:exposed_form:submit_button
+msgctxt "archive:page:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:archive:page:exposed_form:reset_button_label
+msgctxt "archive:page:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:archive:page:exposed_form:exposed_sorts_label
+msgctxt "archive:page:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:archive:page:exposed_form:sort_asc_label
+msgctxt "archive:page:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:archive:page:exposed_form:sort_desc_label
+msgctxt "archive:page:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:archive:page:pager:expose:items_per_page_label
+msgctxt "archive:page:pager:expose:items_per_page_label"
+msgid "Antal elementer"
+msgstr ""
+
+#: views:archive:page:pager:expose:items_per_page_options_all_label
+msgctxt "archive:page:pager:expose:items_per_page_options_all_label"
+msgid "- Alle -"
+msgstr ""
+
+#: views:archive:page:pager:expose:offset_label
+msgctxt "archive:page:pager:expose:offset_label"
+msgid "Forskydning"
+msgstr ""
+
+#: views:archive:page:pager:tags:first
+msgctxt "archive:page:pager:tags:first"
+msgid "« første"
+msgstr ""
+
+#: views:archive:page:pager:tags:previous
+msgctxt "archive:page:pager:tags:previous"
+msgid "‹ forrige"
+msgstr ""
+
+#: views:archive:page:pager:tags:next
+msgctxt "archive:page:pager:tags:next"
+msgid "næste ›"
+msgstr ""
+
+#: views:archive:page:pager:tags:last
+msgctxt "archive:page:pager:tags:last"
+msgid "sidste »"
+msgstr ""
+
+#: views:archive:block:use_more_text
+msgctxt "archive:block:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:archive:block:exposed_form:submit_button
+msgctxt "archive:block:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:archive:block:exposed_form:reset_button_label
+msgctxt "archive:block:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:archive:block:exposed_form:exposed_sorts_label
+msgctxt "archive:block:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:archive:block:exposed_form:sort_asc_label
+msgctxt "archive:block:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:archive:block:exposed_form:sort_desc_label
+msgctxt "archive:block:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:archive:block:pager:expose:items_per_page_label
+msgctxt "archive:block:pager:expose:items_per_page_label"
+msgid "Antal elementer"
+msgstr ""
+
+#: views:archive:block:pager:expose:items_per_page_options_all_label
+msgctxt "archive:block:pager:expose:items_per_page_options_all_label"
+msgid "- Alle -"
+msgstr ""
+
+#: views:archive:block:pager:expose:offset_label
+msgctxt "archive:block:pager:expose:offset_label"
+msgid "Forskydning"
+msgstr ""
+
+#: views:archive:block:pager:tags:first
+msgctxt "archive:block:pager:tags:first"
+msgid "« første"
+msgstr ""
+
+#: views:archive:block:pager:tags:previous
+msgctxt "archive:block:pager:tags:previous"
+msgid "‹ forrige"
+msgstr ""
+
+#: views:archive:block:pager:tags:next
+msgctxt "archive:block:pager:tags:next"
+msgid "næste ›"
+msgstr ""
+
+#: views:archive:block:pager:tags:last
+msgctxt "archive:block:pager:tags:last"
+msgid "sidste »"
+msgstr ""
+
+#: views:archive:block:argument:node:created_year_month:exception:title
+msgctxt "archive:block:argument:node:created_year_month:exception:title"
+msgid "Alle"
+msgstr ""
+
+#: views:archive:block:argument:node:created_year_month:title
+msgctxt "archive:block:argument:node:created_year_month:title"
+msgid "%1"
+msgstr ""
+
+#: views:frontpage:default:use_more_text
+msgctxt "frontpage:default:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:frontpage:default:exposed_form:submit_button
+msgctxt "frontpage:default:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:frontpage:default:exposed_form:reset_button_label
+msgctxt "frontpage:default:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:frontpage:default:exposed_form:exposed_sorts_label
+msgctxt "frontpage:default:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:frontpage:default:exposed_form:sort_asc_label
+msgctxt "frontpage:default:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:frontpage:default:exposed_form:sort_desc_label
+msgctxt "frontpage:default:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:frontpage:default:pager:expose:items_per_page_label
+msgctxt "frontpage:default:pager:expose:items_per_page_label"
+msgid "Antal elementer"
+msgstr ""
+
+#: views:frontpage:default:pager:expose:items_per_page_options_all_label
+msgctxt "frontpage:default:pager:expose:items_per_page_options_all_label"
+msgid "- Alle -"
+msgstr ""
+
+#: views:frontpage:default:pager:expose:offset_label
+msgctxt "frontpage:default:pager:expose:offset_label"
+msgid "Forskydning"
+msgstr ""
+
+#: views:frontpage:default:pager:tags:first
+msgctxt "frontpage:default:pager:tags:first"
+msgid "« første"
+msgstr ""
+
+#: views:frontpage:default:pager:tags:previous
+msgctxt "frontpage:default:pager:tags:previous"
+msgid "‹ forrige"
+msgstr ""
+
+#: views:frontpage:default:pager:tags:next
+msgctxt "frontpage:default:pager:tags:next"
+msgid "næste ›"
+msgstr ""
+
+#: views:frontpage:default:pager:tags:last
+msgctxt "frontpage:default:pager:tags:last"
+msgid "sidste »"
+msgstr ""
+
+#: views:frontpage:page:use_more_text
+msgctxt "frontpage:page:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:frontpage:page:exposed_form:submit_button
+msgctxt "frontpage:page:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:frontpage:page:exposed_form:reset_button_label
+msgctxt "frontpage:page:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:frontpage:page:exposed_form:exposed_sorts_label
+msgctxt "frontpage:page:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:frontpage:page:exposed_form:sort_asc_label
+msgctxt "frontpage:page:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:frontpage:page:exposed_form:sort_desc_label
+msgctxt "frontpage:page:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:frontpage:page:pager:expose:items_per_page_label
+msgctxt "frontpage:page:pager:expose:items_per_page_label"
+msgid "Antal elementer"
+msgstr ""
+
+#: views:frontpage:page:pager:expose:items_per_page_options_all_label
+msgctxt "frontpage:page:pager:expose:items_per_page_options_all_label"
+msgid "- Alle -"
+msgstr ""
+
+#: views:frontpage:page:pager:expose:offset_label
+msgctxt "frontpage:page:pager:expose:offset_label"
+msgid "Forskydning"
+msgstr ""
+
+#: views:frontpage:page:pager:tags:first
+msgctxt "frontpage:page:pager:tags:first"
+msgid "« første"
+msgstr ""
+
+#: views:frontpage:page:pager:tags:previous
+msgctxt "frontpage:page:pager:tags:previous"
+msgid "‹ forrige"
+msgstr ""
+
+#: views:frontpage:page:pager:tags:next
+msgctxt "frontpage:page:pager:tags:next"
+msgid "næste ›"
+msgstr ""
+
+#: views:frontpage:page:pager:tags:last
+msgctxt "frontpage:page:pager:tags:last"
+msgid "sidste »"
+msgstr ""
+
+#: views:frontpage:feed:title
+msgctxt "frontpage:feed:title"
+msgid "Forside feed"
+msgstr ""
+
+#: views:frontpage:feed:use_more_text
+msgctxt "frontpage:feed:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:frontpage:feed:exposed_form:submit_button
+msgctxt "frontpage:feed:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:frontpage:feed:exposed_form:reset_button_label
+msgctxt "frontpage:feed:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:frontpage:feed:exposed_form:exposed_sorts_label
+msgctxt "frontpage:feed:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:frontpage:feed:exposed_form:sort_asc_label
+msgctxt "frontpage:feed:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:frontpage:feed:exposed_form:sort_desc_label
+msgctxt "frontpage:feed:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:glossary:default:use_more_text
+msgctxt "glossary:default:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:glossary:default:exposed_form:submit_button
+msgctxt "glossary:default:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:glossary:default:exposed_form:reset_button_label
+msgctxt "glossary:default:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:glossary:default:exposed_form:exposed_sorts_label
+msgctxt "glossary:default:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:glossary:default:exposed_form:sort_asc_label
+msgctxt "glossary:default:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:glossary:default:exposed_form:sort_desc_label
+msgctxt "glossary:default:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:glossary:default:pager:expose:items_per_page_label
+msgctxt "glossary:default:pager:expose:items_per_page_label"
+msgid "Antal elementer"
+msgstr ""
+
+#: views:glossary:default:pager:expose:items_per_page_options_all_label
+msgctxt "glossary:default:pager:expose:items_per_page_options_all_label"
+msgid "- Alle -"
+msgstr ""
+
+#: views:glossary:default:pager:expose:offset_label
+msgctxt "glossary:default:pager:expose:offset_label"
+msgid "Forskydning"
+msgstr ""
+
+#: views:glossary:default:pager:tags:first
+msgctxt "glossary:default:pager:tags:first"
+msgid "« første"
+msgstr ""
+
+#: views:glossary:default:pager:tags:previous
+msgctxt "glossary:default:pager:tags:previous"
+msgid "‹ forrige"
+msgstr ""
+
+#: views:glossary:default:pager:tags:next
+msgctxt "glossary:default:pager:tags:next"
+msgid "næste ›"
+msgstr ""
+
+#: views:glossary:default:pager:tags:last
+msgctxt "glossary:default:pager:tags:last"
+msgid "sidste »"
+msgstr ""
+
+#: views:glossary:default:field:node:title:label
+msgctxt "glossary:default:field:node:title:label"
+msgid "Titel"
+msgstr ""
+
+#: views:glossary:default:field:users:name:label
+msgctxt "glossary:default:field:users:name:label"
+msgid "Forfatter"
+msgstr ""
+
+#: views:glossary:default:field:node:changed:label
+msgctxt "glossary:default:field:node:changed:label"
+msgid "Seneste opdatering"
+msgstr ""
+
+#: views:glossary:default:argument:node:title:exception:title
+msgctxt "glossary:default:argument:node:title:exception:title"
+msgid "Alle"
+msgstr ""
+
+#: views:glossary:page:use_more_text
+msgctxt "glossary:page:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:glossary:page:exposed_form:submit_button
+msgctxt "glossary:page:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:glossary:page:exposed_form:reset_button_label
+msgctxt "glossary:page:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:glossary:page:exposed_form:exposed_sorts_label
+msgctxt "glossary:page:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:glossary:page:exposed_form:sort_asc_label
+msgctxt "glossary:page:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:glossary:page:exposed_form:sort_desc_label
+msgctxt "glossary:page:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:glossary:page:pager:expose:items_per_page_label
+msgctxt "glossary:page:pager:expose:items_per_page_label"
+msgid "Antal elementer"
+msgstr ""
+
+#: views:glossary:page:pager:expose:items_per_page_options_all_label
+msgctxt "glossary:page:pager:expose:items_per_page_options_all_label"
+msgid "- Alle -"
+msgstr ""
+
+#: views:glossary:page:pager:expose:offset_label
+msgctxt "glossary:page:pager:expose:offset_label"
+msgid "Forskydning"
+msgstr ""
+
+#: views:glossary:page:pager:tags:first
+msgctxt "glossary:page:pager:tags:first"
+msgid "« første"
+msgstr ""
+
+#: views:glossary:page:pager:tags:previous
+msgctxt "glossary:page:pager:tags:previous"
+msgid "‹ forrige"
+msgstr ""
+
+#: views:glossary:page:pager:tags:next
+msgctxt "glossary:page:pager:tags:next"
+msgid "næste ›"
+msgstr ""
+
+#: views:glossary:page:pager:tags:last
+msgctxt "glossary:page:pager:tags:last"
+msgid "sidste »"
+msgstr ""
+
+#: views:glossary:attachment:use_more_text
+msgctxt "glossary:attachment:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:glossary:attachment:exposed_form:submit_button
+msgctxt "glossary:attachment:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:glossary:attachment:exposed_form:reset_button_label
+msgctxt "glossary:attachment:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:glossary:attachment:exposed_form:exposed_sorts_label
+msgctxt "glossary:attachment:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:glossary:attachment:exposed_form:sort_asc_label
+msgctxt "glossary:attachment:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:glossary:attachment:exposed_form:sort_desc_label
+msgctxt "glossary:attachment:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:glossary:attachment:argument:node:title:exception:title
+msgctxt "glossary:attachment:argument:node:title:exception:title"
+msgid "Alle"
+msgstr ""
+
+#: views:popular:default:title
+msgctxt "popular:default:title"
+msgid "Populært indhold"
+msgstr ""
+
+#: views:popular:default:use_more_text
+msgctxt "popular:default:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:popular:default:exposed_form:submit_button
+msgctxt "popular:default:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:popular:default:exposed_form:reset_button_label
+msgctxt "popular:default:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:popular:default:exposed_form:exposed_sorts_label
+msgctxt "popular:default:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:popular:default:exposed_form:sort_asc_label
+msgctxt "popular:default:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:popular:default:exposed_form:sort_desc_label
+msgctxt "popular:default:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:popular:default:pager:expose:items_per_page_label
+msgctxt "popular:default:pager:expose:items_per_page_label"
+msgid "Antal elementer"
+msgstr ""
+
+#: views:popular:default:pager:expose:items_per_page_options_all_label
+msgctxt "popular:default:pager:expose:items_per_page_options_all_label"
+msgid "- Alle -"
+msgstr ""
+
+#: views:popular:default:pager:expose:offset_label
+msgctxt "popular:default:pager:expose:offset_label"
+msgid "Forskydning"
+msgstr ""
+
+#: views:popular:default:pager:tags:first
+msgctxt "popular:default:pager:tags:first"
+msgid "« første"
+msgstr ""
+
+#: views:popular:default:pager:tags:previous
+msgctxt "popular:default:pager:tags:previous"
+msgid "‹ forrige"
+msgstr ""
+
+#: views:popular:default:pager:tags:next
+msgctxt "popular:default:pager:tags:next"
+msgid "næste ›"
+msgstr ""
+
+#: views:popular:default:pager:tags:last
+msgctxt "popular:default:pager:tags:last"
+msgid "sidste »"
+msgstr ""
+
+#: views:popular:default:field:node:type:label
+msgctxt "popular:default:field:node:type:label"
+msgid "Type"
+msgstr ""
+
+#: views:popular:default:field:node:title:label
+msgctxt "popular:default:field:node:title:label"
+msgid "Titel"
+msgstr ""
+
+#: views:popular:default:field:users:name:label
+msgctxt "popular:default:field:users:name:label"
+msgid "Forfatter"
+msgstr ""
+
+#: views:popular:page:use_more_text
+msgctxt "popular:page:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:popular:page:exposed_form:submit_button
+msgctxt "popular:page:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:popular:page:exposed_form:reset_button_label
+msgctxt "popular:page:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:popular:page:exposed_form:exposed_sorts_label
+msgctxt "popular:page:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:popular:page:exposed_form:sort_asc_label
+msgctxt "popular:page:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:popular:page:exposed_form:sort_desc_label
+msgctxt "popular:page:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:popular:page:pager:expose:items_per_page_label
+msgctxt "popular:page:pager:expose:items_per_page_label"
+msgid "Antal elementer"
+msgstr ""
+
+#: views:popular:page:pager:expose:items_per_page_options_all_label
+msgctxt "popular:page:pager:expose:items_per_page_options_all_label"
+msgid "- Alle -"
+msgstr ""
+
+#: views:popular:page:pager:expose:offset_label
+msgctxt "popular:page:pager:expose:offset_label"
+msgid "Forskydning"
+msgstr ""
+
+#: views:popular:page:pager:tags:first
+msgctxt "popular:page:pager:tags:first"
+msgid "« første"
+msgstr ""
+
+#: views:popular:page:pager:tags:previous
+msgctxt "popular:page:pager:tags:previous"
+msgid "‹ forrige"
+msgstr ""
+
+#: views:popular:page:pager:tags:next
+msgctxt "popular:page:pager:tags:next"
+msgid "næste ›"
+msgstr ""
+
+#: views:popular:page:pager:tags:last
+msgctxt "popular:page:pager:tags:last"
+msgid "sidste »"
+msgstr ""
+
+#: views:popular:page_1:use_more_text
+msgctxt "popular:page_1:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:popular:page_1:exposed_form:submit_button
+msgctxt "popular:page_1:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:popular:page_1:exposed_form:reset_button_label
+msgctxt "popular:page_1:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:popular:page_1:exposed_form:exposed_sorts_label
+msgctxt "popular:page_1:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:popular:page_1:exposed_form:sort_asc_label
+msgctxt "popular:page_1:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:popular:page_1:exposed_form:sort_desc_label
+msgctxt "popular:page_1:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:popular:page_1:pager:expose:items_per_page_label
+msgctxt "popular:page_1:pager:expose:items_per_page_label"
+msgid "Antal elementer"
+msgstr ""
+
+#: views:popular:page_1:pager:expose:items_per_page_options_all_label
+msgctxt "popular:page_1:pager:expose:items_per_page_options_all_label"
+msgid "- Alle -"
+msgstr ""
+
+#: views:popular:page_1:pager:expose:offset_label
+msgctxt "popular:page_1:pager:expose:offset_label"
+msgid "Forskydning"
+msgstr ""
+
+#: views:popular:page_1:pager:tags:first
+msgctxt "popular:page_1:pager:tags:first"
+msgid "« første"
+msgstr ""
+
+#: views:popular:page_1:pager:tags:previous
+msgctxt "popular:page_1:pager:tags:previous"
+msgid "‹ forrige"
+msgstr ""
+
+#: views:popular:page_1:pager:tags:next
+msgctxt "popular:page_1:pager:tags:next"
+msgid "næste ›"
+msgstr ""
+
+#: views:popular:page_1:pager:tags:last
+msgctxt "popular:page_1:pager:tags:last"
+msgid "sidste »"
+msgstr ""
+
+#: views:popular:page_1:field:node:type:label
+msgctxt "popular:page_1:field:node:type:label"
+msgid "Type"
+msgstr ""
+
+#: views:popular:page_1:field:node:title:label
+msgctxt "popular:page_1:field:node:title:label"
+msgid "Titel"
+msgstr ""
+
+#: views:popular:page_1:field:users:name:label
+msgctxt "popular:page_1:field:users:name:label"
+msgid "Forfatter"
+msgstr ""
+
+#: views:popular:page_1:field:node_counter:daycount:label
+msgctxt "popular:page_1:field:node_counter:daycount:label"
+msgid "Visninger i dag"
+msgstr ""
+
+#: views:popular:page_1:field:node_counter:daycount:decimal
+msgctxt "popular:page_1:field:node_counter:daycount:decimal"
+msgid "."
+msgstr ""
+
+#: views:popular:page_1:field:node_counter:daycount:separator
+msgctxt "popular:page_1:field:node_counter:daycount:separator"
+msgid ","
+msgstr ""
+
+#: views:popular:block:use_more_text
+msgctxt "popular:block:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:popular:block:exposed_form:submit_button
+msgctxt "popular:block:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:popular:block:exposed_form:reset_button_label
+msgctxt "popular:block:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:popular:block:exposed_form:exposed_sorts_label
+msgctxt "popular:block:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:popular:block:exposed_form:sort_asc_label
+msgctxt "popular:block:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:popular:block:exposed_form:sort_desc_label
+msgctxt "popular:block:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:popular:block:pager:expose:items_per_page_label
+msgctxt "popular:block:pager:expose:items_per_page_label"
+msgid "Antal elementer"
+msgstr ""
+
+#: views:popular:block:pager:expose:items_per_page_options_all_label
+msgctxt "popular:block:pager:expose:items_per_page_options_all_label"
+msgid "- Alle -"
+msgstr ""
+
+#: views:popular:block:pager:expose:offset_label
+msgctxt "popular:block:pager:expose:offset_label"
+msgid "Forskydning"
+msgstr ""
+
+#: views:popular:block:pager:tags:first
+msgctxt "popular:block:pager:tags:first"
+msgid "« første"
+msgstr ""
+
+#: views:popular:block:pager:tags:previous
+msgctxt "popular:block:pager:tags:previous"
+msgid "‹ forrige"
+msgstr ""
+
+#: views:popular:block:pager:tags:next
+msgctxt "popular:block:pager:tags:next"
+msgid "næste ›"
+msgstr ""
+
+#: views:popular:block:pager:tags:last
+msgctxt "popular:block:pager:tags:last"
+msgid "sidste »"
+msgstr ""
+
+#: views:popular:block:field:node_counter:totalcount:decimal
+msgctxt "popular:block:field:node_counter:totalcount:decimal"
+msgid "."
+msgstr ""
+
+#: views:popular:block:field:node_counter:totalcount:separator
+msgctxt "popular:block:field:node_counter:totalcount:separator"
+msgid ","
+msgstr ""
+
+#: views:popular:block:field:node_counter:totalcount:prefix
+msgctxt "popular:block:field:node_counter:totalcount:prefix"
+msgid " ("
+msgstr ""
+
+#: views:popular:block:field:node_counter:totalcount:suffix
+msgctxt "popular:block:field:node_counter:totalcount:suffix"
+msgid ")"
+msgstr ""
+
+#: views:popular:block_1:title
+msgctxt "popular:block_1:title"
+msgid "Populært indhold i dag"
+msgstr ""
+
+#: views:popular:block_1:use_more_text
+msgctxt "popular:block_1:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:popular:block_1:exposed_form:submit_button
+msgctxt "popular:block_1:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:popular:block_1:exposed_form:reset_button_label
+msgctxt "popular:block_1:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:popular:block_1:exposed_form:exposed_sorts_label
+msgctxt "popular:block_1:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:popular:block_1:exposed_form:sort_asc_label
+msgctxt "popular:block_1:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:popular:block_1:exposed_form:sort_desc_label
+msgctxt "popular:block_1:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:popular:block_1:pager:expose:items_per_page_label
+msgctxt "popular:block_1:pager:expose:items_per_page_label"
+msgid "Antal elementer"
+msgstr ""
+
+#: views:popular:block_1:pager:expose:items_per_page_options_all_label
+msgctxt "popular:block_1:pager:expose:items_per_page_options_all_label"
+msgid "- Alle -"
+msgstr ""
+
+#: views:popular:block_1:pager:expose:offset_label
+msgctxt "popular:block_1:pager:expose:offset_label"
+msgid "Forskydning"
+msgstr ""
+
+#: views:popular:block_1:pager:tags:first
+msgctxt "popular:block_1:pager:tags:first"
+msgid "« første"
+msgstr ""
+
+#: views:popular:block_1:pager:tags:previous
+msgctxt "popular:block_1:pager:tags:previous"
+msgid "‹ forrige"
+msgstr ""
+
+#: views:popular:block_1:pager:tags:next
+msgctxt "popular:block_1:pager:tags:next"
+msgid "næste ›"
+msgstr ""
+
+#: views:popular:block_1:pager:tags:last
+msgctxt "popular:block_1:pager:tags:last"
+msgid "sidste »"
+msgstr ""
+
+#: views:popular:block_1:field:node_counter:daycount:decimal
+msgctxt "popular:block_1:field:node_counter:daycount:decimal"
+msgid "."
+msgstr ""
+
+#: views:popular:block_1:field:node_counter:daycount:separator
+msgctxt "popular:block_1:field:node_counter:daycount:separator"
+msgid ","
+msgstr ""
+
+#: views:popular:block_1:field:node_counter:daycount:prefix
+msgctxt "popular:block_1:field:node_counter:daycount:prefix"
+msgid " ("
+msgstr ""
+
+#: views:popular:block_1:field:node_counter:daycount:suffix
+msgctxt "popular:block_1:field:node_counter:daycount:suffix"
+msgid ")"
+msgstr ""
+
+#: views:taxonomy_term:default:use_more_text
+msgctxt "taxonomy_term:default:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:taxonomy_term:default:exposed_form:submit_button
+msgctxt "taxonomy_term:default:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:taxonomy_term:default:exposed_form:reset_button_label
+msgctxt "taxonomy_term:default:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:taxonomy_term:default:exposed_form:exposed_sorts_label
+msgctxt "taxonomy_term:default:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:taxonomy_term:default:exposed_form:sort_asc_label
+msgctxt "taxonomy_term:default:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:taxonomy_term:default:exposed_form:sort_desc_label
+msgctxt "taxonomy_term:default:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:taxonomy_term:default:pager:expose:items_per_page_label
+msgctxt "taxonomy_term:default:pager:expose:items_per_page_label"
+msgid "Antal elementer"
+msgstr ""
+
+#: views:taxonomy_term:default:pager:expose:items_per_page_options_all_label
+msgctxt "taxonomy_term:default:pager:expose:items_per_page_options_all_label"
+msgid "- Alle -"
+msgstr ""
+
+#: views:taxonomy_term:default:pager:expose:offset_label
+msgctxt "taxonomy_term:default:pager:expose:offset_label"
+msgid "Forskydning"
+msgstr ""
+
+#: views:taxonomy_term:default:pager:tags:first
+msgctxt "taxonomy_term:default:pager:tags:first"
+msgid "« første"
+msgstr ""
+
+#: views:taxonomy_term:default:pager:tags:previous
+msgctxt "taxonomy_term:default:pager:tags:previous"
+msgid "‹ forrige"
+msgstr ""
+
+#: views:taxonomy_term:default:pager:tags:next
+msgctxt "taxonomy_term:default:pager:tags:next"
+msgid "næste ›"
+msgstr ""
+
+#: views:taxonomy_term:default:pager:tags:last
+msgctxt "taxonomy_term:default:pager:tags:last"
+msgid "sidste »"
+msgstr ""
+
+#: views:taxonomy_term:default:argument:node:term_node_tid_depth:exception:title
+msgctxt "taxonomy_term:default:argument:node:term_node_tid_depth:exception:title"
+msgid "Alle"
+msgstr ""
+
+#: views:taxonomy_term:default:argument:node:term_node_tid_depth:title
+msgctxt "taxonomy_term:default:argument:node:term_node_tid_depth:title"
+msgid "%1"
+msgstr ""
+
+#: views:taxonomy_term:default:argument:node:term_node_tid_depth_modifier:exception:title
+msgctxt "taxonomy_term:default:argument:node:term_node_tid_depth_modifier:exception:title"
+msgid "Alle"
+msgstr ""
+
+#: views:taxonomy_term:page:use_more_text
+msgctxt "taxonomy_term:page:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:taxonomy_term:page:exposed_form:submit_button
+msgctxt "taxonomy_term:page:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:taxonomy_term:page:exposed_form:reset_button_label
+msgctxt "taxonomy_term:page:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:taxonomy_term:page:exposed_form:exposed_sorts_label
+msgctxt "taxonomy_term:page:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:taxonomy_term:page:exposed_form:sort_asc_label
+msgctxt "taxonomy_term:page:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:taxonomy_term:page:exposed_form:sort_desc_label
+msgctxt "taxonomy_term:page:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:taxonomy_term:page:pager:expose:items_per_page_label
+msgctxt "taxonomy_term:page:pager:expose:items_per_page_label"
+msgid "Antal elementer"
+msgstr ""
+
+#: views:taxonomy_term:page:pager:expose:items_per_page_options_all_label
+msgctxt "taxonomy_term:page:pager:expose:items_per_page_options_all_label"
+msgid "- Alle -"
+msgstr ""
+
+#: views:taxonomy_term:page:pager:expose:offset_label
+msgctxt "taxonomy_term:page:pager:expose:offset_label"
+msgid "Forskydning"
+msgstr ""
+
+#: views:taxonomy_term:page:pager:tags:first
+msgctxt "taxonomy_term:page:pager:tags:first"
+msgid "« første"
+msgstr ""
+
+#: views:taxonomy_term:page:pager:tags:previous
+msgctxt "taxonomy_term:page:pager:tags:previous"
+msgid "‹ forrige"
+msgstr ""
+
+#: views:taxonomy_term:page:pager:tags:next
+msgctxt "taxonomy_term:page:pager:tags:next"
+msgid "næste ›"
+msgstr ""
+
+#: views:taxonomy_term:page:pager:tags:last
+msgctxt "taxonomy_term:page:pager:tags:last"
+msgid "sidste »"
+msgstr ""
+
+#: views:taxonomy_term:feed:use_more_text
+msgctxt "taxonomy_term:feed:use_more_text"
+msgid "mere"
+msgstr ""
+
+#: views:taxonomy_term:feed:exposed_form:submit_button
+msgctxt "taxonomy_term:feed:exposed_form:submit_button"
+msgid "Udfør"
+msgstr ""
+
+#: views:taxonomy_term:feed:exposed_form:reset_button_label
+msgctxt "taxonomy_term:feed:exposed_form:reset_button_label"
+msgid "Gendan"
+msgstr ""
+
+#: views:taxonomy_term:feed:exposed_form:exposed_sorts_label
+msgctxt "taxonomy_term:feed:exposed_form:exposed_sorts_label"
+msgid "Sortér efter"
+msgstr ""
+
+#: views:taxonomy_term:feed:exposed_form:sort_asc_label
+msgctxt "taxonomy_term:feed:exposed_form:sort_asc_label"
+msgid "Stigende"
+msgstr ""
+
+#: views:taxonomy_term:feed:exposed_form:sort_desc_label
+msgctxt "taxonomy_term:feed:exposed_form:sort_desc_label"
+msgid "Faldende"
+msgstr ""
+
+#: views:taxonomy_term:feed:pager:expose:items_per_page_label
+msgctxt "taxonomy_term:feed:pager:expose:items_per_page_label"
+msgid "Antal elementer"
+msgstr ""
+
+#: views:taxonomy_term:feed:pager:expose:items_per_page_options_all_label
+msgctxt "taxonomy_term:feed:pager:expose:items_per_page_options_all_label"
+msgid "- Alle -"
+msgstr ""
+
+#: views:taxonomy_term:feed:pager:expose:offset_label
+msgctxt "taxonomy_term:feed:pager:expose:offset_label"
+msgid "Forskydning"
+msgstr ""
+
+#: views:taxonomy_term:feed:pager:tags:first
+msgctxt "taxonomy_term:feed:pager:tags:first"
+msgid "« første"
+msgstr ""
+
+#: views:taxonomy_term:feed:pager:tags:previous
+msgctxt "taxonomy_term:feed:pager:tags:previous"
+msgid "‹ forrige"
+msgstr ""
+
+#: views:taxonomy_term:feed:pager:tags:next
+msgctxt "taxonomy_term:feed:pager:tags:next"
+msgid "næste ›"
+msgstr ""
+
+#: views:taxonomy_term:feed:pager:tags:last
+msgctxt "taxonomy_term:feed:pager:tags:last"
+msgid "sidste »"
+msgstr ""
 
 #: views:admin_views_comment:default:title
 msgctxt "admin_views_comment:default:title"
@@ -903,681 +2408,6 @@ msgctxt "admin_views_user:system_1:pager:tags:last"
 msgid "sidste »"
 msgstr ""
 
-#: views:archive:default:title
-msgctxt "archive:default:title"
-msgid "Månedsarkiv"
-msgstr ""
-
-#: views:archive:default:use_more_text
-msgctxt "archive:default:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:archive:default:exposed_form:submit_button
-msgctxt "archive:default:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:archive:default:exposed_form:reset_button_label
-msgctxt "archive:default:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:archive:default:exposed_form:exposed_sorts_label
-msgctxt "archive:default:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:archive:default:exposed_form:sort_asc_label
-msgctxt "archive:default:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:archive:default:exposed_form:sort_desc_label
-msgctxt "archive:default:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:archive:default:pager:expose:items_per_page_label
-msgctxt "archive:default:pager:expose:items_per_page_label"
-msgid "Antal elementer"
-msgstr ""
-
-#: views:archive:default:pager:expose:items_per_page_options_all_label
-msgctxt "archive:default:pager:expose:items_per_page_options_all_label"
-msgid "- Alle -"
-msgstr ""
-
-#: views:archive:default:pager:expose:offset_label
-msgctxt "archive:default:pager:expose:offset_label"
-msgid "Forskydning"
-msgstr ""
-
-#: views:archive:default:pager:tags:first
-msgctxt "archive:default:pager:tags:first"
-msgid "« første"
-msgstr ""
-
-#: views:archive:default:pager:tags:previous
-msgctxt "archive:default:pager:tags:previous"
-msgid "‹ forrige"
-msgstr ""
-
-#: views:archive:default:pager:tags:next
-msgctxt "archive:default:pager:tags:next"
-msgid "næste ›"
-msgstr ""
-
-#: views:archive:default:pager:tags:last
-msgctxt "archive:default:pager:tags:last"
-msgid "sidste »"
-msgstr ""
-
-#: views:archive:default:argument:node:created_year_month:exception:title
-msgctxt "archive:default:argument:node:created_year_month:exception:title"
-msgid "Alle"
-msgstr ""
-
-#: views:archive:default:argument:node:created_year_month:title
-msgctxt "archive:default:argument:node:created_year_month:title"
-msgid "%1"
-msgstr ""
-
-#: views:archive:page:use_more_text
-msgctxt "archive:page:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:archive:page:exposed_form:submit_button
-msgctxt "archive:page:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:archive:page:exposed_form:reset_button_label
-msgctxt "archive:page:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:archive:page:exposed_form:exposed_sorts_label
-msgctxt "archive:page:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:archive:page:exposed_form:sort_asc_label
-msgctxt "archive:page:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:archive:page:exposed_form:sort_desc_label
-msgctxt "archive:page:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:archive:page:pager:expose:items_per_page_label
-msgctxt "archive:page:pager:expose:items_per_page_label"
-msgid "Antal elementer"
-msgstr ""
-
-#: views:archive:page:pager:expose:items_per_page_options_all_label
-msgctxt "archive:page:pager:expose:items_per_page_options_all_label"
-msgid "- Alle -"
-msgstr ""
-
-#: views:archive:page:pager:expose:offset_label
-msgctxt "archive:page:pager:expose:offset_label"
-msgid "Forskydning"
-msgstr ""
-
-#: views:archive:page:pager:tags:first
-msgctxt "archive:page:pager:tags:first"
-msgid "« første"
-msgstr ""
-
-#: views:archive:page:pager:tags:previous
-msgctxt "archive:page:pager:tags:previous"
-msgid "‹ forrige"
-msgstr ""
-
-#: views:archive:page:pager:tags:next
-msgctxt "archive:page:pager:tags:next"
-msgid "næste ›"
-msgstr ""
-
-#: views:archive:page:pager:tags:last
-msgctxt "archive:page:pager:tags:last"
-msgid "sidste »"
-msgstr ""
-
-#: views:archive:block:use_more_text
-msgctxt "archive:block:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:archive:block:exposed_form:submit_button
-msgctxt "archive:block:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:archive:block:exposed_form:reset_button_label
-msgctxt "archive:block:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:archive:block:exposed_form:exposed_sorts_label
-msgctxt "archive:block:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:archive:block:exposed_form:sort_asc_label
-msgctxt "archive:block:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:archive:block:exposed_form:sort_desc_label
-msgctxt "archive:block:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:archive:block:pager:expose:items_per_page_label
-msgctxt "archive:block:pager:expose:items_per_page_label"
-msgid "Antal elementer"
-msgstr ""
-
-#: views:archive:block:pager:expose:items_per_page_options_all_label
-msgctxt "archive:block:pager:expose:items_per_page_options_all_label"
-msgid "- Alle -"
-msgstr ""
-
-#: views:archive:block:pager:expose:offset_label
-msgctxt "archive:block:pager:expose:offset_label"
-msgid "Forskydning"
-msgstr ""
-
-#: views:archive:block:pager:tags:first
-msgctxt "archive:block:pager:tags:first"
-msgid "« første"
-msgstr ""
-
-#: views:archive:block:pager:tags:previous
-msgctxt "archive:block:pager:tags:previous"
-msgid "‹ forrige"
-msgstr ""
-
-#: views:archive:block:pager:tags:next
-msgctxt "archive:block:pager:tags:next"
-msgid "næste ›"
-msgstr ""
-
-#: views:archive:block:pager:tags:last
-msgctxt "archive:block:pager:tags:last"
-msgid "sidste »"
-msgstr ""
-
-#: views:archive:block:argument:node:created_year_month:exception:title
-msgctxt "archive:block:argument:node:created_year_month:exception:title"
-msgid "Alle"
-msgstr ""
-
-#: views:archive:block:argument:node:created_year_month:title
-msgctxt "archive:block:argument:node:created_year_month:title"
-msgid "%1"
-msgstr ""
-
-#: views:comments_recent:default:title
-msgctxt "comments_recent:default:title"
-msgid "Seneste kommentarer"
-msgstr ""
-
-#: views:comments_recent:default:use_more_text
-msgctxt "comments_recent:default:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:comments_recent:default:exposed_form:submit_button
-msgctxt "comments_recent:default:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:comments_recent:default:exposed_form:reset_button_label
-msgctxt "comments_recent:default:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:comments_recent:default:exposed_form:exposed_sorts_label
-msgctxt "comments_recent:default:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:comments_recent:default:exposed_form:sort_asc_label
-msgctxt "comments_recent:default:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:comments_recent:default:exposed_form:sort_desc_label
-msgctxt "comments_recent:default:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:comments_recent:default:relationship:comment:nid:label
-msgctxt "comments_recent:default:relationship:comment:nid:label"
-msgid "Indhold"
-msgstr ""
-
-#: views:comments_recent:page:use_more_text
-msgctxt "comments_recent:page:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:comments_recent:page:exposed_form:submit_button
-msgctxt "comments_recent:page:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:comments_recent:page:exposed_form:reset_button_label
-msgctxt "comments_recent:page:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:comments_recent:page:exposed_form:exposed_sorts_label
-msgctxt "comments_recent:page:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:comments_recent:page:exposed_form:sort_asc_label
-msgctxt "comments_recent:page:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:comments_recent:page:exposed_form:sort_desc_label
-msgctxt "comments_recent:page:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:comments_recent:page:field:node:title:label
-msgctxt "comments_recent:page:field:node:title:label"
-msgid "Svar på"
-msgstr ""
-
-#: views:comments_recent:block:use_more_text
-msgctxt "comments_recent:block:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:comments_recent:block:exposed_form:submit_button
-msgctxt "comments_recent:block:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:comments_recent:block:exposed_form:reset_button_label
-msgctxt "comments_recent:block:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:comments_recent:block:exposed_form:exposed_sorts_label
-msgctxt "comments_recent:block:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:comments_recent:block:exposed_form:sort_asc_label
-msgctxt "comments_recent:block:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:comments_recent:block:exposed_form:sort_desc_label
-msgctxt "comments_recent:block:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:frontpage:default:use_more_text
-msgctxt "frontpage:default:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:frontpage:default:exposed_form:submit_button
-msgctxt "frontpage:default:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:frontpage:default:exposed_form:reset_button_label
-msgctxt "frontpage:default:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:frontpage:default:exposed_form:exposed_sorts_label
-msgctxt "frontpage:default:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:frontpage:default:exposed_form:sort_asc_label
-msgctxt "frontpage:default:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:frontpage:default:exposed_form:sort_desc_label
-msgctxt "frontpage:default:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:frontpage:default:pager:expose:items_per_page_label
-msgctxt "frontpage:default:pager:expose:items_per_page_label"
-msgid "Antal elementer"
-msgstr ""
-
-#: views:frontpage:default:pager:expose:items_per_page_options_all_label
-msgctxt "frontpage:default:pager:expose:items_per_page_options_all_label"
-msgid "- Alle -"
-msgstr ""
-
-#: views:frontpage:default:pager:expose:offset_label
-msgctxt "frontpage:default:pager:expose:offset_label"
-msgid "Forskydning"
-msgstr ""
-
-#: views:frontpage:default:pager:tags:first
-msgctxt "frontpage:default:pager:tags:first"
-msgid "« første"
-msgstr ""
-
-#: views:frontpage:default:pager:tags:previous
-msgctxt "frontpage:default:pager:tags:previous"
-msgid "‹ forrige"
-msgstr ""
-
-#: views:frontpage:default:pager:tags:next
-msgctxt "frontpage:default:pager:tags:next"
-msgid "næste ›"
-msgstr ""
-
-#: views:frontpage:default:pager:tags:last
-msgctxt "frontpage:default:pager:tags:last"
-msgid "sidste »"
-msgstr ""
-
-#: views:frontpage:page:use_more_text
-msgctxt "frontpage:page:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:frontpage:page:exposed_form:submit_button
-msgctxt "frontpage:page:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:frontpage:page:exposed_form:reset_button_label
-msgctxt "frontpage:page:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:frontpage:page:exposed_form:exposed_sorts_label
-msgctxt "frontpage:page:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:frontpage:page:exposed_form:sort_asc_label
-msgctxt "frontpage:page:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:frontpage:page:exposed_form:sort_desc_label
-msgctxt "frontpage:page:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:frontpage:page:pager:expose:items_per_page_label
-msgctxt "frontpage:page:pager:expose:items_per_page_label"
-msgid "Antal elementer"
-msgstr ""
-
-#: views:frontpage:page:pager:expose:items_per_page_options_all_label
-msgctxt "frontpage:page:pager:expose:items_per_page_options_all_label"
-msgid "- Alle -"
-msgstr ""
-
-#: views:frontpage:page:pager:expose:offset_label
-msgctxt "frontpage:page:pager:expose:offset_label"
-msgid "Forskydning"
-msgstr ""
-
-#: views:frontpage:page:pager:tags:first
-msgctxt "frontpage:page:pager:tags:first"
-msgid "« første"
-msgstr ""
-
-#: views:frontpage:page:pager:tags:previous
-msgctxt "frontpage:page:pager:tags:previous"
-msgid "‹ forrige"
-msgstr ""
-
-#: views:frontpage:page:pager:tags:next
-msgctxt "frontpage:page:pager:tags:next"
-msgid "næste ›"
-msgstr ""
-
-#: views:frontpage:page:pager:tags:last
-msgctxt "frontpage:page:pager:tags:last"
-msgid "sidste »"
-msgstr ""
-
-#: views:frontpage:feed:title
-msgctxt "frontpage:feed:title"
-msgid "Forside feed"
-msgstr ""
-
-#: views:frontpage:feed:use_more_text
-msgctxt "frontpage:feed:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:frontpage:feed:exposed_form:submit_button
-msgctxt "frontpage:feed:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:frontpage:feed:exposed_form:reset_button_label
-msgctxt "frontpage:feed:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:frontpage:feed:exposed_form:exposed_sorts_label
-msgctxt "frontpage:feed:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:frontpage:feed:exposed_form:sort_asc_label
-msgctxt "frontpage:feed:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:frontpage:feed:exposed_form:sort_desc_label
-msgctxt "frontpage:feed:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:glossary:default:use_more_text
-msgctxt "glossary:default:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:glossary:default:exposed_form:submit_button
-msgctxt "glossary:default:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:glossary:default:exposed_form:reset_button_label
-msgctxt "glossary:default:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:glossary:default:exposed_form:exposed_sorts_label
-msgctxt "glossary:default:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:glossary:default:exposed_form:sort_asc_label
-msgctxt "glossary:default:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:glossary:default:exposed_form:sort_desc_label
-msgctxt "glossary:default:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:glossary:default:pager:expose:items_per_page_label
-msgctxt "glossary:default:pager:expose:items_per_page_label"
-msgid "Antal elementer"
-msgstr ""
-
-#: views:glossary:default:pager:expose:items_per_page_options_all_label
-msgctxt "glossary:default:pager:expose:items_per_page_options_all_label"
-msgid "- Alle -"
-msgstr ""
-
-#: views:glossary:default:pager:expose:offset_label
-msgctxt "glossary:default:pager:expose:offset_label"
-msgid "Forskydning"
-msgstr ""
-
-#: views:glossary:default:pager:tags:first
-msgctxt "glossary:default:pager:tags:first"
-msgid "« første"
-msgstr ""
-
-#: views:glossary:default:pager:tags:previous
-msgctxt "glossary:default:pager:tags:previous"
-msgid "‹ forrige"
-msgstr ""
-
-#: views:glossary:default:pager:tags:next
-msgctxt "glossary:default:pager:tags:next"
-msgid "næste ›"
-msgstr ""
-
-#: views:glossary:default:pager:tags:last
-msgctxt "glossary:default:pager:tags:last"
-msgid "sidste »"
-msgstr ""
-
-#: views:glossary:default:field:node:title:label
-msgctxt "glossary:default:field:node:title:label"
-msgid "Titel"
-msgstr ""
-
-#: views:glossary:default:field:users:name:label
-msgctxt "glossary:default:field:users:name:label"
-msgid "Forfatter"
-msgstr ""
-
-#: views:glossary:default:field:node:changed:label
-msgctxt "glossary:default:field:node:changed:label"
-msgid "Seneste opdatering"
-msgstr ""
-
-#: views:glossary:default:argument:node:title:exception:title
-msgctxt "glossary:default:argument:node:title:exception:title"
-msgid "Alle"
-msgstr ""
-
-#: views:glossary:page:use_more_text
-msgctxt "glossary:page:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:glossary:page:exposed_form:submit_button
-msgctxt "glossary:page:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:glossary:page:exposed_form:reset_button_label
-msgctxt "glossary:page:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:glossary:page:exposed_form:exposed_sorts_label
-msgctxt "glossary:page:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:glossary:page:exposed_form:sort_asc_label
-msgctxt "glossary:page:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:glossary:page:exposed_form:sort_desc_label
-msgctxt "glossary:page:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:glossary:page:pager:expose:items_per_page_label
-msgctxt "glossary:page:pager:expose:items_per_page_label"
-msgid "Antal elementer"
-msgstr ""
-
-#: views:glossary:page:pager:expose:items_per_page_options_all_label
-msgctxt "glossary:page:pager:expose:items_per_page_options_all_label"
-msgid "- Alle -"
-msgstr ""
-
-#: views:glossary:page:pager:expose:offset_label
-msgctxt "glossary:page:pager:expose:offset_label"
-msgid "Forskydning"
-msgstr ""
-
-#: views:glossary:page:pager:tags:first
-msgctxt "glossary:page:pager:tags:first"
-msgid "« første"
-msgstr ""
-
-#: views:glossary:page:pager:tags:previous
-msgctxt "glossary:page:pager:tags:previous"
-msgid "‹ forrige"
-msgstr ""
-
-#: views:glossary:page:pager:tags:next
-msgctxt "glossary:page:pager:tags:next"
-msgid "næste ›"
-msgstr ""
-
-#: views:glossary:page:pager:tags:last
-msgctxt "glossary:page:pager:tags:last"
-msgid "sidste »"
-msgstr ""
-
-#: views:glossary:attachment:use_more_text
-msgctxt "glossary:attachment:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:glossary:attachment:exposed_form:submit_button
-msgctxt "glossary:attachment:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:glossary:attachment:exposed_form:reset_button_label
-msgctxt "glossary:attachment:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:glossary:attachment:exposed_form:exposed_sorts_label
-msgctxt "glossary:attachment:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:glossary:attachment:exposed_form:sort_asc_label
-msgctxt "glossary:attachment:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:glossary:attachment:exposed_form:sort_desc_label
-msgctxt "glossary:attachment:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:glossary:attachment:argument:node:title:exception:title
-msgctxt "glossary:attachment:argument:node:title:exception:title"
-msgid "Alle"
-msgstr ""
-
 #: views:list_node_page_titles:default:title
 msgctxt "list_node_page_titles:default:title"
 msgid "Page Title List"
@@ -1760,11 +2590,6 @@ msgctxt "list_node_page_titles:page_1:pager:tags:last"
 msgid "sidste »"
 msgstr ""
 
-#: views:loop_editor_comments:default:title
-msgctxt "loop_editor_comments:default:title"
-msgid "Comments (Sorted by latest)"
-msgstr ""
-
 #: views:loop_editor_comments:default:use_more_text
 msgctxt "loop_editor_comments:default:use_more_text"
 msgid "mere"
@@ -1823,14 +2648,6 @@ msgstr ""
 #: views:loop_editor_comments:default:field:comment:created:label
 msgctxt "loop_editor_comments:default:field:comment:created:label"
 msgid "excluded"
-msgstr ""
-
-#: views:loop_editor_comments:default:field:views:nothing:alter:text
-msgctxt "loop_editor_comments:default:field:views:nothing:alter:text"
-msgid ""
-"[subject]\n"
-"<span class=\"dashboard-list--meta-data\">Answer, created "
-"[created]</span>"
 msgstr ""
 
 #: views:loop_editor_comments:panel_pane_1:use_more_text
@@ -2099,11 +2916,6 @@ msgstr ""
 #: views:loop_editor_users:panel_pane_1:pane_category:name
 msgctxt "loop_editor_users:panel_pane_1:pane_category:name"
 msgid "View panes"
-msgstr ""
-
-#: views:loop_node_comments:default:title
-msgctxt "loop_node_comments:default:title"
-msgid "Comment for content"
 msgstr ""
 
 #: views:loop_node_comments:default:use_more_text
@@ -3720,426 +4532,6 @@ msgctxt "node_hits:page:pager:tags:last"
 msgid "sidste »"
 msgstr ""
 
-#: views:popular:default:title
-msgctxt "popular:default:title"
-msgid "Populært indhold"
-msgstr ""
-
-#: views:popular:default:use_more_text
-msgctxt "popular:default:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:popular:default:exposed_form:submit_button
-msgctxt "popular:default:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:popular:default:exposed_form:reset_button_label
-msgctxt "popular:default:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:popular:default:exposed_form:exposed_sorts_label
-msgctxt "popular:default:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:popular:default:exposed_form:sort_asc_label
-msgctxt "popular:default:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:popular:default:exposed_form:sort_desc_label
-msgctxt "popular:default:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:popular:default:pager:expose:items_per_page_label
-msgctxt "popular:default:pager:expose:items_per_page_label"
-msgid "Antal elementer"
-msgstr ""
-
-#: views:popular:default:pager:expose:items_per_page_options_all_label
-msgctxt "popular:default:pager:expose:items_per_page_options_all_label"
-msgid "- Alle -"
-msgstr ""
-
-#: views:popular:default:pager:expose:offset_label
-msgctxt "popular:default:pager:expose:offset_label"
-msgid "Forskydning"
-msgstr ""
-
-#: views:popular:default:pager:tags:first
-msgctxt "popular:default:pager:tags:first"
-msgid "« første"
-msgstr ""
-
-#: views:popular:default:pager:tags:previous
-msgctxt "popular:default:pager:tags:previous"
-msgid "‹ forrige"
-msgstr ""
-
-#: views:popular:default:pager:tags:next
-msgctxt "popular:default:pager:tags:next"
-msgid "næste ›"
-msgstr ""
-
-#: views:popular:default:pager:tags:last
-msgctxt "popular:default:pager:tags:last"
-msgid "sidste »"
-msgstr ""
-
-#: views:popular:default:field:node:type:label
-msgctxt "popular:default:field:node:type:label"
-msgid "Type"
-msgstr ""
-
-#: views:popular:default:field:node:title:label
-msgctxt "popular:default:field:node:title:label"
-msgid "Titel"
-msgstr ""
-
-#: views:popular:default:field:users:name:label
-msgctxt "popular:default:field:users:name:label"
-msgid "Forfatter"
-msgstr ""
-
-#: views:popular:page:use_more_text
-msgctxt "popular:page:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:popular:page:exposed_form:submit_button
-msgctxt "popular:page:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:popular:page:exposed_form:reset_button_label
-msgctxt "popular:page:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:popular:page:exposed_form:exposed_sorts_label
-msgctxt "popular:page:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:popular:page:exposed_form:sort_asc_label
-msgctxt "popular:page:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:popular:page:exposed_form:sort_desc_label
-msgctxt "popular:page:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:popular:page:pager:expose:items_per_page_label
-msgctxt "popular:page:pager:expose:items_per_page_label"
-msgid "Antal elementer"
-msgstr ""
-
-#: views:popular:page:pager:expose:items_per_page_options_all_label
-msgctxt "popular:page:pager:expose:items_per_page_options_all_label"
-msgid "- Alle -"
-msgstr ""
-
-#: views:popular:page:pager:expose:offset_label
-msgctxt "popular:page:pager:expose:offset_label"
-msgid "Forskydning"
-msgstr ""
-
-#: views:popular:page:pager:tags:first
-msgctxt "popular:page:pager:tags:first"
-msgid "« første"
-msgstr ""
-
-#: views:popular:page:pager:tags:previous
-msgctxt "popular:page:pager:tags:previous"
-msgid "‹ forrige"
-msgstr ""
-
-#: views:popular:page:pager:tags:next
-msgctxt "popular:page:pager:tags:next"
-msgid "næste ›"
-msgstr ""
-
-#: views:popular:page:pager:tags:last
-msgctxt "popular:page:pager:tags:last"
-msgid "sidste »"
-msgstr ""
-
-#: views:popular:page_1:use_more_text
-msgctxt "popular:page_1:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:popular:page_1:exposed_form:submit_button
-msgctxt "popular:page_1:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:popular:page_1:exposed_form:reset_button_label
-msgctxt "popular:page_1:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:popular:page_1:exposed_form:exposed_sorts_label
-msgctxt "popular:page_1:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:popular:page_1:exposed_form:sort_asc_label
-msgctxt "popular:page_1:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:popular:page_1:exposed_form:sort_desc_label
-msgctxt "popular:page_1:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:popular:page_1:pager:expose:items_per_page_label
-msgctxt "popular:page_1:pager:expose:items_per_page_label"
-msgid "Antal elementer"
-msgstr ""
-
-#: views:popular:page_1:pager:expose:items_per_page_options_all_label
-msgctxt "popular:page_1:pager:expose:items_per_page_options_all_label"
-msgid "- Alle -"
-msgstr ""
-
-#: views:popular:page_1:pager:expose:offset_label
-msgctxt "popular:page_1:pager:expose:offset_label"
-msgid "Forskydning"
-msgstr ""
-
-#: views:popular:page_1:pager:tags:first
-msgctxt "popular:page_1:pager:tags:first"
-msgid "« første"
-msgstr ""
-
-#: views:popular:page_1:pager:tags:previous
-msgctxt "popular:page_1:pager:tags:previous"
-msgid "‹ forrige"
-msgstr ""
-
-#: views:popular:page_1:pager:tags:next
-msgctxt "popular:page_1:pager:tags:next"
-msgid "næste ›"
-msgstr ""
-
-#: views:popular:page_1:pager:tags:last
-msgctxt "popular:page_1:pager:tags:last"
-msgid "sidste »"
-msgstr ""
-
-#: views:popular:page_1:field:node:type:label
-msgctxt "popular:page_1:field:node:type:label"
-msgid "Type"
-msgstr ""
-
-#: views:popular:page_1:field:node:title:label
-msgctxt "popular:page_1:field:node:title:label"
-msgid "Titel"
-msgstr ""
-
-#: views:popular:page_1:field:users:name:label
-msgctxt "popular:page_1:field:users:name:label"
-msgid "Forfatter"
-msgstr ""
-
-#: views:popular:page_1:field:node_counter:daycount:label
-msgctxt "popular:page_1:field:node_counter:daycount:label"
-msgid "Visninger i dag"
-msgstr ""
-
-#: views:popular:page_1:field:node_counter:daycount:decimal
-msgctxt "popular:page_1:field:node_counter:daycount:decimal"
-msgid "."
-msgstr ""
-
-#: views:popular:page_1:field:node_counter:daycount:separator
-msgctxt "popular:page_1:field:node_counter:daycount:separator"
-msgid ","
-msgstr ""
-
-#: views:popular:block:use_more_text
-msgctxt "popular:block:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:popular:block:exposed_form:submit_button
-msgctxt "popular:block:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:popular:block:exposed_form:reset_button_label
-msgctxt "popular:block:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:popular:block:exposed_form:exposed_sorts_label
-msgctxt "popular:block:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:popular:block:exposed_form:sort_asc_label
-msgctxt "popular:block:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:popular:block:exposed_form:sort_desc_label
-msgctxt "popular:block:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:popular:block:pager:expose:items_per_page_label
-msgctxt "popular:block:pager:expose:items_per_page_label"
-msgid "Antal elementer"
-msgstr ""
-
-#: views:popular:block:pager:expose:items_per_page_options_all_label
-msgctxt "popular:block:pager:expose:items_per_page_options_all_label"
-msgid "- Alle -"
-msgstr ""
-
-#: views:popular:block:pager:expose:offset_label
-msgctxt "popular:block:pager:expose:offset_label"
-msgid "Forskydning"
-msgstr ""
-
-#: views:popular:block:pager:tags:first
-msgctxt "popular:block:pager:tags:first"
-msgid "« første"
-msgstr ""
-
-#: views:popular:block:pager:tags:previous
-msgctxt "popular:block:pager:tags:previous"
-msgid "‹ forrige"
-msgstr ""
-
-#: views:popular:block:pager:tags:next
-msgctxt "popular:block:pager:tags:next"
-msgid "næste ›"
-msgstr ""
-
-#: views:popular:block:pager:tags:last
-msgctxt "popular:block:pager:tags:last"
-msgid "sidste »"
-msgstr ""
-
-#: views:popular:block:field:node_counter:totalcount:decimal
-msgctxt "popular:block:field:node_counter:totalcount:decimal"
-msgid "."
-msgstr ""
-
-#: views:popular:block:field:node_counter:totalcount:separator
-msgctxt "popular:block:field:node_counter:totalcount:separator"
-msgid ","
-msgstr ""
-
-#: views:popular:block:field:node_counter:totalcount:prefix
-msgctxt "popular:block:field:node_counter:totalcount:prefix"
-msgid " ("
-msgstr ""
-
-#: views:popular:block:field:node_counter:totalcount:suffix
-msgctxt "popular:block:field:node_counter:totalcount:suffix"
-msgid ")"
-msgstr ""
-
-#: views:popular:block_1:title
-msgctxt "popular:block_1:title"
-msgid "Populært indhold i dag"
-msgstr ""
-
-#: views:popular:block_1:use_more_text
-msgctxt "popular:block_1:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:popular:block_1:exposed_form:submit_button
-msgctxt "popular:block_1:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:popular:block_1:exposed_form:reset_button_label
-msgctxt "popular:block_1:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:popular:block_1:exposed_form:exposed_sorts_label
-msgctxt "popular:block_1:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:popular:block_1:exposed_form:sort_asc_label
-msgctxt "popular:block_1:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:popular:block_1:exposed_form:sort_desc_label
-msgctxt "popular:block_1:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:popular:block_1:pager:expose:items_per_page_label
-msgctxt "popular:block_1:pager:expose:items_per_page_label"
-msgid "Antal elementer"
-msgstr ""
-
-#: views:popular:block_1:pager:expose:items_per_page_options_all_label
-msgctxt "popular:block_1:pager:expose:items_per_page_options_all_label"
-msgid "- Alle -"
-msgstr ""
-
-#: views:popular:block_1:pager:expose:offset_label
-msgctxt "popular:block_1:pager:expose:offset_label"
-msgid "Forskydning"
-msgstr ""
-
-#: views:popular:block_1:pager:tags:first
-msgctxt "popular:block_1:pager:tags:first"
-msgid "« første"
-msgstr ""
-
-#: views:popular:block_1:pager:tags:previous
-msgctxt "popular:block_1:pager:tags:previous"
-msgid "‹ forrige"
-msgstr ""
-
-#: views:popular:block_1:pager:tags:next
-msgctxt "popular:block_1:pager:tags:next"
-msgid "næste ›"
-msgstr ""
-
-#: views:popular:block_1:pager:tags:last
-msgctxt "popular:block_1:pager:tags:last"
-msgid "sidste »"
-msgstr ""
-
-#: views:popular:block_1:field:node_counter:daycount:decimal
-msgctxt "popular:block_1:field:node_counter:daycount:decimal"
-msgid "."
-msgstr ""
-
-#: views:popular:block_1:field:node_counter:daycount:separator
-msgctxt "popular:block_1:field:node_counter:daycount:separator"
-msgid ","
-msgstr ""
-
-#: views:popular:block_1:field:node_counter:daycount:prefix
-msgctxt "popular:block_1:field:node_counter:daycount:prefix"
-msgid " ("
-msgstr ""
-
-#: views:popular:block_1:field:node_counter:daycount:suffix
-msgctxt "popular:block_1:field:node_counter:daycount:suffix"
-msgid ")"
-msgstr ""
-
 #: views:redirects:default:use_more_text
 msgctxt "redirects:default:use_more_text"
 msgid "mere"
@@ -4992,416 +5384,6 @@ msgctxt "subscribe_user:default:argument:flagging:uid:exception:title"
 msgid "Alle"
 msgstr ""
 
-#: views:taxonomy_term:default:use_more_text
-msgctxt "taxonomy_term:default:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:taxonomy_term:default:exposed_form:submit_button
-msgctxt "taxonomy_term:default:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:taxonomy_term:default:exposed_form:reset_button_label
-msgctxt "taxonomy_term:default:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:taxonomy_term:default:exposed_form:exposed_sorts_label
-msgctxt "taxonomy_term:default:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:taxonomy_term:default:exposed_form:sort_asc_label
-msgctxt "taxonomy_term:default:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:taxonomy_term:default:exposed_form:sort_desc_label
-msgctxt "taxonomy_term:default:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:taxonomy_term:default:pager:expose:items_per_page_label
-msgctxt "taxonomy_term:default:pager:expose:items_per_page_label"
-msgid "Antal elementer"
-msgstr ""
-
-#: views:taxonomy_term:default:pager:expose:items_per_page_options_all_label
-msgctxt "taxonomy_term:default:pager:expose:items_per_page_options_all_label"
-msgid "- Alle -"
-msgstr ""
-
-#: views:taxonomy_term:default:pager:expose:offset_label
-msgctxt "taxonomy_term:default:pager:expose:offset_label"
-msgid "Forskydning"
-msgstr ""
-
-#: views:taxonomy_term:default:pager:tags:first
-msgctxt "taxonomy_term:default:pager:tags:first"
-msgid "« første"
-msgstr ""
-
-#: views:taxonomy_term:default:pager:tags:previous
-msgctxt "taxonomy_term:default:pager:tags:previous"
-msgid "‹ forrige"
-msgstr ""
-
-#: views:taxonomy_term:default:pager:tags:next
-msgctxt "taxonomy_term:default:pager:tags:next"
-msgid "næste ›"
-msgstr ""
-
-#: views:taxonomy_term:default:pager:tags:last
-msgctxt "taxonomy_term:default:pager:tags:last"
-msgid "sidste »"
-msgstr ""
-
-#: views:taxonomy_term:default:argument:node:term_node_tid_depth:exception:title
-msgctxt "taxonomy_term:default:argument:node:term_node_tid_depth:exception:title"
-msgid "Alle"
-msgstr ""
-
-#: views:taxonomy_term:default:argument:node:term_node_tid_depth:title
-msgctxt "taxonomy_term:default:argument:node:term_node_tid_depth:title"
-msgid "%1"
-msgstr ""
-
-#: views:taxonomy_term:default:argument:node:term_node_tid_depth_modifier:exception:title
-msgctxt "taxonomy_term:default:argument:node:term_node_tid_depth_modifier:exception:title"
-msgid "Alle"
-msgstr ""
-
-#: views:taxonomy_term:page:use_more_text
-msgctxt "taxonomy_term:page:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:taxonomy_term:page:exposed_form:submit_button
-msgctxt "taxonomy_term:page:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:taxonomy_term:page:exposed_form:reset_button_label
-msgctxt "taxonomy_term:page:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:taxonomy_term:page:exposed_form:exposed_sorts_label
-msgctxt "taxonomy_term:page:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:taxonomy_term:page:exposed_form:sort_asc_label
-msgctxt "taxonomy_term:page:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:taxonomy_term:page:exposed_form:sort_desc_label
-msgctxt "taxonomy_term:page:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:taxonomy_term:page:pager:expose:items_per_page_label
-msgctxt "taxonomy_term:page:pager:expose:items_per_page_label"
-msgid "Antal elementer"
-msgstr ""
-
-#: views:taxonomy_term:page:pager:expose:items_per_page_options_all_label
-msgctxt "taxonomy_term:page:pager:expose:items_per_page_options_all_label"
-msgid "- Alle -"
-msgstr ""
-
-#: views:taxonomy_term:page:pager:expose:offset_label
-msgctxt "taxonomy_term:page:pager:expose:offset_label"
-msgid "Forskydning"
-msgstr ""
-
-#: views:taxonomy_term:page:pager:tags:first
-msgctxt "taxonomy_term:page:pager:tags:first"
-msgid "« første"
-msgstr ""
-
-#: views:taxonomy_term:page:pager:tags:previous
-msgctxt "taxonomy_term:page:pager:tags:previous"
-msgid "‹ forrige"
-msgstr ""
-
-#: views:taxonomy_term:page:pager:tags:next
-msgctxt "taxonomy_term:page:pager:tags:next"
-msgid "næste ›"
-msgstr ""
-
-#: views:taxonomy_term:page:pager:tags:last
-msgctxt "taxonomy_term:page:pager:tags:last"
-msgid "sidste »"
-msgstr ""
-
-#: views:taxonomy_term:feed:use_more_text
-msgctxt "taxonomy_term:feed:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:taxonomy_term:feed:exposed_form:submit_button
-msgctxt "taxonomy_term:feed:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:taxonomy_term:feed:exposed_form:reset_button_label
-msgctxt "taxonomy_term:feed:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:taxonomy_term:feed:exposed_form:exposed_sorts_label
-msgctxt "taxonomy_term:feed:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:taxonomy_term:feed:exposed_form:sort_asc_label
-msgctxt "taxonomy_term:feed:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:taxonomy_term:feed:exposed_form:sort_desc_label
-msgctxt "taxonomy_term:feed:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:taxonomy_term:feed:pager:expose:items_per_page_label
-msgctxt "taxonomy_term:feed:pager:expose:items_per_page_label"
-msgid "Antal elementer"
-msgstr ""
-
-#: views:taxonomy_term:feed:pager:expose:items_per_page_options_all_label
-msgctxt "taxonomy_term:feed:pager:expose:items_per_page_options_all_label"
-msgid "- Alle -"
-msgstr ""
-
-#: views:taxonomy_term:feed:pager:expose:offset_label
-msgctxt "taxonomy_term:feed:pager:expose:offset_label"
-msgid "Forskydning"
-msgstr ""
-
-#: views:taxonomy_term:feed:pager:tags:first
-msgctxt "taxonomy_term:feed:pager:tags:first"
-msgid "« første"
-msgstr ""
-
-#: views:taxonomy_term:feed:pager:tags:previous
-msgctxt "taxonomy_term:feed:pager:tags:previous"
-msgid "‹ forrige"
-msgstr ""
-
-#: views:taxonomy_term:feed:pager:tags:next
-msgctxt "taxonomy_term:feed:pager:tags:next"
-msgid "næste ›"
-msgstr ""
-
-#: views:taxonomy_term:feed:pager:tags:last
-msgctxt "taxonomy_term:feed:pager:tags:last"
-msgid "sidste »"
-msgstr ""
-
-#: views:tracker:default:title
-msgctxt "tracker:default:title"
-msgid "Seneste indlæg"
-msgstr ""
-
-#: views:tracker:default:use_more_text
-msgctxt "tracker:default:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:tracker:default:exposed_form:submit_button
-msgctxt "tracker:default:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:tracker:default:exposed_form:reset_button_label
-msgctxt "tracker:default:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:tracker:default:exposed_form:exposed_sorts_label
-msgctxt "tracker:default:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:tracker:default:exposed_form:sort_asc_label
-msgctxt "tracker:default:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:tracker:default:exposed_form:sort_desc_label
-msgctxt "tracker:default:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:tracker:default:pager:expose:items_per_page_label
-msgctxt "tracker:default:pager:expose:items_per_page_label"
-msgid "Antal elementer"
-msgstr ""
-
-#: views:tracker:default:pager:expose:items_per_page_options_all_label
-msgctxt "tracker:default:pager:expose:items_per_page_options_all_label"
-msgid "- Alle -"
-msgstr ""
-
-#: views:tracker:default:pager:expose:offset_label
-msgctxt "tracker:default:pager:expose:offset_label"
-msgid "Forskydning"
-msgstr ""
-
-#: views:tracker:default:pager:tags:first
-msgctxt "tracker:default:pager:tags:first"
-msgid "« første"
-msgstr ""
-
-#: views:tracker:default:pager:tags:previous
-msgctxt "tracker:default:pager:tags:previous"
-msgid "‹ forrige"
-msgstr ""
-
-#: views:tracker:default:pager:tags:next
-msgctxt "tracker:default:pager:tags:next"
-msgid "næste ›"
-msgstr ""
-
-#: views:tracker:default:pager:tags:last
-msgctxt "tracker:default:pager:tags:last"
-msgid "sidste »"
-msgstr ""
-
-#: views:tracker:default:relationship:node:uid:label
-msgctxt "tracker:default:relationship:node:uid:label"
-msgid "forfatter"
-msgstr ""
-
-#: views:tracker:default:field:node:type:label
-msgctxt "tracker:default:field:node:type:label"
-msgid "Type"
-msgstr ""
-
-#: views:tracker:default:field:node:title:label
-msgctxt "tracker:default:field:node:title:label"
-msgid "Titel"
-msgstr ""
-
-#: views:tracker:default:field:users:name:label
-msgctxt "tracker:default:field:users:name:label"
-msgid "Forfatter"
-msgstr ""
-
-#: views:tracker:default:field:node_comment_statistics:comment_count:label
-msgctxt "tracker:default:field:node_comment_statistics:comment_count:label"
-msgid "Svar"
-msgstr ""
-
-#: views:tracker:default:field:node_comment_statistics:comment_count:decimal
-msgctxt "tracker:default:field:node_comment_statistics:comment_count:decimal"
-msgid "."
-msgstr ""
-
-#: views:tracker:default:field:node_comment_statistics:comment_count:separator
-msgctxt "tracker:default:field:node_comment_statistics:comment_count:separator"
-msgid ","
-msgstr ""
-
-#: views:tracker:default:field:node_comment_statistics:last_comment_timestamp:label
-msgctxt "tracker:default:field:node_comment_statistics:last_comment_timestamp:label"
-msgid "Seneste svar"
-msgstr ""
-
-#: views:tracker:default:field:node:new_comments:decimal
-msgctxt "tracker:default:field:node:new_comments:decimal"
-msgid "."
-msgstr ""
-
-#: views:tracker:default:field:node:new_comments:separator
-msgctxt "tracker:default:field:node:new_comments:separator"
-msgid ","
-msgstr ""
-
-#: views:tracker:default:field:node:new_comments:suffix
-msgctxt "tracker:default:field:node:new_comments:suffix"
-msgid " ny"
-msgstr ""
-
-#: views:tracker:default:argument:node:uid_touch:exception:title
-msgctxt "tracker:default:argument:node:uid_touch:exception:title"
-msgid "Alle"
-msgstr ""
-
-#: views:tracker:default:argument:node:uid_touch:title
-msgctxt "tracker:default:argument:node:uid_touch:title"
-msgid "Seneste indlæg for %1"
-msgstr ""
-
-#: views:tracker:page:use_more_text
-msgctxt "tracker:page:use_more_text"
-msgid "mere"
-msgstr ""
-
-#: views:tracker:page:exposed_form:submit_button
-msgctxt "tracker:page:exposed_form:submit_button"
-msgid "Udfør"
-msgstr ""
-
-#: views:tracker:page:exposed_form:reset_button_label
-msgctxt "tracker:page:exposed_form:reset_button_label"
-msgid "Gendan"
-msgstr ""
-
-#: views:tracker:page:exposed_form:exposed_sorts_label
-msgctxt "tracker:page:exposed_form:exposed_sorts_label"
-msgid "Sortér efter"
-msgstr ""
-
-#: views:tracker:page:exposed_form:sort_asc_label
-msgctxt "tracker:page:exposed_form:sort_asc_label"
-msgid "Stigende"
-msgstr ""
-
-#: views:tracker:page:exposed_form:sort_desc_label
-msgctxt "tracker:page:exposed_form:sort_desc_label"
-msgid "Faldende"
-msgstr ""
-
-#: views:tracker:page:pager:expose:items_per_page_label
-msgctxt "tracker:page:pager:expose:items_per_page_label"
-msgid "Antal elementer"
-msgstr ""
-
-#: views:tracker:page:pager:expose:items_per_page_options_all_label
-msgctxt "tracker:page:pager:expose:items_per_page_options_all_label"
-msgid "- Alle -"
-msgstr ""
-
-#: views:tracker:page:pager:expose:offset_label
-msgctxt "tracker:page:pager:expose:offset_label"
-msgid "Forskydning"
-msgstr ""
-
-#: views:tracker:page:pager:tags:first
-msgctxt "tracker:page:pager:tags:first"
-msgid "« første"
-msgstr ""
-
-#: views:tracker:page:pager:tags:previous
-msgctxt "tracker:page:pager:tags:previous"
-msgid "‹ forrige"
-msgstr ""
-
-#: views:tracker:page:pager:tags:next
-msgctxt "tracker:page:pager:tags:next"
-msgid "næste ›"
-msgstr ""
-
-#: views:tracker:page:pager:tags:last
-msgctxt "tracker:page:pager:tags:last"
-msgid "sidste »"
-msgstr ""
-
 #: views:user_messages:default:use_more_text
 msgctxt "user_messages:default:use_more_text"
 msgid "View all notifications"
@@ -5699,31 +5681,51 @@ msgstr ""
 
 #: views:loop_editor_content:default:title
 msgctxt "loop_editor_content:default:title"
-msgid "Questions (sorted by latest)"
+msgid "Spørgsmål (sorteret efter nyeste)"
 msgstr "Spørgsmål (sorteret efter nyeste)"
 
 #: views:loop_editor_content:panel_pane_3:title
 msgctxt "loop_editor_content:panel_pane_3:title"
-msgid "Other content (sorted by latest)"
+msgid "Andet indhold (sorteret efter nyeste)"
 msgstr "Andet indhold (sorteret efter nyeste)"
 
 #: views:loop_editor_users:default:title
 msgctxt "loop_editor_users:default:title"
-msgid "Users (sorted by latest)"
+msgid "Brugere (sorteret efter nyeste)"
 msgstr "Brugere (sorteret efter nyeste)"
 
 #: views:user_messages:default:title
 msgctxt "user_messages:default:title"
-msgid "Unread messages"
+msgid "Ulæste beskeder"
 msgstr "Ulæste beskeder"
 
 #: views:user_messages:panel_pane_2:title
 msgctxt "user_messages:panel_pane_2:title"
-msgid "Messages archive"
+msgid "Beskedarkiv"
 msgstr "Beskedarkiv"
 
 #: views:user_messages:panel_pane_4:title
 msgctxt "user_messages:panel_pane_4:title"
-msgid "Messages read"
+msgid "Læste beskeder"
 msgstr "Læste beskeder"
+
+#: views:loop_editor_comments:default:title
+msgctxt "loop_editor_comments:default:title"
+msgid "Comments (Sorted by latest)"
+msgstr "Kommentarer (Sorteret efter nyeste)"
+
+#: views:loop_editor_comments:default:field:views:nothing:alter:text
+msgctxt "loop_editor_comments:default:field:views:nothing:alter:text"
+msgid ""
+"[subject]\n"
+"<span class=\"dashboard-list--meta-data\">Answer, created "
+"[created]</span>"
+msgstr ""
+"[subject] <span class=\"dashboard-list--meta-data\">Svar, oprettet "
+"[created]</span>"
+
+#: views:loop_node_comments:default:title
+msgctxt "loop_node_comments:default:title"
+msgid "Comment for content"
+msgstr "Kommentar til indhold"
 

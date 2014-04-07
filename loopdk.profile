@@ -30,13 +30,13 @@ if (!function_exists("system_form_install_configure_form_alter")) {
 function loopdk_module_selection_form($form, &$form_state) {
   $form['translation'] = array(
       '#type' => 'checkbox',
-      '#title' => 'Enable translation',
-      '#description' => 'Enable translation.',
+      '#title' => 'Danish translation',
+      '#description' => 'Install and enable Danish translation.',
       '#default_value' => FALSE,
     );
   $form['submit'] = array(
     '#type' => 'submit',
-    '#value' => st('Enable modules'),
+    '#value' => st('Continue installation'),
   );
   return $form;
 }
@@ -122,12 +122,6 @@ function loopdk_import_translation() {
   $file->filename = basename($file->uri);
   _locale_import_po($file, 'da', LOCALE_IMPORT_OVERWRITE, 'views');
 
-  // Refresh strings
-  module_load_include('inc', 'i18n', 'i18n_string/i18n_string.admin');
-  $groups = array("views"=>"Views", "panels"=>"Paneler", "menu"=>"Menu");
-  $batch = i18n_string_refresh_batch($groups, FALSE);
-  batch_set($batch);
-
   // Build batch with l10n_update module.
   $history = l10n_update_get_history();
   module_load_include('check.inc', 'l10n_update');
@@ -138,6 +132,7 @@ function loopdk_import_translation() {
   module_load_include('batch.inc', 'l10n_update');
   $updates = _l10n_update_prepare_updates($updates, NULL, array());
   $batch = l10n_update_batch_multiple($updates, LOCALE_IMPORT_KEEP);
+
   return $batch;
 }
 
@@ -302,4 +297,7 @@ function loopdk_final_settings() {
   $instance = field_info_instance('user', 'field_user_image', 'user');
   $instance['settings']['default_image'] = $file->fid;
   field_update_instance($instance);
+
+  module_load_include('inc', 'i18n_string', 'i18n_string.admin');
+  i18n_string_refresh_group('panels');
 }
