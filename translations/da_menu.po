@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-04-03 10:54+0200\n"
-"PO-Revision-Date: 2014-04-03 10:54+0200\n"
+"POT-Creation-Date: 2014-04-07 09:02+0200\n"
+"PO-Revision-Date: 2014-04-07 09:02+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -35,18 +35,6 @@ msgctxt "menu:management:description"
 msgid "The <em>Management</em> menu contains links for administrative tasks."
 msgstr ""
 
-#: menu:menu:menu-loop-primary-menu:title
-msgctxt "menu:menu-loop-primary-menu:title"
-msgid "Loop Primary Menu"
-msgstr ""
-
-#: menu:menu:menu-loop-primary-menu:description
-msgctxt "menu:menu-loop-primary-menu:description"
-msgid ""
-"Primary menu with support for smaller screen and touch devices. Works "
-"as a submenu to Main Menu"
-msgstr ""
-
 #: menu:menu:navigation:title
 msgctxt "menu:navigation:title"
 msgid "Navigation"
@@ -70,6 +58,18 @@ msgctxt "menu:user-menu:description"
 msgid ""
 "The <em>User</em> menu contains links related to the user's account, "
 "as well as the 'Log out' link."
+msgstr ""
+
+#: menu:menu:menu-loop-primary-menu:title
+msgctxt "menu:menu-loop-primary-menu:title"
+msgid "Loop Primary Menu"
+msgstr ""
+
+#: menu:menu:menu-loop-primary-menu:description
+msgctxt "menu:menu-loop-primary-menu:description"
+msgid ""
+"Primary menu with support for smaller screen and touch devices. Works "
+"as a submenu to Main Menu"
 msgstr ""
 
 #: menu:item:284:title

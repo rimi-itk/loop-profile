@@ -30,6 +30,7 @@ dependencies[] = google_analytics_counter
 dependencies[] = image
 dependencies[] = l10n_update
 dependencies[] = i18n
+dependencies[] = i18n_field
 dependencies[] = i18n_menu
 dependencies[] = i18n_panels
 dependencies[] = i18n_string
