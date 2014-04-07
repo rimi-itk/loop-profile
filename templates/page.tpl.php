@@ -77,10 +77,10 @@
  * Insert Loop primary menu if module is enabled.
  * Must be placed here to work on small screen devices.
  */
-if (isset($primary_menu_block)): ?>
+if (isset($primary_menu_block['content'])): ?>
   <nav class="nav-mobile js-mobile-nav">
-    <?php if ($primary_menu_block) : ?>
-      <?php print render($primary_menu_block); ?>
+    <?php if ($primary_menu_block['content']) : ?>
+      <?php print render($primary_menu_block['content']); ?>
     <?php endif; ?>
     <?php if($user->uid > 0): ?>
       <div class="nav-mobile--user-links">
@@ -93,7 +93,7 @@ if (isset($primary_menu_block)): ?>
       <?php if (user_access('access administration pages')) : ?>
         <div class="nav-mobile--administration-links">
           <h2 class="nav-mobile--links-header"><?php print t('Administration links');?></h2>
-          <?php print render($management_menu_block); ?>
+          <?php print render($management_menu_block['content']); ?>
         </div>
       <?php endif;?>
     <?php endif;?>
@@ -108,19 +108,19 @@ if (isset($primary_menu_block)): ?>
       </a>
     <?php endif; ?>
     <div class="nav--wrapper">
-      <?php if (!empty($main_menu_block)) : ?>
+      <?php if (!empty($main_menu_block['content'])) : ?>
         <nav class="nav">
-          <?php print render($main_menu_block); ?>
+          <?php print render($main_menu_block['content']); ?>
         </nav>
       <?php endif; ?>
       <?php if (!empty($primary_menu_block['content'])) : ?>
         <nav class="nav-dropdown">
-          <?php print render($primary_menu_block); ?>
+          <?php print render($primary_menu_block['content']); ?>
         </nav>
       <?php endif; ?>
-      <?php if (!empty($management_menu_block) && user_access('access administration pages')) : ?>
+      <?php if (!empty($management_menu_block['content']) && user_access('access administration pages')) : ?>
         <nav class="nav-dropdown">
-          <?php print render($management_menu_block); ?>
+          <?php print render($management_menu_block['content']); ?>
         </nav>
       <?php endif; ?>
       <?php if (!empty($logout_link)) : ?>
@@ -133,7 +133,7 @@ if (isset($primary_menu_block)): ?>
 <?php if (isset($search)): ?>
   <div class="typeahead-block">
     <div class="typeahead-block--wrapper">
-      <?php print render($search); ?>
+      <?php print render($search['content']); ?>
     </div>
   </div>
 <?php endif; ?>
