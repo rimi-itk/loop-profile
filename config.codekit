@@ -1182,17 +1182,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/scripts\/use-chosen.min.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/scripts\/use-chosen.min.js",
-		"outputAbbreviatedPath": "\/scripts\/min\/use-chosen.min-ck.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/template.php": {
 		"fileType": 8192,
 		"ignore": 0,

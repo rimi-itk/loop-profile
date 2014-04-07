@@ -133,10 +133,6 @@ label {
   @include box-sizing(border-box);
 }
 
-.form-select[multiple] {
-  height: 8em;
-}
-
 .form-textarea-question {
   height: 6em;
 

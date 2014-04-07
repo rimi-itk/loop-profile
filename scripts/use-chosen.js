@@ -9,7 +9,10 @@
 (function($) {
   // Start the show.
   $(document).ready(function () {
-    $('.chosen-select').chosen();
+    $('.js-chosen-select-area-of-expertise').chosen({
+      no_results_text: "Angiv værdi.",
+      placeholder_text : "Angiv værdi."
+    });
   });
 
 })(jQuery);
