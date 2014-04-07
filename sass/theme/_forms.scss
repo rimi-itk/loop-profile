@@ -247,6 +247,7 @@ label {
   // We use ID since it's the only unique identifier, and the html is ajax generated through core.
 
   #edit-field-user-image-und-0-upload-button {
+    @extend .button--neutral;
     display: block;
     margin: 1em auto;
     width: 8em;

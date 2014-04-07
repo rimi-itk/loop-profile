@@ -113,13 +113,13 @@ if (isset($primary_menu_block)): ?>
           <?php print render($main_menu_block); ?>
         </nav>
       <?php endif; ?>
-      <?php if (!empty($primary_menu_block)) : ?>
+      <?php if (!empty($primary_menu_block['content'])) : ?>
         <nav class="nav-dropdown">
           <?php print render($primary_menu_block); ?>
         </nav>
       <?php endif; ?>
       <?php if (!empty($management_menu_block) && user_access('access administration pages')) : ?>
-        <nav class="nav-dropdown 2">
+        <nav class="nav-dropdown">
           <?php print render($management_menu_block); ?>
         </nav>
       <?php endif; ?>

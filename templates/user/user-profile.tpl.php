@@ -40,7 +40,7 @@
   <?php else : ?>
     <?php print $elements['#account']->name; ?>
   <?php endif; ?>
-  <?php if ($user->uid == $elements['#account']->uid) : ?>
+  <?php if ($user->uid == $elements['#account']->uid || user_access('administer users')) : ?>
     <span class="user-profile-module--edit-link">(<a href="/user/<?php print $elements['#account']->uid ;?>/edit"><?php print t('Edit'); ?></a>)</span>
   <?php endif; ?>
 </h1>

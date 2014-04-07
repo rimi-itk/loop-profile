@@ -8,6 +8,7 @@
  %button {
   display: inline-block;
   font-size: 1.25em;
+  margin: 0 0.5em 0.5em 0;
   padding: .4em 1.5em .5em;
   position: relative;
 
@@ -20,6 +21,10 @@
   &:hover,
   &:active {
     text-decoration: none;
+  }
+
+  &:last-child {
+    margin: 0 0 0.5em;
   }
 
   @include border-radius($border-radius);

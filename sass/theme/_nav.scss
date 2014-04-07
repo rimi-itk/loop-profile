@@ -134,8 +134,6 @@
    ================================================================================================================== */
 
 .nav-dropdown {
-
-  margin-left: 4px;
   display: none;
 
   @include breakpoint($layout-max-width) {

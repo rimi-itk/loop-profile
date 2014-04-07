@@ -47,6 +47,7 @@
       </fieldset>
       <div class="form-actions">
         <input type="submit" value="Gem" class="form-submit">
+        <input type="submit" value="Slet" class="form-submit">
       </div>
     </div>
   </div>
