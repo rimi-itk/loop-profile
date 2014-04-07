@@ -48,7 +48,7 @@
 <?php if (!$label_hidden): ?>
   <span class="question--label">
     <?php print $label ?>:
-    <?php if ($element['#object']->uid == $user->uid) : ?>
+    <?php if ($element['#object']->uid == $user->uid || user_access('edit any post content')) : ?>
       <span class="question--label-edit-link">
         (<?php print l(t('edit'), 'node/' . $element['#object']->nid . '/edit');?>)
       </span>
