@@ -39,6 +39,7 @@ dependencies[] = libraries
 dependencies[] = link
 dependencies[] = html5_tools
 dependencies[] = menu
+dependencies[] = menu_admin_per_menu
 dependencies[] = menu_block
 dependencies[] = metatag
 dependencies[] = module_filter
