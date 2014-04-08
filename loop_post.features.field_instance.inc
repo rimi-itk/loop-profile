@@ -95,7 +95,7 @@ function loop_post_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_description',
-    'label' => 'Description',
+    'label' => 'Post',
     'required' => 1,
     'settings' => array(
       'better_formats' => array(
@@ -271,9 +271,9 @@ function loop_post_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Comment');
-  t('Description');
   t('Enter your question or observation.');
   t('Keyword');
+  t('Post');
   t('Profession');
   t('Select a subject.');
   t('Subject');
