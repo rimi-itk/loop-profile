@@ -78,15 +78,12 @@
   &.active {
     font-weight: bold;
   }
+
+  &:last-child {
+    @include reset-element-spacing();
+  }
 }
 
-.block-module--user-links-item-last {
-  @extend .block-module--user-links-item;
-
-  border-bottom: 0;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
 
 /* My content block
    ================================================================================================================== */
