@@ -105,6 +105,7 @@ function loop_preprocess_panels_pane(&$variables) {
       $variables['theme_hook_suggestions'][] = 'panels_pane__user_page_unread_messages';
     }
   }
+  $variables['title_attributes_array']['class'][] = 'block-module--title';
 }
 
 
