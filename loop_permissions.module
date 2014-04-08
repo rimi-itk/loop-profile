@@ -246,7 +246,6 @@ function loop_permissions_secure_permissions($role) {
       'delete own post content',
       'delete own tree content',
       'Delete own URLs',
-      'delete revisions',
       'delete terms in 1',
       'delete terms in 2',
       'delete terms in 3',
@@ -264,12 +263,11 @@ function loop_permissions_secure_permissions($role) {
       'edit terms in 3',
       'Enter custom URLs',
       'manage Shorten URLs API keys',
-      'revert revisions',
       'translate interface',
       'use Shorten URLs page',
       'use text format editor',
       'View own URL stats',
-      'view revisions',
+      'view the administration theme',
     ),
   );
   if (isset($permissions[$role])) {
