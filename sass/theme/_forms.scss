@@ -84,14 +84,15 @@ label {
 }
 
 .form-wrapper {
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
+
   &:last-child {
     margin-bottom: 0;
   }
 }
 
 .form-item {
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
 
   &:last-child {
     margin-bottom: 0;
@@ -160,14 +161,6 @@ label {
   margin-bottom: 2em;
   padding-bottom: 1em;
   padding-left: 1em;
-
-  .form-item {
-    margin-bottom: 1em;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
 
   &:last-child {
     margin-bottom: 0;
