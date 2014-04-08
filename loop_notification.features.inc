@@ -84,16 +84,16 @@ function loop_notification_default_message_type() {
     "message_text" : {
     "da" : [
        {
-          "value" : "Der er kommet et nyt svar til sp\u00f8rgsm\u00e5let: \u003Ca href=\u0022node\/[message:field-message-node-reference:nid]\u0022\u003E[message:field-message-node-reference:field_description]\u003C\/a\u003E",
+          "value" : "Der er kommet et nyt svar til sp\u00f8rgsm\u00e5let: \u003Ca href=\u0022\/node\/[message:field-message-node-reference:nid]\u0022\u003E[message:field-message-node-reference:field_description]\u003C\/a\u003E",
           "format" : "html",
-          "safe_value" : "Der er kommet et nyt svar til sp\u00f8rgsm\u00e5let: \u003Ca href=\u0022node\/[message:field-message-node-reference:nid]\u0022\u003E[message:field-message-node-reference:field_description]\u003C\/a\u003E"
+          "safe_value" : "Der er kommet et nyt svar til sp\u00f8rgsm\u00e5let: \u003Ca href=\u0022\/node\/[message:field-message-node-reference:nid]\u0022\u003E[message:field-message-node-reference:field_description]\u003C\/a\u003E"
          }
       ],
     "en" : [
         {
-          "value" : "There is a new reply to the question: \u003Ca href=\u0022node\/[message:field-message-node-reference:nid]\u0022\u003E[message:field-message-node-reference:field_description]\u003C\/a\u003E",
+          "value" : "There is a new reply to the question: \u003Ca href=\u0022\/node\/[message:field-message-node-reference:nid]\u0022\u003E[message:field-message-node-reference:field_description]\u003C\/a\u003E",
           "format" : "html",
-          "safe_value" : "There is a new reply to the question: \u003Ca href=\u0022node\/[message:field-message-node-reference:nid]\u0022\u003E[message:field-message-node-reference:field_description]\u003C\/a\u003E"
+          "safe_value" : "There is a new reply to the question: \u003Ca href=\u0022\/node\/[message:field-message-node-reference:nid]\u0022\u003E[message:field-message-node-reference:field_description]\u003C\/a\u003E"
         }
       ]
     }
