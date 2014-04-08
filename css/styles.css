@@ -2142,6 +2142,7 @@ label {
 /* line 8, ../sass/theme/_tables.scss */
 table {
   width: 100%;
+  margin-bottom: 1em;
 }
 /* line 11, ../sass/theme/_tables.scss */
 table th {
