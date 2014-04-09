@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-04-09 09:55+0200\n"
-"PO-Revision-Date: 2014-04-09 09:55+0200\n"
+"POT-Creation-Date: 2014-04-09 11:01+0200\n"
+"PO-Revision-Date: 2014-04-09 11:01+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -1221,10 +1221,6 @@ msgstr ""
 msgid "ISO 8601"
 msgstr ""
 
-#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
-msgid "List documents in JSON format"
-msgstr ""
-
 #: /loop_search_nodes
 msgid "Add the site's slogan as content."
 msgstr ""
@@ -1249,34 +1245,20 @@ msgstr ""
 msgid "Add a flag link of a certain flag type for entities."
 msgstr ""
 
-#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
-msgid "Message render"
-msgstr ""
-
 #: /loop_search_nodes
 msgid "Message render"
 msgstr ""
 
-#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
+#: /loop_search_nodes
 msgid "Render a message entity."
 msgstr ""
 
-#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
+#: /loop_search_nodes
 msgid "Rounded corners"
 msgstr ""
 
-#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
-msgid "Presents the panes or panels with a rounded corner box around them"
-msgstr ""
-
 #: /loop_search_nodes
 msgid "Presents the panes or panels with a rounded corner box around them"
-msgstr ""
-
-#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
-msgid ""
-"Display the pane as a system block; this is more restrictive than the "
-"default."
 msgstr ""
 
 #: /loop_search_nodes
@@ -1291,21 +1273,11 @@ msgid ""
 "separator."
 msgstr ""
 
-#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
-msgid ""
-"The default panel rendering style; displays each pane with a "
-"separator."
-msgstr ""
-
-#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
-msgid "Presents the panes in the form of an HTML list."
-msgstr ""
-
 #: /loop_search_nodes
 msgid "Presents the panes in the form of an HTML list."
 msgstr ""
 
-#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
+#: /loop_search_nodes
 msgid "No markup at all"
 msgstr ""
 
@@ -1313,4237 +1285,8 @@ msgstr ""
 msgid "Display the pane or region with no markup, not even a title."
 msgstr ""
 
-#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
-msgid "Display the pane or region with no markup, not even a title."
-msgstr ""
-
-#: /
+#: /index.php
 msgid ""
-msgstr ""
-
-#: /
-msgid "Change general settings about this variant."
-msgstr ""
-
-#: /
-msgid "Change the layout of this panel."
-msgstr ""
-
-#: /
-msgid "Move content from old layout"
-msgstr ""
-
-#: /
-msgid ""
-"Add content items and change their location with a drag and drop "
-"interface."
-msgstr ""
-
-#: /
-msgid "Get a preview of what this variant will look like."
-msgstr ""
-
-#: /
-msgid "Renders a panel normally. This is the most common option."
-msgstr ""
-
-#: /
-msgid "Forfatter uid"
-msgstr ""
-
-#: /
-msgid "User image"
-msgstr ""
-
-#: /
-msgid "term fra field_profession"
-msgstr ""
-
-#: /
-msgid "Kommentarer"
-msgstr ""
-
-#: /
-msgid "tæller"
-msgstr ""
-
-#: /
-msgid "Google Analytics Counter tag"
-msgstr ""
-
-#: /
-msgid ""
-"Substitutes a special Google Analytics Counter tag [gac|...] with the "
-"actual content."
-msgstr ""
-
-#: /
-msgid "URL shortener"
-msgstr ""
-
-#: /
-msgid "Replaces URLs with a shortened version."
-msgstr ""
-
-#: /
-msgid "term fra field_area_of_expertise"
-msgstr ""
-
-#: /
-msgid ""
-"A brief and concise summary of the page's content, preferably 150 "
-"characters or less. The description meta tag may be used by search "
-"engines to display a snippet about the page in search results."
-msgstr ""
-
-#: /
-msgid ""
-"A brief and concise summary of the page's content, preferably 150 "
-"characters or less. The abstract meta tag may be used by search "
-"engines for archiving purposes."
-msgstr ""
-
-#: /
-msgid ""
-"A comma-separated list of keywords about the page. This meta tag is "
-"<em>not</em> used by most search engines."
-msgstr ""
-
-#: /
-msgid "Allow search engines to index this page (assumed)."
-msgstr ""
-
-#: /
-msgid "Allow search engines to follow links on this page (assumed)."
-msgstr ""
-
-#: /
-msgid ""
-"Blocks the <a href=\"@odp-url\">Open Directory Project</a> description "
-"of the page from being used in the description that appears below the "
-"page in the search results."
-msgstr ""
-
-#: /
-msgid ""
-"Prevents Yahoo! from listing this page in the <a href=\"@ydir\">Yahoo! "
-"Directory</a>."
-msgstr ""
-
-#: /
-msgid "Prevent search engines from indexing images on this page."
-msgstr ""
-
-#: /
-msgid ""
-"Prevent search engines from offering to translation this page in "
-"search results."
-msgstr ""
-
-#: /
-msgid "Google News Keywords"
-msgstr ""
-
-#: /
-msgid ""
-"A comma-separated list of keywords about the page. This meta tag is "
-"used as an indicator in <a href=\"@google_news\">Google News</a>."
-msgstr ""
-
-#: /
-msgid "Google Standout"
-msgstr ""
-
-#: /
-msgid ""
-"Highlight standout journalism on the web, especially for breaking "
-"news; used as an indicator in <a href=\"@google_news\">Google "
-"News</a>. Warning: Don't abuse it, to be used a maximum of 7 times per "
-"calendar week!"
-msgstr ""
-
-#: /
-msgid ""
-"An image associated with this page, for use as a thumbnail in social "
-"networks and other services."
-msgstr ""
-
-#: /
-msgid "Shortlink URL"
-msgstr ""
-
-#: /
-msgid "Publisher URL"
-msgstr ""
-
-#: /
-msgid "Author URL"
-msgstr ""
-
-#: /
-msgid ""
-"Used by some search engines to confirm authorship of the content on a "
-"page. Should be either the full URL for the author's Google+ profile "
-"page or a local page with information about the author."
-msgstr ""
-
-#: /
-msgid "Original Source"
-msgstr ""
-
-#: /
-msgid ""
-"Used to indicate the URL that broke the story, and can link to either "
-"an internal URL or an external source. If the full URL is not known it "
-"is acceptable to use a partial URL or just the domain name."
-msgstr ""
-
-#: /
-msgid "Revisit After"
-msgstr ""
-
-#: /
-msgid ""
-"Tell search engines when to index the page again. Very few search "
-"engines support this tag, it is more useful to use an <a "
-"href=\"@xmlsitemap\">XML Sitemap</a> file."
-msgstr ""
-
-#: /
-msgid "Latest differences"
-msgstr ""
-
-#: /
-msgid ""
-"The differences between the current revision and the previous revision "
-"of this node."
-msgstr ""
-
-#: /
-msgid "Latest differences (marked down)"
-msgstr ""
-
-#: /
-msgid ""
-"The differences between the current revision and the previous revision "
-"of this node, but with a marked-down form of each revision used for "
-"comparison."
-msgstr ""
-
-#: /
-msgid "Tokens related to the search query and response."
-msgstr ""
-
-#: /
-msgid "Active facet items"
-msgstr ""
-
-#: /
-msgid "Tokens related to active facet items."
-msgstr ""
-
-#: /
-msgid "Facet field"
-msgstr ""
-
-#: /
-msgid "Tokens related to a facet field."
-msgstr ""
-
-#: /
-msgid "Search keywords"
-msgstr ""
-
-#: /
-msgid "The search keywords entered by the user."
-msgstr ""
-
-#: /
-msgid "The page number of the result set."
-msgstr ""
-
-#: /
-msgid "Page limit"
-msgstr ""
-
-#: /
-msgid "The number of results displayed per page."
-msgstr ""
-
-#: /
-msgid "Page total"
-msgstr ""
-
-#: /
-msgid "The total number of pages in the result set."
-msgstr ""
-
-#: /
-msgid "The zero-based offset of the first element on the search page."
-msgstr ""
-
-#: /
-msgid "Start count"
-msgstr ""
-
-#: /
-msgid "The number of the first item on the page."
-msgstr ""
-
-#: /
-msgid "End count"
-msgstr ""
-
-#: /
-msgid "The number of the last item on the page."
-msgstr ""
-
-#: /
-msgid "Result count"
-msgstr ""
-
-#: /
-msgid "The total number of results matched by the search query."
-msgstr ""
-
-#: /
-msgid "Mapped value"
-msgstr ""
-
-#: /
-msgid "The mapped value of the active item."
-msgstr ""
-
-#: /
-msgid "The raw value of the active item as stored in the index."
-msgstr ""
-
-#: /
-msgid "The zero-based position of the active item."
-msgstr ""
-
-#: /
-msgid "Facet label"
-msgstr ""
-
-#: /
-msgid "The human readable label of the active item's facet."
-msgstr ""
-
-#: /
-msgid "Facet name"
-msgstr ""
-
-#: /
-msgid "The machine readable name of the active item's facet."
-msgstr ""
-
-#: /
-msgid "Flaggings"
-msgstr ""
-
-#: /
-msgid "Tokens related to flaggings."
-msgstr ""
-
-#: /
-msgid "Flagging date"
-msgstr ""
-
-#: /
-msgid "The date an item was flagged."
-msgstr ""
-
-#: /
-msgid ""
-"Tokens available in response to a flag action being executed by a "
-"user."
-msgstr ""
-
-#: /
-msgid "The flagging action taking place, either \"flag\" or \"unflag\"."
-msgstr ""
-
-#: /
-msgid "Flag entity URL"
-msgstr ""
-
-#: /
-msgid "The URL of the entity being flagged."
-msgstr ""
-
-#: /
-msgid "Flag entity title"
-msgstr ""
-
-#: /
-msgid "The title of the entity being flagged."
-msgstr ""
-
-#: /
-msgid "Flag entity type"
-msgstr ""
-
-#: /
-msgid ""
-"The type of entity being flagged, such as <em>node</em> or "
-"<em>comment</em>."
-msgstr ""
-
-#: /
-msgid "Flag entity ID"
-msgstr ""
-
-#: /
-msgid "The ID of entity being flagged, such as a nid or cid."
-msgstr ""
-
-#: /
-msgid "Ranking"
-msgstr ""
-
-#: /
-msgid "@flag flag link"
-msgstr ""
-
-#: /
-msgid "Flag/unflag link for @flag"
-msgstr ""
-
-#: /
-msgid "The URL of the account validation page, provided by logintoboggan."
-msgstr ""
-
-#: /
-msgid ""
-"Generated by the Metatag module, may not be used to fill in other meta "
-"tags."
-msgstr ""
-
-#: /
-msgid "Metatag."
-msgstr ""
-
-#: /
-msgid "The title of the current page, as processed by the Page Title module."
-msgstr ""
-
-#: /
-msgid "@entity_type UUID"
-msgstr ""
-
-#: /
-msgid "The universally unique ID of the @entity"
-msgstr ""
-
-#: /
-msgid "@entity_type revision UUID"
-msgstr ""
-
-#: /
-msgid "The universally unique revision ID of the @entity"
-msgstr ""
-
-#: /
-msgid "Time interval"
-msgstr ""
-
-#: /
-msgid "Formatted text"
-msgstr ""
-
-#: /
-msgid "Multiple language"
-msgstr ""
-
-#: /
-msgid "Menu parent"
-msgstr ""
-
-#: /
-msgid "Select the menu parent"
-msgstr ""
-
-#: /
-msgid "Select the available menus"
-msgstr ""
-
-#: /
-msgid ""
-"Block caching is inactive if you have enabled modules defining content "
-"access restrictions."
-msgstr ""
-
-#: /
-msgid "Languages for content"
-msgstr ""
-
-#: /
-msgid "Determines which languages will be allowed for content creation."
-msgstr ""
-
-#: /
-msgid "Enable translation for language"
-msgstr ""
-
-#: /
-msgid "Translatable text formats"
-msgstr ""
-
-#: /
-msgid ""
-"The translation system only translates strings with the selected text "
-"formats. All other strings will be ignored and removed from the list "
-"of translatable strings."
-msgstr ""
-
-#: /
-msgid ""
-"Language that will be used as the source language for string "
-"translations. The default is the site default language."
-msgstr ""
-
-#: /
-msgid "Debug string translation"
-msgstr ""
-
-#: /
-msgid "flagging"
-msgstr ""
-
-#: /
-msgid "watchdog log entry"
-msgstr ""
-
-#: /
-msgid "The category to which this message belongs"
-msgstr ""
-
-#: /
-msgid "Request uri"
-msgstr ""
-
-#: /
-msgid "An associated, HTML formatted link"
-msgstr ""
-
-#: /
-msgid "text token"
-msgstr ""
-
-#: /
-msgctxt "data_types"
-msgid "list"
-msgstr ""
-
-#: /
-msgctxt "data_types"
-msgid "List"
-msgstr ""
-
-#: /
-msgid "list of text"
-msgstr ""
-
-#: /
-msgid "list of integer"
-msgstr ""
-
-#: /
-msgid "list of text tokens"
-msgstr ""
-
-#: /
-msgid "any entity"
-msgstr ""
-
-#: /
-msgid "list of @type_label items"
-msgstr ""
-
-#: /
-msgid "Action set"
-msgstr ""
-
-#: /
-msgid "The flag to check for."
-msgstr ""
-
-#: /
-msgid "User profile is completed"
-msgstr ""
-
-#: /
-msgid "Check number of results returned by a VBO View"
-msgstr ""
-
-#: /
-msgid "View and display"
-msgstr ""
-
-#: /
-msgid "Select the VBO view and display you want to check"
-msgstr ""
-
-#: /
-msgid ""
-"Any arguments to pass to the view, one per line.\n"
-"          You may use token replacement patterns."
-msgstr ""
-
-#: /
-msgid "Minimum number of results"
-msgstr ""
-
-#: /
-msgid ""
-"This condition returns TRUE if the view has at\n"
-"          least the given number of results."
-msgstr ""
-
-#: /
-msgid "Data comparison"
-msgstr ""
-
-#: /
-msgid "Data to compare"
-msgstr ""
-
-#: /
-msgid ""
-"The data to be compared, specified by using a data selector, e.g. "
-"\"node:author:name\"."
-msgstr ""
-
-#: /
-msgid "Data value"
-msgstr ""
-
-#: /
-msgid "The value to compare the data with."
-msgstr ""
-
-#: /
-msgid "Data value is empty"
-msgstr ""
-
-#: /
-msgid "Data to check"
-msgstr ""
-
-#: /
-msgid ""
-"The data to be checked to be empty, specified by using a data "
-"selector, e.g. \"node:author:name\"."
-msgstr ""
-
-#: /
-msgid "List contains item"
-msgstr ""
-
-#: /
-msgid "The item to check for."
-msgstr ""
-
-#: /
-msgid "Text comparison"
-msgstr ""
-
-#: /
-msgid "Matching text"
-msgstr ""
-
-#: /
-msgid "Comparison operation"
-msgstr ""
-
-#: /
-msgid "regular expression"
-msgstr ""
-
-#: /
-msgid ""
-"In case the comparison operation @regex is selected, the matching "
-"pattern will be interpreted as a <a href=\"@regex-wikipedia\">regular "
-"expression</a>.  Tip: <a href=\"@RegExr\">RegExr: Online Regular "
-"Expression Testing Tool</a> is helpful for learning, writing, and "
-"testing Regular Expressions."
-msgstr ""
-
-#: /
-msgid "Entity is new"
-msgstr ""
-
-#: /
-msgid "Specifies the entity for which to evaluate the condition."
-msgstr ""
-
-#: /
-msgid "Entity has field"
-msgstr ""
-
-#: /
-msgid "The name of the field to check for."
-msgstr ""
-
-#: /
-msgid "Entity is of type"
-msgstr ""
-
-#: /
-msgid "The entity type to check for."
-msgstr ""
-
-#: /
-msgid "Entity is of bundle"
-msgstr ""
-
-#: /
-msgid "The type of the checked entity."
-msgstr ""
-
-#: /
-msgid "Entity bundle"
-msgstr ""
-
-#: /
-msgid "The condition is met if the entity is of one of the selected bundles."
-msgstr ""
-
-#: /
-msgid "User has field access"
-msgstr ""
-
-#: /
-msgid "Access operation"
-msgstr ""
-
-#: /
-msgid ""
-"Specifies the user account for which to check access. If left empty, "
-"the currently logged in user will be used."
-msgstr ""
-
-#: /
-msgid "User has role(s)"
-msgstr ""
-
-#: /
-msgid ""
-"If matching against all selected roles, the user must have "
-"<em>all</em> the roles selected."
-msgstr ""
-
-#: /
-msgid ""
-"Specifies the existing path you wish to check for. For example: "
-"node/28, forum/1, taxonomy/term/1+2."
-msgstr ""
-
-#: /
-msgid "If specified, the language for which the URL alias applies."
-msgstr ""
-
-#: /
-msgid ""
-"Specify the URL alias to check for. For example, \"about\" for an "
-"about page."
-msgstr ""
-
-#: /
-msgid "Content is of type"
-msgstr ""
-
-#: /
-msgid ""
-"Evaluates to TRUE if the given content is of one of the selected "
-"content types."
-msgstr ""
-
-#: /
-msgid "The content type(s) to check for."
-msgstr ""
-
-#: /
-msgid "Skip permission check"
-msgstr ""
-
-#: /
-msgid "Whether to ignore permissions of the user on whose behalf to flag."
-msgstr ""
-
-#: /
-msgid ""
-"The maximum number of objects to keep in the queue. Newly flagged "
-"objects will be kept; older ones will be removed. Tip: by typing \"1\" "
-"here you implement a singleton."
-msgstr ""
-
-#: /
-msgid "Trim newest flags"
-msgstr ""
-
-#: /
-msgid ""
-"Checking this will trim the newest flags.  This will prevent new flags "
-"once a limit is reached."
-msgstr ""
-
-#: /
-msgid "Fetch overall flag count"
-msgstr ""
-
-#: /
-msgid "Overall flag count"
-msgstr ""
-
-#: /
-msgid "Fetch entity flag count"
-msgstr ""
-
-#: /
-msgid "Entity flag count"
-msgstr ""
-
-#: /
-msgid "Fetch user flag count"
-msgstr ""
-
-#: /
-msgid "User flag count"
-msgstr ""
-
-#: /
-msgid "Fetch @label flagged by user"
-msgstr ""
-
-#: /
-msgid "User who flagged the @label"
-msgstr ""
-
-#: /
-msgid ""
-"For non-global flags, this is the user who flagged the @label. (For "
-"global flags, this argument is ignored.)"
-msgstr ""
-
-#: /
-msgid "Content flagged by user"
-msgstr ""
-
-#: /
-msgid "Flag a @label"
-msgstr ""
-
-#: /
-msgid "Unflag a @label"
-msgstr ""
-
-#: /
-msgid "Fetch users who have flagged a @label"
-msgstr ""
-
-#: /
-msgid "Choose the flag for which to fetch the users."
-msgstr ""
-
-#: /
-msgid "Users who flagged"
-msgstr ""
-
-#: /
-msgid "(Legacy)"
-msgstr ""
-
-#: /
-msgid "Send Message with Message notify"
-msgstr ""
-
-#: /
-msgid "Message notify"
-msgstr ""
-
-#: /
-msgid "The message to be processed and sent using Message notify."
-msgstr ""
-
-#: /
-msgid "Save on fail"
-msgstr ""
-
-#: /
-msgid "Save message if sending failed."
-msgstr ""
-
-#: /
-msgid "Save on success"
-msgstr ""
-
-#: /
-msgid "Save message if sending successed."
-msgstr ""
-
-#: /
-msgid "Rendered subject field"
-msgstr ""
-
-#: /
-msgid "The field to save the rendered subject."
-msgstr ""
-
-#: /
-msgid "Body subject field"
-msgstr ""
-
-#: /
-msgid "The field to save the rendered body."
-msgstr ""
-
-#: /
-msgid "The recipient of the email"
-msgstr ""
-
-#: /
-msgid ""
-"The recipient of the email. If left empty, the mail will be sent to "
-"the author of the message"
-msgstr ""
-
-#: /
-msgid "The item to index."
-msgstr ""
-
-#: /
-msgid ""
-"The index on which the item should be indexed. Leave blank to index on "
-"all indexes for this item type."
-msgstr ""
-
-#: /
-msgid "Index immediately"
-msgstr ""
-
-#: /
-msgid ""
-"Activate for indexing the item right away, otherwise it will only be "
-"marked as dirty and indexed during the next cron run."
-msgstr ""
-
-#: /
-msgid "Search API"
-msgstr ""
-
-#: /
-msgid "Index an entity"
-msgstr ""
-
-#: /
-msgid "Load a list of entity objects from a VBO View."
-msgstr ""
-
-#: /
-msgid ""
-"Select the view and display you want to use to\n"
-"          create a list."
-msgstr ""
-
-#: /
-msgid "A list of entities"
-msgstr ""
-
-#: /
-msgid "Load a list of entity ids from a VBO View."
-msgstr ""
-
-#: /
-msgid "A list of entity ids"
-msgstr ""
-
-#: /
-msgid "Set a data value"
-msgstr ""
-
-#: /
-msgid ""
-"Specifies the data to be modified using a data selector, e.g. "
-"\"node:author:name\"."
-msgstr ""
-
-#: /
-msgid "The new value to set for the specified data."
-msgstr ""
-
-#: /
-msgid "Calculate a value"
-msgstr ""
-
-#: /
-msgid "Input value 1"
-msgstr ""
-
-#: /
-msgid "The first input value for the calculation."
-msgstr ""
-
-#: /
-msgid "The calculation operator."
-msgstr ""
-
-#: /
-msgid "Input value 2"
-msgstr ""
-
-#: /
-msgid "The second input value."
-msgstr ""
-
-#: /
-msgid "Calculation result"
-msgstr ""
-
-#: /
-msgid "Add an item to a list"
-msgstr ""
-
-#: /
-msgid "The data list, to which an item is to be added."
-msgstr ""
-
-#: /
-msgid "Item to add"
-msgstr ""
-
-#: /
-msgid "Enforce uniqueness"
-msgstr ""
-
-#: /
-msgid "Only add the item to the list if it is not yet contained."
-msgstr ""
-
-#: /
-msgid "Insert position"
-msgstr ""
-
-#: /
-msgid "Remove an item from a list"
-msgstr ""
-
-#: /
-msgid "The data list for which an item is to be removed."
-msgstr ""
-
-#: /
-msgid "Item to remove"
-msgstr ""
-
-#: /
-msgid "Specifies the type of the variable that should be added."
-msgstr ""
-
-#: /
-msgid "Optionally, specify the initial value of the variable."
-msgstr ""
-
-#: /
-msgid "Added variable"
-msgstr ""
-
-#: /
-msgid "Convert data type"
-msgstr ""
-
-#: /
-msgid "The data type to convert a value to."
-msgstr ""
-
-#: /
-msgid "Value to convert"
-msgstr ""
-
-#: /
-msgid "Rounding behavior"
-msgstr ""
-
-#: /
-msgid "The rounding behavior the conversion should use."
-msgstr ""
-
-#: /
-msgid "Conversion result"
-msgstr ""
-
-#: /
-msgid "Fetch entity by id"
-msgstr ""
-
-#: /
-msgid "Specifies the type of entity that should be fetched."
-msgstr ""
-
-#: /
-msgid "Fetched entity"
-msgstr ""
-
-#: /
-msgid "Fetch entity by property"
-msgstr ""
-
-#: /
-msgid "Limit result count"
-msgstr ""
-
-#: /
-msgid "Limit the maximum number of fetched entities."
-msgstr ""
-
-#: /
-msgid "Specifies the type of the entity that should be created."
-msgstr ""
-
-#: /
-msgid "Created entity"
-msgstr ""
-
-#: /
-msgid "Save entity"
-msgstr ""
-
-#: /
-msgid "Specifies the entity, which should be saved permanently."
-msgstr ""
-
-#: /
-msgid "Force saving immediately"
-msgstr ""
-
-#: /
-msgid ""
-"Usually saving is postponed till the end of the evaluation, so that "
-"multiple saves can be fold into one. If this set, saving is forced to "
-"happen immediately."
-msgstr ""
-
-#: /
-msgid "Delete entity"
-msgstr ""
-
-#: /
-msgid "Specifies the entity, which should be deleted permanently."
-msgstr ""
-
-#: /
-msgid ""
-"If disabled and the message has been already shown, then the message "
-"won't be repeated."
-msgstr ""
-
-#: /
-msgid "Page redirect"
-msgstr ""
-
-#: /
-msgid ""
-"A Drupal path, path alias, or external URL to redirect to. Enter "
-"(optional) queries after \"?\" and (optional) anchor after \"#\"."
-msgstr ""
-
-#: /
-msgid "Force redirect"
-msgstr ""
-
-#: /
-msgid ""
-"Force the redirect even if another destination parameter is present. "
-"Per default Drupal would redirect to the path given as destination "
-"parameter, in case it is set. Usually the destination parameter is set "
-"by appending it to the URL, e.g. !example_url"
-msgstr ""
-
-#: /
-msgid "Append destination parameter"
-msgstr ""
-
-#: /
-msgid ""
-"Whether to append a destination parameter to the URL, so another "
-"redirect issued later on would lead back to the origin page."
-msgstr ""
-
-#: /
-msgid "A list of titles for the breadcrumb links."
-msgstr ""
-
-#: /
-msgid ""
-"A list of Drupal paths for the breadcrumb links, matching the order of "
-"the titles."
-msgstr ""
-
-#: /
-msgid ""
-"The e-mail address or addresses where the message will be sent to. The "
-"formatting of this string must comply with RFC 2822."
-msgstr ""
-
-#: /
-msgid ""
-"The mail's from address. Leave it empty to use the site-wide "
-"configured address."
-msgstr ""
-
-#: /
-msgid ""
-"If specified, the language used for getting the mail message and "
-"subject."
-msgstr ""
-
-#: /
-msgid "Send mail to all users of a role"
-msgstr ""
-
-#: /
-msgid "Select the roles whose users should receive the mail."
-msgstr ""
-
-#: /
-msgid "The user whose roles should be changed."
-msgstr ""
-
-#: /
-msgid "Unblock a user"
-msgstr ""
-
-#: /
-msgid "Create or delete any URL alias"
-msgstr ""
-
-#: /
-msgid ""
-"Specifies the existing path you wish to alias. For example: node/28, "
-"forum/1, taxonomy/term/1+2."
-msgstr ""
-
-#: /
-msgid "Leave it empty to delete URL aliases pointing to the given path alias."
-msgstr ""
-
-#: /
-msgid ""
-"Specify an alternative path by which this data can be accessed. For "
-"example, \"about\" for an about page. Use a relative path and do not "
-"add a trailing slash."
-msgstr ""
-
-#: /
-msgid ""
-"Leave it empty to delete URL aliases pointing to the given system "
-"path."
-msgstr ""
-
-#: /
-msgid "Create or delete a content's URL alias"
-msgstr ""
-
-#: /
-msgid ""
-"Specify an alternative path by which the content can be accessed. For "
-"example, \"about\" for an about page. Use a relative path and do not "
-"add a trailing slash."
-msgstr ""
-
-#: /
-msgid "Leave it empty to delete the URL alias."
-msgstr ""
-
-#: /
-msgid "Create or delete a taxonomy term's URL alias"
-msgstr ""
-
-#: /
-msgid ""
-"Specify an alternative path by which the term can be accessed. For "
-"example, \"content/drupal\" for a Drupal term. Use a relative path and "
-"do not add a trailing slash."
-msgstr ""
-
-#: /
-msgid "Tokens related to %label Rules variables."
-msgstr ""
-
-#: /
-msgid "The value of the variable."
-msgstr ""
-
-#: /
-msgid "The following properties may be appended to the token: @keys"
-msgstr ""
-
-#: /
-msgid "List of @entities"
-msgstr ""
-
-#: /
-msgid "Tokens related to the \"@name\" entities."
-msgstr ""
-
-#: /
-msgid "@type with delta @delta"
-msgstr ""
-
-#: /
-msgid ""
-"The list item with delta @delta. Delta values start from 0 and are "
-"incremented by one per list item."
-msgstr ""
-
-#: /
-msgid "List of @type values"
-msgstr ""
-
-#: /
-msgid "Tokens for lists of @type values."
-msgstr ""
-
-#: /
-msgid "Search for an answer"
-msgstr ""
-
-#: /
-msgid "Management"
-msgstr ""
-
-#: /
-msgid "Loop Primary Menu"
-msgstr ""
-
-#: /
-msgid "User links"
-msgstr ""
-
-#: /
-msgid "Administration links"
-msgstr ""
-
-#: /user
-msgid "User my content"
-msgstr ""
-
-#: /user
-msgid "Google Analytics module form element."
-msgstr ""
-
-#: /user
-msgid "Meta tag module form elements."
-msgstr ""
-
-#: /user
-msgid "Areas of expertise"
-msgstr ""
-
-#: /user
-msgid "User menu"
-msgstr ""
-
-#: /user
-msgid "List all nodes with their Page Titles"
-msgstr ""
-
-#: /user
-msgid "Shorten URLs"
-msgstr ""
-
-#: /user
-msgid "Create URL"
-msgstr ""
-
-#: /user
-msgid "Create a short URL"
-msgstr ""
-
-#: /user
-msgid "My URLs"
-msgstr ""
-
-#: /user
-msgid "List, sort, and delete short URLs"
-msgstr ""
-
-#: /user
-msgid "List, sort, and edit Shurly short URLs"
-msgstr ""
-
-#: /node/add/post
-msgid "@title interval"
-msgstr ""
-
-#: /node/add/post
-msgid "@title interval type"
-msgstr ""
-
-#: /node/add/post
-msgid "- none -"
-msgstr ""
-
-#: profiles/loopdk/modules/contrib/autocomplete_deluxe/autocomplete_deluxe.js
-msgid "The term '@term' will be added."
-msgstr ""
-
-#: profiles/loopdk/modules/contrib/metatag/metatag.vertical-tabs.js
-msgid "@label: @value"
-msgstr ""
-
-#: /admin/structure
-msgid ""
-"Configure flags for marking content with arbitrary information (such "
-"as <em>offensive</em> or <em>bookmarked</em>)."
-msgstr ""
-
-#: /admin/structure
-msgid "Get a bird's eye view of items related to Panels."
-msgstr ""
-
-#: /admin/structure
-msgid "Meddelelsestypes"
-msgstr ""
-
-#: /admin/structure
-msgid "Manage Meddelelsestypes."
-msgstr ""
-
-#: /admin/structure
-msgid "Manage customized lists of content."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Adjust settings for using features module."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Service class in use by the following server: !servers."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Block contents (boxes)"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Field Bases"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Field Instances"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Menu items"
-msgstr ""
-
-#: /admin/structure/features
-msgid "UUID entities"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Inline differences"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"The <em>Blocks</em> realm displays each facet in a separate <a "
-"href=\"@block-page\">block</a>. Users are able to refine their "
-"searches in a drill-down fashion."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Profile Complete Percentage - Core Profile"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Search block: !name"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Short URL form"
-msgstr ""
-
-#: /admin/structure/features
-msgid "ShURLy bookmarklet"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Place"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Primary menu with support for smaller screen and touch devices. Works "
-"as a submenu to Main Menu"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Enter your question or observation."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Select a subject."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Create post"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Unmet dependencies: !dependencies"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Needs review"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Rebuilding"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Checking..."
-msgstr ""
-
-#: /admin/structure/features
-msgid "@component [@items]"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Conflicts with: !conflicts"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Required by: !dependents"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Feature"
-msgstr ""
-
-#: profiles/loopdk/modules/contrib/features/features.js
-msgid "Deselect all"
-msgstr ""
-
-#: /admin/structure/features/loop_navigation/status
-msgid "Javascript status call back."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Taxonomy index"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Include the term references created by instances of this field carried "
-"by node entities in the core {taxonomy_index} table. This will allow "
-"various modules to handle them like core term_reference fields."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Rules component"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer Facets"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer flags"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Use flag importer"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Access the flag import functionality."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Flag %entity entities as %flag_title"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Unflag %entity entities as %flag_title"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Enter PHP code in the field for tracking visibility settings."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer Google Analytics Counter"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Set roles that may access the settings of Google Analytics Counter."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer Mail System"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Select the default, per-module, and per-mailing <a "
-"href=\"!interface\"><code>@interface</code></a> to use for formatting "
-"and sending email messages."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer message types"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer message types that can be used to log an event."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Create messages"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Log new messages."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer message subscribe"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer user subscriptions."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer meta tags"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Control the main settings pages and modify per-object meta tags."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Edit meta tags"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Modify meta tags on individual entity records (nodes, terms, users, "
-"etc)."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Edit Mime Mail user settings"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Edit user specific settings for Mime Mail."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Send arbitrary files"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Attach or embed files located outside the public files directory."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer Module Filter"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Configure how Module Filter performs."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Access own OAuth authorizations"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Access own OAuth consumers"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Authorize any OAuth consumers"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Register any OAuth consumers"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer OAuth"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer OAuth consumers"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Set Page Title"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Allow user to set or modify a page title"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer Page Title"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Perform administration tasks for Page Title"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Configure access settings on Panel panes"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Access rules (often also called visibility rules) can be configured on "
-"a per-pane basis. This permission allows users to configure those "
-"settings."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Use the Panels In-Place Editor"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Allows a user to utilize Panels' In-Place Editor."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Change layouts with the Panels In-Place Editor"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Allows a user to change layouts with the IPE."
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Allows a user to administer exported Panels layout plugins & "
-"instances."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer Panels styles"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Allows a user to administer the styles of Panel panes."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Allows a user to configure caching on Panels displays and panes."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Use panel locks"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Allows a user to lock and unlock panes in a panel display."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Use the Panels In-Place Editor with Page Manager"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Allows users with access to the In-Place editor to administer page "
-"manager pages. This permission is only needed for users without \"use "
-"page manager\" access."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer Profile Complete Percentages"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Allows a user to configure which fields to be considered complete."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer Search API"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Create and configure Search API servers and indexes."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Access search pages"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Execute searches using the Search pages module."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Export permission definitions"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Allows the export of permission settings to code, so that the "
-"permission and roles forms may be disabled."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Use URL shortener page"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Manage URL shortener API keys"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Allow viewing and editing the API keys for third-party URL shortening "
-"services."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Create short URLs"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Enter custom URLs"
-msgstr ""
-
-#: /admin/structure/features
-msgid "View own URL stats"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Delete own URLs"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer short URLs"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer UUID"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Allows configuration of the UUID module and APIs."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Use PHP for label patterns"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Use PHP evaluation for automatic entity label patterns."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Translate user-defined strings"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Translate user-defined strings that are created as part of content or "
-"configuration."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Translate admin strings"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Translate administrative strings with a very permissive XSS/HTML "
-"filter that allows all HTML tags."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer features"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Perform administration tasks on features."
-msgstr ""
-
-#: /admin/structure/features
-msgid "View, enable and disable features."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Generate features"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Allow feature exports to be generated and written directly to site."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer rule configurations"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Administer rule configurations including events, conditions and "
-"actions for which the user has sufficient access permissions."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Bypass Rules access control"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Control all configurations regardless of permission restrictions of "
-"events, conditions or actions."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Access the Rules debug log"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Show format tips"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Toggle display of format description help."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Show more format tips link"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Toggle display of the \"More information about text formats\" link."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Show format selection for @entitys"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"The list to loop over. The loop will step through each item in the "
-"list, allowing further actions on them. See <a href=\"@url\"> the "
-"online handbook</a> for more information on how to use loops."
-msgstr ""
-
-#: /admin/structure/features
-msgid "After saving a new @entity"
-msgstr ""
-
-#: /admin/structure/features
-msgid "created @entity"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After updating an existing @entity"
-msgstr ""
-
-#: /admin/structure/features
-msgid "unchanged entity"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Before saving a @entity"
-msgstr ""
-
-#: /admin/structure/features
-msgid "saved @entity"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After deleting a @entity"
-msgstr ""
-
-#: /admin/structure/features
-msgid "deleted @entity"
-msgstr ""
-
-#: /admin/structure/features
-msgid "@entity is viewed"
-msgstr ""
-
-#: /admin/structure/features
-msgid "viewed @entity"
-msgstr ""
-
-#: /admin/structure/features
-msgid "view mode"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Before saving content"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Content is viewed"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Be aware that some actions might initialize the theme system. After "
-"that, it's impossible for any module to change the used theme."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Cron maintenance tasks are performed"
-msgstr ""
-
-#: /admin/structure/features
-msgid "System log entry is created"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Log entry"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After saving a new user account"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After updating an existing user account"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Before saving a user account"
-msgstr ""
-
-#: /admin/structure/features
-msgid "saved user"
-msgstr ""
-
-#: /admin/structure/features
-msgid "User account page is viewed"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After a user account has been deleted"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After saving a new term"
-msgstr ""
-
-#: /admin/structure/features
-msgid "created term"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After updating an existing term"
-msgstr ""
-
-#: /admin/structure/features
-msgid "updated term"
-msgstr ""
-
-#: /admin/structure/features
-msgid "unchanged term"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Before saving a taxonomy term"
-msgstr ""
-
-#: /admin/structure/features
-msgid "saved term"
-msgstr ""
-
-#: /admin/structure/features
-msgid "deleted term"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After saving a new vocabulary"
-msgstr ""
-
-#: /admin/structure/features
-msgid "created vocabulary"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After updating an existing vocabulary"
-msgstr ""
-
-#: /admin/structure/features
-msgid "updated vocabulary"
-msgstr ""
-
-#: /admin/structure/features
-msgid "unchanged vocabulary"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Before saving a vocabulary"
-msgstr ""
-
-#: /admin/structure/features
-msgid "saved vocabulary"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After deleting a vocabulary"
-msgstr ""
-
-#: /admin/structure/features
-msgid "deleted vocabulary"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Message arguments"
-msgstr ""
-
-#: /admin/structure/features
-msgid "The arguments to associate with the message."
-msgstr ""
-
-#: /admin/structure/features
-msgid "unlabeled"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Use Rules component %component"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Controls access for using the component %component via the provided "
-"action or condition. <a href=\"@component-edit-url\">Edit this "
-"component.</a>"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Send HTML e-mail"
-msgstr ""
-
-#: /admin/structure/features
-msgid "A key to identify the e-mail sent."
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"The mail's recipient address. The formatting of this string must "
-"comply with RFC 2822."
-msgstr ""
-
-#: /admin/structure/features
-msgid "CC Recipient"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"The mail's carbon copy address. You may separate multiple addresses "
-"with comma."
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"The mail's blind carbon copy address. You may separate multiple "
-"addresses with comma."
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"The sender's name. Leave it empty to use the site-wide configured "
-"name."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Sender e-mail address"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"The sender's address. Leave it empty to use the site-wide configured "
-"address."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Reply e-mail address"
-msgstr ""
-
-#: /admin/structure/features
-msgid "The address to reply to. Leave it empty to use the sender's address."
-msgstr ""
-
-#: /admin/structure/features
-msgid "The mail's message HTML body."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Plain text body"
-msgstr ""
-
-#: /admin/structure/features
-msgid "The mail's message plaintext body."
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"The mail's attachments, one file per line e.g. "
-"\"files/images/mypic.png\" without quotes."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Send HTML mail to all users of a role"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Send mail only to active users."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Plaintext body"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Send mail in each recipient's language"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"If checked, the mail message and subject will be sent in each user's "
-"preferred language. <strong>You can safely leave the language selector "
-"below empty if this option is selected.</strong>"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Fixed language"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"If specified, the fixed language used for getting the mail message and "
-"subject."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Message node reference"
-msgstr ""
-
-#: /admin/structure/features
-msgid "This is the text of all messages of this type."
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Refresh view by Flag"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid " "
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Latest other content"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "<a href=\"/user/[uid]/edit\" class=\"dashboard-list--icon\"></a>"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid ""
-"[name]\n"
-"<span class=\"dashboard-list--meta-data\">[field_first_name] "
-"[field_last_name], [name_1]</span>"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "View all notifications"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Read messages"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "View all read notifications"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Unread messages - full"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Read messages - full"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Unread messages front"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "User comments"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Sortér efter"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Stigende"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Faldende"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "No. elements"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "- Alle -"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Forskydning"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "« første"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "‹ forrige"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "næste ›"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "sidste »"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Seneste 10 kommentarer"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Alle"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "User nodes"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Seneste 10 spørgsmål"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid " replies"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Your subscriptions"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "You are not subscribed to any item."
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Message read"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "message"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Cleanup"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Clear cache after enabling/disabling a feature."
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Create an archive of selected files"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Pass ids as arguments to a page"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Delete revision"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Modify entity values"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Cancel user account"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Update automatic entity labels"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Fulltext"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Item language"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid ""
-"A field added by the search framework to let components determine an "
-"item's language. Is always indexed."
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Bundle filter"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid ""
-"Exclude items from indexing based on their bundle (content type, "
-"vocabulary, …)."
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Role filter"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Exclude users from indexing based on their role."
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Adds the item's URL to the indexed data."
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Aggregated fields"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid ""
-"Gives you the ability to define additional fields, containing data "
-"from one or more other fields."
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Complete entity view"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid ""
-"Adds an additional field containing the whole HTML content of the "
-"entity when viewed."
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Index hierarchy"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Allows to index hierarchical fields along with all their ancestors."
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Language control"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Lets you determine the language of items in the index."
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid ""
-"Add node access information to the index. <strong>Caution:</strong> "
-"This only affects the indexed nodes themselves, not any node reference "
-"fields that are indexed with them, or displayed in search results."
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Access check"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid ""
-"Exclude unpublished nodes from the index. <strong>Caution:</strong> "
-"This only affects the indexed nodes themselves. If an enabled node has "
-"references to disabled nodes, those will still be indexed (or "
-"displayed) normally."
-msgstr ""
-
-#: /admin/structure/features/loop_user_messages/status
-msgid "Flag-link"
-msgstr ""
-
-#: /admin/structure/features/loop_user_messages/status
-msgid "Render message (Get text)"
-msgstr ""
-
-#: /admin/structure/features/loop_user_page_views/status
-msgid "Nye kommentarer"
-msgstr ""
-
-#: /
-msgid "No widget"
-msgstr ""
-
-#: /
-msgid "No display changes are made to the view while it is being refreshed."
-msgstr ""
-
-#: /
-msgid "Throbber image"
-msgstr ""
-
-#: /
-msgid ""
-"Display a throbber image in place of the view content while it is "
-"being refreshed."
-msgstr ""
-
-#: /
-msgid "Message subscribe"
-msgstr ""
-
-#: /
-msgid ""
-"No Google Analytics profile has been authenticated! Google Analytics "
-"Counter can not fetch any new data. Please authenticate <a "
-"href=\"/admin/config/system/google_analytics_counter/authentication\">here</a>."
-msgstr ""
-
-#: /user
-msgid "@label @delta partial"
-msgstr ""
-
-#: /user
-msgid "Rendered message text of the @delta partial"
-msgstr ""
-
-#: /user
-msgid "Mime Mail module settings form elements."
-msgstr ""
-
-#: /user
-msgid "@flag you follow (@count)"
-msgstr ""
-
-#: /admin/content
-msgid "Change author"
-msgstr ""
-
-#: /admin/content
-msgid "Change value"
-msgstr ""
-
-#: /admin/content
-msgid "Stick"
-msgstr ""
-
-#: /admin/content
-msgid "Unstick"
-msgstr ""
-
-#: /admin/content
-msgid "Promote to front page"
-msgstr ""
-
-#: /admin/content
-msgid "Publish"
-msgstr ""
-
-#: /admin/content
-msgid "Demote from front page"
-msgstr ""
-
-#: /admin/content
-msgid "Unpublish"
-msgstr ""
-
-#: /user/1/edit
-msgid ""
-"Check this option if you do not wish to receive email messages with "
-"graphics and styles."
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Abidjan"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Accra"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Addis Ababa"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Algiers"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Asmara"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Bamako"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Bangui"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Banjul"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Bissau"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Blantyre"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Brazzaville"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Bujumbura"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Cairo"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Casablanca"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Ceuta"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Conakry"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Dakar"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Dar es Salaam"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Djibouti"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Douala"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/El Aaiun"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Freetown"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Gaborone"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Harare"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Johannesburg"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Juba"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Kampala"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Khartoum"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Kigali"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Kinshasa"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Lagos"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Libreville"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Lome"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Luanda"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Lubumbashi"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Lusaka"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Malabo"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Maputo"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Maseru"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Mbabane"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Mogadishu"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Monrovia"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Nairobi"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Ndjamena"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Niamey"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Nouakchott"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Ouagadougou"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Porto-Novo"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Sao Tome"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Tripoli"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Tunis"
-msgstr ""
-
-#: /user/1/edit
-msgid "Africa/Windhoek"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Adak"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Anchorage"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Anguilla"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Antigua"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Araguaina"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Argentina/Buenos Aires"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Argentina/Catamarca"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Argentina/Cordoba"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Argentina/Jujuy"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Argentina/La Rioja"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Argentina/Mendoza"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Argentina/Rio Gallegos"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Argentina/Salta"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Argentina/San Juan"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Argentina/San Luis"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Argentina/Tucuman"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Argentina/Ushuaia"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Aruba"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Asuncion"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Atikokan"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Bahia"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Bahia Banderas"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Barbados"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Belem"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Belize"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Blanc-Sablon"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Boa Vista"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Bogota"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Boise"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Cambridge Bay"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Campo Grande"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Cancun"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Caracas"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Cayenne"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Cayman"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Chicago"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Chihuahua"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Costa Rica"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Creston"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Cuiaba"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Curacao"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Danmarkshavn"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Dawson"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Dawson Creek"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Denver"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Detroit"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Dominica"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Edmonton"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Eirunepe"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/El Salvador"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Fortaleza"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Glace Bay"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Godthab"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Goose Bay"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Grand Turk"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Grenada"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Guadeloupe"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Guatemala"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Guayaquil"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Guyana"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Halifax"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Havana"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Hermosillo"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Indiana/Indianapolis"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Indiana/Knox"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Indiana/Marengo"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Indiana/Petersburg"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Indiana/Tell City"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Indiana/Vevay"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Indiana/Vincennes"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Indiana/Winamac"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Inuvik"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Iqaluit"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Jamaica"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Juneau"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Kentucky/Louisville"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Kentucky/Monticello"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Kralendijk"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/La Paz"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Lima"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Los Angeles"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Lower Princes"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Maceio"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Managua"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Manaus"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Marigot"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Martinique"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Matamoros"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Mazatlan"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Menominee"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Merida"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Metlakatla"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Mexico City"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Miquelon"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Moncton"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Monterrey"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Montevideo"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Montserrat"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Nassau"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/New York"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Nipigon"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Nome"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Noronha"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/North Dakota/Beulah"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/North Dakota/Center"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/North Dakota/New Salem"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Ojinaga"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Panama"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Pangnirtung"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Paramaribo"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Phoenix"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Port-au-Prince"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Port of Spain"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Porto Velho"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Puerto Rico"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Rainy River"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Rankin Inlet"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Recife"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Regina"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Resolute"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Rio Branco"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Santa Isabel"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Santarem"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Santiago"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Santo Domingo"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Sao Paulo"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Scoresbysund"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Sitka"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/St Barthelemy"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/St Johns"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/St Kitts"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/St Lucia"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/St Thomas"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/St Vincent"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Swift Current"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Tegucigalpa"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Thule"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Thunder Bay"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Tijuana"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Toronto"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Tortola"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Vancouver"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Whitehorse"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Winnipeg"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Yakutat"
-msgstr ""
-
-#: /user/1/edit
-msgid "America/Yellowknife"
-msgstr ""
-
-#: /user/1/edit
-msgid "Antarctica/Casey"
-msgstr ""
-
-#: /user/1/edit
-msgid "Antarctica/Davis"
-msgstr ""
-
-#: /user/1/edit
-msgid "Antarctica/DumontDUrville"
-msgstr ""
-
-#: /user/1/edit
-msgid "Antarctica/Macquarie"
-msgstr ""
-
-#: /user/1/edit
-msgid "Antarctica/Mawson"
-msgstr ""
-
-#: /user/1/edit
-msgid "Antarctica/McMurdo"
-msgstr ""
-
-#: /user/1/edit
-msgid "Antarctica/Palmer"
-msgstr ""
-
-#: /user/1/edit
-msgid "Antarctica/Rothera"
-msgstr ""
-
-#: /user/1/edit
-msgid "Antarctica/Syowa"
-msgstr ""
-
-#: /user/1/edit
-msgid "Antarctica/Vostok"
-msgstr ""
-
-#: /user/1/edit
-msgid "Arctic/Longyearbyen"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Aden"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Almaty"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Amman"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Anadyr"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Aqtau"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Aqtobe"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Ashgabat"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Baghdad"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Bahrain"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Baku"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Bangkok"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Beirut"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Bishkek"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Brunei"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Choibalsan"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Chongqing"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Colombo"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Damascus"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Dhaka"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Dili"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Dubai"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Dushanbe"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Gaza"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Harbin"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Hebron"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Ho Chi Minh"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Hong Kong"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Hovd"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Irkutsk"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Jakarta"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Jayapura"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Jerusalem"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Kabul"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Kamchatka"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Karachi"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Kashgar"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Kathmandu"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Khandyga"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Kolkata"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Krasnoyarsk"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Kuala Lumpur"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Kuching"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Kuwait"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Macau"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Magadan"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Makassar"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Manila"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Muscat"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Nicosia"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Novokuznetsk"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Novosibirsk"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Omsk"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Oral"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Phnom Penh"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Pontianak"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Pyongyang"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Qatar"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Qyzylorda"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Rangoon"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Riyadh"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Sakhalin"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Samarkand"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Seoul"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Shanghai"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Singapore"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Taipei"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Tashkent"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Tbilisi"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Tehran"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Thimphu"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Tokyo"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Ulaanbaatar"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Urumqi"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Ust-Nera"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Vientiane"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Vladivostok"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Yakutsk"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Yekaterinburg"
-msgstr ""
-
-#: /user/1/edit
-msgid "Asia/Yerevan"
-msgstr ""
-
-#: /user/1/edit
-msgid "Atlantic/Azores"
-msgstr ""
-
-#: /user/1/edit
-msgid "Atlantic/Bermuda"
-msgstr ""
-
-#: /user/1/edit
-msgid "Atlantic/Canary"
-msgstr ""
-
-#: /user/1/edit
-msgid "Atlantic/Cape Verde"
-msgstr ""
-
-#: /user/1/edit
-msgid "Atlantic/Faroe"
-msgstr ""
-
-#: /user/1/edit
-msgid "Atlantic/Madeira"
-msgstr ""
-
-#: /user/1/edit
-msgid "Atlantic/Reykjavik"
-msgstr ""
-
-#: /user/1/edit
-msgid "Atlantic/South Georgia"
-msgstr ""
-
-#: /user/1/edit
-msgid "Atlantic/St Helena"
-msgstr ""
-
-#: /user/1/edit
-msgid "Atlantic/Stanley"
-msgstr ""
-
-#: /user/1/edit
-msgid "Australia/Adelaide"
-msgstr ""
-
-#: /user/1/edit
-msgid "Australia/Brisbane"
-msgstr ""
-
-#: /user/1/edit
-msgid "Australia/Broken Hill"
-msgstr ""
-
-#: /user/1/edit
-msgid "Australia/Currie"
-msgstr ""
-
-#: /user/1/edit
-msgid "Australia/Darwin"
-msgstr ""
-
-#: /user/1/edit
-msgid "Australia/Eucla"
-msgstr ""
-
-#: /user/1/edit
-msgid "Australia/Hobart"
-msgstr ""
-
-#: /user/1/edit
-msgid "Australia/Lindeman"
-msgstr ""
-
-#: /user/1/edit
-msgid "Australia/Lord Howe"
-msgstr ""
-
-#: /user/1/edit
-msgid "Australia/Melbourne"
-msgstr ""
-
-#: /user/1/edit
-msgid "Australia/Perth"
-msgstr ""
-
-#: /user/1/edit
-msgid "Australia/Sydney"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Amsterdam"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Andorra"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Athens"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Belgrade"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Berlin"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Bratislava"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Brussels"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Bucharest"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Budapest"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Busingen"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Chisinau"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Copenhagen"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Dublin"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Gibraltar"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Guernsey"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Helsinki"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Isle of Man"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Istanbul"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Jersey"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Kaliningrad"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Kiev"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Lisbon"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Ljubljana"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/London"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Luxembourg"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Madrid"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Malta"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Mariehamn"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Minsk"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Monaco"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Moscow"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Oslo"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Paris"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Podgorica"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Prague"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Riga"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Rome"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Samara"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/San Marino"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Sarajevo"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Simferopol"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Skopje"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Sofia"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Stockholm"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Tallinn"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Tirane"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Uzhgorod"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Vaduz"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Vatican"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Vienna"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Vilnius"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Volgograd"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Warsaw"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Zagreb"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Zaporozhye"
-msgstr ""
-
-#: /user/1/edit
-msgid "Europe/Zurich"
-msgstr ""
-
-#: /user/1/edit
-msgid "Indian/Antananarivo"
-msgstr ""
-
-#: /user/1/edit
-msgid "Indian/Chagos"
-msgstr ""
-
-#: /user/1/edit
-msgid "Indian/Christmas"
-msgstr ""
-
-#: /user/1/edit
-msgid "Indian/Cocos"
-msgstr ""
-
-#: /user/1/edit
-msgid "Indian/Comoro"
-msgstr ""
-
-#: /user/1/edit
-msgid "Indian/Kerguelen"
-msgstr ""
-
-#: /user/1/edit
-msgid "Indian/Mahe"
-msgstr ""
-
-#: /user/1/edit
-msgid "Indian/Maldives"
-msgstr ""
-
-#: /user/1/edit
-msgid "Indian/Mauritius"
-msgstr ""
-
-#: /user/1/edit
-msgid "Indian/Mayotte"
-msgstr ""
-
-#: /user/1/edit
-msgid "Indian/Reunion"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Apia"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Auckland"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Chatham"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Chuuk"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Easter"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Efate"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Enderbury"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Fakaofo"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Fiji"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Funafuti"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Galapagos"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Gambier"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Guadalcanal"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Guam"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Honolulu"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Johnston"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Kiritimati"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Kosrae"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Kwajalein"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Majuro"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Marquesas"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Midway"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Nauru"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Niue"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Norfolk"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Noumea"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Pago Pago"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Palau"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Pitcairn"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Pohnpei"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Port Moresby"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Rarotonga"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Saipan"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Tahiti"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Tarawa"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Tongatapu"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Wake"
-msgstr ""
-
-#: /user/1/edit
-msgid "Pacific/Wallis"
-msgstr ""
-
-#: /user/1/edit
-msgid "UTC"
 msgstr ""
 
 #: /index.php
@@ -9566,6 +5309,233 @@ msgid "Calling hook !hook"
 msgstr ""
 
 #: /index.php
+msgid "Service class in use by the following server: !servers."
+msgstr ""
+
+#: /index.php
+msgid "Taxonomy index"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Include the term references created by instances of this field carried "
+"by node entities in the core {taxonomy_index} table. This will allow "
+"various modules to handle them like core term_reference fields."
+msgstr ""
+
+#: /index.php
+msgid "Rules component"
+msgstr ""
+
+#: /index.php
+msgid "Create an archive of selected files"
+msgstr ""
+
+#: /index.php
+msgid "Pass ids as arguments to a page"
+msgstr ""
+
+#: /index.php
+msgid "Delete revision"
+msgstr ""
+
+#: /index.php
+msgid "Modify entity values"
+msgstr ""
+
+#: /index.php
+msgid "Cancel user account"
+msgstr ""
+
+#: /index.php
+msgid "Update automatic entity labels"
+msgstr ""
+
+#: /index.php
+msgid "Inline differences"
+msgstr ""
+
+#: /index.php
+msgid ""
+"The <em>Blocks</em> realm displays each facet in a separate <a "
+"href=\"@block-page\">block</a>. Users are able to refine their "
+"searches in a drill-down fashion."
+msgstr ""
+
+#: /index.php
+msgid "User my content"
+msgstr ""
+
+#: /index.php
+msgid "Loop Primary Menu"
+msgstr ""
+
+#: /index.php
+msgid "Management"
+msgstr ""
+
+#: /index.php
+msgid "User menu"
+msgstr ""
+
+#: /index.php
+msgid "Profile Complete Percentage - Core Profile"
+msgstr ""
+
+#: /index.php
+msgid "Search block: !name"
+msgstr ""
+
+#: /index.php
+msgid "Shorten URLs"
+msgstr ""
+
+#: /index.php
+msgid "Short URL form"
+msgstr ""
+
+#: /index.php
+msgid "ShURLy bookmarklet"
+msgstr ""
+
+#: /index.php
+msgid "Fulltext"
+msgstr ""
+
+#: /index.php
+msgid "Item language"
+msgstr ""
+
+#: /index.php
+msgid ""
+"A field added by the search framework to let components determine an "
+"item's language. Is always indexed."
+msgstr ""
+
+#: /index.php
+msgid "Bundle filter"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Exclude items from indexing based on their bundle (content type, "
+"vocabulary, …)."
+msgstr ""
+
+#: /index.php
+msgid "Role filter"
+msgstr ""
+
+#: /index.php
+msgid "Exclude users from indexing based on their role."
+msgstr ""
+
+#: /index.php
+msgid "Adds the item's URL to the indexed data."
+msgstr ""
+
+#: /index.php
+msgid "Aggregated fields"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Gives you the ability to define additional fields, containing data "
+"from one or more other fields."
+msgstr ""
+
+#: /index.php
+msgid "Complete entity view"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Adds an additional field containing the whole HTML content of the "
+"entity when viewed."
+msgstr ""
+
+#: /index.php
+msgid "Index hierarchy"
+msgstr ""
+
+#: /index.php
+msgid "Allows to index hierarchical fields along with all their ancestors."
+msgstr ""
+
+#: /index.php
+msgid "Language control"
+msgstr ""
+
+#: /index.php
+msgid "Lets you determine the language of items in the index."
+msgstr ""
+
+#: /index.php
+msgid ""
+"Add node access information to the index. <strong>Caution:</strong> "
+"This only affects the indexed nodes themselves, not any node reference "
+"fields that are indexed with them, or displayed in search results."
+msgstr ""
+
+#: /index.php
+msgid "Access check"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Exclude unpublished nodes from the index. <strong>Caution:</strong> "
+"This only affects the indexed nodes themselves. If an enabled node has "
+"references to disabled nodes, those will still be indexed (or "
+"displayed) normally."
+msgstr ""
+
+#: /index.php
+msgid "Block contents (boxes)"
+msgstr ""
+
+#: /index.php
+msgid "Field Bases"
+msgstr ""
+
+#: /index.php
+msgid "Field Instances"
+msgstr ""
+
+#: /index.php
+msgid "Menu items"
+msgstr ""
+
+#: /index.php
+msgid "UUID entities"
+msgstr ""
+
+#: /index.php
+msgid "Place"
+msgstr ""
+
+#: /index.php
+msgid "User image"
+msgstr ""
+
+#: /index.php
+msgid ""
+"Primary menu with support for smaller screen and touch devices. Works "
+"as a submenu to Main Menu"
+msgstr ""
+
+#: /index.php
+msgid "Enter your question or observation."
+msgstr ""
+
+#: /index.php
+msgid "Select a subject."
+msgstr ""
+
+#: /index.php
+msgid "Create post"
+msgstr ""
+
+#: /index.php
 msgid "'!name' cache was cleared."
 msgstr ""
 
@@ -9582,6 +5552,1330 @@ msgid "Peak memory usage was !peak"
 msgstr ""
 
 #: /
+msgid "Change general settings about this variant."
+msgstr ""
+
+#: /
+msgid "Change the layout of this panel."
+msgstr ""
+
+#: /
+msgid "Move content from old layout"
+msgstr ""
+
+#: /
+msgid ""
+"Add content items and change their location with a drag and drop "
+"interface."
+msgstr ""
+
+#: /
+msgid "Get a preview of what this variant will look like."
+msgstr ""
+
+#: /
+msgid "Renders a panel normally. This is the most common option."
+msgstr ""
+
+#: /
+msgid "Forfatter uid"
+msgstr ""
+
+#: /
+msgid "term fra field_profession"
+msgstr ""
+
+#: /
+msgid "Kommentarer"
+msgstr ""
+
+#: /
+msgid "tæller"
+msgstr ""
+
+#: /
+msgid "Google Analytics Counter tag"
+msgstr ""
+
+#: /
+msgid ""
+"Substitutes a special Google Analytics Counter tag [gac|...] with the "
+"actual content."
+msgstr ""
+
+#: /
+msgid "URL shortener"
+msgstr ""
+
+#: /
+msgid "Replaces URLs with a shortened version."
+msgstr ""
+
+#: /
+msgid "term fra field_area_of_expertise"
+msgstr ""
+
+#: /
+msgid ""
+"A brief and concise summary of the page's content, preferably 150 "
+"characters or less. The description meta tag may be used by search "
+"engines to display a snippet about the page in search results."
+msgstr ""
+
+#: /
+msgid ""
+"A brief and concise summary of the page's content, preferably 150 "
+"characters or less. The abstract meta tag may be used by search "
+"engines for archiving purposes."
+msgstr ""
+
+#: /
+msgid ""
+"A comma-separated list of keywords about the page. This meta tag is "
+"<em>not</em> used by most search engines."
+msgstr ""
+
+#: /
+msgid "Allow search engines to index this page (assumed)."
+msgstr ""
+
+#: /
+msgid "Allow search engines to follow links on this page (assumed)."
+msgstr ""
+
+#: /
+msgid ""
+"Blocks the <a href=\"@odp-url\">Open Directory Project</a> description "
+"of the page from being used in the description that appears below the "
+"page in the search results."
+msgstr ""
+
+#: /
+msgid ""
+"Prevents Yahoo! from listing this page in the <a href=\"@ydir\">Yahoo! "
+"Directory</a>."
+msgstr ""
+
+#: /
+msgid "Prevent search engines from indexing images on this page."
+msgstr ""
+
+#: /
+msgid ""
+"Prevent search engines from offering to translation this page in "
+"search results."
+msgstr ""
+
+#: /
+msgid "Google News Keywords"
+msgstr ""
+
+#: /
+msgid ""
+"A comma-separated list of keywords about the page. This meta tag is "
+"used as an indicator in <a href=\"@google_news\">Google News</a>."
+msgstr ""
+
+#: /
+msgid "Google Standout"
+msgstr ""
+
+#: /
+msgid ""
+"Highlight standout journalism on the web, especially for breaking "
+"news; used as an indicator in <a href=\"@google_news\">Google "
+"News</a>. Warning: Don't abuse it, to be used a maximum of 7 times per "
+"calendar week!"
+msgstr ""
+
+#: /
+msgid ""
+"An image associated with this page, for use as a thumbnail in social "
+"networks and other services."
+msgstr ""
+
+#: /
+msgid "Shortlink URL"
+msgstr ""
+
+#: /
+msgid "Publisher URL"
+msgstr ""
+
+#: /
+msgid "Author URL"
+msgstr ""
+
+#: /
+msgid ""
+"Used by some search engines to confirm authorship of the content on a "
+"page. Should be either the full URL for the author's Google+ profile "
+"page or a local page with information about the author."
+msgstr ""
+
+#: /
+msgid "Original Source"
+msgstr ""
+
+#: /
+msgid ""
+"Used to indicate the URL that broke the story, and can link to either "
+"an internal URL or an external source. If the full URL is not known it "
+"is acceptable to use a partial URL or just the domain name."
+msgstr ""
+
+#: /
+msgid "Revisit After"
+msgstr ""
+
+#: /
+msgid ""
+"Tell search engines when to index the page again. Very few search "
+"engines support this tag, it is more useful to use an <a "
+"href=\"@xmlsitemap\">XML Sitemap</a> file."
+msgstr ""
+
+#: /
+msgid "Latest differences"
+msgstr ""
+
+#: /
+msgid ""
+"The differences between the current revision and the previous revision "
+"of this node."
+msgstr ""
+
+#: /
+msgid "Latest differences (marked down)"
+msgstr ""
+
+#: /
+msgid ""
+"The differences between the current revision and the previous revision "
+"of this node, but with a marked-down form of each revision used for "
+"comparison."
+msgstr ""
+
+#: /
+msgid "Tokens related to the search query and response."
+msgstr ""
+
+#: /
+msgid "Active facet items"
+msgstr ""
+
+#: /
+msgid "Tokens related to active facet items."
+msgstr ""
+
+#: /
+msgid "Facet field"
+msgstr ""
+
+#: /
+msgid "Tokens related to a facet field."
+msgstr ""
+
+#: /
+msgid "Search keywords"
+msgstr ""
+
+#: /
+msgid "The search keywords entered by the user."
+msgstr ""
+
+#: /
+msgid "The page number of the result set."
+msgstr ""
+
+#: /
+msgid "Page limit"
+msgstr ""
+
+#: /
+msgid "The number of results displayed per page."
+msgstr ""
+
+#: /
+msgid "Page total"
+msgstr ""
+
+#: /
+msgid "The total number of pages in the result set."
+msgstr ""
+
+#: /
+msgid "The zero-based offset of the first element on the search page."
+msgstr ""
+
+#: /
+msgid "Start count"
+msgstr ""
+
+#: /
+msgid "The number of the first item on the page."
+msgstr ""
+
+#: /
+msgid "End count"
+msgstr ""
+
+#: /
+msgid "The number of the last item on the page."
+msgstr ""
+
+#: /
+msgid "Result count"
+msgstr ""
+
+#: /
+msgid "The total number of results matched by the search query."
+msgstr ""
+
+#: /
+msgid "Mapped value"
+msgstr ""
+
+#: /
+msgid "The mapped value of the active item."
+msgstr ""
+
+#: /
+msgid "The raw value of the active item as stored in the index."
+msgstr ""
+
+#: /
+msgid "The zero-based position of the active item."
+msgstr ""
+
+#: /
+msgid "Facet label"
+msgstr ""
+
+#: /
+msgid "The human readable label of the active item's facet."
+msgstr ""
+
+#: /
+msgid "Facet name"
+msgstr ""
+
+#: /
+msgid "The machine readable name of the active item's facet."
+msgstr ""
+
+#: /
+msgid "Flaggings"
+msgstr ""
+
+#: /
+msgid "Tokens related to flaggings."
+msgstr ""
+
+#: /
+msgid "Flagging date"
+msgstr ""
+
+#: /
+msgid "The date an item was flagged."
+msgstr ""
+
+#: /
+msgid ""
+"Tokens available in response to a flag action being executed by a "
+"user."
+msgstr ""
+
+#: /
+msgid "The flagging action taking place, either \"flag\" or \"unflag\"."
+msgstr ""
+
+#: /
+msgid "Flag entity URL"
+msgstr ""
+
+#: /
+msgid "The URL of the entity being flagged."
+msgstr ""
+
+#: /
+msgid "Flag entity title"
+msgstr ""
+
+#: /
+msgid "The title of the entity being flagged."
+msgstr ""
+
+#: /
+msgid "Flag entity type"
+msgstr ""
+
+#: /
+msgid ""
+"The type of entity being flagged, such as <em>node</em> or "
+"<em>comment</em>."
+msgstr ""
+
+#: /
+msgid "Flag entity ID"
+msgstr ""
+
+#: /
+msgid "The ID of entity being flagged, such as a nid or cid."
+msgstr ""
+
+#: /
+msgid "Ranking"
+msgstr ""
+
+#: /
+msgid "@flag flag link"
+msgstr ""
+
+#: /
+msgid "Flag/unflag link for @flag"
+msgstr ""
+
+#: /
+msgid "The URL of the account validation page, provided by logintoboggan."
+msgstr ""
+
+#: /
+msgid ""
+"Generated by the Metatag module, may not be used to fill in other meta "
+"tags."
+msgstr ""
+
+#: /
+msgid "Metatag."
+msgstr ""
+
+#: /
+msgid "The title of the current page, as processed by the Page Title module."
+msgstr ""
+
+#: /
+msgid "@entity_type UUID"
+msgstr ""
+
+#: /
+msgid "The universally unique ID of the @entity"
+msgstr ""
+
+#: /
+msgid "@entity_type revision UUID"
+msgstr ""
+
+#: /
+msgid "The universally unique revision ID of the @entity"
+msgstr ""
+
+#: /
+msgid "Time interval"
+msgstr ""
+
+#: /
+msgid "Formatted text"
+msgstr ""
+
+#: /
+msgid "Multiple language"
+msgstr ""
+
+#: /
+msgid "Menu parent"
+msgstr ""
+
+#: /
+msgid "Select the menu parent"
+msgstr ""
+
+#: /
+msgid "Select the available menus"
+msgstr ""
+
+#: /
+msgid ""
+"Block caching is inactive if you have enabled modules defining content "
+"access restrictions."
+msgstr ""
+
+#: /
+msgid "Languages for content"
+msgstr ""
+
+#: /
+msgid "Determines which languages will be allowed for content creation."
+msgstr ""
+
+#: /
+msgid "Enable translation for language"
+msgstr ""
+
+#: /
+msgid "Translatable text formats"
+msgstr ""
+
+#: /
+msgid ""
+"The translation system only translates strings with the selected text "
+"formats. All other strings will be ignored and removed from the list "
+"of translatable strings."
+msgstr ""
+
+#: /
+msgid ""
+"Language that will be used as the source language for string "
+"translations. The default is the site default language."
+msgstr ""
+
+#: /
+msgid "Debug string translation"
+msgstr ""
+
+#: /
+msgid "flagging"
+msgstr ""
+
+#: /
+msgid "watchdog log entry"
+msgstr ""
+
+#: /
+msgid "The category to which this message belongs"
+msgstr ""
+
+#: /
+msgid "Request uri"
+msgstr ""
+
+#: /
+msgid "An associated, HTML formatted link"
+msgstr ""
+
+#: /
+msgid "text token"
+msgstr ""
+
+#: /
+msgctxt "data_types"
+msgid "list"
+msgstr ""
+
+#: /
+msgctxt "data_types"
+msgid "List"
+msgstr ""
+
+#: /
+msgid "list of text"
+msgstr ""
+
+#: /
+msgid "list of integer"
+msgstr ""
+
+#: /
+msgid "list of text tokens"
+msgstr ""
+
+#: /
+msgid "any entity"
+msgstr ""
+
+#: /
+msgid "list of @type_label items"
+msgstr ""
+
+#: /
+msgid "Action set"
+msgstr ""
+
+#: /
+msgid "The flag to check for."
+msgstr ""
+
+#: /
+msgid "User profile is completed"
+msgstr ""
+
+#: /
+msgid "Check number of results returned by a VBO View"
+msgstr ""
+
+#: /
+msgid "View and display"
+msgstr ""
+
+#: /
+msgid "Select the VBO view and display you want to check"
+msgstr ""
+
+#: /
+msgid ""
+"Any arguments to pass to the view, one per line.\n"
+"          You may use token replacement patterns."
+msgstr ""
+
+#: /
+msgid "Minimum number of results"
+msgstr ""
+
+#: /
+msgid ""
+"This condition returns TRUE if the view has at\n"
+"          least the given number of results."
+msgstr ""
+
+#: /
+msgid "Data comparison"
+msgstr ""
+
+#: /
+msgid "Data to compare"
+msgstr ""
+
+#: /
+msgid ""
+"The data to be compared, specified by using a data selector, e.g. "
+"\"node:author:name\"."
+msgstr ""
+
+#: /
+msgid "Data value"
+msgstr ""
+
+#: /
+msgid "The value to compare the data with."
+msgstr ""
+
+#: /
+msgid "Data value is empty"
+msgstr ""
+
+#: /
+msgid "Data to check"
+msgstr ""
+
+#: /
+msgid ""
+"The data to be checked to be empty, specified by using a data "
+"selector, e.g. \"node:author:name\"."
+msgstr ""
+
+#: /
+msgid "List contains item"
+msgstr ""
+
+#: /
+msgid "The item to check for."
+msgstr ""
+
+#: /
+msgid "Text comparison"
+msgstr ""
+
+#: /
+msgid "Matching text"
+msgstr ""
+
+#: /
+msgid "Comparison operation"
+msgstr ""
+
+#: /
+msgid "regular expression"
+msgstr ""
+
+#: /
+msgid ""
+"In case the comparison operation @regex is selected, the matching "
+"pattern will be interpreted as a <a href=\"@regex-wikipedia\">regular "
+"expression</a>.  Tip: <a href=\"@RegExr\">RegExr: Online Regular "
+"Expression Testing Tool</a> is helpful for learning, writing, and "
+"testing Regular Expressions."
+msgstr ""
+
+#: /
+msgid "Entity is new"
+msgstr ""
+
+#: /
+msgid "Specifies the entity for which to evaluate the condition."
+msgstr ""
+
+#: /
+msgid "Entity has field"
+msgstr ""
+
+#: /
+msgid "The name of the field to check for."
+msgstr ""
+
+#: /
+msgid "Entity is of type"
+msgstr ""
+
+#: /
+msgid "The entity type to check for."
+msgstr ""
+
+#: /
+msgid "Entity is of bundle"
+msgstr ""
+
+#: /
+msgid "The type of the checked entity."
+msgstr ""
+
+#: /
+msgid "Entity bundle"
+msgstr ""
+
+#: /
+msgid "The condition is met if the entity is of one of the selected bundles."
+msgstr ""
+
+#: /
+msgid "User has field access"
+msgstr ""
+
+#: /
+msgid "Access operation"
+msgstr ""
+
+#: /
+msgid ""
+"Specifies the user account for which to check access. If left empty, "
+"the currently logged in user will be used."
+msgstr ""
+
+#: /
+msgid "User has role(s)"
+msgstr ""
+
+#: /
+msgid ""
+"If matching against all selected roles, the user must have "
+"<em>all</em> the roles selected."
+msgstr ""
+
+#: /
+msgid ""
+"Specifies the existing path you wish to check for. For example: "
+"node/28, forum/1, taxonomy/term/1+2."
+msgstr ""
+
+#: /
+msgid "If specified, the language for which the URL alias applies."
+msgstr ""
+
+#: /
+msgid ""
+"Specify the URL alias to check for. For example, \"about\" for an "
+"about page."
+msgstr ""
+
+#: /
+msgid "Content is of type"
+msgstr ""
+
+#: /
+msgid ""
+"Evaluates to TRUE if the given content is of one of the selected "
+"content types."
+msgstr ""
+
+#: /
+msgid "The content type(s) to check for."
+msgstr ""
+
+#: /
+msgid "Skip permission check"
+msgstr ""
+
+#: /
+msgid "Whether to ignore permissions of the user on whose behalf to flag."
+msgstr ""
+
+#: /
+msgid ""
+"The maximum number of objects to keep in the queue. Newly flagged "
+"objects will be kept; older ones will be removed. Tip: by typing \"1\" "
+"here you implement a singleton."
+msgstr ""
+
+#: /
+msgid "Trim newest flags"
+msgstr ""
+
+#: /
+msgid ""
+"Checking this will trim the newest flags.  This will prevent new flags "
+"once a limit is reached."
+msgstr ""
+
+#: /
+msgid "Fetch overall flag count"
+msgstr ""
+
+#: /
+msgid "Overall flag count"
+msgstr ""
+
+#: /
+msgid "Fetch entity flag count"
+msgstr ""
+
+#: /
+msgid "Entity flag count"
+msgstr ""
+
+#: /
+msgid "Fetch user flag count"
+msgstr ""
+
+#: /
+msgid "User flag count"
+msgstr ""
+
+#: /
+msgid "Fetch @label flagged by user"
+msgstr ""
+
+#: /
+msgid "User who flagged the @label"
+msgstr ""
+
+#: /
+msgid ""
+"For non-global flags, this is the user who flagged the @label. (For "
+"global flags, this argument is ignored.)"
+msgstr ""
+
+#: /
+msgid "Content flagged by user"
+msgstr ""
+
+#: /
+msgid "Flag a @label"
+msgstr ""
+
+#: /
+msgid "Unflag a @label"
+msgstr ""
+
+#: /
+msgid "Fetch users who have flagged a @label"
+msgstr ""
+
+#: /
+msgid "Choose the flag for which to fetch the users."
+msgstr ""
+
+#: /
+msgid "Users who flagged"
+msgstr ""
+
+#: /
+msgid "(Legacy)"
+msgstr ""
+
+#: /
+msgid "Send Message with Message notify"
+msgstr ""
+
+#: /
+msgid "Message notify"
+msgstr ""
+
+#: /
+msgid "The message to be processed and sent using Message notify."
+msgstr ""
+
+#: /
+msgid "Save on fail"
+msgstr ""
+
+#: /
+msgid "Save message if sending failed."
+msgstr ""
+
+#: /
+msgid "Save on success"
+msgstr ""
+
+#: /
+msgid "Save message if sending successed."
+msgstr ""
+
+#: /
+msgid "Rendered subject field"
+msgstr ""
+
+#: /
+msgid "The field to save the rendered subject."
+msgstr ""
+
+#: /
+msgid "Body subject field"
+msgstr ""
+
+#: /
+msgid "The field to save the rendered body."
+msgstr ""
+
+#: /
+msgid "The recipient of the email"
+msgstr ""
+
+#: /
+msgid ""
+"The recipient of the email. If left empty, the mail will be sent to "
+"the author of the message"
+msgstr ""
+
+#: /
+msgid "The item to index."
+msgstr ""
+
+#: /
+msgid ""
+"The index on which the item should be indexed. Leave blank to index on "
+"all indexes for this item type."
+msgstr ""
+
+#: /
+msgid "Index immediately"
+msgstr ""
+
+#: /
+msgid ""
+"Activate for indexing the item right away, otherwise it will only be "
+"marked as dirty and indexed during the next cron run."
+msgstr ""
+
+#: /
+msgid "Search API"
+msgstr ""
+
+#: /
+msgid "Index an entity"
+msgstr ""
+
+#: /
+msgid "Load a list of entity objects from a VBO View."
+msgstr ""
+
+#: /
+msgid ""
+"Select the view and display you want to use to\n"
+"          create a list."
+msgstr ""
+
+#: /
+msgid "A list of entities"
+msgstr ""
+
+#: /
+msgid "Load a list of entity ids from a VBO View."
+msgstr ""
+
+#: /
+msgid "A list of entity ids"
+msgstr ""
+
+#: /
+msgid "Set a data value"
+msgstr ""
+
+#: /
+msgid ""
+"Specifies the data to be modified using a data selector, e.g. "
+"\"node:author:name\"."
+msgstr ""
+
+#: /
+msgid "The new value to set for the specified data."
+msgstr ""
+
+#: /
+msgid "Calculate a value"
+msgstr ""
+
+#: /
+msgid "Input value 1"
+msgstr ""
+
+#: /
+msgid "The first input value for the calculation."
+msgstr ""
+
+#: /
+msgid "The calculation operator."
+msgstr ""
+
+#: /
+msgid "Input value 2"
+msgstr ""
+
+#: /
+msgid "The second input value."
+msgstr ""
+
+#: /
+msgid "Calculation result"
+msgstr ""
+
+#: /
+msgid "Add an item to a list"
+msgstr ""
+
+#: /
+msgid "The data list, to which an item is to be added."
+msgstr ""
+
+#: /
+msgid "Item to add"
+msgstr ""
+
+#: /
+msgid "Enforce uniqueness"
+msgstr ""
+
+#: /
+msgid "Only add the item to the list if it is not yet contained."
+msgstr ""
+
+#: /
+msgid "Insert position"
+msgstr ""
+
+#: /
+msgid "Remove an item from a list"
+msgstr ""
+
+#: /
+msgid "The data list for which an item is to be removed."
+msgstr ""
+
+#: /
+msgid "Item to remove"
+msgstr ""
+
+#: /
+msgid "Specifies the type of the variable that should be added."
+msgstr ""
+
+#: /
+msgid "Optionally, specify the initial value of the variable."
+msgstr ""
+
+#: /
+msgid "Added variable"
+msgstr ""
+
+#: /
+msgid "Convert data type"
+msgstr ""
+
+#: /
+msgid "The data type to convert a value to."
+msgstr ""
+
+#: /
+msgid "Value to convert"
+msgstr ""
+
+#: /
+msgid "Rounding behavior"
+msgstr ""
+
+#: /
+msgid "The rounding behavior the conversion should use."
+msgstr ""
+
+#: /
+msgid "Conversion result"
+msgstr ""
+
+#: /
+msgid "Fetch entity by id"
+msgstr ""
+
+#: /
+msgid "Specifies the type of entity that should be fetched."
+msgstr ""
+
+#: /
+msgid "Fetched entity"
+msgstr ""
+
+#: /
+msgid "Fetch entity by property"
+msgstr ""
+
+#: /
+msgid "Limit result count"
+msgstr ""
+
+#: /
+msgid "Limit the maximum number of fetched entities."
+msgstr ""
+
+#: /
+msgid "Specifies the type of the entity that should be created."
+msgstr ""
+
+#: /
+msgid "Created entity"
+msgstr ""
+
+#: /
+msgid "Save entity"
+msgstr ""
+
+#: /
+msgid "Specifies the entity, which should be saved permanently."
+msgstr ""
+
+#: /
+msgid "Force saving immediately"
+msgstr ""
+
+#: /
+msgid ""
+"Usually saving is postponed till the end of the evaluation, so that "
+"multiple saves can be fold into one. If this set, saving is forced to "
+"happen immediately."
+msgstr ""
+
+#: /
+msgid "Delete entity"
+msgstr ""
+
+#: /
+msgid "Specifies the entity, which should be deleted permanently."
+msgstr ""
+
+#: /
+msgid ""
+"If disabled and the message has been already shown, then the message "
+"won't be repeated."
+msgstr ""
+
+#: /
+msgid "Page redirect"
+msgstr ""
+
+#: /
+msgid ""
+"A Drupal path, path alias, or external URL to redirect to. Enter "
+"(optional) queries after \"?\" and (optional) anchor after \"#\"."
+msgstr ""
+
+#: /
+msgid "Force redirect"
+msgstr ""
+
+#: /
+msgid ""
+"Force the redirect even if another destination parameter is present. "
+"Per default Drupal would redirect to the path given as destination "
+"parameter, in case it is set. Usually the destination parameter is set "
+"by appending it to the URL, e.g. !example_url"
+msgstr ""
+
+#: /
+msgid "Append destination parameter"
+msgstr ""
+
+#: /
+msgid ""
+"Whether to append a destination parameter to the URL, so another "
+"redirect issued later on would lead back to the origin page."
+msgstr ""
+
+#: /
+msgid "A list of titles for the breadcrumb links."
+msgstr ""
+
+#: /
+msgid ""
+"A list of Drupal paths for the breadcrumb links, matching the order of "
+"the titles."
+msgstr ""
+
+#: /
+msgid ""
+"The e-mail address or addresses where the message will be sent to. The "
+"formatting of this string must comply with RFC 2822."
+msgstr ""
+
+#: /
+msgid ""
+"The mail's from address. Leave it empty to use the site-wide "
+"configured address."
+msgstr ""
+
+#: /
+msgid ""
+"If specified, the language used for getting the mail message and "
+"subject."
+msgstr ""
+
+#: /
+msgid "Send mail to all users of a role"
+msgstr ""
+
+#: /
+msgid "Select the roles whose users should receive the mail."
+msgstr ""
+
+#: /
+msgid "The user whose roles should be changed."
+msgstr ""
+
+#: /
+msgid "Unblock a user"
+msgstr ""
+
+#: /
+msgid "Create or delete any URL alias"
+msgstr ""
+
+#: /
+msgid ""
+"Specifies the existing path you wish to alias. For example: node/28, "
+"forum/1, taxonomy/term/1+2."
+msgstr ""
+
+#: /
+msgid "Leave it empty to delete URL aliases pointing to the given path alias."
+msgstr ""
+
+#: /
+msgid ""
+"Specify an alternative path by which this data can be accessed. For "
+"example, \"about\" for an about page. Use a relative path and do not "
+"add a trailing slash."
+msgstr ""
+
+#: /
+msgid ""
+"Leave it empty to delete URL aliases pointing to the given system "
+"path."
+msgstr ""
+
+#: /
+msgid "Create or delete a content's URL alias"
+msgstr ""
+
+#: /
+msgid ""
+"Specify an alternative path by which the content can be accessed. For "
+"example, \"about\" for an about page. Use a relative path and do not "
+"add a trailing slash."
+msgstr ""
+
+#: /
+msgid "Leave it empty to delete the URL alias."
+msgstr ""
+
+#: /
+msgid "Create or delete a taxonomy term's URL alias"
+msgstr ""
+
+#: /
+msgid ""
+"Specify an alternative path by which the term can be accessed. For "
+"example, \"content/drupal\" for a Drupal term. Use a relative path and "
+"do not add a trailing slash."
+msgstr ""
+
+#: /
+msgid "Tokens related to %label Rules variables."
+msgstr ""
+
+#: /
+msgid "The value of the variable."
+msgstr ""
+
+#: /
+msgid "The following properties may be appended to the token: @keys"
+msgstr ""
+
+#: /
+msgid "List of @entities"
+msgstr ""
+
+#: /
+msgid "Tokens related to the \"@name\" entities."
+msgstr ""
+
+#: /
+msgid "@type with delta @delta"
+msgstr ""
+
+#: /
+msgid ""
+"The list item with delta @delta. Delta values start from 0 and are "
+"incremented by one per list item."
+msgstr ""
+
+#: /
+msgid "List of @type values"
+msgstr ""
+
+#: /
+msgid "Tokens for lists of @type values."
+msgstr ""
+
+#: /
+msgid "Search for an answer"
+msgstr ""
+
+#: /
+msgid "User links"
+msgstr ""
+
+#: /
+msgid "Administration links"
+msgstr ""
+
+#: /user
+msgid "Google Analytics module form element."
+msgstr ""
+
+#: /user
+msgid "Meta tag module form elements."
+msgstr ""
+
+#: /user
+msgid "List all nodes with their Page Titles"
+msgstr ""
+
+#: /user
+msgid "Create URL"
+msgstr ""
+
+#: /user
+msgid "Create a short URL"
+msgstr ""
+
+#: /user
+msgid "My URLs"
+msgstr ""
+
+#: /user
+msgid "List, sort, and delete short URLs"
+msgstr ""
+
+#: /user
+msgid "List, sort, and edit Shurly short URLs"
+msgstr ""
+
+#: /
 msgid "an unknown service"
 msgstr ""
 
@@ -9591,6 +6885,1682 @@ msgstr ""
 
 #: /
 msgid "Invalid long URL."
+msgstr ""
+
+#: /user/4/edit
+msgid "@title interval"
+msgstr ""
+
+#: /user/4/edit
+msgid "@title interval type"
+msgstr ""
+
+#: /user/4/edit
+msgid "- none -"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Abidjan"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Accra"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Addis Ababa"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Algiers"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Asmara"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Bamako"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Bangui"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Banjul"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Bissau"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Blantyre"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Brazzaville"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Bujumbura"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Cairo"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Casablanca"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Ceuta"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Conakry"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Dakar"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Dar es Salaam"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Djibouti"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Douala"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/El Aaiun"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Freetown"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Gaborone"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Harare"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Johannesburg"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Juba"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Kampala"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Khartoum"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Kigali"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Kinshasa"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Lagos"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Libreville"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Lome"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Luanda"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Lubumbashi"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Lusaka"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Malabo"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Maputo"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Maseru"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Mbabane"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Mogadishu"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Monrovia"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Nairobi"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Ndjamena"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Niamey"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Nouakchott"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Ouagadougou"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Porto-Novo"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Sao Tome"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Tripoli"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Tunis"
+msgstr ""
+
+#: /user/4/edit
+msgid "Africa/Windhoek"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Adak"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Anchorage"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Anguilla"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Antigua"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Araguaina"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Argentina/Buenos Aires"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Argentina/Catamarca"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Argentina/Cordoba"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Argentina/Jujuy"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Argentina/La Rioja"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Argentina/Mendoza"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Argentina/Rio Gallegos"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Argentina/Salta"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Argentina/San Juan"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Argentina/San Luis"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Argentina/Tucuman"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Argentina/Ushuaia"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Aruba"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Asuncion"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Atikokan"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Bahia"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Bahia Banderas"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Barbados"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Belem"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Belize"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Blanc-Sablon"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Boa Vista"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Bogota"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Boise"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Cambridge Bay"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Campo Grande"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Cancun"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Caracas"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Cayenne"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Cayman"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Chicago"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Chihuahua"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Costa Rica"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Creston"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Cuiaba"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Curacao"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Danmarkshavn"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Dawson"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Dawson Creek"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Denver"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Detroit"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Dominica"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Edmonton"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Eirunepe"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/El Salvador"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Fortaleza"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Glace Bay"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Godthab"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Goose Bay"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Grand Turk"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Grenada"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Guadeloupe"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Guatemala"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Guayaquil"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Guyana"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Halifax"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Havana"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Hermosillo"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Indiana/Indianapolis"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Indiana/Knox"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Indiana/Marengo"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Indiana/Petersburg"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Indiana/Tell City"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Indiana/Vevay"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Indiana/Vincennes"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Indiana/Winamac"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Inuvik"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Iqaluit"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Jamaica"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Juneau"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Kentucky/Louisville"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Kentucky/Monticello"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Kralendijk"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/La Paz"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Lima"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Los Angeles"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Lower Princes"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Maceio"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Managua"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Manaus"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Marigot"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Martinique"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Matamoros"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Mazatlan"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Menominee"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Merida"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Metlakatla"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Mexico City"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Miquelon"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Moncton"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Monterrey"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Montevideo"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Montserrat"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Nassau"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/New York"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Nipigon"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Nome"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Noronha"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/North Dakota/Beulah"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/North Dakota/Center"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/North Dakota/New Salem"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Ojinaga"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Panama"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Pangnirtung"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Paramaribo"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Phoenix"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Port-au-Prince"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Port of Spain"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Porto Velho"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Puerto Rico"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Rainy River"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Rankin Inlet"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Recife"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Regina"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Resolute"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Rio Branco"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Santa Isabel"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Santarem"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Santiago"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Santo Domingo"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Sao Paulo"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Scoresbysund"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Sitka"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/St Barthelemy"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/St Johns"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/St Kitts"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/St Lucia"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/St Thomas"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/St Vincent"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Swift Current"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Tegucigalpa"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Thule"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Thunder Bay"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Tijuana"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Toronto"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Tortola"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Vancouver"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Whitehorse"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Winnipeg"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Yakutat"
+msgstr ""
+
+#: /user/4/edit
+msgid "America/Yellowknife"
+msgstr ""
+
+#: /user/4/edit
+msgid "Antarctica/Casey"
+msgstr ""
+
+#: /user/4/edit
+msgid "Antarctica/Davis"
+msgstr ""
+
+#: /user/4/edit
+msgid "Antarctica/DumontDUrville"
+msgstr ""
+
+#: /user/4/edit
+msgid "Antarctica/Macquarie"
+msgstr ""
+
+#: /user/4/edit
+msgid "Antarctica/Mawson"
+msgstr ""
+
+#: /user/4/edit
+msgid "Antarctica/McMurdo"
+msgstr ""
+
+#: /user/4/edit
+msgid "Antarctica/Palmer"
+msgstr ""
+
+#: /user/4/edit
+msgid "Antarctica/Rothera"
+msgstr ""
+
+#: /user/4/edit
+msgid "Antarctica/Syowa"
+msgstr ""
+
+#: /user/4/edit
+msgid "Antarctica/Vostok"
+msgstr ""
+
+#: /user/4/edit
+msgid "Arctic/Longyearbyen"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Aden"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Almaty"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Amman"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Anadyr"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Aqtau"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Aqtobe"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Ashgabat"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Baghdad"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Bahrain"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Baku"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Bangkok"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Beirut"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Bishkek"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Brunei"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Choibalsan"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Chongqing"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Colombo"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Damascus"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Dhaka"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Dili"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Dubai"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Dushanbe"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Gaza"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Harbin"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Hebron"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Ho Chi Minh"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Hong Kong"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Hovd"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Irkutsk"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Jakarta"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Jayapura"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Jerusalem"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Kabul"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Kamchatka"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Karachi"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Kashgar"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Kathmandu"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Khandyga"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Kolkata"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Krasnoyarsk"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Kuala Lumpur"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Kuching"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Kuwait"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Macau"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Magadan"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Makassar"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Manila"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Muscat"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Nicosia"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Novokuznetsk"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Novosibirsk"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Omsk"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Oral"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Phnom Penh"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Pontianak"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Pyongyang"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Qatar"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Qyzylorda"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Rangoon"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Riyadh"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Sakhalin"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Samarkand"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Seoul"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Shanghai"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Singapore"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Taipei"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Tashkent"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Tbilisi"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Tehran"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Thimphu"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Tokyo"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Ulaanbaatar"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Urumqi"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Ust-Nera"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Vientiane"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Vladivostok"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Yakutsk"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Yekaterinburg"
+msgstr ""
+
+#: /user/4/edit
+msgid "Asia/Yerevan"
+msgstr ""
+
+#: /user/4/edit
+msgid "Atlantic/Azores"
+msgstr ""
+
+#: /user/4/edit
+msgid "Atlantic/Bermuda"
+msgstr ""
+
+#: /user/4/edit
+msgid "Atlantic/Canary"
+msgstr ""
+
+#: /user/4/edit
+msgid "Atlantic/Cape Verde"
+msgstr ""
+
+#: /user/4/edit
+msgid "Atlantic/Faroe"
+msgstr ""
+
+#: /user/4/edit
+msgid "Atlantic/Madeira"
+msgstr ""
+
+#: /user/4/edit
+msgid "Atlantic/Reykjavik"
+msgstr ""
+
+#: /user/4/edit
+msgid "Atlantic/South Georgia"
+msgstr ""
+
+#: /user/4/edit
+msgid "Atlantic/St Helena"
+msgstr ""
+
+#: /user/4/edit
+msgid "Atlantic/Stanley"
+msgstr ""
+
+#: /user/4/edit
+msgid "Australia/Adelaide"
+msgstr ""
+
+#: /user/4/edit
+msgid "Australia/Brisbane"
+msgstr ""
+
+#: /user/4/edit
+msgid "Australia/Broken Hill"
+msgstr ""
+
+#: /user/4/edit
+msgid "Australia/Currie"
+msgstr ""
+
+#: /user/4/edit
+msgid "Australia/Darwin"
+msgstr ""
+
+#: /user/4/edit
+msgid "Australia/Eucla"
+msgstr ""
+
+#: /user/4/edit
+msgid "Australia/Hobart"
+msgstr ""
+
+#: /user/4/edit
+msgid "Australia/Lindeman"
+msgstr ""
+
+#: /user/4/edit
+msgid "Australia/Lord Howe"
+msgstr ""
+
+#: /user/4/edit
+msgid "Australia/Melbourne"
+msgstr ""
+
+#: /user/4/edit
+msgid "Australia/Perth"
+msgstr ""
+
+#: /user/4/edit
+msgid "Australia/Sydney"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Amsterdam"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Andorra"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Athens"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Belgrade"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Berlin"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Bratislava"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Brussels"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Bucharest"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Budapest"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Busingen"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Chisinau"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Copenhagen"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Dublin"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Gibraltar"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Guernsey"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Helsinki"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Isle of Man"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Istanbul"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Jersey"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Kaliningrad"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Kiev"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Lisbon"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Ljubljana"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/London"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Luxembourg"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Madrid"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Malta"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Mariehamn"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Minsk"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Monaco"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Moscow"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Oslo"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Paris"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Podgorica"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Prague"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Riga"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Rome"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Samara"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/San Marino"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Sarajevo"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Simferopol"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Skopje"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Sofia"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Stockholm"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Tallinn"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Tirane"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Uzhgorod"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Vaduz"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Vatican"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Vienna"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Vilnius"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Volgograd"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Warsaw"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Zagreb"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Zaporozhye"
+msgstr ""
+
+#: /user/4/edit
+msgid "Europe/Zurich"
+msgstr ""
+
+#: /user/4/edit
+msgid "Indian/Antananarivo"
+msgstr ""
+
+#: /user/4/edit
+msgid "Indian/Chagos"
+msgstr ""
+
+#: /user/4/edit
+msgid "Indian/Christmas"
+msgstr ""
+
+#: /user/4/edit
+msgid "Indian/Cocos"
+msgstr ""
+
+#: /user/4/edit
+msgid "Indian/Comoro"
+msgstr ""
+
+#: /user/4/edit
+msgid "Indian/Kerguelen"
+msgstr ""
+
+#: /user/4/edit
+msgid "Indian/Mahe"
+msgstr ""
+
+#: /user/4/edit
+msgid "Indian/Maldives"
+msgstr ""
+
+#: /user/4/edit
+msgid "Indian/Mauritius"
+msgstr ""
+
+#: /user/4/edit
+msgid "Indian/Mayotte"
+msgstr ""
+
+#: /user/4/edit
+msgid "Indian/Reunion"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Apia"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Auckland"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Chatham"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Chuuk"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Easter"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Efate"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Enderbury"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Fakaofo"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Fiji"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Funafuti"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Galapagos"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Gambier"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Guadalcanal"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Guam"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Honolulu"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Johnston"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Kiritimati"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Kosrae"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Kwajalein"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Majuro"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Marquesas"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Midway"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Nauru"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Niue"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Norfolk"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Noumea"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Pago Pago"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Palau"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Pitcairn"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Pohnpei"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Port Moresby"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Rarotonga"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Saipan"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Tahiti"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Tarawa"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Tongatapu"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Wake"
+msgstr ""
+
+#: /user/4/edit
+msgid "Pacific/Wallis"
+msgstr ""
+
+#: /user/4/edit
+msgid "UTC"
 msgstr ""
 
 #: /index.php
@@ -9648,22 +8618,6 @@ msgstr ""
 
 #: /admin/config
 msgid "jQuery %jquery and jQuery UI %ui"
-msgstr ""
-
-#: /node/427
-msgid "Flag for @entity_type"
-msgstr ""
-
-#: /node/427
-msgid "Most useful answer"
-msgstr ""
-
-#: /node/427
-msgid "Thumbs up"
-msgstr ""
-
-#: /node/427
-msgid "edit comment"
 msgstr ""
 
 #: /admin/config
@@ -9820,6 +8774,10 @@ msgid "Message subscribe settings"
 msgstr ""
 
 #: /admin/config
+msgid "Administer message subscribe"
+msgstr ""
+
+#: /admin/config
 msgid "Special Menu Items"
 msgstr ""
 
@@ -9829,10 +8787,6 @@ msgstr ""
 
 #: /admin/config
 msgid "ShURLy"
-msgstr ""
-
-#: /admin/config
-msgid "Manage mime mail system settings."
 msgstr ""
 
 #: /admin/config
@@ -9861,10 +8815,6 @@ msgstr ""
 
 #: /admin/config/regional/translate
 msgid "Refresh user defined strings."
-msgstr ""
-
-#: /node/428
-msgid "Please enter at least one keyword."
 msgstr ""
 
 #: ; misc/drupal.js
@@ -50146,4 +49096,8 @@ msgstr "Du abonnerer ikke længere på dette spørgsmål."
 #: /flag/flag/subscribe_node/427?destination=node/427&token=9OYZc7J1fe421ZEa_K0yeoIPp4IOMBpgMh-1FkRUJ-w
 msgid "You are now subscribed to this item."
 msgstr "Du abonnerer ikke længere på dette spørgsmål."
+
+#: /user
+msgid "Areas of expertise"
+msgstr "Kompetencer"
 
