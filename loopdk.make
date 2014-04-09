@@ -94,6 +94,9 @@ projects[memcache][version] = "1.0"
 projects[mailsystem][subdir] = "contrib"
 projects[mailsystem][version] = "2.34"
 
+projects[menu_admin_per_menu][subdir] = "contrib"
+projects[menu_admin_per_menu][version] = "1.0"
+
 projects[menu_attributes][subdir] = "contrib"
 projects[menu_attributes][version] = "1.0-rc2"
 
