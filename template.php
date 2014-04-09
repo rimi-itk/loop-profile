@@ -561,6 +561,8 @@ function loop_form_user_profile_form_alter(&$form)  {
   $user_image_field_lang = $form['field_user_image']['#language'];
   unset($form['field_user_image'][$user_image_field_lang]['0']['#description']);
   unset($form['field_user_image'][$user_image_field_lang]['0']['#title']);
+
+  $form['locale']['#access'] = FALSE;
 }
 
 
