@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-04-09 11:01+0200\n"
-"PO-Revision-Date: 2014-04-09 11:01+0200\n"
+"POT-Creation-Date: 2014-04-09 11:12+0200\n"
+"PO-Revision-Date: 2014-04-09 11:12+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -8815,6 +8815,18 @@ msgstr ""
 
 #: /admin/config/regional/translate
 msgid "Refresh user defined strings."
+msgstr ""
+
+#: /node/427
+msgid "Flag for @entity_type"
+msgstr ""
+
+#: /node/427
+msgid "Most useful answer"
+msgstr ""
+
+#: /node/427
+msgid "edit comment"
 msgstr ""
 
 #: ; misc/drupal.js
@@ -49100,4 +49112,12 @@ msgstr "Du abonnerer ikke længere på dette spørgsmål."
 #: /user
 msgid "Areas of expertise"
 msgstr "Kompetencer"
+
+#: /node/427
+msgid "Thumbs up"
+msgstr "Synes godt om"
+
+#: /flag/flag/ranking/131?destination=node/427&token=H5-vucP6NxRHQVeqLoYB8NiivDgdFa397kuFA9eRxdA
+msgid "Remove thumbs up"
+msgstr "Fjern synes godt om"
 
