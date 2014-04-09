@@ -4,24 +4,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-04-07 09:02+0200\n"
-"PO-Revision-Date: 2014-04-07 09:02+0200\n"
+"POT-Creation-Date: 2014-04-09 09:55+0200\n"
+"PO-Revision-Date: 2014-04-09 09:55+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-
-#: panels:display_configuration:5c4610bd-d98d-4392-833f-1c60080f8cba:title
-msgctxt "display_configuration:5c4610bd-d98d-4392-833f-1c60080f8cba:title"
-msgid "Dashboard"
-msgstr ""
-
-#: panels:display_configuration:d2434553-0d76-4954-bbd4-c8888cfb265f:title
-msgctxt "display_configuration:d2434553-0d76-4954-bbd4-c8888cfb265f:title"
-msgid "Subscriptions"
-msgstr ""
 
 #: panels:display_configuration:eacecc12-ef9b-4b7d-9ec7-1b4ac69aebde:title
 msgctxt "display_configuration:eacecc12-ef9b-4b7d-9ec7-1b4ac69aebde:title"

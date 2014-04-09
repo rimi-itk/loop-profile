@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-04-07 09:02+0200\n"
-"PO-Revision-Date: 2014-04-07 09:02+0200\n"
+"POT-Creation-Date: 2014-04-09 09:55+0200\n"
+"PO-Revision-Date: 2014-04-09 09:55+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -28,70 +28,65 @@ msgctxt "message_text:message_type:description"
 msgid "This is the text of all messages of this type."
 msgstr ""
 
-#: field:field_area_of_expertise:user:label
-msgctxt "field_area_of_expertise:user:label"
-msgid "Area of expertise"
-msgstr ""
-
-#: field:field_biography:user:label
-msgctxt "field_biography:user:label"
-msgid "Biography"
-msgstr ""
-
-#: field:field_first_name:user:label
-msgctxt "field_first_name:user:label"
-msgid "First name"
-msgstr ""
-
-#: field:field_job_title:user:label
-msgctxt "field_job_title:user:label"
-msgid "Job title"
-msgstr ""
-
-#: field:field_last_name:user:label
-msgctxt "field_last_name:user:label"
-msgid "Last name"
-msgstr ""
-
-#: field:field_location_address:user:label
-msgctxt "field_location_address:user:label"
-msgid "Address"
-msgstr ""
-
-#: field:field_location_city:user:label
-msgctxt "field_location_city:user:label"
-msgid "City"
-msgstr ""
-
-#: field:field_location_place:user:label
-msgctxt "field_location_place:user:label"
-msgid "Place"
-msgstr ""
-
-#: field:field_location_postal_code:user:label
-msgctxt "field_location_postal_code:user:label"
-msgid "Postal code"
-msgstr ""
-
-#: field:field_profession:user:label
-msgctxt "field_profession:user:label"
-msgid "Profession"
-msgstr ""
-
 #: field:field_user_image:user:label
 msgctxt "field_user_image:user:label"
 msgid "User image"
-msgstr ""
-
-#: field:field_profession:post:label
-msgctxt "field_profession:post:label"
-msgid "Profession"
 msgstr ""
 
 #: field:field_message_node_reference:comment_added_to_post:label
 msgctxt "field_message_node_reference:comment_added_to_post:label"
 msgid "Message node reference"
 msgstr ""
+
+#: field:field_area_of_expertise:user:label
+msgctxt "field_area_of_expertise:user:label"
+msgid "Area of expertise"
+msgstr "Kompetencer"
+
+#: field:field_biography:user:label
+msgctxt "field_biography:user:label"
+msgid "Biography"
+msgstr "Biografi"
+
+#: field:field_first_name:user:label
+msgctxt "field_first_name:user:label"
+msgid "First name"
+msgstr "Fornavn"
+
+#: field:field_job_title:user:label
+msgctxt "field_job_title:user:label"
+msgid "Job title"
+msgstr "Jobtitel"
+
+#: field:field_last_name:user:label
+msgctxt "field_last_name:user:label"
+msgid "Last name"
+msgstr "Efternavn"
+
+#: field:field_location_address:user:label
+msgctxt "field_location_address:user:label"
+msgid "Address"
+msgstr "Adresse"
+
+#: field:field_location_city:user:label
+msgctxt "field_location_city:user:label"
+msgid "City"
+msgstr "By"
+
+#: field:field_location_place:user:label
+msgctxt "field_location_place:user:label"
+msgid "Place"
+msgstr "Sted"
+
+#: field:field_location_postal_code:user:label
+msgctxt "field_location_postal_code:user:label"
+msgid "Postal code"
+msgstr "Postnummer"
+
+#: field:field_profession:user:label
+msgctxt "field_profession:user:label"
+msgid "Profession"
+msgstr "Profession"
 
 #: field:field_description:post:label
 msgctxt "field_description:post:label"
@@ -112,6 +107,11 @@ msgstr "Nøgleord"
 msgctxt "field_keyword:post:description"
 msgid "Type in keyword(s)."
 msgstr "Indtast nøgleord"
+
+#: field:field_profession:post:label
+msgctxt "field_profession:post:label"
+msgid "Profession"
+msgstr "Profession"
 
 #: field:field_subject:post:label
 msgctxt "field_subject:post:label"

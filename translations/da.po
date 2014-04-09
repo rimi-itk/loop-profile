@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-04-07 09:02+0200\n"
-"PO-Revision-Date: 2014-04-07 09:02+0200\n"
+"POT-Creation-Date: 2014-04-09 09:55+0200\n"
+"PO-Revision-Date: 2014-04-09 09:55+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -1221,6 +1221,10 @@ msgstr ""
 msgid "ISO 8601"
 msgstr ""
 
+#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
+msgid "List documents in JSON format"
+msgstr ""
+
 #: /loop_search_nodes
 msgid "Add the site's slogan as content."
 msgstr ""
@@ -1245,20 +1249,34 @@ msgstr ""
 msgid "Add a flag link of a certain flag type for entities."
 msgstr ""
 
-#: /loop_search_nodes
+#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
 msgid "Message render"
 msgstr ""
 
 #: /loop_search_nodes
+msgid "Message render"
+msgstr ""
+
+#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
 msgid "Render a message entity."
 msgstr ""
 
-#: /loop_search_nodes
+#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
 msgid "Rounded corners"
+msgstr ""
+
+#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
+msgid "Presents the panes or panels with a rounded corner box around them"
 msgstr ""
 
 #: /loop_search_nodes
 msgid "Presents the panes or panels with a rounded corner box around them"
+msgstr ""
+
+#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
+msgid ""
+"Display the pane as a system block; this is more restrictive than the "
+"default."
 msgstr ""
 
 #: /loop_search_nodes
@@ -1273,15 +1291,29 @@ msgid ""
 "separator."
 msgstr ""
 
-#: /loop_search_nodes
+#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
+msgid ""
+"The default panel rendering style; displays each pane with a "
+"separator."
+msgstr ""
+
+#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
 msgid "Presents the panes in the form of an HTML list."
 msgstr ""
 
 #: /loop_search_nodes
+msgid "Presents the panes in the form of an HTML list."
+msgstr ""
+
+#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
 msgid "No markup at all"
 msgstr ""
 
 #: /loop_search_nodes
+msgid "Display the pane or region with no markup, not even a title."
+msgstr ""
+
+#: /loop_search_documents/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,%C3%A6,%C3%B8,%C3%A5
 msgid "Display the pane or region with no markup, not even a title."
 msgstr ""
 
@@ -1320,10 +1352,6 @@ msgid "Forfatter uid"
 msgstr ""
 
 #: /
-msgid "Last name"
-msgstr ""
-
-#: /
 msgid "User image"
 msgstr ""
 
@@ -1355,10 +1383,6 @@ msgstr ""
 
 #: /
 msgid "Replaces URLs with a shortened version."
-msgstr ""
-
-#: /
-msgid "Area of expertise"
 msgstr ""
 
 #: /
@@ -2618,10 +2642,6 @@ msgid "Areas of expertise"
 msgstr ""
 
 #: /user
-msgid "Profession"
-msgstr ""
-
-#: /user
 msgid "User menu"
 msgstr ""
 
@@ -2653,16 +2673,1213 @@ msgstr ""
 msgid "List, sort, and edit Shurly short URLs"
 msgstr ""
 
-#: /user/1/edit
+#: /node/add/post
 msgid "@title interval"
 msgstr ""
 
-#: /user/1/edit
+#: /node/add/post
 msgid "@title interval type"
 msgstr ""
 
-#: /user/1/edit
+#: /node/add/post
 msgid "- none -"
+msgstr ""
+
+#: profiles/loopdk/modules/contrib/autocomplete_deluxe/autocomplete_deluxe.js
+msgid "The term '@term' will be added."
+msgstr ""
+
+#: profiles/loopdk/modules/contrib/metatag/metatag.vertical-tabs.js
+msgid "@label: @value"
+msgstr ""
+
+#: /admin/structure
+msgid ""
+"Configure flags for marking content with arbitrary information (such "
+"as <em>offensive</em> or <em>bookmarked</em>)."
+msgstr ""
+
+#: /admin/structure
+msgid "Get a bird's eye view of items related to Panels."
+msgstr ""
+
+#: /admin/structure
+msgid "Meddelelsestypes"
+msgstr ""
+
+#: /admin/structure
+msgid "Manage Meddelelsestypes."
+msgstr ""
+
+#: /admin/structure
+msgid "Manage customized lists of content."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Adjust settings for using features module."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Service class in use by the following server: !servers."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Block contents (boxes)"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Field Bases"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Field Instances"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Menu items"
+msgstr ""
+
+#: /admin/structure/features
+msgid "UUID entities"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Inline differences"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"The <em>Blocks</em> realm displays each facet in a separate <a "
+"href=\"@block-page\">block</a>. Users are able to refine their "
+"searches in a drill-down fashion."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Profile Complete Percentage - Core Profile"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Search block: !name"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Short URL form"
+msgstr ""
+
+#: /admin/structure/features
+msgid "ShURLy bookmarklet"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Place"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"Primary menu with support for smaller screen and touch devices. Works "
+"as a submenu to Main Menu"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Enter your question or observation."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Select a subject."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Create post"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Unmet dependencies: !dependencies"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Needs review"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Rebuilding"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Checking..."
+msgstr ""
+
+#: /admin/structure/features
+msgid "@component [@items]"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Conflicts with: !conflicts"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Required by: !dependents"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Feature"
+msgstr ""
+
+#: profiles/loopdk/modules/contrib/features/features.js
+msgid "Deselect all"
+msgstr ""
+
+#: /admin/structure/features/loop_navigation/status
+msgid "Javascript status call back."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Taxonomy index"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"Include the term references created by instances of this field carried "
+"by node entities in the core {taxonomy_index} table. This will allow "
+"various modules to handle them like core term_reference fields."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Rules component"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer Facets"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer flags"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Use flag importer"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Access the flag import functionality."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Flag %entity entities as %flag_title"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Unflag %entity entities as %flag_title"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Enter PHP code in the field for tracking visibility settings."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer Google Analytics Counter"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Set roles that may access the settings of Google Analytics Counter."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer Mail System"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"Select the default, per-module, and per-mailing <a "
+"href=\"!interface\"><code>@interface</code></a> to use for formatting "
+"and sending email messages."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer message types"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer message types that can be used to log an event."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Create messages"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Log new messages."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer message subscribe"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer user subscriptions."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer meta tags"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Control the main settings pages and modify per-object meta tags."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Edit meta tags"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"Modify meta tags on individual entity records (nodes, terms, users, "
+"etc)."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Edit Mime Mail user settings"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Edit user specific settings for Mime Mail."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Send arbitrary files"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Attach or embed files located outside the public files directory."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer Module Filter"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Configure how Module Filter performs."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Access own OAuth authorizations"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Access own OAuth consumers"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Authorize any OAuth consumers"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Register any OAuth consumers"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer OAuth"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer OAuth consumers"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Set Page Title"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Allow user to set or modify a page title"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer Page Title"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Perform administration tasks for Page Title"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Configure access settings on Panel panes"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"Access rules (often also called visibility rules) can be configured on "
+"a per-pane basis. This permission allows users to configure those "
+"settings."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Use the Panels In-Place Editor"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Allows a user to utilize Panels' In-Place Editor."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Change layouts with the Panels In-Place Editor"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Allows a user to change layouts with the IPE."
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"Allows a user to administer exported Panels layout plugins & "
+"instances."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer Panels styles"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Allows a user to administer the styles of Panel panes."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Allows a user to configure caching on Panels displays and panes."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Use panel locks"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Allows a user to lock and unlock panes in a panel display."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Use the Panels In-Place Editor with Page Manager"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"Allows users with access to the In-Place editor to administer page "
+"manager pages. This permission is only needed for users without \"use "
+"page manager\" access."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer Profile Complete Percentages"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Allows a user to configure which fields to be considered complete."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer Search API"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Create and configure Search API servers and indexes."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Access search pages"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Execute searches using the Search pages module."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Export permission definitions"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"Allows the export of permission settings to code, so that the "
+"permission and roles forms may be disabled."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Use URL shortener page"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Manage URL shortener API keys"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"Allow viewing and editing the API keys for third-party URL shortening "
+"services."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Create short URLs"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Enter custom URLs"
+msgstr ""
+
+#: /admin/structure/features
+msgid "View own URL stats"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Delete own URLs"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer short URLs"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer UUID"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Allows configuration of the UUID module and APIs."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Use PHP for label patterns"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Use PHP evaluation for automatic entity label patterns."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Translate user-defined strings"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"Translate user-defined strings that are created as part of content or "
+"configuration."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Translate admin strings"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"Translate administrative strings with a very permissive XSS/HTML "
+"filter that allows all HTML tags."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer features"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Perform administration tasks on features."
+msgstr ""
+
+#: /admin/structure/features
+msgid "View, enable and disable features."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Generate features"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Allow feature exports to be generated and written directly to site."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Administer rule configurations"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"Administer rule configurations including events, conditions and "
+"actions for which the user has sufficient access permissions."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Bypass Rules access control"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"Control all configurations regardless of permission restrictions of "
+"events, conditions or actions."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Access the Rules debug log"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Show format tips"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Toggle display of format description help."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Show more format tips link"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Toggle display of the \"More information about text formats\" link."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Show format selection for @entitys"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"The list to loop over. The loop will step through each item in the "
+"list, allowing further actions on them. See <a href=\"@url\"> the "
+"online handbook</a> for more information on how to use loops."
+msgstr ""
+
+#: /admin/structure/features
+msgid "After saving a new @entity"
+msgstr ""
+
+#: /admin/structure/features
+msgid "created @entity"
+msgstr ""
+
+#: /admin/structure/features
+msgid "After updating an existing @entity"
+msgstr ""
+
+#: /admin/structure/features
+msgid "unchanged entity"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Before saving a @entity"
+msgstr ""
+
+#: /admin/structure/features
+msgid "saved @entity"
+msgstr ""
+
+#: /admin/structure/features
+msgid "After deleting a @entity"
+msgstr ""
+
+#: /admin/structure/features
+msgid "deleted @entity"
+msgstr ""
+
+#: /admin/structure/features
+msgid "@entity is viewed"
+msgstr ""
+
+#: /admin/structure/features
+msgid "viewed @entity"
+msgstr ""
+
+#: /admin/structure/features
+msgid "view mode"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Before saving content"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Content is viewed"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"Be aware that some actions might initialize the theme system. After "
+"that, it's impossible for any module to change the used theme."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Cron maintenance tasks are performed"
+msgstr ""
+
+#: /admin/structure/features
+msgid "System log entry is created"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Log entry"
+msgstr ""
+
+#: /admin/structure/features
+msgid "After saving a new user account"
+msgstr ""
+
+#: /admin/structure/features
+msgid "After updating an existing user account"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Before saving a user account"
+msgstr ""
+
+#: /admin/structure/features
+msgid "saved user"
+msgstr ""
+
+#: /admin/structure/features
+msgid "User account page is viewed"
+msgstr ""
+
+#: /admin/structure/features
+msgid "After a user account has been deleted"
+msgstr ""
+
+#: /admin/structure/features
+msgid "After saving a new term"
+msgstr ""
+
+#: /admin/structure/features
+msgid "created term"
+msgstr ""
+
+#: /admin/structure/features
+msgid "After updating an existing term"
+msgstr ""
+
+#: /admin/structure/features
+msgid "updated term"
+msgstr ""
+
+#: /admin/structure/features
+msgid "unchanged term"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Before saving a taxonomy term"
+msgstr ""
+
+#: /admin/structure/features
+msgid "saved term"
+msgstr ""
+
+#: /admin/structure/features
+msgid "deleted term"
+msgstr ""
+
+#: /admin/structure/features
+msgid "After saving a new vocabulary"
+msgstr ""
+
+#: /admin/structure/features
+msgid "created vocabulary"
+msgstr ""
+
+#: /admin/structure/features
+msgid "After updating an existing vocabulary"
+msgstr ""
+
+#: /admin/structure/features
+msgid "updated vocabulary"
+msgstr ""
+
+#: /admin/structure/features
+msgid "unchanged vocabulary"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Before saving a vocabulary"
+msgstr ""
+
+#: /admin/structure/features
+msgid "saved vocabulary"
+msgstr ""
+
+#: /admin/structure/features
+msgid "After deleting a vocabulary"
+msgstr ""
+
+#: /admin/structure/features
+msgid "deleted vocabulary"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Message arguments"
+msgstr ""
+
+#: /admin/structure/features
+msgid "The arguments to associate with the message."
+msgstr ""
+
+#: /admin/structure/features
+msgid "unlabeled"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Use Rules component %component"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"Controls access for using the component %component via the provided "
+"action or condition. <a href=\"@component-edit-url\">Edit this "
+"component.</a>"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Send HTML e-mail"
+msgstr ""
+
+#: /admin/structure/features
+msgid "A key to identify the e-mail sent."
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"The mail's recipient address. The formatting of this string must "
+"comply with RFC 2822."
+msgstr ""
+
+#: /admin/structure/features
+msgid "CC Recipient"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"The mail's carbon copy address. You may separate multiple addresses "
+"with comma."
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"The mail's blind carbon copy address. You may separate multiple "
+"addresses with comma."
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"The sender's name. Leave it empty to use the site-wide configured "
+"name."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Sender e-mail address"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"The sender's address. Leave it empty to use the site-wide configured "
+"address."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Reply e-mail address"
+msgstr ""
+
+#: /admin/structure/features
+msgid "The address to reply to. Leave it empty to use the sender's address."
+msgstr ""
+
+#: /admin/structure/features
+msgid "The mail's message HTML body."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Plain text body"
+msgstr ""
+
+#: /admin/structure/features
+msgid "The mail's message plaintext body."
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"The mail's attachments, one file per line e.g. "
+"\"files/images/mypic.png\" without quotes."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Send HTML mail to all users of a role"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Send mail only to active users."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Plaintext body"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Send mail in each recipient's language"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"If checked, the mail message and subject will be sent in each user's "
+"preferred language. <strong>You can safely leave the language selector "
+"below empty if this option is selected.</strong>"
+msgstr ""
+
+#: /admin/structure/features
+msgid "Fixed language"
+msgstr ""
+
+#: /admin/structure/features
+msgid ""
+"If specified, the fixed language used for getting the mail message and "
+"subject."
+msgstr ""
+
+#: /admin/structure/features
+msgid "Message node reference"
+msgstr ""
+
+#: /admin/structure/features
+msgid "This is the text of all messages of this type."
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "Refresh view by Flag"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid " "
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "Latest other content"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "<a href=\"/user/[uid]/edit\" class=\"dashboard-list--icon\"></a>"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid ""
+"[name]\n"
+"<span class=\"dashboard-list--meta-data\">[field_first_name] "
+"[field_last_name], [name_1]</span>"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "View all notifications"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "Read messages"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "View all read notifications"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "Unread messages - full"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "Read messages - full"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "Unread messages front"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "User comments"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "Sortér efter"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "Stigende"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "Faldende"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "No. elements"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "- Alle -"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "Forskydning"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "« første"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "‹ forrige"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "næste ›"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "sidste »"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "Seneste 10 kommentarer"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "Alle"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "User nodes"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "Seneste 10 spørgsmål"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid " replies"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "Your subscriptions"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "You are not subscribed to any item."
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "Message read"
+msgstr ""
+
+#: /batch?op=start&id=2
+msgid "message"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Cleanup"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Clear cache after enabling/disabling a feature."
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Create an archive of selected files"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Pass ids as arguments to a page"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Delete revision"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Modify entity values"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Cancel user account"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Update automatic entity labels"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Fulltext"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Item language"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid ""
+"A field added by the search framework to let components determine an "
+"item's language. Is always indexed."
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Bundle filter"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid ""
+"Exclude items from indexing based on their bundle (content type, "
+"vocabulary, …)."
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Role filter"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Exclude users from indexing based on their role."
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Adds the item's URL to the indexed data."
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Aggregated fields"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid ""
+"Gives you the ability to define additional fields, containing data "
+"from one or more other fields."
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Complete entity view"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid ""
+"Adds an additional field containing the whole HTML content of the "
+"entity when viewed."
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Index hierarchy"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Allows to index hierarchical fields along with all their ancestors."
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Language control"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Lets you determine the language of items in the index."
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid ""
+"Add node access information to the index. <strong>Caution:</strong> "
+"This only affects the indexed nodes themselves, not any node reference "
+"fields that are indexed with them, or displayed in search results."
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid "Access check"
+msgstr ""
+
+#: /admin/structure/features/cleanup/clear
+msgid ""
+"Exclude unpublished nodes from the index. <strong>Caution:</strong> "
+"This only affects the indexed nodes themselves. If an enabled node has "
+"references to disabled nodes, those will still be indexed (or "
+"displayed) normally."
+msgstr ""
+
+#: /admin/structure/features/loop_user_messages/status
+msgid "Flag-link"
+msgstr ""
+
+#: /admin/structure/features/loop_user_messages/status
+msgid "Render message (Get text)"
+msgstr ""
+
+#: /admin/structure/features/loop_user_page_views/status
+msgid "Nye kommentarer"
+msgstr ""
+
+#: /
+msgid "No widget"
+msgstr ""
+
+#: /
+msgid "No display changes are made to the view while it is being refreshed."
+msgstr ""
+
+#: /
+msgid "Throbber image"
+msgstr ""
+
+#: /
+msgid ""
+"Display a throbber image in place of the view content while it is "
+"being refreshed."
+msgstr ""
+
+#: /
+msgid "Message subscribe"
+msgstr ""
+
+#: /
+msgid ""
+"No Google Analytics profile has been authenticated! Google Analytics "
+"Counter can not fetch any new data. Please authenticate <a "
+"href=\"/admin/config/system/google_analytics_counter/authentication\">here</a>."
+msgstr ""
+
+#: /user
+msgid "@label @delta partial"
+msgstr ""
+
+#: /user
+msgid "Rendered message text of the @delta partial"
+msgstr ""
+
+#: /user
+msgid "Mime Mail module settings form elements."
+msgstr ""
+
+#: /user
+msgid "@flag you follow (@count)"
+msgstr ""
+
+#: /admin/content
+msgid "Change author"
+msgstr ""
+
+#: /admin/content
+msgid "Change value"
+msgstr ""
+
+#: /admin/content
+msgid "Stick"
+msgstr ""
+
+#: /admin/content
+msgid "Unstick"
+msgstr ""
+
+#: /admin/content
+msgid "Promote to front page"
+msgstr ""
+
+#: /admin/content
+msgid "Publish"
+msgstr ""
+
+#: /admin/content
+msgid "Demote from front page"
+msgstr ""
+
+#: /admin/content
+msgid "Unpublish"
+msgstr ""
+
+#: /user/1/edit
+msgid ""
+"Check this option if you do not wish to receive email messages with "
+"graphics and styles."
 msgstr ""
 
 #: /user/1/edit
@@ -3262,10 +4479,6 @@ msgid "America/Montevideo"
 msgstr ""
 
 #: /user/1/edit
-msgid "America/Montreal"
-msgstr ""
-
-#: /user/1/edit
 msgid "America/Montserrat"
 msgstr ""
 
@@ -3386,10 +4599,6 @@ msgid "America/Scoresbysund"
 msgstr ""
 
 #: /user/1/edit
-msgid "America/Shiprock"
-msgstr ""
-
-#: /user/1/edit
 msgid "America/Sitka"
 msgstr ""
 
@@ -3495,10 +4704,6 @@ msgstr ""
 
 #: /user/1/edit
 msgid "Antarctica/Rothera"
-msgstr ""
-
-#: /user/1/edit
-msgid "Antarctica/South Pole"
 msgstr ""
 
 #: /user/1/edit
@@ -4341,74 +5546,6 @@ msgstr ""
 msgid "UTC"
 msgstr ""
 
-#: /user/1/edit
-msgid "Work related information"
-msgstr ""
-
-#: profiles/loopdk/modules/contrib/autocomplete_deluxe/autocomplete_deluxe.js
-msgid "The term '@term' will be added."
-msgstr ""
-
-#: profiles/loopdk/modules/contrib/metatag/metatag.vertical-tabs.js
-msgid "@label: @value"
-msgstr ""
-
-#: /admin/content
-msgid "Create an archive of selected files"
-msgstr ""
-
-#: /admin/content
-msgid "Pass ids as arguments to a page"
-msgstr ""
-
-#: /admin/content
-msgid "Delete revision"
-msgstr ""
-
-#: /admin/content
-msgid "Modify entity values"
-msgstr ""
-
-#: /admin/content
-msgid "Cancel user account"
-msgstr ""
-
-#: /admin/content
-msgid "Update automatic entity labels"
-msgstr ""
-
-#: /admin/content
-msgid "Change author"
-msgstr ""
-
-#: /admin/content
-msgid "Change value"
-msgstr ""
-
-#: /admin/content
-msgid "Stick"
-msgstr ""
-
-#: /admin/content
-msgid "Unstick"
-msgstr ""
-
-#: /admin/content
-msgid "Promote to front page"
-msgstr ""
-
-#: /admin/content
-msgid "Publish"
-msgstr ""
-
-#: /admin/content
-msgid "Demote from front page"
-msgstr ""
-
-#: /admin/content
-msgid "Unpublish"
-msgstr ""
-
 #: /index.php
 msgid "Cache !mess cid: !cid"
 msgstr ""
@@ -4427,18 +5564,6 @@ msgstr ""
 
 #: /index.php
 msgid "Found command: !command (commandfile=!commandfile)"
-msgstr ""
-
-#: /index.php
-msgid " (or '!other')"
-msgstr ""
-
-#: /index.php
-msgid "All available fields are: !fields."
-msgstr ""
-
-#: /index.php
-msgid "Equivalent to --format=!default."
 msgstr ""
 
 #: /index.php
@@ -6742,24 +7867,6 @@ msgid "Delete all redirects before generating new ones."
 msgstr ""
 
 #: /index.php
-msgid ""
-"Rebuild the registry table (for classes) and the system table (for "
-"module locations) in a Drupal install."
-msgstr ""
-
-#: /index.php
-msgid ""
-"Rebuild the registry only, do not clear caches, unless --fire-bazooka "
-"is also used."
-msgstr ""
-
-#: /index.php
-msgid ""
-"Truncate registry and registry_file tables and build them from "
-"scratch. Forces all caches clear."
-msgstr ""
-
-#: /index.php
 msgid "Create a new role."
 msgstr ""
 
@@ -8455,23 +9562,11 @@ msgid "Delete all messages of type cron."
 msgstr ""
 
 #: /index.php
-msgid "Loading !engine engine."
-msgstr ""
-
-#: /index.php
 msgid "Calling hook !hook"
 msgstr ""
 
 #: /index.php
-msgid "Connected"
-msgstr ""
-
-#: /index.php
-msgid "Successful"
-msgstr ""
-
-#: /index.php
-msgid "Service class in use by the following server: !servers."
+msgid "'!name' cache was cleared."
 msgstr ""
 
 #: /index.php
@@ -8486,1112 +9581,20 @@ msgstr ""
 msgid "Peak memory usage was !peak"
 msgstr ""
 
-#: /index.php
-msgid "Taxonomy index"
-msgstr ""
-
-#: /index.php
-msgid ""
-"Include the term references created by instances of this field carried "
-"by node entities in the core {taxonomy_index} table. This will allow "
-"various modules to handle them like core term_reference fields."
-msgstr ""
-
-#: /index.php
-msgid "Rules component"
-msgstr ""
-
-#: /index.php
-msgid "Inline differences"
-msgstr ""
-
-#: /index.php
-msgid ""
-"The <em>Blocks</em> realm displays each facet in a separate <a "
-"href=\"@block-page\">block</a>. Users are able to refine their "
-"searches in a drill-down fashion."
-msgstr ""
-
-#: /index.php
-msgid "Profile Complete Percentage - Core Profile"
-msgstr ""
-
-#: /index.php
-msgid "Search block: !name"
-msgstr ""
-
-#: /index.php
-msgid "Short URL form"
-msgstr ""
-
-#: /index.php
-msgid "ShURLy bookmarklet"
-msgstr ""
-
-#: /index.php
-msgid "Fulltext"
-msgstr ""
-
-#: /index.php
-msgid "Item language"
-msgstr ""
-
-#: /index.php
-msgid ""
-"A field added by the search framework to let components determine an "
-"item's language. Is always indexed."
-msgstr ""
-
-#: /index.php
-msgid "Bundle filter"
-msgstr ""
-
-#: /index.php
-msgid ""
-"Exclude items from indexing based on their bundle (content type, "
-"vocabulary, …)."
-msgstr ""
-
-#: /index.php
-msgid "Role filter"
-msgstr ""
-
-#: /index.php
-msgid "Exclude users from indexing based on their role."
-msgstr ""
-
-#: /index.php
-msgid "Adds the item's URL to the indexed data."
-msgstr ""
-
-#: /index.php
-msgid "Aggregated fields"
-msgstr ""
-
-#: /index.php
-msgid ""
-"Gives you the ability to define additional fields, containing data "
-"from one or more other fields."
-msgstr ""
-
-#: /index.php
-msgid "Complete entity view"
-msgstr ""
-
-#: /index.php
-msgid ""
-"Adds an additional field containing the whole HTML content of the "
-"entity when viewed."
-msgstr ""
-
-#: /index.php
-msgid "Index hierarchy"
-msgstr ""
-
-#: /index.php
-msgid "Allows to index hierarchical fields along with all their ancestors."
-msgstr ""
-
-#: /index.php
-msgid "Language control"
-msgstr ""
-
-#: /index.php
-msgid "Lets you determine the language of items in the index."
-msgstr ""
-
-#: /index.php
-msgid ""
-"Add node access information to the index. <strong>Caution:</strong> "
-"This only affects the indexed nodes themselves, not any node reference "
-"fields that are indexed with them, or displayed in search results."
-msgstr ""
-
-#: /index.php
-msgid "Access check"
-msgstr ""
-
-#: /index.php
-msgid ""
-"Exclude unpublished nodes from the index. <strong>Caution:</strong> "
-"This only affects the indexed nodes themselves. If an enabled node has "
-"references to disabled nodes, those will still be indexed (or "
-"displayed) normally."
-msgstr ""
-
-#: /index.php
-msgid "Block contents (boxes)"
-msgstr ""
-
-#: /index.php
-msgid "Field Bases"
-msgstr ""
-
-#: /index.php
-msgid "Field Instances"
-msgstr ""
-
-#: /index.php
-msgid "Menu items"
-msgstr ""
-
-#: /index.php
-msgid "UUID entities"
-msgstr ""
-
-#: /index.php
-msgid "Address"
-msgstr ""
-
-#: /index.php
-msgid "Biography"
-msgstr ""
-
-#: /index.php
-msgid "Place"
-msgstr ""
-
-#: /index.php
-msgid "Postal code"
-msgstr ""
-
-#: /index.php
-msgid ""
-"Primary menu with support for smaller screen and touch devices. Works "
-"as a submenu to Main Menu"
-msgstr ""
-
-#: /index.php
-msgid "Enter your question or observation."
-msgstr ""
-
-#: /index.php
-msgid "Select a subject."
-msgstr ""
-
-#: /index.php
-msgid "Create post"
-msgstr ""
-
-#: /index.php
-msgid "'!name' cache was cleared."
-msgstr ""
-
-#: /admin/structure
-msgid ""
-"Configure flags for marking content with arbitrary information (such "
-"as <em>offensive</em> or <em>bookmarked</em>)."
-msgstr ""
-
-#: /admin/structure
-msgid "Get a bird's eye view of items related to Panels."
-msgstr ""
-
-#: /admin/structure
-msgid "Meddelelsestypes"
-msgstr ""
-
-#: /admin/structure
-msgid "Manage Meddelelsestypes."
-msgstr ""
-
-#: /admin/structure
-msgid "Manage customized lists of content."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Adjust settings for using features module."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Unmet dependencies: !dependencies"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Needs review"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Rebuilding"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Checking..."
-msgstr ""
-
-#: /admin/structure/features
-msgid "@component [@items]"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Conflicts with: !conflicts"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Required by: !dependents"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Feature"
-msgstr ""
-
-#: profiles/loopdk/modules/contrib/features/features.js
-msgid "Deselect all"
-msgstr ""
-
-#: /admin/structure/features/loop_frontend/status
-msgid "Javascript status call back."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer Facets"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer flags"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Use flag importer"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Access the flag import functionality."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Flag %entity entities as %flag_title"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Unflag %entity entities as %flag_title"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Enter PHP code in the field for tracking visibility settings."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer Google Analytics Counter"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Set roles that may access the settings of Google Analytics Counter."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer Mail System"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Select the default, per-module, and per-mailing <a "
-"href=\"!interface\"><code>@interface</code></a> to use for formatting "
-"and sending email messages."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer message types"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer message types that can be used to log an event."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Create messages"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Log new messages."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer message subscribe"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer user subscriptions."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer meta tags"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Control the main settings pages and modify per-object meta tags."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Edit meta tags"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Modify meta tags on individual entity records (nodes, terms, users, "
-"etc)."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Edit Mime Mail user settings"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Edit user specific settings for Mime Mail."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Send arbitrary files"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Attach or embed files located outside the public files directory."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer Module Filter"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Configure how Module Filter performs."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Access own OAuth authorizations"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Access own OAuth consumers"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Authorize any OAuth consumers"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Register any OAuth consumers"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer OAuth"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer OAuth consumers"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Set Page Title"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Allow user to set or modify a page title"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer Page Title"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Perform administration tasks for Page Title"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Configure access settings on Panel panes"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Access rules (often also called visibility rules) can be configured on "
-"a per-pane basis. This permission allows users to configure those "
-"settings."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Use the Panels In-Place Editor"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Allows a user to utilize Panels' In-Place Editor."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Change layouts with the Panels In-Place Editor"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Allows a user to change layouts with the IPE."
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Allows a user to administer exported Panels layout plugins & "
-"instances."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer Panels styles"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Allows a user to administer the styles of Panel panes."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Allows a user to configure caching on Panels displays and panes."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Use panel locks"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Allows a user to lock and unlock panes in a panel display."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Use the Panels In-Place Editor with Page Manager"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Allows users with access to the In-Place editor to administer page "
-"manager pages. This permission is only needed for users without \"use "
-"page manager\" access."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer Profile Complete Percentages"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Allows a user to configure which fields to be considered complete."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer Search API"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Create and configure Search API servers and indexes."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Access search pages"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Execute searches using the Search pages module."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Export permission definitions"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Allows the export of permission settings to code, so that the "
-"permission and roles forms may be disabled."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Use URL shortener page"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Manage URL shortener API keys"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Allow viewing and editing the API keys for third-party URL shortening "
-"services."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Create short URLs"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Enter custom URLs"
-msgstr ""
-
-#: /admin/structure/features
-msgid "View own URL stats"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Delete own URLs"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer short URLs"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer UUID"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Allows configuration of the UUID module and APIs."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Use PHP for label patterns"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Use PHP evaluation for automatic entity label patterns."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Translate user-defined strings"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Translate user-defined strings that are created as part of content or "
-"configuration."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Translate admin strings"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Translate administrative strings with a very permissive XSS/HTML "
-"filter that allows all HTML tags."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer features"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Perform administration tasks on features."
-msgstr ""
-
-#: /admin/structure/features
-msgid "View, enable and disable features."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Generate features"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Allow feature exports to be generated and written directly to site."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Administer rule configurations"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Administer rule configurations including events, conditions and "
-"actions for which the user has sufficient access permissions."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Bypass Rules access control"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Control all configurations regardless of permission restrictions of "
-"events, conditions or actions."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Access the Rules debug log"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Show format tips"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Toggle display of format description help."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Show more format tips link"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Toggle display of the \"More information about text formats\" link."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Show format selection for @entitys"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"The list to loop over. The loop will step through each item in the "
-"list, allowing further actions on them. See <a href=\"@url\"> the "
-"online handbook</a> for more information on how to use loops."
-msgstr ""
-
-#: /admin/structure/features
-msgid "After saving a new @entity"
-msgstr ""
-
-#: /admin/structure/features
-msgid "created @entity"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After updating an existing @entity"
-msgstr ""
-
-#: /admin/structure/features
-msgid "unchanged entity"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Before saving a @entity"
-msgstr ""
-
-#: /admin/structure/features
-msgid "saved @entity"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After deleting a @entity"
-msgstr ""
-
-#: /admin/structure/features
-msgid "deleted @entity"
-msgstr ""
-
-#: /admin/structure/features
-msgid "@entity is viewed"
-msgstr ""
-
-#: /admin/structure/features
-msgid "viewed @entity"
-msgstr ""
-
-#: /admin/structure/features
-msgid "view mode"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Before saving content"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Content is viewed"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Be aware that some actions might initialize the theme system. After "
-"that, it's impossible for any module to change the used theme."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Cron maintenance tasks are performed"
-msgstr ""
-
-#: /admin/structure/features
-msgid "System log entry is created"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Log entry"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After saving a new user account"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After updating an existing user account"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Before saving a user account"
-msgstr ""
-
-#: /admin/structure/features
-msgid "saved user"
-msgstr ""
-
-#: /admin/structure/features
-msgid "User account page is viewed"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After a user account has been deleted"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After saving a new term"
-msgstr ""
-
-#: /admin/structure/features
-msgid "created term"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After updating an existing term"
-msgstr ""
-
-#: /admin/structure/features
-msgid "updated term"
-msgstr ""
-
-#: /admin/structure/features
-msgid "unchanged term"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Before saving a taxonomy term"
-msgstr ""
-
-#: /admin/structure/features
-msgid "saved term"
-msgstr ""
-
-#: /admin/structure/features
-msgid "deleted term"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After saving a new vocabulary"
-msgstr ""
-
-#: /admin/structure/features
-msgid "created vocabulary"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After updating an existing vocabulary"
-msgstr ""
-
-#: /admin/structure/features
-msgid "updated vocabulary"
-msgstr ""
-
-#: /admin/structure/features
-msgid "unchanged vocabulary"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Before saving a vocabulary"
-msgstr ""
-
-#: /admin/structure/features
-msgid "saved vocabulary"
-msgstr ""
-
-#: /admin/structure/features
-msgid "After deleting a vocabulary"
-msgstr ""
-
-#: /admin/structure/features
-msgid "deleted vocabulary"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Message arguments"
-msgstr ""
-
-#: /admin/structure/features
-msgid "The arguments to associate with the message."
-msgstr ""
-
-#: /admin/structure/features
-msgid "unlabeled"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Use Rules component %component"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"Controls access for using the component %component via the provided "
-"action or condition. <a href=\"@component-edit-url\">Edit this "
-"component.</a>"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Send HTML e-mail"
-msgstr ""
-
-#: /admin/structure/features
-msgid "A key to identify the e-mail sent."
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"The mail's recipient address. The formatting of this string must "
-"comply with RFC 2822."
-msgstr ""
-
-#: /admin/structure/features
-msgid "CC Recipient"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"The mail's carbon copy address. You may separate multiple addresses "
-"with comma."
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"The mail's blind carbon copy address. You may separate multiple "
-"addresses with comma."
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"The sender's name. Leave it empty to use the site-wide configured "
-"name."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Sender e-mail address"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"The sender's address. Leave it empty to use the site-wide configured "
-"address."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Reply e-mail address"
-msgstr ""
-
-#: /admin/structure/features
-msgid "The address to reply to. Leave it empty to use the sender's address."
-msgstr ""
-
-#: /admin/structure/features
-msgid "The mail's message HTML body."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Plain text body"
-msgstr ""
-
-#: /admin/structure/features
-msgid "The mail's message plaintext body."
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"The mail's attachments, one file per line e.g. "
-"\"files/images/mypic.png\" without quotes."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Send HTML mail to all users of a role"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Send mail only to active users."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Plaintext body"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Send mail in each recipient's language"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"If checked, the mail message and subject will be sent in each user's "
-"preferred language. <strong>You can safely leave the language selector "
-"below empty if this option is selected.</strong>"
-msgstr ""
-
-#: /admin/structure/features
-msgid "Fixed language"
-msgstr ""
-
-#: /admin/structure/features
-msgid ""
-"If specified, the fixed language used for getting the mail message and "
-"subject."
-msgstr ""
-
-#: /admin/structure/features
-msgid "Message node reference"
-msgstr ""
-
-#: /admin/structure/features
-msgid "This is the text of all messages of this type."
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Refresh view by Flag"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid " "
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Latest other content"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "<a href=\"/user/[uid]/edit\" class=\"dashboard-list--icon\"></a>"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid ""
-"[name]\n"
-"<span class=\"dashboard-list--meta-data\">[field_first_name] "
-"[field_last_name], [name_1]</span>"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "View all notifications"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Read messages"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "View all read notifications"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Unread messages - full"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Read messages - full"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Unread messages front"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "User comments"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Sortér efter"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Stigende"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Faldende"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "No. elements"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "- Alle -"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Forskydning"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "« første"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "‹ forrige"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "næste ›"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "sidste »"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Seneste 10 kommentarer"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Alle"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "User nodes"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Seneste 10 spørgsmål"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid " replies"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Your subscriptions"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "You are not subscribed to any item."
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "Message read"
-msgstr ""
-
-#: /batch?op=start&id=2
-msgid "message"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Cleanup"
-msgstr ""
-
-#: /admin/structure/features/cleanup/clear
-msgid "Clear cache after enabling/disabling a feature."
+#: /
+msgid "an unknown service"
 msgstr ""
 
 #: /
-msgid "Flag-link"
+msgid "A custom method: @method()"
 msgstr ""
 
 #: /
-msgid "Render message (Get text)"
+msgid "Invalid long URL."
 msgstr ""
 
-#: /
-msgid "No widget"
-msgstr ""
-
-#: /
-msgid "No display changes are made to the view while it is being refreshed."
-msgstr ""
-
-#: /
-msgid "Throbber image"
-msgstr ""
-
-#: /
-msgid ""
-"Display a throbber image in place of the view content while it is "
-"being refreshed."
+#: /index.php
+msgid "No graphical display appears to be available, not starting browser."
 msgstr ""
 
 #: /admin/config
@@ -9647,6 +9650,22 @@ msgstr ""
 msgid "jQuery %jquery and jQuery UI %ui"
 msgstr ""
 
+#: /node/427
+msgid "Flag for @entity_type"
+msgstr ""
+
+#: /node/427
+msgid "Most useful answer"
+msgstr ""
+
+#: /node/427
+msgid "Thumbs up"
+msgstr ""
+
+#: /node/427
+msgid "edit comment"
+msgstr ""
+
 #: /admin/config
 msgid "Drupal core is compatible"
 msgstr ""
@@ -9697,7 +9716,7 @@ msgid "1 server"
 msgstr ""
 
 #: /admin/config
-msgid "The Solr server of <a href=\"!url\">%name</a> could not be reached."
+msgid "The Solr server could be reached."
 msgstr ""
 
 #: /admin/config
@@ -9844,196 +9863,8 @@ msgstr ""
 msgid "Refresh user defined strings."
 msgstr ""
 
-#: /admin/config/regional/translate/i18n_string
-msgid "Select text groups"
-msgstr ""
-
-#: /admin/config/regional/translate/i18n_string
-msgid ""
-"If a text group is no showing up here it means this feature is not "
-"implemented for it."
-msgstr ""
-
-#: /admin/config/regional/translate/i18n_string
-msgid "Clean up left over strings."
-msgstr ""
-
-#: /admin/config/regional/translate/i18n_string
-msgid "Refresh strings"
-msgstr ""
-
-#: /admin/config/regional/translate/i18n_string
-msgid "This will create all the missing strings for the selected text groups."
-msgstr ""
-
-#: /admin/config/regional/translate/i18n_string
-msgid ""
-"On this page you can refresh and update values for user defined "
-"strings."
-msgstr ""
-
-#: /admin/config/regional/translate/i18n_string
-msgid ""
-"Use the refresh option when you are missing strings to translate for a "
-"given text group. All the strings will be re-created keeping existing "
-"translations."
-msgstr ""
-
-#: /admin/config/regional/translate/i18n_string
-msgid ""
-"Use the update option when some of the strings had been previously "
-"translated with the localization system, but the translations are not "
-"showing up for the configurable strings."
-msgstr ""
-
-#: /admin/config/regional/translate/i18n_string
-msgid ""
-"To search and translate strings, use the <a "
-"href=\"@translate-interface\">translation interface</a> pages."
-msgstr ""
-
-#: /admin/config/regional/translate/i18n_string
-msgid ""
-"<strong>Important:</strong> To configure which text formats are safe "
-"for translation, visit the <a href=\"@configure-strings\">configure "
-"strings</a> page before refreshing your strings."
-msgstr ""
-
-#: /admin/config/regional/translate/i18n_string
-msgid "Refreshing user defined strings"
-msgstr ""
-
-#: /admin/config/regional/translate/i18n_string
-msgid "Starting string refresh"
-msgstr ""
-
-#: /admin/config/regional/translate/i18n_string
-msgid "Error refreshing user defined strings"
-msgstr ""
-
-#: /batch?id=3&op=do
-msgid "Nye kommentarer"
-msgstr ""
-
-#: /batch?id=3&op=do
-msgid "Visninger i dag"
-msgstr ""
-
-#: /batch?id=3&op=do
-msgid "Kilde-URL"
-msgstr ""
-
-#: /batch?id=3&op=do
-msgid "Omdirigér til URL"
-msgstr ""
-
-#: /batch?id=3&op=do
-msgid "Sprog"
-msgstr ""
-
-#: /batch?id=3&op=do
-msgid "Sidste tilgangsdato"
-msgstr ""
-
-#: /batch?id=3&op=do
-msgid "Handlinger"
-msgstr ""
-
-#: /batch?id=3&op=do
-msgid "Tidspunkt for seneste kommentar"
-msgstr ""
-
-#: /batch?id=3&op=do
-msgid "Successfully refreshed @count strings for %group"
-msgstr ""
-
-#: /admin/config/regional/i18n
-msgid "Multilingual system"
-msgstr ""
-
-#: /admin/config/regional/i18n
-msgid "Options for user defined strings."
-msgstr ""
-
-#: /admin/config/regional/i18n
-msgid "Enabled languages only."
-msgstr ""
-
-#: /admin/config/regional/i18n
-msgid "All defined languages will be allowed."
-msgstr ""
-
-#: /admin/config/regional/i18n
-msgid ""
-"Menus and menu items can be translated on the <a "
-"href=\"@configure_menus\">Menu administration page</a>."
-msgstr ""
-
-#: /admin/config/regional/i18n/strings
-msgid ""
-"When translating user defined strings that have a text format "
-"associated, translators will be able to edit the text before it is "
-"filtered which may be a security risk for some filters. An obvious "
-"example is when using the PHP filter but other filters may also be "
-"dangerous."
-msgstr ""
-
-#: /admin/config/regional/i18n/strings
-msgid ""
-"As a general rule <strong>do not allow any filtered text to be "
-"translated unless the translators already have access to that text "
-"format</strong>. However if you are doing all your translations "
-"through this site's translation UI or the Localization client, and "
-"never importing translations for other textgroups than <i>default</i>, "
-"filter access will be checked for translators on every translation "
-"page."
-msgstr ""
-
-#: /admin/config/regional/i18n/strings
-msgid ""
-"<strong>Important:</strong> After disallowing some text format, use "
-"the <a href=\"@refresh-strings\">refresh strings</a> page so forbidden "
-"strings are deleted and not allowed anymore for translators."
-msgstr ""
-
-#: /comment/126
-msgid "Flag for @entity_type"
-msgstr ""
-
-#: /comment/126
-msgid "@label @delta partial"
-msgstr ""
-
-#: /comment/126
-msgid "Rendered message text of the @delta partial"
-msgstr ""
-
-#: /comment/126
-msgid "Mime Mail module settings form elements."
-msgstr ""
-
-#: /comment/126
-msgid "Most useful answer"
-msgstr ""
-
-#: /comment/126
-msgid "Thumbs up"
-msgstr ""
-
-#: /admin/content/comment
-msgid "an unknown service"
-msgstr ""
-
-#: /admin/content/comment
-msgid "A custom method: @method()"
-msgstr ""
-
-#: /admin/content/comment
-msgid "Invalid long URL."
-msgstr ""
-
-#: /user
-msgid "@flag you follow (@count)"
+#: /node/428
+msgid "Please enter at least one keyword."
 msgstr ""
 
 #: ; misc/drupal.js
@@ -10124,6 +9955,7 @@ msgstr "Indsæt dette token i din formular"
 msgid "First click a text field to insert your tokens into."
 msgstr "Klik på et tekstfelt som tokens skal sættes ind i."
 
+#: ; profiles/loopdk/modules/contrib/autocomplete_deluxe/autocomplete_deluxe.js
 msgid "None"
 msgstr "Ingen"
 
@@ -50266,4 +50098,52 @@ msgid ""
 msgstr ""
 "[subject] <span class=\"dashboard-list--meta-data\">Svar, oprettet "
 "[created]</span>"
+
+#: /
+msgid "Last name"
+msgstr "Efternavn"
+
+#: /
+msgid "Area of expertise"
+msgstr "Kompetencer"
+
+#: /user
+msgid "Profession"
+msgstr "Profession"
+
+#: /admin/structure/features
+msgid "Address"
+msgstr "Adresse"
+
+#: /admin/structure/features
+msgid "Biography"
+msgstr "Biografi"
+
+#: /admin/structure/features
+msgid "Postal code"
+msgstr "Postnummer"
+
+#: /user/1/edit
+msgid "Work related information"
+msgstr "Arbejdsrelateret information"
+
+#: /user/4/edit
+msgid "User edit"
+msgstr "Redigér bruger"
+
+#: /user/4/messages
+msgid "Users content"
+msgstr "Brugerens indhold"
+
+#: /node/427
+msgid "Unsubscribe"
+msgstr "Fjern abonnering"
+
+#: /flag/unflag/subscribe_node/427?destination=node/427&token=9OYZc7J1fe421ZEa_K0yeoIPp4IOMBpgMh-1FkRUJ-w
+msgid "You are no longer subscribed to this item."
+msgstr "Du abonnerer ikke længere på dette spørgsmål."
+
+#: /flag/flag/subscribe_node/427?destination=node/427&token=9OYZc7J1fe421ZEa_K0yeoIPp4IOMBpgMh-1FkRUJ-w
+msgid "You are now subscribed to this item."
+msgstr "Du abonnerer ikke længere på dette spørgsmål."
 
