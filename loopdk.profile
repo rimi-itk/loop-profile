@@ -71,26 +71,29 @@ function loopdk_module_selection_form($form, &$form_state) {
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => st('Continue installation'),
+    '#weight' => 20,
   );
   return $form;
 }
 
 function loopdk_module_selection_form_submit($form, &$form_state) {
+  $dependency_modules = array();
   if ($form_state['values']['translation']) {
     loopdk_import_translation();
   }
   if ($form_state['values']['dashboard']) {
-    module_enable(array('loop_editor_pages'));
+    $dependency_modules[] = 'loop_editor_pages';
   }
   if ($form_state['values']['user_messages']) {
-    module_enable(array('loop_user_messages'));
-    module_enable(array('loop_user_subscriptions'));
+    //$dependency_modules[] = 'loop_user_messages';
+    //$dependency_modules[] = 'loop_user_subscriptions';
   }
   if ($form_state['values']['user_pages']) {
-    module_enable(array('loop_user_page_views'));
-    module_enable(array('loop_user_related_content_profession'));
-    module_enable(array('loop_user_related_content_competence'));
+    $dependency_modules[] = 'loop_user_page_views';
+    $dependency_modules[] = 'loop_user_related_content_profession';
+    $dependency_modules[] = 'loop_user_related_content_competence';
   }
+  module_enable($dependency_modules);
 }
 
 /**
@@ -216,7 +219,7 @@ function loopdk_setup_filter_and_wysiwyg() {
       'status' => 1,
       'settings' => array(
         'shortener_url_behavior' => 'strict',
-        'shortener_url_length" => "72'
+        'shortener_url_length' => '72'
       )
     )
   );
