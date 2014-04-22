@@ -33,7 +33,41 @@ function loopdk_module_selection_form($form, &$form_state) {
       '#title' => 'Danish translation',
       '#description' => 'Install and enable Danish translation.',
       '#default_value' => FALSE,
+      '#weight' => 10,
     );
+
+  $form['addons'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Add-ons'),
+    '#weight' => 1,
+    '#collapsible' => FALSE,
+    '#collapsed' => FALSE,
+  );
+
+  $form['addons']['dashboard'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Admin dashboard'),
+    '#description' => t('Include admin dashboard.'),
+    '#default_value' => FALSE,
+    '#weight' => 1,
+  );
+
+  $form['addons']['user_messages'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('User messages'),
+    '#description' => t('Include user message functionality and subscription displays.'),
+    '#default_value' => FALSE,
+    '#weight' => 9,
+  );
+
+  $form['addons']['user_pages'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('User pages'),
+    '#description' => t('Include user display and user sub pages.'),
+    '#default_value' => FALSE,
+    '#weight' => 10,
+  );
+
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => st('Continue installation'),
@@ -44,6 +78,18 @@ function loopdk_module_selection_form($form, &$form_state) {
 function loopdk_module_selection_form_submit($form, &$form_state) {
   if ($form_state['values']['translation']) {
     loopdk_import_translation();
+  }
+  if ($form_state['values']['dashboard']) {
+    module_enable(array('loop_editor_pages'));
+  }
+  if ($form_state['values']['user_messages']) {
+    module_enable(array('loop_user_messages'));
+    module_enable(array('loop_user_subscriptions'));
+  }
+  if ($form_state['values']['user_pages']) {
+    module_enable(array('loop_user_page_views'));
+    module_enable(array('loop_user_related_content_profession'));
+    module_enable(array('loop_user_related_content_competence'));
   }
 }
 
