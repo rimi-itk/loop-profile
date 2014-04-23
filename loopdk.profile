@@ -73,7 +73,7 @@ function loopdk_module_selection_form_submit($form, &$form_state) {
   if ($form_state['values']['translation']) {
     loopdk_import_translation();
   }
-  
+
   if ($form_state['values']['dashboard']) {
     $dependency_modules[] = 'loop_editor_pages';
   }
