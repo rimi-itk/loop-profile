@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  *
  * Stylesheet import
@@ -1351,12 +1352,12 @@ label {
   margin-bottom: 1.5em;
   background-color: #41ab51;
 }
-/* line 45, ../../../../../../../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+/* line 45, ../../../../../../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
 .header:before, .header:after {
   content: "";
   display: table;
 }
-/* line 50, ../../../../../../../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
+/* line 50, ../../../../../../../../../../../Library/Ruby/Gems/1.8/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
 .header:after {
   clear: both;
 }
@@ -4019,12 +4020,17 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
  * Dashboard
  *
  */
-/* line 8, ../sass/modules/_dashboard.scss */
+/* line 7, ../sass/modules/_dashboard.scss */
+.dashboard-list {
+  margin-bottom: 1em;
+}
+
+/* line 11, ../sass/modules/_dashboard.scss */
 .dashboard-list--header {
   margin-bottom: .75em;
 }
 
-/* line 14, ../sass/modules/_dashboard.scss */
+/* line 17, ../sass/modules/_dashboard.scss */
 .dashboard-list--filter {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 1em;
@@ -4032,11 +4038,11 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   position: relative;
   border-bottom: 0;
 }
-/* line 22, ../sass/modules/_dashboard.scss */
+/* line 25, ../sass/modules/_dashboard.scss */
 .dashboard-list--filter .dashboard-list--filter-field {
   padding-left: 2.5em;
 }
-/* line 26, ../sass/modules/_dashboard.scss */
+/* line 29, ../sass/modules/_dashboard.scss */
 .dashboard-list--filter:before {
   position: absolute;
   top: 1.1em;
@@ -4045,14 +4051,31 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
   opacity: 0.25;
 }
-/* line 40, ../sass/modules/_dashboard.scss */
+/* line 43, ../sass/modules/_dashboard.scss */
 .dashboard-list--filter .ajax-progress {
   position: absolute;
   top: 0.8em;
   right: 0.6em;
 }
 
-/* line 48, ../sass/modules/_dashboard.scss */
+/* line 50, ../sass/modules/_dashboard.scss */
+.dashboard-list--filter--content {
+  margin-bottom: 1em;
+  position: relative;
+}
+/* line 54, ../sass/modules/_dashboard.scss */
+.dashboard-list--filter--content .ajax-progress {
+  position: absolute;
+  top: 1.8em;
+  right: 3em;
+}
+
+/* line 61, ../sass/modules/_dashboard.scss */
+.dashboard-list--more-link {
+  text-align: right;
+}
+
+/* line 66, ../sass/modules/_dashboard.scss */
 .dashboard-list--submit {
   float: right;
   visibility: hidden;
@@ -4060,31 +4083,31 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   width: 0;
 }
 
-/* line 55, ../sass/modules/_dashboard.scss */
+/* line 73, ../sass/modules/_dashboard.scss */
 .dashboard-list--item, .dashboard-image-list--item,
 .dashboard-user-list--item {
   position: relative;
 }
 
-/* line 65, ../sass/modules/_dashboard.scss */
+/* line 83, ../sass/modules/_dashboard.scss */
 .dashboard-list--item .dashboard-list--meta-data, .dashboard-image-list--item .dashboard-list--meta-data,
 .dashboard-user-list--item .dashboard-list--meta-data {
   color: #cccccc;
   font-size: 12px;
 }
 
-/* line 86, ../sass/modules/_dashboard.scss */
+/* line 104, ../sass/modules/_dashboard.scss */
 .dashboard-image-list--item .dashboard-list--text,
 .dashboard-user-list--item .dashboard-list--text {
   padding-left: 4em;
 }
-/* line 92, ../sass/modules/_dashboard.scss */
+/* line 110, ../sass/modules/_dashboard.scss */
 .dashboard-image-list--item .dashboard-list--meta-data,
 .dashboard-user-list--item .dashboard-list--meta-data {
   display: block;
 }
 
-/* line 99, ../sass/modules/_dashboard.scss */
+/* line 117, ../sass/modules/_dashboard.scss */
 .dashboard-list--icon {
   position: absolute;
   top: .75em;
@@ -4092,7 +4115,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   max-width: 1.25em;
   line-height: 1em;
 }
-/* line 108, ../sass/modules/_dashboard.scss */
+/* line 126, ../sass/modules/_dashboard.scss */
 .dashboard-list--icon:before {
   font-size: 1.25em;
 }

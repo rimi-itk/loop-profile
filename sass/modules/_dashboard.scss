@@ -4,6 +4,9 @@
  *
  */
 
+.dashboard-list {
+  margin-bottom: 1em;
+}
 
 .dashboard-list--header {
   @extend %simple-list--header;
@@ -42,6 +45,21 @@
     top: 0.8em;
     right: 0.6em;
   }
+}
+
+.dashboard-list--filter--content {
+  margin-bottom: 1em;
+  position: relative;
+
+  .ajax-progress {
+    position: absolute;
+    top: 1.8em;
+    right: 3em;
+  }
+}
+
+.dashboard-list--more-link {
+  text-align: right;
 }
 
 

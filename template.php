@@ -686,6 +686,10 @@ function loop_preprocess_views_view(&$vars) {
 
   if ($vars['view']->name == 'loop_editor_content' || $vars['view']->name == 'loop_editor_users' || $vars['view']->name == 'loop_editor_comments') {
     $vars['theme_hook_suggestions'][] = 'views_view__loop_custom_editor_views';
+
+    if (arg(2) == 'content') {
+      $vars['theme_hook_suggestions'][] = 'views_view__loop_custom_editor_views__content';
+    }
   }
 }
 

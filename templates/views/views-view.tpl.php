@@ -34,13 +34,13 @@
   <?php endif; ?>
   <?php print render($title_suffix); ?>
   <?php if ($header): ?>
-    <legend class="fieldset-legend">
+    <div class="view-header">
       <?php print $header; ?>
-    </legend>
+    </div>
   <?php endif; ?>
 
   <?php if ($exposed): ?>
-    <div class="dashboard-list--filter">
+    <div class="view-filters">
       <?php print $exposed; ?>
     </div>
   <?php endif; ?>
@@ -50,15 +50,16 @@
       <?php print $attachment_before; ?>
     </div>
   <?php endif; ?>
-  <div class="dashboard-list">
-    <?php if ($rows): ?>
+
+  <?php if ($rows): ?>
+    <div class="view-content">
       <?php print $rows; ?>
-    <?php elseif ($empty): ?>
-      <div class="view-empty">
-        <?php print $empty; ?>
-      </div>
-    <?php endif; ?>
-  </div>
+    </div>
+  <?php elseif ($empty): ?>
+    <div class="view-empty">
+      <?php print $empty; ?>
+    </div>
+  <?php endif; ?>
 
   <?php if ($pager): ?>
     <?php print $pager; ?>
@@ -69,11 +70,8 @@
       <?php print $attachment_after; ?>
     </div>
   <?php endif; ?>
-
   <?php if ($more): ?>
-    <div class="dashboard-list--more-link">
-      <?php print $more; ?>
-    </div>
+    <?php print $more; ?>
   <?php endif; ?>
 
   <?php if ($footer): ?>
@@ -87,4 +85,5 @@
       <?php print $feed_icon; ?>
     </div>
   <?php endif; ?>
-</div>
+
+</div><?php /* class view */ ?>
