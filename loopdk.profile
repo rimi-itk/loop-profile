@@ -52,14 +52,6 @@ function loopdk_module_selection_form($form, &$form_state) {
     '#weight' => 1,
   );
 
-  $form['addons']['user_messages'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('User messages'),
-    '#description' => t('Include user message functionality and subscription displays.'),
-    '#default_value' => FALSE,
-    '#weight' => 9,
-  );
-
   $form['addons']['user_pages'] = array(
     '#type' => 'checkbox',
     '#title' => t('User pages'),
@@ -81,13 +73,11 @@ function loopdk_module_selection_form_submit($form, &$form_state) {
   if ($form_state['values']['translation']) {
     loopdk_import_translation();
   }
+  
   if ($form_state['values']['dashboard']) {
     $dependency_modules[] = 'loop_editor_pages';
   }
-  if ($form_state['values']['user_messages']) {
-    //$dependency_modules[] = 'loop_user_messages';
-    //$dependency_modules[] = 'loop_user_subscriptions';
-  }
+
   if ($form_state['values']['user_pages']) {
     $dependency_modules[] = 'loop_user_page_views';
     $dependency_modules[] = 'loop_user_related_content_profession';
