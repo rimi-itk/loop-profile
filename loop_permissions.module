@@ -229,6 +229,8 @@ function loop_permissions_secure_permissions($role) {
       'administer menu-loop-primary-menu menu items',
       'administer nodes',
       'administer users',
+      'assign documentation coordinator role',
+      'assign manager role',
       'create index content',
       'create leaf content',
       'create page content',
