@@ -48,6 +48,7 @@ dependencies[] = panels
 dependencies[] = page_title
 dependencies[] = pathauto
 dependencies[] = redirect
+dependencies[] = role_delegation
 dependencies[] = rules
 dependencies[] = shorten
 dependencies[] = shortener

@@ -146,6 +146,9 @@ projects[pcp][version] = "1.5"
 projects[redirect][subdir] = "contrib"
 projects[redirect][version] = "1.0-rc1"
 
+projects[role_delegation][subdir] = "contrib"
+projects[role_delegation][version] = "1.1"
+
 projects[rules][subdir] = "contrib"
 projects[rules][version] = "2.6"
 
