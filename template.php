@@ -552,9 +552,18 @@ function loop_form_comment_form_alter(&$form)  {
  * The user profile form.
  */
 function loop_form_user_profile_form_alter(&$form)  {
-  $form['account']['#access'] = FALSE;
+  global $user;
+  $form['account']['mail']['#access'] = FALSE;
+  $form['account']['name']['#access'] = FALSE;
+  $form['account']['pass']['#access'] = FALSE;
+  $form['account']['status']['#access'] = FALSE;
+  $form['account']['#prefix'] = '<fieldset class="field-group-fieldset">';
+  $form['account']['#suffix'] = '</fieldset>';
+  $form['redirect']['#access'] = FALSE;
+  $form['metatags']['#access'] = FALSE;
   $form['timezone']['#access'] = FALSE;
   $form['#attributes']['class'] = 'user-profile-form';
+  $form['account']['current_pass']['#access'] = FALSE;
   $field_expertise_lang = $form['field_area_of_expertise']['#language'];
   $form['field_area_of_expertise'][$field_expertise_lang]['#attributes']['class'][] = 'js-chosen-select-area-of-expertise';
   // Image field.
@@ -563,8 +572,11 @@ function loop_form_user_profile_form_alter(&$form)  {
   unset($form['field_user_image'][$user_image_field_lang]['0']['#title']);
 
   $form['locale']['#access'] = FALSE;
-}
 
+  if (!in_array("manager", $user->roles) && !in_array("administrator", $user->roles) ) {
+    $form['account']['#access'] = FALSE;
+  }
+}
 
 /**
  * Implements hook_form_FORM_ID_alter().
