@@ -27,6 +27,7 @@ function loop_admin_strongarm() {
     'subscribe_user' => TRUE,
     'message' => TRUE,
     'user_messages' => FALSE,
+    'admin_views_user' => TRUE,
   );
   $export['views_defaults'] = $strongarm;
 
