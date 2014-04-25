@@ -29,28 +29,28 @@ function loop_user_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'googleanalytics' => array(
-          'weight' => '7',
+          'weight' => '5',
         ),
         'metatags' => array(
-          'weight' => '12',
+          'weight' => '10',
         ),
         'redirect' => array(
-          'weight' => '11',
+          'weight' => '9',
         ),
         'account' => array(
-          'weight' => '0',
+          'weight' => '4',
         ),
         'timezone' => array(
-          'weight' => '10',
+          'weight' => '8',
         ),
         'picture' => array(
           'weight' => '5',
         ),
         'locale' => array(
-          'weight' => '9',
+          'weight' => '7',
         ),
         'wysiwyg' => array(
-          'weight' => '8',
+          'weight' => '6',
         ),
         'mimemail' => array(
           'weight' => '1',

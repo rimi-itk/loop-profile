@@ -78,7 +78,7 @@ function loop_user_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => 2,
     ),
   );
 
@@ -235,7 +235,7 @@ function loop_user_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 51,
+      'weight' => 2,
     ),
   );
 
@@ -269,7 +269,7 @@ function loop_user_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 53,
+      'weight' => 4,
     ),
   );
 
@@ -303,7 +303,7 @@ function loop_user_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 50,
+      'weight' => 1,
     ),
   );
 
@@ -337,7 +337,7 @@ function loop_user_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 52,
+      'weight' => 3,
     ),
   );
 

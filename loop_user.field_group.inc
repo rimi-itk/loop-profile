@@ -196,7 +196,7 @@ function loop_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Personal information',
-    'weight' => '2',
+    'weight' => '0',
     'children' => array(
       0 => 'field_first_name',
       1 => 'field_last_name',
@@ -225,7 +225,7 @@ function loop_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Picture',
-    'weight' => '5',
+    'weight' => '3',
     'children' => array(
       0 => 'field_user_image',
     ),
@@ -280,7 +280,7 @@ function loop_user_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Work related information',
-    'weight' => '3',
+    'weight' => '1',
     'children' => array(
       0 => 'field_area_of_expertise',
       1 => 'field_job_title',
