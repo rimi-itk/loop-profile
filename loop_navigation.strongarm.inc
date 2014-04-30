@@ -78,34 +78,6 @@ function loop_navigation_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_index';
-  $strongarm->value = array();
-  $export['menu_options_index'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_options_leaf';
-  $strongarm->value = array();
-  $export['menu_options_leaf'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_index';
-  $strongarm->value = 'main-menu:0';
-  $export['menu_parent_index'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_parent_leaf';
-  $strongarm->value = 'main-menu:0';
-  $export['menu_parent_leaf'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'special_menu_items_nolink_tag';
   $strongarm->value = '<a href="#">';
   $export['special_menu_items_nolink_tag'] = $strongarm;
