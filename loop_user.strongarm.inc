@@ -104,14 +104,11 @@ function loop_user_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'pcp_enabled_fields';
   $strongarm->value = array(
-    0 => 5,
-    1 => 8,
-    2 => 9,
-    3 => 10,
-    4 => 11,
-    5 => 12,
-    6 => 6,
-    7 => 7,
+    'user:user:field_first_name' => 'user:user:field_first_name',
+    'user:user:field_job_title' => 'user:user:field_job_title',
+    'user:user:field_last_name' => 'user:user:field_last_name',
+    'user:user:field_profession' => 'user:user:field_profession',
+    'user:user:field_user_image' => 'user:user:field_user_image',
   );
   $export['pcp_enabled_fields'] = $strongarm;
 

@@ -105,6 +105,28 @@ function loop_user_default_page_manager_handlers() {
     $display->content['new-5e25e15f-93b5-4fbd-9641-bd465af4ebde'] = $pane;
     $display->panels['alpha'][1] = 'new-5e25e15f-93b5-4fbd-9641-bd465af4ebde';
     $pane = new stdClass();
+    $pane->pid = 'new-6a0864bc-1d3c-47b2-ba5c-0c07ba36a9cb';
+    $pane->panel = 'alpha';
+    $pane->type = 'block';
+    $pane->subtype = 'pcp-pcp_profile_percent_complete';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '6a0864bc-1d3c-47b2-ba5c-0c07ba36a9cb';
+    $display->content['new-6a0864bc-1d3c-47b2-ba5c-0c07ba36a9cb'] = $pane;
+    $display->panels['alpha'][2] = 'new-6a0864bc-1d3c-47b2-ba5c-0c07ba36a9cb';
+    $pane = new stdClass();
     $pane->pid = 'new-e76e52ca-1d49-493d-9c54-9ef9eb411c58';
     $pane->panel = 'beta';
     $pane->type = 'user_profile';
