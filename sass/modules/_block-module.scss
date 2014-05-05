@@ -27,6 +27,7 @@
 }
 
 
+.block--pcp,
 .block-my-content,
 .block-follow-question {
   @extend .block-module;
@@ -130,4 +131,17 @@
   &.active {
     font-weight: bold;
   }
+}
+
+
+/* Profile complete persentage
+   ================================================================================================================== */
+.block--pcp {
+
+}
+
+.block--pcp-text {
+  margin-bottom: 0;
+  color: #b3b3b3;
+  font-size: .85em;
 }
