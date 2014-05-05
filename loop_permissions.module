@@ -225,6 +225,7 @@ function loop_permissions_secure_permissions($role) {
       'access administration pages',
       'access contextual links',
       'access user profiles',
+      'administer taxonomy',
       'administer comments',
       'administer menu-loop-primary-menu menu items',
       'administer nodes',
