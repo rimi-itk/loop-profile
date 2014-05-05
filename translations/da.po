@@ -49107,7 +49107,7 @@ msgstr "Du abonnerer ikke længere på dette spørgsmål."
 
 #: /flag/flag/subscribe_node/427?destination=node/427&token=9OYZc7J1fe421ZEa_K0yeoIPp4IOMBpgMh-1FkRUJ-w
 msgid "You are now subscribed to this item."
-msgstr "Du abonnerer ikke længere på dette spørgsmål."
+msgstr "Du abonnerer nu på dette spørgsmål."
 
 #: /user
 msgid "Areas of expertise"
