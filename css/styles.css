@@ -559,27 +559,27 @@ img {
    ========================================================================== */
 /* Used for centering an element */
 /* line 14, ../sass/theme/_placeholders.scss */
-.header--inner, .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .typeahead-block {
+.header--inner, .layout-full-width, .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .typeahead-block {
   margin-right: auto;
   margin-left: auto;
   clear: both;
 }
 @media only screen and (min-width: 18.75em) {
   /* line 14, ../sass/theme/_placeholders.scss */
-  .header--inner, .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .typeahead-block {
+  .header--inner, .layout-full-width, .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .typeahead-block {
     max-width: 75em;
   }
 }
 
 /* line 26, ../sass/theme/_placeholders.scss */
-.layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
+.layout-full-width, .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
   margin-bottom: 1.5em;
   padding: 1.25em;
   background-color: #f2f2f2;
 }
 @media only screen and (min-width: 75em) {
   /* line 26, ../sass/theme/_placeholders.scss */
-  .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
+  .layout-full-width, .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
     -moz-border-radius: 0.4em;
     -webkit-border-radius: 0.4em;
     border-radius: 0.4em;
@@ -1396,12 +1396,12 @@ label {
 /* Layouts
    ================================================================================================================== */
 /* line 58, ../sass/theme/_layout.scss */
-.layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper {
+.layout-full-width, .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper {
   overflow: hidden;
   margin-bottom: 0;
 }
 /* line 65, ../sass/theme/_layout.scss */
-.layout-frontpage .layout--inner:last-child, .layout-dashboard .layout--inner:last-child, .layout-default .layout--inner:last-child, .layout-default-inverted .layout--inner:last-child, .layout-alternative .layout--inner:last-child, .layout-no-wrapper .layout--inner:last-child {
+.layout-full-width .layout--inner:last-child, .layout-frontpage .layout--inner:last-child, .layout-dashboard .layout--inner:last-child, .layout-default .layout--inner:last-child, .layout-default-inverted .layout--inner:last-child, .layout-alternative .layout--inner:last-child, .layout-no-wrapper .layout--inner:last-child {
   margin-bottom: 0;
 }
 
@@ -1427,7 +1427,25 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 97, ../sass/theme/_layout.scss */
+  /* line 95, ../sass/theme/_layout.scss */
+  .layout-full-width .layout-element-alpha {
+    float: left;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: -100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+  }
+}
+
+@media only screen and (min-width: 45em) {
+  /* line 109, ../sass/theme/_layout.scss */
   .layout-frontpage .layout-element-alpha {
     float: left;
     width: 100%;
@@ -1443,14 +1461,14 @@ label {
     padding-left: 0;
   }
 }
-/* line 105, ../sass/theme/_layout.scss */
+/* line 117, ../sass/theme/_layout.scss */
 .layout-frontpage .layout-element-beta {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 2em;
   padding-bottom: 2em;
 }
 @media only screen and (min-width: 75em) {
-  /* line 105, ../sass/theme/_layout.scss */
+  /* line 117, ../sass/theme/_layout.scss */
   .layout-frontpage .layout-element-beta {
     float: left;
     width: 50%;
@@ -1470,7 +1488,7 @@ label {
   }
 }
 @media only screen and (min-width: 75em) {
-  /* line 116, ../sass/theme/_layout.scss */
+  /* line 128, ../sass/theme/_layout.scss */
   .layout-frontpage .layout-element-gamma {
     float: right;
     width: 50%;
@@ -1487,7 +1505,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 124, ../sass/theme/_layout.scss */
+  /* line 136, ../sass/theme/_layout.scss */
   .layout-frontpage .layout-element-delta {
     float: left;
     width: 100%;
@@ -1504,7 +1522,7 @@ label {
   }
 }
 
-/* line 139, ../sass/theme/_layout.scss */
+/* line 151, ../sass/theme/_layout.scss */
 .layout-dashboard .layout-element-alpha,
 .layout-dashboard .layout-element-gamma {
   border-bottom: 1px solid #e6e6e6;
@@ -1512,7 +1530,7 @@ label {
   padding-bottom: 2em;
 }
 @media only screen and (min-width: 75em) {
-  /* line 139, ../sass/theme/_layout.scss */
+  /* line 151, ../sass/theme/_layout.scss */
   .layout-dashboard .layout-element-alpha,
   .layout-dashboard .layout-element-gamma {
     float: left;
@@ -1533,7 +1551,7 @@ label {
   }
 }
 @media only screen and (min-width: 75em) {
-  /* line 151, ../sass/theme/_layout.scss */
+  /* line 163, ../sass/theme/_layout.scss */
   .layout-dashboard .layout-element-beta,
   .layout-dashboard .layout-element-delta {
     float: right;
@@ -1551,14 +1569,14 @@ label {
   }
 }
 
-/* line 167, ../sass/theme/_layout.scss */
+/* line 179, ../sass/theme/_layout.scss */
 .layout-default .layout-element-alpha {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 2em;
   padding-bottom: 2em;
 }
 @media only screen and (min-width: 45em) {
-  /* line 167, ../sass/theme/_layout.scss */
+  /* line 179, ../sass/theme/_layout.scss */
   .layout-default .layout-element-alpha {
     float: left;
     width: 70.83333%;
@@ -1578,7 +1596,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 178, ../sass/theme/_layout.scss */
+  /* line 190, ../sass/theme/_layout.scss */
   .layout-default .layout-element-beta {
     float: right;
     width: 29.16667%;
@@ -1595,7 +1613,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 186, ../sass/theme/_layout.scss */
+  /* line 198, ../sass/theme/_layout.scss */
   .layout-default .layout-element-gamma,
   .layout-default .layout-element-delta,
   .layout-default .layout-element-epsilon {
@@ -1617,7 +1635,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 203, ../sass/theme/_layout.scss */
+  /* line 215, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-alpha {
     float: left;
     width: 29.16667%;
@@ -1634,7 +1652,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 211, ../sass/theme/_layout.scss */
+  /* line 223, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-beta {
     float: right;
     width: 70.83333%;
@@ -1651,7 +1669,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 219, ../sass/theme/_layout.scss */
+  /* line 231, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-gamma {
     clear: both;
     float: left;
@@ -1668,7 +1686,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 227, ../sass/theme/_layout.scss */
+  /* line 239, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-delta {
     float: right;
     width: 50%;
@@ -1684,7 +1702,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 233, ../sass/theme/_layout.scss */
+  /* line 245, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1700,7 +1718,7 @@ label {
     word-wrap: break-word;
   }
 }
-/* line 241, ../sass/theme/_layout.scss */
+/* line 253, ../sass/theme/_layout.scss */
 .layout-default-inverted .layout-element-gamma,
 .layout-default-inverted .layout-element-delta,
 .layout-default-inverted .layout-element-epsilon {
@@ -1709,7 +1727,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 254, ../sass/theme/_layout.scss */
+  /* line 266, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-alpha {
     float: left;
     width: 100%;
@@ -1725,7 +1743,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 260, ../sass/theme/_layout.scss */
+  /* line 272, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-beta {
     clear: both;
     float: left;
@@ -1742,7 +1760,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 268, ../sass/theme/_layout.scss */
+  /* line 280, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-gamma {
     clear: both;
     float: left;
@@ -1759,7 +1777,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 276, ../sass/theme/_layout.scss */
+  /* line 288, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-delta {
     float: right;
     width: 50%;
@@ -1775,7 +1793,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 282, ../sass/theme/_layout.scss */
+  /* line 294, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1792,12 +1810,12 @@ label {
   }
 }
 
-/* line 296, ../sass/theme/_layout.scss */
+/* line 308, ../sass/theme/_layout.scss */
 .layout-no-wrapper .layout--inner {
   padding: 1.5em;
 }
 
-/* line 305, ../sass/theme/_layout.scss */
+/* line 317, ../sass/theme/_layout.scss */
 .layout-alternative .layout-element-alpha,
 .layout-alternative .layout-element-beta,
 .layout-alternative .layout-element-gamma,
