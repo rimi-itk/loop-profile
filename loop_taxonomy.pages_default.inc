@@ -30,7 +30,7 @@ function loop_taxonomy_default_page_manager_handlers() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'default';
+  $display->layout = 'full-width';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
