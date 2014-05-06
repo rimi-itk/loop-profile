@@ -149,7 +149,7 @@ if (isset($primary_menu_block['content'])): ?>
   </div>
 <?php elseif (isset($no_panel)): ?>
   <?php // No panel pages! ?>
-  <div class="layout-full-width">
+  <div class="<?php print $layout_class;?>">
     <div class="layout--inner">
       <?php print render($page['header']); ?>
       <?php if ($messages): ?>

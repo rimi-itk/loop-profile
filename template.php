@@ -49,6 +49,11 @@ function loop_preprocess_page(&$variables) {
 
   if (empty($panel))  {
     $variables['no_panel'] = TRUE;
+    if ($arg['0'] == 'search') {
+      $variables['layout_class'] = 'layout-full-width';
+    } else {
+      $variables['layout_class'] = 'layout-default-inverted';
+    }
   }
 
   // We add logout link here to be able to always print it last. (Hence not part of any menu)
