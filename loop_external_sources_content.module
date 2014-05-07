@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Loop external sources content feature.
+ */
+
+include_once 'loop_external_sources_content.features.inc';
