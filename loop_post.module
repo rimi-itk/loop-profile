@@ -22,6 +22,12 @@ function loop_post_form_node_form_alter(&$form, &$form_state) {
 
   // Set up profession field.
   if ($fetched_field_profession) {
-    $form['field_profession'][LANGUAGE_NONE]['#default_value'] = array(0 => $fetched_field_profession['0']['tid']);
+    if (arg(1) == 'add') {
+      $form['field_profession'][LANGUAGE_NONE]['#default_value'] = array(0 => $fetched_field_profession['0']['tid']);
+    }
   }
+
+  // Move description inside wrapper
+  unset($form['field_description']['#attributes']['class']);
+  $form['field_description']['und']['#prefix'] = '<div id="field-description-add-more-wrapper" class="description-form-element form-item">';
 }
