@@ -35,6 +35,16 @@ function loop_external_data_menu() {
 }
 
 /**
+ * Implements hook_form_alter().
+ */
+function loop_external_data_form_alter(&$form, &$form_state, $form_id) {
+  // Hide the Tree overview from the form.
+  if ($form_id === 'index_node_form') {
+    $form['field_tree']['#access'] = FALSE;
+  }
+}
+
+/**
  * Adds indexes with names from prefixed by A-Z.
  */
 function _loop_external_data_add_indexes() {
