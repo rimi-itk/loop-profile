@@ -3553,11 +3553,14 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
    ================================================================================================================== */
 /* line 11, ../sass/modules/_question.scss */
 .question--wrapper {
-  border-bottom: 1px solid #e6e6e6;
   margin-bottom: 2.5em;
 }
+/* line 14, ../sass/modules/_question.scss */
+.question--wrapper.has-comments {
+  border-bottom: 1px solid #e6e6e6;
+}
 
-/* line 17, ../sass/modules/_question.scss */
+/* line 19, ../sass/modules/_question.scss */
 .question--meta-data {
   margin-bottom: 1.5em;
   padding: .5em 1.25em .65em;
@@ -3569,19 +3572,19 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   border-radius: 0.4em;
 }
 @media only screen and (min-width: 51em) {
-  /* line 17, ../sass/modules/_question.scss */
+  /* line 19, ../sass/modules/_question.scss */
   .question--meta-data {
     float: right;
   }
 }
 
-/* line 33, ../sass/modules/_question.scss */
+/* line 35, ../sass/modules/_question.scss */
 .question--inner {
   clear: both;
-  margin-bottom: 2em;
+  padding-bottom: 2em;
 }
 
-/* line 39, ../sass/modules/_question.scss */
+/* line 41, ../sass/modules/_question.scss */
 .question--label {
   display: block;
   margin-bottom: .25em;
@@ -3589,31 +3592,31 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   font-weight: bold;
 }
 
-/* line 47, ../sass/modules/_question.scss */
+/* line 49, ../sass/modules/_question.scss */
 .question--label-edit-link {
   font-weight: normal;
 }
 
-/* line 51, ../sass/modules/_question.scss */
+/* line 53, ../sass/modules/_question.scss */
 .question {
   margin-bottom: 0;
   font-size: 125%;
 }
 
-/* line 57, ../sass/modules/_question.scss */
+/* line 59, ../sass/modules/_question.scss */
 .question--terms {
   margin-bottom: 2em;
 }
 
 /* Questions list on user page
    ================================================================================================================== */
-/* line 68, ../sass/modules/_question.scss */
+/* line 70, ../sass/modules/_question.scss */
 .question--user-page-nodes-element {
   margin-bottom: 1em;
   border-bottom: 1px solid #e6e6e6;
   padding-bottom: 1em;
 }
-/* line 73, ../sass/modules/_question.scss */
+/* line 75, ../sass/modules/_question.scss */
 .question--user-page-nodes-element:last-child {
   border-bottom: 0;
   margin-bottom: 0;
