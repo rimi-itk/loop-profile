@@ -529,6 +529,13 @@ img {
   display: none;
 }
 
+/* Description list (Drupals node/add page)
+   ========================================================================== */
+/* line 119, ../sass/base/_base.scss */
+dd {
+  margin: 0 0 1em 0;
+}
+
 /**
  * Breakpoints
  *
