@@ -9,9 +9,11 @@
    ================================================================================================================== */
 
 .question--wrapper {
-  border-bottom: 1px solid $border-color;
-
   margin-bottom: 2.5em;
+
+  &.has-comments {
+    border-bottom: 1px solid $border-color;
+  }
 }
 
 .question--meta-data {
@@ -33,7 +35,7 @@
 .question--inner {
   clear: both;
   
-  margin-bottom: 2em;
+  padding-bottom: 2em;
 }
 
 .question--label {

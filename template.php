@@ -73,6 +73,12 @@ function loop_preprocess_node(&$variables) {
   $variables['job_title'] = field_view_value('user', $author, 'field_job_title', $fetched_job_title[0], array());
 
   $variables['author_image'] = _loop_fetch_author_image($author);
+
+  if ($variables['comment_count'] > 0) {
+    $variables['has_comments_class'] = 'has-comments';
+  } else {
+    $variables['has_comments_class'] = '';
+  }
 }
 
 

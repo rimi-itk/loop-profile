@@ -81,7 +81,7 @@
  */
 ?>
 
-<section class="question--wrapper">
+<section class="question--wrapper <?php print $has_comments_class?>">
   <div class="meta-data--author">
     <div class="meta-data--author-image">
       <a href="/user/<?php print $uid;?>"><?php print render($author_image);?></a>
