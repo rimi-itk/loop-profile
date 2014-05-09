@@ -165,6 +165,8 @@ function loop_external_data_block_view($delta = '') {
     case 'index':
       $node_id = (int) arg(1);
       if ((is_int($node_id)) && ($node_id > 0)) {
+        drupal_add_js(drupal_get_path('module', 'loop_external_data') . '/js/index.js');
+
         $node = node_load($node_id);
         $node = _loop_external_data_find_index($node);
         $block['subject'] = t('Index');
