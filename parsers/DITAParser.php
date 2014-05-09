@@ -207,7 +207,16 @@ class DITAParser implements ParserInterface {
         // Set up new image html element.
         $image->removeAttribute('href');
         $image->setAttribute('src', $file_path);
-        $this->renameTag($image, 'img');
+        $image_clone = $image->cloneNode(TRUE);
+
+        // Wrap image in link tag.
+        $wrapping_link = $dom->createElement('a');
+        $wrapping_link->setAttribute('href', $file_path);
+        $wrapping_link->setAttribute('target', '_blank');
+        $wrapping_link->appendChild($image_clone);
+        $image->parentNode->replaceChild($wrapping_link, $image);
+
+        $this->renameTag($image_clone, 'img');
       }
 
       // Replace references.
