@@ -28,14 +28,6 @@ if (!function_exists("system_form_install_configure_form_alter")) {
 }
 
 function loopdk_module_selection_form($form, &$form_state) {
-  $form['translation'] = array(
-      '#type' => 'checkbox',
-      '#title' => 'Danish translation',
-      '#description' => 'Install and enable Danish translation.',
-      '#default_value' => FALSE,
-      '#weight' => 10,
-    );
-
   $form['addons'] = array(
     '#type' => 'fieldset',
     '#title' => t('Add-ons'),
@@ -60,6 +52,14 @@ function loopdk_module_selection_form($form, &$form_state) {
     '#weight' => 10,
   );
 
+  $form['addons']['translation'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Danish translation'),
+    '#description' => t('Install and enable Danish translation.'),
+    '#default_value' => FALSE,
+    '#weight' => 11,
+  );
+
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => st('Continue installation'),
@@ -70,6 +70,7 @@ function loopdk_module_selection_form($form, &$form_state) {
 
 function loopdk_module_selection_form_submit($form, &$form_state) {
   $dependency_modules = array();
+  
   if ($form_state['values']['translation']) {
     loopdk_import_translation();
   }
