@@ -233,7 +233,7 @@ function loop_external_data_block_view($delta = '') {
 
         $node = node_load($node_id);
         $node = _loop_external_data_find_index($node);
-        $block['subject'] = t('Index');
+        //$block['subject'] = $node->title;
         $block['content'] = array(
           '#theme' => 'loop_external_data_dropdown_block',
           '#forest' => _loop_external_data_build_dropdown($node),
@@ -241,6 +241,7 @@ function loop_external_data_block_view($delta = '') {
       }
       break;
   }
+
   return $block;
 }
 
@@ -261,6 +262,7 @@ function _loop_external_data_build_dropdown($item) {
   switch ($item->type) {
     case 'index':
       $trees = $wrapper->field_tree->value();
+      $items['index_title'] = $item->title;
       foreach ($trees as $tree) {
         $items['childs'][] = _loop_external_data_build_dropdown($tree);
         $items['#theme'] = 'loop_external_data_dropdown_trees';
