@@ -36,3 +36,47 @@
   margin-bottom: 0;
   padding-bottom: 0;
 }
+
+@mixin custom-links($color, $active-color) {
+  a {
+    &:link {
+      color: $color;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: $color;
+    }
+
+    &:hover {
+      color: $color;
+    }
+
+    &:focus {
+      color: $color;
+    }
+
+    &.is-active {
+      &:link {
+        color: $active-color;
+        text-decoration: none;
+      }
+
+      &:visited {
+        color: $active-color;
+      }
+
+      &:hover {
+        color: $active-color;
+      }
+
+      &:focus {
+        color: $active-color;
+      }
+    }
+
+    &.is-hidden {
+      display: none;
+    }
+  }
+}

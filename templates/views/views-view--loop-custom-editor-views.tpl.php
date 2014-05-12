@@ -42,6 +42,21 @@
   <?php if ($exposed): ?>
     <div class="dashboard-list--filter">
       <?php print $exposed; ?>
+      <div class="dashboard--comment-filters">
+        <label class="dashboard--filter-label"><?php print t('Show only');?></label>
+        <div class="dashboard--filter-links">
+          <?php print l(t('Unanswered questions'), '#', array('external' => TRUE, 'attributes' => array('class' => array('dashboard--filter-link', 'js-dashboard-answers-hide', 'is-active'))));?>
+          <?php print l(t('Answered questions'), '#', array('external' => TRUE, 'attributes' =>  array('class' => array('dashboard--filter-link', 'js-dashboard-answers-show'))));?>
+        </div>
+      </div>
+      <div class="dashboard--sorting">
+        <label class="dashboard--filter-label"><?php print t('Sort by');?></label>
+        <div class="dashboard--sort-links">
+          <?php print l(t('Newest'), '#', array('external' => TRUE, 'attributes' => array('class' => array('dashboard--sort-link', 'is-active', 'js-sort-link'))));?>
+          <?php print l(t('Oldest'), '#', array('external' => TRUE, 'attributes' => array('class' => array('dashboard--sort-link', 'js-sort-link'))));?>
+          <?php print l(t('Alphabetical'), '#', array('external' => TRUE, 'attributes' => array('class' => array('dashboard--sort-link', 'js-sort-link', 'js-dashboard-alphabetical'))));?>
+          <?php print l(t('Number of answers'), '#', array('external' => TRUE, 'attributes' => array('class' => array('dashboard--sort-link', 'js-dashboard-answers'))));?>
+      </div>
     </div>
   <?php endif; ?>
 

@@ -148,8 +148,7 @@
 .layout-dashboard {
   @extend %layout--wrapper;
 
-  .layout-element-alpha,
-  .layout-element-gamma {
+  .layout-element-alpha {
     @include element-spacing(2em);
 
     @include breakpoint($layout-max-width) {
@@ -167,6 +166,10 @@
 
       padding-right: 0;
     }
+  }
+
+  .layout-element-gamma {
+    @include zen-grid-item(12, 1);
   }
 }
 
