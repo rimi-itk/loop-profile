@@ -48,23 +48,23 @@ jQuery(document).ready(function($) {
     },
     {
       // Pick source.
-      source: loopQuestions.ttAdapter(),
-      // Display field.
-      displayKey: 'title',
-      // HTML template for output.
-      templates: {
-        header: '<h3 class="tt-suggestion-header">' + Drupal.t('Questions') + '</h3>',
-        suggestion: Handlebars.compile('{{title}}')
-      }
-    },
-    {
-      // Pick source.
       source: loopDocuments.ttAdapter(),
       // Display field.
       displayKey: 'title',
       // HTML template for output.
       templates: {
         header: '<h3 class="tt-suggestion-header">' + Drupal.t('Documents') + '</h3>',
+        suggestion: Handlebars.compile('{{title}}')
+      }
+    },
+    {
+      // Pick source.
+      source: loopQuestions.ttAdapter(),
+        // Display field.
+        displayKey: 'title',
+      // HTML template for output.
+      templates: {
+      header: '<h3 class="tt-suggestion-header">' + Drupal.t('Questions') + '</h3>',
         suggestion: Handlebars.compile('{{title}}')
       }
     }
