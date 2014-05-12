@@ -31,8 +31,29 @@ function loop_external_data_menu() {
     'access callback' => array(1),
   );
 
+  $items['loop_external_data/%'] = array(
+    'title' => 'List documents in JSON format',
+    'page callback' => 'loop_external_data_documents',
+    'page arguments' => array(1),
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('access content'),
+  );
+
   return $items;
 }
+
+/**
+ * Implements hook_init().
+ */
+function loop_external_data_init() {
+  global $user;
+
+  // Check if it's a registered user.
+  if ($user->uid > 0) {
+    drupal_add_js(drupal_get_path('module', 'loop_external_data') . '/js/search.js');
+  }
+}
+
 
 /**
  * Implements hook_form_alter().
@@ -42,6 +63,49 @@ function loop_external_data_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id === 'index_node_form') {
     $form['field_tree']['#access'] = FALSE;
   }
+}
+
+/**
+ * Find documents (leafs) and output as JSON.
+ *
+ * @param string $scope
+ *   Comma separated list to search for.
+ *
+ * @return string
+ *   JSON object.
+ */
+function loop_external_data_documents($scope) {
+  // Explode to array.
+  $titles = explode(',', $scope);
+
+  // Title filter.
+  $or = db_or();
+  foreach ($titles as $title) {
+    $or->condition("title", $title . "%", 'LIKE');
+  }
+
+  // Fetch node ID and tiitle.
+  $nodes = db_select('node', 'n')
+    ->fields('n', array('nid', 'title'))
+    ->condition('type', 'leaf')
+    ->condition('status', 1)
+    ->condition($or)
+    ->execute();
+
+  $data = array();
+  foreach ($nodes as $node) {
+    $data[] = array(
+      // For better search, use strtolower().
+      'value' => strtolower(trim($node->title)),
+      // Fine human output.
+      'title' => trim($node->title),
+      // Use internal path.
+      'link' => '/' . drupal_get_path_alias('node/' . $node->nid),
+    );
+  }
+
+  // Return as JSON.
+  drupal_json_output($data);
 }
 
 /**
