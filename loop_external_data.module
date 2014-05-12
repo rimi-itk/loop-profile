@@ -169,7 +169,7 @@ function loop_external_data_block_view($delta = '') {
 
         $node = node_load($node_id);
         $node = _loop_external_data_find_index($node);
-        $block['subject'] = $node->title;
+        //$block['subject'] = $node->title;
         $block['content'] = array(
           '#theme' => 'loop_external_data_dropdown_block',
           '#forest' => _loop_external_data_build_dropdown($node),
