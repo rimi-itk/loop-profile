@@ -94,11 +94,12 @@ function loop_external_data_documents($scope) {
 
   $data = array();
   foreach ($nodes as $node) {
+    $index = _loop_external_data_find_index($node);
     $data[] = array(
       // For better search, use strtolower().
       'value' => strtolower(trim($node->title)),
       // Fine human output.
-      'title' => trim($node->title),
+      'title' => trim($node->title) . " (" . trim($index->title) . ")",
       // Use internal path.
       'link' => '/' . drupal_get_path_alias('node/' . $node->nid),
     );
