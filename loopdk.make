@@ -76,11 +76,8 @@ projects[jquery_update][download][type] = "git"
 projects[jquery_update][download][url] = "http://git.drupal.org/project/jquery_update.git"
 projects[jquery_update][download][revision] = "65eecb0"
 
-projects[l10n_update][type] = "module"
 projects[l10n_update][subdir] = "contrib"
-projects[l10n_update][download][type] = "git"
-projects[l10n_update][download][url] = "http://git.drupal.org/project/l10n_update.git"
-projects[l10n_update][download][revision] = "d36d6f0"
+projects[l10n_update][version] = "1.0"
 
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = "2.1"
