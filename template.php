@@ -60,6 +60,10 @@ function loop_preprocess_page(&$variables) {
   if($user->uid > 0) {
     $variables['logout_link'] = l(t('Logout'), 'user/logout', array('attributes' => array('class' => array('nav--logout'))));
   }
+
+  // Add custom js.
+  $dashboard_filters = $GLOBALS['base_root'] . '/' . path_to_theme() .'/scripts/dashboard-filters.js';
+  drupal_add_js($dashboard_filters, 'file');
 }
 
 
@@ -518,10 +522,6 @@ function loop_form_views_exposed_form_alter(&$form) {
     $form['#attributes']['class'][] = 'dashboard-list--form';
     $form['combine']['#attributes']['class'][] = 'dashboard-list--filter-field';
     $form['submit']['#attributes']['class'][] = 'dashboard-list--submit';
-
-    // Add custom js.
-    $dashboard_filters = $GLOBALS['base_root'] . '/' . path_to_theme() .'/scripts/dashboard-filters.js';
-    drupal_add_js($dashboard_filters, 'file');
   }
 }
 

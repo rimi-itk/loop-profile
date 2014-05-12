@@ -56,6 +56,7 @@
           <?php print l(t('Oldest'), '#', array('external' => TRUE, 'attributes' => array('class' => array('dashboard--sort-link', 'js-sort-link'))));?>
           <?php print l(t('Alphabetical'), '#', array('external' => TRUE, 'attributes' => array('class' => array('dashboard--sort-link', 'js-sort-link', 'js-dashboard-alphabetical'))));?>
           <?php print l(t('Number of answers'), '#', array('external' => TRUE, 'attributes' => array('class' => array('dashboard--sort-link', 'js-dashboard-answers'))));?>
+        </div>
       </div>
     </div>
   <?php endif; ?>
