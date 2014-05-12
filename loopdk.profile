@@ -70,7 +70,7 @@ function loopdk_module_selection_form($form, &$form_state) {
 
 function loopdk_module_selection_form_submit($form, &$form_state) {
   $dependency_modules = array();
-  
+
   if ($form_state['values']['translation']) {
     loopdk_import_translation();
   }
@@ -359,5 +359,9 @@ function loopdk_final_settings() {
   field_update_instance($instance);
 
   module_load_include('inc', 'i18n_string', 'i18n_string.admin');
+  i18n_string_refresh_group('default');
+  i18n_string_refresh_group('field');
+  i18n_string_refresh_group('menu');
   i18n_string_refresh_group('panels');
+  i18n_string_refresh_group('views');
 }

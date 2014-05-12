@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-04-09 09:55+0200\n"
-"PO-Revision-Date: 2014-04-09 09:55+0200\n"
+"POT-Creation-Date: 2014-05-12 13:18+0200\n"
+"PO-Revision-Date: 2014-05-12 13:18+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -72,13 +72,13 @@ msgid ""
 "as a submenu to Main Menu"
 msgstr ""
 
-#: menu:item:284:title
-msgctxt "item:284:title"
+#: menu:item:282:title
+msgctxt "item:282:title"
 msgid "My account"
 msgstr "Min konto"
 
-#: menu:item:289:title
-msgctxt "item:289:title"
+#: menu:item:288:title
+msgctxt "item:288:title"
 msgid "Create post"
 msgstr "Opret spørgsmål"
 

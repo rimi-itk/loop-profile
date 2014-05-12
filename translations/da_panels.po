@@ -4,14 +4,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-04-09 09:55+0200\n"
-"PO-Revision-Date: 2014-04-09 09:55+0200\n"
+"POT-Creation-Date: 2014-05-12 13:18+0200\n"
+"PO-Revision-Date: 2014-05-12 13:18+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: panels:display_configuration:5c4610bd-d98d-4392-833f-1c60080f8cba:title
+msgctxt "display_configuration:5c4610bd-d98d-4392-833f-1c60080f8cba:title"
+msgid "Dashboard"
+msgstr ""
 
 #: panels:display_configuration:eacecc12-ef9b-4b7d-9ec7-1b4ac69aebde:title
 msgctxt "display_configuration:eacecc12-ef9b-4b7d-9ec7-1b4ac69aebde:title"
@@ -21,26 +26,6 @@ msgstr ""
 #: panels:display_configuration:c7d4a77e-2a44-4a1a-82a4-b7f43bc9eb64:title
 msgctxt "display_configuration:c7d4a77e-2a44-4a1a-82a4-b7f43bc9eb64:title"
 msgid "%user:field_first_name %user:field_last_name"
-msgstr ""
-
-#: panels:pane_configuration:a1745ca6-b03f-4e34-9d1d-7601d4a472a2:override_title_text
-msgctxt "pane_configuration:a1745ca6-b03f-4e34-9d1d-7601d4a472a2:override_title_text"
-msgid "Comments by %user:field_first_name %user:field_last_name"
-msgstr ""
-
-#: panels:pane_configuration:a1745ca6-b03f-4e34-9d1d-7601d4a472a2:title
-msgctxt "pane_configuration:a1745ca6-b03f-4e34-9d1d-7601d4a472a2:title"
-msgid "Comments by %user:field_first_name %user:field_last_name"
-msgstr ""
-
-#: panels:pane_configuration:39196a6c-b47a-44a1-94fc-3423a5f0bdc9:override_title_text
-msgctxt "pane_configuration:39196a6c-b47a-44a1-94fc-3423a5f0bdc9:override_title_text"
-msgid "Content by %user:field_first_name %user:field_last_name"
-msgstr ""
-
-#: panels:pane_configuration:39196a6c-b47a-44a1-94fc-3423a5f0bdc9:title
-msgctxt "pane_configuration:39196a6c-b47a-44a1-94fc-3423a5f0bdc9:title"
-msgid "Content by %user:field_first_name %user:field_last_name"
 msgstr ""
 
 #: panels:display_configuration:24c2a122-e628-4285-8035-99f5feb65405:title
@@ -107,4 +92,29 @@ msgstr "Emner"
 msgctxt "pane_configuration:04d21e8b-d7fe-4319-a74c-27503eb8ce1e:title"
 msgid "Topics"
 msgstr "Emner"
+
+#: panels:pane_configuration:a1745ca6-b03f-4e34-9d1d-7601d4a472a2:override_title_text
+msgctxt "pane_configuration:a1745ca6-b03f-4e34-9d1d-7601d4a472a2:override_title_text"
+msgid "Comments by %user:field_first_name %user:field_last_name"
+msgstr "Kommentarer af %user:field_first_name %user:field_last_name"
+
+#: panels:pane_configuration:a1745ca6-b03f-4e34-9d1d-7601d4a472a2:title
+msgctxt "pane_configuration:a1745ca6-b03f-4e34-9d1d-7601d4a472a2:title"
+msgid "Comments by %user:field_first_name %user:field_last_name"
+msgstr "Kommentarer af %user:field_first_name %user:field_last_name"
+
+#: panels:pane_configuration:39196a6c-b47a-44a1-94fc-3423a5f0bdc9:override_title_text
+msgctxt "pane_configuration:39196a6c-b47a-44a1-94fc-3423a5f0bdc9:override_title_text"
+msgid "Content by %user:field_first_name %user:field_last_name"
+msgstr "Indhold af %user:field_first_name %user:field_last_name"
+
+#: panels:pane_configuration:39196a6c-b47a-44a1-94fc-3423a5f0bdc9:title
+msgctxt "pane_configuration:39196a6c-b47a-44a1-94fc-3423a5f0bdc9:title"
+msgid "Content by %user:field_first_name %user:field_last_name"
+msgstr "Indhold af %user:field_first_name %user:field_last_name"
+
+#: panels:display_configuration:d2434553-0d76-4954-bbd4-c8888cfb265f:title
+msgctxt "display_configuration:d2434553-0d76-4954-bbd4-c8888cfb265f:title"
+msgid "Subscriptions"
+msgstr "Abonnementer"
 

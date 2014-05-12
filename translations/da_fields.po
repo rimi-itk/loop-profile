@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2014-04-09 09:55+0200\n"
-"PO-Revision-Date: 2014-04-09 09:55+0200\n"
+"POT-Creation-Date: 2014-05-12 13:18+0200\n"
+"PO-Revision-Date: 2014-05-12 13:18+0200\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "MIME-Version: 1.0\n"
@@ -28,14 +28,79 @@ msgctxt "message_text:message_type:description"
 msgid "This is the text of all messages of this type."
 msgstr ""
 
-#: field:field_user_image:user:label
-msgctxt "field_user_image:user:label"
-msgid "User image"
+#: field:field_file:index:label
+msgctxt "field_file:index:label"
+msgid "File"
+msgstr ""
+
+#: field:field_tree:index:label
+msgctxt "field_tree:index:label"
+msgid "Tree"
+msgstr ""
+
+#: field:body:leaf:label
+msgctxt "body:leaf:label"
+msgid "Body"
+msgstr ""
+
+#: field:field_leaf:tree:label
+msgctxt "field_leaf:tree:label"
+msgid "Leaf"
+msgstr ""
+
+#: field:field_external_link:external_sources:label
+msgctxt "field_external_link:external_sources:label"
+msgid "External link"
+msgstr ""
+
+#: field:field_keyword:external_sources:label
+msgctxt "field_keyword:external_sources:label"
+msgid "Keyword"
+msgstr ""
+
+#: field:field_keyword:external_sources:description
+msgctxt "field_keyword:external_sources:description"
+msgid "Type in keyword(s)."
+msgstr ""
+
+#: field:field_profession:external_sources:label
+msgctxt "field_profession:external_sources:label"
+msgid "Profession"
+msgstr ""
+
+#: field:field_subject:external_sources:label
+msgctxt "field_subject:external_sources:label"
+msgid "Subject"
+msgstr ""
+
+#: field:field_subject:external_sources:description
+msgctxt "field_subject:external_sources:description"
+msgid "Select a subject."
 msgstr ""
 
 #: field:field_message_node_reference:comment_added_to_post:label
 msgctxt "field_message_node_reference:comment_added_to_post:label"
 msgid "Message node reference"
+msgstr ""
+
+#: field:comment_body:comment_node_index:label
+msgctxt "comment_body:comment_node_index:label"
+msgid "Comment"
+msgstr ""
+
+#: field:comment_body:comment_node_leaf:label
+msgctxt "comment_body:comment_node_leaf:label"
+msgid "Comment"
+msgstr ""
+
+#: field:comment_body:comment_node_tree:label
+msgctxt "comment_body:comment_node_tree:label"
+msgid "Comment"
+msgstr ""
+
+#: field:comment_body:comment_node_external_sources:label
+msgctxt "comment_body:comment_node_external_sources:label"
+msgid "Comment"
 msgstr ""
 
 #: field:field_area_of_expertise:user:label
@@ -88,10 +153,15 @@ msgctxt "field_profession:user:label"
 msgid "Profession"
 msgstr "Profession"
 
+#: field:field_user_image:user:label
+msgctxt "field_user_image:user:label"
+msgid "User image"
+msgstr "Profilbillede"
+
 #: field:field_description:post:label
 msgctxt "field_description:post:label"
-msgid "Description"
-msgstr "Beskrivelse"
+msgid "Post"
+msgstr "Spørgsmål"
 
 #: field:field_description:post:description
 msgctxt "field_description:post:description"
