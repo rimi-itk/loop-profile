@@ -21,7 +21,6 @@ function loop_search_default_search_api_index() {
       "fields" : {
         "status" : { "type" : "integer" },
         "comments" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "comment" },
-        "field_description" : { "type" : "text" },
         "search_api_language" : { "type" : "string" },
         "field_keyword:name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_profession:name" : { "type" : "text" },
@@ -32,7 +31,14 @@ function loop_search_default_search_api_index() {
         "search_api_alter_bundle_filter" : {
           "status" : 1,
           "weight" : "-10",
-          "settings" : { "default" : "0", "bundles" : { "post" : "post" } }
+          "settings" : {
+            "default" : "0",
+            "bundles" : {
+              "external_sources" : "external_sources",
+              "leaf" : "leaf",
+              "post" : "post"
+            }
+          }
         },
         "search_api_alter_node_access" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] },
@@ -46,7 +52,6 @@ function loop_search_default_search_api_index() {
           "status" : 1,
           "weight" : "0",
           "settings" : { "fields" : {
-              "field_description" : true,
               "field_keyword:name" : true,
               "field_profession:name" : true,
               "field_subject:name" : true,
@@ -59,7 +64,6 @@ function loop_search_default_search_api_index() {
           "weight" : "10",
           "settings" : {
             "fields" : {
-              "field_description" : true,
               "field_keyword:name" : true,
               "field_profession:name" : true,
               "field_subject:name" : true,
@@ -70,17 +74,12 @@ function loop_search_default_search_api_index() {
             "tags" : "h1 = 5\\r\\nh2 = 3\\r\\nh3 = 2\\r\\nstrong = 2\\r\\nb = 2\\r\\nem = 1.5\\r\\nu = 1.5"
           }
         },
-        "search_api_transliteration" : {
-          "status" : 0,
-          "weight" : "15",
-          "settings" : { "fields" : { "field_description" : true } }
-        },
+        "search_api_transliteration" : { "status" : 0, "weight" : "15", "settings" : { "fields" : [] } },
         "search_api_tokenizer" : {
           "status" : 1,
           "weight" : "20",
           "settings" : {
             "fields" : {
-              "field_description" : true,
               "field_keyword:name" : true,
               "field_profession:name" : true,
               "field_subject:name" : true,
@@ -94,7 +93,7 @@ function loop_search_default_search_api_index() {
           "status" : 0,
           "weight" : "30",
           "settings" : {
-            "fields" : { "field_description" : true },
+            "fields" : [],
             "file" : "",
             "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc"
           }
