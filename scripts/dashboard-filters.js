@@ -55,7 +55,8 @@
   }
 
   // Start the show
-  $(document).ready(function () {
+  /*$(document).ready(function () {
+    alert('123');
     // Hide and store answers button
     $('.js-dashboard-answers').addClass('is-hidden');
     $('.js-dashboard-alphabetical').addClass('is-last');
@@ -65,6 +66,38 @@
 
     // Add som click events
     set_active();
-  });
+  });*/
 
+  Drupal.behaviors.myBehavior = {
+    attach: function (context, settings) {
+      // Hide and store answers button
+      $('.js-dashboard-answers').addClass('is-hidden');
+      $('.js-dashboard-alphabetical').addClass('is-last');
+
+      // Add class to links to define width in css
+      $('.js-sort-link').toggleClass('js-has-answers-removed');
+
+      // Add som click events
+      set_active();
+
+      // First we use the settings object to get the views' details
+      var views = settings.views.ajaxViews;
+
+      // view_dom_id is an unique value, it's unique per view and per pageload
+      var view = view_dom_id = view_name = undefined;
+      for (var viewsName in views) {
+        if (views.hasOwnProperty(viewsName)) {
+          view = views[viewsName];
+          // I used view_display_id to actually identify my view
+          // and store it in the view variable
+          if (view['view_display_id'] == "panel_pane_1") {
+            view_name = view["view_name"];
+            view_dom_id = view["view_dom_id"];
+          }
+        }
+      }
+      console.log(view_name);
+      console.log(view_dom_id);
+    }
+  };
 })(jQuery);
