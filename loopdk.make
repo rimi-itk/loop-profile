@@ -152,6 +152,15 @@ projects[role_delegation][version] = "1.1"
 projects[rules][subdir] = "contrib"
 projects[rules][version] = "2.6"
 
+projects[saml_sp][type] = "module"
+projects[saml_sp][subdir] = "contrib"
+projects[saml_sp][download][type] = "git"
+projects[saml_sp][download][url] = "http://git.drupal.org/project/saml_sp.git"
+projects[saml_sp][download][branch] = "7.x-1.x"
+projects[saml_sp][patch][] = https://drupal.org/files/issues/1793514-saml_sp-dependency-2.patch
+projects[saml_sp][patch][] = https://drupal.org/files/issues/1760312-saml_sp-size-too-small-1.patch
+projects[saml_sp][patch][] = https://drupal.org/files/issues/2266289-required-files-2.patch
+
 projects[search_api][subdir] = "contrib"
 projects[search_api][version] = "1.11"
 
@@ -381,3 +390,8 @@ libraries[respondjs][download][type] = "get"
 libraries[respondjs][download][url] = "https://raw.github.com/scottjehl/Respond/master/dest/respond.min.js"
 libraries[respondjs][directory_name] = "respondjs"
 libraries[respondjs][destination] = "libraries"
+
+libraries[php-saml][download][type] = "get"
+libraries[php-saml][download][url] = "https://github.com/onelogin/php-saml.git"
+libraries[php-saml][directory_name] = "php-saml"
+libraries[php-saml][destination] = "libraries"
