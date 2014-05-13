@@ -5,3 +5,6 @@
  */
 
 include_once 'loop_editor_pages.features.inc';
+
+function loop_editor_pages_views_query_alter(&$view, &$query) {
+}
