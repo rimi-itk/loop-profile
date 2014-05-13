@@ -6,7 +6,188 @@
 
 include_once 'loop_editor_pages.features.inc';
 
-function loop_editor_pages_views_pre_render(&$view) {
-  $dashboard_filters = $GLOBALS['base_root'] . '/' . path_to_theme() .'/scripts/dashboard-filters.js';
-  drupal_add_js($dashboard_filters, 'file');
+/**
+ * Implements hook_menu().
+ */
+function loop_editor_pages_menu() {
+  $items['loop_dashboard_search_questions'] = array(
+    'title' => 'List nodes in JSON format',
+    'page callback' => 'loop_editor_pages_questions',
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('access content'),
+  );
+
+  $items['loop_dashboard_search_comments'] = array(
+    'title' => 'List nodes in JSON format',
+    'page callback' => 'loop_editor_pages_comments',
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('access content'),
+  );
+
+  $items['loop_dashboard_search_other_content'] = array(
+    'title' => 'List nodes in JSON format',
+    'page callback' => 'loop_editor_pages_other_content',
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('access content'),
+  );
+
+  return $items;
+}
+
+/**
+ * Return every node of type post in JSON format.
+ *
+ * @return string
+ *   JSON object.
+ */
+function loop_editor_pages_questions() {
+  // Select nodes.
+  $nodes = db_select('node', 'n')
+    ->fields('n', array('nid', 'title', 'created'))
+    ->condition('status', 1)
+    ->condition('type', 'post')
+    ->execute();
+
+  // Build nodes.
+  $data = array();
+  foreach ($nodes as $node) {
+//    $comments = db_select('comments', 'c')
+
+
+    $data[] = array(
+      // Fine human output.
+      'title' => trim($node->title),
+      // Use internal path.
+      'nid' => $node->nid,
+      // Date
+      'date' => $node->created,
+      // Number of comments
+      'coms' => '0'
+    );
+  }
+
+  // Return as JSON.
+  drupal_json_output($data);
+}
+
+/**
+ * Return every comment of type post in JSON format.
+ *
+ * @return string
+ *   JSON object.
+ */
+function loop_editor_pages_comments() {
+  // Select nodes.
+  $nodes = db_select('comment', 'c')
+    ->fields('c', array('cid', 'nid', 'subject'))
+    ->condition('status', 1)
+    ->execute();
+
+  // Build nodes.
+  $data = array();
+  foreach ($nodes as $node) {
+    $data[] = array(
+      // Fine human output.
+      'subject' => trim($node->subject),
+      // Use internal path.
+      'cid' => $node->cid,
+    );
+  }
+
+  // Return as JSON.
+  drupal_json_output($data);
+}
+
+/**
+ * Return every comment of type post in JSON format.
+ *
+ * @return string
+ *   JSON object.
+ */
+function loop_editor_pages_other_content() {
+  // Select nodes.
+  $nodes = db_select('node', 'n')
+    ->fields('n', array('nid', 'title', 'created'))
+    ->condition('status', 1)
+    ->condition('type', 'post', '<>')
+    ->execute();
+
+  // Build nodes.
+  $data = array();
+  foreach ($nodes as $node) {
+    $data[] = array(
+      // Fine human output.
+      'title' => trim($node->title),
+      // Use internal path.
+      'nid' => $node->nid,
+      // Date
+      'date' => $node->created
+    );
+  }
+
+  // Return as JSON.
+  drupal_json_output($data);
+
+}
+
+
+
+/**
+ * Implements hook_block_info().
+ */
+function loop_editor_pages_block_info() {
+  $blocks['loop_dashboard_questions'] = array(
+    'info' => t('Dashboard questions'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
+  $blocks['loop_dashboard_comments'] = array(
+    'info' => t('Dashboard comments'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
+  $blocks['loop_dashboard_content'] = array(
+    'info' => t('Dashboard content'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
+  return $blocks;
+}
+
+
+/**
+ * Implements hook_block_view().
+ */
+function loop_editor_pages_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'loop_dashboard_questions' :
+      $block['content'] = theme('loop_dashboard_questions');
+      break;
+    case 'loop_dashboard_comments' :
+      $block['content'] = theme('loop_dashboard_comments');
+      break;
+    case 'loop_dashboard_content' :
+      $block['content'] = theme('loop_dashboard_content');
+      break;
+  }
+  return $block;
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function loop_editor_pages_theme() {
+  return array(
+    'loop_dashboard_questions' => array(
+      'variables' => array(),
+      'template' => 'templates/loop-dashboard--questions',
+    ),
+    'loop_dashboard_comments' => array(
+      'variables' => array(),
+      'template' => 'templates/loop-dashboard--comments',
+    ),
+    'loop_dashboard_content' => array(
+      'variables' => array(),
+      'template' => 'templates/loop-dashboard--content',
+    ),
+  );
 }
