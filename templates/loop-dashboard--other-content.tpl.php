@@ -31,7 +31,7 @@
 <?php
 // This is used to enrich the above results.
 ?>
-<script id="js-list-item-template-content" type="text/x-handlebars-template">
+<script id="js-list-item-template-other-content" type="text/x-handlebars-template">
   <div class="dashboard-list--item">
     <a href="/node/{{nid}}/edit" class="dashboard-list--icon"> </a>
     <p class="dashboard-list--text">

@@ -31,11 +31,11 @@
 <?php
 // This is used to enrich the above results.
 ?>
-<script id="dashboard-list-item-comments" type="text/x-handlebars-template">
+<script id="js-list-item-template-comments" type="text/x-handlebars-template">
   <div class="dashboard-list--item">
-    <a href="/node/{{nid}}/edit" class="dashboard-list--icon"> </a>
+    <a href="/comment/{{cid}}#comment-{{cid}}" class="dashboard-list--icon"> </a>
     <p class="dashboard-list--text">
-      <a href="/node/{{nid}}">{{title}}</a>
+      <a href="/comment/{{cid}}#comment-{{cid}}">{{subject}}</a>
     </p>
     <span class="dashboard-list--meta-data">
     Indhold, oprettet {{date}}
