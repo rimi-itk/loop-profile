@@ -51,18 +51,17 @@ function loop_editor_pages_questions() {
   // Build nodes.
   $data = array();
   foreach ($nodes as $node) {
-//    $comments = db_select('comments', 'c')
-
+    $comments = db_select('comment', 'c')
+      ->fields('c')
+      ->condition('nid',$node->nid)
+      ->execute();
+    $num_of_results = $comments->rowCount();
 
     $data[] = array(
-      // Fine human output.
       'title' => trim($node->title),
-      // Use internal path.
       'nid' => $node->nid,
-      // Date
       'date' => $node->created,
-      // Number of comments
-      'coms' => '0'
+      'coms' => $num_of_results
     );
   }
 
@@ -79,7 +78,7 @@ function loop_editor_pages_questions() {
 function loop_editor_pages_comments() {
   // Select nodes.
   $nodes = db_select('comment', 'c')
-    ->fields('c', array('cid', 'nid', 'subject'))
+    ->fields('c', array('cid', 'nid', 'subject', 'created'))
     ->condition('status', 1)
     ->execute();
 
@@ -87,10 +86,9 @@ function loop_editor_pages_comments() {
   $data = array();
   foreach ($nodes as $node) {
     $data[] = array(
-      // Fine human output.
       'subject' => trim($node->subject),
-      // Use internal path.
       'cid' => $node->cid,
+      'date' => $node->created,
     );
   }
 
@@ -110,17 +108,15 @@ function loop_editor_pages_other_content() {
     ->fields('n', array('nid', 'title', 'created'))
     ->condition('status', 1)
     ->condition('type', 'post', '<>')
+    ->condition('type', 'page', '<>')
     ->execute();
 
   // Build nodes.
   $data = array();
   foreach ($nodes as $node) {
     $data[] = array(
-      // Fine human output.
       'title' => trim($node->title),
-      // Use internal path.
       'nid' => $node->nid,
-      // Date
       'date' => $node->created
     );
   }
@@ -190,4 +186,19 @@ function loop_editor_pages_theme() {
       'template' => 'templates/loop-dashboard--content',
     ),
   );
+}
+
+/**
+ * Implements hook_init().
+ *
+ * Include search JS for every pageload!
+ */
+function loop_editor_pages_init() {
+  global $user;
+
+  // Check if it's a registered user.
+  if ($user->uid > 0) {
+    drupal_add_js(drupal_get_path('module', 'loop_search') . '/js/handlebars-v1.2.0.js');
+    drupal_add_js(drupal_get_path('module', 'loop_editor_pages') . '/js/dashboard.js');
+  }
 }
