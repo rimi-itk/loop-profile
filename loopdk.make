@@ -56,7 +56,7 @@ projects[globalredirect][subdir] = "contrib"
 projects[globalredirect][version] = "1.5"
 
 projects[google_analytics][subdir] = "contrib"
-projects[google_analytics][version] = "1.4"
+projects[google_analytics][version] = "2.x-dev"
 
 projects[google_analytics_counter][subdir] = "contrib"
 projects[google_analytics_counter][version] = "2.1"
