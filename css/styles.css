@@ -1156,7 +1156,7 @@ label {
 /* line 67, ../sass/theme/_icons.scss */
 .comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .messages.warning:before, .nav-mobile .nav--link:before, .nav-mobile .nav--logout:before,
 .nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .twitter-typeahead:before, .dashboard-list--filter:before, .dashboard-list--icon:before {
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before, .twitter-typeahead:before, .dashboard-list--filter:before, .dashboard-list--icon:before {
   display: inline-block;
   font-family: "loop-icons";
   line-height: 100%;
@@ -1165,7 +1165,7 @@ label {
 /* line 74, ../sass/theme/_icons.scss */
 .nav-mobile .nav--link:before, .nav-mobile .nav--logout:before,
 .nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .comment--flag:before, .search-result--comments:before, .question--number-of-comments:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .messages.status:before, .messages.warning:before, .messages.error:before {
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .comment--flag:before, .guide--nav-list-item .active:before, .search-result--comments:before, .question--number-of-comments:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .messages.status:before, .messages.warning:before, .messages.error:before {
   margin-right: .35em;
 }
 
@@ -1212,7 +1212,7 @@ label {
 /* line 124, ../sass/theme/_icons.scss */
 .nav-mobile .nav--link:before, .nav-mobile .nav--logout:before,
 .nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before {
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before {
   content: '\e807';
 }
 
@@ -3336,25 +3336,31 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
 /* line 33, ../sass/modules/_guide.scss */
 .guide--nav-list-title {
   border-bottom: 1px solid #e6e6e6;
+  cursor: pointer;
   padding-bottom: .5em;
   font-weight: bold;
 }
 
-/* line 40, ../sass/modules/_guide.scss */
+/* line 41, ../sass/modules/_guide.scss */
 .guide--nav-list-sublist {
   padding-left: 1em;
   list-style: none;
 }
 
-/* line 46, ../sass/modules/_guide.scss */
+/* line 47, ../sass/modules/_guide.scss */
 .guide--nav-list-item {
   margin-top: .25em;
   margin-bottom: .25em;
 }
-/* line 51, ../sass/modules/_guide.scss */
+/* line 52, ../sass/modules/_guide.scss */
 .guide--nav-list-item.has-sublist {
   margin-top: 1em;
   margin-bottom: 1em;
+}
+/* line 57, ../sass/modules/_guide.scss */
+.guide--nav-list-item .active {
+  font-weight: bold;
+  margin-left: -13px;
 }
 
 /**
