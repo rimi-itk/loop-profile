@@ -8,25 +8,17 @@
         <input class="dashboard-list--submit form-submit" type="submit" id="edit-submit-loop-editor-content" name="" value="Udfør">
       </div>
     </form>
-    <div class="dashboard--comment-filters">
-      <label class="dashboard--filter-label"><?php print t('Show only');?></label>
-      <div class="dashboard--filter-links">
-        <a href="#" class="dashboard--filter-link js-dashboard-answers-hide is-active"><?php print t('Unanswered questions');?></a>
-        <a href="#" class="dashboard--filter-link js-dashboard-answers-show"><?php print t('Answered questions');?></a>
-      </div>
-    </div>
     <div class="dashboard--sorting">
       <label class="dashboard--filter-label"><?php print t('Sort by');?></label>
       <div class="dashboard--sort-links">
         <a href="#" class="dashboard--sort-link is-active js-sort-link"><?php print t('Newest');?></a>
         <a href="#" class="dashboard--sort-link js-sort-link"><?php print t('Oldest');?></a>
         <a href="#" class="dashboard--sort-link js-sort-link js-dashboard-alphabetical"><?php print t('Alphabetical');?></a>
-        <a href="#" class="dashboard--sort-link js-dashboard-answers"><?php print('Number of answers');?></a>
       </div>
     </div>
   </div>
 
-  <div class="dashboard-list js-dashboard-questions">
+  <div class="dashboard-list js-dashboard-other-content">
     Insert here
   </div>
 
@@ -39,7 +31,7 @@
 <?php
 // This is used to enrich the above results.
 ?>
-<script id="js-list-item-template-questions" type="text/x-handlebars-template">
+<script id="js-list-item-template-content" type="text/x-handlebars-template">
   <div class="dashboard-list--item">
     <a href="/node/{{nid}}/edit" class="dashboard-list--icon"> </a>
     <p class="dashboard-list--text">
