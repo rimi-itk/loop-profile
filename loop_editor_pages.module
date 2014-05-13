@@ -140,8 +140,8 @@ function loop_editor_pages_block_info() {
     'info' => t('Dashboard comments'),
     'cache' => DRUPAL_CACHE_PER_PAGE,
   );
-  $blocks['loop_dashboard_content'] = array(
-    'info' => t('Dashboard content'),
+  $blocks['loop_dashboard_other_content'] = array(
+    'info' => t('Dashboard other content'),
     'cache' => DRUPAL_CACHE_PER_PAGE,
   );
   return $blocks;
@@ -160,8 +160,8 @@ function loop_editor_pages_block_view($delta = '') {
     case 'loop_dashboard_comments' :
       $block['content'] = theme('loop_dashboard_comments');
       break;
-    case 'loop_dashboard_content' :
-      $block['content'] = theme('loop_dashboard_content');
+    case 'loop_dashboard_other_content' :
+      $block['content'] = theme('loop_dashboard_other_content');
       break;
   }
   return $block;
@@ -181,9 +181,9 @@ function loop_editor_pages_theme() {
       'variables' => array(),
       'template' => 'templates/loop-dashboard--comments',
     ),
-    'loop_dashboard_content' => array(
+    'loop_dashboard_other_content' => array(
       'variables' => array(),
-      'template' => 'templates/loop-dashboard--content',
+      'template' => 'templates/loop-dashboard--other-content',
     ),
   );
 }
