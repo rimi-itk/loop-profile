@@ -4474,6 +4474,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   display: block;
   height: 20px;
   width: 20px;
+  margin: 0 auto;
   -moz-animation: spinner 1s;
   -webkit-animation: spinner 1s;
   animation: spinner 1s;
