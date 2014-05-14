@@ -42,8 +42,7 @@
       <a href="/comment/{{cid}}#comment-{{cid}}">{{subject}}</a>
     </p>
     <span class="dashboard-list--meta-data">
-      {{uri}}
-      <p>Spørgsmål: {{content-title}}</p>
+      <p><?php print t('Question');?>: {{content-title}}</p>
     <?php print t('Content, created');?> {{date}}
     </span>
   </div>
