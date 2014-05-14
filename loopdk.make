@@ -162,6 +162,7 @@ projects[saml_sp][patch][] = https://drupal.org/files/issues/1760312-saml_sp-siz
 projects[saml_sp][patch][] = https://drupal.org/files/use_libraries_api_for_saml_toolkit-1765108-1.patch
 projects[saml_sp][patch][] = https://drupal.org/files/issues/2266289-required-files-3.patch
 projects[saml_sp][patch][] = https://drupal.org/files/issues/2267103-base64-decode-string-1.patch
+projects[saml_sp][patch][] = https://drupal.org/files/issues/2267127-add-logout-url-1.patch
 
 projects[search_api][subdir] = "contrib"
 projects[search_api][version] = "1.11"
