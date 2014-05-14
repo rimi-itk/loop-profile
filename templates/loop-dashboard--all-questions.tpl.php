@@ -1,8 +1,7 @@
 <?php
-
 /**
- * @file loop-dashboard--questions.tpl.php
- * Displays questions list for dashboard.
+ * @file loop-dashboard--all-questions.tpl.php
+ * Displays all questions page dashboard.
  */
 ?>
 <?php if (!empty($profile)) : ?>
@@ -27,9 +26,9 @@
 <?php endif; ?>
 <div class="">
   <div class="dashboard-list--filter">
-    <form class="dashboard-list--form" accept-charset="UTF-8">
+    <form class="dashboard-list--form jquery-once-1-processed" action="/editor/dashboard/content" method="get" id="views-exposed-form-loop-editor-content-panel-pane-1" accept-charset="UTF-8">
       <div class="views-exposed-widgets">
-        <input placeholder="<?php print t('Type parts of title or content to filter the list');?>" class="dashboard-list--filter-field form-text js-questions-text-filter" type="text" id="edit-combine" name="combine" value="" size="30" maxlength="128">
+        <input placeholder="<?php print t('Type parts of title or content to filter the list');?>" class="dashboard-list--filter-field form-text" type="text" id="edit-combine" name="combine" value="" size="30" maxlength="128">
       </div>
       <div class="">
         <input class="dashboard-list--submit form-submit" type="submit" id="edit-submit-loop-editor-content" name="" value="Udfør">
@@ -38,17 +37,17 @@
     <div class="dashboard--comment-filters">
       <label class="dashboard--filter-label"><?php print t('Show only');?></label>
       <div class="dashboard--filter-links">
-        <a href="#" class="dashboard--filter-link js-questions-answer-filter js-questions-unanswered is-active"><?php print t('Unanswered questions');?></a>
-        <a href="#" class="dashboard--filter-link js-questions-answer-filter js-questions-answered"><?php print t('Answered questions');?></a>
+        <a href="#" class="dashboard--filter-link js-dashboard-answers-hide is-active"><?php print t('Unanswered questions');?></a>
+        <a href="#" class="dashboard--filter-link js-dashboard-answers-show"><?php print t('Answered questions');?></a>
       </div>
     </div>
     <div class="dashboard--sorting">
       <label class="dashboard--filter-label"><?php print t('Sort by');?></label>
       <div class="dashboard--sort-links">
-        <a href="#" class="js-has-answers-removed dashboard--sort-link js-questions-sort-filter js-questions-sort-newest is-active"><?php print t('Newest');?></a>
-        <a href="#" class="js-has-answers-removed dashboard--sort-link js-questions-sort-filter js-questions-sort-oldest"><?php print t('Oldest');?></a>
-        <a href="#" class="js-has-answers-removed dashboard--sort-link js-questions-sort-filter js-questions-sort-alphabetic is-last"><?php print t('Alphabetical');?></a>
-        <a href="#" class="js-has-answers-removed dashboard--sort-link js-questions-sort-filter js-questions-sort-comments is-hidden"><?php print t('# answers');?></a>
+        <a href="#" class="dashboard--sort-link is-active js-sort-link"><?php print t('Newest');?></a>
+        <a href="#" class="dashboard--sort-link js-sort-link"><?php print t('Oldest');?></a>
+        <a href="#" class="dashboard--sort-link js-sort-link js-dashboard-alphabetical"><?php print t('Alphabetical');?></a>
+        <a href="#" class="dashboard--sort-link js-dashboard-answers"><?php print ('Number of answers');?></a>
       </div>
     </div>
   </div>
@@ -56,10 +55,6 @@
   <div class="dashboard-list js-dashboard-questions">
     <div class="dashboard--spinner">
     </div>
-  </div>
-
-  <div class="dashboard-list--more-link">
-    <a href="/editor/dashboard/questions="><?php print t('show all content');?></a>
   </div>
 </div>
 

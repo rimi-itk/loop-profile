@@ -12,6 +12,25 @@ include_once 'loop_editor_pages.features.inc';
 function loop_editor_pages_menu() {
   $items = array();
 
+  $items['editor/dashboard/questions'] = array(
+    'title' => 'All questions',
+    'page callback' => 'loop_editor_pages_all_questions',
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('administer nodes'),
+  );
+  $items['editor/dashboard/replies'] = array(
+    'title' => 'All questions',
+    'page callback' => 'loop_editor_pages_all_replies',
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('administer nodes'),
+  );
+  $items['editor/dashboard/other_content'] = array(
+    'title' => 'All questions',
+    'page callback' => 'loop_editor_pages_all_other_content',
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('administer nodes'),
+  );
+
   $items['loop_dashboard_search_questions'] = array(
     'title' => 'List nodes in JSON format',
     'page callback' => 'loop_editor_pages_questions',
@@ -35,6 +54,31 @@ function loop_editor_pages_menu() {
 
   return $items;
 }
+
+
+/**
+ * Returns the "all questions" page.
+ */
+function loop_editor_pages_all_questions() {
+  return array('#theme' => 'loop_dashboard_all_questions');
+}
+
+
+/**
+ * Returns the "all replies" page.
+ */
+function loop_editor_pages_all_replies() {
+  return array('#theme' => 'loop_dashboard_all_comments');
+}
+
+
+/**
+ * Returns the "all other content" page.
+ */
+function loop_editor_pages_all_other_content() {
+  return array('#theme' => 'loop_dashboard_all_other_content');
+}
+
 
 /**
  * Return every node of type post in JSON format.
@@ -201,6 +245,18 @@ function loop_editor_pages_theme() {
     'loop_dashboard_other_content' => array(
       'variables' => array(),
       'template' => 'templates/loop-dashboard--other-content',
+    ),
+    'loop_dashboard_all_questions' => array(
+      'variables' => array(),
+      'template' => 'templates/loop-dashboard--all-questions',
+    ),
+    'loop_dashboard_all_comments' => array(
+      'variables' => array(),
+      'template' => 'templates/loop-dashboard--all-comments',
+    ),
+    'loop_dashboard_all_other_content' => array(
+      'variables' => array(),
+      'template' => 'templates/loop-dashboard--all-other-content',
     ),
   );
 }
