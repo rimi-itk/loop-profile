@@ -139,13 +139,22 @@ function loop_editor_pages_comments() {
   // Build nodes.
   $data = array();
   foreach ($comments as $comment) {
+    $uri = $comment->uri;
+
+    if (is_null($uri)) {
+      $uri = '/sites/default/files/default_images/default-user-icon.png';
+    }
+    else {
+      $uri = image_style_url('profile', $comment->uri);
+    }
+
     $data[] = array(
       'subject' => trim($comment->subject),
       'cid' => $comment->cid,
       'date' => format_date($comment->created, 'medium'),
       'ts' => $comment->created,
       'nid' => $comment->nid,
-      'uri' => image_style_url('profile', $comment->uri),
+      'uri' => $uri,
       'uid' => $comment->uid,
       'content-title' => $comment->title,
     );
