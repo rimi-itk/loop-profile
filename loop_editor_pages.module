@@ -99,6 +99,7 @@ function loop_editor_pages_comments() {
       'subject' => trim($comment->subject),
       'cid' => $comment->cid,
       'date' => format_date($comment->created, 'medium'),
+      'ts' => $comment->created,
       'nid' => $comment->nid,
       'uri' => image_style_url('profile', $comment->uri),
       'uid' => $comment->uid,
@@ -132,6 +133,7 @@ function loop_editor_pages_other_content() {
       'title' => trim($node->title),
       'nid' => $node->nid,
       'date' => format_date($node->created, 'medium'),
+      'ts' => $node->created,
     );
   }
 
