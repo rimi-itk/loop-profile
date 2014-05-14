@@ -100,6 +100,45 @@
     min-height: 0;
   }
 }
+@-moz-keyframes spinner {
+  /* line 22, ../sass/animations/_animate.scss */
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  /* line 27, ../sass/animations/_animate.scss */
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spinner {
+  /* line 22, ../sass/animations/_animate.scss */
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  /* line 27, ../sass/animations/_animate.scss */
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes spinner {
+  /* line 22, ../sass/animations/_animate.scss */
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  /* line 27, ../sass/animations/_animate.scss */
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
 /**
  * Normalize
  *
@@ -4427,6 +4466,21 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
 /* line 228, ../sass/modules/_dashboard.scss */
 .dashboard-list--icon:before {
   font-size: 1.25em;
+}
+
+/* line 236, ../sass/modules/_dashboard.scss */
+.dashboard--spinner {
+  background: transparent url("../images/loader.png") no-repeat 0 0;
+  display: block;
+  height: 20px;
+  width: 20px;
+  -moz-animation: spinner 1s;
+  -webkit-animation: spinner 1s;
+  animation: spinner 1s;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
 }
 
 /**
