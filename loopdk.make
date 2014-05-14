@@ -311,6 +311,12 @@ projects[loop_post][download][type] = "git"
 projects[loop_post][download][url] = "git@github.com:loopdk/loop_post.git"
 projects[loop_post][branch] = "development";
 
+projects[loop_saml][type] = "module"
+projects[loop_saml][subdir] = "features"
+projects[loop_saml][download][type] = "git"
+projects[loop_saml][download][url] = "git@github.com:loopdk/loop_saml.git"
+projects[loop_saml][branch] = "development";
+
 projects[loop_search][type] = "module"
 projects[loop_search][subdir] = "features"
 projects[loop_search][download][type] = "git"
