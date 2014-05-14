@@ -29,10 +29,6 @@
     <div class="dashboard--spinner">
     </div>
   </div>
-
-  <div class="dashboard-list--more-link">
-    <a href="/editor/dashboard/content?combine="><?php print t('show all content');?></a>
-  </div>
 </div>
 
 
@@ -47,10 +43,10 @@
     <a href="/comment/{{cid}}#comment-{{cid}}" class="dashboard-list--icon"> </a>
     <p class="dashboard-list--text">
       <a href="/comment/{{cid}}#comment-{{cid}}">{{subject}}</a>
+      <span class="dashboard-list--meta-data">
+        <?php print t('Content, created');?> {{date}}
+      </span>
     </p>
-    <span class="dashboard-list--meta-data">
-      <p>Spørgsmål: {{content-title}}</p>
-      <?php print t('Content, created');?> {{date}}
-    </span>
+    <p class="dashboard-list--question-title"><?php print t('Question');?>: {{content-title}}</p>
   </div>
 </script>

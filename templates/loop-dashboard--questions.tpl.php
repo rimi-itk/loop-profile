@@ -59,7 +59,7 @@
   </div>
 
   <div class="dashboard-list--more-link">
-    <a href="/editor/dashboard/content?combine="><?php print t('show all content');?></a>
+    <a href="/editor/dashboard/questions="><?php print t('show all content');?></a>
   </div>
 </div>
 

@@ -31,7 +31,7 @@
   </div>
 
   <div class="dashboard-list--more-link">
-    <a href="/editor/dashboard/content?combine="><?php print t('show all content');?></a>
+    <a href="/editor/dashboard/comments"><?php print t('show all content');?></a>
   </div>
 </div>
 
@@ -51,6 +51,6 @@
         <?php print t('Content, created');?> {{date}}
       </span>
     </p>
-    <p><?php print t('Question');?>: {{content-title}}</p>
+    <p class="dashboard-list--question-title">{{content-title}}</p>
   </div>
 </script>

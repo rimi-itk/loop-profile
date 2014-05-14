@@ -35,21 +35,21 @@ function loop_editor_pages_menu() {
     'title' => 'List nodes in JSON format',
     'page callback' => 'loop_editor_pages_questions',
     'type' => MENU_CALLBACK,
-    'access arguments' => array('administer nodes'),
+    'access arguments' => array('access content'),
   );
 
   $items['loop_dashboard_search_comments'] = array(
     'title' => 'List nodes in JSON format',
     'page callback' => 'loop_editor_pages_comments',
     'type' => MENU_CALLBACK,
-    'access arguments' => array('administer nodes'),
+    'access arguments' => array('access content'),
   );
 
   $items['loop_dashboard_search_other_content'] = array(
     'title' => 'List nodes in JSON format',
     'page callback' => 'loop_editor_pages_other_content',
     'type' => MENU_CALLBACK,
-    'access arguments' => array('administer nodes'),
+    'access arguments' => array('access content'),
   );
 
   return $items;
