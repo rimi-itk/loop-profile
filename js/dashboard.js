@@ -26,6 +26,14 @@
         $(".js-dashboard-comments").append(dashboard.comment_template(obj));
       });
     }
+    else if (section === 'other-content') {
+      $(".js-dashboard-other-content").each(function() {
+        $(this).html("");
+      });
+      $.each(dashboard.other_content, function(index, obj) {
+        $(".js-dashboard-other-content").append(dashboard.other_content_template(obj));
+      });
+    }
   }
 };
 
@@ -50,7 +58,7 @@ $(document).ready(function($) {
   });
   $.get( "/loop_dashboard_search_other_content", function( data ) {
     dashboard.other_content = data;
-    dashboard.updateList('other_content');
+    dashboard.updateList('other-content');
   });
 });
 
