@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @file loop-dashboard--questions.tpl.php
- * Displays questions list for dashboard.
+ * @file loop-dashboard--all-questions.tpl.php
+ * Displays all questions page dashboard.
  */
 ?>
 <?php if (!empty($profile)) : ?>

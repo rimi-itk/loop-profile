@@ -1,3 +1,10 @@
+<?php
+
+/**
+ * @file loop-dashboard--comments.tpl.php
+ * Displays comments list for dashboard.
+ */
+?>
 <div class="">
   <div class="dashboard-list--filter">
     <form class="dashboard-list--form jquery-once-1-processed" action="/editor/dashboard/content" method="get" id="views-exposed-form-loop-editor-content-panel-pane-1" accept-charset="UTF-8">
@@ -33,18 +40,17 @@
 // This is used to enrich the above results.
 ?>
 <script id="js-list-item-template-comments" type="text/x-handlebars-template">
-  <div class="dashboard-list--item">
-    <div class="">
-      <a href="/user/{{uid}}"><img src="{{uri}}" width="192" height="192" alt=""></a>
+  <div class="dashboard-image-list--item">
+    <div class="meta-data--author-image">
+      <a href="/user/{{uid}}"><img src="{{uri}}"></a>
     </div>
     <a href="/comment/{{cid}}#comment-{{cid}}" class="dashboard-list--icon"> </a>
     <p class="dashboard-list--text">
       <a href="/comment/{{cid}}#comment-{{cid}}">{{subject}}</a>
     </p>
     <span class="dashboard-list--meta-data">
-      {{uri}}
       <p>Spørgsmål: {{content-title}}</p>
-    <?php print t('Content, created');?> {{date}}
+      <?php print t('Content, created');?> {{date}}
     </span>
   </div>
 </script>

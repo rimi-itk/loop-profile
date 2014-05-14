@@ -10,29 +10,73 @@ include_once 'loop_editor_pages.features.inc';
  * Implements hook_menu().
  */
 function loop_editor_pages_menu() {
+  $items['editor/dashboard/questions'] = array(
+    'title' => 'All questions',
+    'page callback' => 'loop_editor_pages_all_questions',
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('administer nodes'),
+  );
+  $items['editor/dashboard/replies'] = array(
+    'title' => 'All questions',
+    'page callback' => 'loop_editor_pages_all_replies',
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('administer nodes'),
+  );
+  $items['editor/dashboard/other_content'] = array(
+    'title' => 'All questions',
+    'page callback' => 'loop_editor_pages_all_other_content',
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('administer nodes'),
+  );
+
   $items['loop_dashboard_search_questions'] = array(
     'title' => 'List nodes in JSON format',
     'page callback' => 'loop_editor_pages_questions',
     'type' => MENU_CALLBACK,
-    'access arguments' => array('access content'),
+    'access arguments' => array('administer nodes'),
   );
 
   $items['loop_dashboard_search_comments'] = array(
     'title' => 'List nodes in JSON format',
     'page callback' => 'loop_editor_pages_comments',
     'type' => MENU_CALLBACK,
-    'access arguments' => array('access content'),
+    'access arguments' => array('administer nodes'),
   );
 
   $items['loop_dashboard_search_other_content'] = array(
     'title' => 'List nodes in JSON format',
     'page callback' => 'loop_editor_pages_other_content',
     'type' => MENU_CALLBACK,
-    'access arguments' => array('access content'),
+    'access arguments' => array('administer nodes'),
   );
 
   return $items;
 }
+
+
+/**
+ * Returns the "all questions" page.
+ */
+function loop_editor_pages_all_questions() {
+  return theme('my_custom_template');
+}
+
+
+/**
+ * Returns the "all replies" page.
+ */
+function loop_editor_pages_all_replies() {
+  return theme('my_custom_template');
+}
+
+
+/**
+ * Returns the "all other content" page.
+ */
+function loop_editor_pages_all_other_content() {
+  return theme('my_custom_template');
+}
+
 
 /**
  * Return every node of type post in JSON format.

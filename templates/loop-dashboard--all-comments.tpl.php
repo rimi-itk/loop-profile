@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @file loop-dashboard--other-content.tpl.php
- * Displays other content list for dashboard.
+ * @file loop-dashboard--all-comments.tpl.php
+ * Displays all comments page for dashboard.
  */
 ?>
 <div class="">
@@ -25,7 +25,7 @@
     </div>
   </div>
 
-  <div class="dashboard-list js-dashboard-other-content">
+  <div class="dashboard-list js-dashboard-comments">
     <div class="dashboard--spinner">
     </div>
   </div>
@@ -39,14 +39,18 @@
 <?php
 // This is used to enrich the above results.
 ?>
-<script id="js-list-item-template-other-content" type="text/x-handlebars-template">
-  <div class="dashboard-list--item">
-    <a href="/node/{{nid}}/edit" class="dashboard-list--icon"> </a>
+<script id="js-list-item-template-comments" type="text/x-handlebars-template">
+  <div class="dashboard-image-list--item">
+    <div class="meta-data--author-image">
+      <a href="/user/{{uid}}"><img src="{{uri}}"></a>
+    </div>
+    <a href="/comment/{{cid}}#comment-{{cid}}" class="dashboard-list--icon"> </a>
     <p class="dashboard-list--text">
-      <a href="/node/{{nid}}">{{title}}</a>
+      <a href="/comment/{{cid}}#comment-{{cid}}">{{subject}}</a>
     </p>
     <span class="dashboard-list--meta-data">
-    <?php print t('Content, created');?> {{date}}
+      <p>Spørgsmål: {{content-title}}</p>
+      <?php print t('Content, created');?> {{date}}
     </span>
   </div>
 </script>
