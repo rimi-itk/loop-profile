@@ -75,10 +75,10 @@
   <div class="dashboard-list--item">
     <a href="/node/{{nid}}/edit" class="dashboard-list--icon"> </a>
     <p class="dashboard-list--text">
-      <a href="/node/{{nid}}">{{title}}</a>
+      <a href="/node/{{nid}}">{{title}}</a> ({{coms}} <?php print ('Answers');?>)
     </p>
     <span class="dashboard-list--meta-data">
-    Indhold, oprettet {{date}}
+    <?php print t('Content, created');?> {{date}}
     </span>
   </div>
 </script>

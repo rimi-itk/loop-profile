@@ -77,18 +77,24 @@ function loop_editor_pages_questions() {
  */
 function loop_editor_pages_comments() {
   // Select nodes.
-  $nodes = db_select('comment', 'c')
+  $comments = db_select('comment', 'c')
     ->fields('c', array('cid', 'nid', 'subject', 'created'))
     ->condition('status', 1)
     ->execute();
 
   // Build nodes.
   $data = array();
-  foreach ($nodes as $node) {
+  foreach ($comments as $comment) {
+    $nodes = db_select('node', 'n')
+      ->fields('n', array('title'))
+      ->condition('nid', $comment->nid)
+      ->execute();
     $data[] = array(
-      'subject' => trim($node->subject),
-      'cid' => $node->cid,
-      'date' => $node->created,
+      'subject' => trim($comment->subject),
+      'cid' => $comment->cid,
+      'date' => $comment->created,
+      'nid' => $comment->nid,
+      //'content-title' => $content_title
     );
   }
 
