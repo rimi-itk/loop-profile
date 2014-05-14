@@ -32,9 +32,9 @@
 <?php endif; ?>
 <div class="">
   <div class="dashboard-list--filter">
-    <form class="dashboard-list--form jquery-once-1-processed" action="/editor/dashboard/content" method="get" id="views-exposed-form-loop-editor-content-panel-pane-1" accept-charset="UTF-8">
+    <form class="dashboard-list--form" accept-charset="UTF-8">
       <div class="views-exposed-widgets">
-        <input placeholder="<?php print t('Type parts of title or content to filter the list');?>" class="dashboard-list--filter-field form-text" type="text" id="edit-combine" name="combine" value="" size="30" maxlength="128">
+        <input placeholder="<?php print t('Type parts of title or content to filter the list');?>" class="dashboard-list--filter-field form-text js-questions-text-filter" type="text" id="edit-combine" name="combine" value="" size="30" maxlength="128">
       </div>
       <div class="">
         <input class="dashboard-list--submit form-submit" type="submit" id="edit-submit-loop-editor-content" name="" value="Udfør">
@@ -50,10 +50,10 @@
     <div class="dashboard--sorting">
       <label class="dashboard--filter-label"><?php print t('Sort by');?></label>
       <div class="dashboard--sort-links">
-        <a href="#" class="dashboard--sort-link js-questions-sort-filter js-questions-sort-newest is-active"><?php print t('Newest');?></a>
-        <a href="#" class="dashboard--sort-link js-questions-sort-filter js-questions-sort-oldest"><?php print t('Oldest');?></a>
-        <a href="#" class="dashboard--sort-link js-questions-sort-filter js-questions-sort-alphabetic"><?php print t('Alphabetical');?></a>
-        <a href="#" class="dashboard--sort-link js-questions-sort-filter js-questions-sort-comments"><?php print t('# answers');?></a>
+        <a href="#" class="js-has-answers-removed dashboard--sort-link js-questions-sort-filter js-questions-sort-newest is-active"><?php print t('Newest');?></a>
+        <a href="#" class="js-has-answers-removed dashboard--sort-link js-questions-sort-filter js-questions-sort-oldest"><?php print t('Oldest');?></a>
+        <a href="#" class="js-has-answers-removed dashboard--sort-link js-questions-sort-filter js-questions-sort-alphabetic is-last"><?php print t('Alphabetical');?></a>
+        <a href="#" class="js-has-answers-removed dashboard--sort-link js-questions-sort-filter js-questions-sort-comments is-hidden"><?php print t('# answers');?></a>
       </div>
     </div>
   </div>
