@@ -27,7 +27,8 @@
   </div>
 
   <div class="dashboard-list js-dashboard-questions">
-    Insert here
+    <div class="dashboard--spinner">
+    </div>
   </div>
 
   <div class="dashboard-list--more-link">
