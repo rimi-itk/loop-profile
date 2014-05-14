@@ -60,7 +60,7 @@ function loop_editor_pages_questions() {
     $data[] = array(
       'title' => trim($node->title),
       'nid' => $node->nid,
-      'date' => $node->created,
+      'date' => format_date($node->created, 'medium'),
       'coms' => $num_of_results
     );
   }
@@ -77,24 +77,29 @@ function loop_editor_pages_questions() {
  */
 function loop_editor_pages_comments() {
   // Select nodes.
-  $comments = db_select('comment', 'c')
-    ->fields('c', array('cid', 'nid', 'subject', 'created'))
-    ->condition('status', 1)
-    ->execute();
+  $comments = db_select('comment', 'c');
+  $comments->leftJoin('node', 'n', 'c.nid = n.nid');
+  $comments->leftJoin('field_data_field_user_image', 'i', 'c.uid = i.entity_id');
+  $comments->leftJoin('file_managed', 'f', 'f.fid = i.field_user_image_fid');
+  $comments
+    ->fields('n', array('title'))
+    ->fields('c', array('cid', 'nid', 'subject', 'created', 'uid'))
+    ->fields('f', array('uri'))
+    ->condition('c.status', 1);
+
+  $comments = $comments->execute();
 
   // Build nodes.
   $data = array();
   foreach ($comments as $comment) {
-    $nodes = db_select('node', 'n')
-      ->fields('n', array('title'))
-      ->condition('nid', $comment->nid)
-      ->execute();
     $data[] = array(
       'subject' => trim($comment->subject),
       'cid' => $comment->cid,
-      'date' => $comment->created,
+      'date' => format_date($comment->created, 'medium'),
       'nid' => $comment->nid,
-      //'content-title' => $content_title
+      'uri' => image_style_url('profile', $comment->uri),
+      'uid' => $comment->uid,
+      'content-title' => $comment->title
     );
   }
 
@@ -123,7 +128,7 @@ function loop_editor_pages_other_content() {
     $data[] = array(
       'title' => trim($node->title),
       'nid' => $node->nid,
-      'date' => $node->created
+      'date' => format_date($node->created, 'medium'),
     );
   }
 

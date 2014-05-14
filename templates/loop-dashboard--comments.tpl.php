@@ -33,14 +33,17 @@
 ?>
 <script id="js-list-item-template-comments" type="text/x-handlebars-template">
   <div class="dashboard-list--item">
+    <div class="">
+      <a href="/user/{{uid}}"><img src="{{uri}}" width="192" height="192" alt=""></a>
+    </div>
     <a href="/comment/{{cid}}#comment-{{cid}}" class="dashboard-list--icon"> </a>
     <p class="dashboard-list--text">
       <a href="/comment/{{cid}}#comment-{{cid}}">{{subject}}</a>
     </p>
     <span class="dashboard-list--meta-data">
+      {{uri}}
+      <p>Spørgsmål: {{content-title}}</p>
     <?php print t('Content, created');?> {{date}}
     </span>
-    {{nid}}
-    {{content-title}}
   </div>
 </script>

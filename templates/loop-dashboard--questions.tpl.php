@@ -75,7 +75,7 @@
   <div class="dashboard-list--item">
     <a href="/node/{{nid}}/edit" class="dashboard-list--icon"> </a>
     <p class="dashboard-list--text">
-      <a href="/node/{{nid}}">{{title}}</a> ({{coms}} <?php print ('Answers');?>)
+      <a href="/node/{{nid}}">{{title}}</a> ({{coms}} <?php print ('answers');?>)
     </p>
     <span class="dashboard-list--meta-data">
     <?php print t('Content, created');?> {{date}}
