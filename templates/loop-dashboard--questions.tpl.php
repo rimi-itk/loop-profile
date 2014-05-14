@@ -38,8 +38,8 @@
     <div class="dashboard--comment-filters">
       <label class="dashboard--filter-label"><?php print t('Show only');?></label>
       <div class="dashboard--filter-links">
-        <a href="#" class="dashboard--filter-link js-dashboard-answers-hide is-active"><?php print t('Unanswered questions');?></a>
-        <a href="#" class="dashboard--filter-link js-dashboard-answers-show"><?php print t('Answered questions');?></a>
+        <a href="#" class="dashboard--filter-link js-questions-answer-filter js-questions-unanswered is-active"><?php print t('Unanswered questions');?></a>
+        <a href="#" class="dashboard--filter-link js-questions-answer-filter js-questions-answered"><?php print t('Answered questions');?></a>
       </div>
     </div>
     <div class="dashboard--sorting">
@@ -48,7 +48,7 @@
         <a href="#" class="dashboard--sort-link is-active js-sort-link"><?php print t('Newest');?></a>
         <a href="#" class="dashboard--sort-link js-sort-link"><?php print t('Oldest');?></a>
         <a href="#" class="dashboard--sort-link js-sort-link js-dashboard-alphabetical"><?php print t('Alphabetical');?></a>
-        <a href="#" class="dashboard--sort-link js-dashboard-answers"><?php print ('Number of answers');?></a>
+        <a href="#" class="dashboard--sort-link js-dashboard-answers"><?php print('# answers');?></a>
       </div>
     </div>
   </div>
