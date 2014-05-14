@@ -19,7 +19,8 @@
   </div>
 
   <div class="dashboard-list js-dashboard-other-content">
-    Insert here
+    <div class="dashboard--spinner">
+    </div>
   </div>
 
   <div class="dashboard-list--more-link">
