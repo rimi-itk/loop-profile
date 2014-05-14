@@ -10,6 +10,8 @@ include_once 'loop_editor_pages.features.inc';
  * Implements hook_menu().
  */
 function loop_editor_pages_menu() {
+  $items = array();
+
   $items['loop_dashboard_search_questions'] = array(
     'title' => 'List nodes in JSON format',
     'page callback' => 'loop_editor_pages_questions',
@@ -53,7 +55,7 @@ function loop_editor_pages_questions() {
   foreach ($nodes as $node) {
     $comments = db_select('comment', 'c')
       ->fields('c')
-      ->condition('nid',$node->nid)
+      ->condition('nid', $node->nid)
       ->execute();
     $num_of_results = $comments->rowCount();
 
@@ -61,7 +63,7 @@ function loop_editor_pages_questions() {
       'title' => trim($node->title),
       'nid' => $node->nid,
       'date' => format_date($node->created, 'medium'),
-      'coms' => $num_of_results
+      'coms' => $num_of_results,
     );
   }
 
@@ -99,7 +101,7 @@ function loop_editor_pages_comments() {
       'nid' => $comment->nid,
       'uri' => image_style_url('profile', $comment->uri),
       'uid' => $comment->uid,
-      'content-title' => $comment->title
+      'content-title' => $comment->title,
     );
   }
 
@@ -137,8 +139,6 @@ function loop_editor_pages_other_content() {
 
 }
 
-
-
 /**
  * Implements hook_block_info().
  */
@@ -158,26 +158,29 @@ function loop_editor_pages_block_info() {
   return $blocks;
 }
 
-
 /**
  * Implements hook_block_view().
  */
 function loop_editor_pages_block_view($delta = '') {
   $block = array();
   switch ($delta) {
-    case 'loop_dashboard_questions' :
-      $block['content'] = theme('loop_dashboard_questions');
+    case 'loop_dashboard_questions':
+      $block['content'] = array('#theme' => 'loop_dashboard_questions');
+      drupal_add_js(drupal_get_path('module', 'loop_editor_pages') . '/js/dashboard_questions.js');
       break;
-    case 'loop_dashboard_comments' :
-      $block['content'] = theme('loop_dashboard_comments');
+
+    case 'loop_dashboard_comments':
+      $block['content'] = array('#theme' => 'loop_dashboard_comments');
+      drupal_add_js(drupal_get_path('module', 'loop_editor_pages') . '/js/dashboard_comments.js');
       break;
-    case 'loop_dashboard_other_content' :
-      $block['content'] = theme('loop_dashboard_other_content');
+
+    case 'loop_dashboard_other_content':
+      $block['content'] = array('#theme' => 'loop_dashboard_other_content');
+      drupal_add_js(drupal_get_path('module', 'loop_editor_pages') . '/js/dashboard_other_content.js');
       break;
   }
   return $block;
 }
-
 
 /**
  * Implements hook_theme().
@@ -197,19 +200,4 @@ function loop_editor_pages_theme() {
       'template' => 'templates/loop-dashboard--other-content',
     ),
   );
-}
-
-/**
- * Implements hook_init().
- *
- * Include search JS for every pageload!
- */
-function loop_editor_pages_init() {
-  global $user;
-
-  // Check if it's a registered user.
-  if ($user->uid > 0) {
-    drupal_add_js(drupal_get_path('module', 'loop_search') . '/js/handlebars-v1.2.0.js');
-    drupal_add_js(drupal_get_path('module', 'loop_editor_pages') . '/js/dashboard.js');
-  }
 }
