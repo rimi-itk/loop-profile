@@ -47,7 +47,7 @@
       <div class="dashboard--sort-links">
         <a href="#" class="js-has-answers-removed dashboard--sort-link js-questions-sort-filter js-questions-sort-newest is-active"><?php print t('Newest');?></a>
         <a href="#" class="js-has-answers-removed dashboard--sort-link js-questions-sort-filter js-questions-sort-oldest"><?php print t('Oldest');?></a>
-        <a href="#" class="js-has-answers-removed dashboard--sort-link js-questions-sort-filter js-questions-sort-alphabetic is-last"><?php print t('Alphabetical');?></a>
+        <a href="#" class="js-has-answers-removed dashboard--sort-link js-questions-sort-filter js-questions-sort-alphabetic is-last"><span class="dashboard--alphabetical-link"><?php print t('Alphabetical');?></span></a>
         <a href="#" class="js-has-answers-removed dashboard--sort-link js-questions-sort-filter js-questions-sort-comments is-hidden"><?php print t('# answers');?></a>
       </div>
     </div>
