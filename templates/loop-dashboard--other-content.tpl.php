@@ -38,7 +38,7 @@
       <a href="/node/{{nid}}">{{title}}</a>
     </p>
     <span class="dashboard-list--meta-data">
-    Indhold, oprettet {{date}}
+    <?php print t('Content, created');?> {{date}}
     </span>
   </div>
 </script>

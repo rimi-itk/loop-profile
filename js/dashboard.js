@@ -30,9 +30,11 @@
 };
 
 $(document).ready(function($) {
+
   dashboard.question_template = Handlebars.compile(
     $("#js-list-item-template-questions").html()
   );
+
   dashboard.comment_template = Handlebars.compile(
     $("#js-list-item-template-comments").html()
   );

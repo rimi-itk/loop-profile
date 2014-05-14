@@ -38,7 +38,9 @@
       <a href="/comment/{{cid}}#comment-{{cid}}">{{subject}}</a>
     </p>
     <span class="dashboard-list--meta-data">
-    Indhold, oprettet {{date}}
+    <?php print t('Content, created');?> {{date}}
     </span>
+    {{nid}}
+    {{content-title}}
   </div>
 </script>
