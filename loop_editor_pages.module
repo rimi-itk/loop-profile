@@ -64,6 +64,7 @@ function loop_editor_pages_questions() {
       'nid' => $node->nid,
       'date' => format_date($node->created, 'medium'),
       'coms' => $num_of_results,
+      'ts' => $node->created,
     );
   }
 

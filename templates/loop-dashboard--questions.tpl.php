@@ -50,10 +50,10 @@
     <div class="dashboard--sorting">
       <label class="dashboard--filter-label"><?php print t('Sort by');?></label>
       <div class="dashboard--sort-links">
-        <a href="#" class="dashboard--sort-link is-active js-sort-link"><?php print t('Newest');?></a>
-        <a href="#" class="dashboard--sort-link js-sort-link"><?php print t('Oldest');?></a>
-        <a href="#" class="dashboard--sort-link js-sort-link js-dashboard-alphabetical"><?php print t('Alphabetical');?></a>
-        <a href="#" class="dashboard--sort-link js-dashboard-answers"><?php print('# answers');?></a>
+        <a href="#" class="dashboard--sort-link js-questions-sort-filter js-questions-sort-newest is-active"><?php print t('Newest');?></a>
+        <a href="#" class="dashboard--sort-link js-questions-sort-filter js-questions-sort-oldest"><?php print t('Oldest');?></a>
+        <a href="#" class="dashboard--sort-link js-questions-sort-filter js-questions-sort-alphabetic"><?php print t('Alphabetical');?></a>
+        <a href="#" class="dashboard--sort-link js-questions-sort-filter js-questions-sort-comments"><?php print t('# answers');?></a>
       </div>
     </div>
   </div>
