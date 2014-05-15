@@ -3848,6 +3848,13 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   background-color: #eb3000;
 }
 
+/* line 35, ../sass/modules/_tag.scss */
+.tag--list-description {
+  margin-bottom: .5em;
+  color: #b3b3b3;
+  font-size: .85em;
+}
+
 /**
  * Twitter typeahead
  *
