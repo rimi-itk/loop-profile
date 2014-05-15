@@ -60,6 +60,7 @@ function loop_editor_pages_menu() {
  * Returns the "all questions" page.
  */
 function loop_editor_pages_all_questions() {
+  drupal_add_js(drupal_get_path('module', 'loop_editor_pages') . '/js/dashboard_all_questions.js');
   return array('#theme' => 'loop_dashboard_all_questions');
 }
 
@@ -68,6 +69,7 @@ function loop_editor_pages_all_questions() {
  * Returns the "all replies" page.
  */
 function loop_editor_pages_all_replies() {
+  drupal_add_js(drupal_get_path('module', 'loop_editor_pages') . '/js/dashboard_all_comments.js');
   return array('#theme' => 'loop_dashboard_all_comments');
 }
 
@@ -76,6 +78,7 @@ function loop_editor_pages_all_replies() {
  * Returns the "all other content" page.
  */
 function loop_editor_pages_all_other_content() {
+  drupal_add_js(drupal_get_path('module', 'loop_editor_pages') . '/js/dashboard_all_other_content.js');
   return array('#theme' => 'loop_dashboard_all_other_content');
 }
 

@@ -42,10 +42,6 @@
             gt_zero_comments === dq.filter.answered) {
           dq.display.push(obj);
         }
-        if (dq.display.length >= dq.filter.items) {
-          // Break each.
-          return false;
-        }
       });
 
       $(".js-dashboard-questions").html("");

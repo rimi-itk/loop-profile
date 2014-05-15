@@ -28,7 +28,7 @@
     </div>
   </div>
 
-  <div class="dashboard-list js-dashboard-other-content">
+  <div class="dashboard-list js-dashboard-other">
     <div class="dashboard--spinner">
     </div>
   </div>
@@ -38,7 +38,7 @@
 <?php
 // This is used to enrich the above results.
 ?>
-<script id="js-list-item-template-other-content" type="text/x-handlebars-template">
+<script id="js-list-item-template-other" type="text/x-handlebars-template">
   <div class="dashboard-list--item">
     <a href="/node/{{nid}}/edit" class="dashboard-list--icon"> </a>
     <p class="dashboard-list--text">
