@@ -56,7 +56,7 @@ projects[globalredirect][subdir] = "contrib"
 projects[globalredirect][version] = "1.5"
 
 projects[google_analytics][subdir] = "contrib"
-projects[google_analytics][version] = "1.4"
+projects[google_analytics][version] = "2.x-dev"
 
 projects[google_analytics_counter][subdir] = "contrib"
 projects[google_analytics_counter][version] = "2.1"
@@ -151,6 +151,19 @@ projects[role_delegation][version] = "1.1"
 
 projects[rules][subdir] = "contrib"
 projects[rules][version] = "2.6"
+
+projects[saml_sp][type] = "module"
+projects[saml_sp][subdir] = "contrib"
+projects[saml_sp][download][type] = "git"
+projects[saml_sp][download][url] = "http://git.drupal.org/project/saml_sp.git"
+projects[saml_sp][download][branch] = "7.x-1.x"
+projects[saml_sp][patch][] = https://drupal.org/files/issues/1793514-saml_sp-dependency-2.patch
+projects[saml_sp][patch][] = https://drupal.org/files/issues/1760312-saml_sp-size-too-small-1.patch
+projects[saml_sp][patch][] = https://drupal.org/files/use_libraries_api_for_saml_toolkit-1765108-1.patch
+projects[saml_sp][patch][] = https://drupal.org/files/issues/2266289-required-files-3.patch
+projects[saml_sp][patch][] = https://drupal.org/files/issues/2267103-base64-decode-string-1.patch
+projects[saml_sp][patch][] = https://drupal.org/files/issues/2267127-add-logout-url-1.patch
+projects[saml_sp][patch][] = https://drupal.org/files/issues/2267133-uninstall-remove-variable-1.patch
 
 projects[search_api][subdir] = "contrib"
 projects[search_api][version] = "1.11"
@@ -298,6 +311,12 @@ projects[loop_post][download][type] = "git"
 projects[loop_post][download][url] = "git@github.com:loopdk/loop_post.git"
 projects[loop_post][branch] = "development";
 
+projects[loop_saml][type] = "module"
+projects[loop_saml][subdir] = "features"
+projects[loop_saml][download][type] = "git"
+projects[loop_saml][download][url] = "git@github.com:loopdk/loop_saml.git"
+projects[loop_saml][branch] = "development";
+
 projects[loop_search][type] = "module"
 projects[loop_search][subdir] = "features"
 projects[loop_search][download][type] = "git"
@@ -381,3 +400,8 @@ libraries[respondjs][download][type] = "get"
 libraries[respondjs][download][url] = "https://raw.github.com/scottjehl/Respond/master/dest/respond.min.js"
 libraries[respondjs][directory_name] = "respondjs"
 libraries[respondjs][destination] = "libraries"
+
+libraries[php-saml][download][type] = "git"
+libraries[php-saml][download][url] = "https://github.com/onelogin/php-saml.git"
+libraries[php-saml][directory_name] = "php-saml"
+libraries[php-saml][destination] = "libraries"

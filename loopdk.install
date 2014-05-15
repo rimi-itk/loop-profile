@@ -23,6 +23,9 @@ function loopdk_install() {
   // Activate admin theme when editing a node.
   variable_set('node_admin_theme', '1');
 
+  // Enable User tracking in Google Analytics.
+  variable_set('googleanalytics_trackuserid', 1);
+
   // Setup page not found.
   loopdk_page_not_found();
 
