@@ -20,7 +20,10 @@
       <div class="dashboard--sort-links">
         <a href="#" class="js-has-answers-removed dashboard--sort-link js-comments-sort-filter js-comments-sort-newest is-active"><?php print t('Newest');?></a>
         <a href="#" class="js-has-answers-removed dashboard--sort-link js-comments-sort-filter js-comments-sort-oldest "><?php print t('Oldest');?></a>
-        <a href="#" class="js-has-answers-removed dashboard--sort-link js-comments-sort-filter js-comments-sort-alphabetic is-last"><?php print t('Alphabetical');?></a>
+        <a href="#" class="js-has-answers-removed dashboard--sort-link js-comments-sort-filter js-comments-sort-alphabetic is-last">
+          <span class="dashboard--alphabetical-link-short"><?php print t('A-Z');?></span>
+          <span class="dashboard--alphabetical-link-long"><?php print t('Alphabetical');?></span>
+        </a>
       </div>
     </div>
   </div>

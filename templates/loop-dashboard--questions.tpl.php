@@ -38,8 +38,14 @@
     <div class="dashboard--comment-filters">
       <label class="dashboard--filter-label"><?php print t('Show only');?></label>
       <div class="dashboard--filter-links">
-        <a href="#" class="dashboard--filter-link js-questions-answer-filter js-questions-unanswered is-active"><?php print t('Unanswered questions');?></a>
-        <a href="#" class="dashboard--filter-link js-questions-answer-filter js-questions-answered"><?php print t('Answered questions');?></a>
+        <a href="#" class="dashboard--filter-link js-questions-answer-filter js-questions-unanswered is-active">
+          <span class="dashboard--show-only-link-short"><?php print t('Unanswered');?></span>
+          <span class="dashboard--show-only-link-long"><?php print t('Unanswered questions');?></span>
+        </a>
+        <a href="#" class="dashboard--filter-link js-questions-answer-filter js-questions-answered">
+          <span class="dashboard--show-only-link-short"><?php print t('Answered');?></span>
+          <span class="dashboard--show-only-link-long"><?php print t('Answered questions');?></span>
+        </a>
       </div>
     </div>
     <div class="dashboard--sorting">
@@ -47,8 +53,14 @@
       <div class="dashboard--sort-links">
         <a href="#" class="js-has-answers-removed dashboard--sort-link js-questions-sort-filter js-questions-sort-newest is-active"><?php print t('Newest');?></a>
         <a href="#" class="js-has-answers-removed dashboard--sort-link js-questions-sort-filter js-questions-sort-oldest"><?php print t('Oldest');?></a>
-        <a href="#" class="js-has-answers-removed dashboard--sort-link js-questions-sort-filter js-questions-sort-alphabetic is-last"><span class="dashboard--alphabetical-link"><?php print t('Alphabetical');?></span></a>
-        <a href="#" class="js-has-answers-removed dashboard--sort-link js-questions-sort-filter js-questions-sort-comments is-hidden"><?php print t('# answers');?></a>
+        <a href="#" class="js-has-answers-removed dashboard--sort-link js-questions-sort-filter js-questions-sort-alphabetic is-last">
+          <span class="dashboard--alphabetical-link-short"><?php print t('A-Z');?></span>
+          <span class="dashboard--alphabetical-link-long"><?php print t('Alphabetical');?></span>
+        </a>
+        <a href="#" class="js-has-answers-removed dashboard--sort-link js-questions-sort-filter js-questions-sort-comments is-hidden">
+          <span class="dashboard--replies-link-short"><?php print t('Comments');?></span>
+          <span class="dashboard--replies-link-long"><?php print t('# answers');?></span>
+        </a>
       </div>
     </div>
   </div>
