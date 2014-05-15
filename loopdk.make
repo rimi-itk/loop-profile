@@ -383,6 +383,12 @@ projects[loop_taxonomy_views][download][type] = "git"
 projects[loop_taxonomy_views][download][url] = "git@github.com:loopdk/loop_taxonomy_views.git"
 projects[loop_taxonomy_views][branch] = "development"
 
+projects[loop_taxonomy_terms][type] = "module"
+projects[loop_taxonomy_terms][subdir] = "features/content"
+projects[loop_taxonomy_terms][download][type] = "git"
+projects[loop_taxonomy_terms][download][url] = "git@github.com:loopdk/loop_taxonomy_terms.git"
+projects[loop_taxonomy_terms][branch] = "development"
+
 ; LOOP themes
 projects[loop][type] = "theme"
 projects[loop][download][type] = "git"
