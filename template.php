@@ -821,10 +821,8 @@ function _loop_fetch_author_image($author) {
     $author_image_field = $wrapper->field_user_image->value();
     $author_image = theme('image_style', array('style_name' => 'preview', 'path' => $author_image_field['uri']));
     if (empty($author_image_field)) {
-      $field_info = field_info_field('field_user_image');
-      $fid = $field_info['settings']['default_image'];
-      $image = file_load($fid);
-      $author_image = theme('image_style', array('style_name' => 'preview', 'path' => $image->uri));
+      $image_path = 'default-user-icon.png';
+      $author_image = theme('image_style', array('style_name' => 'preview', 'path' => $image_path));
     }
     return $author_image;
   }
