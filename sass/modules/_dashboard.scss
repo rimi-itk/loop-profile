@@ -256,7 +256,7 @@
   margin: 0 auto;
 
   @include animation(spinner 1s);
-  
+
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
   animation-timing-function: linear;
