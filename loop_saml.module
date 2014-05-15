@@ -48,6 +48,19 @@ function loop_saml_form_user_profile_form_alter(&$form)  {
     $form['account']['pass']['#access'] = FALSE;
   }
 }
+
+/**
+ * Define saml role.
+ *
+ * @return
+ *   An array defining the saml role.
+ */
+function loop_saml_secure_permissions_roles() {
+  return array(
+    'saml',
+  );
+}
+
 /**
  * Simple formular for SAML AZ login.
  */
