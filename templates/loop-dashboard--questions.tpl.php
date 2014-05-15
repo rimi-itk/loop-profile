@@ -26,6 +26,7 @@
   </aside>
 <?php endif; ?>
 <div class="">
+  <h2><?php print t('Questions') ?></h2>
   <div class="dashboard-list--filter">
     <form class="dashboard-list--form" accept-charset="UTF-8">
       <div class="views-exposed-widgets">

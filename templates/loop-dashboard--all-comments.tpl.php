@@ -6,6 +6,7 @@
  */
 ?>
 <div class="">
+  <h1><?php print t('All comments') ?></h1>
   <div class="dashboard-list--filter">
     <form class="dashboard-list--form" accept-charset="UTF-8">
       <div class="views-exposed-widgets">

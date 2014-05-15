@@ -6,6 +6,7 @@
  */
 ?>
 <div class="">
+  <h2><?php print t('Comments') ?></h2>
   <div class="dashboard-list--filter">
     <form class="dashboard-list--form" accept-charset="UTF-8">
       <div class="views-exposed-widgets">
@@ -34,7 +35,7 @@
   </div>
 
   <div class="dashboard-list--more-link">
-    <a href="/editor/dashboard/replies"><?php print t('show all replies');?></a>
+    <a href="/editor/dashboard/replies"><?php print t('show all comments');?></a>
   </div>
 </div>
 

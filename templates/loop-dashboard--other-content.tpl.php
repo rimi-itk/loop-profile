@@ -6,6 +6,7 @@
  */
 ?>
 <div class="">
+  <h2><?php print t('Content') ?></h2>
   <div class="dashboard-list--filter">
     <form class="dashboard-list--form jquery-once-1-processed" action="/editor/dashboard/content" method="get" id="views-exposed-form-loop-editor-content-panel-pane-1" accept-charset="UTF-8">
       <div class="views-exposed-widgets">
