@@ -1068,8 +1068,8 @@ label {
  */
 @font-face {
   font-family: 'loop-icons';
-  src: url("../icons/loop-icons.eot?62162620");
-  src: url("../icons/loop-icons.eot?62162620#iefix") format("embedded-opentype"), url("../icons/loop-icons.woff?62162620") format("woff"), url("../icons/loop-icons.ttf?62162620") format("truetype"), url("../icons/loop-icons.svg?62162620#loop-icons") format("svg");
+  src: url("../icons/loop-icons.eot?24139454");
+  src: url("../icons/loop-icons.eot?24139454#iefix") format("embedded-opentype"), url("../icons/loop-icons.woff?24139454") format("woff"), url("../icons/loop-icons.ttf?24139454") format("truetype"), url("../icons/loop-icons.svg?24139454#loop-icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -1083,7 +1083,7 @@ label {
   }
 }
 */
-/* line 29, ../sass/theme/_icons.scss */
+/* line 30, ../sass/theme/_icons.scss */
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "loop-icons";
   font-style: normal;
@@ -1100,174 +1100,197 @@ label {
   text-transform: none;
 }
 
-/* line 47, ../sass/theme/_icons.scss */
+/* line 48, ../sass/theme/_icons.scss */
 .icon-check-circled:before {
   content: '\e80d';
 }
 
 /* '' */
-/* line 48, ../sass/theme/_icons.scss */
+/* line 49, ../sass/theme/_icons.scss */
 .icon-filter:before {
   content: '\e80c';
 }
 
 /* '' */
-/* line 49, ../sass/theme/_icons.scss */
+/* line 50, ../sass/theme/_icons.scss */
 .icon-check:before {
   content: '\e804';
 }
 
 /* '' */
-/* line 50, ../sass/theme/_icons.scss */
+/* line 51, ../sass/theme/_icons.scss */
 .icon-cancel-circled:before {
   content: '\e80b';
 }
 
 /* '' */
-/* line 51, ../sass/theme/_icons.scss */
+/* line 52, ../sass/theme/_icons.scss */
 .icon-thumbs:before {
   content: '\e805';
 }
 
 /* '' */
-/* line 52, ../sass/theme/_icons.scss */
+/* line 53, ../sass/theme/_icons.scss */
 .icon-search:before {
   content: '\e803';
 }
 
 /* '' */
-/* line 53, ../sass/theme/_icons.scss */
+/* line 54, ../sass/theme/_icons.scss */
 .icon-loading:before {
   content: '\e806';
 }
 
 /* '' */
-/* line 54, ../sass/theme/_icons.scss */
+/* line 55, ../sass/theme/_icons.scss */
 .icon-arrow-right-medium:before {
   content: '\e807';
 }
 
 /* '' */
-/* line 55, ../sass/theme/_icons.scss */
+/* line 56, ../sass/theme/_icons.scss */
 .icon-arrow-right-small:before {
   content: '\e808';
 }
 
 /* '' */
-/* line 56, ../sass/theme/_icons.scss */
+/* line 57, ../sass/theme/_icons.scss */
 .icon-arrow-right-big:before {
   content: '\e809';
 }
 
 /* '' */
-/* line 57, ../sass/theme/_icons.scss */
+/* line 58, ../sass/theme/_icons.scss */
 .icon-arrow-down-medium:before {
   content: '\e802';
 }
 
 /* '' */
-/* line 58, ../sass/theme/_icons.scss */
+/* line 59, ../sass/theme/_icons.scss */
 .icon-comment:before {
   content: '\e80a';
 }
 
 /* '' */
-/* line 59, ../sass/theme/_icons.scss */
+/* line 60, ../sass/theme/_icons.scss */
 .icon-pencil:before {
   content: '\e80e';
 }
 
 /* '' */
-/* line 60, ../sass/theme/_icons.scss */
+/* line 61, ../sass/theme/_icons.scss */
 .icon-cancel:before {
   content: '\e800';
 }
 
 /* '' */
-/* line 61, ../sass/theme/_icons.scss */
+/* line 62, ../sass/theme/_icons.scss */
 .icon-attention:before {
   content: '\e801';
 }
 
 /* '' */
+/* line 63, ../sass/theme/_icons.scss */
+.icon-clock:before {
+  content: '\e810';
+}
+
+/* '' */
+/* line 64, ../sass/theme/_icons.scss */
+.icon-alphabetical:before {
+  content: '\e811';
+}
+
+/* '' */
+/* line 65, ../sass/theme/_icons.scss */
+.icon-help-circled:before {
+  content: '\e80F';
+}
+
+/* '' */
 /* Icon shadow classes
    ================================================================================================================== */
-/* line 67, ../sass/theme/_icons.scss */
+/* line 70, ../sass/theme/_icons.scss */
 .comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .messages.warning:before, .nav-mobile .nav--link:before, .nav-mobile .nav--logout:before,
 .nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before, .twitter-typeahead:before, .dashboard-list--filter:before, .dashboard-list--icon:before {
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before, .twitter-typeahead:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before {
   display: inline-block;
   font-family: "loop-icons";
   line-height: 100%;
 }
 
-/* line 74, ../sass/theme/_icons.scss */
+/* line 77, ../sass/theme/_icons.scss */
 .nav-mobile .nav--link:before, .nav-mobile .nav--logout:before,
 .nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .comment--flag:before, .guide--nav-list-item .active:before, .search-result--comments:before, .question--number-of-comments:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .messages.status:before, .messages.warning:before, .messages.error:before {
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .comment--flag:before, .guide--nav-list-item .active:before, .search-result--comments:before, .question--number-of-comments:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .messages.status:before, .messages.warning:before, .messages.error:before {
   margin-right: .35em;
 }
 
-/* line 78, ../sass/theme/_icons.scss */
+/* line 81, ../sass/theme/_icons.scss */
 .at-term:after {
   margin-left: .35em;
 }
 
-/* line 82, ../sass/theme/_icons.scss */
+/* line 85, ../sass/theme/_icons.scss */
 .comment--flag.is-sticky:before {
   content: '\e804';
 }
 
-/* line 88, ../sass/theme/_icons.scss */
+/* line 91, ../sass/theme/_icons.scss */
 .messages.status:before {
   content: '\e80d';
 }
 
-/* line 94, ../sass/theme/_icons.scss */
+/* line 97, ../sass/theme/_icons.scss */
 .comment--flag:before {
   content: '\e805';
 }
 
-/* line 100, ../sass/theme/_icons.scss */
+/* line 103, ../sass/theme/_icons.scss */
 .at-term:after, .messages.error:before {
   content: '\e800';
 }
 
-/* line 106, ../sass/theme/_icons.scss */
+/* line 109, ../sass/theme/_icons.scss */
 .message--flag:before {
   content: '\e80b';
 }
 
-/* line 112, ../sass/theme/_icons.scss */
+/* line 115, ../sass/theme/_icons.scss */
 .search-result--comments:before, .question--number-of-comments:before {
   content: '\e80a';
 }
 
-/* line 118, ../sass/theme/_icons.scss */
+/* line 121, ../sass/theme/_icons.scss */
 .messages.warning:before {
   content: '\e801';
 }
 
-/* line 124, ../sass/theme/_icons.scss */
+/* line 127, ../sass/theme/_icons.scss */
 .nav-mobile .nav--link:before, .nav-mobile .nav--logout:before,
 .nav-mobile .nav-dropdown--header:before,
 .nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before {
   content: '\e807';
 }
 
-/* line 136, ../sass/theme/_icons.scss */
+/* line 139, ../sass/theme/_icons.scss */
 .twitter-typeahead:before {
   content: '\e803';
 }
 
-/* line 142, ../sass/theme/_icons.scss */
+/* line 145, ../sass/theme/_icons.scss */
 .dashboard-list--filter:before {
   content: '\e80c';
 }
 
-/* line 148, ../sass/theme/_icons.scss */
+/* line 151, ../sass/theme/_icons.scss */
 .dashboard-list--icon:before {
   content: '\e80e';
+}
+
+/* line 169, ../sass/theme/_icons.scss */
+.dashboard-list--question-title:before {
+  content: '\e80f';
 }
 
 /**
@@ -4234,15 +4257,22 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
 
 /* line 58, ../sass/modules/_dashboard.scss */
 .dashboard--sorting {
+  font-size: 78%;
   margin-bottom: 2em;
 }
+@media only screen and (min-width: 30em) {
+  /* line 58, ../sass/modules/_dashboard.scss */
+  .dashboard--sorting {
+    font-size: 100%;
+  }
+}
 
-/* line 62, ../sass/modules/_dashboard.scss */
+/* line 67, ../sass/modules/_dashboard.scss */
 .dashboard--filter-label {
   font-weight: bold;
 }
 
-/* line 66, ../sass/modules/_dashboard.scss */
+/* line 71, ../sass/modules/_dashboard.scss */
 .dashboard--filter-links {
   text-decoration: none;
 }
@@ -4284,13 +4314,13 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
 .dashboard--filter-links a.is-hidden {
   display: none;
 }
-/* line 70, ../sass/modules/_dashboard.scss */
+/* line 75, ../sass/modules/_dashboard.scss */
 .dashboard--filter-links.is-active {
   background: #41ab51;
   color: white;
 }
 
-/* line 76, ../sass/modules/_dashboard.scss */
+/* line 81, ../sass/modules/_dashboard.scss */
 .dashboard--sort-links {
   text-decoration: none;
 }
@@ -4332,13 +4362,13 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
 .dashboard--sort-links a.is-hidden {
   display: none;
 }
-/* line 80, ../sass/modules/_dashboard.scss */
+/* line 85, ../sass/modules/_dashboard.scss */
 .dashboard--sort-links.is-active {
   background: #41ab51;
   color: white;
 }
 
-/* line 86, ../sass/modules/_dashboard.scss */
+/* line 91, ../sass/modules/_dashboard.scss */
 .dashboard--filter-link {
   background: white;
   box-sizing: border-box;
@@ -4350,22 +4380,22 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   text-align: center;
   width: 50%;
 }
-/* line 97, ../sass/modules/_dashboard.scss */
+/* line 102, ../sass/modules/_dashboard.scss */
 .dashboard--filter-link.is-active {
   background: #41ab51;
   color: white;
 }
-/* line 102, ../sass/modules/_dashboard.scss */
+/* line 107, ../sass/modules/_dashboard.scss */
 .dashboard--filter-link:first-child {
   border-radius: 0.5em 0 0 0.5em;
 }
-/* line 106, ../sass/modules/_dashboard.scss */
+/* line 111, ../sass/modules/_dashboard.scss */
 .dashboard--filter-link:last-child {
   border: 1px solid #41ab51;
   border-radius: 0 0.5em 0.5em 0;
 }
 
-/* line 112, ../sass/modules/_dashboard.scss */
+/* line 117, ../sass/modules/_dashboard.scss */
 .dashboard--sort-link {
   background: white;
   box-sizing: border-box;
@@ -4377,53 +4407,53 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   text-align: center;
   width: 25%;
 }
-/* line 123, ../sass/modules/_dashboard.scss */
+/* line 128, ../sass/modules/_dashboard.scss */
 .dashboard--sort-link.is-active {
   background: #41ab51;
   color: white;
 }
-/* line 128, ../sass/modules/_dashboard.scss */
+/* line 133, ../sass/modules/_dashboard.scss */
 .dashboard--sort-link:first-child {
   border-radius: 0.5em 0 0 0.5em;
 }
-/* line 132, ../sass/modules/_dashboard.scss */
+/* line 137, ../sass/modules/_dashboard.scss */
 .dashboard--sort-link:last-child {
   border: 1px solid #41ab51;
   border-radius: 0 0.5em 0.5em 0;
 }
 
-/* line 138, ../sass/modules/_dashboard.scss */
+/* line 143, ../sass/modules/_dashboard.scss */
 .js-has-answers-removed {
   width: 33.33%;
 }
-/* line 141, ../sass/modules/_dashboard.scss */
+/* line 146, ../sass/modules/_dashboard.scss */
 .js-has-answers-removed.is-last {
   border: 1px solid #41ab51;
   border-radius: 0 0.5em 0.5em 0;
 }
-/* line 146, ../sass/modules/_dashboard.scss */
+/* line 151, ../sass/modules/_dashboard.scss */
 .js-has-answers-removed.is-hidden {
   display: none;
 }
 
-/* line 152, ../sass/modules/_dashboard.scss */
+/* line 157, ../sass/modules/_dashboard.scss */
 .dashboard-list--filter--content {
   margin-bottom: 1em;
   position: relative;
 }
-/* line 156, ../sass/modules/_dashboard.scss */
+/* line 161, ../sass/modules/_dashboard.scss */
 .dashboard-list--filter--content .ajax-progress {
   position: absolute;
   top: 1.8em;
   right: 3em;
 }
 
-/* line 163, ../sass/modules/_dashboard.scss */
+/* line 168, ../sass/modules/_dashboard.scss */
 .dashboard-list--more-link {
   text-align: center;
 }
 
-/* line 168, ../sass/modules/_dashboard.scss */
+/* line 173, ../sass/modules/_dashboard.scss */
 .dashboard-list--submit {
   float: right;
   visibility: hidden;
@@ -4431,31 +4461,31 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   width: 0;
 }
 
-/* line 175, ../sass/modules/_dashboard.scss */
+/* line 180, ../sass/modules/_dashboard.scss */
 .dashboard-list--item, .dashboard-image-list--item,
 .dashboard-user-list--item {
   position: relative;
 }
 
-/* line 185, ../sass/modules/_dashboard.scss */
+/* line 190, ../sass/modules/_dashboard.scss */
 .dashboard-list--item .dashboard-list--meta-data, .dashboard-image-list--item .dashboard-list--meta-data,
 .dashboard-user-list--item .dashboard-list--meta-data {
   color: #cccccc;
   font-size: 12px;
 }
 
-/* line 206, ../sass/modules/_dashboard.scss */
+/* line 211, ../sass/modules/_dashboard.scss */
 .dashboard-image-list--item .dashboard-list--text,
 .dashboard-user-list--item .dashboard-list--text {
   padding-left: 4em;
 }
-/* line 212, ../sass/modules/_dashboard.scss */
+/* line 217, ../sass/modules/_dashboard.scss */
 .dashboard-image-list--item .dashboard-list--meta-data,
 .dashboard-user-list--item .dashboard-list--meta-data {
   display: block;
 }
 
-/* line 219, ../sass/modules/_dashboard.scss */
+/* line 224, ../sass/modules/_dashboard.scss */
 .dashboard-list--icon {
   position: absolute;
   top: .75em;
@@ -4463,12 +4493,18 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   max-width: 1.25em;
   line-height: 1em;
 }
-/* line 228, ../sass/modules/_dashboard.scss */
+/* line 233, ../sass/modules/_dashboard.scss */
 .dashboard-list--icon:before {
   font-size: 1.25em;
 }
 
-/* line 236, ../sass/modules/_dashboard.scss */
+/* line 241, ../sass/modules/_dashboard.scss */
+.dashboard-list--question-title {
+  color: #cccccc;
+  font-size: 12px;
+}
+
+/* line 251, ../sass/modules/_dashboard.scss */
 .dashboard--spinner {
   background: transparent url("../images/loader.png") no-repeat 0 0;
   display: block;
@@ -4482,6 +4518,54 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   -webkit-animation-iteration-count: infinite;
   animation-timing-function: linear;
   -webkit-animation-timing-function: linear;
+}
+
+/* line 266, ../sass/modules/_dashboard.scss */
+.dashboard--show-only-link-short,
+.dashboard--alphabetical-link-short {
+  display: inline-block;
+}
+@media only screen and (min-width: 30em) {
+  /* line 266, ../sass/modules/_dashboard.scss */
+  .dashboard--show-only-link-short,
+  .dashboard--alphabetical-link-short {
+    display: none;
+  }
+}
+
+/* line 275, ../sass/modules/_dashboard.scss */
+.dashboard--show-only-link-long,
+.dashboard--alphabetical-link-long {
+  display: none;
+}
+@media only screen and (min-width: 30em) {
+  /* line 275, ../sass/modules/_dashboard.scss */
+  .dashboard--show-only-link-long,
+  .dashboard--alphabetical-link-long {
+    display: inline-block;
+  }
+}
+
+/* line 284, ../sass/modules/_dashboard.scss */
+.dashboard--replies-link-short {
+  display: inline-block;
+}
+@media only screen and (min-width: 30em) {
+  /* line 284, ../sass/modules/_dashboard.scss */
+  .dashboard--replies-link-short {
+    display: none;
+  }
+}
+
+/* line 292, ../sass/modules/_dashboard.scss */
+.dashboard--replies-link-long {
+  display: none;
+}
+@media only screen and (min-width: 30em) {
+  /* line 292, ../sass/modules/_dashboard.scss */
+  .dashboard--replies-link-long {
+    display: inline-block;
+  }
 }
 
 /**

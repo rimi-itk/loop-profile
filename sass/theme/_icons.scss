@@ -7,14 +7,15 @@
 
 @font-face {
   font-family: 'loop-icons';
-  src: url('../icons/loop-icons.eot?62162620');
-  src: url('../icons/loop-icons.eot?62162620#iefix') format('embedded-opentype'),
-  url('../icons/loop-icons.woff?62162620') format('woff'),
-  url('../icons/loop-icons.ttf?62162620') format('truetype'),
-  url('../icons/loop-icons.svg?62162620#loop-icons') format('svg');
+  src: url('../icons/loop-icons.eot?24139454');
+  src: url('../icons/loop-icons.eot?24139454#iefix') format('embedded-opentype'),
+  url('../icons/loop-icons.woff?24139454') format('woff'),
+  url('../icons/loop-icons.ttf?24139454') format('truetype'),
+  url('../icons/loop-icons.svg?24139454#loop-icons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
+
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
 /*
@@ -59,7 +60,9 @@
 .icon-pencil:before { content: '\e80e'; } /* '' */
 .icon-cancel:before { content: '\e800'; } /* '' */
 .icon-attention:before { content: '\e801'; } /* '' */
-
+.icon-clock:before { content: '\e810'; } /* '' */
+.icon-alphabetical:before { content: '\e811'; } /* '' */
+.icon-help-circled:before { content: '\e80F'; } /* '' */
 
 /* Icon shadow classes
    ================================================================================================================== */
@@ -149,4 +152,22 @@
   @extend %icon-base;
 
   content: '\e80e';
+}
+
+%icon-clock {
+  @extend %icon-base;
+
+  content: '\e811';
+}
+
+%icon-alphabetical {
+  @extend %icon-base;
+
+  content: '\e810';
+}
+
+%icon-help-circled {
+  @extend %icon-base;
+
+  content: '\e80f';
 }
