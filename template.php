@@ -699,8 +699,8 @@ function loop_preprocess_views_view(&$vars) {
       // Load entity wrapper.
       $wrapper = entity_metadata_wrapper('user', $user_obj);
 
-      $vars['user__area_of_expertise'] = $wrapper->field_area_of_expertise->value();
-      $vars['user__profession'] = $wrapper->field_profession->value();
+      $vars['user_area_of_expertise'] = $wrapper->field_area_of_expertise->value();
+      $vars['user_profession'] = $wrapper->field_profession->value();
     }
   }
 
