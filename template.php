@@ -564,9 +564,6 @@ function loop_form_comment_form_alter(&$form)  {
  */
 function loop_form_user_profile_form_alter(&$form)  {
   global $user;
-  $form['account']['mail']['#access'] = FALSE;
-  $form['account']['name']['#access'] = FALSE;
-  $form['account']['pass']['#access'] = FALSE;
   $form['account']['status']['#access'] = FALSE;
   $form['account']['#prefix'] = '<fieldset class="field-group-fieldset">';
   $form['account']['#suffix'] = '</fieldset>';
@@ -584,7 +581,7 @@ function loop_form_user_profile_form_alter(&$form)  {
 
   $form['locale']['#access'] = FALSE;
 
-  if (!in_array("manager", $user->roles) && !in_array("administrator", $user->roles) ) {
+  if ($user->uid > 1 && !in_array("manager", $user->roles) && !in_array("administrator", $user->roles))  {
     $form['account']['#access'] = FALSE;
   }
 }
