@@ -50523,7 +50523,7 @@ msgid "Type name, username, email or profession to filter the list"
 msgstr "Skrive navn, brugernavn, email eller profession for at filtrere listen"
 
 msgid "You have "
-msgstr "Du har"
+msgstr "Du har "
 
 msgid " notifications"
 msgstr " notifikationer"
