@@ -8,6 +8,7 @@ dependencies[] = features
 dependencies[] = link
 dependencies[] = loop_field_bases
 dependencies[] = loop_search
+dependencies[] = node
 dependencies[] = options
 dependencies[] = strongarm
 dependencies[] = taxonomy
