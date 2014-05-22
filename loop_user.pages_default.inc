@@ -28,6 +28,21 @@ function loop_user_default_page_manager_handlers() {
     'css' => '',
     'contexts' => array(),
     'relationships' => array(),
+    'access' => array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 2,
+            ),
+          ),
+          'context' => 'argument_entity_id:user_1',
+          'not' => FALSE,
+        ),
+      ),
+      'logic' => 'and',
+    ),
   );
   $display = new panels_display();
   $display->layout = 'default-inverted';
@@ -61,6 +76,16 @@ function loop_user_default_page_manager_handlers() {
             0 => 'logged-in-user',
             1 => 'argument_entity_id:user_1',
           ),
+          'not' => FALSE,
+        ),
+        1 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 2,
+            ),
+          ),
+          'context' => 'argument_entity_id:user_1',
           'not' => FALSE,
         ),
       ),
