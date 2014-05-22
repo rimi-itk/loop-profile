@@ -145,7 +145,7 @@ function loop_editor_pages_comments() {
     $uri = $comment->uri;
 
     if (is_null($uri)) {
-      $uri = '/sites/default/files/default_images/default-user-icon.png';
+      $uri = '/sites/default/files/default-user-icon.png';
     }
     else {
       $uri = image_style_url('profile', $comment->uri);
