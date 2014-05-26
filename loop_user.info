@@ -60,6 +60,7 @@ features[variable][] = i18n_string_source_language
 features[variable][] = logintoboggan_login_with_email
 features[variable][] = page_manager_user_view_disabled
 features[variable][] = pcp_enabled_fields
+features[variable][] = pcp_hide_block_on_complete
 features[variable][] = user_admin_role
 features[variable][] = user_cancel_method
 features[variable][] = user_email_verification
