@@ -583,16 +583,13 @@ function loop_form_user_profile_form_alter(&$form) {
   $form['#attributes']['class'] = 'user-profile-form';
   $field_expertise_lang = $form['field_area_of_expertise']['#language'];
   $form['field_area_of_expertise'][$field_expertise_lang]['#attributes']['class'][] = 'js-chosen-select-area-of-expertise';
+
   // Image field.
   $user_image_field_lang = $form['field_user_image']['#language'];
   unset($form['field_user_image'][$user_image_field_lang]['0']['#description']);
   unset($form['field_user_image'][$user_image_field_lang]['0']['#title']);
 
   $form['locale']['#access'] = FALSE;
-
-  if ($user->uid > 1) {
-    $form['account']['#access'] = FALSE;
-  }
 }
 
 /**
