@@ -195,6 +195,14 @@ function loop_user_related_content_profession_views_default_views() {
   $handler->display->display_options['filters']['count']['group_type'] = 'count';
   $handler->display->display_options['filters']['count']['value']['value'] = '0';
   $handler->display->display_options['filters']['count']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'reverse_field_profession_node';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'post' => 'post',
+  );
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
@@ -219,38 +227,13 @@ function loop_user_related_content_profession_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  $translatables['loop_questions_by_user_profession'] = array(
-    t('Master'),
-    t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('term from field_profession'),
-    t('field_profession'),
-    t('author'),
-    t('Comments'),
-    t('counter'),
-    t('excluded'),
-    t('Name'),
-    t('<div class="meta-data--author">
-<div class="meta-data--author-image">
-<a href="/user/[uid]">[field_user_image]</a>
-</div>
-<div class="meta-data--author-wrapper">
-<a class="meta-data--author-link" href="/user/[uid]">[field_first_name] [field_last_name]</a>
-<span class="meta-data--author-title">[field_job_title]</span>
-</div>
-</div>
-<span class="meta-data--date">[created]</span>
-[title]'),
-    t('excluded - used to group results with multiple comments'),
-    t('All'),
-    t('Content pane'),
-    t('View panes'),
-    t('When empty'),
-    t('No content related to your profession'),
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['relationship'] = 'reverse_field_profession_node';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'post' => 'post',
   );
   $export['loop_questions_by_user_profession'] = $view;
 
