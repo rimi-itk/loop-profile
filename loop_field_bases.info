@@ -28,6 +28,7 @@ features[field_base][] = field_location_city
 features[field_base][] = field_location_place
 features[field_base][] = field_location_postal_code
 features[field_base][] = field_message_node_reference
+features[field_base][] = field_phone_number
 features[field_base][] = field_profession
 features[field_base][] = field_subject
 features[field_base][] = field_subject_reference
