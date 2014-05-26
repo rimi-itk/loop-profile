@@ -22,7 +22,7 @@ function loop_preprocess_page(&$variables) {
   }
 
   // Remove search form when no search results are found.
-  if ( (isset($variables['page']['content']['system_main']['results'])) &&  ($variables['page']['content']['system_main']['results']['#results']['result count'] == 0)) {
+  if ((isset($variables['page']['content']['system_main']['results'])) &&  ($variables['page']['content']['system_main']['results']['#results']['result count'] == 0)) {
     unset($variables['page']['content']['system_main']['form']);
   }
 
@@ -47,17 +47,18 @@ function loop_preprocess_page(&$variables) {
   // Check if we are using a panel page to define layout.
   $panel = panels_get_current_page_display();
 
-  if (empty($panel))  {
+  if (empty($panel)) {
     $variables['no_panel'] = TRUE;
     if ($arg['0'] == 'search') {
       $variables['layout_class'] = 'layout-full-width';
-    } else {
+    }
+    else {
       $variables['layout_class'] = 'layout-default-inverted';
     }
   }
 
-  // We add logout link here to be able to always print it last. (Hence not part of any menu)
-  if($user->uid > 0) {
+  // We add logout link here to be able to always print it last. (Hence not part of any menu).
+  if ($user->uid > 0) {
     $variables['logout_link'] = l(t('Logout'), 'user/logout', array('attributes' => array('class' => array('nav--logout'))));
   }
 }
@@ -76,7 +77,8 @@ function loop_preprocess_node(&$variables) {
 
   if ($variables['comment_count'] > 0) {
     $variables['has_comments_class'] = 'has-comments';
-  } else {
+  }
+  else {
     $variables['has_comments_class'] = '';
   }
 }
@@ -110,7 +112,7 @@ function loop_preprocess_panels_pane(&$variables) {
   // Add message variable for panel pane.
   if ($variables['pane']->subtype == 'user_messages-panel_pane_1' || $variables['pane']->subtype == 'user_messages-panel_pane_5') {
     $variables['message_count'] = _loop_fetch_user_new_notifications();
-    $update_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() .'/scripts/update-new-notifications.js';
+    $update_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() . '/scripts/update-new-notifications.js';
     drupal_add_js($update_script_path, 'file');
     if (arg(0) == 'user') {
       $variables['theme_hook_suggestions'][] = 'panels_pane__user_page_unread_messages';
@@ -150,11 +152,11 @@ function loop_menu_local_task($variables) {
   $list_class = 'block-module--user-links-item';
 
   // Tabs on login pages.
-  if ($GLOBALS['user']-> uid == 0 || (arg(0) == 'notifications' && arg(1) == 'subscription')) {
+  if ($GLOBALS['user']->uid == 0 || (arg(0) == 'notifications' && arg(1) == 'subscription')) {
     $list_class = 'tabs-anonymous';
   }
 
-  // User account tabs (Left menu)
+  // User account tabs (Left menu).
   if ($link['page_callback'] == 'page_manager_user_view_page') {
     $link['title'] = t('My account');
   }
@@ -177,7 +179,7 @@ function loop_menu_local_task($variables) {
     return FALSE;
   }
 
-  if(!empty($variables['element']['#active'])) {
+  if (!empty($variables['element']['#active'])) {
     $list_class .= ' active';
   }
 
@@ -202,7 +204,7 @@ function loop_menu_local_task($variables) {
     $link_text = t('!local-task-title!active', array('!local-task-title' => $link['title'], '!active' => $active));
   }
 
-  return '<li class="' .$list_class. '">' . l($link_text, $link['href'], $link['localized_options']) . "</li>\n" . $sub_menu;
+  return '<li class="' . $list_class . '">' . l($link_text, $link['href'], $link['localized_options']) . "</li>\n" . $sub_menu;
 }
 
 
@@ -212,7 +214,7 @@ function loop_menu_local_task($variables) {
 function loop_menu_local_tasks($variables) {
   $output = '';
   // Tabs for login pages.
-  if ($GLOBALS['user']-> uid > 0 && arg(0) == 'user') {
+  if ($GLOBALS['user']->uid > 0 && arg(0) == 'user') {
     if (!empty($variables['primary'])) {
       $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
       $variables['primary']['#prefix'] .= '<ul class="block-module--user-links-list">';
@@ -229,10 +231,10 @@ function loop_menu_local_tasks($variables) {
  * System generated menu links from different modules. Menu not to be changed by users.
  * Forms the header menu together with primary menu.
  */
-function loop_menu_tree__main_menu ($variables) {
+function loop_menu_tree__main_menu($variables) {
   $theme_path = drupal_get_path('theme', 'loop');
 
-  // Add notificaiton link
+  // Add notificaiton link.
   if (_loop_print_notification_tab()) {
     $variables['tree'] = $variables['tree'] . _loop_print_notification_tab();
   }
@@ -287,11 +289,11 @@ function loop_menu_tree__management($variables) {
 /**
  * Implements theme_menu_link().
  */
-function loop_menu_link__main_menu($variables){
+function loop_menu_link__main_menu($variables) {
   $theme_path = drupal_get_path('theme', 'loop');
   $element = $variables['element'];
 
-  // Add images to links depending on the path of the link
+  // Add images to links depending on the path of the link.
   switch ($element['#href']) {
     case 'user':
       $img = array(
@@ -301,6 +303,7 @@ function loop_menu_link__main_menu($variables){
       // Create the title with image icon.
       $element['#title'] = theme_image($img) . '<span class="nav--text">' . $element['#title'] . '</span>';
       break;
+
     case 'node/add/post':
       $img = array(
         'path' => '/' . $theme_path . '/images/nav-add-icon.png',
@@ -324,7 +327,7 @@ function loop_menu_link__main_menu($variables){
 /**
  * Implements theme_menu_link().
  */
-function loop_menu_link__menu_loop_primary_menu($variables){
+function loop_menu_link__menu_loop_primary_menu($variables) {
   $theme_path = drupal_get_path('theme', 'loop');
   $element = $variables['element'];
 
@@ -352,7 +355,7 @@ function loop_menu_link__menu_loop_primary_menu($variables){
   elseif ($element['#original_link']['plid'] > 0) {
     $element['#localized_options']['attributes']['class'][] = 'nav-dropdown--link';
     $output = l($element['#title'], $element['#href'], $element['#localized_options']);
-    return  $output;
+    return $output;
   }
 
   // Default main menu link, not parent and not child.
@@ -366,7 +369,7 @@ function loop_menu_link__menu_loop_primary_menu($variables){
 /**
  * Implements theme_menu_link().
  */
-function loop_menu_link__management($variables){
+function loop_menu_link__management($variables) {
   $theme_path = drupal_get_path('theme', 'loop');
   $element = $variables['element'];
   if ($element['#href'] == 'admin') {
@@ -386,7 +389,8 @@ function loop_menu_link__management($variables){
     $element['#localized_options']['html'][] = TRUE;
 
     $output = '<div class="nav-dropdown--wrapper">' . l($element['#title'], $element['#href'], $element['#localized_options']) . $sub_menu . '</div>';
-  } else {
+  }
+  else {
     $element['#localized_options']['attributes']['class'][] = 'nav-dropdown--link';
     $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   }
@@ -484,7 +488,7 @@ function loop_form_views_form_loop_user_subscriptions_panel_pane_1_alter(&$form,
 
   // Add js class to checkboxes.
   foreach ($form['views_bulk_operations'] as $key => $value) {
-    if(is_array($value)) {
+    if (is_array($value)) {
       $form['views_bulk_operations'][$key]['#attributes']['class'][] = 'js-user-profile-notification-select';
     }
   }
@@ -498,7 +502,7 @@ function loop_form_views_form_loop_user_subscriptions_panel_pane_1_alter(&$form,
   unset($form['select']);
 
   // Add custom js.
-  $display_notification_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() .'/scripts/display-notification-actions.js';
+  $display_notification_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() . '/scripts/display-notification-actions.js';
   drupal_add_js($display_notification_script_path, 'file');
 
   // If on confirmation step.
@@ -508,11 +512,16 @@ function loop_form_views_form_loop_user_subscriptions_panel_pane_1_alter(&$form,
   }
 }
 
+
+/**
+ * Implements hook_form_FORM_alter().
+ */
 function loop_form_views_exposed_form_alter(&$form) {
   if (arg(1) == 'dashboard') {
     if ($form['#id'] == 'views-exposed-form-loop-editor-users-panel-pane-1') {
       $form['combine']['#attributes']['placeholder'] = t('Type name, username, email or profession to filter the list');
-    } else {
+    }
+    else {
       $form['combine']['#attributes']['placeholder'] = t('Type text that is part of title or content to filter the list');
     }
     $form['#attributes']['class'][] = 'dashboard-list--form';
@@ -536,7 +545,7 @@ function loop_form_search_api_page_search_form_default_alter(&$form) {
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function loop_form_comment_form_alter(&$form)  {
+function loop_form_comment_form_alter(&$form) {
   $variables['user_obj'] = user_load($GLOBALS['user']->uid);
   if (!empty($variables['user_obj'])) {
     $variables['user_name'] = _loop_fetch_full_name($variables['user_obj']);
@@ -560,9 +569,10 @@ function loop_form_comment_form_alter(&$form)  {
 
 /**
  * Implements hook_form_FORM_ID_alter().
+ *
  * The user profile form.
  */
-function loop_form_user_profile_form_alter(&$form)  {
+function loop_form_user_profile_form_alter(&$form) {
   global $user;
   $form['account']['status']['#access'] = FALSE;
   $form['account']['#prefix'] = '<fieldset class="field-group-fieldset">';
@@ -571,7 +581,6 @@ function loop_form_user_profile_form_alter(&$form)  {
   $form['metatags']['#access'] = FALSE;
   $form['timezone']['#access'] = FALSE;
   $form['#attributes']['class'] = 'user-profile-form';
-  $form['account']['current_pass']['#access'] = FALSE;
   $field_expertise_lang = $form['field_area_of_expertise']['#language'];
   $form['field_area_of_expertise'][$field_expertise_lang]['#attributes']['class'][] = 'js-chosen-select-area-of-expertise';
   // Image field.
@@ -581,16 +590,17 @@ function loop_form_user_profile_form_alter(&$form)  {
 
   $form['locale']['#access'] = FALSE;
 
-  if ($user->uid > 1 && !in_array("manager", $user->roles) && !in_array("administrator", $user->roles))  {
+  if ($user->uid > 1) {
     $form['account']['#access'] = FALSE;
   }
 }
 
 /**
  * Implements hook_form_FORM_ID_alter().
+ *
  * For display on user/[uid]/notifications/subscription.
  */
-function loop_form_notifications_account_manage_subscriptions_form_alter(&$form)  {
+function loop_form_notifications_account_manage_subscriptions_form_alter(&$form) {
   // Hide filtering.
   $form['filters']['#access'] = FALSE;
 
@@ -650,7 +660,7 @@ function loop_preprocess_comment(&$variables) {
 function loop_preprocess_loop_post_subscription_list(&$vars) {
   $vars['custom_link'] = l($vars['link']['#text'], $vars['link']['#path'], array('attributes' => array('class' => array('block-module--link')), 'html' => 'TRUE', 'query' => array($vars['link']['#query'])));
 
-  if($vars['link']['#text'] == 'Subscribe') {
+  if ($vars['link']['#text'] == 'Subscribe') {
     $vars['current_type_css'] = 'block-follow-question';
   }
   else {
@@ -686,7 +696,7 @@ function loop_preprocess_views_view(&$vars) {
   // We run the new message count in this function since the view updates with ajax.
   if ($vars['view']->name == 'user_messages') {
     $new_message_count = _loop_fetch_user_new_notifications();
-    $update_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() .'/scripts/update-new-notifications.js';
+    $update_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() . '/scripts/update-new-notifications.js';
     drupal_add_js($update_script_path, 'file');
     $vars['user_messages'] = $new_message_count;
   }
@@ -694,7 +704,7 @@ function loop_preprocess_views_view(&$vars) {
   if ($vars['view']->name == 'loop_questions_by_user_profession' || $vars['view']->name == 'loop_questions_by_user_competence') {
     if ($vars['user']->uid > 0) {
       // Fetch full user obj.
-      $user_obj = user_load ($vars['user']->uid);
+      $user_obj = user_load($vars['user']->uid);
 
       // Load entity wrapper.
       $wrapper = entity_metadata_wrapper('user', $user_obj);
@@ -773,7 +783,8 @@ function _loop_fetch_full_name ($user_obj) {
     // Set name.
     if ($first_name && $last_name) {
       $name = $first_name . ' ' . $last_name;
-    } else {
+    }
+    else {
       $name = $user_obj->name;
     }
   }
