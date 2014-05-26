@@ -48,23 +48,30 @@ function loop_external_sources_content_documents($scope) {
     $or->condition("title", $title . "%", 'LIKE');
   }
 
-  // Fetch node ID and tiitle.
-  $nodes = db_select('node', 'n')
-    ->fields('n', array('nid', 'title'))
-    ->condition('type', 'external_sources')
-    ->condition('status', 1)
-    ->condition($or)
-    ->execute();
+  // Fetch node ID and title.
+  $nodes = db_query("
+    SELECT node.nid, node.title, field_data_field_external_link.field_external_link_url
+    FROM node
+    INNER JOIN field_data_field_external_link
+    ON node.nid=field_data_field_external_link.entity_id
+    WHERE node.type = 'external_sources' AND  node.status = 1
+    ")->fetchAll();
 
   $data = array();
   foreach ($nodes as $node) {
+    // Load entity wrapper.
+
+    $wrapper = entity_metadata_wrapper('node', $node);
+
+    // Get path.
+    $path = link_cleanup_url($node->field_external_link_url);
     $data[] = array(
       // For better search, use strtolower().
       'value' => strtolower(trim($node->title)),
       // Fine human output.
       'title' => trim($node->title),
       // Use internal path.
-      'link' => '/' . drupal_get_path_alias('node/' . $node->nid),
+      'link' => $path,
     );
   }
 
