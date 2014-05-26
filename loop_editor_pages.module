@@ -15,19 +15,19 @@ function loop_editor_pages_menu() {
   $items['editor/dashboard/questions'] = array(
     'title' => 'All questions',
     'page callback' => 'loop_editor_pages_all_questions',
-    'type' => MENU_CALLBACK,
+    'type' => MENU_NORMAL_ITEM,
     'access arguments' => array('administer nodes'),
   );
   $items['editor/dashboard/replies'] = array(
-    'title' => 'All questions',
+    'title' => 'All replies',
     'page callback' => 'loop_editor_pages_all_replies',
-    'type' => MENU_CALLBACK,
+    'type' => MENU_NORMAL_ITEM,
     'access arguments' => array('administer nodes'),
   );
   $items['editor/dashboard/other_content'] = array(
-    'title' => 'All questions',
+    'title' => 'All other content',
     'page callback' => 'loop_editor_pages_all_other_content',
-    'type' => MENU_CALLBACK,
+    'type' => MENU_NORMAL_ITEM,
     'access arguments' => array('administer nodes'),
   );
 
