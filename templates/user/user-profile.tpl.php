@@ -41,20 +41,23 @@
     <?php print $elements['#account']->name; ?>
   <?php endif; ?>
   <?php if ($user->uid == $elements['#account']->uid || user_access('administer users')) : ?>
-    <span class="user-profile-module--edit-link">(<a href="/user/<?php print $elements['#account']->uid ;?>/edit"><?php print t('Edit'); ?></a>)</span>
+    <span class="user-profile-module--edit-link">(<a href="/user/<?php print $elements['#account']->uid;?>/edit"><?php print t('Edit'); ?></a>)</span>
   <?php endif; ?>
 </h1>
 <fieldset class="user-profile-module--field-group-fieldset-personal-info">
   <legend class="fieldset-legend"><?php print t('Personal information'); ?></legend>
   <div class="user-profile-module--personal-info-text">
     <div class="user-profile-module--field-personal-info">
-      <span class="user-profile-module--field-label"><?php print t('First name') . ':'; ?></span><span class="user-profile-module--field-value"><?php print render($elements['field_first_name']); ?></span>
+      <span class="user-profile-module--field-label"><?php print t('First name') . ':'; ?></span><span class="user-profile-module--field-value"><?php print render($elements['field_first_name']);?></span>
     </div>
     <div class="user-profile-module--field-personal-info">
-      <span class="user-profile-module--field-label"><?php print t('Surname') . ':'; ?></span><span class="user-profile-module--field-value"><?php print render($elements['field_last_name']); ?></span>
+      <span class="user-profile-module--field-label"><?php print t('Surname') . ':'; ?></span><span class="user-profile-module--field-value"><?php print render($elements['field_last_name']);?></span>
     </div>
     <div class="user-profile-module--field-personal-info">
-      <span class="user-profile-module--field-label"><?php print t('E-mail') . ':'; ?></span><span class="user-profile-module--field-value"><?php print $elements['#account']->mail ;?></span>
+      <span class="user-profile-module--field-label"><?php print t('E-mail') . ':'; ?></span><span class="user-profile-module--field-value"><?php print ' ' . render($elements['#account']->mail);?></span>
+    </div>
+    <div class="user-profile-module--field-personal-info">
+      <span class="user-profile-module--field-label"><?php print t('Phone') . ':'; ?></span><span class="user-profile-module--field-value"><?php print render($elements['field_phone_number']);?></span>
     </div>
   </div>
   <div class="user-profile-module--personal-info-image">
@@ -65,4 +68,5 @@
 <?php hide($user_profile['group_personal_information']); ?>
 <?php hide($user_profile['field_user_image']); ?>
 <?php hide($user_profile['message_subscribe_email']); ?>
+<?php hide($user_profile['field_phone_number']); ?>
 <?php print render($user_profile); ?>
