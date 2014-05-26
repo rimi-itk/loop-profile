@@ -290,11 +290,37 @@ function loop_user_field_default_field_instances() {
     ),
     'entity_type' => 'user',
     'field_name' => 'field_location_place',
-    'label' => 'Place',
-    'required' => 0,
+    'label' => 'Place / Department',
+    'required' => 1,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'editor' => 'editor',
+          'html' => 'html',
+          'plain_text' => 'plain_text',
+          'simple' => 'simple',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'editor' => array(
+              'weight' => 0,
+            ),
+            'html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'simple' => array(
+              'weight' => -10,
+            ),
+          ),
+        ),
+      ),
       'text_processing' => 0,
-      'user_register_form' => 0,
+      'user_register_form' => 1,
     ),
     'widget' => array(
       'active' => 1,
@@ -338,6 +364,64 @@ function loop_user_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_phone_number'
+  $field_instances['user-user-field_phone_number'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 15,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_phone_number',
+    'label' => 'Phone number',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'editor' => 'editor',
+          'html' => 'html',
+          'plain_text' => 'plain_text',
+          'simple' => 'simple',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'editor' => array(
+              'weight' => 0,
+            ),
+            'html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'simple' => array(
+              'weight' => -10,
+            ),
+          ),
+        ),
+      ),
+      'text_processing' => 0,
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'html5_tools',
+      'settings' => array(),
+      'type' => 'telwidget',
+      'weight' => 47,
     ),
   );
 
@@ -432,7 +516,8 @@ function loop_user_field_default_field_instances() {
   t('First name');
   t('Job title');
   t('Last name');
-  t('Place');
+  t('Phone number');
+  t('Place / Department');
   t('Postal code');
   t('Profession');
   t('User image');

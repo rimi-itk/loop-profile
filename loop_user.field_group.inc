@@ -200,6 +200,7 @@ function loop_user_field_group_info() {
     'children' => array(
       0 => 'field_first_name',
       1 => 'field_last_name',
+      2 => 'field_phone_number',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
