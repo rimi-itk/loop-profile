@@ -109,6 +109,8 @@ function loop_user_strongarm() {
     'user:user:field_last_name' => 'user:user:field_last_name',
     'user:user:field_profession' => 'user:user:field_profession',
     'user:user:field_user_image' => 'user:user:field_user_image',
+    'user:user:field_location_place' => 'user:user:field_location_place',
+    'user:user:field_phone_number' => 'user:user:field_phone_number',
   );
   $export['pcp_enabled_fields'] = $strongarm;
 
