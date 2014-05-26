@@ -140,8 +140,8 @@ msgstr "By"
 
 #: field:field_location_place:user:label
 msgctxt "field_location_place:user:label"
-msgid "Place"
-msgstr "Sted"
+msgid "Place / Department"
+msgstr "Sted / Afdeling"
 
 #: field:field_location_postal_code:user:label
 msgctxt "field_location_postal_code:user:label"
