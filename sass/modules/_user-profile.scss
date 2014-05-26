@@ -147,6 +147,23 @@
   list-style: none;
 }
 
+.password-confirm,
+.password-strength-title,
+.password-strength-text,
+.password-strength {
+  color: #737373;
+  float: right;
+  margin-left: .5em;
+
+  .error {
+    color: $red;
+  }
+
+  .ok {
+    color: $green;
+  }
+}
+
 .edit-user--image-fieldset {
   position: relative;
 
