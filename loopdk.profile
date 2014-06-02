@@ -3,6 +3,7 @@
 /**
  * Implement hook_install_tasks_alter().
  *
+ * Redirect language selection to our own function.
  */
 function loopdk_install_tasks_alter(&$tasks, $install_state) {
   // Callback for languageg selection.
@@ -17,7 +18,7 @@ function loopdk_locale_selection(&$install_state) {
 /**
  * Implements hook_form_FORM_ID_alter().
  *
- * Allows the profile to alter the site configuration form.
+ * Set sitename, country and timezone.
  */
 if (!function_exists("system_form_install_configure_form_alter")) {
   function system_form_install_configure_form_alter(&$form, $form_state) {
@@ -27,6 +28,11 @@ if (!function_exists("system_form_install_configure_form_alter")) {
   }
 }
 
+/**
+ * Pick settings.
+ *
+ * Dashboard, user pages and translations.
+ */
 function loopdk_module_selection_form($form, &$form_state) {
   $form['addons'] = array(
     '#type' => 'fieldset',
@@ -68,6 +74,9 @@ function loopdk_module_selection_form($form, &$form_state) {
   return $form;
 }
 
+/**
+ * Formular submit function for LOOP settings.
+ */
 function loopdk_module_selection_form_submit($form, &$form_state) {
   $dependency_modules = array();
 
@@ -90,8 +99,8 @@ function loopdk_module_selection_form_submit($form, &$form_state) {
 /**
  * Implements hook_install_tasks().
  *
- * As this function is called early and often, we have to maintain a cache or
- * else the task specifying a form may not be available on form submit.
+ * Add extra steps.
+ * Settings, Filter & WYSIWYG and Final round up.
  */
 function loopdk_install_tasks(&$install_state) {
 
@@ -103,12 +112,14 @@ function loopdk_install_tasks(&$install_state) {
       'type' => 'form',
       'run' => empty($tasks) ? INSTALL_TASK_RUN_IF_REACHED : INSTALL_TASK_SKIP,
     ),
+    // Filter and WYSIWYG settings.
     'loopdk_setup_filter_and_wysiwyg' => array(
       'display_name' => st('Setup filter and WYSIWYG'),
       'display' => TRUE,
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
       'type' => 'batch'
     ),
+    // Round up installation.
     'loopdk_final_settings' => array(
       'display_name' => st('Round up installation'),
       'display' => TRUE,
@@ -314,7 +325,7 @@ function loopdk_setup_filter_and_wysiwyg() {
 
   filter_format_save($format);
 
-  // URL shorten.
+  // Setup contrib module Shorten to use contrib module ShURLy.
   variable_set('shorten_service', 'ShURLy');
   variable_set('shorten_service_backup', 'none');
   variable_set('shorten_generate_token', 0);
@@ -322,8 +333,13 @@ function loopdk_setup_filter_and_wysiwyg() {
   variable_set('shorten_use_alias', 0);
 }
 
-/*
- * Revert features.
+/**
+ * Final LOOP install profile settings.
+ *
+ * Revert every feature.
+ * Enable Transliterate contrib module setting.
+ * Setup default user icon.
+ * Refresh strings.
  */
 function loopdk_final_settings() {
   module_load_include('inc', 'features', 'features.export');
@@ -358,6 +374,7 @@ function loopdk_final_settings() {
   $instance['settings']['default_image'] = $file->fid;
   field_update_instance($instance);
 
+  // Refresh strings.
   module_load_include('inc', 'i18n_string', 'i18n_string.admin');
   i18n_string_refresh_group('default');
   i18n_string_refresh_group('field');
