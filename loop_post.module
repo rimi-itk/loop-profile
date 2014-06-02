@@ -27,7 +27,7 @@ function loop_post_form_node_form_alter(&$form, &$form_state) {
     }
   }
 
-  // Move description inside wrapper
+  // Move description inside wrapper.
   unset($form['field_description']['#attributes']['class']);
   $form['field_description']['und']['#prefix'] = '<div id="field-description-add-more-wrapper" class="description-form-element form-item">';
 }

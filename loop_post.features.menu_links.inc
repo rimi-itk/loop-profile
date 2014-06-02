@@ -29,7 +29,7 @@ function loop_post_menu_default_menu_links() {
     'weight' => 40,
     'customized' => 1,
   );
-  // Translatables
+  // Translatables.
   // Included for use with string extractors like potx.
   t('Create post');
 
