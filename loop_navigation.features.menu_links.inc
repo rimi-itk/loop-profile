@@ -30,7 +30,7 @@ function loop_navigation_menu_default_menu_links() {
     'weight' => 9,
     'customized' => 1,
   );
-  // Translatables
+  // Translatables.
   // Included for use with string extractors like potx.
   t('Administration');
 
