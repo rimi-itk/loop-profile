@@ -1,3 +1,8 @@
+/**
+ * @file
+ * Autocomplete attachement for search in Drupal.
+ */
+
 var LoopSearch = LoopSearch || [];
 jQuery(document).ready(function($) {
 

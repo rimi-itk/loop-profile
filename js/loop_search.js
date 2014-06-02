@@ -1,6 +1,6 @@
 /**
  * @file
- * Autocomplete attachement for search in Apache Solr.
+ * Autocomplete attachement for search in Drupal.
  */
 
 /**
