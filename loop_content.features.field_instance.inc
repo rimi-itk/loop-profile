@@ -60,7 +60,7 @@ function loop_content_field_default_field_instances() {
     ),
   );
 
-  // Translatables
+  // Translatables.
   // Included for use with string extractors like potx.
   t('Body');
 
