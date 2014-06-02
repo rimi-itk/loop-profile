@@ -197,7 +197,6 @@ function loop_editor_pages_other_content() {
 
   // Return as JSON.
   drupal_json_output($data);
-
 }
 
 /**
