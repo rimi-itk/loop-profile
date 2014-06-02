@@ -365,7 +365,7 @@ projects[loop_editor_pages][download][url] = "git@github.com:loopdk/loop_editor_
 projects[loop_editor_pages][branch] = "development"
 
 projects[loop_external_sources_content][type] = "module"
-projects[loop_external_sources_content][subdir] = "features/loop_external_sources_content"
+projects[loop_external_sources_content][subdir] = "features"
 projects[loop_external_sources_content][download][type] = "git"
 projects[loop_external_sources_content][download][url] = "git@github.com:loopdk/loop_external_sources_content.git"
 projects[loop_external_sources_content][branch] = "development"
