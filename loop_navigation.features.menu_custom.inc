@@ -26,7 +26,7 @@ function loop_navigation_menu_default_menu_custom() {
     'language' => 'und',
     'i18n_mode' => 0,
   );
-  // Translatables
+  // Translatables.
   // Included for use with string extractors like potx.
   t('Loop Primary Menu');
   t('Management');
