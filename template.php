@@ -4,7 +4,6 @@
  * Preprocess and Process Functions.
  */
 
-
 /**
  * Override or insert variables into the page template.
  */
@@ -46,7 +45,6 @@ function loop_preprocess_page(&$variables) {
 
   // Check if we are using a panel page to define layout.
   $panel = panels_get_current_page_display();
-
   if (empty($panel)) {
     $variables['no_panel'] = TRUE;
     if ($arg['0'] == 'search') {
@@ -62,7 +60,6 @@ function loop_preprocess_page(&$variables) {
     $variables['logout_link'] = l(t('Logout'), 'user/logout', array('attributes' => array('class' => array('nav--logout'))));
   }
 }
-
 
 /**
  * Override or insert variables into the node template.
@@ -83,7 +80,6 @@ function loop_preprocess_node(&$variables) {
   }
 }
 
-
 /**
  * Override or insert variables into the node template.
  */
@@ -96,7 +92,6 @@ function loop_preprocess_block(&$variables) {
   }
 }
 
-
 /**
  * Override or insert variables into the panel pane template.
  */
@@ -104,6 +99,7 @@ function loop_preprocess_panels_pane(&$variables) {
   if (arg(0) == 'editor') {
     $variables['theme_hook_suggestions'][] = 'panels_pane__editor';
   }
+
   // Add template for flag subscribe button on post node.
   if ($variables['pane']->type == 'flag_link') {
     $variables['theme_hook_suggestions'][] = 'panels_pane__flag_subscribe';
@@ -118,9 +114,9 @@ function loop_preprocess_panels_pane(&$variables) {
       $variables['theme_hook_suggestions'][] = 'panels_pane__user_page_unread_messages';
     }
   }
+
   $variables['title_attributes_array']['class'][] = 'block-module--title';
 }
-
 
 /**
  * Implements hook_search_api_page_results().
@@ -188,7 +184,6 @@ function loop_menu_local_task($variables) {
     $sub_menu = '<ul class="block-module-user-links-list-sub ">' . drupal_render($secondary) . '</ul>';
   }
 
-
   $link_text = $link['title'];
 
   if (!empty($variables['element']['#active'])) {
@@ -207,7 +202,6 @@ function loop_menu_local_task($variables) {
   return '<li class="' . $list_class . '">' . l($link_text, $link['href'], $link['localized_options']) . "</li>\n" . $sub_menu;
 }
 
-
 /**
  * Implements theme_menu_local_tasks().
  */
@@ -223,7 +217,6 @@ function loop_menu_local_tasks($variables) {
   }
   return $output;
 }
-
 
 /**
  * Implements theme_menu_tree__main_menu().
@@ -263,7 +256,6 @@ function loop_menu_tree__main_menu($variables) {
   return $variables['tree'];
 }
 
-
 /**
  * Implements theme_menu_tree__menu_loop_primary_menu().
  *
@@ -274,7 +266,6 @@ function loop_menu_tree__menu_loop_primary_menu($variables) {
   return $variables['tree'];
 }
 
-
 /**
  * Implements theme_menu_tree__menu_loop_primary_menu().
  *
@@ -284,7 +275,6 @@ function loop_menu_tree__menu_loop_primary_menu($variables) {
 function loop_menu_tree__management($variables) {
   return $variables['tree'];
 }
-
 
 /**
  * Implements theme_menu_link().
@@ -322,7 +312,6 @@ function loop_menu_link__main_menu($variables) {
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   return $output . "\n";
 }
-
 
 /**
  * Implements theme_menu_link().
@@ -363,6 +352,7 @@ function loop_menu_link__menu_loop_primary_menu($variables) {
     $element['#localized_options']['attributes']['class'][] = 'nav--link';
     $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   }
+
   return $output . "\n";
 }
 
@@ -372,6 +362,7 @@ function loop_menu_link__menu_loop_primary_menu($variables) {
 function loop_menu_link__management($variables) {
   $theme_path = drupal_get_path('theme', 'loop');
   $element = $variables['element'];
+
   if ($element['#href'] == 'admin') {
     $img = array(
       'path' => '/' . $theme_path . '/images/nav-arrow-down-icon.png',
@@ -394,9 +385,9 @@ function loop_menu_link__management($variables) {
     $element['#localized_options']['attributes']['class'][] = 'nav-dropdown--link';
     $output = l($element['#title'], $element['#href'], $element['#localized_options']);
   }
+
   return $output . "\n";
 }
-
 
 /**
  * Returns HTML for a fieldset form element and its children.
@@ -413,19 +404,22 @@ function loop_fieldset($variables) {
     // Always wrap fieldset legends in a SPAN for CSS positioning.
     $output .= '<legend><span class="fieldset-legend">' . $element['#title'] . '</span></legend>';
   }
+
   $output .= '<div class="fieldset-wrapper">';
   if (!empty($element['#description'])) {
     $output .= '<div class="fieldset-description">' . $element['#description'] . '</div>';
   }
+
   $output .= $element['#children'];
   if (isset($element['#value'])) {
     $output .= $element['#value'];
   }
+
   $output .= '</div>';
   $output .= "</fieldset>\n";
+
   return $output;
 }
-
 
 /**
  * Implements template_preprocess_user_profile().
@@ -444,7 +438,6 @@ function loop_preprocess_user_profile(&$variables) {
   field_attach_preprocess('user', $account, $variables['elements'], $variables);
 }
 
-
 /**
  * Implements theme_panels_default_style_render_region().
  *
@@ -456,7 +449,6 @@ function loop_panels_default_style_render_region($vars) {
   return $output;
 }
 
-
 /**
  * Implements hook_form_FORM_ID_alter().
  */
@@ -467,7 +459,6 @@ function loop_form_user_login_alter(&$form) {
   $form['name']['#title'] = t('Username or e-mail');
   $form['pass']['#description'] = FALSE;
 }
-
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -512,7 +503,6 @@ function loop_form_views_form_loop_user_subscriptions_panel_pane_1_alter(&$form,
   }
 }
 
-
 /**
  * Implements hook_form_FORM_alter().
  */
@@ -524,6 +514,7 @@ function loop_form_views_exposed_form_alter(&$form) {
     else {
       $form['combine']['#attributes']['placeholder'] = t('Type text that is part of title or content to filter the list');
     }
+
     $form['#attributes']['class'][] = 'dashboard-list--form';
     $form['combine']['#attributes']['class'][] = 'dashboard-list--filter-field';
     $form['submit']['#attributes']['class'][] = 'dashboard-list--submit';
@@ -541,7 +532,6 @@ function loop_form_search_api_page_search_form_default_alter(&$form) {
   $form['keys_1']['#title'] = t('Search for an answer');
 }
 
-
 /**
  * Implements hook_form_FORM_ID_alter().
  */
@@ -558,14 +548,13 @@ function loop_form_comment_form_alter(&$form) {
     $variables['author_image'] = _loop_fetch_author_image($variables['user_obj']);
   }
 
-
   $form['#prefix'] = theme('comment_form_prefix', $variables);
   $form['#prefix'] .= '<div class="form-module">';
-  hide($form['author']);
   $form['comment_body'][LANGUAGE_NONE][0]['#wysiwyg'] = FALSE;
   $form['#suffix'] = '</div>';
-}
 
+  hide($form['author']);
+}
 
 /**
  * Implements hook_form_FORM_ID_alter().
@@ -573,7 +562,6 @@ function loop_form_comment_form_alter(&$form) {
  * The user profile form.
  */
 function loop_form_user_profile_form_alter(&$form) {
-  global $user;
   $form['account']['status']['#access'] = FALSE;
   $form['account']['#prefix'] = '<fieldset class="field-group-fieldset">';
   $form['account']['#suffix'] = '</fieldset>';
@@ -581,6 +569,7 @@ function loop_form_user_profile_form_alter(&$form) {
   $form['metatags']['#access'] = FALSE;
   $form['timezone']['#access'] = FALSE;
   $form['#attributes']['class'] = 'user-profile-form';
+
   $field_expertise_lang = $form['field_area_of_expertise']['#language'];
   $form['field_area_of_expertise'][$field_expertise_lang]['#attributes']['class'][] = 'js-chosen-select-area-of-expertise';
 
@@ -615,7 +604,6 @@ function loop_form_notifications_account_manage_subscriptions_form_alter(&$form)
   $form['admin']['subscriptions']['#attributes']['class'][] = 'notification--user-subscriptions';
 }
 
-
 /**
  * Implements hook_theme().
  */
@@ -628,7 +616,6 @@ function loop_theme($existing, $type, $theme, $path) {
     ),
   );
 }
-
 
 /**
  * Implements hook_preprocess_comment().
@@ -652,7 +639,7 @@ function loop_preprocess_comment(&$variables) {
 /**
  * Implements hook_preprocess_loop_post_subscription_list().
  *
- * Preprocesss function for displaying subscribe/unsubscribe on nodes
+ * Preprocesss function for displaying subscribe/unsubscribe on nodes.
  */
 function loop_preprocess_loop_post_subscription_list(&$vars) {
   $vars['custom_link'] = l($vars['link']['#text'], $vars['link']['#path'], array('attributes' => array('class' => array('block-module--link')), 'html' => 'TRUE', 'query' => array($vars['link']['#query'])));
@@ -665,7 +652,6 @@ function loop_preprocess_loop_post_subscription_list(&$vars) {
   }
 }
 
-
 /**
  * Implements hook_textarea().
  *
@@ -677,6 +663,7 @@ function loop_textarea($variables) {
   $element['#attributes']['id'] = $element['#id'];
   $element['#attributes']['cols'] = $element['#cols'];
   $element['#attributes']['rows'] = $element['#rows'];
+
   _form_set_class($element, array('form-textarea'));
 
   $wrapper_attributes = array(
@@ -693,9 +680,10 @@ function loop_preprocess_views_view(&$vars) {
   // We run the new message count in this function since the view updates with ajax.
   if ($vars['view']->name == 'user_messages') {
     $new_message_count = _loop_fetch_user_new_notifications();
+    $vars['user_messages'] = $new_message_count;
+
     $update_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() . '/scripts/update-new-notifications.js';
     drupal_add_js($update_script_path, 'file');
-    $vars['user_messages'] = $new_message_count;
   }
 
   if ($vars['view']->name == 'loop_questions_by_user_profession' || $vars['view']->name == 'loop_questions_by_user_competence') {
@@ -720,14 +708,14 @@ function loop_preprocess_views_view(&$vars) {
   }
 }
 
-
 /**
  * Function for printing the notification tab. Since the page already exists we don't use hook menu.
  *
  * @return html for the notification tab or false if module does not exist or user is not logged in.
  */
 function _loop_print_notification_tab() {
-  // We run the new message count in this function called from loop_links__system_primary_menu() since it should display on all pages.
+  // We run the new message count in this function called from loop_links__system_primary_menu()
+  // since it should display on all pages.
   if (module_exists('loop_notification') && $GLOBALS['user']->uid > 0) {
     $new_message_count = _loop_fetch_user_new_notifications();
 
@@ -748,14 +736,12 @@ function _loop_print_notification_tab() {
     $title = theme_image($img) . '<span class="nav--text">' . t('Notifications') . '</span>' . $new_messages;
 
     $menutab = l($title, 'user/' . $GLOBALS['user']->uid . '/messages', array('attributes' => array('class' => array('nav--link')), 'html' => 'TRUE'));
-
   }
   else {
     $menutab = FALSE;
   }
   return $menutab;
 }
-
 
 /**
  * Fetch the full name from a user object, if both first name and last name is set.
@@ -793,7 +779,6 @@ function _loop_fetch_full_name ($user_obj) {
  *
  * @return number of new notifications related to current user.
  */
-
 function _loop_fetch_user_new_notifications() {
   // Fetch all current users messages from the message table.
   $all_message_count = db_query('SELECT uid FROM message WHERE uid = :uid', array(':uid' => $GLOBALS['user']->uid))->rowCount();
@@ -804,7 +789,7 @@ function _loop_fetch_user_new_notifications() {
   // Fetch all flags of type message_read (fid) that the current user made.
   $flagged_read_message_count = db_query('SELECT entity_id FROM flagging WHERE uid = :uid AND fid = :fid', array(':uid' => $GLOBALS['user']->uid, ':fid' => $flag_id))->rowCount();
 
-  // Compare the two.
+  // Subtract the two.
   $new_notifications = $all_message_count - $flagged_read_message_count;
 
   return $new_notifications;
@@ -816,7 +801,6 @@ function _loop_fetch_user_new_notifications() {
  * @param user object.
  * @return themed image based on author.
  */
-
 function _loop_fetch_author_image($author) {
   if (is_object($author)) {
     // Load entity wrapper.
@@ -829,6 +813,7 @@ function _loop_fetch_author_image($author) {
       $image_path = 'default-user-icon.png';
       $author_image = theme('image_style', array('style_name' => 'preview', 'path' => $image_path));
     }
+
     return $author_image;
   }
 }
