@@ -1,9 +1,15 @@
 <?php
+/**
+ * @file
+ * Access in paths_alter.
+ */
 
 include_once 'loop_admin.features.inc';
 
 /**
  * Implements hook_admin_paths_alter().
+ *
+ * Setup permissions for user pages and create user pages.
  */
 function loop_admin_admin_paths_alter(&$paths) {
   // Treat all user pages as not administrative.
