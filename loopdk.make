@@ -135,7 +135,6 @@ projects[page_title][version] = "2.7"
 
 projects[panels][subdir] = "contrib"
 projects[panels][version] = "3.4"
-;projects[panels][patch][] = "https://drupal.org/files/panels.code_.2114599-1.patch"
 
 projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = "1.2"
@@ -388,7 +387,6 @@ projects[loop][type] = "theme"
 projects[loop][download][type] = "git"
 projects[loop][download][url] = "git@github.com:loopdk/loop.git"
 projects[loop][download][branch] = "development"
-
 
 ; Libraries
 libraries[ckeditor][download][type] = "get"
