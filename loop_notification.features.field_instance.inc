@@ -92,7 +92,7 @@ function loop_notification_field_default_field_instances() {
     ),
   );
 
-  // Translatables
+  // Translatables.
   // Included for use with string extractors like potx.
   t('Message node reference');
   t('Message text');
