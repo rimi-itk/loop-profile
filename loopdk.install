@@ -1,10 +1,17 @@
 <?php
-// $Id$
+/**
+ * @file
+ * Install, update and uninstall functions for the LOOP installation profile.
+ */
 
 /**
-* Implements hook_install().
-*
-* Perform actions to set up the site for this profile.
+ * Implements hook_install().
+ *
+ * Setting up default and admin theme. Activate node editing from admin theme.
+ * Enable user tracking via Google Analytics.
+ * Setup "Page not found" and "Access denied" pages.
+ *
+ * @see system_install()
 */
 function loopdk_install() {
 // Set default variables.
