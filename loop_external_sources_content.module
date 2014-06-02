@@ -61,8 +61,6 @@ function loop_external_sources_content_documents($scope) {
   foreach ($nodes as $node) {
     // Load entity wrapper.
 
-    $wrapper = entity_metadata_wrapper('node', $node);
-
     // Get path.
     $path = link_cleanup_url($node->field_external_link_url);
     $data[] = array(
