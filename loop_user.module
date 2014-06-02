@@ -18,7 +18,7 @@ function loop_user_views_api() {
  * Implements hook_block_info().
  */
 function loop_user_block_info() {
-  // Block for display of "My content".
+  // "My content" block.
   $blocks['loop_user_my_content'] = array(
     'info' => t('User my content'),
     'cache' => DRUPAL_CACHE_PER_PAGE,
@@ -34,6 +34,7 @@ function loop_user_block_view($delta = '') {
   $block = array();
   switch ($delta) {
     case 'loop_user_my_content':
+      // "My content" block.
       if (user_access('access content')) {
         if (arg(0) == 'user' && is_numeric(arg(1))) {
           $profile = user_load(arg(1));
