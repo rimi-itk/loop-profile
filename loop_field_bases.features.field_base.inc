@@ -42,7 +42,7 @@ function loop_field_bases_field_default_field_bases() {
   // Exported field_base: 'field_area_of_expertise'
   $field_bases['field_area_of_expertise'] = array(
     'active' => 1,
-    'cardinality' => 5,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_area_of_expertise',
