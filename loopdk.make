@@ -154,7 +154,7 @@ projects[rules][version] = "2.6"
 projects[saml2_sp][type] = "module"
 projects[saml2_sp][subdir] = "contrib"
 projects[saml2_sp][download][type] = "git"
-projects[saml2_sp][download][url] = "http://git.drupal.org:sandbox/umtj/2283401.git"
+projects[saml2_sp][download][url] = "http://git.drupal.org/sandbox/umtj/2283401.git"
 projects[saml2_sp][download][branch] = "7.x-1.x"
 
 projects[search_api][subdir] = "contrib"
