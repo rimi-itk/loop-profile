@@ -1,5 +1,8 @@
 (function ($) {
 
+  /**
+   * Containing class for the functionality of the filter.
+   */
   var doc = {
     list: [],
     display: [],
@@ -10,6 +13,9 @@
       items: 5
     },
 
+    /**
+     * Defines the different filters.
+     */
     sortByFilter: function(a, b) {
       if (doc.filter.sorting === 'newest') {
         return ((a.ts < b.ts) ? 1 : ((a.ts > b.ts) ? -1 : 0));
@@ -24,6 +30,9 @@
       }
     },
 
+    /**
+     * Function to call every time the display list should be updated.
+     */
     updateList: function() {
       doc.display = [];
 
@@ -50,9 +59,12 @@
 
 
   $(document).ready(function($) {
+    // Load the template for each entry.
     doc.template = Handlebars.compile(
       $("#js-list-item-template-other").html()
     );
+
+    // Load the data from the backend.
     $.get("/loop_dashboard_search_other_content", function(data) {
       doc.list = data;
       doc.updateList();

@@ -1,5 +1,8 @@
 (function ($) {
 
+  /**
+   * Containing class for the functionality of the filter.
+   */
   var dq = {
     questions: [],
     display: [],
@@ -11,6 +14,9 @@
       items: 5
     },
 
+    /**
+     * Defines the different filters.
+     */
     sortByFilter: function(a, b) {
       if (dq.filter.sorting === 'newest') {
         return ((a.ts < b.ts) ? 1 : ((a.ts > b.ts) ? -1 : 0));
@@ -28,6 +34,9 @@
       }
     },
 
+    /**
+     * Function to call every time the display list should be updated.
+     */
     updateList: function() {
       dq.display = [];
 
@@ -50,6 +59,10 @@
       });
     },
 
+    /**
+     * Helper function to set the class of the filter buttons.
+     * This depends on whether answered/unanswered questions should be displayed.
+     */
     setFilterButtonSizes: function() {
       if (!dq.filter.answered) {
         $('.js-questions-sort-filter').addClass('js-has-answers-removed');
@@ -65,9 +78,12 @@
 
 
   $(document).ready(function($) {
+    // Load the template for each entry.
     dq.template = Handlebars.compile(
       $("#js-list-item-template-questions").html()
     );
+
+    // Load the data from the backend.
     $.get("/loop_dashboard_search_questions", function(data) {
       dq.questions = data;
       dq.updateList();
