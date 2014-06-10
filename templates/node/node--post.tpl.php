@@ -92,7 +92,7 @@
           <span class="meta-data--author-link"><?php print l($author_name, 'user/' . $uid); ?></span>
         <?php endif ?>
         <?php if (isset($job_title)): ?>
-          <span class="meta-data--author-title"><?php print render($job_title);?></span>
+          <span class="meta-data--author-title"><?php print render($job_title);?><?php if (isset($place)): ?>, <?php print render($place);?><?php endif ?></span>
         <?php endif ?>
       </div>
     <?php endif ?>
