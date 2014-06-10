@@ -25,6 +25,7 @@ function loop_preprocess_page(&$variables) {
     unset($variables['page']['content']['system_main']['form']);
   }
 
+  // Fetch a user block (my content) on user pages).
   if ($arg[0] == 'user') {
     $variables['loop_user_my_content'] = module_invoke('loop_user', 'block_view', 'loop_user_my_content');
     hide($variables['tabs']['#secondary']);
@@ -62,9 +63,12 @@ function loop_preprocess_page(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_node().
+ *
  * Override or insert variables into the node template.
  */
 function loop_preprocess_node(&$variables) {
+  // Fetch node author.
   $author = user_load($variables['node']->uid);
 
   // Fetch user metadata.
@@ -75,13 +79,14 @@ function loop_preprocess_node(&$variables) {
     // Load entity wrapper.
     $wrapper = entity_metadata_wrapper('user', $author);
 
-    // Get first name and last name.
+    // Fetch data.
     $variables['job_title'] = $wrapper->field_job_title->value();
     $variables['place'] = $wrapper->field_location_place->value();
   }
 
   $variables['author_image'] = _loop_fetch_author_image($author);
 
+  // Add has comments class.
   if ($variables['comment_count'] > 0) {
     $variables['has_comments_class'] = 'has-comments';
   }
@@ -91,7 +96,9 @@ function loop_preprocess_node(&$variables) {
 }
 
 /**
- * Override or insert variables into the node template.
+ * Implements hook_preprocess_block().
+ *
+ * Override or insert variables into the block template.
  */
 function loop_preprocess_block(&$variables) {
   // Are we dealing with the access denied or page not found block?
@@ -103,8 +110,13 @@ function loop_preprocess_block(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_panels_pane().
+ *
+ * Override or insert variables into the node template.
+ *
  * Override or insert variables into the panel pane template.
  */
+
 function loop_preprocess_panels_pane(&$variables) {
   if (arg(0) == 'editor') {
     $variables['theme_hook_suggestions'][] = 'panels_pane__editor';
@@ -461,6 +473,8 @@ function loop_panels_default_style_render_region($vars) {
 
 /**
  * Implements hook_form_FORM_ID_alter().
+ *
+ * Change html of user login.
  */
 function loop_form_user_login_alter(&$form) {
   $form['#prefix'] = '<h2>' . t('User login') . '</h2>';
@@ -700,7 +714,7 @@ function loop_textarea($variables) {
 /**
  * Implements hook_preprocess_views_view().
  *
- * Preprocesss function for displaying subscribe/unsubscribe on nodes.
+ * Add variables to the base view template files (views.view.tpl.php and overrides).
  */
 function loop_preprocess_views_view(&$vars) {
   // We run the new message count in this function since the view updates with ajax.
@@ -708,10 +722,12 @@ function loop_preprocess_views_view(&$vars) {
     $new_message_count = _loop_fetch_user_new_notifications();
     $vars['user_messages'] = $new_message_count;
 
+    // Add update notification script.
     $update_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() . '/scripts/update-new-notifications.js';
     drupal_add_js($update_script_path, 'file');
   }
 
+  // If the view is one of the two front page views, add a few user variables.
   if ($vars['view']->name == 'loop_questions_by_user_profession' || $vars['view']->name == 'loop_questions_by_user_competence') {
     if ($vars['user']->uid > 0) {
       // Fetch full user obj.
@@ -722,14 +738,6 @@ function loop_preprocess_views_view(&$vars) {
 
       $vars['user_area_of_expertise'] = $wrapper->field_area_of_expertise->value();
       $vars['user_profession'] = $wrapper->field_profession->value();
-    }
-  }
-
-  if ($vars['view']->name == 'loop_editor_content' || $vars['view']->name == 'loop_editor_users' || $vars['view']->name == 'loop_editor_comments') {
-    $vars['theme_hook_suggestions'][] = 'views_view__loop_custom_editor_views';
-
-    if (arg(2) == 'content') {
-      $vars['theme_hook_suggestions'][] = 'views_view__loop_custom_editor_views__content';
     }
   }
 }
