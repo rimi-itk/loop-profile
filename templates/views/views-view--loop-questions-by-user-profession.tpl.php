@@ -62,7 +62,7 @@
           <h3 class="block-questions--header"><?php print t('Help a colleague'); ?></h3>
           <h4 class="block-questions--sub-header">
             <?php print t('Questions about') . ': '; ?>
-            <?php if (is_object($user__profession)): ?>
+            <?php if (!empty($user_profession) && is_object($user__profession)): ?>
               <em><?php print $user__profession->name;?></em>
             <?php endif; ?>
           </h4>

@@ -66,9 +66,19 @@ function loop_preprocess_page(&$variables) {
  */
 function loop_preprocess_node(&$variables) {
   $author = user_load($variables['node']->uid);
+
+  // Fetch user metadata.
   $variables['author_name'] = _loop_fetch_full_name($author);
-  $fetched_job_title = field_get_items('user', $author, 'field_job_title');
-  $variables['job_title'] = field_view_value('user', $author, 'field_job_title', $fetched_job_title[0], array());
+
+  if (is_object($author)) {
+
+    // Load entity wrapper.
+    $wrapper = entity_metadata_wrapper('user', $author);
+
+    // Get first name and last name.
+    $variables['job_title'] = $wrapper->field_job_title->value();
+    $variables['place'] = $wrapper->field_location_place->value();
+  }
 
   $variables['author_image'] = _loop_fetch_author_image($author);
 
@@ -545,6 +555,7 @@ function loop_form_comment_form_alter(&$form) {
 
     // Get job title.
     $variables['jobtitle'] = $wrapper->field_job_title->value();
+    $variables['place'] = $wrapper->field_location_place->value();
     $variables['author_image'] = _loop_fetch_author_image($variables['user_obj']);
   }
 
@@ -653,6 +664,16 @@ function loop_preprocess_loop_post_subscription_list(&$vars) {
 }
 
 /**
+ * Implements hook_preprocess_loop_post_subscription_list().
+ *
+ * Preprocesss function for displaying subscribe/unsubscribe on nodes.
+ */
+function loop_form_node_form_alter(&$form) {
+  $field_description_language = $form['field_description']['#language'];
+  $form['field_description'][$field_description_language]['0']['#format'] = 'simple';
+}
+
+/**
  * Implements hook_textarea().
  *
  * Remove grippie from textarea.
@@ -676,6 +697,11 @@ function loop_textarea($variables) {
   return $output;
 }
 
+/**
+ * Implements hook_preprocess_views_view().
+ *
+ * Preprocesss function for displaying subscribe/unsubscribe on nodes.
+ */
 function loop_preprocess_views_view(&$vars) {
   // We run the new message count in this function since the view updates with ajax.
   if ($vars['view']->name == 'user_messages') {
@@ -754,7 +780,7 @@ function _loop_fetch_full_name ($user_obj) {
   $name = '';
 
   // Make sure we are dealing with an object.
-  if(is_object($user_obj)) {
+  if (is_object($user_obj)) {
 
     // Load entity wrapper.
     $wrapper = entity_metadata_wrapper('user', $user_obj);
