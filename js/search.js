@@ -10,8 +10,8 @@ jQuery(document).ready(function($) {
     prefetch:  {
       // URL to fetch.
       url: '/loop_external_soruces/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,æ,ø,å',
-      // TTL 1 day.
-      ttl: 86400000
+      // TTL 5 min.
+      ttl: 300000
     },
   });
   loopExternalSources.initialize();
