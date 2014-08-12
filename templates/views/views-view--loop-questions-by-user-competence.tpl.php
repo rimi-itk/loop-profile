@@ -63,15 +63,8 @@
           <h4 class="block-questions--sub-header">
             <?php print t('Questions about') . ': '; ?>
             <em>
-              <?php if (!empty($user_area_of_expertise)): ?>
-                <?php $last_key = end(array_keys($user_area_of_expertise));?>
-                <?php foreach ($user_area_of_expertise as $key=>$value) : ?>
-                  <?php if ($key == $last_key) : ?>
-                    <?php print $value->name;?>
-                  <?php else : ?>
-                    <?php print $value->name .', ';?>
-                  <?php endif; ?>
-                <?php endforeach;?>
+              <?php if (isset($user_area_of_expertise) && (is_array($user_area_of_expertise))): ?>
+                <?php print implode(', ', $user_area_of_expertise); ?>
               <?php endif; ?>
             </em>
           </h4>
