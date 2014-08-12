@@ -13,21 +13,25 @@ include_once 'loop_post.features.inc';
  * Figure out if profession is linked to a subject, set it as default.
  */
 function loop_post_form_node_form_alter(&$form, &$form_state) {
-  global $user;
-  // We need the field_profession field, so lets fire up user_load!
-  $account = user_load($user->uid);
+  if ($form['type']['#value'] == 'post') {
+    global $user;
+    $field_description_language = $form['field_description']['#language'];
+    $form['field_description'][$field_description_language]['0']['#format'] = 'simple';
+    // We need the field_profession field, so lets fire up user_load!
+    $account = user_load($user->uid);
 
-  // Fetch profession field from user.
-  $fetched_field_profession = field_get_items('user', $account, 'field_profession');
+    // Fetch profession field from user.
+    $fetched_field_profession = field_get_items('user', $account, 'field_profession');
 
-  // Set up profession field.
-  if ($fetched_field_profession) {
-    if (arg(1) == 'add') {
-      $form['field_profession'][LANGUAGE_NONE]['#default_value'] = array(0 => $fetched_field_profession['0']['tid']);
+    // Set up profession field.
+    if ($fetched_field_profession) {
+      if (arg(1) == 'add') {
+        $form['field_profession'][LANGUAGE_NONE]['#default_value'] = array(0 => $fetched_field_profession['0']['tid']);
+      }
     }
-  }
 
-  // Move description inside wrapper.
-  unset($form['field_description']['#attributes']['class']);
-  $form['field_description']['und']['#prefix'] = '<div id="field-description-add-more-wrapper" class="description-form-element form-item">';
+    // Move description inside wrapper.
+    unset($form['field_description']['#attributes']['class']);
+    $form['field_description']['und']['#prefix'] = '<div id="field-description-add-more-wrapper" class="description-form-element form-item">';
+  }
 }
