@@ -165,6 +165,9 @@ if (isset($primary_menu_block['content'])): ?>
               </div>
             </aside>
             <?php print render($loop_user_my_content['content']); ?>
+            <?php if (isset($user_completion_block)): ?>
+              <?php print render($user_completion_block['content']); ?>
+            <?php endif; ?>
           <?php endif; ?>
         </div>
       <div class="layout-element-beta">
