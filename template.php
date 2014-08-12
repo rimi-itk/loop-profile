@@ -28,6 +28,9 @@ function loop_preprocess_page(&$variables) {
   // Fetch a user block (my content) on user pages).
   if ($arg[0] == 'user') {
     $variables['loop_user_my_content'] = module_invoke('loop_user', 'block_view', 'loop_user_my_content');
+    if (module_exists('pcp')) {
+      $variables['user_completion_block'] = module_invoke('pcp', 'block_view', 'pcp_profile_percent_complete');
+    }
     hide($variables['tabs']['#secondary']);
   }
 
