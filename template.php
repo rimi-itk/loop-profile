@@ -659,9 +659,17 @@ function loop_preprocess_comment(&$variables) {
 
   $variables['comment_body'] = _loop_fetch_comment_body($variables['comment']);
 
-  // Fetch the fields needed.
-  $fetched_job_title = field_get_items('user', $variables['comment']->account, 'field_job_title');
-  $variables['job_title'] = field_view_value('user', $variables['comment']->account, 'field_job_title', $fetched_job_title[0], array());
+  $comment_author = $variables['comment']->account;
+  if (is_object($comment_author)) {
+
+    // Load entity wrapper for author.
+    $wrapper = entity_metadata_wrapper('user', $comment_author);
+
+    // Fetch the fields needed.
+    $variables['place'] = $wrapper->field_location_place->value();
+    $fetched_job_title = field_get_items('user', $variables['comment']->account, 'field_job_title');
+    $variables['job_title'] = field_view_value('user', $variables['comment']->account, 'field_job_title', $fetched_job_title[0], array());
+  }
 }
 
 /**
@@ -678,16 +686,6 @@ function loop_preprocess_loop_post_subscription_list(&$vars) {
   else {
     $vars['current_type_css'] = 'block-unfollow-question';
   }
-}
-
-/**
- * Implements hook_preprocess_loop_post_subscription_list().
- *
- * Preprocesss function for displaying subscribe/unsubscribe on nodes.
- */
-function loop_form_node_form_alter(&$form) {
-  $field_description_language = $form['field_description']['#language'];
-  $form['field_description'][$field_description_language]['0']['#format'] = 'simple';
 }
 
 /**
