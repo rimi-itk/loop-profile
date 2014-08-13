@@ -34,6 +34,29 @@ function loop_navigation_menu_default_menu_links() {
   // Included for use with string extractors like potx.
   t('Administration');
 
+  $menu_links['management_overview:admin/index'] = array(
+    'menu_name' => 'management',
+    'link_path' => 'admin/index',
+    'parent_identifier' => 'management_administration:admin',
+    'router_path' => 'admin/index',
+    'link_title' => 'Overview',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'management_overview:admin/index',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 1,
+    'weight' => -42,
+    'customized' => 1,
+  );
+  // Translatables.
+  // Included for use with string extractors like potx.
+  t('Overview');
 
   return $menu_links;
 }
