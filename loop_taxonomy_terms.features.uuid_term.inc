@@ -1001,6 +1001,15 @@ function loop_taxonomy_terms_uuid_features_default_terms() {
     'metatags' => array(),
   );
   $terms[] = array(
+    'name' => 'Sundhedskonsulent',
+    'description' => NULL,
+    'format' => NULL,
+    'weight' => 0,
+    'uuid' => 'e8f4af38-bd69-4dbe-bb6c-aebf1926d839',
+    'vocabulary_machine_name' => 'profession',
+    'metatags' => array(),
+  );
+  $terms[] = array(
     'name' => 'Værge',
     'description' => '',
     'format' => 'editor',
