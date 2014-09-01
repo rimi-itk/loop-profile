@@ -11,7 +11,7 @@ jQuery(document).ready(function($) {
       // URL to fetch.
       url: '/loop_external_data/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,æ,ø,å',
       // TTL 1 day.
-      ttl: 86400000
+      ttl: 30
     },
   });
   loopDocuments.initialize();
