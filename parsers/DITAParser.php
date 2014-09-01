@@ -149,7 +149,6 @@ class DITAParser implements ParserInterface {
             "message" => "import error: file not found",
             "ref" => $path_to_directory . '/' . dirname($href) . '/' . $file_path,
           );
-          watchdog('loop_external_data', print_r($msg, 1));
           continue;
         }
 
@@ -171,7 +170,6 @@ class DITAParser implements ParserInterface {
               "containerid" => '"' . $contain_id . '"',
               "id" => '"' . $id . '"',
             );
-            watchdog('loop_external_data', print_r($msg, 1));
             continue;
           }
 
