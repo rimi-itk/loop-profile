@@ -108,7 +108,20 @@ function loop_frontpage_default_page_manager_pages() {
     $pane->type = 'views_panes';
     $pane->subtype = 'loop_questions_by_user_profession-panel_pane_1';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 6,
+            ),
+          ),
+          'context' => 'context_user_1',
+          'not' => TRUE,
+        ),
+      ),
+    );
     $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
@@ -149,7 +162,9 @@ function loop_frontpage_default_page_manager_pages() {
     $pane->type = 'views_panes';
     $pane->subtype = 'loop_questions_by_user_competence-panel_pane_1';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(),
+    );
     $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
