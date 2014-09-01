@@ -15,8 +15,8 @@ jQuery(document).ready(function($) {
     prefetch:  {
       // URL to fetch.
       url: '/loop_search_nodes',
-      // TTL 5 min.
-      ttl: 300000
+      // TTL 30 sec.
+      ttl: 30000
     },
   });
   loopQuestions.initialize();
