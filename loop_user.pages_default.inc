@@ -113,7 +113,20 @@ function loop_user_default_page_manager_handlers() {
     $pane->type = 'block';
     $pane->subtype = 'loop_user-loop_user_my_content';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'role',
+          'settings' => array(
+            'rids' => array(
+              0 => 6,
+            ),
+          ),
+          'context' => 'argument_entity_id:user_1',
+          'not' => TRUE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'override_title' => 0,
       'override_title_text' => '',
