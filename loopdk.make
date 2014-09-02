@@ -127,6 +127,9 @@ projects[module_filter][version] = "1.8"
 projects[node_export][subdir] = "contrib"
 projects[node_export][version] = "3.0"
 
+projects[node_limit][subdir] = "contrib"
+projects[node_limit][version] = "1.0-alpha5"
+
 projects[oauth][subdir] = "contrib"
 projects[oauth][version] = "3.2"
 
