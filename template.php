@@ -96,6 +96,13 @@ function loop_preprocess_node(&$variables) {
   else {
     $variables['has_comments_class'] = '';
   }
+
+  // Fetch files related to post.
+  if ($variables['type'] == 'post') {
+    if (!empty($variables['field_file_upload'])) {
+      $variables['files'] = _loop_fetch_files('node', $variables['node']);
+    }
+  }
 }
 
 /**
@@ -670,6 +677,14 @@ function loop_preprocess_comment(&$variables) {
     $fetched_job_title = field_get_items('user', $variables['comment']->account, 'field_job_title');
     $variables['job_title'] = field_view_value('user', $variables['comment']->account, 'field_job_title', $fetched_job_title[0], array());
   }
+
+  // Fetch files related to the comment.
+  if ($variables['node']->type == 'post') {
+    if (!empty($variables['field_file_upload_comment'])) {
+      $variables['files'] = _loop_fetch_files('comment', $variables['comment']);
+      echo '1';
+    }
+  }
 }
 
 /**
@@ -870,4 +885,32 @@ function _loop_fetch_comment_body($comment) {
   $comment = $wrapper->comment_body->value();
 
   return $comment['safe_value'];
+}
+
+/**
+ * Fetches files related to node or comment.
+ *
+ * @param type - The entity type.
+ * @param id - The id of the entity.
+ * @return files - The files related to the entity.
+ */
+function _loop_fetch_files($type, $entity) {
+  if ($type == 'comment') {
+    // Load entity wrapper.
+    $wrapper = entity_metadata_wrapper('comment', $entity);
+
+    // Fetch files.
+    $files = $wrapper->field_file_upload_comment->value();
+  }
+  elseif ($type == 'node'){
+    // Load entity wrapper.
+    $wrapper = entity_metadata_wrapper('node', $entity);
+
+    // Fetch files.
+    $files = $wrapper->field_file_upload->value();
+  } else {
+    $files = FALSE;
+  }
+
+  return $files;
 }
