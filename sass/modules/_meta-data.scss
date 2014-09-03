@@ -9,6 +9,7 @@
 .meta-data--author {
   margin-bottom: .75em;
   margin-left: -2em;
+  margin-right: 2em;
 
   @include breakpoint($layout-max-width) {
     margin-left: 0;
