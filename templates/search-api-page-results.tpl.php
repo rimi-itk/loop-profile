@@ -64,16 +64,22 @@
           <div class="messages warning"><?php print t('No results found');?></div>
           <?php print render($spellcheck); ?>
         </div>
-        <?php print t('If you think your question has not been answered before, you can <a href="#ask-question">create the question</a> in the form. You can also try to <a href="#search-block-form">search again</a>.');?>
+        <?php if (isset($node_form)): ?>
+          <?php print t('If you think your question has not been answered before, you can <a href="#ask-question">create the question</a> in the form. You can also try to <a href="#search-block-form">search again</a>.');?>
+        <?php else: ?>
+          <?php print t('Try to <a href="#search-block-form">search again</a>.');?>
+        <?php endif; ?>
       </div>
     </div>
     <div class="layout-element-beta">
     </div>
   </div>
-  <div class="layout--inner" id="ask-question">
-    <div class="layout-element-epsilon">
-      <h3 class="page-title"><?php print t('Create question');?></h3>
-      <?php print render($node_form); ?>
+  <?php if (isset($node_form)): ?>
+    <div class="layout--inner" id="ask-question">
+      <div class="layout-element-epsilon">
+        <h3 class="page-title"><?php print t('Create question');?></h3>
+        <?php print render($node_form); ?>
+      </div>
     </div>
-  </div>
+  <?php endif; ?>
 <?php endif; ?>

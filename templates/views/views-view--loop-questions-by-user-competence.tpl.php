@@ -26,6 +26,8 @@
  *
  * @ingroup views_templates
  */
+
+global $user;
 ?>
 <div class="<?php print $classes; ?>">
   <?php print render($title_prefix); ?>
@@ -57,7 +59,7 @@
     </div>
   <?php elseif ($empty): ?>
     <div class="view-empty">
-      <?php if ($view->current_display == 'panel_pane_2'): ?>
+      <?php if ( ($view->current_display == 'panel_pane_2') && (!in_array('read only', $user->roles)) ): ?>
         <div class="block-questions--header-wrapper">
           <h3 class="block-questions--header"><?php print t('You are the expert! Can you help?'); ?></h3>
           <h4 class="block-questions--sub-header">
