@@ -194,30 +194,6 @@ function loop_post_views_default_views() {
       'label' => 'Content: Nid',
     ),
   );
-  $translatables['loop_node_comments'] = array(
-    t('Master'),
-    t('Comment for content'),
-    t('mere'),
-    t('Perform'),
-    t('Restore'),
-    t('Sort by'),
-    t('Ascending'),
-    t('Descending'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('Content'),
-    t('counter'),
-    t('All'),
-    t('Most valid comment'),
-    t('more'),
-    t('View panes'),
-    t('Other comments'),
-  );
   $export['loop_node_comments'] = $view;
 
   return $export;
