@@ -72,6 +72,21 @@
     <span class="meta-data--author-title"><?php print render($job_title); ?><?php if (isset($place)): ?>, <?php print render($place);?><?php endif ?></span>
   </div>
 </div>
+<?php if (!empty($files)): ?>
+  <div class="comments--files">
+    <div class="comments--files-label"><?php print t('Files');?>:</div>
+    <div class="comments--files-content">
+      <?php foreach ($files as $file) : ?>
+        <div class="question--file">
+          <a href="<?php print file_create_url($file['uri']);?>" target="_blank">
+            <span class="comments--icon comments--icon-<?php print str_replace('/','-', $file['filemime']);?>"></span>
+            <span class="comments--file-name"><?php print truncate_utf8($file['filename'], 20, FALSE, TRUE);?></span>
+          </a>
+        </div>
+      <?php endforeach; ?>
+    </div>
+  </div>
+<?php endif; ?>
 <span class="comments--comment-meta-data">
   <?php print t('Submitted') . ' ' . format_date($comment->created, $type = 'medium'); ?>
   <?php if ($comment->uid == $user->uid) : ?>
