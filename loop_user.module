@@ -23,6 +23,11 @@ function loop_user_block_info() {
     'info' => t('User my content'),
     'cache' => DRUPAL_CACHE_PER_PAGE,
   );
+
+  $blocks['loop_user_best_answers'] = array(
+    'info' => t('User best answers'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
   return $blocks;
 }
 
@@ -49,6 +54,16 @@ function loop_user_block_view($delta = '') {
         $block['content'] = FALSE;
       }
       break;
+    case 'loop_user_best_answers':
+      // Display users best answers.
+      if (user_access('access content')) {
+        if (arg(0) == 'user' && is_numeric(arg(1))) {
+          $uid = arg(1);
+          $variables = _fetch_user_answers($uid);
+          $block['content'] = theme('loop_user_best_answers', $variables);
+        }
+      }
+      break;
   }
   return $block;
 }
@@ -63,5 +78,27 @@ function loop_user_theme() {
       'variables' => array(),
       'template' => 'templates/loop-user--my-content',
     ),
+    'loop_user_best_answers' => array(
+      'variables' => array(),
+      'template' => 'templates/loop-user--best-answers',
+    ),
   );
+}
+
+
+/**
+ * Fetches users answers and and number of best answers.
+ *
+ * @param uid - The user.
+ * @return answers_array - The answers.
+ */
+function _fetch_user_answers($uid) {
+  // Fetch all comments by user.
+  $result = db_query('select cid, uid, subject FROM comment where uid = :uid', array(':uid' => $uid))->fetchAll();
+  $answers_array = array (
+    'answers' => $result,
+    'answers_count' => count($result),
+    'best_answers_count' => '456'
+  );
+  return $answers_array;
 }
