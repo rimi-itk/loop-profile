@@ -62,7 +62,8 @@
   </div>
   <div class="user-profile-module--personal-info-image">
     <?php print render($elements['field_user_image']); ?>
-  <div>
+    <?php print render($loop_user_best_answers['content']); ?>
+  </div>
 </fieldset>
 <?php hide($user_profile['mimemail']); ?>
 <?php hide($user_profile['group_personal_information']); ?>
