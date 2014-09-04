@@ -62,7 +62,6 @@
         <div class="search-result--lead">
           <p><?php print t('You searched for:');?> <strong><?php print $keys;?></strong></p>
           <div class="messages warning"><?php print t('No results found');?></div>
-          <?php print render($spellcheck); ?>
         </div>
         <?php if (isset($node_form)): ?>
           <?php print t('If you think your question has not been answered before, you can <a href="#ask-question">create the question</a> in the form. You can also try to <a href="#search-block-form">search again</a>.');?>
