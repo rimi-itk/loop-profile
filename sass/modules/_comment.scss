@@ -71,6 +71,48 @@
   }
 }
 
+.comments--files {
+  background-color: #f2f2f2;
+  color: #999999;
+  clear: both;
+  font-size: 80%;
+  margin-bottom: 1em;
+  overflow: hidden;
+  padding: .5em 1.25em .65em;
+
+  @include breakpoint (65em) {
+    clear: none;
+    max-width: 16em;
+  }
+}
+
+.comments--icon {
+  height: 16px;
+  width: 16px;
+  float: left;
+  display: block;
+  margin-right: .5em;
+  background: url('../images/document-icon.png') no-repeat right top;
+}
+
+.comments--icon-application-pdf {
+  background: url('../images/pdf-icon.png') no-repeat right top;
+}
+
+.comments--icon-image-jpeg,
+.comments--icon-image-png,{
+  background: url('../images/image-icon.png') no-repeat right top;
+}
+
+.comments--files-label {
+  float: left;
+  margin-right: 1.6em;
+}
+
+.comments--files-content {
+  float: left;
+}
+
 
 /* Comments list on user page
    ================================================================================================================== */

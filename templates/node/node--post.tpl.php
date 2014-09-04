@@ -100,6 +100,21 @@
   <div class="question--meta-data">
     <div class="question--meta-data-date"><?php print t('Submitted') . ' ' . format_date($created, $type = 'medium'); ?></div>
     <?php print render($content['field_subject']);?>
+    <?php if (!empty($files)): ?>
+      <div class="question--files">
+        <div class="question--files-label"><?php print t('Files');?>:</div>
+        <div class="question--files-content">
+          <?php foreach ($files as $file) : ?>
+            <div class="question--file">
+              <a href="<?php print file_create_url($file['uri']);?>" target="_blank">
+                <span class="question--icon question--icon-<?php print str_replace('/','-', $file['filemime']);?>"></span>
+                <span class="question--file-name"><?php print truncate_utf8($file['filename'], 20, FALSE, TRUE);?></span>
+              </a>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    <?php endif; ?>
   </div>
   <div class="question--inner">
     <?php print render($content['field_description']);?>

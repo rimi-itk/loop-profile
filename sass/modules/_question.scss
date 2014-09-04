@@ -46,6 +46,37 @@
   font-weight: bold;
 }
 
+.question--files {
+  overflow: hidden;
+}
+
+.question--icon {
+  height: 16px;
+  width: 16px;
+  float: left;
+  display: block;
+  margin-right: .5em;
+  background: url('../images/document-icon.png') no-repeat right top;
+}
+
+.question--icon-application-pdf {
+  background: url('../images/pdf-icon.png') no-repeat right top;
+}
+
+.question--icon-image-jpeg,
+.question--icon-image-png,{
+  background: url('../images/image-icon.png') no-repeat right top;
+}
+
+.question--files-label {
+  float: left;
+  margin-right: 1.6em;
+}
+
+.question--files-content {
+  float: left;
+}
+
 .question--label-edit-link {
   font-weight: normal;
 }
