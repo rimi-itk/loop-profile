@@ -463,6 +463,7 @@ function loop_preprocess_user_profile(&$variables) {
   $account = $variables['elements']['#account'];
 
   $variables['full_name'] = _loop_fetch_full_name($account);
+  $variables['loop_user_best_answers'] = module_invoke('loop_user', 'block_view', 'loop_user_best_answers');
 
   // Helpful $user_profile variable for templates.
   foreach (element_children($variables['elements']) as $key) {
@@ -685,7 +686,6 @@ function loop_preprocess_comment(&$variables) {
   if ($variables['node']->type == 'post') {
     if (!empty($variables['field_file_upload_comment'])) {
       $variables['files'] = _loop_fetch_files('comment', $variables['comment']);
-      echo '1';
     }
   }
 }
