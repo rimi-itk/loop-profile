@@ -16,3 +16,19 @@ function loop_admin_admin_paths_alter(&$paths) {
   $paths['user/*'] = FALSE;
   $paths['admin/people/create'] = FALSE;
 }
+
+function loop_admin_form_post_node_form_alter(&$form, &$form_state) {
+  global $user;
+  $account = user_load($user->uid);
+
+  $name = t('Not set');
+  if (isset($account->field_first_name['und'][0]['safe_value'])) {
+    $name = '' . $account->field_first_name['und'][0]['safe_value'];
+    if (isset($account->field_last_name['und'][0]['safe_value'])) {
+      $name .= ' ' . $account->field_last_name['und'][0]['safe_value'];
+
+    }
+  }
+
+  $form['author']['name']['#title'] .= ' fullname: <span>' . $name . '</span>';
+}
