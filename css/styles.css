@@ -3894,18 +3894,46 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   text-decoration: underline;
 }
 
-/* line 35, ../sass/modules/_search.scss */
+/* line 36, ../sass/modules/_search.scss */
+.search-result--lead {
+  margin-bottom: 2em;
+}
+
+/* line 41, ../sass/modules/_search.scss */
 .search-result--comments, .question--number-of-comments {
   display: block;
 }
-/* line 38, ../sass/modules/_search.scss */
+/* line 44, ../sass/modules/_search.scss */
 .search-result--comments:link, .question--number-of-comments:link, .search-result--comments:visited, .question--number-of-comments:visited {
   color: #737373;
   text-decoration: none;
 }
-/* line 44, ../sass/modules/_search.scss */
+/* line 50, ../sass/modules/_search.scss */
 .search-result--comments:hover, .question--number-of-comments:hover, .search-result--comments:active, .question--number-of-comments:active {
   color: #404040;
+}
+
+/* line 62, ../sass/modules/_search.scss */
+.search-result--meta-data {
+  margin-bottom: 1.5em;
+  padding: .5em 1.25em .65em;
+  background-color: #f2f2f2;
+  color: #999999;
+  font-size: 80%;
+  -moz-border-radius: 0.4em;
+  -webkit-border-radius: 0.4em;
+  border-radius: 0.4em;
+}
+@media only screen and (min-width: 51em) {
+  /* line 62, ../sass/modules/_search.scss */
+  .search-result--meta-data {
+    float: right;
+  }
+}
+
+/* line 77, ../sass/modules/_search.scss */
+.search-result--meta-data-date {
+  min-width: 13em;
 }
 
 /**

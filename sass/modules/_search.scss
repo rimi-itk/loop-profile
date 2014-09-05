@@ -32,6 +32,12 @@
   }
 }
 
+
+.search-result--lead {
+  margin-bottom: 2em;
+}
+
+
 .search-result--comments {
   display: block;
 
@@ -50,4 +56,24 @@
     @extend %icon-comment;
     @extend %icon-before;
   }
+}
+
+
+.search-result--meta-data {
+  margin-bottom: $margin-bottom;
+  padding: .5em 1.25em .65em;
+
+  background-color: $gray-background;
+  color: $gray-color;
+  font-size: 80%;
+
+  @include border-radius($border-radius);
+
+  @include breakpoint(51em) {
+    float: right;
+  }
+}
+
+.search-result--meta-data-date {
+  min-width: 13em;
 }
