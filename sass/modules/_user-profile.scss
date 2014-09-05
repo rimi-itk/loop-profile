@@ -34,6 +34,7 @@
   text-align: center;
 
   img {
+    margin-bottom: 1em;
     width: 50%;
   }
 
@@ -140,6 +141,60 @@
 
 .user-profile--notification-actions--button--confirm {
   margin-right: 1em;
+}
+
+.user-profile--answers-label {
+  clear: both;
+  font-size: .7em;
+  float: left;
+  margin-left: 0;
+}
+
+/* Answers count*/
+.user-profile--answers {
+  display: inline-block;
+  text-align: center;
+  width: 4.5em;
+}
+
+.user-profile--best-answers {
+  display: inline-block;
+  margin-left: -4px;
+  text-align: center;
+  width: 4.2em;
+}
+
+.user-profile--answers-count {
+  border: 2px solid $green;
+  color: $green;
+  clear: both;
+  float: left;
+  margin-right: 1em;
+  padding: .5em;
+  width: 2em;
+
+  &:before {
+    @extend %icon-comment;
+    @extend %icon-before;
+
+    margin-right: .5em;
+  }
+}
+
+.user-profile--answers-best-count {
+  border: 2px solid $green;
+  color: $green;
+  clear: both;
+  float: left;
+  padding: .5em;
+  width: 2em;
+
+  &:before {
+    @extend %icon-like;
+    @extend %icon-before;
+
+    margin-right: .5em;
+  }
 }
 
 .user-form--password-link {

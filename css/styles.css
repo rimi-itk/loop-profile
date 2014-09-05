@@ -1211,7 +1211,7 @@ label {
 /* Icon shadow classes
    ================================================================================================================== */
 /* line 70, ../sass/theme/_icons.scss */
-.comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .messages.warning:before, .nav-mobile .nav--link:before, .nav-mobile .nav--logout:before,
+.comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .user-profile--answers-best-count:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .messages.warning:before, .nav-mobile .nav--link:before, .nav-mobile .nav--logout:before,
 .nav-mobile .nav-dropdown--header:before,
 .nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before, .twitter-typeahead:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before {
   display: inline-block;
@@ -1222,7 +1222,7 @@ label {
 /* line 77, ../sass/theme/_icons.scss */
 .nav-mobile .nav--link:before, .nav-mobile .nav--logout:before,
 .nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .comment--flag:before, .guide--nav-list-item .active:before, .search-result--comments:before, .question--number-of-comments:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .messages.status:before, .messages.warning:before, .messages.error:before {
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .comment--flag:before, .guide--nav-list-item .active:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .user-profile--answers-best-count:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .messages.status:before, .messages.warning:before, .messages.error:before {
   margin-right: .35em;
 }
 
@@ -1242,7 +1242,7 @@ label {
 }
 
 /* line 97, ../sass/theme/_icons.scss */
-.comment--flag:before {
+.comment--flag:before, .user-profile--answers-best-count:before {
   content: '\e805';
 }
 
@@ -1257,7 +1257,7 @@ label {
 }
 
 /* line 115, ../sass/theme/_icons.scss */
-.search-result--comments:before, .question--number-of-comments:before {
+.search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before {
   content: '\e80a';
 }
 
@@ -4142,6 +4142,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
 }
 /* line 36, ../sass/modules/_user-profile.scss */
 .user-profile-module--personal-info-image img {
+  margin-bottom: 1em;
   width: 50%;
 }
 @media only screen and (min-width: 45em) {
@@ -4150,13 +4151,13 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
     float: right;
     width: 20%;
   }
-  /* line 45, ../sass/modules/_user-profile.scss */
+  /* line 46, ../sass/modules/_user-profile.scss */
   .user-profile-module--personal-info-image img {
     width: 100%;
   }
 }
 
-/* line 51, ../sass/modules/_user-profile.scss */
+/* line 52, ../sass/modules/_user-profile.scss */
 .user-profile-module--field, .user-profile-module--field-personal-info {
   position: relative;
   line-height: 1.75em;
@@ -4164,37 +4165,37 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 58, ../sass/modules/_user-profile.scss */
+/* line 59, ../sass/modules/_user-profile.scss */
 .user-profile-module--field:last-child, .user-profile-module--field-personal-info:last-child {
   border-bottom: 0;
   margin-bottom: -1em;
   padding-bottom: 1em;
 }
 
-/* line 66, ../sass/modules/_user-profile.scss */
+/* line 67, ../sass/modules/_user-profile.scss */
 .user-profile-module--edit-link {
   float: right;
   padding: 0.5em;
 }
 
-/* line 72, ../sass/modules/_user-profile.scss */
+/* line 73, ../sass/modules/_user-profile.scss */
 .user-profile-module--field-text,
 .user-profile-module--field-text p {
   display: inline;
   padding-right: 1.75em;
 }
 
-/* line 78, ../sass/modules/_user-profile.scss */
+/* line 79, ../sass/modules/_user-profile.scss */
 .user-profile-module--field-personal-info {
   border-bottom: 1px solid #e6e6e6;
 }
 
-/* line 84, ../sass/modules/_user-profile.scss */
+/* line 85, ../sass/modules/_user-profile.scss */
 .user-profile-module--fieldset-legend {
   font-weight: bold;
 }
 
-/* line 90, ../sass/modules/_user-profile.scss */
+/* line 91, ../sass/modules/_user-profile.scss */
 .user-profile-module--field-label {
   display: inline-block;
   font-weight: bold;
@@ -4202,22 +4203,22 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   margin-right: 1em;
 }
 
-/* line 97, ../sass/modules/_user-profile.scss */
+/* line 98, ../sass/modules/_user-profile.scss */
 .user-profile-module--footer {
   padding: 2em 1em 0;
   text-align: center;
 }
 
-/* line 103, ../sass/modules/_user-profile.scss */
+/* line 104, ../sass/modules/_user-profile.scss */
 .user-profile-module--notifications {
   margin-bottom: 3em;
 }
-/* line 106, ../sass/modules/_user-profile.scss */
+/* line 107, ../sass/modules/_user-profile.scss */
 .user-profile-module--notifications:last-child {
   margin-bottom: 0;
 }
 
-/* line 111, ../sass/modules/_user-profile.scss */
+/* line 112, ../sass/modules/_user-profile.scss */
 .user-profile--notification-actions {
   background-color: #f2f2f2;
   overflow: hidden;
@@ -4227,7 +4228,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-/* line 120, ../sass/modules/_user-profile.scss */
+/* line 121, ../sass/modules/_user-profile.scss */
 .user-profile--notification-actions.anim-open-notification-tab {
   -moz-animation: open-notification-actions 1.5s;
   -webkit-animation: open-notification-actions 1.5s;
@@ -4235,7 +4236,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   animation-fill-mode: forwards;
   -webkit-animation-fill-mode: forwards;
 }
-/* line 126, ../sass/modules/_user-profile.scss */
+/* line 127, ../sass/modules/_user-profile.scss */
 .user-profile--notification-actions.anim-close-notification-tab {
   -moz-animation: close-notification-actions 1.5s;
   -webkit-animation: close-notification-actions 1.5s;
@@ -4244,28 +4245,81 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   -webkit-animation-fill-mode: forwards;
 }
 
-/* line 133, ../sass/modules/_user-profile.scss */
+/* line 134, ../sass/modules/_user-profile.scss */
 .user-profile--notification-actions-inner {
   padding: 1em;
 }
 
-/* line 137, ../sass/modules/_user-profile.scss */
+/* line 138, ../sass/modules/_user-profile.scss */
 .user-profile--notification-actions--button-remove {
   float: right;
 }
 
-/* line 141, ../sass/modules/_user-profile.scss */
+/* line 142, ../sass/modules/_user-profile.scss */
 .user-profile--notification-actions--button--confirm {
   margin-right: 1em;
 }
 
-/* line 145, ../sass/modules/_user-profile.scss */
+/* line 146, ../sass/modules/_user-profile.scss */
+.user-profile--answers-label {
+  clear: both;
+  font-size: .7em;
+  float: left;
+  margin-left: 0;
+}
+
+/* Answers count*/
+/* line 154, ../sass/modules/_user-profile.scss */
+.user-profile--answers {
+  display: inline-block;
+  text-align: center;
+  width: 4.5em;
+}
+
+/* line 160, ../sass/modules/_user-profile.scss */
+.user-profile--best-answers {
+  display: inline-block;
+  margin-left: -4px;
+  text-align: center;
+  width: 4.2em;
+}
+
+/* line 167, ../sass/modules/_user-profile.scss */
+.user-profile--answers-count {
+  border: 2px solid #41ab51;
+  color: #41ab51;
+  clear: both;
+  float: left;
+  margin-right: 1em;
+  padding: .5em;
+  width: 2em;
+}
+/* line 176, ../sass/modules/_user-profile.scss */
+.user-profile--answers-count:before {
+  margin-right: .5em;
+}
+
+/* line 184, ../sass/modules/_user-profile.scss */
+.user-profile--answers-best-count {
+  border: 2px solid #41ab51;
+  color: #41ab51;
+  clear: both;
+  float: left;
+  padding: .5em;
+  width: 2em;
+}
+/* line 192, ../sass/modules/_user-profile.scss */
+.user-profile--answers-best-count:before {
+  margin-right: .5em;
+}
+
+/* line 200, ../sass/modules/_user-profile.scss */
 .user-form--password-link {
   padding-left: 0;
   list-style: none;
 }
 
-/* line 150, ../sass/modules/_user-profile.scss */
+/* line 205, ../sass/modules/_user-profile.scss */
 .password-confirm,
 .password-strength-title,
 .password-strength-text,
@@ -4274,14 +4328,14 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   float: right;
   margin-left: .5em;
 }
-/* line 158, ../sass/modules/_user-profile.scss */
+/* line 213, ../sass/modules/_user-profile.scss */
 .password-confirm .error,
 .password-strength-title .error,
 .password-strength-text .error,
 .password-strength .error {
   color: #ff6138;
 }
-/* line 162, ../sass/modules/_user-profile.scss */
+/* line 217, ../sass/modules/_user-profile.scss */
 .password-confirm .ok,
 .password-strength-title .ok,
 .password-strength-text .ok,
@@ -4289,13 +4343,13 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   color: #41ab51;
 }
 
-/* line 167, ../sass/modules/_user-profile.scss */
+/* line 222, ../sass/modules/_user-profile.scss */
 .edit-user--image-fieldset {
   position: relative;
   height: 15em;
 }
 
-/* line 173, ../sass/modules/_user-profile.scss */
+/* line 228, ../sass/modules/_user-profile.scss */
 .edit-user--image {
   position: absolute;
   top: 3em;
@@ -4304,7 +4358,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   width: 25%;
 }
 
-/* line 182, ../sass/modules/_user-profile.scss */
+/* line 237, ../sass/modules/_user-profile.scss */
 .edit-user--image-buttons {
   position: relative;
   top: 50%;
@@ -4316,7 +4370,7 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   transform: translateY(-50%);
 }
 
-/* line 192, ../sass/modules/_user-profile.scss */
+/* line 247, ../sass/modules/_user-profile.scss */
 .edit-user--image-button-remove {
   margin-right: .5em;
 }
