@@ -109,6 +109,12 @@ function _loop_user_fetch_user_answers($uid) {
     ->execute()
     ->fetchAllAssoc('cid');
 
+  $user_comments =  db_select('comment', 'c')
+    ->fields('c')
+    ->condition('uid', $uid)
+    ->execute()
+    ->fetchAllAssoc('cid');
+
   $top_comments = array();
   $nids = array();
   foreach ($flags as $flag) {
@@ -133,9 +139,9 @@ function _loop_user_fetch_user_answers($uid) {
 
   // Send data back.
   $answers_array = array (
-    'answers' => $top_comments,
-    'answers_count' => count($top_comments),
-    'best_answers_count' => '456'
+    'answers_count' => count($user_comments),
+    'top_answers' => $top_comments,
+    'top_answers_count' => count($top_comments),
   );
   return $answers_array;
 }
