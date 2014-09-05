@@ -52,7 +52,7 @@
     <p class="dashboard-list--text">
       <a href="/comment/{{cid}}#comment-{{cid}}">{{subject}}</a>
       <span class="dashboard-list--meta-data">
-        <?php print t('Content, created');?> {{date}}
+        <?php print t('Content, created');?> {{date}} - {{full_name}}
       </span>
     </p>
     <p class="dashboard-list--question-title">{{content-title}}</p>

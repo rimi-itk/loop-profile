@@ -82,7 +82,7 @@
       <a href="/node/{{nid}}">{{title}}</a> ({{coms}} <?php print ('answers');?>)
     </p>
     <span class="dashboard-list--meta-data">
-    <?php print t('Content, created');?> {{date}}
+    <?php print t('Content, created');?> {{date}} - {{full_name}}
     </span>
   </div>
 </script>

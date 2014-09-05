@@ -92,7 +92,7 @@ function loop_editor_pages_all_other_content() {
 function loop_editor_pages_questions() {
   // Select nodes.
   $nodes = db_select('node', 'n')
-    ->fields('n', array('nid', 'title', 'created'))
+    ->fields('n', array('nid', 'title', 'created', 'uid'))
     ->condition('status', 1)
     ->condition('type', 'post')
     ->execute();
@@ -112,6 +112,8 @@ function loop_editor_pages_questions() {
       'date' => format_date($node->created, 'medium'),
       'coms' => $num_of_results,
       'ts' => $node->created,
+      'uid' => $node->uid,
+      'full_name' => _loop_editor_pages_fetch_full_name($node->uid)
     );
   }
 
@@ -162,6 +164,7 @@ function loop_editor_pages_comments() {
       'uri' => $uri,
       'uid' => $comment->uid,
       'content-title' => $comment->title,
+      'full_name' => _loop_editor_pages_fetch_full_name($comment->uid)
     );
   }
 
@@ -178,7 +181,7 @@ function loop_editor_pages_comments() {
 function loop_editor_pages_other_content() {
   // Select nodes.
   $nodes = db_select('node', 'n')
-    ->fields('n', array('nid', 'title', 'created'))
+    ->fields('n', array('nid', 'title', 'created', 'uid'))
     ->condition('status', 1)
     ->condition('type', 'post', '<>')
     ->condition('type', 'page', '<>')
@@ -192,6 +195,8 @@ function loop_editor_pages_other_content() {
       'nid' => $node->nid,
       'date' => format_date($node->created, 'medium'),
       'ts' => $node->created,
+      'uid' => $node->uid,
+      'full_name' => _loop_editor_pages_fetch_full_name($node->uid)
     );
   }
 
@@ -272,4 +277,25 @@ function loop_editor_pages_theme() {
       'template' => 'templates/loop-dashboard--all-other-content',
     ),
   );
+}
+
+
+function _loop_editor_pages_fetch_full_name ($uid) {
+  $name = '';
+  // Make sure field tables exist.
+  if (module_exists('loop_user')) {
+    $first_name = db_select('field_data_field_first_name', 'f')
+      ->fields('f')
+      ->condition('entity_id', $uid)
+      ->execute()
+      ->fetchAssoc();
+
+    $last_name = db_select('field_data_field_last_name', 'f')
+      ->fields('f')
+      ->condition('entity_id', $uid)
+      ->execute()
+      ->fetchAssoc();
+  }
+  $name = $first_name['field_first_name_value'] . ' ' . $last_name['field_last_name_value'];
+  return $name;
 }
