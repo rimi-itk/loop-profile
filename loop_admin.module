@@ -17,6 +17,11 @@ function loop_admin_admin_paths_alter(&$paths) {
   $paths['admin/people/create'] = FALSE;
 }
 
+/**
+ * Implements hook_FORM_ID_form_alter().
+ *
+ * Add full name to author information tab.
+ */
 function loop_admin_form_post_node_form_alter(&$form, &$form_state) {
   global $user;
   $account = user_load($user->uid);
