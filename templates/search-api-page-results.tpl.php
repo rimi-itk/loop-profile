@@ -43,7 +43,6 @@
       <?php //print render($search_performance); ?>
       <div class="search-result--lead">
         <?php print t('You searched for:');?> <strong><?php print $keys;?></strong>
-        <?php print render($spellcheck); ?>
       </div>
       <div class="search-result">
         <?php print render($search_results); ?>
@@ -64,9 +63,9 @@
           <div class="messages warning"><?php print t('No results found');?></div>
         </div>
         <?php if (isset($node_form)): ?>
-          <?php print t('If you think your question has not been answered before, you can <a href="#ask-question">create the question</a> in the form. You can also try to <a href="#search-block-form">search again</a>.');?>
+          <?php print t('If you think your question has not been answered before, you can create the question in the form. You can also try to search again.');?>
         <?php else: ?>
-          <?php print t('Try to <a href="#search-block-form">search again</a>.');?>
+          <?php print t('Try to search again.');?>
         <?php endif; ?>
       </div>
     </div>
