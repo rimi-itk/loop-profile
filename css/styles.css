@@ -1986,6 +1986,16 @@ label {
 .nav--wrapper .nav--logout:hover {
   background-color: #82d08e;
 }
+/* line 54, ../sass/theme/_nav.scss */
+.nav--wrapper .nav-dropdown--header.active-trail, .nav--wrapper .nav-dropdown--header.active,
+.nav--wrapper .nav--toggle-mobile-nav.active-trail,
+.nav--wrapper .nav--toggle-mobile-nav.active,
+.nav--wrapper .nav--link.active-trail,
+.nav--wrapper .active-trail.nav--logout,
+.nav--wrapper .nav--link.active,
+.nav--wrapper .active.nav--logout {
+  background-color: #82d08e;
+}
 @media only screen and (min-width: 35em) {
   /* line 30, ../sass/theme/_nav.scss */
   .nav--wrapper .nav-dropdown--header,
@@ -2015,63 +2025,63 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 76, ../sass/theme/_nav.scss */
+  /* line 81, ../sass/theme/_nav.scss */
   .nav--wrapper .nav--toggle-mobile-nav {
     display: inline-block;
     min-height: 2.5em;
     vertical-align: bottom;
   }
-  /* line 82, ../sass/theme/_nav.scss */
+  /* line 87, ../sass/theme/_nav.scss */
   .nav--wrapper .nav--toggle-mobile-nav .nav--icon {
     position: relative;
     top: .5em;
     display: block;
   }
-  /* line 89, ../sass/theme/_nav.scss */
+  /* line 94, ../sass/theme/_nav.scss */
   .nav--wrapper .nav--toggle-mobile-nav .nav--text {
     display: none;
   }
 }
 @media only screen and (min-width: 75em) {
-  /* line 76, ../sass/theme/_nav.scss */
+  /* line 81, ../sass/theme/_nav.scss */
   .nav--wrapper .nav--toggle-mobile-nav {
     display: none;
   }
 }
-/* line 99, ../sass/theme/_nav.scss */
+/* line 104, ../sass/theme/_nav.scss */
 .nav--wrapper .nav--logout {
   display: none;
 }
 @media only screen and (min-width: 75em) {
-  /* line 99, ../sass/theme/_nav.scss */
+  /* line 104, ../sass/theme/_nav.scss */
   .nav--wrapper .nav--logout {
     display: inline-block;
   }
 }
 
-/* line 111, ../sass/theme/_nav.scss */
+/* line 116, ../sass/theme/_nav.scss */
 .nav--icon {
   max-width: 1.25em;
 }
 @media only screen and (min-width: 35em) {
-  /* line 111, ../sass/theme/_nav.scss */
+  /* line 116, ../sass/theme/_nav.scss */
   .nav--icon {
     max-width: 1.5em;
   }
 }
 @media only screen and (min-width: 43em) {
-  /* line 111, ../sass/theme/_nav.scss */
+  /* line 116, ../sass/theme/_nav.scss */
   .nav--icon {
     display: none;
   }
 }
 
-/* line 123, ../sass/theme/_nav.scss */
+/* line 128, ../sass/theme/_nav.scss */
 .nav--text {
   display: none;
 }
 @media only screen and (min-width: 43em) {
-  /* line 123, ../sass/theme/_nav.scss */
+  /* line 128, ../sass/theme/_nav.scss */
   .nav--text {
     display: inline;
   }
@@ -2080,28 +2090,28 @@ label {
 /* Dropdown menu
  * We use the same menu as in mobile, where we don't want any of this stuff. This results in some needed nesting.
    ================================================================================================================== */
-/* line 136, ../sass/theme/_nav.scss */
+/* line 141, ../sass/theme/_nav.scss */
 .nav-dropdown {
   display: none;
 }
 @media only screen and (min-width: 75em) {
-  /* line 136, ../sass/theme/_nav.scss */
+  /* line 141, ../sass/theme/_nav.scss */
   .nav-dropdown {
     display: inline-block;
   }
 }
-/* line 143, ../sass/theme/_nav.scss */
+/* line 148, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--header {
   padding-right: 2.5em;
 }
-/* line 147, ../sass/theme/_nav.scss */
+/* line 152, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--icon {
   position: absolute;
   top: .85em;
   right: 1em;
   max-width: .85em;
 }
-/* line 155, ../sass/theme/_nav.scss */
+/* line 160, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--item {
   position: absolute;
   top: 2.5em;
@@ -2117,16 +2127,16 @@ label {
   -webkit-border-radius: 0;
   border-radius: 0 0 0.4em 0.4em;
 }
-/* line 173, ../sass/theme/_nav.scss */
+/* line 178, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--wrapper {
   position: relative;
   display: inline-block;
 }
-/* line 179, ../sass/theme/_nav.scss */
+/* line 184, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--wrapper:hover .nav-dropdown--item {
   display: block;
 }
-/* line 185, ../sass/theme/_nav.scss */
+/* line 190, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--link {
   border-bottom: 1px solid #82d08e;
   margin-bottom: .5em;
@@ -2135,19 +2145,23 @@ label {
   min-width: 10em;
   text-align: right;
 }
-/* line 195, ../sass/theme/_nav.scss */
+/* line 200, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--link:link, .nav-dropdown .nav-dropdown--link:visited {
   color: white;
   text-decoration: none;
 }
-/* line 201, ../sass/theme/_nav.scss */
+/* line 206, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--link:hover {
   text-decoration: underline;
 }
-/* line 205, ../sass/theme/_nav.scss */
+/* line 210, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--link:last-child {
   border: 0;
   margin-bottom: 0;
+}
+/* line 215, ../sass/theme/_nav.scss */
+.nav-dropdown .nav-dropdown--link.active {
+  text-decoration: underline;
 }
 
 /* Mobile navigation
@@ -2156,7 +2170,7 @@ label {
  * We use the same menu as in the header, and thus the same html. This results in some needed nesting.
  *
    ================================================================================================================== */
-/* line 222, ../sass/theme/_nav.scss */
+/* line 231, ../sass/theme/_nav.scss */
 .nav-mobile {
   position: absolute;
   top: 0;
@@ -2182,25 +2196,25 @@ label {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-/* line 242, ../sass/theme/_nav.scss */
+/* line 251, ../sass/theme/_nav.scss */
 .nav-mobile a:link {
   color: white;
   text-decoration: none;
 }
-/* line 247, ../sass/theme/_nav.scss */
+/* line 256, ../sass/theme/_nav.scss */
 .nav-mobile a:visited {
   color: white;
 }
-/* line 251, ../sass/theme/_nav.scss */
+/* line 260, ../sass/theme/_nav.scss */
 .nav-mobile a:hover {
   color: white;
   text-decoration: underline;
 }
-/* line 256, ../sass/theme/_nav.scss */
+/* line 265, ../sass/theme/_nav.scss */
 .nav-mobile a:focus {
   color: white;
 }
-/* line 261, ../sass/theme/_nav.scss */
+/* line 270, ../sass/theme/_nav.scss */
 .nav-mobile .nav--link, .nav-mobile .nav--logout,
 .nav-mobile .nav-dropdown--header,
 .nav-mobile .nav-dropdown--link {
@@ -2210,27 +2224,27 @@ label {
   border-bottom-color: #5dc26d;
   display: block;
 }
-/* line 276, ../sass/theme/_nav.scss */
+/* line 285, ../sass/theme/_nav.scss */
 .nav-mobile .nav-dropdown--item {
   padding-left: 1.25em;
 }
-/* line 280, ../sass/theme/_nav.scss */
+/* line 289, ../sass/theme/_nav.scss */
 .nav-mobile .nav--text {
   display: inline-block;
 }
-/* line 284, ../sass/theme/_nav.scss */
+/* line 293, ../sass/theme/_nav.scss */
 .nav-mobile .nav-dropdown--icon {
   display: none;
 }
-/* line 289, ../sass/theme/_nav.scss */
+/* line 298, ../sass/theme/_nav.scss */
 .nav-mobile .nav-mobile--user-links {
   padding: 1em 0;
 }
-/* line 293, ../sass/theme/_nav.scss */
+/* line 302, ../sass/theme/_nav.scss */
 .nav-mobile .block-module--user-links-list {
   padding-left: 0;
 }
-/* line 297, ../sass/theme/_nav.scss */
+/* line 306, ../sass/theme/_nav.scss */
 .nav-mobile .nav-mobile--links-header {
   color: #fff;
   font-size: 130%;

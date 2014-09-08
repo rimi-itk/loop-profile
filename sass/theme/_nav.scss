@@ -51,6 +51,11 @@
       background-color: lighten($green-light, 10%);
     }
 
+    &.active-trail,
+    &.active {
+      background-color: lighten($green-light, 10%);
+    }
+
     @include border-radius(100%);
 
     @include breakpoint(35em) {
@@ -205,6 +210,10 @@
     &:last-child {
       border: 0;
       margin-bottom: 0;
+    }
+
+    &.active {
+      text-decoration: underline;
     }
   }
 }
