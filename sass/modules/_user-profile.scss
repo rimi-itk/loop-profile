@@ -170,8 +170,8 @@
   clear: both;
   float: left;
   margin-right: 1em;
-  padding: .5em;
-  width: 2em;
+  padding: .2em;
+  width: 3.6em;
 
   &:before {
     @extend %icon-comment;
@@ -186,8 +186,8 @@
   color: $green;
   clear: both;
   float: left;
-  padding: .5em;
-  width: 2em;
+  padding: .2em;
+  width: 3.6em;
 
   &:before {
     @extend %icon-like;
