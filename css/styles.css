@@ -1208,89 +1208,106 @@ label {
 }
 
 /* '' */
+/* line 66, ../sass/theme/_icons.scss */
+.icon-flag-filled:before {
+  content: '\e812';
+}
+
+/* '' */
 /* Icon shadow classes
    ================================================================================================================== */
-/* line 70, ../sass/theme/_icons.scss */
-.comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .user-profile--answers-best-count:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .messages.warning:before, .nav-mobile .nav--link:before, .nav-mobile .nav--logout:before,
+/* line 71, ../sass/theme/_icons.scss */
+.flag-ranking .comment--flag.is-sticky:before, .messages.status:before, .flag-ranking .comment--flag:before, .user-profile--answers-best-count:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .messages.warning:before, .nav-mobile .nav--link:before, .nav-mobile .nav--logout:before,
 .nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before, .twitter-typeahead:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before {
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before, .twitter-typeahead:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .flag-inappropriate-comment .flag:before, .flag-inappropriate-comment .comment--flag:before,
+.flag-inappropriate-content .flag:before,
+.flag-inappropriate-content .comment--flag:before {
   display: inline-block;
   font-family: "loop-icons";
   line-height: 100%;
 }
 
-/* line 77, ../sass/theme/_icons.scss */
+/* line 78, ../sass/theme/_icons.scss */
 .nav-mobile .nav--link:before, .nav-mobile .nav--logout:before,
 .nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .comment--flag:before, .guide--nav-list-item .active:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .user-profile--answers-best-count:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .messages.status:before, .messages.warning:before, .messages.error:before {
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .flag-ranking .comment--flag:before, .flag-inappropriate-comment .flag:before, .flag-inappropriate-comment .comment--flag:before,
+.flag-inappropriate-content .flag:before,
+.flag-inappropriate-content .comment--flag:before, .guide--nav-list-item .active:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .user-profile--answers-best-count:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .messages.status:before, .messages.warning:before, .messages.error:before {
   margin-right: .35em;
 }
 
-/* line 81, ../sass/theme/_icons.scss */
+/* line 82, ../sass/theme/_icons.scss */
 .at-term:after {
   margin-left: .35em;
 }
 
-/* line 85, ../sass/theme/_icons.scss */
-.comment--flag.is-sticky:before {
+/* line 86, ../sass/theme/_icons.scss */
+.flag-ranking .comment--flag.is-sticky:before {
   content: '\e804';
 }
 
-/* line 91, ../sass/theme/_icons.scss */
+/* line 92, ../sass/theme/_icons.scss */
 .messages.status:before {
   content: '\e80d';
 }
 
-/* line 97, ../sass/theme/_icons.scss */
-.comment--flag:before, .user-profile--answers-best-count:before {
+/* line 98, ../sass/theme/_icons.scss */
+.flag-ranking .comment--flag:before, .user-profile--answers-best-count:before {
   content: '\e805';
 }
 
-/* line 103, ../sass/theme/_icons.scss */
+/* line 104, ../sass/theme/_icons.scss */
 .at-term:after, .messages.error:before {
   content: '\e800';
 }
 
-/* line 109, ../sass/theme/_icons.scss */
+/* line 110, ../sass/theme/_icons.scss */
 .message--flag:before {
   content: '\e80b';
 }
 
-/* line 115, ../sass/theme/_icons.scss */
+/* line 116, ../sass/theme/_icons.scss */
 .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before {
   content: '\e80a';
 }
 
-/* line 121, ../sass/theme/_icons.scss */
+/* line 122, ../sass/theme/_icons.scss */
 .messages.warning:before {
   content: '\e801';
 }
 
-/* line 127, ../sass/theme/_icons.scss */
+/* line 128, ../sass/theme/_icons.scss */
 .nav-mobile .nav--link:before, .nav-mobile .nav--logout:before,
 .nav-mobile .nav-dropdown--header:before,
 .nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before {
   content: '\e807';
 }
 
-/* line 139, ../sass/theme/_icons.scss */
+/* line 140, ../sass/theme/_icons.scss */
 .twitter-typeahead:before {
   content: '\e803';
 }
 
-/* line 145, ../sass/theme/_icons.scss */
+/* line 146, ../sass/theme/_icons.scss */
 .dashboard-list--filter:before {
   content: '\e80c';
 }
 
-/* line 151, ../sass/theme/_icons.scss */
+/* line 152, ../sass/theme/_icons.scss */
 .dashboard-list--icon:before {
   content: '\e80e';
 }
 
-/* line 169, ../sass/theme/_icons.scss */
+/* line 170, ../sass/theme/_icons.scss */
 .dashboard-list--question-title:before {
   content: '\e80f';
+}
+
+/* line 177, ../sass/theme/_icons.scss */
+.flag-inappropriate-comment .flag:before, .flag-inappropriate-comment .comment--flag:before,
+.flag-inappropriate-content .flag:before,
+.flag-inappropriate-content .comment--flag:before {
+  content: '\e812';
 }
 
 /**
@@ -3092,29 +3109,39 @@ This file is generated by `grunt build`, do not edit it by hand.
   padding-bottom: 0;
 }
 
-/* line 46, ../sass/modules/_comment.scss */
+/* line 42, ../sass/modules/_comment.scss */
+.comments--comment-meta-data {
+  position: relative;
+}
+
+/* line 48, ../sass/modules/_comment.scss */
+.comments--comment-meta-data-date {
+  margin-right: 2em;
+}
+
+/* line 52, ../sass/modules/_comment.scss */
 .comments--comment-content {
   margin-bottom: 1em;
 }
 @media only screen and (min-width: 43em) {
-  /* line 46, ../sass/modules/_comment.scss */
+  /* line 52, ../sass/modules/_comment.scss */
   .comments--comment-content {
     margin-bottom: 0;
   }
 }
 
-/* line 54, ../sass/modules/_comment.scss */
+/* line 60, ../sass/modules/_comment.scss */
 .comment--flag {
   /* Breakpoints */
 }
-/* line 57, ../sass/modules/_comment.scss */
+/* line 63, ../sass/modules/_comment.scss */
 .comment--flag.is-sticky {
   top: 1.5em;
   right: 1.5em;
   background-color: white;
 }
 @media only screen and (min-width: 43em) {
-  /* line 54, ../sass/modules/_comment.scss */
+  /* line 60, ../sass/modules/_comment.scss */
   .comment--flag {
     position: absolute;
     right: 0;
@@ -3123,7 +3150,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   }
 }
 
-/* line 74, ../sass/modules/_comment.scss */
+/* line 80, ../sass/modules/_comment.scss */
 .comments--files {
   background-color: #f2f2f2;
   color: #999999;
@@ -3134,14 +3161,14 @@ This file is generated by `grunt build`, do not edit it by hand.
   padding: .5em 1.25em .65em;
 }
 @media only screen and (min-width: 65em) {
-  /* line 74, ../sass/modules/_comment.scss */
+  /* line 80, ../sass/modules/_comment.scss */
   .comments--files {
     clear: none;
     max-width: 16em;
   }
 }
 
-/* line 89, ../sass/modules/_comment.scss */
+/* line 95, ../sass/modules/_comment.scss */
 .comments--icon {
   height: 16px;
   width: 16px;
@@ -3151,37 +3178,44 @@ This file is generated by `grunt build`, do not edit it by hand.
   background: url("../images/document-icon.png") no-repeat right top;
 }
 
-/* line 98, ../sass/modules/_comment.scss */
+/* line 104, ../sass/modules/_comment.scss */
 .comments--icon-application-pdf {
   background: url("../images/pdf-icon.png") no-repeat right top;
 }
 
-/* line 102, ../sass/modules/_comment.scss */
+/* line 108, ../sass/modules/_comment.scss */
 .comments--icon-image-jpeg,
 .comments--icon-image-png {
   background: url("../images/image-icon.png") no-repeat right top;
 }
 
-/* line 107, ../sass/modules/_comment.scss */
+/* line 113, ../sass/modules/_comment.scss */
 .comments--files-label {
   float: left;
   margin-right: 1.6em;
 }
 
-/* line 112, ../sass/modules/_comment.scss */
+/* line 118, ../sass/modules/_comment.scss */
 .comments--files-content {
   float: left;
 }
 
+/* Inapropriate flag */
+/* line 125, ../sass/modules/_comment.scss */
+.comments--inappropriate-flag {
+  text-align: right;
+  white-space: nowrap;
+}
+
 /* Comments list on user page
    ================================================================================================================== */
-/* line 119, ../sass/modules/_comment.scss */
+/* line 133, ../sass/modules/_comment.scss */
 .comments--user-page-comments-element {
   margin-bottom: 1em;
   padding-bottom: 1em;
   border-bottom: 1px solid #e6e6e6;
 }
-/* line 124, ../sass/modules/_comment.scss */
+/* line 138, ../sass/modules/_comment.scss */
 .comments--user-page-comments-element:last-child {
   border-bottom: 0;
   margin-bottom: 0;
@@ -3306,7 +3340,7 @@ This file is generated by `grunt build`, do not edit it by hand.
  *
  */
 /* line 8, ../sass/modules/_flag.scss */
-.comment--flag {
+.flag-ranking .comment--flag {
   border: 1px solid #b3b3b3;
   display: block;
   padding: .5em 1em;
@@ -3320,47 +3354,47 @@ This file is generated by `grunt build`, do not edit it by hand.
   /* States */
 }
 /* line 20, ../sass/modules/_flag.scss */
-.comment--flag:before {
+.flag-ranking .comment--flag:before {
   font-size: 150%;
   vertical-align: top;
 }
 /* line 29, ../sass/modules/_flag.scss */
-.comment--flag.is-sticky {
+.flag-ranking .comment--flag.is-sticky {
   font-size: 1em;
 }
 /* line 33, ../sass/modules/_flag.scss */
-.comment--flag.is-active, .comment--flag.is-sticky, .comment--flag.unflag-action {
+.flag-ranking .comment--flag.is-active, .flag-ranking .comment--flag.is-sticky, .flag-ranking .comment--flag.unflag-action {
   border: 1px solid #41ab51;
   color: #41ab51;
 }
 
 /* line 50, ../sass/modules/_flag.scss */
-a.comment--flag {
+.flag-ranking a.comment--flag {
   /* States */
 }
 /* line 51, ../sass/modules/_flag.scss */
-a.comment--flag:link, a.comment--flag:visited, a.comment--flag:hover, a.comment--flag:active {
+.flag-ranking a.comment--flag:link, .flag-ranking a.comment--flag:visited, .flag-ranking a.comment--flag:hover, .flag-ranking a.comment--flag:active {
   color: #b3b3b3;
   text-decoration: none;
 }
 /* line 59, ../sass/modules/_flag.scss */
-a.comment--flag:hover {
+.flag-ranking a.comment--flag:hover {
   border: 1px solid #737373;
   color: #737373;
 }
 /* line 69, ../sass/modules/_flag.scss */
-a.comment--flag.is-active:link, a.comment--flag.is-active:visited, a.comment--flag.is-active:hover, a.comment--flag.is-active:active, a.comment--flag.is-sticky:link, a.comment--flag.is-sticky:visited, a.comment--flag.is-sticky:hover, a.comment--flag.is-sticky:active, a.comment--flag.unflag-action:link, a.comment--flag.unflag-action:visited, a.comment--flag.unflag-action:hover, a.comment--flag.unflag-action:active {
+.flag-ranking a.comment--flag.is-active:link, .flag-ranking a.comment--flag.is-active:visited, .flag-ranking a.comment--flag.is-active:hover, .flag-ranking a.comment--flag.is-active:active, .flag-ranking a.comment--flag.is-sticky:link, .flag-ranking a.comment--flag.is-sticky:visited, .flag-ranking a.comment--flag.is-sticky:hover, .flag-ranking a.comment--flag.is-sticky:active, .flag-ranking a.comment--flag.unflag-action:link, .flag-ranking a.comment--flag.unflag-action:visited, .flag-ranking a.comment--flag.unflag-action:hover, .flag-ranking a.comment--flag.unflag-action:active {
   border: 1px solid #41ab51;
   color: #41ab51;
   text-decoration: none;
 }
 /* line 79, ../sass/modules/_flag.scss */
-a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--flag.unflag-action:hover {
+.flag-ranking a.comment--flag.is-active:hover, .flag-ranking a.comment--flag.is-sticky:hover, .flag-ranking a.comment--flag.unflag-action:hover {
   border: 1px solid #737373;
   color: #737373;
 }
 /* line 85, ../sass/modules/_flag.scss */
-a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--flag.unflag-action:hover {
+.flag-ranking a.comment--flag.is-active:hover, .flag-ranking a.comment--flag.is-sticky:hover, .flag-ranking a.comment--flag.unflag-action:hover {
   border: 1px solid #33863f;
   color: #33863f;
 }
@@ -3424,6 +3458,80 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
 /* line 161, ../sass/modules/_flag.scss */
 .message--flag:before {
   font-size: 1.5em;
+}
+
+/* Inappropriate flag
+   ================================================================================================================== */
+/* line 42, ../sass/theme/_mixins.scss */
+.flag-inappropriate-comment a:link,
+.flag-inappropriate-content a:link {
+  color: #cccccc;
+  text-decoration: none;
+}
+/* line 47, ../sass/theme/_mixins.scss */
+.flag-inappropriate-comment a:visited,
+.flag-inappropriate-content a:visited {
+  color: #cccccc;
+}
+/* line 51, ../sass/theme/_mixins.scss */
+.flag-inappropriate-comment a:hover,
+.flag-inappropriate-content a:hover {
+  color: #b3b3b3;
+}
+/* line 55, ../sass/theme/_mixins.scss */
+.flag-inappropriate-comment a:focus,
+.flag-inappropriate-content a:focus {
+  color: #cccccc;
+}
+/* line 60, ../sass/theme/_mixins.scss */
+.flag-inappropriate-comment a.is-active:link,
+.flag-inappropriate-content a.is-active:link {
+  color: #cccccc;
+  text-decoration: none;
+}
+/* line 65, ../sass/theme/_mixins.scss */
+.flag-inappropriate-comment a.is-active:visited,
+.flag-inappropriate-content a.is-active:visited {
+  color: #cccccc;
+}
+/* line 69, ../sass/theme/_mixins.scss */
+.flag-inappropriate-comment a.is-active:hover,
+.flag-inappropriate-content a.is-active:hover {
+  color: #cccccc;
+}
+/* line 73, ../sass/theme/_mixins.scss */
+.flag-inappropriate-comment a.is-active:focus,
+.flag-inappropriate-content a.is-active:focus {
+  color: #cccccc;
+}
+/* line 78, ../sass/theme/_mixins.scss */
+.flag-inappropriate-comment a.is-hidden,
+.flag-inappropriate-content a.is-hidden {
+  display: none;
+}
+/* line 175, ../sass/modules/_flag.scss */
+.flag-inappropriate-comment .flag, .flag-inappropriate-comment .comment--flag,
+.flag-inappropriate-content .flag,
+.flag-inappropriate-content .comment--flag {
+  font-size: .8em;
+}
+/* line 178, ../sass/modules/_flag.scss */
+.flag-inappropriate-comment .flag:before, .flag-inappropriate-comment .comment--flag:before,
+.flag-inappropriate-content .flag:before,
+.flag-inappropriate-content .comment--flag:before {
+  margin-right: .5em;
+}
+/* line 185, ../sass/modules/_flag.scss */
+.flag-inappropriate-comment .flag:hover, .flag-inappropriate-comment .comment--flag:hover,
+.flag-inappropriate-content .flag:hover,
+.flag-inappropriate-content .comment--flag:hover {
+  color: #b3b3b3;
+}
+/* line 189, ../sass/modules/_flag.scss */
+.flag-inappropriate-comment .flag.unflag-action:before, .flag-inappropriate-comment .unflag-action.comment--flag:before,
+.flag-inappropriate-content .flag.unflag-action:before,
+.flag-inappropriate-content .unflag-action.comment--flag:before {
+  color: #ff6138;
 }
 
 /**
@@ -3711,7 +3819,6 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
 
 /* line 19, ../sass/modules/_question.scss */
 .question--meta-data {
-  margin-bottom: 1.5em;
   padding: .5em 1.25em .65em;
   background-color: #f2f2f2;
   color: #999999;
@@ -3727,13 +3834,13 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   }
 }
 
-/* line 35, ../sass/modules/_question.scss */
+/* line 34, ../sass/modules/_question.scss */
 .question--inner {
   clear: both;
   padding-bottom: 2em;
 }
 
-/* line 41, ../sass/modules/_question.scss */
+/* line 40, ../sass/modules/_question.scss */
 .question--label {
   display: block;
   margin-bottom: .25em;
@@ -3741,12 +3848,12 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   font-weight: bold;
 }
 
-/* line 49, ../sass/modules/_question.scss */
+/* line 48, ../sass/modules/_question.scss */
 .question--files {
   overflow: hidden;
 }
 
-/* line 53, ../sass/modules/_question.scss */
+/* line 52, ../sass/modules/_question.scss */
 .question--icon {
   height: 16px;
   width: 16px;
@@ -3756,53 +3863,61 @@ a.comment--flag.is-active:hover, a.comment--flag.is-sticky:hover, a.comment--fla
   background: url("../images/document-icon.png") no-repeat right top;
 }
 
-/* line 62, ../sass/modules/_question.scss */
+/* line 61, ../sass/modules/_question.scss */
 .question--icon-application-pdf {
   background: url("../images/pdf-icon.png") no-repeat right top;
 }
 
-/* line 66, ../sass/modules/_question.scss */
+/* line 65, ../sass/modules/_question.scss */
 .question--icon-image-jpeg,
 .question--icon-image-png {
   background: url("../images/image-icon.png") no-repeat right top;
 }
 
-/* line 71, ../sass/modules/_question.scss */
+/* line 70, ../sass/modules/_question.scss */
 .question--files-label {
   float: left;
   margin-right: 1.6em;
 }
 
-/* line 76, ../sass/modules/_question.scss */
+/* line 75, ../sass/modules/_question.scss */
 .question--files-content {
   float: left;
 }
 
-/* line 80, ../sass/modules/_question.scss */
+/* line 79, ../sass/modules/_question.scss */
 .question--label-edit-link {
   font-weight: normal;
 }
 
-/* line 84, ../sass/modules/_question.scss */
+/* line 83, ../sass/modules/_question.scss */
 .question {
   margin-bottom: 0;
   font-size: 125%;
 }
 
-/* line 90, ../sass/modules/_question.scss */
+/* line 89, ../sass/modules/_question.scss */
 .question--terms {
   margin-bottom: 2em;
 }
 
+/* Inapropriate flag */
+/* line 100, ../sass/modules/_question.scss */
+.question--inappropriate-flag {
+  clear: right;
+  float: right;
+  margin-bottom: 1em;
+}
+
 /* Questions list on user page
    ================================================================================================================== */
-/* line 101, ../sass/modules/_question.scss */
+/* line 109, ../sass/modules/_question.scss */
 .question--user-page-nodes-element {
   margin-bottom: 1em;
   border-bottom: 1px solid #e6e6e6;
   padding-bottom: 1em;
 }
-/* line 106, ../sass/modules/_question.scss */
+/* line 114, ../sass/modules/_question.scss */
 .question--user-page-nodes-element:last-child {
   border-bottom: 0;
   margin-bottom: 0;
