@@ -13,6 +13,11 @@
       no_results_text: "Angiv værdi.",
       placeholder_text : "Angiv værdi."
     });
+
+    $('.js-chosen-select-profession').chosen({
+      no_results_text: "Angiv værdi.",
+      placeholder_text : "Angiv værdi."
+    });
   });
 
 })(jQuery);
