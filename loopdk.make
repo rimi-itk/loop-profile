@@ -18,6 +18,9 @@ projects[autocomplete_deluxe][patch][] = "https://drupal.org/files/issues/217575
 projects[better_formats][subdir] = "contrib"
 projects[better_formats][version] = "1.0-beta1"
 
+projects[comment_counter][subdir] = "contrib"
+projects[comment_counter][version] = "1.0-alpha1"
+
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.4"
 
@@ -130,6 +133,9 @@ projects[module_filter][version] = "1.8"
 projects[node_export][subdir] = "contrib"
 projects[node_export][version] = "3.0"
 
+projects[node_limit][subdir] = "contrib"
+projects[node_limit][version] = "1.0-alpha5"
+
 projects[oauth][subdir] = "contrib"
 projects[oauth][version] = "3.2"
 
@@ -193,6 +199,9 @@ projects[shurly][download][revision] = "bf412bd"
 projects[special_menu_items][subdir] = "contrib"
 projects[special_menu_items][version] = "2.0"
 
+projects[statistics_counter][subdir] = "contrib"
+projects[statistics_counter][version] = "1.2"
+
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
 
@@ -217,6 +226,9 @@ projects[variable][version] = "2.4"
 projects[views][subdir] = "contrib"
 projects[views][version] = "3.7"
 projects[views][patch][] = "https://drupal.org/files/views-make_destination_parameter_configurable-1239566-26.patch"
+
+projects[views_calc][subdir] = "contrib"
+projects[views_calc][version] = "1.1"
 
 projects[views_bulk_operations][subdir] = "contrib"
 projects[views_bulk_operations][version] = "3.2"
@@ -281,6 +293,12 @@ projects[loop_navigation][subdir] = "features"
 projects[loop_navigation][download][type] = "git"
 projects[loop_navigation][download][url] = "git@github.com:loopdk/loop_navigation.git"
 projects[loop_navigation][branch] = "development"
+
+projects[loop_node_statistics][type] = "module"
+projects[loop_node_statistics][subdir] = "features"
+projects[loop_node_statistics][download][type] = "git"
+projects[loop_node_statistics][download][url] = "git@github.com:loopdk/loop_node_statistics.git"
+projects[loop_node_statistics][branch] = "development"
 
 projects[loop_notification][type] = "module"
 projects[loop_notification][subdir] = "features"
