@@ -116,6 +116,9 @@
       </div>
     <?php endif; ?>
   </div>
+  <div class="question--inappropriate-flag">
+    <?php print flag_create_link('inappropriate_content', $node->nid); ?>
+  </div>
   <div class="question--inner">
     <?php print render($content['field_description']);?>
   </div>

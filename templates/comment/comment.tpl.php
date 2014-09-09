@@ -88,10 +88,15 @@
   </div>
 <?php endif; ?>
 <span class="comments--comment-meta-data">
-  <?php print t('Submitted') . ' ' . format_date($comment->created, $type = 'medium'); ?>
-  <?php if ($comment->uid == $user->uid) : ?>
-    - (<?php print l(t('edit comment'), 'comment/' . $comment->cid . '/edit'); ?>)
-  <?php endif; ?>
+  <span class="comments--comment-meta-data-date">
+    <?php print t('Submitted') . ' ' . format_date($comment->created, $type = 'medium'); ?>
+    <?php if ($comment->uid == $user->uid) : ?>
+      - (<?php print l(t('edit comment'), 'comment/' . $comment->cid . '/edit'); ?>)
+    <?php endif; ?>
+  </span>
+  <span class="comments--inappropriate-flag">
+    <?php print flag_create_link('inappropriate_comment', $comment->cid); ?>
+  </span>
 </span>
 <div class="comments--comment-content">
   <?php print render($comment_body); ?>
