@@ -5,7 +5,7 @@
  */
 
 
-.comment--flag {
+.flag-ranking .comment--flag {
   border: 1px solid $gray;
   display: block;
   padding: .5em 1em;
@@ -47,7 +47,7 @@
 }
 
 // If it's a link add pseudo styles.
-a.comment--flag {
+.flag-ranking a.comment--flag {
   &:link,
   &:visited,
   &:hover,
@@ -162,5 +162,32 @@ a.comment--flag {
     @extend %icon-cancel-circled;
 
     font-size: 1.5em;
+  }
+}
+
+
+/* Inappropriate flag
+   ================================================================================================================== */
+.flag-inappropriate-comment,
+.flag-inappropriate-content {
+  @include custom-links($gray-light, $gray-light, $gray);
+
+  .flag {
+    font-size: .8em;
+
+    &:before {
+      @extend %icon-flag-filled;
+      @extend %icon-before;
+
+      margin-right: .5em;
+    }
+
+    &:hover {
+      color: $gray;
+    }
+
+    &.unflag-action:before {
+      color: $red;
+    }
   }
 }

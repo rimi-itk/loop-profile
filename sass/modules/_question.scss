@@ -17,7 +17,6 @@
 }
 
 .question--meta-data {
-  margin-bottom: $margin-bottom;
   padding: .5em 1.25em .65em;
 
   background-color: $gray-background;
@@ -93,6 +92,15 @@
 
 .question--term {
   @extend %tag;
+}
+
+
+/* Inapropriate flag */
+
+.question--inappropriate-flag {
+  clear: right;
+  float: right;
+  margin-bottom: 1em;
 }
 
 

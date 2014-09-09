@@ -63,6 +63,7 @@
 .icon-clock:before { content: '\e810'; } /* '' */
 .icon-alphabetical:before { content: '\e811'; } /* '' */
 .icon-help-circled:before { content: '\e80F'; } /* '' */
+.icon-flag-filled:before { content: '\e812'; } /* '' */
 
 /* Icon shadow classes
    ================================================================================================================== */
@@ -170,4 +171,11 @@
   @extend %icon-base;
 
   content: '\e80f';
+}
+
+
+%icon-flag-filled {
+  @extend %icon-base;
+
+  content: '\e812';
 }

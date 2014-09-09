@@ -37,7 +37,7 @@
   padding-bottom: 0;
 }
 
-@mixin custom-links($color, $active-color) {
+@mixin custom-links($color, $active-color, $hover:$color) {
   a {
     &:link {
       color: $color;
@@ -49,7 +49,7 @@
     }
 
     &:hover {
-      color: $color;
+      color: $hover;
     }
 
     &:focus {

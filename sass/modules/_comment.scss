@@ -41,6 +41,12 @@
 
 .comments--comment-meta-data {
   @extend .meta-data--date;
+
+  position: relative;
+}
+
+.comments--comment-meta-data-date {
+  margin-right: 2em;
 }
 
 .comments--comment-content {
@@ -111,6 +117,14 @@
 
 .comments--files-content {
   float: left;
+}
+
+
+/* Inapropriate flag */
+
+.comments--inappropriate-flag {
+  text-align: right;
+  white-space: nowrap;
 }
 
 
