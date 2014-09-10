@@ -7,6 +7,7 @@ project = loop_admin
 dependencies[] = admin_views
 dependencies[] = ctools
 dependencies[] = features
+dependencies[] = loop_navigation
 dependencies[] = menu
 dependencies[] = strongarm
 dependencies[] = views
