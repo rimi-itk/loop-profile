@@ -171,8 +171,8 @@ function loop_user_subscriptions_views_default_views() {
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
+      'override_label' => 1,
+      'label' => t('Remove subscription'),
     ),
     'action::node_save_action' => array(
       'selected' => 0,
