@@ -20,6 +20,11 @@ function loop_preprocess_page(&$variables) {
     }
   }
 
+  // Drupal core got a minor but with active trail on 'My account'.
+  if ($arg[0] == 'user' && is_numeric($arg[1])) {
+    menu_set_active_item('user');
+  }
+
   // Remove search form when no search results are found.
   if ((isset($variables['page']['content']['system_main']['results'])) &&  ($variables['page']['content']['system_main']['results']['#results']['result count'] == 0)) {
     unset($variables['page']['content']['system_main']['form']);
