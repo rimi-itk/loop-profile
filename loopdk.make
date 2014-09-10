@@ -18,6 +18,9 @@ projects[autocomplete_deluxe][patch][] = "https://drupal.org/files/issues/217575
 projects[better_formats][subdir] = "contrib"
 projects[better_formats][version] = "1.0-beta1"
 
+projects[comment_abuse][subdir] = "contrib"
+projects[comment_abuse][version] = "2.7"
+
 projects[comment_counter][subdir] = "contrib"
 projects[comment_counter][version] = "1.0-alpha1"
 
