@@ -22,8 +22,8 @@ function loop_search_default_search_api_index() {
         "status" : { "type" : "integer" },
         "comments" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "comment" },
         "search_api_language" : { "type" : "string" },
+        "field_profession:name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_keyword:name" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_profession:name" : { "type" : "text" },
         "field_subject:name" : { "type" : "text" },
         "comments:comment_body:value" : { "type" : "list\\u003Ctext\\u003E" }
       },
