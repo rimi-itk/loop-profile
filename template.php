@@ -693,6 +693,12 @@ function loop_preprocess_comment(&$variables) {
       $variables['files'] = _loop_fetch_files('comment', $variables['comment']);
     }
   }
+
+  // Remove flag, delete, edit and reply links.
+  unset($variables['content']['links']['flag']);
+  unset($variables['content']['links']['comment']['#links']['comment-delete']);
+  unset($variables['content']['links']['comment']['#links']['comment-edit']);
+  unset($variables['content']['links']['comment']['#links']['comment-reply']);
 }
 
 /**
