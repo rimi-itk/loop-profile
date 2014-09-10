@@ -23,10 +23,84 @@ function loop_admin_admin_paths_alter(&$paths) {
  * Add full name to author information tab.
  */
 function loop_admin_form_post_node_form_alter(&$form, &$form_state) {
-  global $user;
-  $account = user_load($user->uid);
+  $account = user_load($form['uid']['#value']);
 
-  $name = t('Not set');
+  $name = _loop_admin_generate_full_name($account);
+  if (!$name) {
+    $name = t('Not set');
+  }
+  $form['author']['name']['#title'] .= ' fullname: <span>' . $name . '</span>';
+}
+
+/**
+ * Implements hook_menu().
+ */
+function loop_admin_menu() {
+  $items['admin/reports/loop-user-statistics'] = array(
+    'title' => 'LOOP User statistics',
+    'page callback' => '_loop_admin_user_statistics',
+    'access arguments' => array('administer users'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+function _loop_admin_user_statistics() {
+  $accounts = _loop_admin_fetch_users();
+
+  $users = array();
+  foreach ($accounts as $account) {
+    $users[] = array(
+      'uid' => $account->uid,
+      'name' => $account->name,
+      'fullname' => _loop_admin_generate_full_name($account),
+      'answers' => _loop_user_fetch_user_answers($account->uid),
+      'comments' => _loop_admin_find_comments($account->uid),
+      'flagging' => _loop_admin_fetch_flagging($account->uid),
+    );
+  }
+
+  return _loop_admin_build_table($users);
+}
+
+function _loop_admin_fetch_users() {
+  $raw_users = db_select('users', 'u')
+    ->fields('u')
+    ->condition('status', 1)
+    ->execute()
+    ->fetchAllAssoc('uid');
+
+  $accounts = array();
+  foreach ($raw_users as $raw_user) {
+    $account = user_load($raw_user->uid);
+
+    $accounts[] = $account;
+  }
+
+  return $accounts;
+}
+
+function _loop_admin_find_comments($uid) {
+  // Fetch all comments.
+  $comments = db_select('comment', 'c')
+    ->fields('c')
+    ->execute()
+    ->fetchAllAssoc('cid');
+
+  $user_comments = array();
+
+  foreach ($comments as $comment) {
+    if ($comment->uid == $uid) {
+      $user_comments[] = $comment;
+    }
+  }
+
+  return $user_comments;
+}
+
+function _loop_admin_generate_full_name($account) {
+  $name = '';
   if (isset($account->field_first_name['und'][0]['safe_value'])) {
     $name = '' . $account->field_first_name['und'][0]['safe_value'];
     if (isset($account->field_last_name['und'][0]['safe_value'])) {
@@ -35,5 +109,41 @@ function loop_admin_form_post_node_form_alter(&$form, &$form_state) {
     }
   }
 
-  $form['author']['name']['#title'] .= ' fullname: <span>' . $name . '</span>';
+  return $name;
+}
+
+function _loop_admin_fetch_flagging($uid) {
+  $flagging = db_select('flagging', 'f')
+    ->fields('f')
+    ->condition('uid', $uid)
+    ->execute()
+    ->fetchAllAssoc('flagging_id');
+
+  return $flagging;
+}
+
+function _loop_admin_build_table($users) {
+  $header = array('UID', 'Username', 'Full name', 'Accepted answers', 'Comments', 'Thumb ups');
+
+  $rows = array();
+  foreach ($users as $user) {
+    $rows[] = array(
+      $user['uid'],
+      $user['name'],
+      $user['fullname'],
+      $user['answers']['answers_count'],
+      count($user['comments']),
+      count($user['flagging']),
+    );
+  }
+
+  return theme_table(array(
+    'header' => $header,
+    'rows' => $rows,
+    'attributes' => array(),
+    'caption' => '',
+    'colgroups' => array(),
+    'sticky' => array(),
+    'empty' => array(),
+  ));
 }

@@ -124,7 +124,7 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area_text_custom']['content'] = 'Ingen brugere tilgængelige.';
+  $handler->display->display_options['empty']['area_text_custom']['content'] = 'No users available.';
   /* Felt: Masse-handlinger: Bruger */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'users';
@@ -262,7 +262,7 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'users';
   $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = 'Medlem i';
+  $handler->display->display_options['fields']['created']['label'] = 'Member for';
   $handler->display->display_options['fields']['created']['date_format'] = 'raw time ago';
   /* Felt: Bruger: Seneste tilgang */
   $handler->display->display_options['fields']['access']['id'] = 'access';
@@ -273,7 +273,7 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'users';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
-  $handler->display->display_options['fields']['edit_node']['label'] = 'Handlinger';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Operations';
   /* Felt: Bruger: Annullér-link */
   $handler->display->display_options['fields']['cancel_node']['id'] = 'cancel_node';
   $handler->display->display_options['fields']['cancel_node']['table'] = 'users';
@@ -303,7 +303,7 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['filters']['name']['group'] = 1;
   $handler->display->display_options['filters']['name']['exposed'] = TRUE;
   $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
-  $handler->display->display_options['filters']['name']['expose']['label'] = 'Brugernavn';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'Username';
   $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
   $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
   $handler->display->display_options['filters']['name']['expose']['remember'] = TRUE;
@@ -327,7 +327,7 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['exposed'] = TRUE;
   $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
-  $handler->display->display_options['filters']['status']['expose']['label'] = 'Aktiv';
+  $handler->display->display_options['filters']['status']['expose']['label'] = 'Active';
   $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
   $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
   $handler->display->display_options['filters']['status']['expose']['remember'] = TRUE;
@@ -338,7 +338,7 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['filters']['rid']['group'] = 1;
   $handler->display->display_options['filters']['rid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['rid']['expose']['operator_id'] = 'rid_op';
-  $handler->display->display_options['filters']['rid']['expose']['label'] = 'Rolle';
+  $handler->display->display_options['filters']['rid']['expose']['label'] = 'Role';
   $handler->display->display_options['filters']['rid']['expose']['operator'] = 'rid_op';
   $handler->display->display_options['filters']['rid']['expose']['identifier'] = 'rid';
   $handler->display->display_options['filters']['rid']['expose']['remember'] = TRUE;
