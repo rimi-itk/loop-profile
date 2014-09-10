@@ -42,7 +42,6 @@ function loop_post_views_default_views() {
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'comment';
-  $handler->display->display_options['row_options']['links'] = FALSE;
   /* Relationship: Comment: Content */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'comment';
@@ -116,8 +115,6 @@ function loop_post_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'comment';
-  $handler->display->display_options['row_options']['links'] = FALSE;
-  $handler->display->display_options['row_options']['view_mode'] = 'most_valid_comment';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -193,30 +190,6 @@ function loop_post_views_default_views() {
       'fixed' => '',
       'label' => 'Content: Nid',
     ),
-  );
-  $translatables['loop_node_comments'] = array(
-    t('Master'),
-    t('Comment for content'),
-    t('mere'),
-    t('Perform'),
-    t('Restore'),
-    t('Sort by'),
-    t('Ascending'),
-    t('Descending'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('Content'),
-    t('counter'),
-    t('All'),
-    t('Most valid comment'),
-    t('more'),
-    t('View panes'),
-    t('Other comments'),
   );
   $export['loop_node_comments'] = $view;
 
