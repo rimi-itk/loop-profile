@@ -112,6 +112,9 @@ projects[menu_block][version] = "2.3"
 projects[menu_token][subdir] = "contrib"
 projects[menu_token][version] = "1.0-beta5"
 
+projects[menu_position][subdir] = "contrib"
+projects[menu_position][version] = "1.1"
+
 projects[metatag][subdir] = "contrib"
 projects[metatag][version] = "1.0-beta9"
 
