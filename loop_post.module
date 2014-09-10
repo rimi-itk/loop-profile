@@ -30,6 +30,10 @@ function loop_post_form_node_form_alter(&$form, &$form_state) {
       }
     }
 
+    // Add js chosen class to profession field. (Chosen jquery added in theme)
+    $field_profession_lang = $form['field_profession']['#language'];
+    $form['field_profession'][$field_profession_lang]['#attributes']['class'][] = 'js-chosen-select-profession';
+
     // Move description inside wrapper.
     unset($form['field_description']['#attributes']['class']);
     $form['field_description']['und']['#prefix'] = '<div id="field-description-add-more-wrapper" class="description-form-element form-item">';

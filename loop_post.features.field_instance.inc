@@ -66,6 +66,42 @@ function loop_post_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'comment-comment_node_post-field_file_upload_comment'
+  $field_instances['comment-comment_node_post-field_file_upload_comment'] = array(
+    'bundle' => 'comment_node_post',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'comment',
+    'field_name' => 'field_file_upload_comment',
+    'label' => 'Upload',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => 'uploaded_files',
+      'file_extensions' => 'pdf doc docx jpg png gif',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-post-field_description'
   $field_instances['node-post-field_description'] = array(
     'bundle' => 'post',
@@ -134,6 +170,48 @@ function loop_post_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-post-field_file_upload'
+  $field_instances['node-post-field_file_upload'] = array(
+    'bundle' => 'post',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_file_upload',
+    'label' => 'Upload',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => 'uploaded_files',
+      'file_extensions' => 'pdf doc docx jpg png gif',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'node-post-field_keyword'
   $field_instances['node-post-field_keyword'] = array(
     'bundle' => 'post',
@@ -178,7 +256,7 @@ function loop_post_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'autocomplete_deluxe_taxonomy',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -221,7 +299,7 @@ function loop_post_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -278,6 +356,7 @@ function loop_post_field_default_field_instances() {
   t('Select a subject.');
   t('Subject');
   t('Type in keyword(s).');
+  t('Upload');
 
   return $field_instances;
 }
