@@ -546,6 +546,12 @@ function loop_form_views_form_loop_user_subscriptions_panel_pane_1_alter(&$form,
   }
 }
 
+function loop_form_user_register_form_alter(&$form) {
+  // Add js chosen class to profession field.
+  $field_profession_lang = $form['field_profession']['#language'];
+  $form['field_profession'][$field_profession_lang]['#attributes']['class'][] = 'js-chosen-select-profession';
+}
+
 /**
  * Implements hook_form_FORM_alter().
  */
