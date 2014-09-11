@@ -618,6 +618,9 @@ function loop_form_user_profile_form_alter(&$form) {
   unset($form['field_user_image'][$user_image_field_lang]['0']['#title']);
 
   $form['locale']['#access'] = FALSE;
+
+  // Set page title
+  drupal_set_title(t("Edit user"));
 }
 
 /**
