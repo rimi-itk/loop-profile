@@ -97,6 +97,7 @@
   <span class="comments--inappropriate-flag">
     <?php print flag_create_link('inappropriate_comment', $comment->cid); ?>
   </span>
+  <?php print render($content['links']); ?>
 </span>
 <div class="comments--comment-content">
   <?php print render($comment_body); ?>
