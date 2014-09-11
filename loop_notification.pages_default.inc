@@ -91,7 +91,7 @@ function loop_notification_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Messages';
+  $display->title = t('Messages');
   $display->uuid = '24c2a122-e628-4285-8035-99f5feb65405';
   $display->content = array();
   $display->panels = array();
@@ -316,7 +316,7 @@ function loop_notification_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = 'Subscriptions';
+  $display->title = t('Subscriptions');
   $display->uuid = 'd2434553-0d76-4954-bbd4-c8888cfb265f';
   $display->content = array();
   $display->panels = array();
