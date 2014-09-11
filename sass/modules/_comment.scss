@@ -122,9 +122,31 @@
 
 /* Inapropriate flag */
 
-.comments--inappropriate-flag {
-  text-align: right;
+.comments--links {
+  list-style-type: none;
+  padding: 0;
   white-space: nowrap;
+
+  @include custom-links($gray-light, $gray-light, $gray);
+
+  a {
+    font-size: .8em;
+
+    &:before {
+      @extend %icon-flag-filled;
+      @extend %icon-before;
+
+      margin-right: .5em;
+    }
+
+    &:hover {
+      color: $gray;
+    }
+  }
+  .abuse-notice {
+    color: $red;
+    font-size: .8em;
+  }
 }
 
 

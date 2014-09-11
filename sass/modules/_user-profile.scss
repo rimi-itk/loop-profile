@@ -145,6 +145,7 @@
 
 .user-profile--answers-label {
   clear: both;
+  color: $gray;
   font-size: .7em;
   float: left;
   margin-left: 0;
@@ -152,12 +153,14 @@
 
 /* Answers count*/
 .user-profile--answers {
+  color: $gray;
   display: inline-block;
   text-align: center;
   width: 4.5em;
 }
 
 .user-profile--best-answers {
+  color: $gray;
   display: inline-block;
   margin-left: -4px;
   text-align: center;
@@ -165,8 +168,8 @@
 }
 
 .user-profile--answers-count {
-  border: 2px solid $green;
-  color: $green;
+  border: 2px solid $gray;
+  color: $gray;
   clear: both;
   float: left;
   margin-right: 1em;
@@ -182,8 +185,8 @@
 }
 
 .user-profile--answers-best-count {
-  border: 2px solid $green;
-  color: $green;
+  border: 2px solid $gray;
+  color: $gray;
   clear: both;
   float: left;
   padding: .2em;
