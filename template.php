@@ -20,8 +20,8 @@ function loop_preprocess_page(&$variables) {
     }
   }
 
-  // Drupal core got a minor but with active trail on 'My account'.
-  if ($arg[0] == 'user' && is_numeric($arg[1])) {
+  // Drupal core got a minor bug with active trail on 'My account'.
+  if ($arg[0] == 'user' && is_numeric($arg[1]) && $arg[2] != 'messages') {
     menu_set_active_item('user');
   }
 
@@ -423,7 +423,7 @@ function loop_menu_link__management($variables) {
   }
   else {
     $element['#localized_options']['attributes']['class'][] = 'nav-dropdown--link';
-    $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+    $output = l(t($element['#title']), $element['#href'], $element['#localized_options']);
   }
 
   return $output . "\n";
