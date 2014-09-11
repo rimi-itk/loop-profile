@@ -94,11 +94,12 @@
       - (<?php print l(t('edit comment'), 'comment/' . $comment->cid . '/edit'); ?>)
     <?php endif; ?>
   </span>
-  <span class="comments--inappropriate-flag">
-    <?php print flag_create_link('inappropriate_comment', $comment->cid); ?>
-  </span>
-  <?php print render($content['links']); ?>
 </span>
 <div class="comments--comment-content">
   <?php print render($comment_body); ?>
+</div>
+<div class="comments--abuse">
+  <div class="comments--abuse-inner">
+    <?php print render($content['links']); ?>
+  </div>
 </div>
