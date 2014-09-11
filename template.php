@@ -712,6 +712,8 @@ function loop_preprocess_comment(&$variables) {
   unset($variables['content']['links']['comment']['#links']['comment-delete']);
   unset($variables['content']['links']['comment']['#links']['comment-edit']);
   unset($variables['content']['links']['comment']['#links']['comment-reply']);
+  $variables['content']['links']['#attributes']['class'] = 'comments--links';
+  $variables['content']['links']['comment']['#attributes']['class'] = 'comments--complaints';
 }
 
 /**
