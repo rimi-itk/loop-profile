@@ -68,6 +68,14 @@ function loop_preprocess_page(&$variables) {
   if ($user->uid > 0) {
     $variables['logout_link'] = l(t('Logout'), 'user/logout', array('attributes' => array('class' => array('nav--logout'))));
   }
+
+  // Set title for page types. For some reason it does not work through page title module.
+  if (!empty($variables['node'])) {
+    if ($variables['node']->type == 'page') {
+      // Set page title
+      drupal_set_title($variables['node']->title);
+    }
+  }
 }
 
 /**
