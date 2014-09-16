@@ -31,7 +31,7 @@ function loop_user_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
-  // Translatables.
+  // Translatables
   // Included for use with string extractors like potx.
   t('My account');
 

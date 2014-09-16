@@ -55,7 +55,7 @@ function loop_user_default_page_manager_handlers() {
     ),
   );
   $display->cache = array();
-  $display->title = '%user:field_first_name %user:field_last_name';
+  $display->title = t('My account');
   $display->uuid = 'c7d4a77e-2a44-4a1a-82a4-b7f43bc9eb64';
   $display->content = array();
   $display->panels = array();
@@ -202,7 +202,7 @@ function loop_user_default_page_manager_handlers() {
     $pane->uuid = 'e76e52ca-1d49-493d-9c54-9ef9eb411c58';
     $display->content['new-e76e52ca-1d49-493d-9c54-9ef9eb411c58'] = $pane;
     $display->panels['beta'][0] = 'new-e76e52ca-1d49-493d-9c54-9ef9eb411c58';
-  $display->hide_title = PANELS_TITLE_NONE;
+  $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['user_view_panel_context'] = $handler;
