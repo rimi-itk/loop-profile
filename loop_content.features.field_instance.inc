@@ -43,13 +43,40 @@ function loop_content_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'body',
     'label' => 'Body',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'display_summary' => TRUE,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'editor' => 0,
+          'html' => 0,
+          'plain_text' => 0,
+          'simple' => 'simple',
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'editor' => array(
+              'weight' => 0,
+            ),
+            'html' => array(
+              'weight' => -10,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'simple' => array(
+              'weight' => -10,
+            ),
+          ),
+        ),
+      ),
+      'display_summary' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
@@ -60,7 +87,7 @@ function loop_content_field_default_field_instances() {
     ),
   );
 
-  // Translatables.
+  // Translatables
   // Included for use with string extractors like potx.
   t('Body');
 
