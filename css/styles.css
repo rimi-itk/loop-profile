@@ -35,105 +35,78 @@
 /* Misc
    ================================================================================================================== */
 @-moz-keyframes open-notification-actions {
-  /* line 2, ../sass/animations/_animate.scss */
   0% {
     height: 0;
   }
-
-  /* line 6, ../sass/animations/_animate.scss */
   100% {
     min-height: 80px;
   }
 }
 @-webkit-keyframes open-notification-actions {
-  /* line 2, ../sass/animations/_animate.scss */
   0% {
     height: 0;
   }
-
-  /* line 6, ../sass/animations/_animate.scss */
   100% {
     min-height: 80px;
   }
 }
 @keyframes open-notification-actions {
-  /* line 2, ../sass/animations/_animate.scss */
   0% {
     height: 0;
   }
-
-  /* line 6, ../sass/animations/_animate.scss */
   100% {
     min-height: 80px;
   }
 }
 @-moz-keyframes close-notification-actions {
-  /* line 12, ../sass/animations/_animate.scss */
   0% {
     min-height: 80px;
   }
-
-  /* line 16, ../sass/animations/_animate.scss */
   100% {
     min-height: 0;
   }
 }
 @-webkit-keyframes close-notification-actions {
-  /* line 12, ../sass/animations/_animate.scss */
   0% {
     min-height: 80px;
   }
-
-  /* line 16, ../sass/animations/_animate.scss */
   100% {
     min-height: 0;
   }
 }
 @keyframes close-notification-actions {
-  /* line 12, ../sass/animations/_animate.scss */
   0% {
     min-height: 80px;
   }
-
-  /* line 16, ../sass/animations/_animate.scss */
   100% {
     min-height: 0;
   }
 }
 @-moz-keyframes spinner {
-  /* line 22, ../sass/animations/_animate.scss */
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
-  /* line 27, ../sass/animations/_animate.scss */
   100% {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
   }
 }
 @-webkit-keyframes spinner {
-  /* line 22, ../sass/animations/_animate.scss */
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
-  /* line 27, ../sass/animations/_animate.scss */
   100% {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
   }
 }
 @keyframes spinner {
-  /* line 22, ../sass/animations/_animate.scss */
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
-
-  /* line 27, ../sass/animations/_animate.scss */
   100% {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
@@ -638,7 +611,7 @@ dd {
 /* line 39, ../sass/theme/_placeholders.scss */
 .layout--inner {
   padding: 1.5em .5em;
-  background-color: white;
+  background-color: #fff;
   -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
@@ -1000,12 +973,12 @@ label {
 .button--action, .form-submit, .block-follow-question .flag-action, .typeahead-block--button {
   background-color: #5dc26d;
   border: 1px solid #41ab51;
-  color: white;
+  color: #fff;
   text-shadow: 1px 1px 0 #33863f;
 }
 /* line 42, ../sass/theme/_buttons.scss */
 .button--action:link, .form-submit:link, .block-follow-question .flag-action:link, .typeahead-block--button:link, .button--action:visited, .form-submit:visited, .block-follow-question .flag-action:visited, .typeahead-block--button:visited {
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 /* line 48, ../sass/theme/_buttons.scss */
@@ -1017,12 +990,12 @@ label {
 .button--neutral, .user-profile-form #edit-field-user-image-und-0-upload-button, .edit-user--image-button-add {
   background-color: #595959;
   border: 1px solid #404040;
-  color: white;
+  color: #fff;
   text-shadow: 1px 1px 0 #404040;
 }
 /* line 62, ../sass/theme/_buttons.scss */
 .button--neutral:link, .user-profile-form #edit-field-user-image-und-0-upload-button:link, .edit-user--image-button-add:link, .button--neutral:visited, .user-profile-form #edit-field-user-image-und-0-upload-button:visited, .edit-user--image-button-add:visited {
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 /* line 68, ../sass/theme/_buttons.scss */
@@ -1034,12 +1007,12 @@ label {
 .button--warning, .block-follow-question .unflag-action, .edit-user--image-button-remove {
   background-color: #ff6138;
   border: 1px solid #ff3905;
-  color: white;
+  color: #fff;
   text-shadow: 1px 1px 0 #d12b00;
 }
 /* line 82, ../sass/theme/_buttons.scss */
 .button--warning:link, .block-follow-question .unflag-action:link, .edit-user--image-button-remove:link, .button--warning:visited, .block-follow-question .unflag-action:visited, .edit-user--image-button-remove:visited {
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 /* line 88, ../sass/theme/_buttons.scss */
@@ -1051,7 +1024,7 @@ label {
 .button--deactivated, .typeahead-block--button:disabled {
   background-color: #cccccc;
   border: 1px solid #b3b3b3;
-  color: white;
+  color: #fff;
   text-shadow: 1px 1px 0 #999999;
 }
 /* line 100, ../sass/theme/_buttons.scss */
@@ -1322,7 +1295,7 @@ label {
   border: none;
   margin-top: 0;
   padding: 1em;
-  background-color: white;
+  background-color: #fff;
   -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
@@ -1369,7 +1342,7 @@ label {
 .tabs li:hover a:hover,
 .tabs li.active:hover a:hover {
   background: #f2f2f2;
-  color: black;
+  color: #000;
   text-decoration: none;
 }
 @media only screen and (min-width: 75em) {
@@ -1399,21 +1372,21 @@ label {
 }
 /* line 79, ../sass/theme/_tabs.scss */
 .tabs li a.active {
-  background: white;
+  background: #fff;
 }
 /* line 83, ../sass/theme/_tabs.scss */
 .tabs.secondary {
   margin-top: 0;
   margin-bottom: -1.75em;
   padding: 1.5em 1em;
-  background-color: white;
+  background-color: #fff;
 }
 /* line 91, ../sass/theme/_tabs.scss */
 .tabs.secondary li a,
 .tabs.secondary li a:hover {
   border: 1px solid #cccccc;
   padding: .5em 1.25em;
-  background: white;
+  background: #fff;
 }
 /* line 99, ../sass/theme/_tabs.scss */
 .tabs.secondary li a.active {
@@ -1466,7 +1439,7 @@ label {
 /* line 35, ../sass/theme/_layout.scss */
 .logo--link {
   display: inline-block;
-  max-width: 3.5em;
+  max-width: 5em;
   padding-top: 0;
   position: absolute;
   text-align: center;
@@ -1476,10 +1449,10 @@ label {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-@media only screen and (min-width: 22em) {
+@media only screen and (min-width: 40em) {
   /* line 35, ../sass/theme/_layout.scss */
   .logo--link {
-    max-width: 5em;
+    max-width: 7em;
   }
 }
 
@@ -1992,7 +1965,7 @@ label {
 .nav--wrapper .nav--logout:link,
 .nav--wrapper .nav--link:visited,
 .nav--wrapper .nav--logout:visited {
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 /* line 50, ../sass/theme/_nav.scss */
@@ -2163,7 +2136,7 @@ label {
 }
 /* line 200, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--link:link, .nav-dropdown .nav-dropdown--link:visited {
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 /* line 206, ../sass/theme/_nav.scss */
@@ -2214,21 +2187,21 @@ label {
 }
 /* line 251, ../sass/theme/_nav.scss */
 .nav-mobile a:link {
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 /* line 256, ../sass/theme/_nav.scss */
 .nav-mobile a:visited {
-  color: white;
+  color: #fff;
 }
 /* line 260, ../sass/theme/_nav.scss */
 .nav-mobile a:hover {
-  color: white;
+  color: #fff;
   text-decoration: underline;
 }
 /* line 265, ../sass/theme/_nav.scss */
 .nav-mobile a:focus {
-  color: white;
+  color: #fff;
 }
 /* line 270, ../sass/theme/_nav.scss */
 .nav-mobile .nav--link, .nav-mobile .nav--logout,
@@ -2905,7 +2878,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 /* line 68, ../sass/modules/_block-module.scss */
 .block-module--user-links-header {
   border-bottom: 1px solid #5dc26d;
-  color: white;
+  color: #fff;
   padding-bottom: 0.5em;
 }
 
@@ -2919,21 +2892,21 @@ This file is generated by `grunt build`, do not edit it by hand.
 }
 /* line 8, ../sass/theme/_mixins.scss */
 .block-module--user-links-item a:link {
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 /* line 13, ../sass/theme/_mixins.scss */
 .block-module--user-links-item a:visited {
-  color: white;
+  color: #fff;
 }
 /* line 17, ../sass/theme/_mixins.scss */
 .block-module--user-links-item a:hover {
-  color: white;
+  color: #fff;
   text-decoration: underline;
 }
 /* line 22, ../sass/theme/_mixins.scss */
 .block-module--user-links-item a:focus {
-  color: white;
+  color: #fff;
 }
 /* line 85, ../sass/modules/_block-module.scss */
 .block-module--user-links-item.active {
@@ -3137,7 +3110,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 .comment--flag.is-sticky {
   top: 1.5em;
   right: 1.5em;
-  background-color: white;
+  background-color: #fff;
 }
 @media only screen and (min-width: 43em) {
   /* line 60, ../sass/modules/_comment.scss */
@@ -3399,7 +3372,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   border: 1px solid #b3b3b3;
   display: block;
   padding: .5em 1em;
-  background-color: white;
+  background-color: #fff;
   font-size: .85em;
   font-weight: bold;
   text-align: center;
@@ -3619,7 +3592,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   margin-right: .5em;
   max-height: 3em;
   max-width: 3em;
-  background-color: white;
+  background-color: #fff;
   -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
@@ -3655,7 +3628,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   height: 2em;
   width: 2.05em;
   background-color: #ff6138;
-  color: white;
+  color: #fff;
   font-size: 65%;
   font-weight: bold;
   line-height: 1.95em;
@@ -3802,7 +3775,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 .question--meta-data {
   padding: .5em 1.25em .65em;
   background-color: #f2f2f2;
-  color: #999999;
+  color: #999;
   font-size: 80%;
   -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
@@ -3918,7 +3891,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   margin-bottom: 1.5em;
   padding: .5em 1.25em .65em;
   background-color: #f2f2f2;
-  color: #999999;
+  color: #999;
   font-size: 80%;
   -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
@@ -4020,7 +3993,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   margin-bottom: 1.5em;
   padding: .5em 1.25em .65em;
   background-color: #f2f2f2;
-  color: #999999;
+  color: #999;
   font-size: 80%;
   -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
@@ -4049,7 +4022,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   margin-bottom: .25em;
   padding: .1em 1em;
   background-color: #ff6138;
-  color: white;
+  color: #fff;
   cursor: pointer;
   font-size: 85%;
   -moz-border-radius: 0.4em;
@@ -4058,7 +4031,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 }
 /* line 21, ../sass/modules/_tag.scss */
 .comments--user-page-comments-new:link, .question--term:link, .question--user-page-nodes-new:link, .external-sources--term:link, .at-term:link, .comments--user-page-comments-new:visited, .question--term:visited, .question--user-page-nodes-new:visited, .external-sources--term:visited, .at-term:visited, .comments--user-page-comments-new:hover, .question--term:hover, .question--user-page-nodes-new:hover, .external-sources--term:hover, .at-term:hover, .comments--user-page-comments-new:active, .question--term:active, .question--user-page-nodes-new:active, .external-sources--term:active, .at-term:active {
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 /* line 29, ../sass/modules/_tag.scss */
@@ -4112,7 +4085,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   padding-bottom: 1.25em;
   padding-left: 3em;
   height: 65px;
-  background-color: white;
+  background-color: #fff;
 }
 /* line 45, ../sass/modules/_twitter-typeahead.scss */
 .typeahead-block--wrapper .tt-hint:focus,
@@ -4135,7 +4108,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 /* line 59, ../sass/modules/_twitter-typeahead.scss */
 .twitter-typeahead {
   display: block !important;
-  background-color: white;
+  background-color: #fff;
   -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
@@ -4190,7 +4163,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   margin-top: .5em;
   padding: 1em;
   width: 100%;
-  background-color: white;
+  background-color: #fff;
   -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
@@ -4601,20 +4574,20 @@ This file is generated by `grunt build`, do not edit it by hand.
 }
 /* line 60, ../sass/theme/_mixins.scss */
 .dashboard--filter-links a.is-active:link {
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 /* line 65, ../sass/theme/_mixins.scss */
 .dashboard--filter-links a.is-active:visited {
-  color: white;
+  color: #fff;
 }
 /* line 69, ../sass/theme/_mixins.scss */
 .dashboard--filter-links a.is-active:hover {
-  color: white;
+  color: #fff;
 }
 /* line 73, ../sass/theme/_mixins.scss */
 .dashboard--filter-links a.is-active:focus {
-  color: white;
+  color: #fff;
 }
 /* line 78, ../sass/theme/_mixins.scss */
 .dashboard--filter-links a.is-hidden {
@@ -4623,7 +4596,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 /* line 75, ../sass/modules/_dashboard.scss */
 .dashboard--filter-links.is-active {
   background: #41ab51;
-  color: white;
+  color: #fff;
 }
 
 /* line 81, ../sass/modules/_dashboard.scss */
@@ -4649,20 +4622,20 @@ This file is generated by `grunt build`, do not edit it by hand.
 }
 /* line 60, ../sass/theme/_mixins.scss */
 .dashboard--sort-links a.is-active:link {
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 /* line 65, ../sass/theme/_mixins.scss */
 .dashboard--sort-links a.is-active:visited {
-  color: white;
+  color: #fff;
 }
 /* line 69, ../sass/theme/_mixins.scss */
 .dashboard--sort-links a.is-active:hover {
-  color: white;
+  color: #fff;
 }
 /* line 73, ../sass/theme/_mixins.scss */
 .dashboard--sort-links a.is-active:focus {
-  color: white;
+  color: #fff;
 }
 /* line 78, ../sass/theme/_mixins.scss */
 .dashboard--sort-links a.is-hidden {
@@ -4671,12 +4644,12 @@ This file is generated by `grunt build`, do not edit it by hand.
 /* line 85, ../sass/modules/_dashboard.scss */
 .dashboard--sort-links.is-active {
   background: #41ab51;
-  color: white;
+  color: #fff;
 }
 
 /* line 91, ../sass/modules/_dashboard.scss */
 .dashboard--filter-link {
-  background: white;
+  background: #fff;
   box-sizing: border-box;
   border: 1px solid #41ab51;
   border-right: 0;
@@ -4689,7 +4662,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 /* line 102, ../sass/modules/_dashboard.scss */
 .dashboard--filter-link.is-active {
   background: #41ab51;
-  color: white;
+  color: #fff;
 }
 /* line 107, ../sass/modules/_dashboard.scss */
 .dashboard--filter-link:first-child {
@@ -4703,7 +4676,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 
 /* line 117, ../sass/modules/_dashboard.scss */
 .dashboard--sort-link {
-  background: white;
+  background: #fff;
   box-sizing: border-box;
   border: 1px solid #41ab51;
   border-right: 0;
@@ -4716,7 +4689,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 /* line 128, ../sass/modules/_dashboard.scss */
 .dashboard--sort-link.is-active {
   background: #41ab51;
-  color: white;
+  color: #fff;
 }
 /* line 133, ../sass/modules/_dashboard.scss */
 .dashboard--sort-link:first-child {
@@ -4897,7 +4870,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   width: 100%;
   background-color: #595959;
   border: 1px solid #404040;
-  color: white;
+  color: #fff;
   font-size: 100%;
 }
 /* line 39, ../sass/drupal-modules/_at-term.scss */
@@ -4940,16 +4913,16 @@ This file is generated by `grunt build`, do not edit it by hand.
 /* line 27, ../sass/drupal-modules/_messages.scss */
 .messages.status {
   background-color: #d6ff9a;
-  color: black;
+  color: #000;
 }
 /* line 32, ../sass/drupal-modules/_messages.scss */
 .messages.status a:link {
-  color: black;
+  color: #000;
   text-decoration: underline;
 }
 /* line 37, ../sass/drupal-modules/_messages.scss */
 .messages.status a:visited, .messages.status a:hover, .messages.status a:focus {
-  color: black;
+  color: #000;
   text-decoration: none;
 }
 /* line 45, ../sass/drupal-modules/_messages.scss */
@@ -4959,16 +4932,16 @@ This file is generated by `grunt build`, do not edit it by hand.
 /* line 53, ../sass/drupal-modules/_messages.scss */
 .messages.warning {
   background-color: #fff98f;
-  color: black;
+  color: #000;
 }
 /* line 58, ../sass/drupal-modules/_messages.scss */
 .messages.warning a:link {
-  color: black;
+  color: #000;
   text-decoration: underline;
 }
 /* line 63, ../sass/drupal-modules/_messages.scss */
 .messages.warning a:visited, .messages.warning a:hover, .messages.warning a:focus {
-  color: black;
+  color: #000;
   text-decoration: none;
 }
 /* line 72, ../sass/drupal-modules/_messages.scss */
@@ -4978,16 +4951,16 @@ This file is generated by `grunt build`, do not edit it by hand.
 /* line 80, ../sass/drupal-modules/_messages.scss */
 .messages.error {
   background-color: #eb3000;
-  color: white;
+  color: #fff;
 }
 /* line 85, ../sass/drupal-modules/_messages.scss */
 .messages.error a:link {
-  color: white;
+  color: #fff;
   text-decoration: underline;
 }
 /* line 90, ../sass/drupal-modules/_messages.scss */
 .messages.error a:visited, .messages.error a:hover, .messages.error a:focus {
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 /* line 98, ../sass/drupal-modules/_messages.scss */
@@ -5025,7 +4998,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 /* line 21, ../sass/drupal-modules/_autocomplete-deluxe.scss */
 .ui-widget-content {
   border: 1px solid #e6e6e6;
-  background: white;
+  background: #fff;
   color: inherit;
 }
 
@@ -5124,7 +5097,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   padding: 0.3em 1.25em 0.3em 0.5em;
   margin: 0 5px 0 0;
   line-height: 13px;
-  background-color: white;
+  background-color: #fff;
   border: 1px solid #cccccc;
   cursor: default;
   font-size: .85em;
