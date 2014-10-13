@@ -54,6 +54,7 @@
     &.active-trail,
     &.active {
       background-color: lighten($green-light, 10%);
+      text-decoration: underline;
     }
 
     @include border-radius(100%);
