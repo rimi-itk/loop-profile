@@ -1984,6 +1984,7 @@ label {
 .nav--wrapper .nav--link.active,
 .nav--wrapper .active.nav--logout {
   background-color: #82d08e;
+  text-decoration: underline;
 }
 @media only screen and (min-width: 35em) {
   /* line 30, ../sass/theme/_nav.scss */
@@ -2014,63 +2015,63 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 81, ../sass/theme/_nav.scss */
+  /* line 82, ../sass/theme/_nav.scss */
   .nav--wrapper .nav--toggle-mobile-nav {
     display: inline-block;
     min-height: 2.5em;
     vertical-align: bottom;
   }
-  /* line 87, ../sass/theme/_nav.scss */
+  /* line 88, ../sass/theme/_nav.scss */
   .nav--wrapper .nav--toggle-mobile-nav .nav--icon {
     position: relative;
     top: .5em;
     display: block;
   }
-  /* line 94, ../sass/theme/_nav.scss */
+  /* line 95, ../sass/theme/_nav.scss */
   .nav--wrapper .nav--toggle-mobile-nav .nav--text {
     display: none;
   }
 }
 @media only screen and (min-width: 75em) {
-  /* line 81, ../sass/theme/_nav.scss */
+  /* line 82, ../sass/theme/_nav.scss */
   .nav--wrapper .nav--toggle-mobile-nav {
     display: none;
   }
 }
-/* line 104, ../sass/theme/_nav.scss */
+/* line 105, ../sass/theme/_nav.scss */
 .nav--wrapper .nav--logout {
   display: none;
 }
 @media only screen and (min-width: 75em) {
-  /* line 104, ../sass/theme/_nav.scss */
+  /* line 105, ../sass/theme/_nav.scss */
   .nav--wrapper .nav--logout {
     display: inline-block;
   }
 }
 
-/* line 116, ../sass/theme/_nav.scss */
+/* line 117, ../sass/theme/_nav.scss */
 .nav--icon {
   max-width: 1.25em;
 }
 @media only screen and (min-width: 35em) {
-  /* line 116, ../sass/theme/_nav.scss */
+  /* line 117, ../sass/theme/_nav.scss */
   .nav--icon {
     max-width: 1.5em;
   }
 }
 @media only screen and (min-width: 43em) {
-  /* line 116, ../sass/theme/_nav.scss */
+  /* line 117, ../sass/theme/_nav.scss */
   .nav--icon {
     display: none;
   }
 }
 
-/* line 128, ../sass/theme/_nav.scss */
+/* line 129, ../sass/theme/_nav.scss */
 .nav--text {
   display: none;
 }
 @media only screen and (min-width: 43em) {
-  /* line 128, ../sass/theme/_nav.scss */
+  /* line 129, ../sass/theme/_nav.scss */
   .nav--text {
     display: inline;
   }
@@ -2079,28 +2080,28 @@ label {
 /* Dropdown menu
  * We use the same menu as in mobile, where we don't want any of this stuff. This results in some needed nesting.
    ================================================================================================================== */
-/* line 141, ../sass/theme/_nav.scss */
+/* line 142, ../sass/theme/_nav.scss */
 .nav-dropdown {
   display: none;
 }
 @media only screen and (min-width: 75em) {
-  /* line 141, ../sass/theme/_nav.scss */
+  /* line 142, ../sass/theme/_nav.scss */
   .nav-dropdown {
     display: inline-block;
   }
 }
-/* line 148, ../sass/theme/_nav.scss */
+/* line 149, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--header {
   padding-right: 2.5em;
 }
-/* line 152, ../sass/theme/_nav.scss */
+/* line 153, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--icon {
   position: absolute;
   top: .85em;
   right: 1em;
   max-width: .85em;
 }
-/* line 160, ../sass/theme/_nav.scss */
+/* line 161, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--item {
   position: absolute;
   top: 2.5em;
@@ -2116,16 +2117,16 @@ label {
   -webkit-border-radius: 0;
   border-radius: 0 0 0.4em 0.4em;
 }
-/* line 178, ../sass/theme/_nav.scss */
+/* line 179, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--wrapper {
   position: relative;
   display: inline-block;
 }
-/* line 184, ../sass/theme/_nav.scss */
+/* line 185, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--wrapper:hover .nav-dropdown--item {
   display: block;
 }
-/* line 190, ../sass/theme/_nav.scss */
+/* line 191, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--link {
   border-bottom: 1px solid #82d08e;
   margin-bottom: .5em;
@@ -2134,21 +2135,21 @@ label {
   min-width: 10em;
   text-align: right;
 }
-/* line 200, ../sass/theme/_nav.scss */
+/* line 201, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--link:link, .nav-dropdown .nav-dropdown--link:visited {
   color: #fff;
   text-decoration: none;
 }
-/* line 206, ../sass/theme/_nav.scss */
+/* line 207, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--link:hover {
   text-decoration: underline;
 }
-/* line 210, ../sass/theme/_nav.scss */
+/* line 211, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--link:last-child {
   border: 0;
   margin-bottom: 0;
 }
-/* line 215, ../sass/theme/_nav.scss */
+/* line 216, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--link.active {
   text-decoration: underline;
 }
@@ -2159,7 +2160,7 @@ label {
  * We use the same menu as in the header, and thus the same html. This results in some needed nesting.
  *
    ================================================================================================================== */
-/* line 231, ../sass/theme/_nav.scss */
+/* line 232, ../sass/theme/_nav.scss */
 .nav-mobile {
   position: absolute;
   top: 0;
@@ -2185,25 +2186,25 @@ label {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-/* line 251, ../sass/theme/_nav.scss */
+/* line 252, ../sass/theme/_nav.scss */
 .nav-mobile a:link {
   color: #fff;
   text-decoration: none;
 }
-/* line 256, ../sass/theme/_nav.scss */
+/* line 257, ../sass/theme/_nav.scss */
 .nav-mobile a:visited {
   color: #fff;
 }
-/* line 260, ../sass/theme/_nav.scss */
+/* line 261, ../sass/theme/_nav.scss */
 .nav-mobile a:hover {
   color: #fff;
   text-decoration: underline;
 }
-/* line 265, ../sass/theme/_nav.scss */
+/* line 266, ../sass/theme/_nav.scss */
 .nav-mobile a:focus {
   color: #fff;
 }
-/* line 270, ../sass/theme/_nav.scss */
+/* line 271, ../sass/theme/_nav.scss */
 .nav-mobile .nav--link, .nav-mobile .nav--logout,
 .nav-mobile .nav-dropdown--header,
 .nav-mobile .nav-dropdown--link {
@@ -2213,27 +2214,27 @@ label {
   border-bottom-color: #5dc26d;
   display: block;
 }
-/* line 285, ../sass/theme/_nav.scss */
+/* line 286, ../sass/theme/_nav.scss */
 .nav-mobile .nav-dropdown--item {
   padding-left: 1.25em;
 }
-/* line 289, ../sass/theme/_nav.scss */
+/* line 290, ../sass/theme/_nav.scss */
 .nav-mobile .nav--text {
   display: inline-block;
 }
-/* line 293, ../sass/theme/_nav.scss */
+/* line 294, ../sass/theme/_nav.scss */
 .nav-mobile .nav-dropdown--icon {
   display: none;
 }
-/* line 298, ../sass/theme/_nav.scss */
+/* line 299, ../sass/theme/_nav.scss */
 .nav-mobile .nav-mobile--user-links {
   padding: 1em 0;
 }
-/* line 302, ../sass/theme/_nav.scss */
+/* line 303, ../sass/theme/_nav.scss */
 .nav-mobile .block-module--user-links-list {
   padding-left: 0;
 }
-/* line 306, ../sass/theme/_nav.scss */
+/* line 307, ../sass/theme/_nav.scss */
 .nav-mobile .nav-mobile--links-header {
   color: #fff;
   font-size: 130%;
