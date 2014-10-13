@@ -9,7 +9,7 @@ jQuery(document).ready(function($) {
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     prefetch:  {
       // URL to fetch.
-      url: '/loop_external_soruces/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,æ,ø,å',
+      url: '/loop_external_sources/a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,x,y,z,æ,ø,å',
       // TTL 30 sec.
       ttl: 30000
     },
