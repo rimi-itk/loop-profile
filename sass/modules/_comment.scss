@@ -123,31 +123,41 @@
 /* Inapropriate flag */
 
 .comments--links {
+  font-size: .8em;
+  height: 2em;
   list-style-type: none;
   padding: 0;
   white-space: nowrap;
 
-  @include custom-links($gray-light, $gray-light, $gray);
-
-  a {
-    font-size: .8em;
-
-    &:before {
-      @extend %icon-flag-filled;
-      @extend %icon-before;
-
-      margin-right: .5em;
-    }
-
-    &:hover {
-      color: $gray;
-    }
-  }
   .abuse-notice {
     color: $red;
     font-size: .8em;
   }
+
+  .comment-complaint {
+    
+    @include custom-links($gray-light, $gray-light, $gray);
+
+    a {
+      &:before {
+        @extend %icon-flag-filled;
+        @extend %icon-before;
+
+        margin-right: .5em;
+      }
+
+      &:hover {
+        color: $gray;
+      }
+    }
+  }
+
+  .comment-delete {
+    float: right;
+  }
 }
+
+
 
 
 /* Comments list on user page
