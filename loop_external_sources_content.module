@@ -18,7 +18,7 @@ function loop_external_sources_content_menu() {
     'access arguments' => array('access content'),
   );
 
-  $items['loop_external_soruces/%'] = array(
+  $items['loop_external_sources/%'] = array(
     'title' => 'List external sources in JSON format',
     'page callback' => 'loop_external_sources_content_documents',
     'page arguments' => array(1),
