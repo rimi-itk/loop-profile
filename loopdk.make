@@ -200,6 +200,7 @@ projects[shurly][subdir] = "contrib"
 projects[shurly][download][type] = "git"
 projects[shurly][download][url] = "http://git.drupal.org/project/shurly.git"
 projects[shurly][download][revision] = "bf412bd"
+projects[shurly][patch][] = "https://drupal.org/files/issues/shurly-host-check.patch"
 
 projects[special_menu_items][subdir] = "contrib"
 projects[special_menu_items][version] = "2.0"
