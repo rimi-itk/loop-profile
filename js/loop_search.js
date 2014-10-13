@@ -22,7 +22,13 @@ jQuery(document).ready(function($) {
   $('.typeahead').on('typeahead:selected', function (object, datum) {
     // If suggestion contains a link. Redirect.
     if (datum.link !== undefined) {
-      window.location = datum.link;
+      // Open external links in a new window.
+      if (url_domain(datum.link) !== url_domain(window.location)) {
+        window.open(datum.link);
+      }
+      else {
+        window.location = datum.link;
+      }
     }
     else {
       // Suggestion is clicked. Display the results.
@@ -37,3 +43,18 @@ jQuery(document).ready(function($) {
       .val(Drupal.t('Searching ...'));
   });
 });
+
+/**
+ * Helper function to get hostname of a link.
+ *
+ * @param data
+ *   Full link.
+ *
+ * @returns {string}
+ *   Hostname of full link.
+ */
+function url_domain(data) {
+  var a = document.createElement('a');
+  a.href = data;
+  return a.hostname;
+}
