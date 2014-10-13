@@ -279,6 +279,13 @@ function loopdk_setup_filter_and_wysiwyg() {
   $format->status = 1;
   $format->weight = -10;
   $format->filters = array(
+    'filter_url' => array(
+      'weight' => -48,
+      'status' => 1,
+      'settings' => array(
+        'filter_url_length' => 72,
+      ),
+    ),
     'filter_html' => array(
       'weight' => 0,
       'status' => 1,
