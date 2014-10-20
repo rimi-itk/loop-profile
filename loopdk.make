@@ -2,6 +2,13 @@ api = 2
 core = 7.x
 
 ; Contrib modules
+projects[abuse][type] = "module"
+projects[abuse][subdir] = "contrib"
+projects[abuse][download][type] = "git"
+projects[abuse][download][url] = "http://git.drupal.org/project/abuse.git"
+projects[abuse][download][branch] = "7.x-1.x-dev"
+projects[abuse][patch][] = "https://www.drupal.org/files/issues/1484470-massive_patch.patch"
+
 projects[admin_views][subdir] = "contrib"
 projects[admin_views][version] = "1.2"
 
