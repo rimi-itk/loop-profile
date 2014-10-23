@@ -424,6 +424,6 @@ libraries[respondjs][directory_name] = "respondjs"
 libraries[respondjs][destination] = "libraries"
 
 libraries[php-saml][download][type] = "git"
-libraries[php-saml][download][url] = "https://github.com/onelogin/php-saml.git"
+libraries[php-saml][download][url] = "https://github.com/loopdk/php-saml.git"
 libraries[php-saml][directory_name] = "php-saml"
 libraries[php-saml][destination] = "libraries"
