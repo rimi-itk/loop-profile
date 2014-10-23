@@ -305,15 +305,16 @@ LOGOUTREQUEST;
                     $signAlg = $_GET['SigAlg'];
                 }
 
-                $signedQuery = 'SAMLRequest='.urlencode($_GET['SAMLRequest']);
-                if (isset($_GET['RelayState'])) {
-                    $signedQuery .= '&RelayState='.urlencode($_GET['RelayState']);
-                }
-                $signedQuery .= '&SigAlg='.urlencode($signAlg);
-
+                $signedQuery = 'SAMLRequest='.OneLogin_Saml2_Utils::extractOriginalQueryParam('SAMLRequest');
+                if (isset($_GET['RelayState'])) 
+                    $signedQuery .= '&RelayState='.OneLogin_Saml2_Utils::extractOriginalQueryParam('RelayState');
+                
+                $signedQuery .= '&SigAlg='.OneLogin_Saml2_Utils::extractOriginalQueryParam('SigAlg');
+                
                 if (!isset($idpData['x509cert']) || empty($idpData['x509cert'])) {
                     throw new Exception('In order to validate the sign on the Logout Request, the x509cert of the IdP is required');
                 }
+                
                 $cert = $idpData['x509cert'];
 
                 $objKey = new XMLSecurityKey(XMLSecurityKey::RSA_SHA1, array('type' => 'public'));
