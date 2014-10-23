@@ -118,6 +118,7 @@
   </div>
   <div class="question--inner">
     <?php print render($content['field_description']);?>
+    <?php print render($content['links']);?>
   </div>
   <?php if (!empty($content['field_keyword'])): ?>
     <div class="question--terms">

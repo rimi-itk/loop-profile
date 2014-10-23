@@ -182,6 +182,9 @@ if (isset($primary_menu_block['content'])): ?>
   </div>
 <?php else: ?>
   <?php // Panel pages will get printed here. ?>
+  <?php if ($messages): ?>
+    <?php print $messages; ?>
+  <?php endif; ?>
   <?php print render($page['content']); ?>
 <?php endif;?>
 

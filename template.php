@@ -116,6 +116,19 @@ function loop_preprocess_node(&$variables) {
       $variables['files'] = _loop_fetch_files('node', $variables['node']);
     }
   }
+
+  // Cleanup links.
+  if (isset( $variables['content']['links']['statistics'])) {
+    $variables['content']['links']['statistics']['#access'] = FALSE;
+  }
+
+  if (isset( $variables['content']['links']['comment'])) {
+    $variables['content']['links']['comment']['#access'] = FALSE;
+  }
+
+  if ( (!in_array('administrator', $variables['user']->roles)) && (isset($variables['content']['links']['abuse']))) {
+    unset($variables['content']['links']['abuse']['#links']['abuse_node_history']);
+  }
 }
 
 /**
