@@ -1,104 +1,12 @@
 <?php
 
 /**
- * Implements hook_menu().
+ * @param $settings
  */
-function loop_saml_menu() {
-  $items = array();
-  // URL to trigger the authentication process.
-  $items['saml/loop_saml'] = array(
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('loop_saml_form'),
-    'access callback' => TRUE,
-    'type' => MENU_CALLBACK,
-  );
-  return $items;
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function loop_saml_form_user_login_block_alter(&$form, &$form_state) {
-  // Add a "Log in using AZ credential" link to the user-login form.
-  $items = array();
-  $items[] = array(
-    'data' => l(t('Log in using AZ credential'), 'saml/loop_saml', array('external' => TRUE)),
-    'class' => array('saml-link'),
-  );
-
-  $form['loop_saml_link'] = array(
-    '#theme' => 'item_list',
-    '#items' => $items,
-    '#attributes' => array('class' => array('saml_sp_drupal_login-links')),
-    '#weight' => 1,
-  );
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- *
- * Hide fields when user is created by SAML.
- */
-function loop_saml_form_user_profile_form_alter(&$form)  {
-  global $user;
-
-  if (in_array('saml', $user->roles)) {
-    $form['account']['mail']['#access'] = FALSE;
-    $form['account']['name']['#access'] = FALSE;
-    $form['account']['pass']['#access'] = FALSE;
-  }
-}
-
-/**
- * Define saml role.
- *
- * @return
- *   An array defining the saml role.
- */
-function loop_saml_secure_permissions_roles() {
-  return array(
-    'saml',
-  );
-}
-
-/**
- * Simple formular for SAML AZ login.
- */
-function loop_saml_form($form_state) {
-  $form = array();
-
-  $form['az'] = array(
-    '#type' => 'textfield',
-    '#title' => t('AZ credential')
-  );
-
-  $form['submit'] = array(
-    '#type' => 'submit',
-    '#value' => t('Login')
-  );
-
-  return $form;
-}
-
-/**
- * Validate AZ field.
- */
-function loop_saml_form_validate($form, &$form_state) {
-  if (!isset($form_state['values']['az'])) {
-    form_set_error('az', 'AZ credential cannot be empty');
-  }
-}
-
-/**
- * Submit data to IdP
- */
-function loop_saml_form_submit($form, &$form_state) {
-  $idp = saml_sp_drupal_login__get_idp();
-  loop_saml_start($idp);
-}
-
-/**
- * Empty function for SAML startup. Called when form is submitted.
- */
-function loop_saml_start($idp) {
+function loop_saml_saml_sp_settings_alter(&$settings) {
+  $settings['debug'] = TRUE;
+  $settings['strict'] = FALSE;
+  $settings['security']['allowedAuthContexts'] = FALSE;
+  $settings['security']['logoutRequestSigned'] = TRUE;
+  $settings['security']['logoutResponseSigned'] = TRUE;
 }
