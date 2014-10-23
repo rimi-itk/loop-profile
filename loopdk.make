@@ -172,7 +172,6 @@ projects[saml2_sp][download][type] = "git"
 projects[saml2_sp][download][url] = "http://git.drupal.org/project/saml_sp.git"
 projects[saml2_sp][download][branch] = "7.x-1.x"
 projects[saml2_sp][patch][] = "https://www.drupal.org/files/issues/2316693-make-version2-compatible-10.patch"
-projects[saml2_sp][patch][] = "https://raw.githubusercontent.com/loopdk/profile/development/SAML_remove_user_pass.patch"
 
 projects[search_api][subdir] = "contrib"
 projects[search_api][version] = "1.11"
