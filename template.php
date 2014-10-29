@@ -21,7 +21,7 @@ function loop_preprocess_page(&$variables) {
   }
 
   // Drupal core got a minor bug with active trail on 'My account'.
-  if ($arg[0] == 'user' && isset($arg[1]) && is_numeric($arg[1]) && $arg[2] != 'messages') {
+  if ($arg[0] == 'user' && isset($arg[1]) && isset($arg[2]) && is_numeric($arg[1]) && $arg[2] != 'messages') {
     menu_set_active_item('user');
   }
 
