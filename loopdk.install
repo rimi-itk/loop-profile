@@ -14,7 +14,7 @@
  * @see system_install()
 */
 function loopdk_install() {
-// Set default variables.
+  // Set default variables.
   $default_theme = 'loop';
   $admin_theme = 'seven';
 
@@ -44,7 +44,6 @@ function loopdk_install() {
 
   // Clear caches.
   drupal_flush_all_caches();
-
 }
 
 /**
