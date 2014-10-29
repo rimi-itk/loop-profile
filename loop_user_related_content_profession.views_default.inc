@@ -167,9 +167,9 @@ function loop_user_related_content_profession_views_default_views() {
   $handler->display->display_options['fields']['comment_body']['relationship'] = 'cid';
   $handler->display->display_options['fields']['comment_body']['label'] = 'excluded - used to group results with multiple comments';
   $handler->display->display_options['fields']['comment_body']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['comment_body']['group_column'] = 'entity_id';
+  $handler->display->display_options['fields']['comment_body']['group_column'] = 'format';
   $handler->display->display_options['fields']['comment_body']['group_columns'] = array(
-    'format' => 'format',
+    'value' => 'value',
   );
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
