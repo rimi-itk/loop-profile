@@ -265,7 +265,7 @@ function loop_post_field_default_field_instances() {
     'bundle' => 'post',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Add your professions',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -348,6 +348,7 @@ function loop_post_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Add your professions');
   t('Comment');
   t('Enter your question or observation.');
   t('Keyword');
