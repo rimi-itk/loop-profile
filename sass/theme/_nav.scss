@@ -155,7 +155,8 @@
     padding-right: 2.5em;
   }
 
-  .nav-dropdown--icon {
+  .nav-dropdown--icon-white,
+  .nav-dropdown--icon-green {
     position: absolute;
     top: .85em;
     right: 1em;
@@ -192,6 +193,40 @@
       }
     }
   }
+
+
+  // Control the arrow down icons with hover and active trail.
+
+  .nav-dropdown--header {
+    .nav-dropdown--icon-green {
+      display: none;
+    }
+
+    .nav-dropdown--icon-white {
+      display: block;
+    }
+  }
+
+  .nav-dropdown--header.active-trail {
+    .nav-dropdown--icon-green {
+      display: block;
+    }
+
+    .nav-dropdown--icon-white {
+      display: none;
+    }
+
+    &:hover {
+      .nav-dropdown--icon-green {
+        display: none;
+      }
+
+      .nav-dropdown--icon-white {
+        display: block;
+      }
+    }
+  }
+
 
   .nav-dropdown--link {
     border-bottom: 1px solid lighten($green-light, 10%);
