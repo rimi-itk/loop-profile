@@ -94,6 +94,29 @@
   @extend %tag;
 }
 
+.question--links {
+  font-size: .8em;
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0;
+  white-space: nowrap;
+
+  @include custom-links($green, $green, $green);
+
+  a {
+    &:before {
+      @extend %icon-flag-filled;
+      @extend %icon-before;
+
+      margin-right: .5em;
+    }
+
+    &:hover {
+      color: $green;
+    }
+  }
+}
+
 
 /* Questions list on user page
    ================================================================================================================== */

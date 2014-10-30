@@ -53,8 +53,13 @@
 
     &.active-trail,
     &.active {
-      background-color: lighten($green-light, 10%);
-      text-decoration: underline;
+      background-color: $gray-lightest;
+      color: $green;
+
+      &:hover {
+        background-color: $green-light;
+        color: $gray-lightest;
+      }
     }
 
     @include border-radius(100%);

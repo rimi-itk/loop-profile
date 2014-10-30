@@ -48,6 +48,11 @@
 
   display: inline-block;
   margin-left: 4em;
+  max-width: 100%;
+
+  @include breakpoint(60em) {
+    max-width: 20em;
+  }
 }
 
 .meta-data--author-link {

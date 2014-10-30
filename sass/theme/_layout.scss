@@ -41,10 +41,6 @@
   top: 50%;
 
   @include transform(translateY(-50%));
-
-  @include breakpoint(40em) {
-    max-width: 7em;
-  }
 }
 
 .logo--image {

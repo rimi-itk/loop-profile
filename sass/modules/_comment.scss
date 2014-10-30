@@ -27,13 +27,6 @@
     @include border-radius($border-radius);
   }
 
-  // Flag needs flag-wrapper to work, adding float so it does not take up space.
-  .flag-wrapper {
-    @include breakpoint($breakpoint-4) {
-      float: left;
-    }
-  }
-
   &:last-child {
     @include reset-element-spacing();
   }
@@ -68,7 +61,7 @@
   }
 
   /* Breakpoints */
-  @include breakpoint($breakpoint-4) {
+  @include breakpoint(60em) {
     position: absolute;
     right: 0;
     top: 0;
@@ -124,8 +117,8 @@
 
 .comments--links {
   font-size: .8em;
-  height: 2em;
   list-style-type: none;
+  overflow: hidden;
   padding: 0;
   white-space: nowrap;
 
@@ -134,9 +127,9 @@
     font-size: .8em;
   }
 
-  .comment-complaint {
+  .abuse_flag_comment {
 
-    @include custom-links($gray-light, $gray-light, $gray);
+    @include custom-links($green, $green, $green);
 
     a {
       &:before {
@@ -147,13 +140,35 @@
       }
 
       &:hover {
-        color: $gray;
+        color: $green;
       }
     }
   }
 
+  .comment-delete,
+  .comment-edit {
+    box-sizing: border-box;
+    font-size: .9em;
+    display: inline-block;
+    width: 49%;
+
+    @include breakpoint($breakpoint-4) {
+      float: right;
+      max-width: 11em;
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
   .comment-delete {
-    float: right;
+    @extend .button--warning;
+  }
+
+  .comment-edit {
+    @extend .button--neutral;
   }
 }
 
