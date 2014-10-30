@@ -946,7 +946,7 @@ label {
  * @author magnify
  */
 /* line 8, ../sass/theme/_buttons.scss */
-.button--action, .form-submit, .block-follow-question .flag-action, .typeahead-block--button, .button--neutral, .user-profile-form #edit-field-user-image-und-0-upload-button, .edit-user--image-button-add, .button--warning, .block-follow-question .unflag-action, .edit-user--image-button-remove, .at-add-btn {
+.button--action, .form-submit, .block-follow-question .flag-action, .typeahead-block--button, .button--neutral, .user-profile-form #edit-field-user-image-und-0-upload-button, .comments--links .comment-edit, .edit-user--image-button-add, .button--warning, .comments--links .comment-delete, .block-follow-question .unflag-action, .edit-user--image-button-remove, .at-add-btn {
   display: inline-block;
   font-size: 1.25em;
   margin: 0 0.5em 0.5em 0;
@@ -961,11 +961,11 @@ label {
   border-radius: 0.4em;
 }
 /* line 20, ../sass/theme/_buttons.scss */
-.button--action:focus, .form-submit:focus, .block-follow-question .flag-action:focus, .typeahead-block--button:focus, .button--neutral:focus, .user-profile-form #edit-field-user-image-und-0-upload-button:focus, .edit-user--image-button-add:focus, .button--warning:focus, .block-follow-question .unflag-action:focus, .edit-user--image-button-remove:focus, .at-add-btn:focus, .button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .typeahead-block--button:hover, .button--neutral:hover, .user-profile-form #edit-field-user-image-und-0-upload-button:hover, .edit-user--image-button-add:hover, .button--warning:hover, .block-follow-question .unflag-action:hover, .edit-user--image-button-remove:hover, .at-add-btn:hover, .button--action:active, .form-submit:active, .block-follow-question .flag-action:active, .typeahead-block--button:active, .button--neutral:active, .user-profile-form #edit-field-user-image-und-0-upload-button:active, .edit-user--image-button-add:active, .button--warning:active, .block-follow-question .unflag-action:active, .edit-user--image-button-remove:active, .at-add-btn:active {
+.button--action:focus, .form-submit:focus, .block-follow-question .flag-action:focus, .typeahead-block--button:focus, .button--neutral:focus, .user-profile-form #edit-field-user-image-und-0-upload-button:focus, .comments--links .comment-edit:focus, .edit-user--image-button-add:focus, .button--warning:focus, .comments--links .comment-delete:focus, .block-follow-question .unflag-action:focus, .edit-user--image-button-remove:focus, .at-add-btn:focus, .button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .typeahead-block--button:hover, .button--neutral:hover, .user-profile-form #edit-field-user-image-und-0-upload-button:hover, .comments--links .comment-edit:hover, .edit-user--image-button-add:hover, .button--warning:hover, .comments--links .comment-delete:hover, .block-follow-question .unflag-action:hover, .edit-user--image-button-remove:hover, .at-add-btn:hover, .button--action:active, .form-submit:active, .block-follow-question .flag-action:active, .typeahead-block--button:active, .button--neutral:active, .user-profile-form #edit-field-user-image-und-0-upload-button:active, .comments--links .comment-edit:active, .edit-user--image-button-add:active, .button--warning:active, .comments--links .comment-delete:active, .block-follow-question .unflag-action:active, .edit-user--image-button-remove:active, .at-add-btn:active {
   text-decoration: none;
 }
 /* line 26, ../sass/theme/_buttons.scss */
-.button--action:last-child, .form-submit:last-child, .block-follow-question .flag-action:last-child, .typeahead-block--button:last-child, .button--neutral:last-child, .user-profile-form #edit-field-user-image-und-0-upload-button:last-child, .edit-user--image-button-add:last-child, .button--warning:last-child, .block-follow-question .unflag-action:last-child, .edit-user--image-button-remove:last-child, .at-add-btn:last-child {
+.button--action:last-child, .form-submit:last-child, .block-follow-question .flag-action:last-child, .typeahead-block--button:last-child, .button--neutral:last-child, .user-profile-form #edit-field-user-image-und-0-upload-button:last-child, .comments--links .comment-edit:last-child, .edit-user--image-button-add:last-child, .button--warning:last-child, .comments--links .comment-delete:last-child, .block-follow-question .unflag-action:last-child, .edit-user--image-button-remove:last-child, .at-add-btn:last-child {
   margin: 0 0 0.5em;
 }
 
@@ -987,36 +987,36 @@ label {
 }
 
 /* line 53, ../sass/theme/_buttons.scss */
-.button--neutral, .user-profile-form #edit-field-user-image-und-0-upload-button, .edit-user--image-button-add {
+.button--neutral, .user-profile-form #edit-field-user-image-und-0-upload-button, .comments--links .comment-edit, .edit-user--image-button-add {
   background-color: #595959;
   border: 1px solid #404040;
   color: #fff;
   text-shadow: 1px 1px 0 #404040;
 }
 /* line 62, ../sass/theme/_buttons.scss */
-.button--neutral:link, .user-profile-form #edit-field-user-image-und-0-upload-button:link, .edit-user--image-button-add:link, .button--neutral:visited, .user-profile-form #edit-field-user-image-und-0-upload-button:visited, .edit-user--image-button-add:visited {
+.button--neutral:link, .user-profile-form #edit-field-user-image-und-0-upload-button:link, .comments--links .comment-edit:link, .edit-user--image-button-add:link, .button--neutral:visited, .user-profile-form #edit-field-user-image-und-0-upload-button:visited, .comments--links .comment-edit:visited, .edit-user--image-button-add:visited {
   color: #fff;
   text-decoration: none;
 }
 /* line 68, ../sass/theme/_buttons.scss */
-.button--neutral:hover, .user-profile-form #edit-field-user-image-und-0-upload-button:hover, .edit-user--image-button-add:hover {
+.button--neutral:hover, .user-profile-form #edit-field-user-image-und-0-upload-button:hover, .comments--links .comment-edit:hover, .edit-user--image-button-add:hover {
   background-color: #262626;
 }
 
 /* line 73, ../sass/theme/_buttons.scss */
-.button--warning, .block-follow-question .unflag-action, .edit-user--image-button-remove {
+.button--warning, .comments--links .comment-delete, .block-follow-question .unflag-action, .edit-user--image-button-remove {
   background-color: #ff6138;
   border: 1px solid #ff3905;
   color: #fff;
   text-shadow: 1px 1px 0 #d12b00;
 }
 /* line 82, ../sass/theme/_buttons.scss */
-.button--warning:link, .block-follow-question .unflag-action:link, .edit-user--image-button-remove:link, .button--warning:visited, .block-follow-question .unflag-action:visited, .edit-user--image-button-remove:visited {
+.button--warning:link, .comments--links .comment-delete:link, .block-follow-question .unflag-action:link, .edit-user--image-button-remove:link, .button--warning:visited, .comments--links .comment-delete:visited, .block-follow-question .unflag-action:visited, .edit-user--image-button-remove:visited {
   color: #fff;
   text-decoration: none;
 }
 /* line 88, ../sass/theme/_buttons.scss */
-.button--warning:hover, .block-follow-question .unflag-action:hover, .edit-user--image-button-remove:hover {
+.button--warning:hover, .comments--links .comment-delete:hover, .block-follow-question .unflag-action:hover, .edit-user--image-button-remove:hover {
   background-color: #ff3905;
 }
 
@@ -1192,7 +1192,7 @@ label {
 /* line 71, ../sass/theme/_icons.scss */
 .comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .user-profile--answers-best-count:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .messages.warning:before, .nav-mobile .nav--link:before, .nav-mobile .nav--logout:before,
 .nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before, .twitter-typeahead:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .comments--links .comment-complaint a:before {
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before, .twitter-typeahead:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .comments--links .abuse_flag_comment a:before, .question--links a:before {
   display: inline-block;
   font-family: "loop-icons";
   line-height: 100%;
@@ -1201,7 +1201,7 @@ label {
 /* line 78, ../sass/theme/_icons.scss */
 .nav-mobile .nav--link:before, .nav-mobile .nav--logout:before,
 .nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .comments--links .comment-complaint a:before, .comment--flag:before, .guide--nav-list-item .active:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .user-profile--answers-best-count:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .messages.status:before, .messages.warning:before, .messages.error:before {
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .comments--links .abuse_flag_comment a:before, .comment--flag:before, .guide--nav-list-item .active:before, .question--links a:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .user-profile--answers-best-count:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .messages.status:before, .messages.warning:before, .messages.error:before {
   margin-right: .35em;
 }
 
@@ -1273,7 +1273,7 @@ label {
 }
 
 /* line 177, ../sass/theme/_icons.scss */
-.comments--links .comment-complaint a:before {
+.comments--links .abuse_flag_comment a:before, .question--links a:before {
   content: '\e812';
 }
 
@@ -1449,14 +1449,8 @@ label {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-@media only screen and (min-width: 40em) {
-  /* line 35, ../sass/theme/_layout.scss */
-  .logo--link {
-    max-width: 7em;
-  }
-}
 
-/* line 50, ../sass/theme/_layout.scss */
+/* line 46, ../sass/theme/_layout.scss */
 .logo--image {
   margin-right: auto;
   margin-left: auto;
@@ -1464,17 +1458,17 @@ label {
 
 /* Layouts
    ================================================================================================================== */
-/* line 60, ../sass/theme/_layout.scss */
+/* line 56, ../sass/theme/_layout.scss */
 .layout-full-width, .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper {
   overflow: hidden;
   margin-bottom: 0;
 }
-/* line 67, ../sass/theme/_layout.scss */
+/* line 63, ../sass/theme/_layout.scss */
 .layout-full-width .layout--inner:last-child, .layout-frontpage .layout--inner:last-child, .layout-dashboard .layout--inner:last-child, .layout-default .layout--inner:last-child, .layout-default-inverted .layout--inner:last-child, .layout-alternative .layout--inner:last-child, .layout-no-wrapper .layout--inner:last-child {
   margin-bottom: 0;
 }
 
-/* line 72, ../sass/theme/_layout.scss */
+/* line 68, ../sass/theme/_layout.scss */
 .layout--inner {
   float: left;
   margin-bottom: 1.5em;
@@ -1482,7 +1476,7 @@ label {
   width: 100%;
 }
 
-/* line 81, ../sass/theme/_layout.scss */
+/* line 77, ../sass/theme/_layout.scss */
 .layout-element-alpha,
 .layout-element-beta,
 .layout-element-gamma,
@@ -1496,7 +1490,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 97, ../sass/theme/_layout.scss */
+  /* line 93, ../sass/theme/_layout.scss */
   .layout-full-width .layout-element-alpha {
     float: left;
     width: 100%;
@@ -1514,7 +1508,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 111, ../sass/theme/_layout.scss */
+  /* line 107, ../sass/theme/_layout.scss */
   .layout-frontpage .layout-element-alpha {
     float: left;
     width: 100%;
@@ -1530,14 +1524,14 @@ label {
     padding-left: 0;
   }
 }
-/* line 119, ../sass/theme/_layout.scss */
+/* line 115, ../sass/theme/_layout.scss */
 .layout-frontpage .layout-element-beta {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 2em;
   padding-bottom: 2em;
 }
 @media only screen and (min-width: 75em) {
-  /* line 119, ../sass/theme/_layout.scss */
+  /* line 115, ../sass/theme/_layout.scss */
   .layout-frontpage .layout-element-beta {
     float: left;
     width: 50%;
@@ -1557,7 +1551,7 @@ label {
   }
 }
 @media only screen and (min-width: 75em) {
-  /* line 130, ../sass/theme/_layout.scss */
+  /* line 126, ../sass/theme/_layout.scss */
   .layout-frontpage .layout-element-gamma {
     float: right;
     width: 50%;
@@ -1574,7 +1568,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 138, ../sass/theme/_layout.scss */
+  /* line 134, ../sass/theme/_layout.scss */
   .layout-frontpage .layout-element-delta {
     float: left;
     width: 100%;
@@ -1591,14 +1585,14 @@ label {
   }
 }
 
-/* line 153, ../sass/theme/_layout.scss */
+/* line 149, ../sass/theme/_layout.scss */
 .layout-dashboard .layout-element-alpha {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 2em;
   padding-bottom: 2em;
 }
 @media only screen and (min-width: 75em) {
-  /* line 153, ../sass/theme/_layout.scss */
+  /* line 149, ../sass/theme/_layout.scss */
   .layout-dashboard .layout-element-alpha {
     float: left;
     width: 50%;
@@ -1618,7 +1612,7 @@ label {
   }
 }
 @media only screen and (min-width: 75em) {
-  /* line 164, ../sass/theme/_layout.scss */
+  /* line 160, ../sass/theme/_layout.scss */
   .layout-dashboard .layout-element-beta,
   .layout-dashboard .layout-element-delta {
     float: right;
@@ -1635,7 +1629,7 @@ label {
     padding-right: 0;
   }
 }
-/* line 173, ../sass/theme/_layout.scss */
+/* line 169, ../sass/theme/_layout.scss */
 .layout-dashboard .layout-element-gamma {
   float: left;
   width: 100%;
@@ -1650,14 +1644,14 @@ label {
   word-wrap: break-word;
 }
 
-/* line 184, ../sass/theme/_layout.scss */
+/* line 180, ../sass/theme/_layout.scss */
 .layout-default .layout-element-alpha {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 2em;
   padding-bottom: 2em;
 }
 @media only screen and (min-width: 45em) {
-  /* line 184, ../sass/theme/_layout.scss */
+  /* line 180, ../sass/theme/_layout.scss */
   .layout-default .layout-element-alpha {
     float: left;
     width: 70.83333%;
@@ -1677,7 +1671,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 195, ../sass/theme/_layout.scss */
+  /* line 191, ../sass/theme/_layout.scss */
   .layout-default .layout-element-beta {
     float: right;
     width: 29.16667%;
@@ -1694,7 +1688,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 203, ../sass/theme/_layout.scss */
+  /* line 199, ../sass/theme/_layout.scss */
   .layout-default .layout-element-gamma,
   .layout-default .layout-element-delta,
   .layout-default .layout-element-epsilon {
@@ -1716,7 +1710,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 220, ../sass/theme/_layout.scss */
+  /* line 216, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-alpha {
     float: left;
     width: 29.16667%;
@@ -1733,7 +1727,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 228, ../sass/theme/_layout.scss */
+  /* line 224, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-beta {
     float: right;
     width: 70.83333%;
@@ -1750,7 +1744,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 236, ../sass/theme/_layout.scss */
+  /* line 232, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-gamma {
     clear: both;
     float: left;
@@ -1767,7 +1761,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 244, ../sass/theme/_layout.scss */
+  /* line 240, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-delta {
     float: right;
     width: 50%;
@@ -1783,7 +1777,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 250, ../sass/theme/_layout.scss */
+  /* line 246, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1799,7 +1793,7 @@ label {
     word-wrap: break-word;
   }
 }
-/* line 258, ../sass/theme/_layout.scss */
+/* line 254, ../sass/theme/_layout.scss */
 .layout-default-inverted .layout-element-gamma,
 .layout-default-inverted .layout-element-delta,
 .layout-default-inverted .layout-element-epsilon {
@@ -1808,7 +1802,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 271, ../sass/theme/_layout.scss */
+  /* line 267, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-alpha {
     float: left;
     width: 100%;
@@ -1824,7 +1818,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 277, ../sass/theme/_layout.scss */
+  /* line 273, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-beta {
     clear: both;
     float: left;
@@ -1841,7 +1835,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 285, ../sass/theme/_layout.scss */
+  /* line 281, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-gamma {
     clear: both;
     float: left;
@@ -1858,7 +1852,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 293, ../sass/theme/_layout.scss */
+  /* line 289, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-delta {
     float: right;
     width: 50%;
@@ -1874,7 +1868,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 299, ../sass/theme/_layout.scss */
+  /* line 295, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1891,12 +1885,12 @@ label {
   }
 }
 
-/* line 313, ../sass/theme/_layout.scss */
+/* line 309, ../sass/theme/_layout.scss */
 .layout-no-wrapper .layout--inner {
   padding: 1.5em;
 }
 
-/* line 322, ../sass/theme/_layout.scss */
+/* line 318, ../sass/theme/_layout.scss */
 .layout-alternative .layout-element-alpha,
 .layout-alternative .layout-element-beta,
 .layout-alternative .layout-element-gamma,
@@ -1983,8 +1977,19 @@ label {
 .nav--wrapper .active-trail.nav--logout,
 .nav--wrapper .nav--link.active,
 .nav--wrapper .active.nav--logout {
-  background-color: #82d08e;
-  text-decoration: underline;
+  background-color: #f2f2f2;
+  color: #41ab51;
+}
+/* line 59, ../sass/theme/_nav.scss */
+.nav--wrapper .nav-dropdown--header.active-trail:hover, .nav--wrapper .nav-dropdown--header.active:hover,
+.nav--wrapper .nav--toggle-mobile-nav.active-trail:hover,
+.nav--wrapper .nav--toggle-mobile-nav.active:hover,
+.nav--wrapper .nav--link.active-trail:hover,
+.nav--wrapper .active-trail.nav--logout:hover,
+.nav--wrapper .nav--link.active:hover,
+.nav--wrapper .active.nav--logout:hover {
+  background-color: #5dc26d;
+  color: #f2f2f2;
 }
 @media only screen and (min-width: 35em) {
   /* line 30, ../sass/theme/_nav.scss */
@@ -2015,63 +2020,63 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 82, ../sass/theme/_nav.scss */
+  /* line 87, ../sass/theme/_nav.scss */
   .nav--wrapper .nav--toggle-mobile-nav {
     display: inline-block;
     min-height: 2.5em;
     vertical-align: bottom;
   }
-  /* line 88, ../sass/theme/_nav.scss */
+  /* line 93, ../sass/theme/_nav.scss */
   .nav--wrapper .nav--toggle-mobile-nav .nav--icon {
     position: relative;
     top: .5em;
     display: block;
   }
-  /* line 95, ../sass/theme/_nav.scss */
+  /* line 100, ../sass/theme/_nav.scss */
   .nav--wrapper .nav--toggle-mobile-nav .nav--text {
     display: none;
   }
 }
 @media only screen and (min-width: 75em) {
-  /* line 82, ../sass/theme/_nav.scss */
+  /* line 87, ../sass/theme/_nav.scss */
   .nav--wrapper .nav--toggle-mobile-nav {
     display: none;
   }
 }
-/* line 105, ../sass/theme/_nav.scss */
+/* line 110, ../sass/theme/_nav.scss */
 .nav--wrapper .nav--logout {
   display: none;
 }
 @media only screen and (min-width: 75em) {
-  /* line 105, ../sass/theme/_nav.scss */
+  /* line 110, ../sass/theme/_nav.scss */
   .nav--wrapper .nav--logout {
     display: inline-block;
   }
 }
 
-/* line 117, ../sass/theme/_nav.scss */
+/* line 122, ../sass/theme/_nav.scss */
 .nav--icon {
   max-width: 1.25em;
 }
 @media only screen and (min-width: 35em) {
-  /* line 117, ../sass/theme/_nav.scss */
+  /* line 122, ../sass/theme/_nav.scss */
   .nav--icon {
     max-width: 1.5em;
   }
 }
 @media only screen and (min-width: 43em) {
-  /* line 117, ../sass/theme/_nav.scss */
+  /* line 122, ../sass/theme/_nav.scss */
   .nav--icon {
     display: none;
   }
 }
 
-/* line 129, ../sass/theme/_nav.scss */
+/* line 134, ../sass/theme/_nav.scss */
 .nav--text {
   display: none;
 }
 @media only screen and (min-width: 43em) {
-  /* line 129, ../sass/theme/_nav.scss */
+  /* line 134, ../sass/theme/_nav.scss */
   .nav--text {
     display: inline;
   }
@@ -2080,28 +2085,28 @@ label {
 /* Dropdown menu
  * We use the same menu as in mobile, where we don't want any of this stuff. This results in some needed nesting.
    ================================================================================================================== */
-/* line 142, ../sass/theme/_nav.scss */
+/* line 147, ../sass/theme/_nav.scss */
 .nav-dropdown {
   display: none;
 }
 @media only screen and (min-width: 75em) {
-  /* line 142, ../sass/theme/_nav.scss */
+  /* line 147, ../sass/theme/_nav.scss */
   .nav-dropdown {
     display: inline-block;
   }
 }
-/* line 149, ../sass/theme/_nav.scss */
+/* line 154, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--header {
   padding-right: 2.5em;
 }
-/* line 153, ../sass/theme/_nav.scss */
+/* line 158, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--icon {
   position: absolute;
   top: .85em;
   right: 1em;
   max-width: .85em;
 }
-/* line 161, ../sass/theme/_nav.scss */
+/* line 166, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--item {
   position: absolute;
   top: 2.5em;
@@ -2117,16 +2122,16 @@ label {
   -webkit-border-radius: 0;
   border-radius: 0 0 0.4em 0.4em;
 }
-/* line 179, ../sass/theme/_nav.scss */
+/* line 184, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--wrapper {
   position: relative;
   display: inline-block;
 }
-/* line 185, ../sass/theme/_nav.scss */
+/* line 190, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--wrapper:hover .nav-dropdown--item {
   display: block;
 }
-/* line 191, ../sass/theme/_nav.scss */
+/* line 196, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--link {
   border-bottom: 1px solid #82d08e;
   margin-bottom: .5em;
@@ -2135,21 +2140,21 @@ label {
   min-width: 10em;
   text-align: right;
 }
-/* line 201, ../sass/theme/_nav.scss */
+/* line 206, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--link:link, .nav-dropdown .nav-dropdown--link:visited {
   color: #fff;
   text-decoration: none;
 }
-/* line 207, ../sass/theme/_nav.scss */
+/* line 212, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--link:hover {
   text-decoration: underline;
 }
-/* line 211, ../sass/theme/_nav.scss */
+/* line 216, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--link:last-child {
   border: 0;
   margin-bottom: 0;
 }
-/* line 216, ../sass/theme/_nav.scss */
+/* line 221, ../sass/theme/_nav.scss */
 .nav-dropdown .nav-dropdown--link.active {
   text-decoration: underline;
 }
@@ -2160,7 +2165,7 @@ label {
  * We use the same menu as in the header, and thus the same html. This results in some needed nesting.
  *
    ================================================================================================================== */
-/* line 232, ../sass/theme/_nav.scss */
+/* line 237, ../sass/theme/_nav.scss */
 .nav-mobile {
   position: absolute;
   top: 0;
@@ -2186,25 +2191,25 @@ label {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-/* line 252, ../sass/theme/_nav.scss */
+/* line 257, ../sass/theme/_nav.scss */
 .nav-mobile a:link {
   color: #fff;
   text-decoration: none;
 }
-/* line 257, ../sass/theme/_nav.scss */
+/* line 262, ../sass/theme/_nav.scss */
 .nav-mobile a:visited {
   color: #fff;
 }
-/* line 261, ../sass/theme/_nav.scss */
+/* line 266, ../sass/theme/_nav.scss */
 .nav-mobile a:hover {
   color: #fff;
   text-decoration: underline;
 }
-/* line 266, ../sass/theme/_nav.scss */
+/* line 271, ../sass/theme/_nav.scss */
 .nav-mobile a:focus {
   color: #fff;
 }
-/* line 271, ../sass/theme/_nav.scss */
+/* line 276, ../sass/theme/_nav.scss */
 .nav-mobile .nav--link, .nav-mobile .nav--logout,
 .nav-mobile .nav-dropdown--header,
 .nav-mobile .nav-dropdown--link {
@@ -2214,27 +2219,27 @@ label {
   border-bottom-color: #5dc26d;
   display: block;
 }
-/* line 286, ../sass/theme/_nav.scss */
+/* line 291, ../sass/theme/_nav.scss */
 .nav-mobile .nav-dropdown--item {
   padding-left: 1.25em;
 }
-/* line 290, ../sass/theme/_nav.scss */
+/* line 295, ../sass/theme/_nav.scss */
 .nav-mobile .nav--text {
   display: inline-block;
 }
-/* line 294, ../sass/theme/_nav.scss */
+/* line 299, ../sass/theme/_nav.scss */
 .nav-mobile .nav-dropdown--icon {
   display: none;
 }
-/* line 299, ../sass/theme/_nav.scss */
+/* line 304, ../sass/theme/_nav.scss */
 .nav-mobile .nav-mobile--user-links {
   padding: 1em 0;
 }
-/* line 303, ../sass/theme/_nav.scss */
+/* line 308, ../sass/theme/_nav.scss */
 .nav-mobile .block-module--user-links-list {
   padding-left: 0;
 }
-/* line 307, ../sass/theme/_nav.scss */
+/* line 312, ../sass/theme/_nav.scss */
 .nav-mobile .nav-mobile--links-header {
   color: #fff;
   font-size: 130%;
@@ -3069,52 +3074,46 @@ This file is generated by `grunt build`, do not edit it by hand.
   -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-@media only screen and (min-width: 43em) {
-  /* line 31, ../sass/modules/_comment.scss */
-  .comments--comment .flag-wrapper {
-    float: left;
-  }
-}
-/* line 37, ../sass/modules/_comment.scss */
+/* line 30, ../sass/modules/_comment.scss */
 .comments--comment:last-child {
   border-bottom: 0;
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-/* line 42, ../sass/modules/_comment.scss */
+/* line 35, ../sass/modules/_comment.scss */
 .comments--comment-meta-data {
   position: relative;
 }
 
-/* line 48, ../sass/modules/_comment.scss */
+/* line 41, ../sass/modules/_comment.scss */
 .comments--comment-meta-data-date {
   margin-right: 2em;
 }
 
-/* line 52, ../sass/modules/_comment.scss */
+/* line 45, ../sass/modules/_comment.scss */
 .comments--comment-content {
   margin-bottom: 1em;
 }
 @media only screen and (min-width: 43em) {
-  /* line 52, ../sass/modules/_comment.scss */
+  /* line 45, ../sass/modules/_comment.scss */
   .comments--comment-content {
     margin-bottom: 0;
   }
 }
 
-/* line 60, ../sass/modules/_comment.scss */
+/* line 53, ../sass/modules/_comment.scss */
 .comment--flag {
   /* Breakpoints */
 }
-/* line 63, ../sass/modules/_comment.scss */
+/* line 56, ../sass/modules/_comment.scss */
 .comment--flag.is-sticky {
   top: 1.5em;
   right: 1.5em;
   background-color: #fff;
 }
-@media only screen and (min-width: 43em) {
-  /* line 60, ../sass/modules/_comment.scss */
+@media only screen and (min-width: 60em) {
+  /* line 53, ../sass/modules/_comment.scss */
   .comment--flag {
     position: absolute;
     right: 0;
@@ -3123,7 +3122,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   }
 }
 
-/* line 80, ../sass/modules/_comment.scss */
+/* line 73, ../sass/modules/_comment.scss */
 .comments--files {
   background-color: #f2f2f2;
   color: #999999;
@@ -3134,14 +3133,14 @@ This file is generated by `grunt build`, do not edit it by hand.
   padding: .5em 1.25em .65em;
 }
 @media only screen and (min-width: 65em) {
-  /* line 80, ../sass/modules/_comment.scss */
+  /* line 73, ../sass/modules/_comment.scss */
   .comments--files {
     clear: none;
     max-width: 16em;
   }
 }
 
-/* line 95, ../sass/modules/_comment.scss */
+/* line 88, ../sass/modules/_comment.scss */
 .comments--icon {
   height: 16px;
   width: 16px;
@@ -3151,102 +3150,120 @@ This file is generated by `grunt build`, do not edit it by hand.
   background: url("../images/document-icon.png") no-repeat right top;
 }
 
-/* line 104, ../sass/modules/_comment.scss */
+/* line 97, ../sass/modules/_comment.scss */
 .comments--icon-application-pdf {
   background: url("../images/pdf-icon.png") no-repeat right top;
 }
 
-/* line 108, ../sass/modules/_comment.scss */
+/* line 101, ../sass/modules/_comment.scss */
 .comments--icon-image-jpeg,
 .comments--icon-image-png {
   background: url("../images/image-icon.png") no-repeat right top;
 }
 
-/* line 113, ../sass/modules/_comment.scss */
+/* line 106, ../sass/modules/_comment.scss */
 .comments--files-label {
   float: left;
   margin-right: 1.6em;
 }
 
-/* line 118, ../sass/modules/_comment.scss */
+/* line 111, ../sass/modules/_comment.scss */
 .comments--files-content {
   float: left;
 }
 
 /* Inapropriate flag */
-/* line 125, ../sass/modules/_comment.scss */
+/* line 118, ../sass/modules/_comment.scss */
 .comments--links {
   font-size: .8em;
-  height: 2em;
   list-style-type: none;
+  overflow: hidden;
   padding: 0;
   white-space: nowrap;
 }
-/* line 132, ../sass/modules/_comment.scss */
+/* line 125, ../sass/modules/_comment.scss */
 .comments--links .abuse-notice {
   color: #ff6138;
   font-size: .8em;
 }
 /* line 42, ../sass/theme/_mixins.scss */
-.comments--links .comment-complaint a:link {
-  color: #cccccc;
+.comments--links .abuse_flag_comment a:link {
+  color: #41ab51;
   text-decoration: none;
 }
 /* line 47, ../sass/theme/_mixins.scss */
-.comments--links .comment-complaint a:visited {
-  color: #cccccc;
+.comments--links .abuse_flag_comment a:visited {
+  color: #41ab51;
 }
 /* line 51, ../sass/theme/_mixins.scss */
-.comments--links .comment-complaint a:hover {
-  color: #b3b3b3;
+.comments--links .abuse_flag_comment a:hover {
+  color: #41ab51;
 }
 /* line 55, ../sass/theme/_mixins.scss */
-.comments--links .comment-complaint a:focus {
-  color: #cccccc;
+.comments--links .abuse_flag_comment a:focus {
+  color: #41ab51;
 }
 /* line 60, ../sass/theme/_mixins.scss */
-.comments--links .comment-complaint a.is-active:link {
-  color: #cccccc;
+.comments--links .abuse_flag_comment a.is-active:link {
+  color: #41ab51;
   text-decoration: none;
 }
 /* line 65, ../sass/theme/_mixins.scss */
-.comments--links .comment-complaint a.is-active:visited {
-  color: #cccccc;
+.comments--links .abuse_flag_comment a.is-active:visited {
+  color: #41ab51;
 }
 /* line 69, ../sass/theme/_mixins.scss */
-.comments--links .comment-complaint a.is-active:hover {
-  color: #cccccc;
+.comments--links .abuse_flag_comment a.is-active:hover {
+  color: #41ab51;
 }
 /* line 73, ../sass/theme/_mixins.scss */
-.comments--links .comment-complaint a.is-active:focus {
-  color: #cccccc;
+.comments--links .abuse_flag_comment a.is-active:focus {
+  color: #41ab51;
 }
 /* line 78, ../sass/theme/_mixins.scss */
-.comments--links .comment-complaint a.is-hidden {
+.comments--links .abuse_flag_comment a.is-hidden {
   display: none;
 }
-/* line 142, ../sass/modules/_comment.scss */
-.comments--links .comment-complaint a:before {
+/* line 135, ../sass/modules/_comment.scss */
+.comments--links .abuse_flag_comment a:before {
   margin-right: .5em;
 }
-/* line 149, ../sass/modules/_comment.scss */
-.comments--links .comment-complaint a:hover {
-  color: #b3b3b3;
+/* line 142, ../sass/modules/_comment.scss */
+.comments--links .abuse_flag_comment a:hover {
+  color: #41ab51;
 }
-/* line 155, ../sass/modules/_comment.scss */
-.comments--links .comment-delete {
-  float: right;
+/* line 148, ../sass/modules/_comment.scss */
+.comments--links .comment-delete,
+.comments--links .comment-edit {
+  box-sizing: border-box;
+  font-size: .9em;
+  display: inline-block;
+  width: 49%;
+}
+@media only screen and (min-width: 43em) {
+  /* line 148, ../sass/modules/_comment.scss */
+  .comments--links .comment-delete,
+  .comments--links .comment-edit {
+    float: right;
+    max-width: 11em;
+  }
+}
+/* line 160, ../sass/modules/_comment.scss */
+.comments--links .comment-delete a,
+.comments--links .comment-edit a {
+  color: #fff;
+  text-decoration: none;
 }
 
 /* Comments list on user page
    ================================================================================================================== */
-/* line 165, ../sass/modules/_comment.scss */
+/* line 180, ../sass/modules/_comment.scss */
 .comments--user-page-comments-element {
   margin-bottom: 1em;
   padding-bottom: 1em;
   border-bottom: 1px solid #e6e6e6;
 }
-/* line 170, ../sass/modules/_comment.scss */
+/* line 185, ../sass/modules/_comment.scss */
 .comments--user-page-comments-element:last-child {
   border-bottom: 0;
   margin-bottom: 0;
@@ -3606,14 +3623,21 @@ This file is generated by `grunt build`, do not edit it by hand.
   vertical-align: top;
   display: inline-block;
   margin-left: 4em;
+  max-width: 100%;
+}
+@media only screen and (min-width: 60em) {
+  /* line 46, ../sass/modules/_meta-data.scss */
+  .meta-data--author-wrapper {
+    max-width: 20em;
+  }
 }
 
-/* line 53, ../sass/modules/_meta-data.scss */
+/* line 58, ../sass/modules/_meta-data.scss */
 .meta-data--author-link {
   font-weight: bold;
 }
 
-/* line 57, ../sass/modules/_meta-data.scss */
+/* line 62, ../sass/modules/_meta-data.scss */
 .meta-data--author-title {
   display: block;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
@@ -3858,15 +3882,70 @@ This file is generated by `grunt build`, do not edit it by hand.
   margin-bottom: 2em;
 }
 
+/* line 97, ../sass/modules/_question.scss */
+.question--links {
+  font-size: .8em;
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0;
+  white-space: nowrap;
+}
+/* line 42, ../sass/theme/_mixins.scss */
+.question--links a:link {
+  color: #41ab51;
+  text-decoration: none;
+}
+/* line 47, ../sass/theme/_mixins.scss */
+.question--links a:visited {
+  color: #41ab51;
+}
+/* line 51, ../sass/theme/_mixins.scss */
+.question--links a:hover {
+  color: #41ab51;
+}
+/* line 55, ../sass/theme/_mixins.scss */
+.question--links a:focus {
+  color: #41ab51;
+}
+/* line 60, ../sass/theme/_mixins.scss */
+.question--links a.is-active:link {
+  color: #41ab51;
+  text-decoration: none;
+}
+/* line 65, ../sass/theme/_mixins.scss */
+.question--links a.is-active:visited {
+  color: #41ab51;
+}
+/* line 69, ../sass/theme/_mixins.scss */
+.question--links a.is-active:hover {
+  color: #41ab51;
+}
+/* line 73, ../sass/theme/_mixins.scss */
+.question--links a.is-active:focus {
+  color: #41ab51;
+}
+/* line 78, ../sass/theme/_mixins.scss */
+.question--links a.is-hidden {
+  display: none;
+}
+/* line 107, ../sass/modules/_question.scss */
+.question--links a:before {
+  margin-right: .5em;
+}
+/* line 114, ../sass/modules/_question.scss */
+.question--links a:hover {
+  color: #41ab51;
+}
+
 /* Questions list on user page
    ================================================================================================================== */
-/* line 100, ../sass/modules/_question.scss */
+/* line 123, ../sass/modules/_question.scss */
 .question--user-page-nodes-element {
   margin-bottom: 1em;
   border-bottom: 1px solid #e6e6e6;
   padding-bottom: 1em;
 }
-/* line 105, ../sass/modules/_question.scss */
+/* line 128, ../sass/modules/_question.scss */
 .question--user-page-nodes-element:last-child {
   border-bottom: 0;
   margin-bottom: 0;
