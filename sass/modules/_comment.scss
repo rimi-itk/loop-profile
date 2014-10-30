@@ -42,10 +42,6 @@
 
 .comments--comment-content {
   margin-bottom: 1em;
-
-  @include breakpoint($breakpoint-4) {
-    margin-bottom: 0;
-  }
 }
 
 .comment--flag {
@@ -113,16 +109,12 @@
 
 /* Inapropriate flag */
 
-.comments--links {
-  font-size: .8em;
-  list-style-type: none;
-  overflow: hidden;
-  padding: 0;
-  white-space: nowrap;
+.comments--abuse {
 
-  .abuse-notice {
-    color: $red;
+  .links {
     font-size: .8em;
+    list-style: none;
+    padding: 0;
   }
 
   .abuse_flag_comment {
@@ -142,9 +134,19 @@
       }
     }
   }
+}
 
-  .comment-delete,
-  .comment-edit {
+
+.comments--editor-actions {
+  font-size: .8em;
+  list-style-type: none;
+  margin-bottom: 1em;
+  overflow: hidden;
+  padding: 0;
+  white-space: nowrap;
+
+  .comments--editor-actions-delete,
+  .comments--editor-actions-edit {
     box-sizing: border-box;
     font-size: .9em;
     display: inline-block;
@@ -161,11 +163,11 @@
     }
   }
 
-  .comment-delete {
+  .comments--editor-actions-delete {
     @extend .button--warning;
   }
 
-  .comment-edit {
+  .comments--editor-actions-edit {
     @extend .button--neutral;
 
     &:last-child {

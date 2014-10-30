@@ -99,7 +99,15 @@
   <?php print render($comment_body); ?>
 </div>
 <div class="comments--abuse">
-  <div class="comments--abuse-inner">
-    <?php print render($content['links']); ?>
-  </div>
+  <?php print render($content['links']); ?>
 </div>
+<?php if (user_access('administer comments')) : ?>
+  <div class="comments--editor-actions">
+    <div class="comments--editor-actions-delete">
+      <a href="/comment/<?php print $comment->cid; ?>/delete"><?php print t('Delete comment');?></a>
+    </div>
+    <div class="comments--editor-actions-edit">
+      <a href="/comment/<?php print $comment->cid; ?>/edit"><?php print t('Edit comment');?></a>
+    </div>
+  </div>
+<?php endif; ?>

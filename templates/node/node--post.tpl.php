@@ -125,4 +125,18 @@
       <?php print render($content['field_keyword']);?>
     </div>
   <?php endif; ?>
+  <?php if (user_access('edit any post content') || user_access('delete any post content')): ?>
+    <div class="question--editor-actions">
+      <?php if (user_access('delete any post content')): ?>
+        <div class="question--editor-actions-delete">
+          <a href="/node/<?php print $node->nid ?>/delete"><?php print t('Delete post');?></a>
+        </div>
+      <?php endif; ?>
+      <?php if (user_access('edit any post content')): ?>
+        <div class="question--editor-actions-edit">
+          <a href="/node/<?php print $node->nid ?>/edit"><?php print t('Edit post');?></a>
+        </div>
+      <?php endif; ?>
+    </div>
+  <?php endif; ?>
 </section>

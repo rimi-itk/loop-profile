@@ -33,8 +33,6 @@
 
 .question--inner {
   clear: both;
-  
-  padding-bottom: 2em;
 }
 
 .question--label {
@@ -81,7 +79,7 @@
 }
 
 .question {
-  margin-bottom: 0;
+  margin-bottom: 1em;
 
   font-size: 125%;
 }
@@ -113,6 +111,45 @@
 
     &:hover {
       color: $green;
+    }
+  }
+}
+
+.question--editor-actions {
+  font-size: .8em;
+  list-style-type: none;
+  margin-bottom: 1em;
+  overflow: hidden;
+  padding: 0;
+  white-space: nowrap;
+
+  .question--editor-actions-delete,
+  .question--editor-actions-edit {
+    box-sizing: border-box;
+    font-size: .9em;
+    display: inline-block;
+    width: 48%;
+
+    @include breakpoint($breakpoint-4) {
+      float: right;
+      max-width: 11em;
+    }
+
+    a {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+
+  .question--editor-actions-delete {
+    @extend .button--warning;
+  }
+
+  .question--editor-actions-edit {
+    @extend .button--neutral;
+
+    &:last-child {
+      margin-right: .5em;
     }
   }
 }
