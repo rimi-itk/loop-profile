@@ -36,6 +36,8 @@ function loop_admin_form_post_node_form_alter(&$form, &$form_state) {
  * Implements hook_menu().
  */
 function loop_admin_menu() {
+  $items = array();
+
   $items['editor/dashboard/user-statistics'] = array(
     'title' => 'LOOP User statistics',
     'page callback' => '_loop_admin_user_statistics',
@@ -47,103 +49,33 @@ function loop_admin_menu() {
 }
 
 function _loop_admin_user_statistics() {
-  $accounts = _loop_admin_fetch_users();
+  // Start with the comment table.
+  $query = db_select('comment', 'comment');
 
-  $users = array();
-  foreach ($accounts as $account) {
-    $users[] = array(
-      'uid' => $account->uid,
-      'name' => $account->name,
-      'fullname' => _loop_admin_generate_full_name($account),
-      'answers' => _loop_user_fetch_user_answers($account->uid),
-      'comments' => _loop_admin_find_comments($account->uid),
-      'flagging' => _loop_admin_fetch_flagging($account->uid),
-    );
-  }
+  // Count comments for a user.
+  $query->addExpression('COUNT(comment.cid)', 'comments');
 
-  return _loop_admin_build_table($users);
-}
+  // Add user information.
+  $query->rightJoin('users', 'u', 'comment.uid = u.uid');
+  $query->addField('u', 'uid', 'uid');
+  $query->addField('u', 'name', 'username');
 
-function _loop_admin_fetch_users() {
-  $raw_users = db_select('users', 'u')
-    ->fields('u')
-    ->condition('status', 1)
-    ->execute()
-    ->fetchAllAssoc('uid');
+  // Add username.
+  $query->join('field_data_field_first_name', 'fn', 'fn.entity_id = u.uid');
+  $query->join('field_data_field_last_name', 'ln', 'ln.entity_id = u.uid');
+  $query->addField('fn', 'field_first_name_value', 'firstname');
+  $query->addField('ln', 'field_last_name_value', 'lastname');
 
-  $accounts = array();
-  foreach ($raw_users as $raw_user) {
-    $account = user_load($raw_user->uid);
+  // Group by each user.
+  $query->groupBy('u.uid');
 
-    $accounts[] = $account;
-  }
+  // Get thumbs up.
+  $query->addExpression("(SELECT count(*) FROM flagging WHERE flagging.entity_type = 'comment' AND flagging.uid = u.uid)", 'thumbs');
 
-  return $accounts;
-}
+  // Get most accepted answers.
+  $query->addExpression("IFNULL((SELECT count(*) FROM flag_counts fc JOIN comment c ON c.cid = fc.entity_id JOIN node n ON n.nid = c.nid WHERE entity_type = 'comment' AND c.uid = u.uid GROUP BY c.uid), 0)", 'accepted');
 
-function _loop_admin_find_comments($uid) {
-  // Fetch all comments.
-  $comments = db_select('comment', 'c')
-    ->fields('c')
-    ->execute()
-    ->fetchAllAssoc('cid');
+  $result = $query->execute()->fetchAllAssoc('uid');
 
-  $user_comments = array();
-
-  foreach ($comments as $comment) {
-    if ($comment->uid == $uid) {
-      $user_comments[] = $comment;
-    }
-  }
-
-  return $user_comments;
-}
-
-function _loop_admin_generate_full_name($account) {
-  $name = '';
-  if (isset($account->field_first_name['und'][0]['safe_value'])) {
-    $name = '' . $account->field_first_name['und'][0]['safe_value'];
-    if (isset($account->field_last_name['und'][0]['safe_value'])) {
-      $name .= ' ' . $account->field_last_name['und'][0]['safe_value'];
-
-    }
-  }
-
-  return $name;
-}
-
-function _loop_admin_fetch_flagging($uid) {
-  $flagging = db_select('flagging', 'f')
-    ->fields('f')
-    ->condition('uid', $uid)
-    ->execute()
-    ->fetchAllAssoc('flagging_id');
-
-  return $flagging;
-}
-
-function _loop_admin_build_table($users) {
-  $header = array('UID', 'Username', 'Full name', 'Accepted answers', 'Comments', 'Thumb ups');
-
-  $rows = array();
-  foreach ($users as $user) {
-    $rows[] = array(
-      $user['uid'],
-      $user['name'],
-      $user['fullname'],
-      $user['answers']['answers_count'],
-      count($user['comments']),
-      count($user['flagging']),
-    );
-  }
-
-  return theme_table(array(
-    'header' => $header,
-    'rows' => $rows,
-    'attributes' => array(),
-    'caption' => '',
-    'colgroups' => array(),
-    'sticky' => array(),
-    'empty' => array(),
-  ));
+  print_r($result);
 }
