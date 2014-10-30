@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Access in paths_alter.
+ * Alter paths and build statistics for users.
  */
 
 include_once 'loop_admin.features.inc';
@@ -40,7 +40,8 @@ function loop_admin_menu() {
 
   $items['editor/dashboard/user-statistics'] = array(
     'title' => 'LOOP User statistics',
-    'page callback' => '_loop_admin_user_statistics',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_loop_admin_user_statistics_form'),
     'access arguments' => array('access user profiles'),
     'type' => MENU_NORMAL_ITEM,
   );
@@ -48,7 +49,72 @@ function loop_admin_menu() {
   return $items;
 }
 
-function _loop_admin_user_statistics() {
+/**
+ * Menu callback that generates the table.
+ *
+ * @throws Exception
+ */
+function _loop_admin_user_statistics_form() {
+  // Define header and fields to sort on.
+  $header = array(
+    array('data' => t('UID'), 'field' => 'uid'),
+    array('data' => t('Username'), 'field' => 'username'),
+    array('data' => t('Full name'), 'field' => 'fullname'),
+    array('data' => t('Accepted answers'), 'field' => 'accepted'),
+    array('data' => t('Comments'), 'field' => 'comments'),
+    array('data' => t('Thumb ups'), 'field' => 'thumbs'),
+  );
+
+  // Get query.
+  $query = _loop_admin_user_statistics_query();
+
+  // Enable table sort on headers.
+  $query->extend('TableSort')->orderByHeader($header);
+
+  // Enabled pager.
+  $query = $query->extend('PagerDefault')->limit(10);
+
+  // Execute query.
+  $result = $query->execute();
+
+  // Looping for filling the table rows.
+  $rows = array();
+  foreach ($result as $row) {
+    // Fill the table rows.
+    $rows[] = array(
+      l($row->uid, 'user/' . $row->uid),
+      l($row->username, 'user/' . $row->uid),
+      l($row->fullname, 'user/' . $row->uid),
+      $row->accepted,
+      $row->comments,
+      $row->thumbs,
+    );
+  }
+
+  // Theme table.
+  $form['table'] = array(
+    '#theme' => 'table',
+    '#header' => $header,
+    '#rows' => $rows,
+    '#empty' => t('Table has no row!'),
+  );
+
+  // Add pager.
+  $form['pager'] = array(
+    '#type' => 'markup',
+    '#markup' => theme('pager'),
+  );
+
+  return $form;
+}
+
+/**
+ * Build query to find statistics information.
+ *
+ * @return SelectQuery
+ *   Query to run against the database.
+ */
+function _loop_admin_user_statistics_query() {
   // Start with the comment table.
   $query = db_select('comment', 'comment');
 
@@ -65,6 +131,7 @@ function _loop_admin_user_statistics() {
   $query->join('field_data_field_last_name', 'ln', 'ln.entity_id = u.uid');
   $query->addField('fn', 'field_first_name_value', 'firstname');
   $query->addField('ln', 'field_last_name_value', 'lastname');
+  $query->addExpression("CONCAT_WS(' ', fn.field_first_name_value, ln.field_last_name_value)", 'fullname');
 
   // Group by each user.
   $query->groupBy('u.uid');
@@ -75,7 +142,27 @@ function _loop_admin_user_statistics() {
   // Get most accepted answers.
   $query->addExpression("IFNULL((SELECT count(*) FROM flag_counts fc JOIN comment c ON c.cid = fc.entity_id JOIN node n ON n.nid = c.nid WHERE entity_type = 'comment' AND c.uid = u.uid GROUP BY c.uid), 0)", 'accepted');
 
-  $result = $query->execute()->fetchAllAssoc('uid');
+  return $query;
+}
 
-  print_r($result);
+/**
+ * Get full name from an user account.
+ *
+ * @param $account
+ *  Drupal user account.
+ *
+ * @return string
+ *  The users full name.
+ */
+function _loop_admin_generate_full_name($account) {
+  $name = '';
+  if (isset($account->field_first_name['und'][0]['safe_value'])) {
+    $name = '' . $account->field_first_name['und'][0]['safe_value'];
+    if (isset($account->field_last_name['und'][0]['safe_value'])) {
+      $name .= ' ' . $account->field_last_name['und'][0]['safe_value'];
+
+    }
+  }
+
+  return $name;
 }
