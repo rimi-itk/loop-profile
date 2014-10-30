@@ -138,9 +138,22 @@ function _loop_admin_user_statistics_query() {
 
   // Get thumbs up.
   $query->addExpression("(SELECT count(*) FROM flagging WHERE flagging.entity_type = 'comment' AND flagging.uid = u.uid)", 'thumbs');
+  // @todo:
+  // AND timestamp = 1411628953
 
   // Get most accepted answers.
   $query->addExpression("IFNULL((SELECT count(*) FROM flag_counts fc JOIN comment c ON c.cid = fc.entity_id JOIN node n ON n.nid = c.nid WHERE entity_type = 'comment' AND c.uid = u.uid GROUP BY c.uid), 0)", 'accepted');
+  // @todo:
+  // SELECT count(1)
+  //  FROM flag_counts fc
+  //  JOIN comment c ON c.cid = fc.entity_id
+  //  JOIN node n ON n.nid = c.nid
+  //  JOIN flagging f ON f.entity_id = fc.entity_id
+  //  WHERE fc.entity_type = 'comment' AND c.uid = 35 AND f.fid = 1 AND timestamp = 1411628953
+  //  GROUP BY c.uid
+
+  // @todo:
+  // WHERE comment.cid IN (SELECT entity_id FROM flagging f WHERE f.entity_type = 'comment' AND f.timestamp = 1411628953)
 
   return $query;
 }
@@ -148,11 +161,11 @@ function _loop_admin_user_statistics_query() {
 /**
  * Get full name from an user account.
  *
- * @param $account
- *  Drupal user account.
+ * @param StdClass $account
+ *   Drupal user account.
  *
  * @return string
- *  The users full name.
+ *   The users full name.
  */
 function _loop_admin_generate_full_name($account) {
   $name = '';
