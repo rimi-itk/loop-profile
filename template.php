@@ -21,8 +21,14 @@ function loop_preprocess_page(&$variables) {
   }
 
   // Drupal core got a minor bug with active trail on 'My account'.
-  if ($arg[0] == 'user' && isset($arg[1]) && isset($arg[2]) && is_numeric($arg[1]) && $arg[2] != 'messages') {
-    menu_set_active_item('user');
+  if ($arg[0] == 'user' && isset($arg[1]) && is_numeric($arg[1])) {
+    if (!isset($arg[2])) {
+      menu_set_active_item('user');
+    } else {
+      if ($arg[2] != 'messages') {
+        menu_set_active_item('user');
+      }
+    }
   }
 
   // Remove search form when no search results are found.
@@ -126,9 +132,9 @@ function loop_preprocess_node(&$variables) {
     $variables['content']['links']['comment']['#access'] = FALSE;
   }
 
-  if ( (!in_array('administrator', $variables['user']->roles)) && (isset($variables['content']['links']['abuse']))) {
-    unset($variables['content']['links']['abuse']['#links']['abuse_node_history']);
-  }
+  // Change default links display.
+  $variables['content']['links']['abuse']['#attributes']['class'] = 'question--links';
+  unset($variables['content']['links']['abuse']['#links']['abuse_node_history']);
 }
 
 /**
@@ -729,8 +735,9 @@ function loop_preprocess_comment(&$variables) {
   }
 
   // Remove flag, delete, edit and reply links.
+  $variables['content']['links']['comment']['#links']['comment-delete']['title'] = t('Delete comment');
+  $variables['content']['links']['comment']['#links']['comment-edit']['title'] = t('Edit comment');
   unset($variables['content']['links']['flag']);
-  unset($variables['content']['links']['comment']['#links']['comment-edit']);
   unset($variables['content']['links']['comment']['#links']['comment-reply']);
   $variables['content']['links']['#attributes']['class'] = 'comments--links';
   $variables['content']['links']['comment']['#attributes']['class'] = 'comments--complaints';
