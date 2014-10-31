@@ -54,7 +54,7 @@ function loop_admin_menu() {
  *
  * @throws Exception
  */
-function _loop_admin_user_statistics_form() {
+function _loop_admin_user_statistics_form($form, &$form_state) {
   // Define header and fields to sort on.
   $header = array(
     array('data' => t('UID'), 'field' => 'uid'),
@@ -65,14 +65,24 @@ function _loop_admin_user_statistics_form() {
     array('data' => t('Thumb ups'), 'field' => 'thumbs'),
   );
 
+  // Check for filter values.
+  $filter = array();
+  if (isset($form_state['input']['filter']['start_date']['date'])) {
+    $filter['date']['start'] = strtotime($form_state['input']['filter']['start_date']['date']);
+  }
+
+  if (isset($form_state['input']['filter']['end_date']['date'])) {
+    $filter['date']['end'] = strtotime($form_state['input']['filter']['end_date']['date']);
+  }
+
   // Get query.
-  $query = _loop_admin_user_statistics_query();
+  $query = _loop_admin_user_statistics_query($filter);
 
   // Enable table sort on headers.
   $query->extend('TableSort')->orderByHeader($header);
 
   // Enabled pager.
-  $query = $query->extend('PagerDefault')->limit(10);
+  $query = $query->extend('PagerDefault')->limit(25);
 
   // Execute query.
   $result = $query->execute();
@@ -91,8 +101,56 @@ function _loop_admin_user_statistics_form() {
     );
   }
 
+  // Build filter field set.
+  $collapsed = !isset($form_state['input']['filter']['start_date']['date']);
+  $form['filter'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Filter list'),
+    '#collapsed' => $collapsed,
+    '#collapsible' => TRUE,
+    '#tree' => TRUE,
+  );
+
+  $form['filter']['start_date'] = array(
+    '#type' => 'date_popup',
+    '#title' => t('Start'),
+    '#required' => TRUE,
+    '#date_format' => 'd-m-Y',
+    '#date_label_position' => 'none',
+    '#attributes' => array('autocomplete' => 'off'),
+  );
+
+  $form['filter']['end_date'] = array(
+    '#type' => 'date_popup',
+    '#title' => t('End'),
+    '#required' => TRUE,
+    '#date_format' => 'd-m-Y',
+    '#date_label_position' => 'none',
+    '#attributes' => array('autocomplete' => 'off'),
+  );
+
+  // Add Ajax submit button (as form submits to own address and loads twice,
+  // hence values are empty on load).
+  $form['filter']['submit'] = array(
+    '#type' => 'button',
+    '#value' => t('Filter'),
+    '#ajax' => array(
+      'callback' => '_loop_admin_user_statistics_ajax_callback',
+      'wrapper' => 'replace-stats',
+      'method' => 'replace',
+      'effect' => 'fade',
+    ),
+  );
+
+  // Add wrapper to replace on filter.
+  $form['stats'] = array(
+    '#tree' => TRUE,
+    '#prefix' => '<div id="replace-stats">',
+    '#suffix' => '</div>',
+  );
+
   // Theme table.
-  $form['table'] = array(
+  $form['stats']['table'] = array(
     '#theme' => 'table',
     '#header' => $header,
     '#rows' => $rows,
@@ -100,7 +158,7 @@ function _loop_admin_user_statistics_form() {
   );
 
   // Add pager.
-  $form['pager'] = array(
+  $form['stats']['pager'] = array(
     '#type' => 'markup',
     '#markup' => theme('pager'),
   );
@@ -109,12 +167,23 @@ function _loop_admin_user_statistics_form() {
 }
 
 /**
+ * Ajax callback for the filter form.
+ */
+function _loop_admin_user_statistics_ajax_callback($form, $form_state) {
+  $form = _loop_admin_user_statistics_form($form, $form_state);
+  return $form['stats'];
+}
+
+/**
  * Build query to find statistics information.
+ *
+ * @param array $filter
+ *   The different values to filter on.
  *
  * @return SelectQuery
  *   Query to run against the database.
  */
-function _loop_admin_user_statistics_query() {
+function _loop_admin_user_statistics_query($filter = array()) {
   // Start with the comment table.
   $query = db_select('comment', 'comment');
 
@@ -137,23 +206,25 @@ function _loop_admin_user_statistics_query() {
   $query->groupBy('u.uid');
 
   // Get thumbs up.
-  $query->addExpression("(SELECT count(*) FROM flagging WHERE flagging.entity_type = 'comment' AND flagging.uid = u.uid)", 'thumbs');
-  // @todo:
-  // AND timestamp = 1411628953
+  if (isset($filter['date'])) {
+    $query->addExpression("(SELECT count(*) FROM flagging WHERE flagging.entity_type = 'comment' AND flagging.uid = u.uid AND timestamp >= :start_date AND timestamp < :end_date)", 'thumbs', array('start_date' => $filter['date']['start'], 'end_date' => $filter['date']['end']));
+  }
+  else {
+    $query->addExpression("(SELECT count(*) FROM flagging WHERE flagging.entity_type = 'comment' AND flagging.uid = u.uid)", 'thumbs');
+  }
 
   // Get most accepted answers.
-  $query->addExpression("IFNULL((SELECT count(*) FROM flag_counts fc JOIN comment c ON c.cid = fc.entity_id JOIN node n ON n.nid = c.nid WHERE entity_type = 'comment' AND c.uid = u.uid GROUP BY c.uid), 0)", 'accepted');
-  // @todo:
-  // SELECT count(1)
-  //  FROM flag_counts fc
-  //  JOIN comment c ON c.cid = fc.entity_id
-  //  JOIN node n ON n.nid = c.nid
-  //  JOIN flagging f ON f.entity_id = fc.entity_id
-  //  WHERE fc.entity_type = 'comment' AND c.uid = 35 AND f.fid = 1 AND timestamp = 1411628953
-  //  GROUP BY c.uid
+  if (isset($filter['date'])) {
+    $query->addExpression("(SELECT count(*) FROM (SELECT c.uid, MAX(fc.count) FROM node n JOIN comment c ON n.nid = c.nid JOIN flag_counts fc ON c.cid = fc.entity_id JOIN flagging f ON f.entity_id = c.cid WHERE fc.entity_type = 'comment' AND f.timestamp >= :start_date AND f.timestamp < :end_date GROUP BY n.nid) AS count WHERE count.uid = u.uid)", 'accepted', array('start_date' => $filter['date']['start'], 'end_date' => $filter['date']['end']));
+  }
+  else {
+    $query->addExpression("IFNULL((SELECT count(*) FROM (SELECT c.uid, MAX(fc.count) FROM node n JOIN comment c ON n.nid = c.nid JOIN flag_counts fc ON c.cid = fc.entity_id WHERE fc.entity_type = 'comment') AS count WHERE count.uid = u.uid), 0)", 'accepted');
+  }
 
-  // @todo:
-  // WHERE comment.cid IN (SELECT entity_id FROM flagging f WHERE f.entity_type = 'comment' AND f.timestamp = 1411628953)
+  // Filter the whole query on date.
+  if (isset($filter['date'])) {
+    $query->where("comment.cid IN (SELECT entity_id FROM flagging f WHERE f.entity_type = 'comment' AND f.timestamp >= :start_date AND f.timestamp < :end_date)", array('start_date' => $filter['date']['start'], 'end_date' => $filter['date']['end']));
+  }
 
   return $query;
 }

@@ -6,6 +6,7 @@ version = 7.x-1.0
 project = loop_admin
 dependencies[] = admin_views
 dependencies[] = ctools
+dependencies[] = date_popup
 dependencies[] = features
 dependencies[] = loop_user
 dependencies[] = menu
