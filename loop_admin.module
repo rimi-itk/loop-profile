@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Access in paths_alter.
+ * Alter paths and build statistics for users.
  */
 
 include_once 'loop_admin.features.inc';
@@ -36,9 +36,12 @@ function loop_admin_form_post_node_form_alter(&$form, &$form_state) {
  * Implements hook_menu().
  */
 function loop_admin_menu() {
+  $items = array();
+
   $items['editor/dashboard/user-statistics'] = array(
     'title' => 'LOOP User statistics',
-    'page callback' => '_loop_admin_user_statistics',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_loop_admin_user_statistics_form'),
     'access arguments' => array('access user profiles'),
     'type' => MENU_NORMAL_ITEM,
   );
@@ -46,59 +49,195 @@ function loop_admin_menu() {
   return $items;
 }
 
-function _loop_admin_user_statistics() {
-  $accounts = _loop_admin_fetch_users();
+/**
+ * Menu callback that generates the table.
+ *
+ * @throws Exception
+ */
+function _loop_admin_user_statistics_form($form, &$form_state) {
+  // Define header and fields to sort on.
+  $header = array(
+    array('data' => t('UID'), 'field' => 'uid'),
+    array('data' => t('Username'), 'field' => 'username'),
+    array('data' => t('Full name'), 'field' => 'fullname'),
+    array('data' => t('Accepted answers'), 'field' => 'accepted'),
+    array('data' => t('Comments'), 'field' => 'comments'),
+    array('data' => t('Thumb ups'), 'field' => 'thumbs'),
+  );
 
-  $users = array();
-  foreach ($accounts as $account) {
-    $users[] = array(
-      'uid' => $account->uid,
-      'name' => $account->name,
-      'fullname' => _loop_admin_generate_full_name($account),
-      'answers' => _loop_user_fetch_user_answers($account->uid),
-      'comments' => _loop_admin_find_comments($account->uid),
-      'flagging' => _loop_admin_fetch_flagging($account->uid),
+  // Check for filter values.
+  $filter = array();
+  if (isset($form_state['input']['filter']['start_date']['date'])) {
+    $filter['date']['start'] = strtotime($form_state['input']['filter']['start_date']['date']);
+  }
+
+  if (isset($form_state['input']['filter']['end_date']['date'])) {
+    $filter['date']['end'] = strtotime($form_state['input']['filter']['end_date']['date']);
+  }
+
+  // Get query.
+  $query = _loop_admin_user_statistics_query($filter);
+
+  // Enable table sort on headers.
+  $query->extend('TableSort')->orderByHeader($header);
+
+  // Enabled pager.
+  $query = $query->extend('PagerDefault')->limit(25);
+
+  // Execute query.
+  $result = $query->execute();
+
+  // Looping for filling the table rows.
+  $rows = array();
+  foreach ($result as $row) {
+    // Fill the table rows.
+    $rows[] = array(
+      l($row->uid, 'user/' . $row->uid),
+      l($row->username, 'user/' . $row->uid),
+      l($row->fullname, 'user/' . $row->uid),
+      $row->accepted,
+      $row->comments,
+      $row->thumbs,
     );
   }
 
-  return _loop_admin_build_table($users);
+  // Build filter field set.
+  $collapsed = !isset($form_state['input']['filter']['start_date']['date']);
+  $form['filter'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Filter list'),
+    '#collapsed' => $collapsed,
+    '#collapsible' => TRUE,
+    '#tree' => TRUE,
+  );
+
+  $form['filter']['start_date'] = array(
+    '#type' => 'date_popup',
+    '#title' => t('Start'),
+    '#required' => TRUE,
+    '#date_format' => 'd-m-Y',
+    '#date_label_position' => 'none',
+    '#attributes' => array('autocomplete' => 'off'),
+  );
+
+  $form['filter']['end_date'] = array(
+    '#type' => 'date_popup',
+    '#title' => t('End'),
+    '#required' => TRUE,
+    '#date_format' => 'd-m-Y',
+    '#date_label_position' => 'none',
+    '#attributes' => array('autocomplete' => 'off'),
+  );
+
+  // Add Ajax submit button (as form submits to own address and loads twice,
+  // hence values are empty on load).
+  $form['filter']['submit'] = array(
+    '#type' => 'button',
+    '#value' => t('Filter'),
+    '#ajax' => array(
+      'callback' => '_loop_admin_user_statistics_ajax_callback',
+      'wrapper' => 'replace-stats',
+      'method' => 'replace',
+      'effect' => 'fade',
+    ),
+  );
+
+  // Add wrapper to replace on filter.
+  $form['stats'] = array(
+    '#tree' => TRUE,
+    '#prefix' => '<div id="replace-stats">',
+    '#suffix' => '</div>',
+  );
+
+  // Theme table.
+  $form['stats']['table'] = array(
+    '#theme' => 'table',
+    '#header' => $header,
+    '#rows' => $rows,
+    '#empty' => t('Table has no row!'),
+  );
+
+  // Add pager.
+  $form['stats']['pager'] = array(
+    '#type' => 'markup',
+    '#markup' => theme('pager'),
+  );
+
+  return $form;
 }
 
-function _loop_admin_fetch_users() {
-  $raw_users = db_select('users', 'u')
-    ->fields('u')
-    ->condition('status', 1)
-    ->execute()
-    ->fetchAllAssoc('uid');
+/**
+ * Ajax callback for the filter form.
+ */
+function _loop_admin_user_statistics_ajax_callback($form, $form_state) {
+  $form = _loop_admin_user_statistics_form($form, $form_state);
+  return $form['stats'];
+}
 
-  $accounts = array();
-  foreach ($raw_users as $raw_user) {
-    $account = user_load($raw_user->uid);
+/**
+ * Build query to find statistics information.
+ *
+ * @param array $filter
+ *   The different values to filter on.
+ *
+ * @return SelectQuery
+ *   Query to run against the database.
+ */
+function _loop_admin_user_statistics_query($filter = array()) {
+  // Start with the comment table.
+  $query = db_select('comment', 'comment');
 
-    $accounts[] = $account;
+  // Count comments for a user.
+  $query->addExpression('COUNT(comment.cid)', 'comments');
+
+  // Add user information.
+  $query->rightJoin('users', 'u', 'comment.uid = u.uid');
+  $query->addField('u', 'uid', 'uid');
+  $query->addField('u', 'name', 'username');
+
+  // Add username.
+  $query->join('field_data_field_first_name', 'fn', 'fn.entity_id = u.uid');
+  $query->join('field_data_field_last_name', 'ln', 'ln.entity_id = u.uid');
+  $query->addField('fn', 'field_first_name_value', 'firstname');
+  $query->addField('ln', 'field_last_name_value', 'lastname');
+  $query->addExpression("CONCAT_WS(' ', fn.field_first_name_value, ln.field_last_name_value)", 'fullname');
+
+  // Group by each user.
+  $query->groupBy('u.uid');
+
+  // Get thumbs up.
+  if (isset($filter['date'])) {
+    $query->addExpression("(SELECT count(*) FROM comment c JOIN flagging f ON c.cid = f.entity_id WHERE c.uid = u.uid AND timestamp >= :start_date AND timestamp <= :end_date)", 'thumbs', array('start_date' => $filter['date']['start'], 'end_date' => $filter['date']['end']));
+  }
+  else {
+    $query->addExpression("(SELECT count(*) FROM comment c JOIN flagging f ON c.cid = f.entity_id WHERE c.uid = u.uid)", 'thumbs');
   }
 
-  return $accounts;
-}
-
-function _loop_admin_find_comments($uid) {
-  // Fetch all comments.
-  $comments = db_select('comment', 'c')
-    ->fields('c')
-    ->execute()
-    ->fetchAllAssoc('cid');
-
-  $user_comments = array();
-
-  foreach ($comments as $comment) {
-    if ($comment->uid == $uid) {
-      $user_comments[] = $comment;
-    }
+  // Get most accepted answers.
+  if (isset($filter['date'])) {
+    $query->addExpression("(SELECT count(*) FROM (SELECT c.uid, MAX(fc.count) FROM node n JOIN comment c ON n.nid = c.nid JOIN flag_counts fc ON c.cid = fc.entity_id JOIN flagging f ON f.entity_id = c.cid WHERE fc.entity_type = 'comment' AND f.timestamp >= :start_date AND f.timestamp <= :end_date GROUP BY n.nid) AS count WHERE count.uid = u.uid)", 'accepted', array('start_date' => $filter['date']['start'], 'end_date' => $filter['date']['end']));
+  }
+  else {
+    $query->addExpression("(SELECT count(*) FROM (SELECT c.uid, MAX(fc.count) FROM node n JOIN comment c ON n.nid = c.nid JOIN flag_counts fc ON c.cid = fc.entity_id WHERE fc.entity_type = 'comment' GROUP BY n.nid) AS count WHERE count.uid = u.uid)", 'accepted');
   }
 
-  return $user_comments;
+  // Filter the whole query on date.
+  if (isset($filter['date'])) {
+    $query->where("comment.cid IN (SELECT entity_id FROM flagging f WHERE f.entity_type = 'comment' AND f.timestamp >= :start_date AND f.timestamp <= :end_date)", array('start_date' => $filter['date']['start'], 'end_date' => $filter['date']['end']));
+  }
+
+  return $query;
 }
 
+/**
+ * Get full name from an user account.
+ *
+ * @param StdClass $account
+ *   Drupal user account.
+ *
+ * @return string
+ *   The users full name.
+ */
 function _loop_admin_generate_full_name($account) {
   $name = '';
   if (isset($account->field_first_name['und'][0]['safe_value'])) {
@@ -110,40 +249,4 @@ function _loop_admin_generate_full_name($account) {
   }
 
   return $name;
-}
-
-function _loop_admin_fetch_flagging($uid) {
-  $flagging = db_select('flagging', 'f')
-    ->fields('f')
-    ->condition('uid', $uid)
-    ->execute()
-    ->fetchAllAssoc('flagging_id');
-
-  return $flagging;
-}
-
-function _loop_admin_build_table($users) {
-  $header = array('UID', 'Username', 'Full name', 'Accepted answers', 'Comments', 'Thumb ups');
-
-  $rows = array();
-  foreach ($users as $user) {
-    $rows[] = array(
-      $user['uid'],
-      $user['name'],
-      $user['fullname'],
-      $user['answers']['answers_count'],
-      count($user['comments']),
-      count($user['flagging']),
-    );
-  }
-
-  return theme_table(array(
-    'header' => $header,
-    'rows' => $rows,
-    'attributes' => array(),
-    'caption' => '',
-    'colgroups' => array(),
-    'sticky' => array(),
-    'empty' => array(),
-  ));
 }
