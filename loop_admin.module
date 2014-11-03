@@ -207,10 +207,10 @@ function _loop_admin_user_statistics_query($filter = array()) {
 
   // Get thumbs up.
   if (isset($filter['date'])) {
-    $query->addExpression("(SELECT count(*) FROM flagging WHERE flagging.entity_type = 'comment' AND flagging.uid = u.uid AND timestamp >= :start_date AND timestamp <= :end_date)", 'thumbs', array('start_date' => $filter['date']['start'], 'end_date' => $filter['date']['end']));
+    $query->addExpression("(SELECT count(*) FROM comment c JOIN flagging f ON c.cid = f.entity_id WHERE c.uid = u.uid AND timestamp >= :start_date AND timestamp <= :end_date)", 'thumbs', array('start_date' => $filter['date']['start'], 'end_date' => $filter['date']['end']));
   }
   else {
-    $query->addExpression("(SELECT count(*) FROM flagging WHERE flagging.entity_type = 'comment' AND flagging.uid = u.uid)", 'thumbs');
+    $query->addExpression("(SELECT count(*) FROM comment c JOIN flagging f ON c.cid = f.entity_id WHERE c.uid = u.uid)", 'thumbs');
   }
 
   // Get most accepted answers.
