@@ -76,6 +76,16 @@ function loop_user_related_content_profession_views_default_views() {
   $handler->display->display_options['relationships']['flag_count_rel']['relationship'] = 'cid';
   $handler->display->display_options['relationships']['flag_count_rel']['required'] = 0;
   $handler->display->display_options['relationships']['flag_count_rel']['flag'] = 'ranking';
+  /* Field: Field: Profession */
+  $handler->display->display_options['fields']['field_profession']['id'] = 'field_profession';
+  $handler->display->display_options['fields']['field_profession']['table'] = 'field_data_field_profession';
+  $handler->display->display_options['fields']['field_profession']['field'] = 'field_profession';
+  $handler->display->display_options['fields']['field_profession']['label'] = 'Excluded - used for templates';
+  $handler->display->display_options['fields']['field_profession']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_profession']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_profession']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_profession']['group_column'] = 'entity_id';
+  $handler->display->display_options['fields']['field_profession']['delta_offset'] = '0';
   /* Field: Content: Author uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'node';
