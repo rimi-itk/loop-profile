@@ -814,13 +814,29 @@ function loop_preprocess_views_view(&$vars) {
       // Load entity wrapper.
       $wrapper = entity_metadata_wrapper('user', $user_obj);
 
-      $items = $wrapper->field_area_of_expertise->value();
-      $user_area_of_expertises = array();
-      foreach ($items as $item) {
-        $user_area_of_expertises[] = $item->name;
+      if ($vars['view']->name == 'loop_questions_by_user_profession') {
+        $items = $wrapper->field_profession->value();
+        $user_professions = array();
+        foreach ($items as $item) {
+          if (is_object($item)) {
+            $user_professions[] = $item->name;
+
+          }
+        }
+        $vars['user_profession'] = $user_professions;
       }
-      $vars['user_area_of_expertise'] = $user_area_of_expertises;
-      $vars['user_profession'] = $wrapper->field_profession->value();
+
+
+      if ($vars['view']->name == 'loop_questions_by_user_competence') {
+        $items = $wrapper->field_area_of_expertise->value();
+        $user_area_of_expertises = array();
+        foreach ($items as $item) {
+          if (is_object($item)) {
+            $user_area_of_expertises[] = $item->name;
+          }
+        }
+        $vars['user_area_of_expertise'] = $user_area_of_expertises;
+      }
     }
   }
 }
