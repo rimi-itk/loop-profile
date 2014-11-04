@@ -6,7 +6,7 @@
  * Redirect language selection to our own function.
  */
 function loopdk_install_tasks_alter(&$tasks, $install_state) {
-  // Callback for languageg selection.
+  // Callback for language selection.
   $tasks['install_select_locale']['function'] = 'loopdk_locale_selection';
 }
 
@@ -75,13 +75,13 @@ function loopdk_module_selection_form($form, &$form_state) {
 }
 
 /**
- * Formular submit function for LOOP settings.
+ * Formula submit function for LOOP settings.
  */
 function loopdk_module_selection_form_submit($form, &$form_state) {
   $dependency_modules = array();
 
   if ($form_state['values']['translation']) {
-    loopdk_import_translation();
+    variable_set('loopdk_install_translations', TRUE);
   }
 
   if ($form_state['values']['dashboard']) {
@@ -105,12 +105,26 @@ function loopdk_module_selection_form_submit($form, &$form_state) {
 function loopdk_install_tasks(&$install_state) {
 
   $ret = array(
-    // Update translations.
+    // Module selection form.
     'loopdk_module_selection_form' => array(
       'display_name' => 'Module selection',
       'display' => TRUE,
       'type' => 'form',
-      'run' => empty($tasks) ? INSTALL_TASK_RUN_IF_REACHED : INSTALL_TASK_SKIP,
+      'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
+    ),
+    // Update translations.
+    'loopdk_import_translation' => array(
+      'display_name' => 'Update translations',
+      'display' => variable_get('loopdk_install_translations', FALSE),
+      'type' => 'batch',
+      'run' => variable_get('loopdk_install_translations', FALSE) ? INSTALL_TASK_RUN_IF_NOT_COMPLETED : INSTALL_TASK_SKIP,
+    ),
+    // Update translations.
+    'loopdk_import_contrib_translation' => array(
+      'display_name' => 'Update contribute translations',
+      'display' => variable_get('loopdk_install_translations', FALSE),
+      'type' => 'batch',
+      'run' => variable_get('loopdk_install_translations', FALSE) ? INSTALL_TASK_RUN_IF_NOT_COMPLETED : INSTALL_TASK_SKIP,
     ),
     // Filter and WYSIWYG settings.
     'loopdk_setup_filter_and_wysiwyg' => array(
@@ -127,6 +141,7 @@ function loopdk_install_tasks(&$install_state) {
       'type' => 'normal',
     )
   );
+
   return $ret;
 }
 
@@ -143,43 +158,73 @@ function loopdk_import_translation() {
   include_once DRUPAL_ROOT . '/includes/locale.inc';
   locale_add_language('da', NULL, NULL, NULL, '', NULL, TRUE, TRUE);
 
+  $operations = array();
+
   // Import our own translations.
-  $file = new stdClass();
-  $file->uri = DRUPAL_ROOT . '/profiles/loopdk/translations/da.po';
-  $file->filename = basename($file->uri);
-  _locale_import_po($file, 'da', LOCALE_IMPORT_OVERWRITE, 'default');
+  $operations[] = array(
+    '_loopdk_insert_translation',
+    array(
+      'default',
+      '/profiles/loopdk/translations/da.po',
+    ),
+  );
 
   // Import field translation group.
-  $file = new stdClass();
-  $file->uri = DRUPAL_ROOT . '/profiles/loopdk/translations/da_fields.po';
-  $file->filename = basename($file->uri);
-  _locale_import_po($file, 'da', LOCALE_IMPORT_OVERWRITE, 'field');
+  $operations[] = array(
+    '_loopdk_insert_translation',
+    array(
+      'field',
+      '/profiles/loopdk/translations/da_fields.po',
+    ),
+  );
 
   // Import menu translation group.
-  $file = new stdClass();
-  $file->uri = DRUPAL_ROOT . '/profiles/loopdk/translations/da_menu.po';
-  $file->filename = basename($file->uri);
-  _locale_import_po($file, 'da', LOCALE_IMPORT_OVERWRITE, 'menu');
+  $operations[] = array(
+    '_loopdk_insert_translation',
+    array(
+      'menu',
+      '/profiles/loopdk/translations/da_menu.po',
+    ),
+  );
 
   // Import panels translation group.
-  $file = new stdClass();
-  $file->uri = DRUPAL_ROOT . '/profiles/loopdk/translations/da_panels.po';
-  $file->filename = basename($file->uri);
-  _locale_import_po($file, 'da', LOCALE_IMPORT_OVERWRITE, 'panels');
+  $operations[] = array(
+    '_loopdk_insert_translation',
+    array(
+      'panels',
+      '/profiles/loopdk/translations/da_panels.po',
+    ),
+  );
 
   // Import views translation group.
-  $file = new stdClass();
-  $file->uri = DRUPAL_ROOT . '/profiles/loopdk/translations/da_views.po';
-  $file->filename = basename($file->uri);
-  _locale_import_po($file, 'da', LOCALE_IMPORT_OVERWRITE, 'views');
+  $operations[] = array(
+    '_loopdk_insert_translation',
+    array(
+      'views',
+      '/profiles/loopdk/translations/da_views.po',
+    ),
+  );
 
+  $batch = array(
+    'title' => st('Installing translations'),
+    'operations' => $operations,
+    'file' => drupal_get_path('profile', 'loopdk') . '/loopdk.callbacks.inc',
+  );
+
+  return $batch;
+}
+
+/**
+ * Install contribute modules translations.
+ */
+function loopdk_import_contrib_translation() {
   // Build batch with l10n_update module.
   $history = l10n_update_get_history();
   module_load_include('check.inc', 'l10n_update');
   $available = l10n_update_available_releases();
   $updates = l10n_update_build_updates($history, $available);
 
-  // Fire of the batch!
+  // Fire of the batch.
   module_load_include('batch.inc', 'l10n_update');
   $updates = _l10n_update_prepare_updates($updates, NULL, array());
   $batch = l10n_update_batch_multiple($updates, LOCALE_IMPORT_KEEP);
@@ -366,7 +411,6 @@ function loopdk_final_settings() {
 
   // Setup url path to use Transliteration module.
   variable_set('pathauto_transliterate', 1);
-
 
   // Setup default user icon.
   if (!$da = file_get_contents(drupal_get_path('theme', 'loop') . '/images/default-user-icon.png')) {
