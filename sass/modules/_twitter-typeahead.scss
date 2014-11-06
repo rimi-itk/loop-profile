@@ -10,6 +10,7 @@
   @extend %set-max-width-and-center-element;
   @extend %basic-element-styling;
 
+  z-index: 1;
   position: relative;
 
   // Compensate for margin from header (necessary when not logged in)

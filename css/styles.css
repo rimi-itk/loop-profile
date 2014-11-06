@@ -1414,6 +1414,7 @@ label {
 /* line 13, ../sass/theme/_layout.scss */
 .header {
   margin-bottom: 1.5em;
+  z-index: 1;
   background-color: #41ab51;
 }
 /* line 45, ../../../../../../../../../../../../Library/Ruby/Gems/2.0.0/gems/zen-grids-1.4/stylesheets/zen/_grids.scss */
@@ -1426,7 +1427,7 @@ label {
   clear: both;
 }
 
-/* line 21, ../sass/theme/_layout.scss */
+/* line 22, ../sass/theme/_layout.scss */
 .header--inner {
   position: relative;
   min-height: 5em;
@@ -1436,7 +1437,7 @@ label {
 
 /* Logo
    ================================================================================================================== */
-/* line 35, ../sass/theme/_layout.scss */
+/* line 36, ../sass/theme/_layout.scss */
 .logo--link {
   display: inline-block;
   max-width: 5em;
@@ -1450,7 +1451,7 @@ label {
   transform: translateY(-50%);
 }
 
-/* line 46, ../sass/theme/_layout.scss */
+/* line 47, ../sass/theme/_layout.scss */
 .logo--image {
   margin-right: auto;
   margin-left: auto;
@@ -1458,17 +1459,17 @@ label {
 
 /* Layouts
    ================================================================================================================== */
-/* line 56, ../sass/theme/_layout.scss */
+/* line 57, ../sass/theme/_layout.scss */
 .layout-full-width, .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper {
   overflow: hidden;
   margin-bottom: 0;
 }
-/* line 63, ../sass/theme/_layout.scss */
+/* line 64, ../sass/theme/_layout.scss */
 .layout-full-width .layout--inner:last-child, .layout-frontpage .layout--inner:last-child, .layout-dashboard .layout--inner:last-child, .layout-default .layout--inner:last-child, .layout-default-inverted .layout--inner:last-child, .layout-alternative .layout--inner:last-child, .layout-no-wrapper .layout--inner:last-child {
   margin-bottom: 0;
 }
 
-/* line 68, ../sass/theme/_layout.scss */
+/* line 69, ../sass/theme/_layout.scss */
 .layout--inner {
   float: left;
   margin-bottom: 1.5em;
@@ -1476,7 +1477,7 @@ label {
   width: 100%;
 }
 
-/* line 77, ../sass/theme/_layout.scss */
+/* line 78, ../sass/theme/_layout.scss */
 .layout-element-alpha,
 .layout-element-beta,
 .layout-element-gamma,
@@ -1490,7 +1491,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 93, ../sass/theme/_layout.scss */
+  /* line 94, ../sass/theme/_layout.scss */
   .layout-full-width .layout-element-alpha {
     float: left;
     width: 100%;
@@ -1508,7 +1509,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 107, ../sass/theme/_layout.scss */
+  /* line 108, ../sass/theme/_layout.scss */
   .layout-frontpage .layout-element-alpha {
     float: left;
     width: 100%;
@@ -1524,14 +1525,14 @@ label {
     padding-left: 0;
   }
 }
-/* line 115, ../sass/theme/_layout.scss */
+/* line 116, ../sass/theme/_layout.scss */
 .layout-frontpage .layout-element-beta {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 2em;
   padding-bottom: 2em;
 }
 @media only screen and (min-width: 75em) {
-  /* line 115, ../sass/theme/_layout.scss */
+  /* line 116, ../sass/theme/_layout.scss */
   .layout-frontpage .layout-element-beta {
     float: left;
     width: 50%;
@@ -1551,7 +1552,7 @@ label {
   }
 }
 @media only screen and (min-width: 75em) {
-  /* line 126, ../sass/theme/_layout.scss */
+  /* line 127, ../sass/theme/_layout.scss */
   .layout-frontpage .layout-element-gamma {
     float: right;
     width: 50%;
@@ -1568,7 +1569,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 134, ../sass/theme/_layout.scss */
+  /* line 135, ../sass/theme/_layout.scss */
   .layout-frontpage .layout-element-delta {
     float: left;
     width: 100%;
@@ -1585,14 +1586,14 @@ label {
   }
 }
 
-/* line 149, ../sass/theme/_layout.scss */
+/* line 150, ../sass/theme/_layout.scss */
 .layout-dashboard .layout-element-alpha {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 2em;
   padding-bottom: 2em;
 }
 @media only screen and (min-width: 75em) {
-  /* line 149, ../sass/theme/_layout.scss */
+  /* line 150, ../sass/theme/_layout.scss */
   .layout-dashboard .layout-element-alpha {
     float: left;
     width: 50%;
@@ -1612,7 +1613,7 @@ label {
   }
 }
 @media only screen and (min-width: 75em) {
-  /* line 160, ../sass/theme/_layout.scss */
+  /* line 161, ../sass/theme/_layout.scss */
   .layout-dashboard .layout-element-beta,
   .layout-dashboard .layout-element-delta {
     float: right;
@@ -1629,7 +1630,7 @@ label {
     padding-right: 0;
   }
 }
-/* line 169, ../sass/theme/_layout.scss */
+/* line 170, ../sass/theme/_layout.scss */
 .layout-dashboard .layout-element-gamma {
   float: left;
   width: 100%;
@@ -1644,14 +1645,14 @@ label {
   word-wrap: break-word;
 }
 
-/* line 180, ../sass/theme/_layout.scss */
+/* line 181, ../sass/theme/_layout.scss */
 .layout-default .layout-element-alpha {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 2em;
   padding-bottom: 2em;
 }
 @media only screen and (min-width: 45em) {
-  /* line 180, ../sass/theme/_layout.scss */
+  /* line 181, ../sass/theme/_layout.scss */
   .layout-default .layout-element-alpha {
     float: left;
     width: 70.83333%;
@@ -1671,7 +1672,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 191, ../sass/theme/_layout.scss */
+  /* line 192, ../sass/theme/_layout.scss */
   .layout-default .layout-element-beta {
     float: right;
     width: 29.16667%;
@@ -1688,7 +1689,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 199, ../sass/theme/_layout.scss */
+  /* line 200, ../sass/theme/_layout.scss */
   .layout-default .layout-element-gamma,
   .layout-default .layout-element-delta,
   .layout-default .layout-element-epsilon {
@@ -1710,7 +1711,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 216, ../sass/theme/_layout.scss */
+  /* line 217, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-alpha {
     float: left;
     width: 29.16667%;
@@ -1727,7 +1728,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 224, ../sass/theme/_layout.scss */
+  /* line 225, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-beta {
     float: right;
     width: 70.83333%;
@@ -1744,7 +1745,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 232, ../sass/theme/_layout.scss */
+  /* line 233, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-gamma {
     clear: both;
     float: left;
@@ -1761,7 +1762,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 240, ../sass/theme/_layout.scss */
+  /* line 241, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-delta {
     float: right;
     width: 50%;
@@ -1777,7 +1778,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 246, ../sass/theme/_layout.scss */
+  /* line 247, ../sass/theme/_layout.scss */
   .layout-default-inverted .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1793,7 +1794,7 @@ label {
     word-wrap: break-word;
   }
 }
-/* line 254, ../sass/theme/_layout.scss */
+/* line 255, ../sass/theme/_layout.scss */
 .layout-default-inverted .layout-element-gamma,
 .layout-default-inverted .layout-element-delta,
 .layout-default-inverted .layout-element-epsilon {
@@ -1802,7 +1803,7 @@ label {
 }
 
 @media only screen and (min-width: 45em) {
-  /* line 267, ../sass/theme/_layout.scss */
+  /* line 268, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-alpha {
     float: left;
     width: 100%;
@@ -1818,7 +1819,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 273, ../sass/theme/_layout.scss */
+  /* line 274, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-beta {
     clear: both;
     float: left;
@@ -1835,7 +1836,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 281, ../sass/theme/_layout.scss */
+  /* line 282, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-gamma {
     clear: both;
     float: left;
@@ -1852,7 +1853,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 289, ../sass/theme/_layout.scss */
+  /* line 290, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-delta {
     float: right;
     width: 50%;
@@ -1868,7 +1869,7 @@ label {
   }
 }
 @media only screen and (min-width: 45em) {
-  /* line 295, ../sass/theme/_layout.scss */
+  /* line 296, ../sass/theme/_layout.scss */
   .layout-alternative .layout-element-epsilon {
     clear: both;
     float: left;
@@ -1885,12 +1886,12 @@ label {
   }
 }
 
-/* line 309, ../sass/theme/_layout.scss */
+/* line 310, ../sass/theme/_layout.scss */
 .layout-no-wrapper .layout--inner {
   padding: 1.5em;
 }
 
-/* line 318, ../sass/theme/_layout.scss */
+/* line 319, ../sass/theme/_layout.scss */
 .layout-alternative .layout-element-alpha,
 .layout-alternative .layout-element-beta,
 .layout-alternative .layout-element-gamma,
@@ -2245,26 +2246,31 @@ label {
   display: block;
 }
 /* line 326, ../sass/theme/_nav.scss */
+.nav-mobile .nav-dropdown--icon-white,
+.nav-mobile .nav-dropdown--icon-green {
+  display: none;
+}
+/* line 331, ../sass/theme/_nav.scss */
 .nav-mobile .nav-dropdown--item {
   padding-left: 1.25em;
 }
-/* line 330, ../sass/theme/_nav.scss */
+/* line 335, ../sass/theme/_nav.scss */
 .nav-mobile .nav--text {
   display: inline-block;
 }
-/* line 334, ../sass/theme/_nav.scss */
+/* line 339, ../sass/theme/_nav.scss */
 .nav-mobile .nav-dropdown--icon {
   display: none;
 }
-/* line 339, ../sass/theme/_nav.scss */
+/* line 344, ../sass/theme/_nav.scss */
 .nav-mobile .nav-mobile--user-links {
   padding: 1em 0;
 }
-/* line 343, ../sass/theme/_nav.scss */
+/* line 348, ../sass/theme/_nav.scss */
 .nav-mobile .block-module--user-links-list {
   padding-left: 0;
 }
-/* line 347, ../sass/theme/_nav.scss */
+/* line 352, ../sass/theme/_nav.scss */
 .nav-mobile .nav-mobile--links-header {
   color: #fff;
   font-size: 130%;
@@ -4197,10 +4203,11 @@ This file is generated by `grunt build`, do not edit it by hand.
  */
 /* line 9, ../sass/modules/_twitter-typeahead.scss */
 .typeahead-block {
+  z-index: 1;
   position: relative;
   margin-top: -1.5em;
 }
-/* line 19, ../sass/modules/_twitter-typeahead.scss */
+/* line 20, ../sass/modules/_twitter-typeahead.scss */
 .typeahead-block .form-item {
   border: 0;
   margin-bottom: 0;
@@ -4215,11 +4222,11 @@ This file is generated by `grunt build`, do not edit it by hand.
   }
 }
 
-/* line 30, ../sass/modules/_twitter-typeahead.scss */
+/* line 31, ../sass/modules/_twitter-typeahead.scss */
 .typeahead-block--wrapper {
   position: relative;
 }
-/* line 33, ../sass/modules/_twitter-typeahead.scss */
+/* line 34, ../sass/modules/_twitter-typeahead.scss */
 .typeahead-block--wrapper .tt-hint,
 .typeahead-block--wrapper .typeahead {
   margin-bottom: 1em;
@@ -4230,13 +4237,13 @@ This file is generated by `grunt build`, do not edit it by hand.
   height: 65px;
   background-color: #fff;
 }
-/* line 45, ../sass/modules/_twitter-typeahead.scss */
+/* line 46, ../sass/modules/_twitter-typeahead.scss */
 .typeahead-block--wrapper .tt-hint:focus,
 .typeahead-block--wrapper .typeahead:focus {
   outline: none;
 }
 @media only screen and (min-width: 28em) {
-  /* line 33, ../sass/modules/_twitter-typeahead.scss */
+  /* line 34, ../sass/modules/_twitter-typeahead.scss */
   .typeahead-block--wrapper .tt-hint,
   .typeahead-block--wrapper .typeahead {
     margin-bottom: 0;
@@ -4248,7 +4255,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   }
 }
 
-/* line 59, ../sass/modules/_twitter-typeahead.scss */
+/* line 60, ../sass/modules/_twitter-typeahead.scss */
 .twitter-typeahead {
   display: block !important;
   background-color: #fff;
@@ -4256,7 +4263,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   -webkit-border-radius: 0.4em;
   border-radius: 0.4em;
 }
-/* line 66, ../sass/modules/_twitter-typeahead.scss */
+/* line 67, ../sass/modules/_twitter-typeahead.scss */
 .twitter-typeahead:before {
   position: absolute;
   top: .5em;
@@ -4265,23 +4272,23 @@ This file is generated by `grunt build`, do not edit it by hand.
   font-size: 200%;
   z-index: 99;
 }
-/* line 79, ../sass/modules/_twitter-typeahead.scss */
+/* line 80, ../sass/modules/_twitter-typeahead.scss */
 .twitter-typeahead [class^=tt-dataset] {
   margin-bottom: 2em;
 }
-/* line 82, ../sass/modules/_twitter-typeahead.scss */
+/* line 83, ../sass/modules/_twitter-typeahead.scss */
 .twitter-typeahead [class^=tt-dataset]:last-child {
   margin-bottom: 0;
 }
 
-/* line 88, ../sass/modules/_twitter-typeahead.scss */
+/* line 89, ../sass/modules/_twitter-typeahead.scss */
 .typeahead-block--button {
   margin: 0;
   height: 65px;
   width: 100%;
 }
 @media only screen and (min-width: 28em) {
-  /* line 88, ../sass/modules/_twitter-typeahead.scss */
+  /* line 89, ../sass/modules/_twitter-typeahead.scss */
   .typeahead-block--button {
     position: absolute;
     bottom: 0;
@@ -4298,7 +4305,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 
 /* Suggestions
    ========================================================================== */
-/* line 117, ../sass/modules/_twitter-typeahead.scss */
+/* line 118, ../sass/modules/_twitter-typeahead.scss */
 .tt-dropdown-menu {
   position: absolute;
   z-index: 90;
@@ -4315,13 +4322,13 @@ This file is generated by `grunt build`, do not edit it by hand.
   box-sizing: border-box;
 }
 @media only screen and (min-width: 28em) {
-  /* line 117, ../sass/modules/_twitter-typeahead.scss */
+  /* line 118, ../sass/modules/_twitter-typeahead.scss */
   .tt-dropdown-menu {
     top: 7.5em;
   }
 }
 
-/* line 136, ../sass/modules/_twitter-typeahead.scss */
+/* line 137, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion-header {
   font-size: 110%;
   font-weight: bold;
@@ -4330,7 +4337,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   padding-bottom: 1em;
 }
 
-/* line 143, ../sass/modules/_twitter-typeahead.scss */
+/* line 144, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion {
   color: #41ab51;
   cursor: pointer;
@@ -4339,15 +4346,15 @@ This file is generated by `grunt build`, do not edit it by hand.
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
-/* line 150, ../sass/modules/_twitter-typeahead.scss */
+/* line 151, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion:link, .tt-suggestion:visited {
   text-decoration: none;
 }
-/* line 155, ../sass/modules/_twitter-typeahead.scss */
+/* line 156, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion:hover, .tt-suggestion:active {
   text-decoration: underline;
 }
-/* line 160, ../sass/modules/_twitter-typeahead.scss */
+/* line 161, ../sass/modules/_twitter-typeahead.scss */
 .tt-suggestion:last-child {
   border-bottom: 0;
   margin-bottom: 0;
