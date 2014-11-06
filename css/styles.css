@@ -1440,7 +1440,7 @@ label {
 /* line 36, ../sass/theme/_layout.scss */
 .logo--link {
   display: inline-block;
-  max-width: 5em;
+  max-width: 4em;
   padding-top: 0;
   position: absolute;
   text-align: center;
