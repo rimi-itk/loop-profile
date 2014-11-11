@@ -147,6 +147,14 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
     '#suffix' => '</div>',
   );
 
+  // HACK: this is a workaround for the issue here: https://www.drupal.org/node/1181370
+  // and should be removed when the issue is resolved.
+  $_GET['q'] = isset($form_state['values']['q']) ? $form_state['values']['q'] : $_GET['q'];
+  $form['q'] = array(
+    '#type' => 'value',
+    '#value' => isset($form_state['values']['q']) ? $form_state['values']['q'] : $_GET['q']
+  );
+
   // Theme table.
   $form['stats']['table'] = array(
     '#theme' => 'table',
