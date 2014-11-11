@@ -29,7 +29,11 @@ function loop_node_statistics_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Udfør';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Gendan';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortér efter';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Stigende';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Faldende';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '100';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -54,11 +58,13 @@ function loop_node_statistics_views_default_views() {
     'title' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
-      'align' => '',
+      'align' => 'views-align-left',
       'separator' => '',
       'empty_column' => 0,
       'has_calc' => 0,
-      'calc' => array(),
+      'calc' => array(
+        'COUNT' => 'COUNT',
+      ),
     ),
     'daycount' => array(
       'sortable' => 1,
@@ -173,6 +179,7 @@ function loop_node_statistics_views_default_views() {
   );
   $handler->display->display_options['style_options']['detailed_values'] = '0';
   $handler->display->display_options['style_options']['precision'] = '0';
+  $handler->display->display_options['style_options']['separator'] = '';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -243,6 +250,45 @@ function loop_node_statistics_views_default_views() {
     4 => 0,
     5 => 0,
     6 => 0,
+  );
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'post' => 'post',
+  );
+  /* Filter criterion: Date: Date (node) */
+  $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
+  $handler->display->display_options['filters']['date_filter']['table'] = 'node';
+  $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
+  $handler->display->display_options['filters']['date_filter']['operator'] = 'between';
+  $handler->display->display_options['filters']['date_filter']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['date_filter']['expose']['operator_id'] = 'date_filter_op';
+  $handler->display->display_options['filters']['date_filter']['expose']['operator'] = 'date_filter_op';
+  $handler->display->display_options['filters']['date_filter']['expose']['identifier'] = 'date_filter';
+  $handler->display->display_options['filters']['date_filter']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['date_filter']['group_info']['label'] = 'Dato (node)';
+  $handler->display->display_options['filters']['date_filter']['group_info']['identifier'] = 'date_filter';
+  $handler->display->display_options['filters']['date_filter']['group_info']['remember'] = FALSE;
+  $handler->display->display_options['filters']['date_filter']['group_info']['group_items'] = array(
+    1 => array(),
+    2 => array(),
+    3 => array(),
+  );
+  $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
+    'node.changed' => 'node.changed',
+    'node.created' => 'node.created',
+    'node_comment_statistics.last_comment_timestamp' => 'node_comment_statistics.last_comment_timestamp',
+    'node_counter.timestamp' => 'node_counter.timestamp',
+    'node_revision.timestamp' => 'node_revision.timestamp',
   );
 
   /* Display: Page */
