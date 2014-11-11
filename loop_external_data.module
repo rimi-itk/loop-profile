@@ -97,7 +97,7 @@ function loop_external_data_documents($scope) {
     $index = _loop_external_data_find_index($node);
     $data[] = array(
       // For better search, use strtolower().
-      'value' => strtolower(trim($node->title)),
+      'value' => strtolower(trim(trim($node->title), '"')),
       // Fine human output.
       'title' => trim($node->title) . " (" . trim($index->title) . ")",
       // Use internal path.
