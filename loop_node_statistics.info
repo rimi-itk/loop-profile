@@ -4,6 +4,7 @@ package = LOOP
 version = 7.x-1.0
 project = loop_node_statistics
 dependencies[] = comment_counter
+dependencies[] = date_views
 dependencies[] = statistics_counter
 dependencies[] = strongarm
 dependencies[] = views
