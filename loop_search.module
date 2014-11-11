@@ -40,7 +40,7 @@ function loop_search_nodes() {
   foreach ($nodes as $node) {
     $data[] = array(
       // For better search, use strtolower.
-      'value' => strtolower(trim($node->title)),
+      'value' => strtolower(trim(trim($node->title), '"')),
       // Fine human output.
       'title' => trim($node->title),
       // Use internal path.
