@@ -102,11 +102,9 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
   }
 
   // Build filter field set.
-  $collapsed = !isset($form_state['input']['filter']['start_date']['date']);
   $form['filter'] = array(
     '#type' => 'fieldset',
     '#title' => t('Filter list'),
-    '#collapsed' => $collapsed,
     '#collapsible' => TRUE,
     '#tree' => TRUE,
   );
