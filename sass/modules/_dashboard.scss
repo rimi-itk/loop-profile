@@ -49,6 +49,16 @@
 
 .dashboard-list--form {
   margin-bottom: 1em;
+
+  .views-widget-filter-title,
+  .views-widget-filter-date_filter .container-inline-date {
+    margin-bottom: 1em;
+
+    label {
+      float: left;
+      width: 100%;
+    }
+  }
 }
 
 .dashboard--comment-filters {
@@ -175,7 +185,16 @@
   visibility: hidden;
   height: 0;
   width: 0;
+
+  &#edit-submit-loop-node-statistics{
+    float: none;
+    visibility: visible;
+    height: auto;
+    width: auto;
+  }
 }
+
+
 
 %dashboard-list--item {
   @extend %simple-list--item;
@@ -295,4 +314,14 @@
   @include breakpoint(30em) {
     display: inline-block;
   }
+}
+
+
+/**
+* The user statistics page has its own style setup.
+*/
+
+.page-editor-dashboard-user-statistics .container-inline-date label{
+  float: left;
+  width: 100%;
 }
