@@ -47,10 +47,10 @@ function loop_content_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
-          'editor' => 0,
+          'editor' => 'editor',
           'html' => 0,
           'plain_text' => 0,
-          'simple' => 'simple',
+          'simple' => 0,
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
