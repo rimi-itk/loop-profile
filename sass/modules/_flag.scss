@@ -164,3 +164,20 @@
     font-size: 1.5em;
   }
 }
+
+// Flag as offensive
+.abuse_flag_node .flag-content {
+  color: #fff;
+  background-color: #595959;
+  padding: .4em 1em;
+  display: inline-block;
+  font-size: .8em;
+
+  @include border-radius(0.4em);
+
+  &:link,
+  &:active,
+  &:visited {
+    color: $white;
+  }
+}
