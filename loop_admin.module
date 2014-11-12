@@ -75,6 +75,15 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
     $filter['date']['end'] = strtotime($form_state['input']['filter']['end_date']['date']);
   }
 
+  // HACK: Workaround for issue 1181370. See the hack comment in the code below.
+  if (!empty($filter)) {
+    $_SESSION['filter'] = $filter;
+  }
+  else {
+    // Check if value exists in the session.
+    $filter = isset($_SESSION['filter']) ? $_SESSION['filter'] : array();
+  }
+
   // Get query.
   $query = _loop_admin_user_statistics_query($filter);
 
@@ -116,6 +125,7 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
     '#date_format' => 'd-m-Y',
     '#date_label_position' => 'none',
     '#attributes' => array('autocomplete' => 'off'),
+    '#default_value' => isset($filter['date']['start']) ? date('Y-m-d H:i:s', $filter['date']['start']) :  '',
   );
 
   $form['filter']['end_date'] = array(
@@ -125,6 +135,7 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
     '#date_format' => 'd-m-Y',
     '#date_label_position' => 'none',
     '#attributes' => array('autocomplete' => 'off'),
+    '#default_value' => isset($filter['date']['end']) ? date('Y-m-d H:i:s', $filter['date']['end']) : '',
   );
 
   // Add Ajax submit button (as form submits to own address and loads twice,
@@ -132,8 +143,28 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
   $form['filter']['submit'] = array(
     '#type' => 'button',
     '#value' => t('Filter'),
+    '#name' => 'filter-submit',
     '#ajax' => array(
       'callback' => '_loop_admin_user_statistics_ajax_callback',
+      'wrapper' => 'replace-stats',
+      'method' => 'replace',
+      'effect' => 'fade',
+    ),
+  );
+
+  // Add javascript to handle reset of data-pickers on ajax completed events to
+  // clear out the date filters.
+  $form['#attached']['js'] = array(
+    drupal_get_path('module', 'loop_admin') . '/js/loop_admin.js',
+  );
+
+  // Add reset button to clear the sessions filter.
+  $form['filter']['reset'] = array(
+    '#type' => 'button',
+    '#value' => t('Reset'),
+    '#name' => 'filter-reset',
+    '#ajax' => array(
+      'callback' => '_loop_admin_user_statistics_reset_ajax_callback',
       'wrapper' => 'replace-stats',
       'method' => 'replace',
       'effect' => 'fade',
@@ -145,6 +176,14 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
     '#tree' => TRUE,
     '#prefix' => '<div id="replace-stats">',
     '#suffix' => '</div>',
+  );
+
+  // HACK: this is a workaround for the issue here: https://www.drupal.org/node/1181370
+  // and should be removed when the issue is resolved.
+  $_GET['q'] = isset($form_state['values']['q']) ? $form_state['values']['q'] : $_GET['q'];
+  $form['q'] = array(
+    '#type' => 'value',
+    '#value' => isset($form_state['values']['q']) ? $form_state['values']['q'] : $_GET['q']
   );
 
   // Theme table.
@@ -171,6 +210,21 @@ function _loop_admin_user_statistics_ajax_callback($form, $form_state) {
   $form = _loop_admin_user_statistics_form($form, $form_state);
   return $form['stats'];
 }
+
+/**
+ * Ajax callback for the reset filter button.
+ */
+function _loop_admin_user_statistics_reset_ajax_callback($form, $form_state) {
+  // Remove stored filter.
+  unset($_SESSION['filter']);
+
+  // Remove values form form state.
+  unset($form_state['input']['filter']);
+
+  // Rebuild the form.
+  return _loop_admin_user_statistics_ajax_callback($form, $form_state);
+}
+
 
 /**
  * Build query to find statistics information.
