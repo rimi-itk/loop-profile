@@ -60,7 +60,7 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
     array('data' => t('UID'), 'field' => 'uid'),
     array('data' => t('Username'), 'field' => 'username'),
     array('data' => t('Full name'), 'field' => 'fullname'),
-    array('data' => t('Accepted answers'), 'field' => 'accepted'),
+    array('data' => t('Best answers'), 'field' => 'accepted'),
     array('data' => t('Comments'), 'field' => 'comments'),
     array('data' => t('Thumb ups'), 'field' => 'thumbs'),
   );
