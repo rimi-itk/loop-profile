@@ -8,6 +8,7 @@ projects[abuse][download][type] = "git"
 projects[abuse][download][url] = "http://git.drupal.org/project/abuse.git"
 projects[abuse][download][branch] = "7.x-1.x-dev"
 projects[abuse][patch][] = "https://www.drupal.org/files/issues/1484470-user_access.patch"
+projects[abuse][patch][] = "https://www.drupal.org/files/issues/1484470-user_access2.patch"
 projects[abuse][patch][] = "https://www.drupal.org/files/issues/1484470-template-rewrite.patch"
 
 projects[admin_views][subdir] = "contrib"
