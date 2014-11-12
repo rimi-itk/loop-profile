@@ -226,6 +226,7 @@ function loop_permissions_secure_permissions($role) {
       'Administer abuse reports',
       'Administer all abuse reports',
       'administer comments',
+      'administer complaints',
       'administer nodes',
       'delete any post content',
       'delete own post content',
