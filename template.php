@@ -546,7 +546,9 @@ function loop_form_views_form_loop_user_subscriptions_panel_pane_1_alter(&$form,
   $form['#attributes']['class'][] = 'vbo-views-form';
 
   // Copy button from field group.
-  $form['rules_component::rules_remove_subscription'] = $form['select']['rules_component::rules_remove_subscription'];
+  if (!empty($form['select'])) {
+    $form['rules_component::rules_remove_subscription'] = $form['select']['rules_component::rules_remove_subscription'];
+  }
 
   // Add wrappers.
   $form['rules_component::rules_remove_subscription']['#prefix'] = '<div class="js-user-profile-notification-actions user-profile--notification-actions"><div class="user-profile--notification-actions-inner">';
@@ -556,9 +558,11 @@ function loop_form_views_form_loop_user_subscriptions_panel_pane_1_alter(&$form,
   $form['rules_component::rules_remove_subscription']['#attributes']['class'][] = 'user-profile--notification-actions--button-remove button--warning';
 
   // Add js class to checkboxes.
-  foreach ($form['views_bulk_operations'] as $key => $value) {
-    if (is_array($value)) {
-      $form['views_bulk_operations'][$key]['#attributes']['class'][] = 'js-user-profile-notification-select';
+  if (!empty($form['views_bulk_operations'])) {
+    foreach ($form['views_bulk_operations'] as $key => $value) {
+      if (is_array($value)) {
+        $form['views_bulk_operations'][$key]['#attributes']['class'][] = 'js-user-profile-notification-select';
+      }
     }
   }
 
