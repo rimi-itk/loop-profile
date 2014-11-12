@@ -85,6 +85,7 @@ function loop_permissions_secure_permissions($role) {
       'access toolbar',
       'access user profiles',
       'Administer abuse reports',
+      'Administer all abuse reports',
       'administer actions',
       'administer advanced pane settings',
       'Administer all abuse reports',
