@@ -195,6 +195,9 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
   // Add top new posts based on users
   _loop_admin_users_statistics_post_count_element($form, $filter);
 
+  // Add top accepted answers based on users.
+  _loop_admin_users_statistics_accepted_answered_element($form, $filter);
+
   return $form;
 }
 
@@ -215,6 +218,101 @@ function _loop_admin_user_statistics_reset_ajax_callback($form, $form_state) {
 
   // Rebuild the form.
   return _loop_admin_user_statistics_ajax_callback($form, $form_state);
+}
+
+/**
+ * Wrapper function to add top users new posts to the form.
+ *
+ * @param $form
+ *   Form to add the table to.
+ * @param array $filter
+ *   The different values to filter on.
+ */
+function _loop_admin_users_statistics_accepted_answered_element(&$form, $filter = array()) {
+  // Get statistics.
+  $result = _loop_admin_users_statistics_accepted_answered($filter);
+
+  // Define headers
+  $header = array(
+    array('data' => t('The top @limit accepted answers', array('@limit' => LOOP_ADMIN_STATISTICS_LIMIT))),
+    array('data' => t('Count')),
+  );
+
+  // Looping to fill the table rows.
+  $rows = array();
+  foreach ($result as $row) {
+    // Fill the table rows.
+    $rows[] = array(
+      l($row->fullname, 'user/' . $row->uid),
+      $row->count,
+    );
+  }
+
+  // Theme tables.
+  $form['stats']['user']['top_accepted'] = array(
+    '#theme' => 'table',
+    '#header' => $header,
+    '#rows' => $rows,
+    '#empty' => t('Table has no row!'),
+  );
+}
+
+function _loop_admin_users_statistics_accepted_answered($filter = array()) {
+  // Start by build sub-query based on nodes.
+  $subquery = db_select('node', 'n')
+    ->condition('n.type', LOOP_ADMIN_STATISTICS_NODE_TYPE, '=');
+
+  // Join comments to limit to nodes with comments.
+  $subquery->join('comment', 'c', 'c.nid = n.nid');
+  $subquery->addField('c', 'uid', 'uid');
+
+  // Join flag counts to get... well counts
+  $subquery->join('flag_counts', 'fc', 'c.cid = fc.entity_id');
+
+  // Join flagging to be able to limit based on flag time later.
+  $subquery->join('flagging', 'fl', 'fl.entity_id = c.cid');
+
+  // Join flag to limit to one flag type.
+  $subquery->join('flag', 'f', 'fl.fid = f.fid AND f.name = :name', array(':name' => LOOP_ADMIN_STATISTICS_FLAG_NAME));
+
+  // Filter the query on date.
+  if (isset($filter['date'])) {
+    $subquery->condition('fl.timestamp', $filter['date']['start'], '>=')
+      ->condition('fl.timestamp', $filter['date']['end'], '<=');
+  }
+
+  // Group by node id (use to get max later).
+  $subquery->groupBy('n.nid');
+
+  // Get max count values.
+  $subquery->addExpression('MAX(fc.count)', 'count');
+
+  // Build the outer query to count max's and join user information.
+  $query = db_select($subquery, 'ct')
+    ->fields('ct', array('uid'));
+
+  // Join users and field tables to get the users full name.
+  $query->join('users', 'u', 'ct.uid = u.uid');
+  $query->join('field_data_field_first_name', 'fn', 'fn.entity_id = u.uid');
+  $query->join('field_data_field_last_name', 'ln', 'ln.entity_id = u.uid');
+  $query->addField('fn', 'field_first_name_value', 'firstname');
+  $query->addField('ln', 'field_last_name_value', 'lastname');
+  $query->addExpression("CONCAT_WS(' ', field_first_name_value, field_last_name_value)", 'fullname');
+
+  // Count the number of comments (answers).
+  $query->addExpression('COUNT(1)', 'count');
+
+  // Group by users id to get correct count.
+  $query->groupBy('ct.uid');
+
+  // Order to get the largest number first.
+  $query->orderBy('count', 'desc');
+
+  // Limit the number of rows.
+  $query->range(0, LOOP_ADMIN_STATISTICS_LIMIT);
+
+  // Execute query.
+  return $query->execute();
 }
 
 /**
