@@ -4,6 +4,8 @@
  * Alter paths and build statistics for users.
  *
  * @todo: Update the *_element functions as they are almost the same.
+ * @todo: Move user join for name into function.
+ * @todo: Move date filter limit into own sql function.
  */
 
 include_once 'loop_admin.features.inc';
@@ -188,7 +190,10 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
   );
 
   // Add top answers base on users.
-  _loop_admin_users_statistics_answers_count_count_element($form, $filter);
+  _loop_admin_users_statistics_answers_count_element($form, $filter);
+
+  // Add top new posts based on users
+  _loop_admin_users_statistics_post_count_element($form, $filter);
 
   return $form;
 }
@@ -269,6 +274,87 @@ function _loop_admin_user_statistics_query($filter = array()) {
 }
 
 /**
+ * Wrapper function to add top users new posts to the form.
+ *
+ * @param $form
+ *   Form to add the table to.
+ * @param array $filter
+ *   The different values to filter on.
+ */
+function _loop_admin_users_statistics_post_count_element(&$form, $filter = array()) {
+  // Get statistics.
+  $result = _loop_admin_users_statistics_post_count($filter);
+
+  // Define headers
+  $header = array(
+    array('data' => t('The top @limit new posts', array('@limit' => LOOP_ADMIN_STATISTICS_LIMIT))),
+    array('data' => t('Count')),
+  );
+
+  // Looping to fill the table rows.
+  $rows = array();
+  foreach ($result as $row) {
+    // Fill the table rows.
+    $rows[] = array(
+      l($row->fullname, 'user/' . $row->uid),
+      $row->count,
+    );
+  }
+
+  // Theme tables.
+  $form['stats']['user']['top_posts'] = array(
+    '#theme' => 'table',
+    '#header' => $header,
+    '#rows' => $rows,
+    '#empty' => t('Table has no row!'),
+  );
+}
+
+/**
+ * Get list of post counts based on users.
+ *
+ * @param array $filter
+ *   The different values to filter on.
+ *
+ * @return DatabaseStatementInterface|null
+ *   The database results or NULL if no results.
+ */
+function _loop_admin_users_statistics_post_count($filter = array()) {
+  // Start by selection all post nodes.
+  $query = db_select('node', 'n')
+    ->condition('n.type', LOOP_ADMIN_STATISTICS_NODE_TYPE, '=');
+
+  // Join users and field tables to get the users full name.
+  $query->join('users', 'u', 'n.uid = u.uid');
+  $query->join('field_data_field_first_name', 'fn', 'fn.entity_id = u.uid');
+  $query->join('field_data_field_last_name', 'ln', 'ln.entity_id = u.uid');
+  $query->addField('fn', 'field_first_name_value', 'firstname');
+  $query->addField('ln', 'field_last_name_value', 'lastname');
+  $query->addExpression("CONCAT_WS(' ', field_first_name_value, field_last_name_value)", 'fullname');
+
+  // Filter the query on date.
+  if (isset($filter['date'])) {
+    $query->condition('n.created', $filter['date']['start'], '>=')
+      ->condition('n.created', $filter['date']['end'], '<=');
+  }
+
+  // Count the number of comments (answers).
+  $query->addExpression('COUNT(1)', 'count');
+
+  // Group by users id to get correct count.
+  $query->groupBy('u.uid');
+
+  // Order to get the largest number first.
+  $query->orderBy('count', 'desc');
+
+  // Limit the number of rows.
+  $query->range(0, LOOP_ADMIN_STATISTICS_LIMIT);
+
+  // Execute query.
+  return $query->execute();
+}
+
+/**
  * Wrapper function to add top users answers to the form.
  *
  * @param $form
@@ -276,9 +362,9 @@ function _loop_admin_user_statistics_query($filter = array()) {
  * @param array $filter
  *   The different values to filter on.
  */
-function _loop_admin_users_statistics_answers_count_count_element(&$form, $filter = array()) {
+function _loop_admin_users_statistics_answers_count_element(&$form, $filter = array()) {
   // Get statistics.
-  $result = _loop_admin_users_statistics_answers_count_count($filter);
+  $result = _loop_admin_users_statistics_answers_count($filter);
 
   // Define headers
   $header = array(
@@ -314,7 +400,7 @@ function _loop_admin_users_statistics_answers_count_count_element(&$form, $filte
  * @return DatabaseStatementInterface|null
  *   The database results or NULL if no results.
  */
-function _loop_admin_users_statistics_answers_count_count($filter = array()) {
+function _loop_admin_users_statistics_answers_count($filter = array()) {
   // Start by selection all node of type post.
   $query = db_select('node', 'n')
     ->condition('n.type', LOOP_ADMIN_STATISTICS_NODE_TYPE, '=');
