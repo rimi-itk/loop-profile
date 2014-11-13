@@ -6,6 +6,9 @@
 
 include_once 'loop_admin.features.inc';
 
+// Defines the number of rows to show in the statistics tables.
+define('LOOP_ADMIN_STATISTICS_LIMIT', 5);
+
 /**
  * Implements hook_admin_paths_alter().
  *
@@ -50,21 +53,26 @@ function loop_admin_menu() {
 }
 
 /**
+ * Implements hook_theme().
+ */
+function loop_admin_theme($existing, $type, $theme, $path) {
+  return array(
+    'loop_admin_stats_post_count' => array(
+      'variables' => array(
+        'post_count' => 0,
+        'comment_count' => 0,
+      ),
+      'template' => 'templates/loop_admin_stats_post_count',
+    ),
+  );
+}
+
+/**
  * Menu callback that generates the table.
  *
  * @throws Exception
  */
 function _loop_admin_user_statistics_form($form, &$form_state) {
-  // Define header and fields to sort on.
-  $header = array(
-    array('data' => t('UID'), 'field' => 'uid'),
-    array('data' => t('Username'), 'field' => 'username'),
-    array('data' => t('Full name'), 'field' => 'fullname'),
-    array('data' => t('Best answers'), 'field' => 'accepted'),
-    array('data' => t('Comments'), 'field' => 'comments'),
-    array('data' => t('Thumb ups'), 'field' => 'thumbs'),
-  );
-
   // Check for filter values.
   $filter = array();
   if (isset($form_state['input']['filter']['start_date']['date'])) {
@@ -73,41 +81,6 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
 
   if (isset($form_state['input']['filter']['end_date']['date'])) {
     $filter['date']['end'] = strtotime($form_state['input']['filter']['end_date']['date']);
-  }
-
-  // HACK: Workaround for issue 1181370. See the hack comment in the code below.
-  if (!empty($filter)) {
-    $_SESSION['filter'] = $filter;
-  }
-  else {
-    // Check if value exists in the session.
-    $filter = isset($_SESSION['filter']) ? $_SESSION['filter'] : array();
-  }
-
-  // Get query.
-  $query = _loop_admin_user_statistics_query($filter);
-
-  // Enable table sort on headers.
-  $query->extend('TableSort')->orderByHeader($header);
-
-  // Enabled pager.
-  $query = $query->extend('PagerDefault')->limit(25);
-
-  // Execute query.
-  $result = $query->execute();
-
-  // Looping for filling the table rows.
-  $rows = array();
-  foreach ($result as $row) {
-    // Fill the table rows.
-    $rows[] = array(
-      l($row->uid, 'user/' . $row->uid),
-      l($row->username, 'user/' . $row->uid),
-      l($row->fullname, 'user/' . $row->uid),
-      $row->accepted,
-      $row->comments,
-      $row->thumbs,
-    );
   }
 
   // Build filter field set.
@@ -178,26 +151,27 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
     '#suffix' => '</div>',
   );
 
-  // HACK: this is a workaround for the issue here: https://www.drupal.org/node/1181370
-  // and should be removed when the issue is resolved.
-  $_GET['q'] = isset($form_state['values']['q']) ? $form_state['values']['q'] : $_GET['q'];
-  $form['q'] = array(
-    '#type' => 'value',
-    '#value' => isset($form_state['values']['q']) ? $form_state['values']['q'] : $_GET['q']
+  // Add field-set for content stats.
+  $form['stats']['content'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Content statistics'),
+    '#collapsible' => TRUE,
+    '#tree' => TRUE,
   );
 
-  // Theme table.
-  $form['stats']['table'] = array(
-    '#theme' => 'table',
-    '#header' => $header,
-    '#rows' => $rows,
-    '#empty' => t('Table has no row!'),
-  );
+  // Add basic count of posts and comments.
+  _loop_admin_content_statistics_total_count_element($form, $filter);
 
-  // Add pager.
-  $form['stats']['pager'] = array(
-    '#type' => 'markup',
-    '#markup' => theme('pager'),
+  // Add top answers.
+  _loop_admin_content_statistics_answers_count_element($form, $filter);
+
+
+  // Add field-set for user stats.
+  $form['stats']['user'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('User statistics'),
+    '#collapsible' => TRUE,
+    '#tree' => TRUE,
   );
 
   return $form;
@@ -215,9 +189,6 @@ function _loop_admin_user_statistics_ajax_callback($form, $form_state) {
  * Ajax callback for the reset filter button.
  */
 function _loop_admin_user_statistics_reset_ajax_callback($form, $form_state) {
-  // Remove stored filter.
-  unset($_SESSION['filter']);
-
   // Remove values form form state.
   unset($form_state['input']['filter']);
 
@@ -279,6 +250,147 @@ function _loop_admin_user_statistics_query($filter = array()) {
   }
 
   return $query;
+}
+
+/**
+ * Wrapper function to add top list of answers in posts to the form.
+ *
+ * @param $form
+ *   Form to add the table to.
+ * @param array $filter
+ *   The different values to filter on.
+ */
+function _loop_admin_content_statistics_answers_count_element(&$form, $filter = array()) {
+  // Get statistics.
+  $result = _loop_admin_content_statistics_answers_count($filter);
+
+  // Define headers
+  $header = array(
+    array('data' => t('The top @limit most answered posts', array('@limit' => LOOP_ADMIN_STATISTICS_LIMIT))),
+    array('data' => t('Count')),
+  );
+
+  // Looping to fill the table rows.
+  $rows = array();
+  foreach ($result as $row) {
+    // Fill the table rows.
+    $rows[] = array(
+      l($row->title, 'node/' . $row->nid),
+      $row->count,
+    );
+  }
+
+  // Theme tables.
+  $form['stats']['content']['top_answers'] = array(
+    '#theme' => 'table',
+    '#header' => $header,
+    '#rows' => $rows,
+    '#empty' => t('Table has no row!'),
+  );
+}
+
+/**
+ * Get list of posts order by the number of answers a post got.
+ *
+ * @param array $filter
+ *   The different values to filter on.
+ *
+ * @return DatabaseStatementInterface|null
+ *   The database results or NULL if no results.
+ */
+function _loop_admin_content_statistics_answers_count($filter = array()) {
+  // Select all "post" nodes.
+  $query = db_select('node', 'n')
+    ->fields('n', array('nid', 'title'))
+    ->condition('n.type', 'post', '=');
+
+  // Join comments on the table.
+  $query->join('comment', 'c', 'n.nid = c.nid');
+
+  // Count the number of answers.
+  $query->addExpression('COUNT(1)', 'count');
+
+  // Filter the query on date.
+  if (isset($filter['date'])) {
+    $query->condition('n.created', $filter['date']['start'], '>=')
+      ->condition('n.created', $filter['date']['end'], '<=');
+  }
+
+  // Group by node id's and order by there count.
+  $query->groupBy('n.nid');
+  $query->orderBy('count', 'desc');
+
+  // Limit the number of rows.
+  $query->range(0, LOOP_ADMIN_STATISTICS_LIMIT);
+
+  // Execute query.
+  return $query->execute();
+}
+
+/**
+ * Builds the new questions and answers block.
+ *
+ * @param $form
+ *   The form to insert the block into.
+ *
+ * @param array $filter
+ *   The different values to filter on.
+ */
+function _loop_admin_content_statistics_total_count_element(&$form, $filter = array()) {
+  $form['stats']['content']['post_count'] = array(
+    '#theme' => 'loop_admin_stats_post_count',
+    '#post_count' => _loop_admin_content_statistics_post_count($filter),
+    '#comment_count' => _loop_admin_content_statistics_comment_count($filter),
+  );
+}
+
+/**
+ * Count the number of posts in the database.
+ *
+ * @param array $filter
+ *   The different values to filter on.
+ *
+ * @return int
+ */
+function _loop_admin_content_statistics_post_count($filter = array()) {
+  // Use the node table to get node with type "post".
+  $query = db_select('node', 'n')
+    ->condition('n.type', 'post', '=');
+
+  // Filter the query on date.
+  if (isset($filter['date'])) {
+    $query->condition('n.created', $filter['date']['start'], '>=')
+      ->condition('n.created', $filter['date']['end'], '<=');
+  }
+
+  // Return the number of rows (the count).
+  return $query->countQuery()->execute()->fetchField();
+}
+
+/**
+ * Count the number of comments to posts in the database.
+ *
+ * @param array $filter
+ *   The different values to filter on.
+ *
+ * @return int
+ */
+function _loop_admin_content_statistics_comment_count($filter = array()) {
+  // Use the node table to get node with type "post".
+  $query = db_select('node', 'n')
+    ->condition('n.type', 'post', '=');
+
+  // Join comments on the table.
+  $query->join('comment', 'c', 'n.nid = c.nid');
+
+  // Filter the query on date.
+  if (isset($filter['date'])) {
+    $query->condition('n.created', $filter['date']['start'], '>=')
+      ->condition('n.created', $filter['date']['end'], '<=');
+  }
+
+  // Return the number of rows (the count).
+  return $query->countQuery()->execute()->fetchField();
 }
 
 /**
