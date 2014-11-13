@@ -9,6 +9,9 @@ include_once 'loop_admin.features.inc';
 // Defines the number of rows to show in the statistics tables.
 define('LOOP_ADMIN_STATISTICS_LIMIT', 5);
 
+// Define the name of the flag to use in statistics.
+define('LOOP_ADMIN_STATISTICS_FLAG_NAME', 'ranking');
+
 /**
  * Implements hook_admin_paths_alter().
  *
@@ -81,6 +84,9 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
 
   if (isset($form_state['input']['filter']['end_date']['date'])) {
     $filter['date']['end'] = strtotime($form_state['input']['filter']['end_date']['date']);
+
+    // Ensure that this is the end of the day to include the date.
+    $filter['date']['end'] += 86399;
   }
 
   // Build filter field set.
@@ -165,6 +171,8 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
   // Add top answers.
   _loop_admin_content_statistics_answers_count_element($form, $filter);
 
+  // Add thumbs up.
+  _loop_admin_content_statistics_thumbs_up_count_element($form, $filter);
 
   // Add field-set for user stats.
   $form['stats']['user'] = array(
@@ -251,6 +259,88 @@ function _loop_admin_user_statistics_query($filter = array()) {
 
   return $query;
 }
+
+/**
+ * Wrapper function to add thumbs up table to the form.
+ *
+ * @param $form
+ *   Form to add the table to.
+ * @param array $filter
+ *   The different values to filter on.
+ */
+function _loop_admin_content_statistics_thumbs_up_count_element(&$form, $filter = array()) {
+  // Get statistics.
+  $result = _loop_admin_content_statistics_thumbs_up_count($filter);
+
+  // Define headers
+  $header = array(
+    array('data' => t('The top @limit thumbs up', array('@limit' => LOOP_ADMIN_STATISTICS_LIMIT))),
+    array('data' => t('Count')),
+  );
+
+  // Looping to fill the table rows.
+  $rows = array();
+  foreach ($result as $row) {
+    // Fill the table rows.
+    $rows[] = array(
+      l($row->subject, 'comment/' . $row->cid),
+      $row->count,
+    );
+  }
+
+  // Theme tables.
+  $form['stats']['content']['thumbs_up'] = array(
+    '#theme' => 'table',
+    '#header' => $header,
+    '#rows' => $rows,
+    '#empty' => t('Table has no row!'),
+  );
+}
+
+/**
+ * Get list of thumbs up.
+ *
+ * @param array $filter
+ *   The different values to filter on.
+ *
+ * @return DatabaseStatementInterface|null
+ *   The database results or NULL if no results.
+ */
+function _loop_admin_content_statistics_thumbs_up_count($filter = array()) {
+  // Select all flag counters and select count.
+  $query = db_select('flagging', 'fl');
+
+  // Join flag to limit to one flag type.
+  $query->join('flag', 'f', 'fl.fid = f.fid AND f.name = :name', array(':name' => LOOP_ADMIN_STATISTICS_FLAG_NAME));
+
+  // Join comments to get title.
+  $query->join('comment', 'c', 'fl.entity_id = c.cid');
+
+  // Add extra fields from comment table.
+  $query->addField('c', 'subject');
+  $query->addField('c', 'cid');
+
+  $query->addExpression('COUNT(1)', 'count');
+
+  // Filter the query on date.
+  if (isset($filter['date'])) {
+    $query->condition('fl.timestamp', $filter['date']['start'], '>=');
+    $query->condition('fl.timestamp', $filter['date']['end'], '<=');
+  }
+
+  // Order by there flag count.
+  $query->groupBy('fl.entity_id');
+  $query->orderBy('count', 'desc');
+
+  // Limit the number of rows.
+  $query->range(0, LOOP_ADMIN_STATISTICS_LIMIT);
+
+//  print_r($query->__toString());
+
+  // Execute query.
+  return $query->execute();
+}
+
 
 /**
  * Wrapper function to add top list of answers in posts to the form.
