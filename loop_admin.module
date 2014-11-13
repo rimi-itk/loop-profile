@@ -196,7 +196,7 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
   _loop_admin_users_statistics_post_count_element($form, $filter);
 
   // Add top accepted answers based on users.
-  _loop_admin_users_statistics_accepted_answered_element($form, $filter);
+  _loop_admin_users_statistics_accepted_answers_element($form, $filter);
 
   return $form;
 }
@@ -228,9 +228,9 @@ function _loop_admin_user_statistics_reset_ajax_callback($form, $form_state) {
  * @param array $filter
  *   The different values to filter on.
  */
-function _loop_admin_users_statistics_accepted_answered_element(&$form, $filter = array()) {
+function _loop_admin_users_statistics_accepted_answers_element(&$form, $filter = array()) {
   // Get statistics.
-  $result = _loop_admin_users_statistics_accepted_answered($filter);
+  $result = _loop_admin_users_statistics_accepted_answers($filter);
 
   // Define headers
   $header = array(
@@ -257,7 +257,16 @@ function _loop_admin_users_statistics_accepted_answered_element(&$form, $filter 
   );
 }
 
-function _loop_admin_users_statistics_accepted_answered($filter = array()) {
+/**
+ * Get list of accepted answers.
+ *
+ * @param array $filter
+ *   The different values to filter on.
+ *
+ * @return DatabaseStatementInterface|null
+ *   The database results or NULL if no results.
+ */
+function _loop_admin_users_statistics_accepted_answers($filter = array()) {
   // Start by build sub-query based on nodes.
   $subquery = db_select('node', 'n')
     ->condition('n.type', LOOP_ADMIN_STATISTICS_NODE_TYPE, '=');
