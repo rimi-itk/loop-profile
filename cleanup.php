@@ -13,6 +13,10 @@ db_delete('flagging')
   ->condition('entity_type', 'node')
   ->execute();
 
+// Delete all messages.
+db_delete('message')
+  ->execute();
+
 // Get post nodes.
 $nodes = db_select('node', 'n')
   ->fields('n', array('nid'))
