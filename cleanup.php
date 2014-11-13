@@ -1,4 +1,6 @@
+#!/usr/bin/env drush
 <?php
+
 /**
  * @file Cleanup flagging.
  */
@@ -11,6 +13,10 @@ db_delete('flagging')
 // Delete every flagged nodes.
 db_delete('flagging')
   ->condition('entity_type', 'node')
+  ->execute();
+
+// Delete all messages.
+db_delete('message')
   ->execute();
 
 // Get post nodes.
