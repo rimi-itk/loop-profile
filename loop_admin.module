@@ -217,62 +217,6 @@ function _loop_admin_user_statistics_reset_ajax_callback($form, $form_state) {
   return _loop_admin_user_statistics_ajax_callback($form, $form_state);
 }
 
-
-/**
- * Build query to find statistics information.
- *
- * @param array $filter
- *   The different values to filter on.
- *
- * @return SelectQuery
- *   Query to run against the database.
- */
-function _loop_admin_user_statistics_query($filter = array()) {
-  // Start with the comment table.
-  $query = db_select('comment', 'comment');
-
-  // Count comments for a user.
-  $query->addExpression('COUNT(comment.cid)', 'comments');
-
-  // Add user information.
-  $query->rightJoin('users', 'u', 'comment.uid = u.uid');
-  $query->addField('u', 'uid', 'uid');
-  $query->addField('u', 'name', 'username');
-
-  // Add username.
-  $query->join('field_data_field_first_name', 'fn', 'fn.entity_id = u.uid');
-  $query->join('field_data_field_last_name', 'ln', 'ln.entity_id = u.uid');
-  $query->addField('fn', 'field_first_name_value', 'firstname');
-  $query->addField('ln', 'field_last_name_value', 'lastname');
-  $query->addExpression("CONCAT_WS(' ', fn.field_first_name_value, ln.field_last_name_value)", 'fullname');
-
-  // Group by each user.
-  $query->groupBy('u.uid');
-
-  // Get thumbs up.
-  if (isset($filter['date'])) {
-    $query->addExpression("(SELECT count(*) FROM comment c JOIN flagging f ON c.cid = f.entity_id WHERE c.uid = u.uid AND timestamp >= :start_date AND timestamp <= :end_date)", 'thumbs', array('start_date' => $filter['date']['start'], 'end_date' => $filter['date']['end']));
-  }
-  else {
-    $query->addExpression("(SELECT count(*) FROM comment c JOIN flagging f ON c.cid = f.entity_id WHERE c.uid = u.uid)", 'thumbs');
-  }
-
-  // Get most accepted answers.
-  if (isset($filter['date'])) {
-    $query->addExpression("(SELECT count(*) FROM (SELECT c.uid, MAX(fc.count) FROM node n JOIN comment c ON n.nid = c.nid JOIN flag_counts fc ON c.cid = fc.entity_id JOIN flagging f ON f.entity_id = c.cid WHERE fc.entity_type = 'comment' AND f.timestamp >= :start_date AND f.timestamp <= :end_date GROUP BY n.nid) AS count WHERE count.uid = u.uid)", 'accepted', array('start_date' => $filter['date']['start'], 'end_date' => $filter['date']['end']));
-  }
-  else {
-    $query->addExpression("(SELECT count(*) FROM (SELECT c.uid, MAX(fc.count) FROM node n JOIN comment c ON n.nid = c.nid JOIN flag_counts fc ON c.cid = fc.entity_id WHERE fc.entity_type = 'comment' GROUP BY n.nid) AS count WHERE count.uid = u.uid)", 'accepted');
-  }
-
-  // Filter the whole query on date.
-  if (isset($filter['date'])) {
-    $query->where("comment.cid IN (SELECT entity_id FROM flagging f WHERE f.entity_type = 'comment' AND f.timestamp >= :start_date AND f.timestamp <= :end_date)", array('start_date' => $filter['date']['start'], 'end_date' => $filter['date']['end']));
-  }
-
-  return $query;
-}
-
 /**
  * Wrapper function to add top users new posts to the form.
  *
