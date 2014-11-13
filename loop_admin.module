@@ -4,7 +4,6 @@
  * Alter paths and build statistics for users.
  *
  * @todo: Update the *_element functions as they are almost the same.
- * @todo: Move user join for name into function.
  * @todo: Move date filter limit into own sql function.
  */
 
@@ -198,6 +197,9 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
   // Add top accepted answers based on users.
   _loop_admin_users_statistics_accepted_answers_element($form, $filter);
 
+  // Add top thumbs up based on users.
+  _loop_admin_users_statistics_thumbs_up_element($form, $filter);
+
   return $form;
 }
 
@@ -221,7 +223,88 @@ function _loop_admin_user_statistics_reset_ajax_callback($form, $form_state) {
 }
 
 /**
- * Wrapper function to add top users new posts to the form.
+ * Wrapper function to add accepted answers to the form.
+ *
+ * @param $form
+ *   Form to add the table to.
+ * @param array $filter
+ *   The different values to filter on.
+ */
+function _loop_admin_users_statistics_thumbs_up_element(&$form, $filter = array()) {
+  // Get statistics.
+  $result = _loop_admin_users_statistics_thumbs_up($filter);
+
+  // Define headers
+  $header = array(
+    array('data' => t('The top @limit thumbs up', array('@limit' => LOOP_ADMIN_STATISTICS_LIMIT))),
+    array('data' => t('Count')),
+  );
+
+  // Looping to fill the table rows.
+  $rows = array();
+  foreach ($result as $row) {
+    // Fill the table rows.
+    $rows[] = array(
+      l($row->fullname, 'user/' . $row->uid),
+      $row->count,
+    );
+  }
+
+  // Theme tables.
+  $form['stats']['user']['thumbs_up'] = array(
+    '#theme' => 'table',
+    '#header' => $header,
+    '#rows' => $rows,
+    '#empty' => t('Table has no row!'),
+  );
+}
+
+/**
+ * Get list of thumbs up.
+ *
+ * @param array $filter
+ *   The different values to filter on.
+ *
+ * @return DatabaseStatementInterface|null
+ *   The database results or NULL if no results.
+ */
+function _loop_admin_users_statistics_thumbs_up($filter = array()) {
+  // Start by select all comments.
+  $query = db_select('comment', 'c')
+    ->fields('c', array('uid'));
+
+  // Join flagging to be able to limit based on flag time later.
+  $query->join('flagging', 'fl', 'fl.entity_id = c.cid');
+
+  // Join flag to limit to one flag type.
+  $query->join('flag', 'f', 'fl.fid = f.fid AND f.name = :name', array(':name' => LOOP_ADMIN_STATISTICS_FLAG_NAME));
+
+  // Join users and field tables to get the users full name.
+  $query->join('users', 'u', 'c.uid = u.uid');
+  $query->join('field_data_field_first_name', 'fn', 'fn.entity_id = u.uid');
+  $query->join('field_data_field_last_name', 'ln', 'ln.entity_id = u.uid');
+  $query->addField('fn', 'field_first_name_value', 'firstname');
+  $query->addField('ln', 'field_last_name_value', 'lastname');
+  $query->addExpression("CONCAT_WS(' ', field_first_name_value, field_last_name_value)", 'fullname');
+
+  // Count the number of comments (answers).
+  $query->addExpression('COUNT(1)', 'count');
+
+  // Group by users id to get correct count.
+  $query->groupBy('u.uid');
+
+  // Order to get the largest number first.
+  $query->orderBy('count', 'desc');
+
+  // Limit the number of rows.
+  $query->range(0, LOOP_ADMIN_STATISTICS_LIMIT);
+
+  // Execute query.
+  return $query->execute();
+}
+
+/**
+ * Wrapper function to add accepted answers to the form.
  *
  * @param $form
  *   Form to add the table to.
