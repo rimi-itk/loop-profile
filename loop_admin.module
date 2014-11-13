@@ -322,6 +322,7 @@ function _loop_admin_users_statistics_post_count_element(&$form, $filter = array
 function _loop_admin_users_statistics_post_count($filter = array()) {
   // Start by selection all post nodes.
   $query = db_select('node', 'n')
+    ->fields('n', array('uid'))
     ->condition('n.type', LOOP_ADMIN_STATISTICS_NODE_TYPE, '=');
 
   // Join users and field tables to get the users full name.
