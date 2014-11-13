@@ -1,4 +1,6 @@
+#!/usr/bin/env drush
 <?php
+
 /**
  * @file Cleanup flagging.
  */
