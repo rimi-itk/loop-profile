@@ -51,10 +51,10 @@ function loop_admin_menu() {
   $items = array();
 
   $items['editor/dashboard/user-statistics'] = array(
-    'title' => 'LOOP User statistics',
+    'title' => t('Internal statistics'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('_loop_admin_user_statistics_form'),
-    'access arguments' => array('access user profiles'),
+    'access arguments' => array('administer users'),
     'type' => MENU_NORMAL_ITEM,
   );
 
@@ -200,7 +200,7 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
   // Add top thumbs up based on users.
   _loop_admin_users_statistics_thumbs_up_element($form, $filter);
 
-  return $form;
+    return $form;
 }
 
 /**
@@ -254,8 +254,10 @@ function _loop_admin_users_statistics_thumbs_up_element(&$form, $filter = array(
   $form['stats']['user']['thumbs_up'] = array(
     '#theme' => 'table',
     '#header' => $header,
+    '#sticky' => FALSE,
     '#rows' => $rows,
     '#empty' => t('Table has no row!'),
+    '#attributes' => array('class' => 'dashboard--statistics-table'),
   );
 }
 
@@ -335,8 +337,10 @@ function _loop_admin_users_statistics_accepted_answers_element(&$form, $filter =
   $form['stats']['user']['top_accepted'] = array(
     '#theme' => 'table',
     '#header' => $header,
+    '#sticky' => FALSE,
     '#rows' => $rows,
     '#empty' => t('Table has no row!'),
+    '#attributes' => array('class' => 'dashboard--statistics-table'),
   );
 }
 
@@ -439,8 +443,10 @@ function _loop_admin_users_statistics_post_count_element(&$form, $filter = array
   $form['stats']['user']['top_posts'] = array(
     '#theme' => 'table',
     '#header' => $header,
+    '#sticky' => FALSE,
     '#rows' => $rows,
     '#empty' => t('Table has no row!'),
+    '#attributes' => array('class' => 'dashboard--statistics-table'),
   );
 }
 
@@ -521,8 +527,10 @@ function _loop_admin_users_statistics_answers_count_element(&$form, $filter = ar
   $form['stats']['user']['top_answers'] = array(
     '#theme' => 'table',
     '#header' => $header,
+    '#sticky' => FALSE,
     '#rows' => $rows,
     '#empty' => t('Table has no row!'),
+    '#attributes' => array('class' => 'dashboard--statistics-table'),
   );
 }
 
@@ -606,8 +614,10 @@ function _loop_admin_content_statistics_thumbs_up_count_element(&$form, $filter 
   $form['stats']['content']['thumbs_up'] = array(
     '#theme' => 'table',
     '#header' => $header,
+    '#sticky' => FALSE,
     '#rows' => $rows,
     '#empty' => t('Table has no row!'),
+    '#attributes' => array('class' => 'dashboard--content-statistics-table'),
   );
 }
 
@@ -678,7 +688,7 @@ function _loop_admin_content_statistics_answers_count_element(&$form, $filter = 
   foreach ($result as $row) {
     // Fill the table rows.
     $rows[] = array(
-      l($row->title, 'node/' . $row->nid),
+      l(truncate_utf8($row->title, '50', $wordsafe = FALSE, $add_ellipsis = TRUE), 'node/' . $row->nid),
       $row->count,
     );
   }
@@ -688,7 +698,9 @@ function _loop_admin_content_statistics_answers_count_element(&$form, $filter = 
     '#theme' => 'table',
     '#header' => $header,
     '#rows' => $rows,
+    '#sticky' => FALSE,
     '#empty' => t('Table has no row!'),
+    '#attributes' => array('class' => 'dashboard--content-statistics-table'),
   );
 }
 
