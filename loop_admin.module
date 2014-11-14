@@ -694,7 +694,7 @@ function _loop_admin_content_statistics_answers_count_element(&$form, $filter = 
   foreach ($result as $row) {
     // Fill the table rows.
     $rows[] = array(
-      l(truncate_utf8($row->title, '50', $wordsafe = FALSE, $add_ellipsis = TRUE), 'node/' . $row->nid),
+      l(truncate_utf8($row->title, '25', $wordsafe = FALSE, $add_ellipsis = TRUE), 'node/' . $row->nid),
       $row->count,
     );
   }
