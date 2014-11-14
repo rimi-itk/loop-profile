@@ -289,6 +289,12 @@ function _loop_admin_users_statistics_thumbs_up($filter = array()) {
   $query->addField('ln', 'field_last_name_value', 'lastname');
   $query->addExpression("CONCAT_WS(' ', field_first_name_value, field_last_name_value)", 'fullname');
 
+  // Filter the query on date.
+  if (isset($filter['date'])) {
+    $query->condition('fl.timestamp', $filter['date']['start'], '>=')
+      ->condition('fl.timestamp', $filter['date']['end'], '<=');
+  }
+
   // Count the number of comments (answers).
   $query->addExpression('COUNT(1)', 'count');
 
