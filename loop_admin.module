@@ -312,7 +312,7 @@ function _loop_admin_users_statistics_thumbs_up($filter = array()) {
 }
 
 /**
- * Wrapper function to add accepted answers to the form.
+ * Wrapper function to add best answers to the form.
  *
  * @param $form
  *   Form to add the table to.
@@ -325,7 +325,7 @@ function _loop_admin_users_statistics_accepted_answers_element(&$form, $filter =
 
   // Define headers
   $header = array(
-    array('data' => t('The top @limit accepted answers', array('@limit' => LOOP_ADMIN_STATISTICS_LIMIT))),
+    array('data' => t('The top @limit best answers', array('@limit' => LOOP_ADMIN_STATISTICS_LIMIT))),
     array('data' => t('Count')),
   );
 
