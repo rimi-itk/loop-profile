@@ -325,3 +325,87 @@
   float: left;
   width: 100%;
 }
+
+
+/* Loop internal statistics
+   ================================================================================================================== */
+
+.dashboard--statistics-table {
+  box-sizing: border-box;
+  display: inline-block;
+  margin-left: -4px;
+  padding: 0 1em;
+  width: 100%;
+
+  @include breakpoint(80em) {
+    width: 25%;
+  }
+
+  th,
+  td {
+    width: 70%;
+  }
+
+
+  td:last-child,
+  th:last-child {
+    text-align: center;
+    width: 30%;
+  }
+
+  thead,
+  tbody {
+    display: inline-table;
+    min-height: 4em;
+    width: 100%;
+  }
+}
+
+.dashboard--content-statistics-table {
+  box-sizing: border-box;
+  display: inline-block;
+  margin-left: -4px;
+  padding: 0 1em;
+  width: 100%;
+
+  @include breakpoint(80em) {
+    width: 33%;
+  }
+
+  th,
+  td {
+    width: 75%;
+  }
+
+  td:last-child,
+  th:last-child {
+    text-align: center;
+    width: 25%;
+  }
+
+  thead,
+  tbody {
+    display: inline-table;
+    min-height: 4em;
+    width: 100%;
+  }
+}
+
+.dashboard--content-overview {
+  @extend .dashboard--content-statistics-table;  // Extend to include width etc.
+
+  vertical-align: top;
+}
+
+.dashboard--content-overview-inner {
+  background: $gray-lightest;
+  border: 1px solid $gray-light;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+  padding: 3em 1em;
+  text-align: center;
+}
+
+.dashboard--content-overview-text {
+  font-size: 1.2em;
+}

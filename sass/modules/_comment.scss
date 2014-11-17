@@ -109,28 +109,29 @@
 /* Inapropriate flag */
 
 .comments--abuse {
+  font-size: .8em;
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0;
+  white-space: nowrap;
 
   .links {
-    font-size: .8em;
     list-style: none;
     padding: 0;
   }
 
-  .abuse_flag_comment {
+  @include custom-links($green, $green, $green);
 
-    @include custom-links($green, $green, $green);
+  a {
+    &:before {
+      @extend %icon-flag-filled;
+      @extend %icon-before;
 
-    a {
-      &:before {
-        @extend %icon-flag-filled;
-        @extend %icon-before;
+      margin-right: .5em;
+    }
 
-        margin-right: .5em;
-      }
-
-      &:hover {
-        color: $green;
-      }
+    &:hover {
+      color: $green;
     }
   }
 }

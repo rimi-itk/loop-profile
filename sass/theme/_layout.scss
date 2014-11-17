@@ -121,6 +121,11 @@
       @include reset-element-spacing();
 
       padding-left: 0;
+
+      &.js-full-width {
+        overflow: hidden;
+        width: 100%;
+      }
     }
   }
 
@@ -129,6 +134,11 @@
       @include zen-grid-item(6, 1, right);
 
       padding-right: 0;
+    }
+
+    &.js-full-width {
+      overflow: hidden;
+      width: 100%;
     }
   }
 

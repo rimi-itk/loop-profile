@@ -165,7 +165,11 @@
   }
 }
 
-// Flag as offensive
+
+/* Abuse module
+   ================================================================================================================== */
+
+.abuse_flag_comment .flag-content,
 .abuse_flag_node .flag-content {
   color: #fff;
   background-color: #595959;
