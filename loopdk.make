@@ -10,6 +10,7 @@ projects[abuse][download][branch] = "7.x-1.x-dev"
 projects[abuse][patch][] = "https://www.drupal.org/files/issues/1484470-user_acces4.patch"
 projects[abuse][patch][] = "https://www.drupal.org/files/issues/1484470-template-rewrite.patch"
 projects[abuse][patch][] = "https://www.drupal.org/files/issues/1484470-assigned_count_sql.patch"
+projects[abuse][patch][] = "https://www.drupal.org/files/issues/1484470-sql-and-render.patch"
 
 projects[admin_views][subdir] = "contrib"
 projects[admin_views][version] = "1.2"
