@@ -43,12 +43,6 @@ function loop_user_related_content_profession_views_default_views() {
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* No results behavior: Global: View area */
-  $handler->display->display_options['empty']['view']['id'] = 'view';
-  $handler->display->display_options['empty']['view']['table'] = 'views';
-  $handler->display->display_options['empty']['view']['field'] = 'view';
-  $handler->display->display_options['empty']['view']['empty'] = TRUE;
-  $handler->display->display_options['empty']['view']['view_to_insert'] = 'loop_questions_by_user_profession:panel_pane_2';
   /* Relationship: Field: Profession (field_profession) */
   $handler->display->display_options['relationships']['field_profession_tid']['id'] = 'field_profession_tid';
   $handler->display->display_options['relationships']['field_profession_tid']['table'] = 'field_data_field_profession';
@@ -229,8 +223,8 @@ function loop_user_related_content_profession_views_default_views() {
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
 
-  /* Display: When empty */
-  $handler = $view->new_display('panel_pane', 'When empty', 'panel_pane_2');
+  /* Display: When empty (unused) */
+  $handler = $view->new_display('panel_pane', 'When empty (unused)', 'panel_pane_2');
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Text area */
   $handler->display->display_options['empty']['area']['id'] = 'area';
