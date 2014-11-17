@@ -31,6 +31,11 @@ function loop_preprocess_page(&$variables) {
     }
   }
 
+  if ($variables['is_front']) {
+    $update_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() . '/scripts/frontpage-column-width.js';
+    drupal_add_js($update_script_path, 'file');
+  }
+
   // Remove search form when no search results are found.
   if ((isset($variables['page']['content']['system_main']['results'])) &&  ($variables['page']['content']['system_main']['results']['#results']['result count'] == 0)) {
     unset($variables['page']['content']['system_main']['form']);
@@ -746,6 +751,7 @@ function loop_preprocess_comment(&$variables) {
     }
   }
 
+  $variables['content']['links']['abuse']['#attributes']['class'] = 'comment--links';
   // Remove flag, delete, edit and reply links.
   unset($variables['content']['links']['comment']['#links']['comment-delete']);
   unset($variables['content']['links']['comment']['#links']['comment-edit']);
