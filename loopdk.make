@@ -11,6 +11,7 @@ projects[abuse][patch][] = "https://www.drupal.org/files/issues/1484470-user_acc
 projects[abuse][patch][] = "https://www.drupal.org/files/issues/1484470-template-rewrite.patch"
 projects[abuse][patch][] = "https://www.drupal.org/files/issues/1484470-assigned_count_sql.patch"
 projects[abuse][patch][] = "https://www.drupal.org/files/issues/1484470-sql-and-render2.patch"
+projects[abuse][patch][] = "https://www.drupal.org/files/issues/1484470-taxonomy.patch"
 
 projects[admin_views][subdir] = "contrib"
 projects[admin_views][version] = "1.2"
