@@ -94,7 +94,7 @@ function loop_user_default_page_manager_handlers() {
       'type' => 'primary',
       'id' => 'tabs',
       'override_title' => 1,
-      'override_title_text' => 'My account',
+      'override_title_text' => t('My account'),
     );
     $pane->cache = array();
     $pane->style = array(
@@ -280,7 +280,7 @@ function loop_user_default_page_manager_handlers() {
       'type' => 'primary',
       'id' => 'tabs',
       'override_title' => 1,
-      'override_title_text' => 'My account',
+      'override_title_text' => t('My account'),
     );
     $pane->cache = array();
     $pane->style = array(
@@ -417,7 +417,7 @@ function loop_user_default_page_manager_handlers() {
       'type' => 'primary',
       'id' => 'tabs',
       'override_title' => 1,
-      'override_title_text' => 'My account',
+      'override_title_text' => t('My account'),
     );
     $pane->cache = array();
     $pane->style = array(
