@@ -15,7 +15,6 @@ projects[admin_views][version] = "1.2"
 projects[auto_entitylabel][subdir] = "contrib"
 projects[auto_entitylabel][download][type] = "git"
 projects[auto_entitylabel][download][url] = "http://git.drupal.org/project/auto_entitylabel.git"
-projects[auto_entitylabel][download][branch] = "7.x-1.0-dev"
 
 projects[autocomplete_deluxe][type] = "module"
 projects[autocomplete_deluxe][subdir] = "contrib"
