@@ -301,8 +301,12 @@ function loop_menu_tree__main_menu($variables) {
 
   // Add notificaiton link.
   if (_loop_print_notification_tab()) {
-    $variables['tree'] = $variables['tree'] . _loop_print_notification_tab();
+    $variables['tree'] =  _loop_print_notification_tab() . $variables['tree'];
   }
+
+  // Add frontpage link from code
+  // due to the notification tab being added to start of menu.
+  $variables['tree'] = l(t('Frontpage'), '/', array('attributes' => array('class' => array('nav--frontpage-link')), 'html' => 'TRUE')) . $variables['tree'];
 
   // If loop navigation exists add a mobile dropdown navigation.
   if (module_exists('loop_navigation')) {
