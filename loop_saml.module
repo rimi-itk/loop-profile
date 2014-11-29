@@ -1,12 +1,69 @@
 <?php
 
 /**
- * @param $settings
+ * Implements hook_menu().
  */
-function loop_saml_saml_sp_settings_alter(&$settings) {
-  $settings['debug'] = TRUE;
-  $settings['strict'] = FALSE;
-  $settings['security']['allowedAuthContexts'] = FALSE;
-  $settings['security']['logoutRequestSigned'] = TRUE;
-  $settings['security']['logoutResponseSigned'] = TRUE;
+function loop_saml_menu() {
+  $items = array();
+
+  $items['loop_saml_redirect'] = array(
+    'title' => 'Simple redirect page',
+    'page callback' => 'loop_saml_redirect',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Simple iFrame redirect page.
+ */
+function loop_saml_redirect() {
+  header('Refresh: 5;url=/');
+
+  return '<iframe src="https://adfs.aarhuskommune.dk/adfs/ls/?wa=wsignout1.0" width="0px" height="0px"></iframe>';
+}
+
+/**
+ * Implements hook_user_logout().
+ */
+function loop_saml_user_logout($account) {
+  if (variable_get('saml_sp_drupal_login__logout', FALSE) === 0) {
+    drupal_goto('loop_saml_redirect');
+  }
+}
+
+/**
+ * Implements hook_saml_sp_post_create_user().
+ */
+function loop_saml_saml_sp_post_create_user_alter($account, $attributes) {
+  _loop_saml_setup_account($account, $attributes);
+}
+
+/**
+ * Implements hook_saml_sp_post_update_user().
+ */
+function loop_saml_saml_sp_post_update_user_alter($account, $attributes) {
+  _loop_saml_setup_account($account, $attributes);
+}
+
+/**
+ * Setup LOOP specicfic acocunt details.
+ *
+ * @param object $account
+ *   Drupal account
+ *
+ * @param array $attributes
+ *   SAML attributes.
+ */
+function _loop_saml_setup_account($account, $attributes) {
+  $fullename = $attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/displayname'][0];
+
+  $names = preg_split("/\s+(?=\S*+$)/", $fullename);
+
+  $wrapper = entity_metadata_wrapper('user', $account);
+  $wrapper->field_first_name->set($names[0]);
+  $wrapper->field_last_name->set($names[1]);
+  $wrapper->save();
 }
