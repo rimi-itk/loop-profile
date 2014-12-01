@@ -1,12 +1,8 @@
 /**
  * IE 8 specific styles
  */
-/* line 7, ../sass/ie8.scss */
 .logo--link {
-  max-width: 4em;
-}
+  max-width: 4em; }
 
-/* line 11, ../sass/ie8.scss */
 .nav-dropdown--header {
-  padding-right: 2.5em !important;
-}
+  padding-right: 2.5em !important; }

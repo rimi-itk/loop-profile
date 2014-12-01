@@ -889,14 +889,14 @@ label {
 /* '' */
 /* Icon shadow classes
    ================================================================================================================== */
-.comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .user-profile--answers-best-count:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .messages.warning:before, .nav-mobile .nav--link:before, .nav-mobile .nav--logout:before,
+.comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .user-profile--answers-best-count:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .messages.warning:before, .nav-mobile .nav--link:before, .nav-mobile .nav--wrapper .nav--frontpage-link:before, .nav--wrapper .nav-mobile .nav--frontpage-link:before, .nav-mobile .nav--logout:before,
 .nav-mobile .nav-dropdown--header:before,
 .nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before, .twitter-typeahead:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .comments--abuse a:before, .question--links a:before {
   display: inline-block;
   font-family: "loop-icons";
   line-height: 100%; }
 
-.nav-mobile .nav--link:before, .nav-mobile .nav--logout:before,
+.nav-mobile .nav--link:before, .nav-mobile .nav--wrapper .nav--frontpage-link:before, .nav--wrapper .nav-mobile .nav--frontpage-link:before, .nav-mobile .nav--logout:before,
 .nav-mobile .nav-dropdown--header:before,
 .nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .comments--abuse a:before, .comment--flag:before, .guide--nav-list-item .active:before, .question--links a:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .user-profile--answers-best-count:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .messages.status:before, .messages.warning:before, .messages.error:before {
   margin-right: .35em; }
@@ -925,7 +925,7 @@ label {
 .messages.warning:before {
   content: '\e801'; }
 
-.nav-mobile .nav--link:before, .nav-mobile .nav--logout:before,
+.nav-mobile .nav--link:before, .nav-mobile .nav--wrapper .nav--frontpage-link:before, .nav--wrapper .nav-mobile .nav--frontpage-link:before, .nav-mobile .nav--logout:before,
 .nav-mobile .nav-dropdown--header:before,
 .nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before {
   content: '\e807'; }
@@ -1475,6 +1475,7 @@ label {
   .nav--wrapper .nav-dropdown--header,
   .nav--wrapper .nav--toggle-mobile-nav,
   .nav--wrapper .nav--link,
+  .nav--wrapper .nav--frontpage-link,
   .nav--wrapper .nav--logout {
     position: relative;
     display: inline-block;
@@ -1491,22 +1492,27 @@ label {
     .nav--wrapper .nav--toggle-mobile-nav:link,
     .nav--wrapper .nav--toggle-mobile-nav:visited,
     .nav--wrapper .nav--link:link,
+    .nav--wrapper .nav--frontpage-link:link,
     .nav--wrapper .nav--logout:link,
     .nav--wrapper .nav--link:visited,
+    .nav--wrapper .nav--frontpage-link:visited,
     .nav--wrapper .nav--logout:visited {
       color: #fff;
       text-decoration: none; }
     .nav--wrapper .nav-dropdown--header:hover,
     .nav--wrapper .nav--toggle-mobile-nav:hover,
     .nav--wrapper .nav--link:hover,
+    .nav--wrapper .nav--frontpage-link:hover,
     .nav--wrapper .nav--logout:hover {
       background-color: #82d08e; }
     .nav--wrapper .nav-dropdown--header.active-trail, .nav--wrapper .nav-dropdown--header.active,
     .nav--wrapper .nav--toggle-mobile-nav.active-trail,
     .nav--wrapper .nav--toggle-mobile-nav.active,
     .nav--wrapper .nav--link.active-trail,
+    .nav--wrapper .active-trail.nav--frontpage-link,
     .nav--wrapper .active-trail.nav--logout,
     .nav--wrapper .nav--link.active,
+    .nav--wrapper .active.nav--frontpage-link,
     .nav--wrapper .active.nav--logout {
       background-color: #f2f2f2;
       color: #41ab51; }
@@ -1514,8 +1520,10 @@ label {
       .nav--wrapper .nav--toggle-mobile-nav.active-trail:hover,
       .nav--wrapper .nav--toggle-mobile-nav.active:hover,
       .nav--wrapper .nav--link.active-trail:hover,
+      .nav--wrapper .active-trail.nav--frontpage-link:hover,
       .nav--wrapper .active-trail.nav--logout:hover,
       .nav--wrapper .nav--link.active:hover,
+      .nav--wrapper .active.nav--frontpage-link:hover,
       .nav--wrapper .active.nav--logout:hover {
         background-color: #5dc26d;
         color: #f2f2f2; }
@@ -1523,6 +1531,7 @@ label {
       .nav--wrapper .nav-dropdown--header,
       .nav--wrapper .nav--toggle-mobile-nav,
       .nav--wrapper .nav--link,
+      .nav--wrapper .nav--frontpage-link,
       .nav--wrapper .nav--logout {
         height: 3.25em;
         margin-left: 1em;
@@ -1532,6 +1541,7 @@ label {
       .nav--wrapper .nav-dropdown--header,
       .nav--wrapper .nav--toggle-mobile-nav,
       .nav--wrapper .nav--link,
+      .nav--wrapper .nav--frontpage-link,
       .nav--wrapper .nav--logout {
         padding-right: 1.25em;
         padding-left: 1.25em;
@@ -1541,6 +1551,11 @@ label {
         -moz-border-radius: 0.4em 0.4em 0 0;
         -webkit-border-radius: 0.4em;
         border-radius: 0.4em 0.4em 0 0; } }
+  .nav--wrapper .nav--frontpage-link {
+    display: none; }
+    @media only screen and (min-width: 50em) {
+      .nav--wrapper .nav--frontpage-link {
+        display: inline-block; } }
   @media only screen and (min-width: 45em) {
     .nav--wrapper .nav--toggle-mobile-nav {
       display: inline-block;
@@ -1681,7 +1696,7 @@ label {
     text-decoration: underline; }
   .nav-mobile a:focus {
     color: #fff; }
-  .nav-mobile .nav--link, .nav-mobile .nav--logout,
+  .nav-mobile .nav--link, .nav-mobile .nav--wrapper .nav--frontpage-link, .nav--wrapper .nav-mobile .nav--frontpage-link, .nav-mobile .nav--logout,
   .nav-mobile .nav-dropdown--header,
   .nav-mobile .nav-dropdown--link {
     border-bottom: 1px solid #e6e6e6;

@@ -84,6 +84,15 @@
     }
   }
 
+  .nav--frontpage-link {
+    @extend .nav--link;
+    display:none;
+
+    @include breakpoint(50em) {
+      display: inline-block;
+    }
+  }
+
   .nav--toggle-mobile-nav {
     @include breakpoint(45em) {
       display: inline-block;
