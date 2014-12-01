@@ -9,20 +9,43 @@ function loop_saml_menu() {
   $items['loop_saml_redirect'] = array(
     'title' => 'Simple redirect page',
     'page callback' => 'loop_saml_redirect',
-    'access arguments' => array('access content'),
-    'type' => MENU_CALLBACK,
+    'access callback' => TRUE,
+    'type' => MENU_LOCAL_TASK,
   );
 
   return $items;
 }
 
 /**
+ * Implements hook_init().
+ */
+function loop_saml_init() {
+  // Do not run this from CLI.
+  if (php_sapi_name() != 'cli') {
+    global $user;
+    // Verify this is an anonymous user.
+    if ($user->uid === 0) {
+      $arg = arg();
+
+      // Verify this is a front-page request.
+      if (isset($arg[0]) && ($arg[0] == 'front')) {
+        // Redirect the user to the IdP.
+        drupal_goto('saml/drupal_login');
+      }
+    }
+  }
+}
+
+/**
  * Simple iFrame redirect page.
  */
 function loop_saml_redirect() {
-  header('Refresh: 5;url=/');
+  header('Refresh: 5;url=/user');
 
-  return '<iframe src="https://adfs.aarhuskommune.dk/adfs/ls/?wa=wsignout1.0" width="0px" height="0px"></iframe>';
+  $output = array(
+    '#markup' => '<iframe src="https://adfs.aarhuskommune.dk/adfs/ls/?wa=wsignout1.0" frameborder="0" width="0px" height="0px"></iframe>',
+  );
+  return $output;
 }
 
 /**
@@ -30,7 +53,8 @@ function loop_saml_redirect() {
  */
 function loop_saml_user_logout($account) {
   if (variable_get('saml_sp_drupal_login__logout', FALSE) === 0) {
-    drupal_goto('loop_saml_redirect');
+    // Setup a tempoary redirect. This will log the user out of the IdP.
+    $_GET['destination'] = 'loop_saml_redirect';
   }
 }
 
