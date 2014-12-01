@@ -52,8 +52,12 @@ function loop_saml_redirect() {
  * Implements hook_user_logout().
  */
 function loop_saml_user_logout($account) {
+  // Be sure the user is destroyed.
+  if (isset($_SESSION)) {
+    session_destroy();
+  }
   if (variable_get('saml_sp_drupal_login__logout', FALSE) === 0) {
-    // Setup a tempoary redirect. This will log the user out of the IdP.
+    // Setup a temporary redirect. This will log the user out of the IdP.
     $_GET['destination'] = 'loop_saml_redirect';
   }
 }
