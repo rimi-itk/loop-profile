@@ -256,3 +256,19 @@
 .edit-user--image-button-add {
   @extend .button--neutral;
 }
+
+/* Login */
+
+.user-profile--login-text {
+  margin-bottom: 1em;
+}
+
+.user-profile--login-link {
+  margin-bottom: 3em;
+}
+
+.user-profile--login-link a {
+  color: $white;
+  text-decoration: none;
+  text-shadow: none;
+}
