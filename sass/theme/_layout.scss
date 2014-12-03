@@ -35,7 +35,6 @@
 
 .logo--link {
   display: inline-block;
-  max-width: 4em;
   padding-top: 0;
   position: absolute;
   text-align: center;
@@ -47,6 +46,7 @@
 .logo--image {
   margin-right: auto;
   margin-left: auto;
+  max-height: 3em;
 }
 
 
