@@ -1066,7 +1066,6 @@ label {
    ================================================================================================================== */
 .logo--link {
   display: inline-block;
-  max-width: 4em;
   padding-top: 0;
   position: absolute;
   text-align: center;
