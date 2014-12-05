@@ -96,6 +96,21 @@ function loop_saml_form_user_login_alter(&$form, &$form_state) {
 }
 
 /**
+ * Implements hook_form_ID_alter().
+ *
+ * Re-enable password field.
+ */
+function loop_saml_form_user_profile_form_alter(&$form, &$form_state) {
+  $form['#validate'][] = 'user_validate_current_pass';
+
+  $form['account']['pass'] = array(
+    '#type' => 'password_confirm',
+    '#size' => 25,
+    '#description' => t('To change the current user password, enter the new password in both fields.'),
+  );
+}
+
+/**
  * Setup LOOP specicfic acocunt details.
  *
  * @param object $account
