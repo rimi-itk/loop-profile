@@ -23,22 +23,16 @@ jQuery(document).ready(function($) {
     // If suggestion contains a link. Redirect.
     if (datum.link != undefined) {
       if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) {
-        var is_msie = 1;
         var domain = window.location.hostname;
       } else {
         var domain = url_domain(datum.link);
       }
-      alert('1' + window.location.hostname);
-      alert('2' + domain);
-      alert('3' + url_domain(window.location));
       // Open external links in a new window.
       if (domain != url_domain(window.location)) {
-        alert('aaa');
         window.open(datum.link);
       }
       else {
         window.location = datum.link;
-        alert('bbb');
       }
     }
     else {
