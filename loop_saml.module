@@ -40,6 +40,12 @@ function loop_saml_init() {
  * Simple iFrame redirect page.
  */
 function loop_saml_redirect() {
+  // Be sure the session is deleted.
+  $session_id = session_id();
+  if ($session_id) {
+    session_destroy();
+  }
+
   header('Refresh: 5;url=/user');
 
   $output = array(
