@@ -23,15 +23,17 @@ jQuery(document).ready(function($) {
     // If suggestion contains a link. Redirect.
     if (datum.link !== undefined) {
       var full_host = location.protocol + '//' + location.host;
-      alert(full_host);
-      alert(url_domain(datum.link)); //         /user
-      alert(window.location);   //              /test
+      alert('1' + full_host);
+      alert('2' + url_domain(datum.link)); //         /user
+      alert('3' + window.location);   //              /test
       // Open external links in a new window.
       if (url_domain(datum.link) != url_domain(window.location)) {
+        alert('aaa');
         window.open(datum.link);
       }
       else {
         window.location = datum.link;
+        alert('bbb');
       }
     }
     else {
