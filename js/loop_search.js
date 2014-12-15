@@ -62,5 +62,6 @@ jQuery(document).ready(function($) {
 function url_domain(data) {
   var a = document.createElement('a');
   a.href = data;
+  alert('test---' + a.hostname);
   return a.hostname;
 }
