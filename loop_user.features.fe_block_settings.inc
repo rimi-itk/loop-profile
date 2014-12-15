@@ -18,7 +18,7 @@ function loop_user_default_fe_block_settings() {
     'delta' => 'login',
     'module' => 'user',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => '<front>',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
@@ -41,7 +41,7 @@ function loop_user_default_fe_block_settings() {
       ),
     ),
     'title' => '',
-    'visibility' => 0,
+    'visibility' => 1,
   );
 
   return $export;
