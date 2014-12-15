@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
     if (datum.link != undefined) {
       if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) {
         var is_msie = 1;
-        var domain = 'stg-loop.etek.dk';
+        var domain = 'window.location.hostname';
       } else {
         var domain = url_domain(datum.link);
       }
