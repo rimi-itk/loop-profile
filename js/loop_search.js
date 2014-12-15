@@ -21,7 +21,7 @@ jQuery(document).ready(function($) {
 
   $('.typeahead').on('typeahead:selected', function (object, datum) {
     // If suggestion contains a link. Redirect.
-    if (datum.link !== undefined) {
+    if (datum.link != undefined) {
       var full_host = location.protocol + '//' + location.host;
       alert('1' + full_host);
       alert('2' + url_domain(datum.link)); //         /user
