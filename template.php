@@ -148,8 +148,8 @@ function loop_preprocess_node(&$variables) {
  * Override or insert variables into the block template.
  */
 function loop_preprocess_block(&$variables) {
-  // SAMl redirect.
-  if (!$variables['logged_in'] && arg(0) == 'loop_saml_redirect') {
+  // Skip login formular.
+  if ($variables['elements']['#form_id'] == 'user_login') {
     return;
   }
 
