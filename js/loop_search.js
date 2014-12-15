@@ -23,19 +23,14 @@ jQuery(document).ready(function($) {
     // If suggestion contains a link. Redirect.
     if (datum.link !== undefined) {
       // Open external links in a new window.
-      alert(url_domain(datum.link));
-      alert(url_domain(window.location));
       if (url_domain(datum.link) !== url_domain(window.location)) {
-        alert('1');
         window.open(datum.link);
       }
       else {
-        alert('2');
         window.location = datum.link;
       }
     }
     else {
-      alert('3');
       // Suggestion is clicked. Display the results.
       $('.typeahead').blur().focus();
     }
@@ -59,10 +54,6 @@ jQuery(document).ready(function($) {
  *   Hostname of full link.
  */
 function url_domain(data) {
-  var full_host = location.protocol + '//' + location.host;
-  if (data.indexOf('http') < 0) {
-    data = full_host + data;
-  }
   var a = document.createElement('a');
   a.href = data;
   return a.hostname;
