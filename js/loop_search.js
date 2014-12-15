@@ -59,7 +59,6 @@ function url_domain(data) {
   if (data.indexOf('http') < 0) {
     data = full_host + data;
   }
-  alert(data);
   var a = document.createElement('a');
   a.href = data;
   return a.hostname;
