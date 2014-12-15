@@ -22,10 +22,12 @@ jQuery(document).ready(function($) {
   $('.typeahead').on('typeahead:selected', function (object, datum) {
     // If suggestion contains a link. Redirect.
     if (datum.link != undefined) {
+      if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) {
+        var is_msie = 1;
+      }
       var full_host = location.protocol + '//' + location.host;
-      alert('1' + full_host);
-      alert('2' + url_domain(datum.link)); //         /user
-      alert('3' + url_domain(window.location));   //              /test
+      alert('2' + url_domain(datum.link));
+      alert('3' + url_domain(window.location));
       // Open external links in a new window.
       if (url_domain(datum.link) != url_domain(window.location)) {
         alert('aaa');
@@ -61,7 +63,6 @@ jQuery(document).ready(function($) {
  */
 function url_domain(data) {
   var a = document.createElement('a');
-  alert('test---' + data);
   a.href = data;
   return a.hostname;
 }
