@@ -25,7 +25,7 @@ jQuery(document).ready(function($) {
       var full_host = location.protocol + '//' + location.host;
       alert('1' + full_host);
       alert('2' + url_domain(datum.link)); //         /user
-      alert('3' + window.location);   //              /test
+      alert('3' + url_domain(window.location));   //              /test
       // Open external links in a new window.
       if (url_domain(datum.link) != url_domain(window.location)) {
         alert('aaa');
