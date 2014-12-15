@@ -23,8 +23,9 @@ jQuery(document).ready(function($) {
     // If suggestion contains a link. Redirect.
     if (datum.link !== undefined) {
       var full_host = location.protocol + '//' + location.host;
-      alert(url_domain(datum.link));
-      alert(window.location);
+      alert(full_host);
+      alert(url_domain(datum.link)); //         /user
+      alert(window.location);   //              /test
       // Open external links in a new window.
       if (url_domain(datum.link) != url_domain(window.location)) {
         window.open(datum.link);
