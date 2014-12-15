@@ -28,7 +28,7 @@ jQuery(document).ready(function($) {
       } else {
         var domain = url_domain(datum.link);
       }
-      alert('1' + window.host);
+      alert('1' + window.location);
       alert('2' + domain);
       alert('3' + url_domain(window.location));
       // Open external links in a new window.
