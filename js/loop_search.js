@@ -32,7 +32,7 @@ jQuery(document).ready(function($) {
       alert('2' + domain);
       alert('3' + url_domain(window.location));
       // Open external links in a new window.
-      if (url_domain(datum.link) != url_domain(window.location)) {
+      if (domain != url_domain(window.location)) {
         alert('aaa');
         window.open(datum.link);
       }
