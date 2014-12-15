@@ -149,7 +149,7 @@ function loop_preprocess_node(&$variables) {
  */
 function loop_preprocess_block(&$variables) {
   // Skip login formular.
-  if ($variables['elements']['#form_id'] == 'user_login') {
+  if ((isset($variables['elements']['#form_id'])) && ($variables['elements']['#form_id'] == 'user_login')) {
     return;
   }
 
