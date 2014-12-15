@@ -21,6 +21,7 @@ jQuery(document).ready(function($) {
 
   $('.typeahead').on('typeahead:selected', function (object, datum) {
     // If suggestion contains a link. Redirect.
+    alert(data);
     if (datum.link !== undefined) {
       alert(data);
       // Open external links in a new window.
