@@ -24,9 +24,12 @@ jQuery(document).ready(function($) {
     if (datum.link != undefined) {
       if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) {
         var is_msie = 1;
+        var domain = 'stg-loop.etek.dk';
+      } else {
+        var domain = url_domain(datum.link);
       }
-      var full_host = location.protocol + '//' + location.host;
-      alert('2' + url_domain(datum.link));
+      alert('1' + window.host);
+      alert('2' + domain);
       alert('3' + url_domain(window.location));
       // Open external links in a new window.
       if (url_domain(datum.link) != url_domain(window.location)) {
