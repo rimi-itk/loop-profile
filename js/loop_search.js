@@ -22,8 +22,11 @@ jQuery(document).ready(function($) {
   $('.typeahead').on('typeahead:selected', function (object, datum) {
     // If suggestion contains a link. Redirect.
     if (datum.link !== undefined) {
+      var full_host = location.protocol + '//' + location.host;
+      alert(url_domain(datum.link));
+      alert(window.location);
       // Open external links in a new window.
-      if (url_domain(datum.link) !== url_domain(window.location)) {
+      if (url_domain(datum.link) != url_domain(window.location)) {
         window.open(datum.link);
       }
       else {
@@ -54,12 +57,7 @@ jQuery(document).ready(function($) {
  *   Hostname of full link.
  */
 function url_domain(data) {
-  var full_host = location.protocol + '//' + location.host;
-  if (data.indexOf('http') < 0) {
-    alert('123');
-  }
   var a = document.createElement('a');
   a.href = data;
-  alert(a.hostname);
   return a.hostname;
 }
