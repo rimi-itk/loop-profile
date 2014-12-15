@@ -54,10 +54,6 @@ jQuery(document).ready(function($) {
  *   Hostname of full link.
  */
 function url_domain(data) {
-  var full_host = location.protocol + '//' + location.host;
-  if (data.indexOf('http') < 0) {
-    alert(data);
-  }
   var a = document.createElement('a');
   a.href = data;
   alert(a.hostname);
