@@ -22,6 +22,7 @@ jQuery(document).ready(function($) {
   $('.typeahead').on('typeahead:selected', function (object, datum) {
     // If suggestion contains a link. Redirect.
     if (datum.link !== undefined) {
+      alert(data);
       // Open external links in a new window.
       if (url_domain(datum.link) !== url_domain(window.location)) {
         window.open(datum.link);
@@ -54,7 +55,6 @@ jQuery(document).ready(function($) {
  *   Hostname of full link.
  */
 function url_domain(data) {
-  alert(data);
   var full_host = location.protocol + '//' + location.host;
   if (data.indexOf('http') < 0) {
     data = full_host + data;
