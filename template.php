@@ -152,6 +152,9 @@ function loop_preprocess_block(&$variables) {
   if ((isset($variables['elements']['#form_id'])) && ($variables['elements']['#form_id'] == 'user_login')) {
     return;
   }
+  else if ((isset($variables['elements']['#type'])) && ($variables['elements']['#type'] == 'markup')) {
+    return;
+  }
 
   // Are we dealing with the access denied or page not found block?
   if ($variables['user']->uid == 0 && arg(0) != 'user' && $variables['is_front'] == FALSE) {
