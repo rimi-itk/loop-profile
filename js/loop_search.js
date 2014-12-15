@@ -23,6 +23,8 @@ jQuery(document).ready(function($) {
     // If suggestion contains a link. Redirect.
     if (datum.link !== undefined) {
       // Open external links in a new window.
+      alert(url_domain(datum.link));
+      alert(url_domain(window.location));
       if (url_domain(datum.link) !== url_domain(window.location)) {
         alert('1');
         window.open(datum.link);
@@ -63,6 +65,5 @@ function url_domain(data) {
   }
   var a = document.createElement('a');
   a.href = data;
-  alert(a);
   return a.hostname;
 }
