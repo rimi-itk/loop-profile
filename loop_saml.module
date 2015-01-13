@@ -46,11 +46,11 @@ function loop_saml_redirect() {
     session_destroy();
   }
 
-  header('Refresh: 5;url=/user');
-
   $output = array(
     '#markup' => '<iframe src="https://adfs.aarhuskommune.dk/adfs/ls/?wa=wsignout1.0" frameborder="0" width="0px" height="0px"></iframe>',
   );
+
+  drupal_add_js(drupal_get_path('module', 'loop_saml') . '/js/loop_saml.js');
   return $output;
 }
 
