@@ -22,11 +22,8 @@ jQuery(document).ready(function($) {
   $('.typeahead').on('typeahead:selected', function (object, datum) {
     // If suggestion contains a link. Redirect.
     if (datum.link != undefined) {
-      if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) {
-        var domain = window.location.hostname;
-      } else {
-        var domain = url_domain(datum.link);
-      }
+      var domain = url_domain(datum.link);
+
       // Open external links in a new window.
       if (domain != url_domain(window.location)) {
         window.open(datum.link);
