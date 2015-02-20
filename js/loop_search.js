@@ -1,53 +1,7 @@
 /**
  * @file
- * Autocomplete attachement for search in Drupal.
+ * Autocomplete attachment for search in Drupal.
  */
-
-/**
- * Default ready function.
- *
- * Prefetch nodes.
- * Start typeahead.
- */
-jQuery(document).ready(function($) {
-  var settings = {
-    highlight: true
-  };
-
-  LoopSearch.unshift(settings);
-
-  // Apply our global search Bloodhound(s).
-  $('.typeahead').typeahead.apply($('.typeahead'), LoopSearch);
-
-  $('.typeahead').on('typeahead:selected', function (object, datum) {
-    // If suggestion contains a link. Redirect.
-    if (datum.link != undefined) {
-      if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0) {
-        var domain = window.location.hostname;
-      } else {
-        var domain = url_domain(datum.link);
-      }
-      // Open external links in a new window.
-      if (domain != url_domain(window.location)) {
-        window.open(datum.link);
-      }
-      else {
-        window.location = datum.link;
-      }
-    }
-    else {
-      // Suggestion is clicked. Display the results.
-      $('.typeahead').blur().focus();
-    }
-  });
-
-  // On search form submit disable submit button.
-  $('form.js--search').submit(function () {
-    $(this).find('[type=submit]')
-      .attr('disabled', true)
-      .val(Drupal.t('Searching ...'));
-  });
-});
 
 /**
  * Helper function to get hostname of a link.
@@ -63,3 +17,50 @@ function url_domain(data) {
   a.href = data;
   return a.hostname;
 }
+
+/**
+ * Default ready function.
+ *
+ * Prefetch nodes.
+ * Start typeahead.
+ */
+jQuery(document).ready(function($) {
+  var settings = {
+    highlight: true
+  };
+
+  LoopSearch.unshift(settings);
+
+  // Apply our global search Bloodhound(s).
+  var typeaheadElement = $('.typeahead');
+  typeaheadElement.typeahead.apply(typeaheadElement, LoopSearch);
+
+  typeaheadElement.on('typeahead:selected', function (object, datum) {
+    // If suggestion contains a link. Redirect.
+    if (datum.link !== undefined) {
+      var linkDomain = url_domain(datum.link);
+      var currentDomain = window.location.hostname;
+
+      // Open external links in a new window.
+      // IE9: url_domain() will return '' for relative links for domain,
+      //   that is the reason for the first condition below.
+      if (linkDomain !== '' && linkDomain !== currentDomain) {
+        window.open(datum.link);
+      }
+      else {
+        window.location = datum.link;
+      }
+    }
+    else {
+      // Suggestion is clicked. Display the results.
+      typeaheadElement.blur().focus();
+    }
+  });
+
+  // On search form submit disable submit button.
+  $('form.js--search').submit(function () {
+    $(this).find('[type=submit]')
+      .attr('disabled', true)
+      .val(Drupal.t('Searching ...'));
+  });
+});
