@@ -55,7 +55,6 @@ function loop_editor_pages_menu() {
   return $items;
 }
 
-
 /**
  * Returns the "all questions" page.
  */
@@ -63,7 +62,6 @@ function loop_editor_pages_all_questions() {
   drupal_add_js(drupal_get_path('module', 'loop_editor_pages') . '/js/dashboard_all_questions.js');
   return array('#theme' => 'loop_dashboard_all_questions');
 }
-
 
 /**
  * Returns the "all replies" page.
@@ -73,7 +71,6 @@ function loop_editor_pages_all_replies() {
   return array('#theme' => 'loop_dashboard_all_comments');
 }
 
-
 /**
  * Returns the "all other content" page.
  */
@@ -82,12 +79,10 @@ function loop_editor_pages_all_other_content() {
   return array('#theme' => 'loop_dashboard_all_other_content');
 }
 
-
 /**
  * Return every node of type post in JSON format.
  *
- * @return string
- *   JSON object.
+ * Outputs JSON object.
  */
 function loop_editor_pages_questions() {
   // Select nodes.
@@ -113,7 +108,7 @@ function loop_editor_pages_questions() {
       'coms' => $num_of_results,
       'ts' => $node->created,
       'uid' => $node->uid,
-      'full_name' => _loop_editor_pages_fetch_full_name($node->uid)
+      'full_name' => _loop_editor_pages_fetch_full_name($node->uid),
     );
   }
 
@@ -124,8 +119,7 @@ function loop_editor_pages_questions() {
 /**
  * Return every comment of type post in JSON format.
  *
- * @return string
- *   JSON object.
+ * Outputs JSON object.
  */
 function loop_editor_pages_comments() {
   // Select nodes.
@@ -133,8 +127,7 @@ function loop_editor_pages_comments() {
   $comments->leftJoin('node', 'n', 'c.nid = n.nid');
   $comments->leftJoin('field_data_field_user_image', 'i', 'c.uid = i.entity_id');
   $comments->leftJoin('file_managed', 'f', 'f.fid = i.field_user_image_fid');
-  $comments
-    ->fields('n', array('title'))
+  $comments->fields('n', array('title'))
     ->fields('c', array('cid', 'nid', 'subject', 'created', 'uid'))
     ->fields('f', array('uri'))
     ->condition('c.status', 1);
@@ -164,7 +157,7 @@ function loop_editor_pages_comments() {
       'uri' => $uri,
       'uid' => $comment->uid,
       'content-title' => $comment->title,
-      'full_name' => _loop_editor_pages_fetch_full_name($comment->uid)
+      'full_name' => _loop_editor_pages_fetch_full_name($comment->uid),
     );
   }
 
@@ -175,8 +168,7 @@ function loop_editor_pages_comments() {
 /**
  * Return every comment of type post in JSON format.
  *
- * @return string
- *   JSON object.
+ * Outputs JSON object.
  */
 function loop_editor_pages_other_content() {
   // Select nodes.
@@ -196,7 +188,7 @@ function loop_editor_pages_other_content() {
       'date' => format_date($node->created, 'medium'),
       'ts' => $node->created,
       'uid' => $node->uid,
-      'full_name' => _loop_editor_pages_fetch_full_name($node->uid)
+      'full_name' => _loop_editor_pages_fetch_full_name($node->uid),
     );
   }
 
@@ -208,19 +200,20 @@ function loop_editor_pages_other_content() {
  * Implements hook_block_info().
  */
 function loop_editor_pages_block_info() {
-  $blocks['loop_dashboard_questions'] = array(
-    'info' => t('Dashboard questions'),
-    'cache' => DRUPAL_CACHE_PER_PAGE,
+  return array(
+    'loop_dashboard_questions' => array(
+      'info' => t('Dashboard questions'),
+      'cache' => DRUPAL_CACHE_PER_PAGE,
+    ),
+    'loop_dashboard_comments' => array(
+      'info' => t('Dashboard comments'),
+      'cache' => DRUPAL_CACHE_PER_PAGE,
+    ),
+    'loop_dashboard_other_content' => array(
+      'info' => t('Dashboard other content'),
+      'cache' => DRUPAL_CACHE_PER_PAGE,
+    ),
   );
-  $blocks['loop_dashboard_comments'] = array(
-    'info' => t('Dashboard comments'),
-    'cache' => DRUPAL_CACHE_PER_PAGE,
-  );
-  $blocks['loop_dashboard_other_content'] = array(
-    'info' => t('Dashboard other content'),
-    'cache' => DRUPAL_CACHE_PER_PAGE,
-  );
-  return $blocks;
 }
 
 /**
@@ -228,6 +221,7 @@ function loop_editor_pages_block_info() {
  */
 function loop_editor_pages_block_view($delta = '') {
   $block = array();
+
   switch ($delta) {
     case 'loop_dashboard_questions':
       $block['content'] = array('#theme' => 'loop_dashboard_questions');
@@ -244,6 +238,7 @@ function loop_editor_pages_block_view($delta = '') {
       drupal_add_js(drupal_get_path('module', 'loop_editor_pages') . '/js/dashboard_other_content.js');
       break;
   }
+
   return $block;
 }
 
@@ -279,9 +274,18 @@ function loop_editor_pages_theme() {
   );
 }
 
-
-function _loop_editor_pages_fetch_full_name ($uid) {
+/**
+ * Get the users full name.
+ *
+ * @param string $uid
+ *   The drupal user id.
+ *
+ * @return string
+ *   The users full name.
+ */
+function _loop_editor_pages_fetch_full_name($uid) {
   $name = '';
+
   // Make sure field tables exist.
   if (module_exists('loop_user')) {
     $first_name = db_select('field_data_field_first_name', 'f')
@@ -295,7 +299,9 @@ function _loop_editor_pages_fetch_full_name ($uid) {
       ->condition('entity_id', $uid)
       ->execute()
       ->fetchAssoc();
+
+    $name = $first_name['field_first_name_value'] . ' ' . $last_name['field_last_name_value'];
   }
-  $name = $first_name['field_first_name_value'] . ' ' . $last_name['field_last_name_value'];
+
   return $name;
 }

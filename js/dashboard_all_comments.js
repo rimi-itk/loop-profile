@@ -1,8 +1,10 @@
+/**
+ * @file
+ * Containing class for the functionality of the filter.
+ */
 (function ($) {
+  "use strict";
 
-  /**
-   * Containing class for the functionality of the filter.
-   */
   var dc = {
     comments: [],
     display: [],
@@ -103,5 +105,4 @@
       dc.updateList();
     });
   });
-
 })(jQuery);

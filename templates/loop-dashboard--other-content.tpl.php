@@ -5,14 +5,14 @@
  * Displays other content list for dashboard.
  */
 ?>
-<div class="">
+<div class="dashboard-list">
   <h2><?php print t('Content') ?></h2>
   <div class="dashboard-list--filter">
     <form class="dashboard-list--form jquery-once-1-processed" action="/editor/dashboard/content" method="get" id="views-exposed-form-loop-editor-content-panel-pane-1" accept-charset="UTF-8">
       <div class="views-exposed-widgets">
         <input placeholder="<?php print t('Type parts of title or content to filter the list');?>" class="dashboard-list--filter-field form-text js-other-text-filter" type="text" id="edit-combine" name="combine" value="" size="30" maxlength="128">
       </div>
-      <div class="">
+      <div>
         <input class="dashboard-list--submit form-submit" type="submit" id="edit-submit-loop-editor-content" name="" value="Udfør">
       </div>
     </form>

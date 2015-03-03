@@ -1,18 +1,17 @@
 <?php
-
 /**
- * @file loop-dashboard--all-comments.tpl.php
+ * @file
  * Displays all comments page for dashboard.
  */
 ?>
-<div class="">
+<div class="dashboard-list">
   <h1><?php print t('All comments') ?></h1>
   <div class="dashboard-list--filter">
     <form class="dashboard-list--form" accept-charset="UTF-8">
       <div class="views-exposed-widgets">
         <input placeholder="<?php print t('Type parts of title or content to filter the list');?>" class="dashboard-list--filter-field form-text js-comments-text-filter" type="text" id="edit-combine" name="combine" value="" size="30" maxlength="128">
       </div>
-      <div class="">
+      <div>
         <input class="dashboard-list--submit form-submit" type="submit" id="edit-submit-loop-editor-content" name="" value="Udfør">
       </div>
     </form>
