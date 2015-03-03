@@ -51,7 +51,7 @@ function loop_admin_menu() {
   $items = array();
 
   $items['editor/dashboard/user-statistics'] = array(
-    'title' => t('Internal statistics'),
+    'title' => 'Internal statistics',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('_loop_admin_user_statistics_form'),
     'access arguments' => array('administer users'),
@@ -78,8 +78,6 @@ function loop_admin_theme($existing, $type, $theme, $path) {
 
 /**
  * Menu callback that generates the table.
- *
- * @throws Exception
  */
 function _loop_admin_user_statistics_form($form, &$form_state) {
   // Check for filter values.
@@ -110,7 +108,7 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
     '#date_format' => 'd-m-Y',
     '#date_label_position' => 'none',
     '#attributes' => array('autocomplete' => 'off'),
-    '#default_value' => isset($filter['date']['start']) ? date('Y-m-d H:i:s', $filter['date']['start']) :  '',
+    '#default_value' => isset($filter['date']['start']) ? date('Y-m-d H:i:s', $filter['date']['start']) : '',
   );
 
   $form['filter']['end_date'] = array(
@@ -191,7 +189,7 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
   // Add top answers base on users.
   _loop_admin_users_statistics_answers_count_element($form, $filter);
 
-  // Add top new posts based on users
+  // Add top new posts based on users.
   _loop_admin_users_statistics_post_count_element($form, $filter);
 
   // Add top accepted answers based on users.
@@ -200,7 +198,7 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
   // Add top thumbs up based on users.
   _loop_admin_users_statistics_thumbs_up_element($form, $filter);
 
-    return $form;
+  return $form;
 }
 
 /**
@@ -225,7 +223,7 @@ function _loop_admin_user_statistics_reset_ajax_callback($form, $form_state) {
 /**
  * Wrapper function to add accepted answers to the form.
  *
- * @param $form
+ * @param array $form
  *   Form to add the table to.
  * @param array $filter
  *   The different values to filter on.
@@ -234,7 +232,7 @@ function _loop_admin_users_statistics_thumbs_up_element(&$form, $filter = array(
   // Get statistics.
   $result = _loop_admin_users_statistics_thumbs_up($filter);
 
-  // Define headers
+  // Define headers.
   $header = array(
     array('data' => t('The top @limit thumbs up', array('@limit' => LOOP_ADMIN_STATISTICS_LIMIT))),
     array('data' => t('Count')),
@@ -314,7 +312,7 @@ function _loop_admin_users_statistics_thumbs_up($filter = array()) {
 /**
  * Wrapper function to add best answers to the form.
  *
- * @param $form
+ * @param array $form
  *   Form to add the table to.
  * @param array $filter
  *   The different values to filter on.
@@ -323,7 +321,7 @@ function _loop_admin_users_statistics_accepted_answers_element(&$form, $filter =
   // Get statistics.
   $result = _loop_admin_users_statistics_accepted_answers($filter);
 
-  // Define headers
+  // Define headers.
   $header = array(
     array('data' => t('The top @limit best answers', array('@limit' => LOOP_ADMIN_STATISTICS_LIMIT))),
     array('data' => t('Count')),
@@ -368,7 +366,7 @@ function _loop_admin_users_statistics_accepted_answers($filter = array()) {
   $subquery->join('comment', 'c', 'c.nid = n.nid');
   $subquery->addField('c', 'uid', 'uid');
 
-  // Join flag counts to get... well counts
+  // Join flag counts to get... well counts.
   $subquery->join('flag_counts', 'fc', 'c.cid = fc.entity_id');
 
   // Join flagging to be able to limit based on flag time later.
@@ -420,7 +418,7 @@ function _loop_admin_users_statistics_accepted_answers($filter = array()) {
 /**
  * Wrapper function to add top users new posts to the form.
  *
- * @param $form
+ * @param array $form
  *   Form to add the table to.
  * @param array $filter
  *   The different values to filter on.
@@ -429,7 +427,7 @@ function _loop_admin_users_statistics_post_count_element(&$form, $filter = array
   // Get statistics.
   $result = _loop_admin_users_statistics_post_count($filter);
 
-  // Define headers
+  // Define headers.
   $header = array(
     array('data' => t('The top @limit new posts', array('@limit' => LOOP_ADMIN_STATISTICS_LIMIT))),
     array('data' => t('Count')),
@@ -504,7 +502,7 @@ function _loop_admin_users_statistics_post_count($filter = array()) {
 /**
  * Wrapper function to add top users answers to the form.
  *
- * @param $form
+ * @param array $form
  *   Form to add the table to.
  * @param array $filter
  *   The different values to filter on.
@@ -513,7 +511,7 @@ function _loop_admin_users_statistics_answers_count_element(&$form, $filter = ar
   // Get statistics.
   $result = _loop_admin_users_statistics_answers_count($filter);
 
-  // Define headers
+  // Define headers.
   $header = array(
     array('data' => t('The top @limit most answered posts', array('@limit' => LOOP_ADMIN_STATISTICS_LIMIT))),
     array('data' => t('Count')),
@@ -591,7 +589,7 @@ function _loop_admin_users_statistics_answers_count($filter = array()) {
 /**
  * Wrapper function to add thumbs up table to the form.
  *
- * @param $form
+ * @param array $form
  *   Form to add the table to.
  * @param array $filter
  *   The different values to filter on.
@@ -600,7 +598,7 @@ function _loop_admin_content_statistics_thumbs_up_count_element(&$form, $filter 
   // Get statistics.
   $result = _loop_admin_content_statistics_thumbs_up_count($filter);
 
-  // Define headers
+  // Define headers.
   $header = array(
     array('data' => t('The top @limit thumbs up', array('@limit' => LOOP_ADMIN_STATISTICS_LIMIT))),
     array('data' => t('Count')),
@@ -674,7 +672,7 @@ function _loop_admin_content_statistics_thumbs_up_count($filter = array()) {
 /**
  * Wrapper function to add top list of answers in posts to the form.
  *
- * @param $form
+ * @param array $form
  *   Form to add the table to.
  * @param array $filter
  *   The different values to filter on.
@@ -683,7 +681,7 @@ function _loop_admin_content_statistics_answers_count_element(&$form, $filter = 
   // Get statistics.
   $result = _loop_admin_content_statistics_answers_count($filter);
 
-  // Define headers
+  // Define headers.
   $header = array(
     array('data' => t('The top @limit most answered posts', array('@limit' => LOOP_ADMIN_STATISTICS_LIMIT))),
     array('data' => t('Count')),
@@ -751,9 +749,8 @@ function _loop_admin_content_statistics_answers_count($filter = array()) {
 /**
  * Builds the new questions and answers block.
  *
- * @param $form
+ * @param array $form
  *   The form to insert the block into.
- *
  * @param array $filter
  *   The different values to filter on.
  */
@@ -772,6 +769,7 @@ function _loop_admin_content_statistics_total_count_element(&$form, $filter = ar
  *   The different values to filter on.
  *
  * @return int
+ *   The number of posts.
  */
 function _loop_admin_content_statistics_post_count($filter = array()) {
   // Use the node table to get node with type "post".
@@ -795,6 +793,7 @@ function _loop_admin_content_statistics_post_count($filter = array()) {
  *   The different values to filter on.
  *
  * @return int
+ *   The number of comments.
  */
 function _loop_admin_content_statistics_comment_count($filter = array()) {
   // Use the node table to get node with type "post".

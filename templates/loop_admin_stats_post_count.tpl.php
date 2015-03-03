@@ -1,3 +1,9 @@
+<?php
+/**
+ * @file
+ * Default dashboard template.
+ */
+?>
 <div class="dashboard--content-overview">
   <div class="dashboard--content-overview-inner">
     <p class="dashboard--content-overview-text"><span><?php print $post_count; ?></span> <?php print t('new questions in the periode'); ?></p>
