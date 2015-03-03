@@ -6,6 +6,17 @@
 
 include_once 'loop_external_sources_content.features.inc';
 
+/**
+ * Implements hook_init().
+ *
+ * Include search JS for every page load.
+ */
+function loop_external_sources_content_init() {
+  // Check if it's a registered user.
+  if (user_is_logged_in()) {
+    drupal_add_js(drupal_get_path('module', 'loop_external_sources_content') . '/js/search.js');
+  }
+}
 
 /**
  * Implements hook_menu().
@@ -34,9 +45,6 @@ function loop_external_sources_content_menu() {
  *
  * @param string $scope
  *   Comma separated list to search for.
- *
- * @return string
- *   JSON object.
  */
 function loop_external_sources_content_documents($scope) {
   // Explode to array.
@@ -59,8 +67,6 @@ function loop_external_sources_content_documents($scope) {
 
   $data = array();
   foreach ($nodes as $node) {
-    // Load entity wrapper.
-
     // Get path.
     $path = link_cleanup_url($node->field_external_link_url);
     $data[] = array(
@@ -75,18 +81,4 @@ function loop_external_sources_content_documents($scope) {
 
   // Return as JSON.
   drupal_json_output($data);
-}
-
-/**
- * Implements hook_init().
- *
- * Include search JS for every pageload!
- */
-function loop_external_sources_content_init() {
-  global $user;
-
-  // Check if it's a registered user.
-  if ($user->uid > 0) {
-    drupal_add_js(drupal_get_path('module', 'loop_external_sources_content') . '/js/search.js');
-  }
 }
