@@ -24,7 +24,8 @@ function loop_preprocess_page(&$variables) {
   if ($arg[0] == 'user' && isset($arg[1]) && is_numeric($arg[1])) {
     if (!isset($arg[2])) {
       menu_set_active_item('user');
-    } else {
+    }
+    else {
       if ($arg[2] != 'messages') {
         menu_set_active_item('user');
       }
@@ -75,15 +76,17 @@ function loop_preprocess_page(&$variables) {
     }
   }
 
-  // We add logout link here to be able to always print it last. (Hence not part of any menu).
+  // We add logout link here to be able to always print it last. (Hence not part
+  // of any menu).
   if ($user->uid > 0) {
     $variables['logout_link'] = l(t('Logout'), 'user/logout', array('attributes' => array('class' => array('nav--logout'))));
   }
 
-  // Set title for page types. For some reason it does not work through page title module.
+  // Set title for page types. For some reason it does not work through page
+  // title module.
   if (!empty($variables['node'])) {
     if ($variables['node']->type == 'page') {
-      // Set page title
+      // Set page title.
       drupal_set_title($variables['node']->title);
     }
   }
@@ -129,11 +132,11 @@ function loop_preprocess_node(&$variables) {
   }
 
   // Cleanup links.
-  if (isset( $variables['content']['links']['statistics'])) {
+  if (isset($variables['content']['links']['statistics'])) {
     $variables['content']['links']['statistics']['#access'] = FALSE;
   }
 
-  if (isset( $variables['content']['links']['comment'])) {
+  if (isset($variables['content']['links']['comment'])) {
     $variables['content']['links']['comment']['#access'] = FALSE;
   }
 
@@ -168,7 +171,6 @@ function loop_preprocess_block(&$variables) {
  *
  * Override or insert variables into the panel pane template.
  */
-
 function loop_preprocess_panels_pane(&$variables) {
   if (arg(0) == 'editor') {
     $variables['theme_hook_suggestions'][] = 'panels_pane__editor';
@@ -181,8 +183,10 @@ function loop_preprocess_panels_pane(&$variables) {
 
   // Add message variable for panel pane.
   if ($variables['pane']->subtype == 'user_messages-panel_pane_1' || $variables['pane']->subtype == 'user_messages-panel_pane_5') {
+    global $base_root;
+
     $variables['message_count'] = _loop_fetch_user_new_notifications();
-    $update_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() . '/scripts/update-new-notifications.js';
+    $update_script_path = $base_root . '/' . path_to_theme() . '/scripts/update-new-notifications.js';
     drupal_add_js($update_script_path, 'file');
     if (arg(0) == 'user') {
       $variables['theme_hook_suggestions'][] = 'panels_pane__user_page_unread_messages';
@@ -258,7 +262,7 @@ function loop_menu_local_task($variables) {
 
   $sub_menu = '';
   if ($secondary) {
-    $sub_menu = '<ul class="block-module-user-links-list-sub ">' . drupal_render($secondary) . '</ul>';
+    $sub_menu = '<ul class="block-module-user-links-list-sub">' . drupal_render($secondary) . '</ul>';
   }
 
   $link_text = $link['title'];
@@ -298,22 +302,30 @@ function loop_menu_local_tasks($variables) {
 /**
  * Implements theme_menu_tree__main_menu().
  *
- * System generated menu links from different modules. Menu not to be changed by users.
- * Forms the header menu together with primary menu.
+ * System generated menu links from different modules. Menu not to be changed
+ * by users. Forms the header menu together with primary menu.
  */
 function loop_menu_tree__main_menu($variables) {
   $theme_path = drupal_get_path('theme', 'loop');
 
-  // Add notificaiton link.
+  // Add notification link.
   if (_loop_print_notification_tab()) {
-    $variables['tree'] =  _loop_print_notification_tab() . $variables['tree'];
+    $variables['tree'] = _loop_print_notification_tab() . $variables['tree'];
   }
 
-  // Add frontpage link from code
+  // Add front page link from code
   // due to the notification tab being added to start of menu.
-  $variables['tree'] = l(t('Frontpage'), $GLOBALS['base_root'], array('attributes' => array('class' => array('nav--frontpage-link')), 'html' => 'TRUE')) . $variables['tree'];
+  global $base_root;
+  $variables['tree'] = l(t('Frontpage'), $base_root, array(
+      'attributes' => array(
+        'class' => array(
+          'nav--frontpage-link',
+        ),
+      ),
+      'html' => 'TRUE',
+    )) . $variables['tree'];
 
-  // If loop navigation exists add a mobile dropdown navigation.
+  // If loop navigation exists add a mobile drop down navigation.
   if (module_exists('loop_navigation')) {
     $element['#localized_options']['attributes']['class'][] = 'last leaf nav--toggle-mobile-nav js-toggle-mobile-nav nolink';
 
@@ -391,6 +403,7 @@ function loop_menu_link__main_menu($variables) {
   $element['#localized_options']['html'][] = TRUE;
 
   $output = l($element['#title'], $element['#href'], $element['#localized_options']);
+
   return $output . "\n";
 }
 
@@ -479,9 +492,10 @@ function loop_menu_link__management($variables) {
 }
 
 /**
- * Returns HTML for a fieldset form element and its children.
+ * Returns HTML for a field set form element and its children.
  *
- * Changes the class added to fieldsets, so it differs from the wrapper added inside.
+ * Changes the class added to field sets, so it differs from the wrapper added
+ * inside.
  */
 function loop_fieldset($variables) {
   $element = $variables['element'];
@@ -490,7 +504,7 @@ function loop_fieldset($variables) {
 
   $output = '<fieldset' . drupal_attributes($element['#attributes']) . '>';
   if (!empty($element['#title'])) {
-    // Always wrap fieldset legends in a SPAN for CSS positioning.
+    // Always wrap field set legends in a SPAN for CSS positioning.
     $output .= '<legend><span class="fieldset-legend">' . $element['#title'] . '</span></legend>';
   }
 
@@ -585,7 +599,7 @@ function loop_form_views_form_loop_user_subscriptions_panel_pane_1_alter(&$form,
   unset($form['#suffix']);
   unset($form['select_all_markup']);
 
-  // Remove fieldgroup containing actions.
+  // Remove field group containing actions.
   unset($form['select']);
 
   // Add custom js.
@@ -599,6 +613,9 @@ function loop_form_views_form_loop_user_subscriptions_panel_pane_1_alter(&$form,
   }
 }
 
+/**
+ * Implements hook_FROM_ID_form_alter().
+ */
 function loop_form_user_register_form_alter(&$form) {
   // Add js chosen class to profession field.
   $field_profession_lang = $form['field_profession']['#language'];
@@ -626,7 +643,8 @@ function loop_form_views_exposed_form_alter(&$form) {
 /**
  * Implements hook_form_FORM_ID_alter().
  *
- * Adds custom class names and placeholder attribute and icon prefix to search field.
+ * Adds custom class names and placeholder attribute and icon prefix to search
+ * field.
  */
 function loop_form_search_api_page_search_form_default_alter(&$form) {
   // Change title text and make sure the label is displayed.
@@ -687,7 +705,7 @@ function loop_form_user_profile_form_alter(&$form) {
   $field_profession_lang = $form['field_profession']['#language'];
   $form['field_profession'][$field_profession_lang]['#attributes']['class'][] = 'js-chosen-select-profession';
 
-  // Set page title
+  // Set page title.
   drupal_set_title(t("Edit user"));
 }
 
@@ -761,6 +779,7 @@ function loop_preprocess_comment(&$variables) {
   }
 
   $variables['content']['links']['abuse']['#attributes']['class'] = 'comment--links';
+
   // Remove flag, delete, edit and reply links.
   unset($variables['content']['links']['comment']['#links']['comment-delete']);
   unset($variables['content']['links']['comment']['#links']['comment-edit']);
@@ -771,7 +790,7 @@ function loop_preprocess_comment(&$variables) {
 /**
  * Implements hook_preprocess_loop_post_subscription_list().
  *
- * Preprocesss function for displaying subscribe/unsubscribe on nodes.
+ * Preprocesss function for displaying subscribe/un-subscribe on nodes.
  */
 function loop_preprocess_loop_post_subscription_list(&$vars) {
   $vars['custom_link'] = l($vars['link']['#text'], $vars['link']['#path'], array('attributes' => array('class' => array('block-module--link')), 'html' => 'TRUE', 'query' => array($vars['link']['#query'])));
@@ -811,10 +830,12 @@ function loop_textarea($variables) {
 /**
  * Implements hook_preprocess_views_view().
  *
- * Add variables to the base view template files (views.view.tpl.php and overrides).
+ * Add variables to the base view template files (views.view.tpl.php and
+ * overrides).
  */
 function loop_preprocess_views_view(&$vars) {
-  // We run the new message count in this function since the view updates with ajax.
+  // We run the new message count in this function since the view updates with
+  // ajax.
   if ($vars['view']->name == 'user_messages') {
     $new_message_count = _loop_fetch_user_new_notifications();
     $vars['user_messages'] = $new_message_count;
@@ -845,7 +866,6 @@ function loop_preprocess_views_view(&$vars) {
         $vars['user_profession'] = $user_professions;
       }
 
-
       if ($vars['view']->name == 'loop_questions_by_user_competence') {
         $items = $wrapper->field_area_of_expertise->value();
         $user_area_of_expertises = array();
@@ -861,12 +881,17 @@ function loop_preprocess_views_view(&$vars) {
 }
 
 /**
- * Function for printing the notification tab. Since the page already exists we don't use hook menu.
+ * Function for printing the notification tab.
  *
- * @return html for the notification tab or false if module does not exist or user is not logged in.
+ * Since the page already exists we don't use hook menu.
+ *
+ * @return string
+ *   HTML for the notification tab or false if module does not exist or user is
+ *   not logged in.
  */
 function _loop_print_notification_tab() {
-  // We run the new message count in this function called from loop_links__system_primary_menu()
+  // We run the new message count in this function called from
+  // loop_links__system_primary_menu().
   // since it should display on all pages.
   if (module_exists('loop_notification') && $GLOBALS['user']->uid > 0) {
     $new_message_count = _loop_fetch_user_new_notifications();
@@ -896,20 +921,24 @@ function _loop_print_notification_tab() {
 }
 
 /**
- * Fetch the full name from a user object, if both first name and last name is set.
+ * Fetch the full name from a user object.
  *
- * @param $user_obj
+ * If both first name and last name is set.
  *
- * @return name based on user fields.
+ * @param StdClass $user
+ *   Drupal user object.
+ *
+ * @return string
+ *   Name based on user fields.
  */
-function _loop_fetch_full_name ($user_obj) {
+function _loop_fetch_full_name ($user) {
   $name = '';
 
   // Make sure we are dealing with an object.
-  if (is_object($user_obj)) {
+  if (is_object($user)) {
 
     // Load entity wrapper.
-    $wrapper = entity_metadata_wrapper('user', $user_obj);
+    $wrapper = entity_metadata_wrapper('user', $user);
 
     // Get first name and last name.
     $first_name = $wrapper->field_first_name->value();
@@ -920,16 +949,17 @@ function _loop_fetch_full_name ($user_obj) {
       $name = $first_name . ' ' . $last_name;
     }
     else {
-      $name = $user_obj->name;
+      $name = $user->name;
     }
   }
   return $name;
 }
 
 /**
- * Fetches notifications related to current user and returns the number of new notifications
+ * Fetches notifications related to current user.
  *
- * @return number of new notifications related to current user.
+ * @return int
+ *   Number of new notifications related to current user.
  */
 function _loop_fetch_user_new_notifications() {
   // Fetch all current users messages from the message table.
@@ -950,10 +980,15 @@ function _loop_fetch_user_new_notifications() {
 /**
  * Fetches an image based on author.
  *
- * @param user object.
- * @return themed image based on author.
+ * @param StdClass $author
+ *   Drupal user object.
+ *
+ * @return string
+ *   Themed image based on author.
  */
 function _loop_fetch_author_image($author) {
+  $author_image = '';
+
   if (is_object($author)) {
     // Load entity wrapper.
     $wrapper = entity_metadata_wrapper('user', $author);
@@ -965,16 +1000,19 @@ function _loop_fetch_author_image($author) {
       $image_path = 'default-user-icon.png';
       $author_image = theme('image_style', array('style_name' => 'preview', 'path' => $image_path));
     }
-
-    return $author_image;
   }
+
+  return $author_image;
 }
 
 /**
  * Fetches body of comment.
  *
- * @param comment.
- * @return comment safe value.
+ * @param StdClass $comment
+ *   Comment object.
+ *
+ * @return string
+ *   Comment safe value.
  */
 function _loop_fetch_comment_body($comment) {
   // Load entity wrapper.
@@ -987,26 +1025,25 @@ function _loop_fetch_comment_body($comment) {
 /**
  * Fetches files related to node or comment.
  *
- * @param type - The entity type.
- * @param id - The id of the entity.
- * @return files - The files related to the entity.
+ * @param string $type
+ *   The entity type.
+ * @param StdClass $entity
+ *   Entity object.
+ *
+ * @return mixed
+ *   files - The files related to the entity.
  */
 function _loop_fetch_files($type, $entity) {
-  if ($type == 'comment') {
-    // Load entity wrapper.
-    $wrapper = entity_metadata_wrapper('comment', $entity);
+  $files = FALSE;
 
+  $wrapper = entity_metadata_wrapper($type, $entity);
+  if ($type == 'comment') {
     // Fetch files.
     $files = $wrapper->field_file_upload_comment->value();
   }
-  elseif ($type == 'node'){
-    // Load entity wrapper.
-    $wrapper = entity_metadata_wrapper('node', $entity);
-
+  elseif ($type == 'node') {
     // Fetch files.
     $files = $wrapper->field_file_upload->value();
-  } else {
-    $files = FALSE;
   }
 
   return $files;
