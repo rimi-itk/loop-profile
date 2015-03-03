@@ -18,7 +18,7 @@ function loop_user_default_fe_block_settings() {
     'delta' => 'login',
     'module' => 'user',
     'node_types' => array(),
-    'pages' => '<front>',
+    'pages' => 'loop_saml_redirect',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
