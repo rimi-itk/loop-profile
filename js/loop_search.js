@@ -4,6 +4,21 @@
  */
 
 /**
+ * Helper function to get hostname of a link.
+ *
+ * @param data
+ *   Full link.
+ *
+ * @returns {string}
+ *   Hostname of full link.
+ */
+function url_domain(data) {
+  var a = document.createElement('a');
+  a.href = data;
+  return a.hostname;
+}
+
+/**
  * Default ready function.
  *
  * Prefetch nodes.
@@ -19,16 +34,19 @@ jQuery(document).ready(function($) {
   LoopSearch.unshift(settings);
 
   // Apply our global search Bloodhound(s).
-  var $typeahead = $('.typeahead');
-  $typeahead.typeahead.apply($typeahead, LoopSearch);
+  var typeaheadElement = $('.typeahead');
+  typeaheadElement.typeahead.apply(typeaheadElement, LoopSearch);
 
-  $typeahead.on('typeahead:selected', function (object, datum) {
+  typeaheadElement.on('typeahead:selected', function (object, datum) {
     // If suggestion contains a link. Redirect.
     if (datum.link !== undefined) {
-      var domain = url_domain(datum.link);
+      var linkDomain = url_domain(datum.link);
+      var currentDomain = window.location.hostname;
 
       // Open external links in a new window.
-      if (domain !== url_domain(window.location)) {
+      // IE9: url_domain() will return '' for relative links for domain,
+      //   that is the reason for the first condition below.
+      if (linkDomain !== '' && linkDomain !== currentDomain) {
         window.open(datum.link);
       }
       else {
@@ -37,7 +55,7 @@ jQuery(document).ready(function($) {
     }
     else {
       // Suggestion is clicked. Display the results.
-      $('.typeahead').blur().focus();
+      typeaheadElement.blur().focus();
     }
   });
 
