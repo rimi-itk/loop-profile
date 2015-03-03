@@ -1,15 +1,10 @@
 <?php
 /**
  * @file
- * Code for the Loop Frontend feature.
- */
-
-include_once 'loop_frontend.features.inc';
-/**
- * @file
  * Code for the Loop frontend module.
  */
 
+include_once 'loop_frontend.features.inc';
 
 /**
  * Implements template_preprocess_html().
@@ -25,7 +20,6 @@ function loop_frontend_preprocess_html(&$variables) {
     'weight' => -997,
   ));
 }
-
 
 /**
  * Helper function gets the path to a libraries file.
@@ -48,5 +42,6 @@ function loop_frontend_get_library_file($libpath, $libfile) {
   else {
     $path = NULL;
   }
+
   return $path;
 }
