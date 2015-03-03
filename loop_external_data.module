@@ -46,10 +46,8 @@ function loop_external_data_menu() {
  * Implements hook_init().
  */
 function loop_external_data_init() {
-  global $user;
-
   // Check if it's a registered user.
-  if ($user->uid > 0) {
+  if (user_is_logged_in()) {
     drupal_add_js(drupal_get_path('module', 'loop_external_data') . '/js/search.js', array('weight' => 2));
   }
 }
@@ -70,9 +68,6 @@ function loop_external_data_form_alter(&$form, &$form_state, $form_id) {
  *
  * @param string $scope
  *   Comma separated list to search for.
- *
- * @return string
- *   JSON object.
  */
 function loop_external_data_documents($scope) {
   // Explode to array.
@@ -84,7 +79,7 @@ function loop_external_data_documents($scope) {
     $or->condition("title", $title . "%", 'LIKE');
   }
 
-  // Fetch node ID and tiitle.
+  // Fetch node ID and title.
   $nodes = db_select('node', 'n')
     ->fields('n', array('nid', 'title'))
     ->condition('type', 'leaf')
@@ -117,8 +112,32 @@ function _loop_external_data_add_indexes() {
   file_prepare_directory($path, FILE_CREATE_DIRECTORY);
 
   $alphabet = array(
-    'A','B','C','D','E','F','G','H','I','J','K','L','M',
-    'N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    'F',
+    'G',
+    'H',
+    'I',
+    'J',
+    'K',
+    'L',
+    'M',
+    'N',
+    'O',
+    'P',
+    'Q',
+    'R',
+    'S',
+    'T',
+    'U',
+    'V',
+    'W',
+    'X',
+    'Y',
+    'Z',
   );
 
   if (!$da = file_get_contents(drupal_realpath('public://external_data/dita.zip'))) {
@@ -133,7 +152,6 @@ function _loop_external_data_add_indexes() {
     }
 
     $node = new Stdclass();
-
     $node->type = 'index';
     $node->language = LANGUAGE_NONE;
     $node->status = 1;
@@ -213,11 +231,11 @@ function loop_external_data_theme($existing, $type, $theme, $path) {
  * Implements hook_block_info().
  */
 function loop_external_data_block_info() {
-  $blocks['index'] = array(
-    'info' => t('Index'),
+  return array(
+    'index' => array(
+      'info' => t('Index'),
+    ),
   );
-
-  return $blocks;
 }
 
 /**
@@ -234,7 +252,6 @@ function loop_external_data_block_view($delta = '') {
 
         $node = node_load($node_id);
         $node = _loop_external_data_find_index($node);
-        //$block['subject'] = $node->title;
         $block['content'] = array(
           '#theme' => 'loop_external_data_dropdown_block',
           '#forest' => _loop_external_data_build_dropdown($node),
@@ -509,7 +526,7 @@ function _loop_external_data_file_load($node) {
  *   Index/tree/leaf object.
  * @param int $parent
  *   Parent node ID.
- * @param array $references
+ * @param mixed $references
  *   Array of references.
  */
 function _loop_external_data_parser($data, $parent = NULL, &$references = NULL) {
@@ -568,7 +585,7 @@ function _loop_external_data_parser_index($index, $parent) {
  *
  * @param mixed $loop_tree
  *   Tree/Leaf.
- * @param array $references
+ * @param mixed $references
  *   Array of references.
  */
 function _loop_external_data_fix_references_tree($loop_tree, $references) {
@@ -594,7 +611,7 @@ function _loop_external_data_fix_references_tree($loop_tree, $references) {
  *
  * @param Leaf $loop_leaf
  *   Leaf.
- * @param array $references
+ * @param mixed $references
  *   Array of references.
  *
  * @throws Exception
@@ -644,11 +661,11 @@ function _loop_external_data_fix_references_leaf($loop_leaf, $references) {
 /**
  * Parse tree object.
  *
- * Creates a tree node and recursively parse childs.
+ * Creates a tree node and recursively parse children.
  *
  * @param mixed $tree
  *   Tree object.
- * @param array $references
+ * @param mixed $references
  *   Array of references.
  * @param mixed $parent
  *   Parent node.
