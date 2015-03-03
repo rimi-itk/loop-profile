@@ -1,13 +1,11 @@
 <?php
 /**
  * @file
- * loop-saml--prefix-login.tpl.php
- * My content block for user account
+ * My content block for user account.
  *
  * Available variables:
  * - $link
  */
-
 ?>
 <div class="user-profile--login-text">
   <?php if (!empty($link)) : ?>

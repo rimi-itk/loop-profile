@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * Handles updates.
+ */
 
 /**
  * Implements hook_update().

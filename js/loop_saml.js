@@ -1,3 +1,7 @@
+/**
+ * @file
+ * Used to redirect after logout.
+ */
 jQuery(function() {
   "use strict";
 
