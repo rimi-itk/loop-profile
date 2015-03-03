@@ -13,30 +13,28 @@ function loop_user_views_api() {
   return array('api' => 3.0);
 }
 
-
 /**
  * Implements hook_block_info().
  */
 function loop_user_block_info() {
-  // "My content" block.
-  $blocks['loop_user_my_content'] = array(
-    'info' => t('User my content'),
-    'cache' => DRUPAL_CACHE_PER_PAGE,
+  return array(
+    'loop_user_my_content' => array(
+      'info' => t('User my content'),
+      'cache' => DRUPAL_CACHE_PER_PAGE,
+    ),
+    'loop_user_best_answers' => array(
+      'info' => t('User best answers'),
+      'cache' => DRUPAL_CACHE_PER_PAGE,
+    ),
   );
-
-  $blocks['loop_user_best_answers'] = array(
-    'info' => t('User best answers'),
-    'cache' => DRUPAL_CACHE_PER_PAGE,
-  );
-  return $blocks;
 }
-
 
 /**
  * Implements hook_block_view().
  */
 function loop_user_block_view($delta = '') {
   $block = array();
+
   switch ($delta) {
     case 'loop_user_my_content':
       // "My content" block.
@@ -54,6 +52,7 @@ function loop_user_block_view($delta = '') {
         $block['content'] = FALSE;
       }
       break;
+
     case 'loop_user_best_answers':
       // Display users best answers.
       if (user_access('access content')) {
@@ -65,9 +64,9 @@ function loop_user_block_view($delta = '') {
       }
       break;
   }
+
   return $block;
 }
-
 
 /**
  * Implements hook_theme().
@@ -85,12 +84,12 @@ function loop_user_theme() {
   );
 }
 
-
 /**
  * Fetches users answers and and number of best answers.
  *
- * @param uid
+ * @param string $uid
  *   The user.
+ *
  * @return array
  *   The answers.
  */
@@ -109,7 +108,7 @@ function _loop_user_fetch_user_answers($uid) {
     ->execute()
     ->fetchAllAssoc('cid');
 
-  $user_comments =  db_select('comment', 'c')
+  $user_comments = db_select('comment', 'c')
     ->fields('c')
     ->condition('uid', $uid)
     ->execute()
@@ -138,10 +137,11 @@ function _loop_user_fetch_user_answers($uid) {
   }
 
   // Send data back.
-  $answers_array = array (
+  $answers_array = array(
     'answers_count' => count($user_comments),
     'top_answers' => $top_comments,
     'top_answers_count' => count($top_comments),
   );
+
   return $answers_array;
 }
