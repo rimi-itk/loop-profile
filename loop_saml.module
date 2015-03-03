@@ -47,7 +47,7 @@ function loop_saml_redirect() {
 
   // Add i-frame that log out the user at adfs.
   $output = array(
-    '#markup' => '<iframe src="https://adfs.aarhuskommune.dk/adfs/ls/?wa=wsignout1.0" frameborder="0" width="0px" height="0px"></iframe><p>' . t('Plase wait while we are logging you out of the system.') . '</p>',
+    '#markup' => '<iframe src="https://adfs.aarhuskommune.dk/adfs/ls/?wa=wsignout1.0" frameborder="0" width="0px" height="0px"></iframe><p>' . t('Please wait while you are being logged out of the system.') . '</p>',
   );
 
   drupal_add_js(drupal_get_path('module', 'loop_saml') . '/js/loop_saml.js');
