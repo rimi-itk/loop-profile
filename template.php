@@ -154,7 +154,7 @@ function loop_preprocess_block(&$variables) {
   }
 
   // Are we dealing with the access denied or page not found block?
-  if ($variables['user']->uid == 0 && arg(0) != 'user' && $variables['is_front'] == FALSE) {
+  if ($variables['user']->uid == 0 && !in_array(arg(0), array('user', 'loop_saml_redirect')) && $variables['is_front'] == FALSE) {
     if ($variables['block']->module == 'system' && $variables['block']->delta == 'main') {
       $variables['content'] = '<div class="messages error">' . $variables['content'] . '</div>';
     }
