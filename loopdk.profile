@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * The installation profile.
+ */
 
 /**
  * Implement hook_install_tasks_alter().
@@ -18,7 +22,7 @@ function loopdk_locale_selection(&$install_state) {
 /**
  * Implements hook_form_FORM_ID_alter().
  *
- * Set sitename, country and timezone.
+ * Set site name, country and timezone.
  */
 if (!function_exists("system_form_install_configure_form_alter")) {
   function system_form_install_configure_form_alter(&$form, $form_state) {
@@ -71,6 +75,7 @@ function loopdk_module_selection_form($form, &$form_state) {
     '#value' => st('Continue installation'),
     '#weight' => 20,
   );
+
   return $form;
 }
 
@@ -377,7 +382,7 @@ function loopdk_setup_filter_and_wysiwyg() {
 
   filter_format_save($format);
 
-  // Setup contrib module Shorten to use contrib module ShURLy.
+  // Setup contribute module Shorten to use contribute module ShURLy.
   variable_set('shorten_service', 'ShURLy');
   variable_set('shorten_service_backup', 'none');
   variable_set('shorten_generate_token', 0);
@@ -388,10 +393,10 @@ function loopdk_setup_filter_and_wysiwyg() {
 /**
  * Final LOOP install profile settings.
  *
- * Revert every feature.
- * Enable Transliterate contrib module setting.
- * Setup default user icon.
- * Refresh strings.
+ * 1. Revert every feature.
+ * 2. Enable Transliterate contribute module setting.
+ * 3. Setup default user icon.
+ * 4. Refresh strings.
  */
 function loopdk_final_settings() {
   module_load_include('inc', 'features', 'features.export');
