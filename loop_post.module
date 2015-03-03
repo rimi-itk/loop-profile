@@ -17,6 +17,7 @@ function loop_post_form_node_form_alter(&$form, &$form_state) {
     global $user;
     $field_description_language = $form['field_description']['#language'];
     $form['field_description'][$field_description_language]['0']['#format'] = 'simple';
+
     // We need the field_profession field, so lets fire up user_load!
     $account = user_load($user->uid);
 
@@ -30,7 +31,7 @@ function loop_post_form_node_form_alter(&$form, &$form_state) {
       }
     }
 
-    // Add js chosen class to profession field. (Chosen jquery added in theme)
+    // Add js chosen class to profession field. (Chosen jquery added in theme).
     $field_profession_lang = $form['field_profession']['#language'];
     $form['field_profession'][$field_profession_lang]['#attributes']['class'][] = 'js-chosen-select-profession';
 
@@ -38,7 +39,7 @@ function loop_post_form_node_form_alter(&$form, &$form_state) {
     unset($form['field_description']['#attributes']['class']);
     $form['field_description']['und']['#prefix'] = '<div id="field-description-add-more-wrapper" class="description-form-element form-item">';
 
-    // Set page title
+    // Set page title.
     drupal_set_title(t("Create question"));
   }
 }
