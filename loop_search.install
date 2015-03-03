@@ -2,13 +2,13 @@
 
 /**
  * @file
- * Autcomplete Apache Solr search module.
+ * Auto-complete Apache Solr search module.
  */
 
 /**
  * Implements hook_install().
  *
- * jQuery version check.
+ * Check jQuery version.
  */
 function loop_search_install() {
   // Check jQuery version.

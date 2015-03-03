@@ -1,6 +1,6 @@
 /**
  * @file
- * Autocomplete attachement for search in Drupal.
+ * Auto complete attachment for search in Drupal.
  */
 
 /**
@@ -10,6 +10,8 @@
  * Start typeahead.
  */
 jQuery(document).ready(function($) {
+  "use strict";
+
   var settings = {
     highlight: true
   };
@@ -17,15 +19,16 @@ jQuery(document).ready(function($) {
   LoopSearch.unshift(settings);
 
   // Apply our global search Bloodhound(s).
-  $('.typeahead').typeahead.apply($('.typeahead'), LoopSearch);
+  var $typeahead = $('.typeahead');
+  $typeahead.typeahead.apply($typeahead, LoopSearch);
 
-  $('.typeahead').on('typeahead:selected', function (object, datum) {
+  $typeahead.on('typeahead:selected', function (object, datum) {
     // If suggestion contains a link. Redirect.
-    if (datum.link != undefined) {
+    if (datum.link !== undefined) {
       var domain = url_domain(datum.link);
 
       // Open external links in a new window.
-      if (domain != url_domain(window.location)) {
+      if (domain !== url_domain(window.location)) {
         window.open(datum.link);
       }
       else {
@@ -44,19 +47,21 @@ jQuery(document).ready(function($) {
       .attr('disabled', true)
       .val(Drupal.t('Searching ...'));
   });
+
+  /**
+   * Helper function to get hostname of a link.
+   *
+   * @param data
+   *   Full link.
+   *
+   * @returns {string}
+   *   Hostname of full link.
+   */
+  function url_domain(data) {
+    var a = document.createElement('a');
+    a.href = data;
+
+    return a.hostname;
+  }
 });
 
-/**
- * Helper function to get hostname of a link.
- *
- * @param data
- *   Full link.
- *
- * @returns {string}
- *   Hostname of full link.
- */
-function url_domain(data) {
-  var a = document.createElement('a');
-  a.href = data;
-  return a.hostname;
-}

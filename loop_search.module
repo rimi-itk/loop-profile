@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Autcomplete Apache Solr search module.
+ * Auto-complete Apache Solr search module.
  */
 
 include_once 'loop_search.features.inc';
@@ -24,8 +24,7 @@ function loop_search_menu() {
 /**
  * Return every node of type post in JSON format.
  *
- * @return string
- *   JSON object.
+ * Outputs JSON object.
  */
 function loop_search_nodes() {
   // Select nodes.
@@ -55,7 +54,7 @@ function loop_search_nodes() {
 /**
  * Implements hook_init().
  *
- * Include search JS for every pageload!
+ * Include search JS for every page load.
  */
 function loop_search_init() {
   global $user;
@@ -64,7 +63,10 @@ function loop_search_init() {
   if ($user->uid > 0) {
     drupal_add_js(drupal_get_path('module', 'loop_search') . '/js/handlebars-v1.2.0.js');
     drupal_add_js(drupal_get_path('module', 'loop_search') . '/js/typeahead.bundle.js');
-    drupal_add_js(drupal_get_path('module', 'loop_search') . '/js/loop_search.js', array('scoop' => 'header', 'weight' => 1000));
+    drupal_add_js(drupal_get_path('module', 'loop_search') . '/js/loop_search.js', array(
+      'scoop' => 'header',
+      'weight' => 1000,
+    ));
     drupal_add_js(drupal_get_path('module', 'loop_search') . '/js/search.js');
   }
 }
@@ -87,7 +89,7 @@ function loop_search_theme() {
  * Alter search form for Twitter Typeahead.
  */
 function loop_search_form_search_api_page_search_form_default_alter(&$form) {
-  // Fetch search page id
+  // Fetch search page id.
   $default_page_id = db_query("SELECT id FROM {search_api_page} WHERE index_id = 'post'")->fetchField();
 
   $form['#attributes']['class'] = 'js--search';
@@ -121,7 +123,7 @@ function loop_search_form_search_api_page_search_form_default_alter(&$form) {
       // Verify its a string.
       if (is_string($description)) {
         // Change default value.
-        $form['keys_' . $default_page_id]['#default_value'] = $wrapper->field_description->value();
+        $form['keys_' . $default_page_id]['#default_value'] = $description;
       }
     }
   }
