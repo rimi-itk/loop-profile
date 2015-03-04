@@ -10,8 +10,10 @@
  *  $completed: How many fields the user has filled.
  *  $incomplete: The inverse of $completed, how many empty fields left.
  *  $total: Total number of fields in profile.
- *  $nextfield_title: The name of the suggested next field to fill (human readable name).
- *  $nextfield_name: The name of the suggested next field to fill (machine name).
+ *  $nextfield_title: The name of the suggested next field to fill (human
+ *  readable name).
+ *  $nextfield_name: The name of the suggested next field to fill (machine
+ *  name).
  *
  * @see template_preprocess_pcp_profile_percent_complete()
  */
@@ -32,7 +34,11 @@
     </div>
 
     <?php if (isset($nextfield_name) && isset($next_percent)) :?>
-        <span class="block--pcp-text"><?php print t('Filling out <em>!empty-field</em> will bring your profile to !complete% complete', array('!empty-field' => l($nextfield_title, $next_path), '!complete' => $next_percent)); ?></span>
+        <span class="block--pcp-text">
+          <?php print t('Filling out <em>!empty-field</em> will bring your profile to !complete% complete', array(
+            '!empty-field' => l($nextfield_title, $next_path),
+            '!complete' => $next_percent,
+          )); ?></span>
     <?php endif;?>
   </div>
 </aside>

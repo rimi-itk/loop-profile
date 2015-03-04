@@ -40,7 +40,6 @@
   <div class="layout--inner">
     <div class="layout-element-alpha">
       <h1 class="page-title"><?php print t('Search results');?></h1>
-      <?php //print render($search_performance); ?>
       <div class="search-result--lead">
         <?php print t('You searched for:');?> <strong><?php print $keys;?></strong>
       </div>
@@ -56,7 +55,6 @@
   <div class="layout--inner">
     <div class="layout-element-alpha">
       <h1 class="page-title"><?php print t('Search results');?></h1>
-      <?php //print render($search_performance); ?>
       <div class="search-result">
         <div class="search-result--lead">
           <p><?php print t('You searched for:');?> <strong><?php print $keys;?></strong></p>

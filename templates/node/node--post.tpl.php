@@ -80,7 +80,6 @@
  * @ingroup themeable
  */
 ?>
-
 <section class="question--wrapper <?php print $has_comments_class?>">
   <div class="meta-data--author">
     <div class="meta-data--author-image">
@@ -92,7 +91,11 @@
           <span class="meta-data--author-link"><?php print l($author_name, 'user/' . $uid); ?></span>
         <?php endif ?>
         <?php if (isset($job_title)): ?>
-          <span class="meta-data--author-title"><?php print render($job_title);?><?php if (isset($place)): ?>, <?php print render($place);?><?php endif ?></span>
+          <span class="meta-data--author-title"><?php print render($job_title);?>
+            <?php if (isset($place)): ?>,
+              <?php print render($place);?>
+            <?php endif; ?>
+          </span>
         <?php endif ?>
       </div>
     <?php endif ?>
@@ -107,8 +110,8 @@
           <?php foreach ($files as $file) : ?>
             <div class="question--file">
               <a href="<?php print file_create_url($file['uri']);?>" target="_blank">
-                <span class="question--icon question--icon-<?php print str_replace('/','-', $file['filemime']);?>"></span>
-                <span class="question--file-name"><?php print truncate_utf8($file['filename'], 20, FALSE, TRUE);?></span>
+                <span class="question--icon question--icon-<?php print str_replace('/', '-', $file['filemime']); ?>"></span>
+                <span class="question--file-name"><?php print truncate_utf8($file['filename'], 20, FALSE, TRUE); ?></span>
               </a>
             </div>
           <?php endforeach; ?>
@@ -117,24 +120,24 @@
     <?php endif; ?>
   </div>
   <div class="question--inner">
-    <?php print render($content['field_description']);?>
+    <?php print render($content['field_description']); ?>
     <?php print render($content['links']);?>
   </div>
   <?php if (!empty($content['field_keyword'])): ?>
     <div class="question--terms">
-      <?php print render($content['field_keyword']);?>
+      <?php print render($content['field_keyword']); ?>
     </div>
   <?php endif; ?>
   <?php if (user_access('edit any post content') || user_access('delete any post content')): ?>
     <div class="question--editor-actions">
       <?php if (user_access('delete any post content')): ?>
         <div class="question--editor-actions-delete">
-          <a href="/node/<?php print $node->nid ?>/delete"><?php print t('Delete post');?></a>
+          <a href="/node/<?php print $node->nid ?>/delete"><?php print t('Delete post'); ?></a>
         </div>
       <?php endif; ?>
       <?php if (user_access('edit any post content')): ?>
         <div class="question--editor-actions-edit">
-          <a href="/node/<?php print $node->nid ?>/edit"><?php print t('Edit post');?></a>
+          <a href="/node/<?php print $node->nid ?>/edit"><?php print t('Edit post'); ?></a>
         </div>
       <?php endif; ?>
     </div>

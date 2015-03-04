@@ -1,9 +1,9 @@
 <?php
-
 /**
- * implementation of hook_panels_layouts()
+ * @file
+ * Implementation of hook_panels_layouts().
  */
-// Plugin definition
+
 $plugin = array(
   'title' => t('Default inverted'),
   'category' => t('Loop custom'),
@@ -11,6 +11,6 @@ $plugin = array(
   'theme' => 'default-inverted',
   'regions' => array(
     'alpha' => t('Alpha'),
-    'beta' => t('Beta')
+    'beta' => t('Beta'),
   ),
 );

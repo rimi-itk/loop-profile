@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Main view template.
@@ -27,7 +26,6 @@
  * @ingroup views_templates
  */
 ?>
-
 <div data-new-message-count="<?php print $user_messages; ?>" class="<?php print $classes; ?> js-user-message-count">
   <?php print render($title_prefix); ?>
   <?php if ($title): ?>
@@ -57,7 +55,11 @@
       <?php print $rows; ?>
     </div>
   <?php else : ?>
-    <h4 class="notification--empty"><?php print t('You have '); ?><span class="notification--inline">0</span><?php print t(' notifications'); ?></h4>
+    <h4 class="notification--empty">
+      <?php print t('You have '); ?>
+      <span class="notification--inline">0</span>
+      <?php print t(' notifications'); ?>
+    </h4>
   <?php endif; ?>
 
   <?php if ($pager): ?>
@@ -86,4 +88,4 @@
     </div>
   <?php endif; ?>
 
-</div><?php /* class view */ ?>
+</div>

@@ -69,7 +69,7 @@
     <?php if (isset($node->name) && isset($node->uid)): ?>
       <span class="meta-data--author-link"><?php print l($comment_author_name, 'user/' . $comment->account->uid); ?></span>
     <?php endif ?>
-    <span class="meta-data--author-title"><?php print render($job_title); ?><?php if (isset($place)): ?>, <?php print render($place);?><?php endif ?></span>
+    <span class="meta-data--author-title"><?php print render($job_title); ?><?php if (isset($place)): ?>, <?php print render($place); ?><?php endif ?></span>
   </div>
 </div>
 <?php if (!empty($files)): ?>
@@ -79,8 +79,8 @@
       <?php foreach ($files as $file) : ?>
         <div class="question--file">
           <a href="<?php print file_create_url($file['uri']);?>" target="_blank">
-            <span class="comments--icon comments--icon-<?php print str_replace('/','-', $file['filemime']);?>"></span>
-            <span class="comments--file-name"><?php print truncate_utf8($file['filename'], 20, FALSE, TRUE);?></span>
+            <span class="comments--icon comments--icon-<?php print str_replace('/', '-', $file['filemime']); ?>"></span>
+            <span class="comments--file-name"><?php print truncate_utf8($file['filename'], 20, FALSE, TRUE); ?></span>
           </a>
         </div>
       <?php endforeach; ?>

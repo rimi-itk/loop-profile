@@ -1,17 +1,16 @@
 <?php
-
 /**
- * @file comment-form-prefix.tpl.php
+ * @file
+ * Ensures that form comments are prefixes correctly.
  *
  * Available variables:
- * - $author_image: The rendered author image.
- * - $user_name: The user first name and second name or drupal username if none is set.
- * - $jobtitle: The user job title.
- * - $place: The user job title.
+ *   - $author_image: The rendered author image.
+ *   - $user_name: The user first name and second name or drupal username if
+ *     none is set.
+ *   - $jobtitle: The user job title.
+ *   - $place: The user job title.
  */
 ?>
-
-
 <h3><?php print t('Your reply'); ?></h3>
 <div class="meta-data--author">
   <div class="meta-data--author-image">
@@ -28,7 +27,12 @@
       <?php endif;?>
     </a>
     <span class="meta-data--author-title">
-      <?php if ($jobtitle) :?><?php print $jobtitle; ?><?php endif;?><?php if ($place) :?><?php print ', ' . $place; ?><?php endif;?>
+      <?php if ($jobtitle) :?>
+        <?php print $jobtitle; ?>
+      <?php endif; ?>
+      <?php if ($place) : ?>
+        <?php print ', ' . $place; ?>
+      <?php endif; ?>
     </span>
   </div>
 </div>

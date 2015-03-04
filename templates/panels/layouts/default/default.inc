@@ -1,9 +1,9 @@
 <?php
-
 /**
- * implementation of hook_panels_layouts()
+ * @file
+ * Implementation of hook_panels_layouts().
  */
-// Plugin definition
+
 $plugin = array(
   'title' => t('Default'),
   'category' => t('Loop custom'),
@@ -12,6 +12,6 @@ $plugin = array(
   'regions' => array(
     'alpha' => t('Alpha'),
     'beta' => t('Beta'),
-    'gamma' => t('Gamma')
+    'gamma' => t('Gamma'),
   ),
 );

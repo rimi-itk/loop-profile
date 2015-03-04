@@ -5,5 +5,3 @@
     <?php print $custom_link; ?>
   </div>
 </aside>
-
-

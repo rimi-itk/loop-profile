@@ -1,16 +1,17 @@
 <?php
 /**
- * @file views-view-table.tpl.php
+ * @file
  * Template to display a view as a table.
  *
- * - $title : The title of this group of rows.  May be empty.
+ * Available variables:
+ * - $title : The title of this group of rows. May be empty.
  * - $header: An array of header labels keyed by field id.
  * - $fields: An array of CSS IDs to use for each field id.
  * - $class: A class or classes to apply to the table, based on settings.
  * - $rows: An array of row items. Each row is an array of content
- * - $totals: An array of calculated totals. Each row contains the total for one calculation.
+ * - $totals: An array of calculated totals. Each row contains the total for one
+ *   calculation.
  *   keyed by field ID.
- * @ingroup views_templates
  */
 if (empty($rows) && empty($totals)) {
   return;

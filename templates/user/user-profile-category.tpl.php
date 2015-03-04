@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Default theme implementation to present profile categories (groups of

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Main view template.
@@ -81,5 +80,3 @@
     <?php print $feed_icon; ?>
   </div>
 <?php endif; ?>
-
-<?php /* class view */ ?>

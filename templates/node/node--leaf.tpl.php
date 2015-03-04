@@ -80,9 +80,7 @@
  * @ingroup themeable
  */
 ?>
-
 <h1 class="page-title"><?php print $title; ?></h1>
-
 <?php
   // We hide the comments and links now so that we can render them later.
   hide($content['comments']);

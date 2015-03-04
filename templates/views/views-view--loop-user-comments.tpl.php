@@ -85,4 +85,4 @@
     </div>
   <?php endif; ?>
 
-</fieldset><?php /* class view */ ?>
+</fieldset>

@@ -80,7 +80,6 @@
  * @ingroup themeable
  */
 ?>
-
 <section class="external-sources--wrapper">
   <div class="meta-data--author">
     <div class="meta-data--author-image">
@@ -90,24 +89,24 @@
       <div class="meta-data--author-wrapper">
         <?php if (isset($node->name) && isset($node->uid)): ?>
           <span class="meta-data--author-link"><?php print l($author_name, 'user/' . $uid); ?></span>
-        <?php endif ?>
+        <?php endif; ?>
         <?php if (isset($job_title)): ?>
-          <span class="meta-data--author-title"><?php print render($job_title);?></span>
-        <?php endif ?>
+          <span class="meta-data--author-title"><?php print render($job_title); ?></span>
+        <?php endif; ?>
       </div>
-    <?php endif ?>
+    <?php endif; ?>
   </div>
   <div class="external-sources--meta-data">
     <div class="external-sources--meta-data-date"><?php print t('Submitted') . ' ' . format_date($created, $type = 'medium'); ?></div>
-    <?php print render($content['field_subject']);?>
+    <?php print render($content['field_subject']); ?>
   </div>
   <div class="external-sources--inner">
-    <?php print render($content['field_external_link']);?>
-    <div class="external-sources--description"><?php print render($title);?></div>
+    <?php print render($content['field_external_link']); ?>
+    <div class="external-sources--description"><?php print render($title); ?></div>
   </div>
   <?php if (!empty($content['field_keyword'])): ?>
     <div class="question--terms">
-      <?php print render($content['field_keyword']);?>
+      <?php print render($content['field_keyword']); ?>
     </div>
   <?php endif; ?>
 </section>

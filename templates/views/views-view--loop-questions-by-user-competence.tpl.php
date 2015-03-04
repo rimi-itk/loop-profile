@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Main view template.
@@ -26,7 +25,10 @@
  *
  * @ingroup views_templates
  */
+?>
 
+<?php
+// @TODO: Move this use logic into preprocess function.
 global $user;
 ?>
 <div class="<?php print $classes; ?>">
@@ -106,4 +108,4 @@ global $user;
     </div>
   <?php endif; ?>
 
-</div><?php /* class view */ ?>
+</div>

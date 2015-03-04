@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Main view template.
@@ -85,4 +84,4 @@
     </div>
   <?php endif; ?>
 
-</fieldset><?php /* class view */ ?>
+</fieldset>

@@ -71,7 +71,6 @@
  * @ingroup themeable
  */
 ?>
-
 <?php
 /*
  * Insert Loop primary menu if module is enabled.
@@ -82,7 +81,7 @@ if (isset($primary_menu_block['content'])): ?>
     <?php if ($primary_menu_block['content']) : ?>
       <?php print render($primary_menu_block['content']); ?>
     <?php endif; ?>
-    <?php if($user->uid > 0): ?>
+    <?php if(user_is_logged_in()): ?>
       <div class="nav-mobile--user-links">
         <h2 class="nav-mobile--links-header"><?php print t('User links');?></h2>
         <?php print render($tabs); ?>
@@ -137,8 +136,7 @@ if (isset($primary_menu_block['content'])): ?>
     </div>
   </div>
 <?php endif; ?>
-<?php if ($user->uid == 0): ?>
-  <?php // User is not logged in ?>
+<?php if (user_is_anonymous()): ?>
   <div class="layout-no-wrapper">
     <div class="layout--inner">
       <?php if ($messages): ?>
@@ -148,7 +146,6 @@ if (isset($primary_menu_block['content'])): ?>
     </div>
   </div>
 <?php elseif (isset($no_panel)): ?>
-  <?php // No panel pages! ?>
   <div class="<?php print $layout_class;?>">
     <div class="layout--inner">
       <?php print render($page['header']); ?>
@@ -181,7 +178,6 @@ if (isset($primary_menu_block['content'])): ?>
     </div>
   </div>
 <?php else: ?>
-  <?php // Panel pages will get printed here. ?>
   <?php if ($messages): ?>
     <?php print $messages; ?>
   <?php endif; ?>
