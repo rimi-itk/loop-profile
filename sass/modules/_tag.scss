@@ -37,3 +37,11 @@
   color: #b3b3b3;
   font-size: .85em;
 }
+
+.taxonomy-keyword {
+  background-color: #007700;
+
+  &:hover {
+    background-color: #006600;
+  }
+}
