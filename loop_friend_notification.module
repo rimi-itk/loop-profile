@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Loop friend notification feature.
+ */
+
+include_once 'loop_friend_notification.features.inc';
