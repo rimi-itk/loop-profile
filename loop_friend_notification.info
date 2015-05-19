@@ -1,4 +1,5 @@
 name = Loop friend notification
+description = Provides a custom pane to panels, to send a notification to other users
 core = 7.x
 package = Features
 dependencies[] = ctools
@@ -15,5 +16,5 @@ features[field_instance][] = message-user_sharing_node_reference-field_node
 features[field_instance][] = message-user_sharing_node_reference-field_sender
 features[message_type][] = user_sharing_node_reference
 features[variable][] = field_bundle_settings_message__user_sharing_node_reference
-mtime = 1432039856
+mtime = 1432041837
 project path = profiles/loopdk/modules
