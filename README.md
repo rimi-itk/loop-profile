@@ -1,12 +1,15 @@
 # LOOP SimpleSAMLphp
 
-This module allows users to authenticate to LOOP using SAML.
+This module allows users to authenticate to LOOP using SAML when 
+SimpleSAMLphp has been properly installed and configured.
+
 It redirects users to the SAML login page instead of allowing them to login 
 using the normal Drupal login form (unless you visit the /user/login page).
+
 It also provides a way to map SAML attributes to LOOP user profile fields from 
 the SimpleSAMLphp Auth configuration page.
 
-# Installation and configuration of SimpleSAMLphp
+# Installation and configuration
 
 1.  [Download SimpleSAMLphp](https://simplesamlphp.org/download).
 
