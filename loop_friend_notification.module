@@ -105,8 +105,11 @@ function loop_friend_notification_notify_form($form) {
 
 function loop_friend_notification_notify_form_validate($form, $form_state){
     $recipientName = $form['recipient']['#value'];
-    $recipientUser = user_load_by_name($recipientName);
-    if ($recipientUser === false) {
+    if (user_load_by_name($recipientName) !== false) {
+        // ok, we have an existing user
+    } else if (valid_email_address($recipientName)) {
+        // ok, we have a valid mail address
+    } else {
         form_set_error('recipient', t("Recipient doesn't exist; notification not sent"));
     }
 }
@@ -121,6 +124,28 @@ function loop_friend_notification_notify_form_submit($form, $form_state) {
         $wrapper->field_node->set(menu_get_object());
         $wrapper->field_sender->set($user);
         $wrapper->save();
+    } else if (valid_email_address($recipientName)) {
+
+        $message = message_create('user_sharing_node_reference', array('uid' => 0));
+        $wrapper = entity_metadata_wrapper('message', $message);
+        $wrapper->field_node->set(menu_get_object());
+        $wrapper->field_sender->set($user);
+
+        $language = user_preferred_language($user);
+        $subject = "Loop notifikation";
+        $body = message_property_get_text($message, array('language'=>$language));
+
+        //throw new Exception("stop");
+        drupal_mail("loop_friend_notification", 'friend_notification', $recipientName, $language, array('subject'=>$subject, 'body'=>$body));
+    }
+}
+
+function loop_friend_notification_mail($key, &$message, $params) {
+    switch($key) {
+        case 'friend_notification':
+            $message['subject'] = $params['subject'];
+            $message['body'][] = $params['body'];
+            break;
     }
 }
 
