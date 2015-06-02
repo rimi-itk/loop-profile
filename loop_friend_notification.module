@@ -124,19 +124,22 @@ function loop_friend_notification_notify_form_submit($form, $form_state) {
         $wrapper->field_node->set(menu_get_object());
         $wrapper->field_sender->set($user);
         $wrapper->save();
-    } else if (valid_email_address($recipientName)) {
+        drupal_set_message(t('Notification sent'), 'status');
 
+    } else if (valid_email_address($recipientName)) {
         $message = message_create('user_sharing_node_reference', array('uid' => 0));
         $wrapper = entity_metadata_wrapper('message', $message);
         $wrapper->field_node->set(menu_get_object());
         $wrapper->field_sender->set($user);
-
         $language = user_preferred_language($user);
         $subject = "Loop notifikation";
         $body = message_property_get_text($message, array('language'=>$language));
-
-        //throw new Exception("stop");
-        drupal_mail("loop_friend_notification", 'friend_notification', $recipientName, $language, array('subject'=>$subject, 'body'=>$body));
+        $sent = drupal_mail("loop_friend_notification", 'friend_notification', $recipientName, $language, array('subject'=>$subject, 'body'=>$body));
+        if ($sent) {
+            drupal_set_message(t('Email sent'), 'status');
+        } else {
+            drupal_set_message(t('Email could not be sent'), 'error');
+        }
     }
 }
 
