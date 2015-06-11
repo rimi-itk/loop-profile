@@ -1,14 +1,10 @@
 /**
  * IE specific styles (All internet explorers)
  */
-/* line 7, ../sass/ie.scss */
 .anim-open-notification-tab {
   display: block;
-  min-height: 80px;
-}
+  min-height: 80px; }
 
-/* line 12, ../sass/ie.scss */
 .anim-close-notification-tab {
   display: none;
-  min-height: 0;
-}
+  min-height: 0; }
