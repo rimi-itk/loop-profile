@@ -1,10 +1,11 @@
 /**
  * @file
- * Autocomplete attachement for search in Drupal.
+ * Auto complete attachment for search in Drupal.
  */
 
 var LoopSearch = LoopSearch || [];
 jQuery(document).ready(function($) {
+  "use strict";
 
   var loopQuestions = new Bloodhound({
     datumTokenizer: function(d) {
@@ -17,7 +18,7 @@ jQuery(document).ready(function($) {
       url: '/loop_search_nodes',
       // TTL 30 sec.
       ttl: 30000
-    },
+    }
   });
   loopQuestions.initialize();
 
