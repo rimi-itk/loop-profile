@@ -19,11 +19,13 @@ function loop_search_default_search_api_index() {
       "index_directly" : 1,
       "cron_limit" : "50",
       "fields" : {
+        "title" : { "type" : "text", "boost" : "2.0" },
         "status" : { "type" : "integer" },
         "comments" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "comment" },
         "search_api_language" : { "type" : "string" },
-        "field_profession:name" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_description:value" : { "type" : "text" },
         "field_keyword:name" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_profession:name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_subject:name" : { "type" : "text" },
         "comments:comment_body:value" : { "type" : "list\\u003Ctext\\u003E" }
       },
