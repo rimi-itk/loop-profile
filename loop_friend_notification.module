@@ -79,7 +79,7 @@ function loop_friend_notification_pane_custom_pane_admin_info($subtype, $conf, $
  * Implements hook_form().
  */
 function loop_friend_notification_form() {
-  return drupal_get_form("loop_friend_notification_notify_form");x
+  return drupal_get_form("loop_friend_notification_notify_form");
 }
 
 function loop_friend_notification_notify_form($form) {
