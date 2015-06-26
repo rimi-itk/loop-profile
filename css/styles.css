@@ -1066,11 +1066,11 @@ label {
 /* Logo
    ================================================================================================================== */
 .logo--link {
+  position: absolute;
+  top: 50%;
   display: inline-block;
   padding-top: 0;
-  position: absolute;
   text-align: center;
-  top: 50%;
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
@@ -1079,7 +1079,12 @@ label {
 .logo--image {
   margin-right: auto;
   margin-left: auto;
-  max-height: 3em; }
+  max-height: 2em;
+  max-width: 4em;
+  vertical-align: middle; }
+  @media only screen and (min-width: 28em) {
+    .logo--image {
+      max-width: 16em; } }
 
 /* Layouts
    ================================================================================================================== */
