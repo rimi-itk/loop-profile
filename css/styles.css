@@ -1079,7 +1079,12 @@ label {
 .logo--image {
   margin-right: auto;
   margin-left: auto;
-  max-height: 3em; }
+  max-height: 2em;
+  max-width: 4em;
+  vertical-align: middle; }
+  @media only screen and (min-width: 28em) {
+    .logo--image {
+      max-width: 16em; } }
 
 /* Layouts
    ================================================================================================================== */
