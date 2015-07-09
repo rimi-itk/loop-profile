@@ -7,16 +7,16 @@ css_dir = "css"
 sass_dir = "sass"
 images_dir = "images"
 javascripts_dir = "scripts"
-additional_import_paths = ["/Library/Ruby/Gems/2.0.0/gems/zen-grids-1.4/stylesheets"]
+additional_import_paths = ["/Library/Ruby/Gems/2.0.0/gems/zen-grids-1.4/stylesheets", "/var/lib/gems/2.0.0/gems/zen-grids-1.4/stylesheets"]
 
-output_style = :expanded
+output_style = :nested
 environment = :development
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 relative_assets = true
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
-# line_comments = false
+line_comments = false
 color_output = false
 # sass_options = {:debug_info => true}
 

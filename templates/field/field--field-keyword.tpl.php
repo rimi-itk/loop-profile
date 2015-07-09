@@ -44,15 +44,10 @@
  * @ingroup themeable
  */
 ?>
-<!--
-THIS FILE IS NOT USED AND IS HERE AS A STARTING POINT FOR CUSTOMIZATION ONLY.
-See http://api.drupal.org/api/function/theme_field/7 for details.
-After copying this file to your theme's folder and customizing it, remove this
-HTML comment.
--->
+
 <?php if (!$label_hidden): ?>
   <?php print $label ?>:
 <?php endif; ?>
 <?php foreach ($items as $delta => $item): ?>
-  <a href="<?php print $item['#href']; ?>" title="<?php print $item['#title']; ?>" class="question--term"><?php print $item['#title']; ?></a>
+  <a href="<?php print $item['#href']; ?>" title="<?php print $item['#title']; ?>" class="question--term taxonomy-keyword"><?php print $item['#title']; ?></a>
 <?php endforeach; ?>
