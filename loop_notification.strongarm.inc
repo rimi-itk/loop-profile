@@ -108,20 +108,6 @@ function loop_notification_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'mimemail_mail';
-  $strongarm->value = 'loop@elaer.dk';
-  $export['mimemail_mail'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'mimemail_name';
-  $strongarm->value = 'LOOP';
-  $export['mimemail_name'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'mimemail_simple_address';
   $strongarm->value = 0;
   $export['mimemail_simple_address'] = $strongarm;
