@@ -92,7 +92,9 @@ function loop_saml_form_user_login_alter(&$form, &$form_state) {
   $idp_selection = variable_get('saml_sp_drupal_login__idp', '');
   $idp = saml_sp_idp_load($idp_selection);
 
-  $options = array('query' => array('returnTo' => url('user')));
+  $destination = drupal_get_destination();
+  $returnTo = $destination['destination'];
+  $options = array('query' => array('returnTo' => $returnTo));
   $items['link'] = array(
     'content' => l(t('Log in using @idp_name', array('@idp_name' => $idp->name)), 'saml/drupal_login', $options),
     'class' => array('saml-link'),
