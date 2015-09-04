@@ -54,3 +54,48 @@ After installing the loopdk profile you should create some taxomony terms in the
 Go to [Home » Administration » Structure » Taxonomy](/admin/structure/taxonomy) to add terms to the vocabularies.
 
 As an alternative to manually creating terms, you can install the module [Loop taxonomy terms (loop_taxonomy_terms)](/admin/modules#loop_content) and get the default Loop taxonomy terms.
+
+## Installing Apache Solr
+
+These script below will
+
+* install Apache Solr (as a Tomcat servlet) running on port 8983 and
+* create a Solr node named "loop_stg"
+
+Change "8983" and "loop_stg" as needed.
+
+```
+# Install tomcat7
+sudo apt-get update
+sudo apt-get install -y tomcat7
+
+# Install Solr
+cd ~
+wget http://archive.apache.org/dist/lucene/solr/4.8.0/solr-4.8.0.tgz -O solr.tgz
+tar xzf solr.tgz
+rm solr.tgz
+sudo cp solr-*/example/lib/ext/* /usr/share/tomcat7/lib/
+sudo cp solr-*/dist/solr-*.war /var/lib/tomcat7/webapps/solr.war
+sudo cp -R solr-*/example/solr /var/lib/tomcat7
+rm -rf solr-*
+
+# Rename Solr node "collection1" to "loop_stg"
+sudo mv /var/lib/tomcat7/solr/collection1 /var/lib/tomcat7/solr/loop_stg
+sudo sed -i 's/collection1/loop_stg/' /var/lib/tomcat7/solr/loop_stg/core.properties
+
+# Get Drupal Solr configuration and copy it into the Solr installion
+drush dl search_api_solr
+sudo cp search_api_solr/solr-conf/4.x/* /var/lib/tomcat7/solr/loop_stg/conf/
+rm -rf search_api_solr
+sudo sed -i '/\<Connector port="8080" protocol="HTTP\/1.1"/c \<Connector port="8983" protocol="HTTP\/1.1"' /var/lib/tomcat7/conf/server.xml
+sudo chown -R tomcat7:tomcat7 /var/lib/tomcat7/solr
+
+# Restart tomcat
+sudo service tomcat7 restart
+
+# Check that tomcat is running
+lynx --dump http://localhost:8983
+
+# Check that Solr is running and that we can access the node "loop_stg"
+curl 'http://localhost:8983/solr/loop_stg/select?q=*%3A*&wt=json&indent=true'
+```
