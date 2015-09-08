@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * syddjurs_post_wysiwyg.features.inc
+ * loop_post_wysiwyg.features.inc
  */
 
 /**
