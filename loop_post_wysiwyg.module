@@ -1,0 +1,41 @@
+<?php
+/**
+ * @file
+ * Code for the Syddjurs Post WYSIWYG feature.
+ */
+
+include_once 'loop_post_wysiwyg.features.inc';
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function loop_post_wysiwyg_form_node_form_alter(&$form, &$form_state) {
+   if ($form['type']['#value'] == 'post') {
+     global $user;
+     $field_description_language = $form['field_description']['#language'];
+     $form['field_description'][$field_description_language]['0']['#format'] = 'editor';
+   }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+// Unfortunately, this doesn't work because the LOOP theme's
+// form_alter hook is called AFTER all module hooks are called.
+// Instead, I have directly modified the LOOP theme to override this setting.
+//function loop_post_wysiwyg_form_comment_form_alter(&$form) {
+//  $form['comment_body'][LANGUAGE_NONE][0]['#wysiwyg'] = TRUE;
+//}
+
+/**
+ * Implements hook_module_implements_alter().
+ */
+function loop_post_wysiwyg_module_implements_alter(&$implementations, $hook) {
+  // Make sure our hook always gets executed last
+  if ($hook == 'form_alter' && isset($implementations['loop_post_wysiwyg'])) {
+    $group = $implementations['loop_post_wysiwyg'];
+    unset($implementations['loop_post_wysiwyg']);
+    $implementations['loop_post_wysiwyg'] = $group;
+  }
+}
+
