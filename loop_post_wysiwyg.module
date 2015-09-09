@@ -19,23 +19,11 @@ function loop_post_wysiwyg_form_node_form_alter(&$form, &$form_state) {
 
 /**
  * Implements hook_form_FORM_ID_alter().
+ *
+ * The LOOP theme has been modified to pick up on this global variable;
+ * previously, it was setting $form['comment_body'][LANGUAGE_NONE][0]['#wysiwyg'] to FALSE
  */
-// Unfortunately, this doesn't work because the LOOP theme's
-// form_alter hook is called AFTER all module hooks are called.
-// Instead, I have directly modified the LOOP theme to override this setting.
-//function loop_post_wysiwyg_form_comment_form_alter(&$form) {
-//  $form['comment_body'][LANGUAGE_NONE][0]['#wysiwyg'] = TRUE;
-//}
-
-/**
- * Implements hook_module_implements_alter().
- */
-function loop_post_wysiwyg_module_implements_alter(&$implementations, $hook) {
-  // Make sure our hook always gets executed last
-  if ($hook == 'form_alter' && isset($implementations['loop_post_wysiwyg'])) {
-    $group = $implementations['loop_post_wysiwyg'];
-    unset($implementations['loop_post_wysiwyg']);
-    $implementations['loop_post_wysiwyg'] = $group;
-  }
+function loop_post_wysiwyg_form_comment_form_alter(&$form) {
+  $GLOBALS['use_wysiwyg_comments'] = $form['comment_body'][LANGUAGE_NONE][0]['#wysiwyg'] = TRUE;
 }
 
