@@ -47,7 +47,7 @@ function loop_knowledge_documents() {
   $nodes = db_select('node', 'n')
     ->fields('n', array('nid', 'title'))
     ->condition('status', 1)
-    ->condition('type', 'vejledning')
+    ->condition('type', 'instruction')
     ->execute();
 
   // Build nodes.
@@ -60,9 +60,12 @@ function loop_knowledge_documents() {
       'title' => trim($node->title),
       // Use internal path.
       'link' => '/' . drupal_get_path_alias('node/' . $node->nid),
+      // Node ID.
+      'id' => $node->nid,
     );
   }
 
   // Return as JSON.
   drupal_json_output($data);
 }
+
