@@ -1,0 +1,22 @@
+name = Syddjurs knowledge
+description = Content type for knowledge
+core = 7.x
+package = Syddjurs
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = link
+dependencies[] = loop_field_bases
+dependencies[] = loop_search
+dependencies[] = node
+
+features[features_api][] = api:2
+features[features_override_items][] = search_api_index.post
+features[features_overrides][] = search_api_index.post.options|data_alter_callbacks|search_api_alter_bundle_filter|settings|bundles|external_sources
+features[features_overrides][] = search_api_index.post.options|data_alter_callbacks|search_api_alter_bundle_filter|settings|bundles|leaf
+features[features_overrides][] = search_api_index.post.options|data_alter_callbacks|search_api_alter_bundle_filter|settings|bundles|page
+features[features_overrides][] = search_api_index.post.options|data_alter_callbacks|search_api_alter_bundle_filter|settings|bundles|vejledning
+features[features_overrides][] = search_api_index.post.options|data_alter_callbacks|search_api_alter_language_control
+features[features_overrides][] = search_api_index.post.options|fields|body:value
+features[features_overrides][] = search_api_index.post.options|fields|title
+features[features_overrides][] = search_api_index.post.options|fields|type
+
