@@ -5,6 +5,15 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_api().
+ */
+function loop_knowledge_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
+}
+
+/**
  * Implements hook_default_search_api_index_alter().
  */
 function loop_knowledge_default_search_api_index_alter(&$data) {
@@ -27,6 +36,22 @@ function loop_knowledge_default_search_api_index_alter(&$data) {
     ); /* WAS: '' */
     unset($data['post']->options['data_alter_callbacks']['search_api_alter_bundle_filter']['settings']['bundles']['external_sources']);
     unset($data['post']->options['data_alter_callbacks']['search_api_alter_bundle_filter']['settings']['bundles']['leaf']);
-    unset($data['post']->options['fields']['type']);
   }
+}
+
+/**
+ * Implements hook_node_info().
+ */
+function loop_knowledge_node_info() {
+  $items = array(
+    'instruction' => array(
+      'name' => t('Instruction'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+  );
+  return $items;
 }

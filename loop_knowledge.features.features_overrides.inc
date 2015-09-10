@@ -30,7 +30,6 @@ function loop_knowledge_features_override_default_overrides() {
   $overrides["search_api_index.post.options|fields|title"] = array(
     'type' => 'text',
   );
-  $overrides["search_api_index.post.options|fields|type"]["DELETED"] = TRUE;
 
  return $overrides;
 }
