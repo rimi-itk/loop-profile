@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * loop_knowledge.strongarm.inc
+ * loop_instruction.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function loop_knowledge_strongarm() {
+function loop_instruction_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

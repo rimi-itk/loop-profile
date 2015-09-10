@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * loop_knowledge.features.field_instance.inc
+ * loop_instruction.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function loop_knowledge_field_default_field_instances() {
+function loop_instruction_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'comment-comment_node_instruction-comment_body'

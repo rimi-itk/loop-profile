@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * loop_knowledge.features.field_base.inc
+ * loop_instruction.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function loop_knowledge_field_default_field_bases() {
+function loop_instruction_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'comment_body'

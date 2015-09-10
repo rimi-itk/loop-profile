@@ -1,11 +1,11 @@
 <?php
 
-include_once 'loop_knowledge.features.inc';
+include_once 'loop_instruction.features.inc';
 
 
 /**
  * @file
- * Code for the Loop knowledge feature.
+ * Code for the Loop instruction feature.
  */
 
 /**
@@ -13,22 +13,22 @@ include_once 'loop_knowledge.features.inc';
  *
  * Include search JS for every page load.
  */
-function loop_knowledge_init() {
+function loop_instruction_init() {
   // Check if it's a registered user.
   if (user_is_logged_in()) {
-    drupal_add_js(drupal_get_path('module', 'loop_knowledge') . '/js/search.js');
+    drupal_add_js(drupal_get_path('module', 'loop_instruction') . '/js/search.js');
   }
 }
 
 /**
  * Implements hook_menu().
  */
-function loop_knowledge_menu() {
+function loop_instruction_menu() {
   $items = array();
 
-  $items['loop_knowledge'] = array(
-    'title' => 'List knowledge in JSON format',
-    'page callback' => 'loop_knowledge_documents',
+  $items['loop_instruction'] = array(
+    'title' => 'List instruction in JSON format',
+    'page callback' => 'loop_instruction_documents',
     'type' => MENU_CALLBACK,
     'access arguments' => array('access content'),
   );
@@ -42,7 +42,7 @@ function loop_knowledge_menu() {
  * @param string $scope
  *   Comma separated list to search for.
  */
-function loop_knowledge_documents() {
+function loop_instruction_documents() {
   // Select nodes.
   $nodes = db_select('node', 'n')
     ->fields('n', array('nid', 'title'))

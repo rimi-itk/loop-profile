@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * loop_knowledge.features.inc
+ * loop_instruction.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function loop_knowledge_ctools_plugin_api($module = NULL, $api = NULL) {
+function loop_instruction_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -16,7 +16,7 @@ function loop_knowledge_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_node_info().
  */
-function loop_knowledge_node_info() {
+function loop_instruction_node_info() {
   $items = array(
     'instruction' => array(
       'name' => t('Instruction'),
