@@ -12,8 +12,12 @@ function loop_post_wysiwyg_field_default_field_instances_alter(&$data) {
     $data['comment-comment_node_post-comment_body']['settings']['better_formats']['allowed_formats']['editor'] = 'editor'; /* WAS: 0 */
     $data['comment-comment_node_post-comment_body']['settings']['better_formats']['allowed_formats']['html'] = 0; /* WAS: '' */
     $data['comment-comment_node_post-comment_body']['settings']['better_formats']['allowed_formats']['simple'] = 0; /* WAS: 'simple' */
+    $data['comment-comment_node_post-comment_body']['settings']['better_formats']['allowed_formats']['wysiwyg'] = 'wysiwyg'; /* WAS: '' */
     $data['comment-comment_node_post-comment_body']['settings']['better_formats']['default_order_wrapper']['formats']['html'] = array(
       'weight' => -10,
+    ); /* WAS: '' */
+    $data['comment-comment_node_post-comment_body']['settings']['better_formats']['default_order_wrapper']['formats']['wysiwyg'] = array(
+      'weight' => 0,
     ); /* WAS: '' */
   }
   if (isset($data['comment-comment_node_post-field_file_upload_comment'])) {
