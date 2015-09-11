@@ -1,12 +1,8 @@
 <?php
 /**
- * @file
- * Drupal needs this blank file.
- */
-
-
-/**
  * Implements hook_FORM_ID_alter().
+ *
+ * Add fields to a form, letting the administrator choose the header color and logo height.
  */
 function loop_configure_theme_form_system_theme_settings_alter(&$form, $form_state) {
 
