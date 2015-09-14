@@ -1,0 +1,8 @@
+name = Loop configure theme
+description = Configurable styling
+core = 7.x
+package = LOOP
+dependencies[] = style_settings
+features[features_api][] = api:2
+mtime = 1441278934
+project path = profiles/loopdk/modules
