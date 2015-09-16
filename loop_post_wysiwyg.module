@@ -10,11 +10,11 @@ include_once 'loop_post_wysiwyg.features.inc';
  * Implements hook_form_FORM_ID_alter().
  */
 function loop_post_wysiwyg_form_node_form_alter(&$form, &$form_state) {
-   if ($form['type']['#value'] == 'post') {
-     global $user;
-     $field_description_language = $form['field_description']['#language'];
-     $form['field_description'][$field_description_language]['0']['#format'] = 'wysiwyg';
-   }
+  if ($form['type']['#value'] == 'post') {
+    global $user;
+    $field_description_language = $form['field_description']['#language'];
+    $form['field_description'][$field_description_language]['0']['#format'] = 'wysiwyg';
+  }
 }
 
 /**
@@ -26,4 +26,3 @@ function loop_post_wysiwyg_form_node_form_alter(&$form, &$form_state) {
 function loop_post_wysiwyg_form_comment_form_alter(&$form) {
   $GLOBALS['use_wysiwyg_comments'] = $form['comment_body'][LANGUAGE_NONE][0]['#wysiwyg'] = TRUE;
 }
-
