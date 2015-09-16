@@ -59,6 +59,9 @@ projects[features][version] = "2.0"
 projects[features_extra][subdir] = "contrib"
 projects[features_extra][version] = "1.0-beta1"
 
+projects[features_override][subdir] = "contrib"
+projects[features_override][version] = "2.0-rc2"
+
 projects[field_group][subdir] = "contrib"
 projects[field_group][version] = "1.3"
 
@@ -158,6 +161,9 @@ projects[panels][version] = "3.4"
 projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = "1.2"
 
+projects[path_breadcrumbs][subdir] = "contrib"
+projects[path_breadcrumbs][version] = "3.2"
+
 projects[pcp][subdir] = "contrib"
 projects[pcp][version] = "1.6"
 
@@ -207,6 +213,9 @@ projects[shurly][download][url] = "http://git.drupal.org/project/shurly.git"
 projects[shurly][download][revision] = "bf412bd"
 projects[shurly][patch][] = "https://drupal.org/files/issues/shurly-host-check.patch"
 
+projects[simplesamlphp_auth][subdir] = "contrib"
+projects[simplesamlphp_auth][version] = "2.0-alpha2"
+
 projects[special_menu_items][subdir] = "contrib"
 projects[special_menu_items][version] = "2.0"
 
@@ -215,6 +224,13 @@ projects[statistics_counter][version] = "1.2"
 
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
+
+projects[style_settings][type] = "module"
+projects[style_settings][subdir] = "contrib"
+projects[style_settings][download][type] = "git"
+projects[style_settings][download][url] = "http://git.drupal.org/project/style_settings.git"
+projects[style_settings][download][branch] = "7.x-1.x"
+projects[style_settings][patch][] = "patches/style_settings.patch"
 
 projects[taxonomy_manager][subdir] = "contrib"
 projects[taxonomy_manager][version] = "1.0"
@@ -264,6 +280,11 @@ projects[loop_admin][branch] = "development"
 
 projects[loop_content][type] = "module"
 projects[loop_content][download][type] = "git"
+projects[loop_content][download][url] = "git@github.com:loopdk/loop_configure_theme.git"
+projects[loop_content][branch] = "development"
+
+projects[loop_content][type] = "module"
+projects[loop_content][download][type] = "git"
 projects[loop_content][download][url] = "git@github.com:loopdk/loop_content.git"
 projects[loop_content][branch] = "development"
 
@@ -282,6 +303,11 @@ projects[loop_flag][download][type] = "git"
 projects[loop_flag][download][url] = "git@github.com:loopdk/loop_flag.git"
 projects[loop_flag][branch] = "development"
 
+projects[loop_friend_notification][type] = "module"
+projects[loop_friend_notification][download][type] = "git"
+projects[loop_friend_notification][download][url] = "git@github.com:loopdk/loop_friend_notification.git"
+projects[loop_friend_notification][branch] = "development"
+
 projects[loop_frontend][type] = "module"
 projects[loop_frontend][download][type] = "git"
 projects[loop_frontend][download][url] = "git@github.com:loopdk/loop_frontend.git"
@@ -290,6 +316,11 @@ projects[loop_frontend][branch] = "development"
 projects[loop_frontpage][type] = "module"
 projects[loop_frontpage][download][type] = "git"
 projects[loop_frontpage][download][url] = "git@github.com:loopdk/loop_frontpage.git"
+projects[loop_frontpage][branch] = "development"
+
+projects[loop_frontpage][type] = "module"
+projects[loop_frontpage][download][type] = "git"
+projects[loop_frontpage][download][url] = "git@github.com:loopdk/loop_instruction.git"
 projects[loop_frontpage][branch] = "development"
 
 projects[loop_navigation][type] = "module"
@@ -317,6 +348,16 @@ projects[loop_post][download][type] = "git"
 projects[loop_post][download][url] = "git@github.com:loopdk/loop_post.git"
 projects[loop_post][branch] = "development";
 
+projects[loop_post][type] = "module"
+projects[loop_post][download][type] = "git"
+projects[loop_post][download][url] = "git@github.com:loopdk/loop_profession_optional.git"
+projects[loop_post][branch] = "development";
+
+projects[loop_post][type] = "module"
+projects[loop_post][download][type] = "git"
+projects[loop_post][download][url] = "git@github.com:loopdk/loop_post_wysiwyg.git"
+projects[loop_post][branch] = "development";
+
 projects[loop_saml][type] = "module"
 projects[loop_saml][download][type] = "git"
 projects[loop_saml][download][url] = "git@github.com:loopdk/loop_saml.git"
@@ -326,6 +367,11 @@ projects[loop_search][type] = "module"
 projects[loop_search][download][type] = "git"
 projects[loop_search][download][url] = "git@github.com:loopdk/loop_search.git"
 projects[loop_search][branch] = "development"
+
+projects[loop_simplesamlphp][type] = "module"
+projects[loop_simplesamlphp][download][type] = "git"
+projects[loop_simplesamlphp][download][url] = "git@github.com:loopdk/loop_simplesamlphp.git"
+projects[loop_simplesamlphp][branch] = "development";
 
 projects[loop_taxonomy][type] = "module"
 projects[loop_taxonomy][download][type] = "git"
