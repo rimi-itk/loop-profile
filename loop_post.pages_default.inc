@@ -163,6 +163,29 @@ function loop_post_default_page_manager_handlers() {
     $display->content['new-3b00d83d-17c2-4baa-ac2d-0d2b36b6a7fc'] = $pane;
     $display->panels['beta'][0] = 'new-3b00d83d-17c2-4baa-ac2d-0d2b36b6a7fc';
     $pane = new stdClass();
+    $pane->pid = 'new-8d69457f-e73e-4036-a817-04b562ff17c1';
+    $pane->panel = 'beta';
+    $pane->type = 'loop_friend_notification_pane';
+    $pane->subtype = 'loop_friend_notification_pane';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'text' => '',
+      'override_title' => 1,
+      'override_title_text' => 'Del med en ven',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '8d69457f-e73e-4036-a817-04b562ff17c1';
+    $display->content['new-8d69457f-e73e-4036-a817-04b562ff17c1'] = $pane;
+    $display->panels['beta'][1] = 'new-8d69457f-e73e-4036-a817-04b562ff17c1';
+    $pane = new stdClass();
     $pane->pid = 'new-0bb2f825-4693-4ff9-b1f7-bb0546b4ee70';
     $pane->panel = 'gamma';
     $pane->type = 'node_comment_form';
