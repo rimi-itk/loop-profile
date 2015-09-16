@@ -129,6 +129,14 @@ if (isset($primary_menu_block['content'])): ?>
   </div>
 </header>
 
+<?php if (isset($page['pagetop'])): ?>
+  <div class="section">
+    <div class="layout-frontpage">
+        <?php print render($page['pagetop']); ?>
+    </div>
+  </div>
+<?php endif; ?>
+
 <?php if (isset($search)): ?>
   <div class="typeahead-block">
     <div class="typeahead-block--wrapper">
@@ -136,6 +144,11 @@ if (isset($primary_menu_block['content'])): ?>
     </div>
   </div>
 <?php endif; ?>
+
+<?php if ($breadcrumb): ?>
+  <div id="breadcrumb"><?php print $breadcrumb; ?></div>
+<?php endif; ?>
+
 <?php if (user_is_anonymous()): ?>
   <div class="layout-no-wrapper">
     <div class="layout--inner">

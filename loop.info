@@ -6,6 +6,7 @@ core = 7.x
 ; Regions
 regions[header] = Header
 regions[navigation] = Navigation
+regions[pagetop] = Page Top
 regions[content] = Content
 regions[footer] = Footer
 
@@ -31,3 +32,10 @@ stylesheets[all][] = image.css
 
 ; Panels layouts. You can place multiple layouts under the "layouts" folder.
 plugins[panels][layouts] = templates/panels/layouts
+
+dependencies[] = style_settings
+
+; Defaults for the theme configuration
+settings[header_color] = #41ab51
+settings[header_logo_height] = 3em
+

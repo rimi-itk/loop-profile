@@ -51,6 +51,10 @@ function loop_preprocess_page(&$variables) {
     hide($variables['tabs']['#secondary']);
   }
 
+  if ($arg[0] == 'front') {
+    $variables['loop_frontpage_welcometext'] = module_invoke('loop_frontpage', 'block_view', 'loop_frontpage_welcometext');
+  }
+
   // Load LOOP primary menu.
   if (module_exists('loop_navigation') && ($user->uid > 0)) {
     $variables['main_menu_block'] = module_invoke('system', 'block_view', 'main-menu');
@@ -78,7 +82,7 @@ function loop_preprocess_page(&$variables) {
 
   // We add logout link here to be able to always print it last. (Hence not part
   // of any menu).
-  if ($user->uid > 0) {
+  if ($user->uid > 0 && !(array_key_exists('hide_logout', $variables) && $variables['hide_logout'])) {
     $variables['logout_link'] = l(t('Logout'), 'user/logout', array('attributes' => array('class' => array('nav--logout'))));
   }
 
@@ -174,6 +178,11 @@ function loop_preprocess_block(&$variables) {
 function loop_preprocess_panels_pane(&$variables) {
   if (arg(0) == 'editor') {
     $variables['theme_hook_suggestions'][] = 'panels_pane__editor';
+  }
+
+  // Add template for "notify friend" box.
+  if ($variables['pane']->type == 'loop_friend_notification_pane') {
+    $variables['theme_hook_suggestions'][] = 'panels_pane__loop_friend_notification';
   }
 
   // Add template for flag subscribe button on post node.
@@ -614,6 +623,65 @@ function loop_form_views_form_loop_user_subscriptions_panel_pane_1_alter(&$form,
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function loop_form_views_form_loop_user_taxonomy_subscriptions_panel_pane_1_alter(&$form, &$form_state, $form_id) {
+  // Add form class.
+  $form['#attributes']['class'][] = 'vbo-views-form';
+
+  // Copy button from field group.
+  if (!empty($form['select'])) {
+    $buttonKey = 'rules_component::loop_notification_remove_taxonomy_subscription';
+    if (array_key_exists($buttonKey, $form['select'])) {
+      $form['rules_component::rules_remove_subscription'] = $form['select'][$buttonKey];
+    } else {
+      // Fall back to hardcoded definition because Drupal
+      $form['rules_component::rules_remove_subscription'] = array(
+          '#type' => 'submit',
+          '#value' => t('Remove subscription'),
+          '#validate' => array('views_bulk_operations_form_validate'),
+          '#submit' => array('views_bulk_operations_form_submit'),
+          '#operation_id' => 'rules_component::loop_notification_remove_taxonomy_subscription'
+      );
+    }
+  }
+
+  // Add wrappers.
+  $form['rules_component::rules_remove_subscription']['#prefix'] = '<div class="js-user-profile-notification-actions user-profile--notification-actions"><div class="user-profile--notification-actions-inner">';
+  $form['rules_component::rules_remove_subscription']['#suffix'] = '</div></div>';
+
+  // Add warning class to button.
+  $form['rules_component::rules_remove_subscription']['#attributes']['class'][] = 'user-profile--notification-actions--button-remove button--warning';
+
+  // Add js class to checkboxes.
+  if (!empty($form['views_bulk_operations'])) {
+    foreach ($form['views_bulk_operations'] as $key => $value) {
+      if (is_array($value)) {
+        $form['views_bulk_operations'][$key]['#attributes']['class'][] = 'js-user-profile-notification-select';
+      }
+    }
+  }
+
+  // Remove stuff from form.
+  unset($form['#prefix']);
+  unset($form['#suffix']);
+  unset($form['select_all_markup']);
+
+  // Remove field group containing actions.
+  unset($form['select']);
+
+  // Add custom js.
+  $display_notification_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() . '/scripts/display-notification-actions.js';
+  drupal_add_js($display_notification_script_path, 'file');
+
+  // If on confirmation step.
+  if ($form_state['step'] == 'views_bulk_operations_confirm_form') {
+    $form['actions']['submit']['#attributes']['class'][] = 'user-profile--notification-actions--button--confirm button--warning';
+    $form['actions']['cancel']['#attributes']['class'][] = 'user-profile--notification-actions--button button--action';
+  }
+}
+
+/**
  * Implements hook_FROM_ID_form_alter().
  */
 function loop_form_user_register_form_alter(&$form) {
@@ -671,7 +739,8 @@ function loop_form_comment_form_alter(&$form) {
 
   $form['#prefix'] = theme('comment_form_prefix', $variables);
   $form['#prefix'] .= '<div class="form-module">';
-  $form['comment_body'][LANGUAGE_NONE][0]['#wysiwyg'] = FALSE;
+  // Let modules set a global variable to influence the use of wysiwyg comments, but default to FALSE.
+  $form['comment_body'][LANGUAGE_NONE][0]['#wysiwyg'] = array_key_exists('use_wysiwyg_comments', $GLOBALS) ? $GLOBALS['use_wysiwyg_comments'] : FALSE;
   $form['#suffix'] = '</div>';
 
   hide($form['author']);
