@@ -351,17 +351,17 @@ projects[loop_post][download][branch] = "development";
 projects[loop_profession_optional][type] = "module"
 projects[loop_profession_optional][download][type] = "git"
 projects[loop_profession_optional][download][url] = "git@github.com:loopdk/loop_profession_optional.git"
-projects[loop_profession_optional][download][branch] = "development";
+projects[loop_profession_optional][download][branch] = "development"
 
 projects[loop_post_wysiwyg][type] = "module"
 projects[loop_post_wysiwyg][download][type] = "git"
 projects[loop_post_wysiwyg][download][url] = "git@github.com:loopdk/loop_post_wysiwyg.git"
-projects[loop_post_wysiwyg][download][branch] = "development";
+projects[loop_post_wysiwyg][download][branch] = "development"
 
 projects[loop_saml][type] = "module"
 projects[loop_saml][download][type] = "git"
 projects[loop_saml][download][url] = "git@github.com:loopdk/loop_saml.git"
-projects[loop_saml][download][branch] = "development";
+projects[loop_saml][download][branch] = "development"
 
 projects[loop_search][type] = "module"
 projects[loop_search][download][type] = "git"
@@ -371,7 +371,7 @@ projects[loop_search][download][branch] = "development"
 projects[loop_simplesamlphp][type] = "module"
 projects[loop_simplesamlphp][download][type] = "git"
 projects[loop_simplesamlphp][download][url] = "git@github.com:loopdk/loop_simplesamlphp.git"
-projects[loop_simplesamlphp][download][branch] = "development";
+projects[loop_simplesamlphp][download][branch] = "development"
 
 projects[loop_taxonomy][type] = "module"
 projects[loop_taxonomy][download][type] = "git"
