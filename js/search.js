@@ -13,11 +13,19 @@ jQuery(document).ready(function($) {
       return Bloodhound.tokenizers.whitespace(d.value);
     },
     queryTokenizer: Bloodhound.tokenizers.whitespace,
+    remote: {
+      url: '/loop_search/post/%QUERY',
+      wildcard: '%QUERY'
+    },
     prefetch:  {
       // URL to fetch.
       url: '/loop_search_nodes',
       // TTL 30 sec.
       ttl: 30000
+    },
+    // Detect duplicates in local and remote matches.
+    dupDetector: function(remoteMatch, localMatch) {
+      return remoteMatch.id === localMatch.id;
     }
   });
   loopQuestions.initialize();

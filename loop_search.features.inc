@@ -27,7 +27,9 @@ function loop_search_default_search_api_index() {
         "field_keyword:name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_profession:name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_subject:name" : { "type" : "text" },
-        "comments:comment_body:value" : { "type" : "list\\u003Ctext\\u003E" }
+        "comments:comment_body:value" : { "type" : "list\\u003Ctext\\u003E" },
+        "body:value" : { "type" : "text" },
+        "body:summary" : { "type" : "text" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
@@ -38,7 +40,8 @@ function loop_search_default_search_api_index() {
             "bundles" : {
               "external_sources" : "external_sources",
               "leaf" : "leaf",
-              "post" : "post"
+              "post" : "post",
+              "instruction" : "instruction"
             }
           }
         },
