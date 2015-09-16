@@ -13,7 +13,7 @@ jQuery(document).ready(function($) {
     },
     prefetch:  {
       // URL to fetch.
-      url: '/loop_knowledge',
+      url: '/loop_instruction',
       // TTL 30 sec.
       ttl: 30000
     },
