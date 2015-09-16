@@ -348,15 +348,15 @@ projects[loop_post][download][type] = "git"
 projects[loop_post][download][url] = "git@github.com:loopdk/loop_post.git"
 projects[loop_post][download][branch] = "development";
 
-projects[loop_post][type] = "module"
-projects[loop_post][download][type] = "git"
-projects[loop_post][download][url] = "git@github.com:loopdk/loop_profession_optional.git"
-projects[loop_post][download][branch] = "development";
+projects[loop_profession_optional][type] = "module"
+projects[loop_profession_optional][download][type] = "git"
+projects[loop_profession_optional][download][url] = "git@github.com:loopdk/loop_profession_optional.git"
+projects[loop_profession_optional][download][branch] = "development";
 
-projects[loop_post][type] = "module"
-projects[loop_post][download][type] = "git"
-projects[loop_post][download][url] = "git@github.com:loopdk/loop_post_wysiwyg.git"
-projects[loop_post][download][branch] = "development";
+projects[loop_post_wysiwyg][type] = "module"
+projects[loop_post_wysiwyg][download][type] = "git"
+projects[loop_post_wysiwyg][download][url] = "git@github.com:loopdk/loop_post_wysiwyg.git"
+projects[loop_post_wysiwyg][download][branch] = "development";
 
 projects[loop_saml][type] = "module"
 projects[loop_saml][download][type] = "git"
