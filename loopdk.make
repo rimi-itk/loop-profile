@@ -346,7 +346,7 @@ projects[loop_permissions][download][branch] = "development"
 projects[loop_post][type] = "module"
 projects[loop_post][download][type] = "git"
 projects[loop_post][download][url] = "git@github.com:loopdk/loop_post.git"
-projects[loop_post][download][branch] = "development";
+projects[loop_post][download][branch] = "development"
 
 projects[loop_profession_optional][type] = "module"
 projects[loop_profession_optional][download][type] = "git"
