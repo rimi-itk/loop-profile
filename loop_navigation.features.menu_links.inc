@@ -30,10 +30,7 @@ function loop_navigation_menu_default_menu_links() {
     'weight' => 9,
     'customized' => 1,
   );
-  // Translatables.
-  // Included for use with string extractors like potx.
-  t('Administration');
-
+  // Exported menu link: management_overview:admin/index
   $menu_links['management_overview:admin/index'] = array(
     'menu_name' => 'management',
     'link_path' => 'admin/index',
@@ -56,6 +53,7 @@ function loop_navigation_menu_default_menu_links() {
   );
   // Translatables.
   // Included for use with string extractors like potx.
+  t('Administration');
   t('Overview');
 
   return $menu_links;
