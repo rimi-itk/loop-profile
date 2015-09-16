@@ -68,4 +68,3 @@ function loop_instruction_documents() {
   // Return as JSON.
   drupal_json_output($data);
 }
-
