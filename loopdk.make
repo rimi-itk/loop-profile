@@ -14,6 +14,7 @@ projects[admin_views][version] = "1.5"
 projects[auto_entitylabel][subdir] = "contrib"
 projects[auto_entitylabel][download][type] = "git"
 projects[auto_entitylabel][download][url] = "http://git.drupal.org/project/auto_entitylabel.git"
+projects[auto_entitylabel][version] = "1.3"
 
 projects[autocomplete_deluxe][type] = "module"
 projects[autocomplete_deluxe][subdir] = "contrib"
@@ -74,7 +75,7 @@ projects[google_analytics][subdir] = "contrib"
 projects[google_analytics][version] = "2.x-dev"
 
 projects[google_analytics_counter][subdir] = "contrib"
-projects[google_analytics_counter][version] = "2.1"
+projects[google_analytics_counter][version] = "3.1"
 
 projects[html5_tools][subdir] = "contrib"
 projects[html5_tools][version] = "1.2"
@@ -140,7 +141,7 @@ projects[mimemail][subdir] = "contrib"
 projects[mimemail][version] = "1.0-beta4"
 
 projects[module_filter][subdir] = "contrib"
-projects[module_filter][version] = "1.8"
+projects[module_filter][version] = "2.0"
 
 projects[node_export][subdir] = "contrib"
 projects[node_export][version] = "3.0"
