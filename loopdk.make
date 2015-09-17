@@ -228,7 +228,7 @@ projects[style_settings][type] = "module"
 projects[style_settings][subdir] = "contrib"
 projects[style_settings][download][type] = "git"
 projects[style_settings][download][url] = "http://git.drupal.org/project/style_settings.git"
-projects[style_settings][download][branch] = "7.x-2.x-dev"
+projects[style_settings][download][branch] = "7.x-2.x"
 
 projects[taxonomy_manager][subdir] = "contrib"
 projects[taxonomy_manager][version] = "1.0"
