@@ -254,11 +254,6 @@ projects[loop_external_data][download][url] = "git@github.com:loopdk/loop_extern
 projects[loop_external_data][download][branch] = "development"
 
 ; LOOP features
-projects[loop_admin][type] = "module"
-projects[loop_admin][download][type] = "git"
-projects[loop_admin][download][url] = "git@github.com:loopdk/loop_admin.git"
-projects[loop_admin][download][branch] = "development"
-
 projects[loop_configure_theme][type] = "module"
 projects[loop_configure_theme][download][type] = "git"
 projects[loop_configure_theme][download][url] = "git@github.com:loopdk/loop_configure_theme.git"
@@ -308,6 +303,11 @@ projects[loop_navigation][type] = "module"
 projects[loop_navigation][download][type] = "git"
 projects[loop_navigation][download][url] = "git@github.com:loopdk/loop_navigation.git"
 projects[loop_navigation][download][branch] = "development"
+
+projects[loop_admin][type] = "module"
+projects[loop_admin][download][type] = "git"
+projects[loop_admin][download][url] = "git@github.com:loopdk/loop_admin.git"
+projects[loop_admin][download][branch] = "development"
 
 projects[loop_node_statistics][type] = "module"
 projects[loop_node_statistics][download][type] = "git"
