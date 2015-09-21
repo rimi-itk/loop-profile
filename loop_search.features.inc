@@ -20,6 +20,7 @@ function loop_search_default_search_api_index() {
       "cron_limit" : "50",
       "fields" : {
         "title" : { "type" : "text", "boost" : "2.0" },
+        "type" : { "type" : "string" },
         "status" : { "type" : "integer" },
         "comments" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "comment" },
         "search_api_language" : { "type" : "string" },
