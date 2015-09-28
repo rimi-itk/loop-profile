@@ -245,7 +245,7 @@ projects[views_flag_refresh][subdir] = "contrib"
 projects[views_flag_refresh][version] = "1.3"
 
 projects[wysiwyg][subdir] = "contrib"
-projects[wysiwyg][version] = "2.2"
+projects[wysiwyg][version] = "2.x-dev"
 
 ; LOOP modules
 projects[loop_external_data][type] = "module"
