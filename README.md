@@ -6,28 +6,71 @@ working Apache/Nginx. The stack should be optimized to run a Drupal site.
 * [Drush 6.1.0](https://github.com/drush-ops/drush)
 
 ## Production
-```sh
-  ~$ drush make https://raw.github.com/loopdk/loop/master/drupal.make loop
+```
+drush make https://raw.github.com/loopdk/loop/master/drupal.make htdocs
 ```
 
 ## Development
 If you want a developer version with _working copies_ of the Git repositories,
 run this command instead.
 
-```sh
-  ~$ drush make --working-copy https://raw.github.com/loopdk/loop/development/drupal.make loop
+```
+drush make --working-copy https://raw.github.com/loopdk/loop/development/drupal.make htdocs
 ```
 
-## Setting up Loop
+
+## Installing Loop
 
 After running the make file you should install the site as any other Drupal website.
+
+First, create a database (loopdk) and a database user (loopdk) with access to the database
+
+```
+mysql --user=root --password --host=localhost
+[enter root password]
+create database loopdk;
+create user 'loopdk'@'localhost' identified by 'loopdk';
+grant all privileges on loopdk.* to 'loopdk'@'localhost';
+quit
+```
+
+Then install drupal using the database settings from above:
+
+```
+cd htdocs
+drush --yes site-install loopdk --db-url='mysql://loopdk:loopdk@localhost/loopdk' --site-name=loopdk --account-name=admin --account-pass=admin
+```
+
+Now you can sign into Loop as `admin` with password `admin` – remember to change this!
+
 By default only the core features are enabled so you should visit the features overview and enable any additional features you would need.
 
 
 ### Setup for development
 
 Enable the Loop example content feature and create a demo user account.
-You can drush dl and drush en the Devel module and use this for generating content.
+
+Download and enable the Devel module and use this for generating content:
+
+```
+drush --yes dl devel
+drush --yes pm-enable devel_generate
+```
+
+You can then generate 10 posts with (at most) 2 comment each like this:
+
+```
+drush generate-content --types=post 10 2
+```
+
+Create taxonomi terms like this:
+
+```
+drush generate-terms keyword 10
+drush generate-terms profession 10
+drush generate-terms subject 10
+```
+
 
 ## Apache Solr
 
@@ -41,17 +84,17 @@ The default Solr server settings are
   path: /solr/loop_stg
 ```
 
-After installation these settings should be changed to match the actual Solr server setup (Go to [Home » Administration » Configuration » Search and metadata » Search API](/admin/config/search/search_api)
-and edit the server named "Default"). See the documentation on [Search API Solr Search](https://www.drupal.org/project/search_api_solr) for details on how to get Solr up and running.
+After installing Loop these settings should be changed to match the actual Solr server setup (go to `/admin/config/search/search_api`)
+and edit the server named "Default").
 
-If you have Apache Solr running on your local development environment you can create a core named "loop_stg" to make searching work out of the box.
+See [Installing Apache Solr](#installing-apache-solr) below for details on how to get Solr up and running on your server.
 
 
 ## Adding taxonomies
 
-After installing the Loop profile you should create some taxomony terms in the vocabularies Keyword, Profession and Subject. At lease one term must be defined in the Subject vocabulary before users can create new posts.
+After installing the loopdk profile you should create some taxomony terms in the vocabularies Keyword, Profession and Subject. At lease one term must be defined in the Subject vocabulary before users can create new posts.
 
-Go to [Home » Administration » Structure » Taxonomy](/admin/structure/taxonomy) to add terms to the vocabularies.
+Go to `/admin/structure/taxonomy` to add terms to the vocabularies.
 
 As an alternative to manually creating terms, you can install the module [Loop taxonomy terms (loop_taxonomy_terms)](/admin/modules#loop_content) and get the default Loop taxonomy terms.
 
@@ -59,8 +102,8 @@ As an alternative to manually creating terms, you can install the module [Loop t
 
 These script below will
 
-* install Apache Solr (as a Tomcat servlet) running on port 8983 and
-* create a Solr node named "loop_stg"
+* install Apache Solr 4.9.1 (as a Tomcat servlet) running on port 8983 and
+* create a Solr core named "loop_stg"
 
 Change "8983" and "loop_stg" as needed.
 
@@ -71,31 +114,74 @@ sudo apt-get install -y tomcat7
 
 # Install Solr
 cd ~
-wget http://archive.apache.org/dist/lucene/solr/4.8.0/solr-4.8.0.tgz -O solr.tgz
+wget http://archive.apache.org/dist/lucene/solr/4.9.1/solr-4.9.1.tgz -O solr.tgz
 tar xzf solr.tgz
 rm solr.tgz
 sudo cp solr-*/example/lib/ext/* /usr/share/tomcat7/lib/
 sudo cp solr-*/dist/solr-*.war /var/lib/tomcat7/webapps/solr.war
 sudo cp -R solr-*/example/solr /var/lib/tomcat7
 rm -rf solr-*
+cd -
 
-# Rename Solr node "collection1" to "loop_stg"
-sudo mv /var/lib/tomcat7/solr/collection1 /var/lib/tomcat7/solr/loop_stg
-sudo sed -i 's/collection1/loop_stg/' /var/lib/tomcat7/solr/loop_stg/core.properties
-
-# Get Drupal Solr configuration and copy it into the Solr installion
-drush dl search_api_solr
-sudo cp search_api_solr/solr-conf/4.x/* /var/lib/tomcat7/solr/loop_stg/conf/
-rm -rf search_api_solr
+# Make Solr run on post 8983 (rather than 8080)
 sudo sed -i '/\<Connector port="8080" protocol="HTTP\/1.1"/c \<Connector port="8983" protocol="HTTP\/1.1"' /var/lib/tomcat7/conf/server.xml
+
+# Set file permissions
 sudo chown -R tomcat7:tomcat7 /var/lib/tomcat7/solr
 
 # Restart tomcat
 sudo service tomcat7 restart
 
 # Check that tomcat is running
-lynx --dump http://localhost:8983
+curl http://localhost:8983/
 
-# Check that Solr is running and that we can access the node "loop_stg"
+```
+
+## Adding a Solr core
+
+The first Loop Solr core can be created like this
+
+```
+# Create Solr core "loop_stg"
+sudo cp -r /var/lib/tomcat7/solr/collection1 /var/lib/tomcat7/solr/loop_stg
+sudo sed -i 's/collection1/loop_stg/' /var/lib/tomcat7/solr/loop_stg/core.properties
+
+# Get Drupal Solr configuration and copy it into the Solr installion
+cd ~
+drush pm-download search_api_solr
+sudo cp search_api_solr/solr-conf/4.x/* /var/lib/tomcat7/solr/loop_stg/conf/
+rm -rf search_api_solr
+cd -
+
+# Set file permissions
+sudo chown -R tomcat7:tomcat7 /var/lib/tomcat7/solr
+
+# Restart tomcat
+sudo service tomcat7 restart
+
+# Check that Solr is running and that we can access the core "loop_stg"
 curl 'http://localhost:8983/solr/loop_stg/select?q=*%3A*&wt=json&indent=true'
 ```
+
+Additional Loop Solr cores can be created as shown above or be created
+as copies of already existing cores:
+
+```
+# Create Solr core "loopdk" as a copy of "loop_stg"
+sudo cp -r /var/lib/tomcat7/solr/loop_stg /var/lib/tomcat7/solr/loopdk
+sudo sed -i 's/loop_stg/loopdk/' /var/lib/tomcat7/solr/loopdk/core.properties
+
+# Set file permissions
+sudo chown -R tomcat7:tomcat7 /var/lib/tomcat7/solr
+
+# Restart tomcat
+sudo service tomcat7 restart
+
+# Delete all data in the copied core
+curl http://localhost:8983/solr/loopdk/update --data '<delete><query>*:*</query></delete>' -H 'Content-type:text/xml; charset=utf-8'
+curl http://localhost:8983/solr/loopdk/update --data '<commit/>' -H 'Content-type:text/xml; charset=utf-8'
+```
+
+# Reindexing all data
+
+/admin/config/search/search_api/index/post
