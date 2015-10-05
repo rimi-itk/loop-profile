@@ -7,7 +7,7 @@ working Apache/Nginx. The stack should be optimized to run a Drupal site.
 
 ## Production
 ```sh
-  ~$ drush make https://raw.github.com/loopdk/profile/master/drupal.make loop
+  ~$ drush make https://raw.github.com/loopdk/loop/master/drupal.make loop
 ```
 
 ## Development
@@ -15,7 +15,7 @@ If you want a developer version with _working copies_ of the Git repositories,
 run this command instead.
 
 ```sh
-  ~$ drush make --working-copy https://raw.github.com/loopdk/profile/development/drupal.make loop
+  ~$ drush make --working-copy https://raw.github.com/loopdk/loop/development/drupal.make loop
 ```
 
 ## Setting up Loop
@@ -49,7 +49,7 @@ If you have Apache Solr running on your local development environment you can cr
 
 ## Adding taxonomies
 
-After installing the loopdk profile you should create some taxomony terms in the vocabularies Keyword, Profession and Subject. At lease one term must be defined in the Subject vocabulary before users can create new posts.
+After installing the Loop profile you should create some taxomony terms in the vocabularies Keyword, Profession and Subject. At lease one term must be defined in the Subject vocabulary before users can create new posts.
 
 Go to [Home » Administration » Structure » Taxonomy](/admin/structure/taxonomy) to add terms to the vocabularies.
 

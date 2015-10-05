@@ -13,7 +13,7 @@
  *
  * @see system_install()
 */
-function loopdk_install() {
+function loop_install() {
   // Set default variables.
   $default_theme = 'loop';
   $admin_theme = 'seven';
@@ -34,10 +34,10 @@ function loopdk_install() {
   variable_set('googleanalytics_trackuserid', 1);
 
   // Setup page not found.
-  loopdk_page_not_found();
+  loop_page_not_found();
 
   // Setup access denied page.
-  loopdk_access_denied_page();
+  loop_access_denied_page();
 
   // Ignore any other install messages.
   drupal_get_messages();
@@ -49,7 +49,7 @@ function loopdk_install() {
 /**
  * Add a basic page for page-not-found.
  */
-function loopdk_page_not_found() {
+function loop_page_not_found() {
   $node = new stdClass();
   $node->uid = 1;
 
@@ -80,7 +80,7 @@ function loopdk_page_not_found() {
 /**
  * Add a basic access denied page.
  */
-function loopdk_access_denied_page() {
+function loop_access_denied_page() {
   $node = new stdClass();
   $node->uid = 1;
 
@@ -107,4 +107,3 @@ function loopdk_access_denied_page() {
   // Set the 404 page.
   variable_set('site_403', 'access_denied');
 }
-
