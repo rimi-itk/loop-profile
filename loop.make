@@ -412,7 +412,7 @@ projects[loop_taxonomy_terms][branch] = "development"
 ; LOOP themes
 projects[loop][type] = "theme"
 projects[loop][download][type] = "git"
-projects[loop][download][url] = "git@github.com:loopdk/loop.git"
+projects[loop][download][url] = "git@github.com:loopdk/loop_theme.git"
 projects[loop][download][branch] = "development"
 
 ; Libraries

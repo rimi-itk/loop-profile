@@ -12,7 +12,7 @@ projects[drupal][patch][] = "https://drupal.org/files/drupal-menu_navigation_lin
 projects[drupal][patch][] = "https://drupal.org/files/issues/translate_role_names-2205581-1.patch"
 
 ; Install profile.
-projects[loopdk][type] = "profile"
-projects[loopdk][download][type] = "git"
-projects[loopdk][download][url] = "git@github.com:loopdk/profile.git"
-projects[loopdk][download][branch] = "development"
+projects[loop][type] = "profile"
+projects[loop][download][type] = "git"
+projects[loop][download][url] = "git@github.com:loopdk/loop.git"
+projects[loop][download][branch] = "gitstuff"
