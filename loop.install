@@ -1,0 +1,109 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the Loop installation profile.
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * Setting up default and admin theme. Activate node editing from admin theme.
+ * Enable user tracking via Google Analytics.
+ * Setup "Page not found" and "Access denied" pages.
+ *
+ * @see system_install()
+*/
+function loop_install() {
+  // Set default variables.
+  $default_theme = 'loop';
+  $admin_theme = 'seven';
+
+  // Enable themes.
+  theme_enable(array($default_theme, $admin_theme));
+
+  // Enable $default_theme.
+  variable_set('theme_default', $default_theme);
+
+  // Enable $admin_theme.
+  variable_set('admin_theme', $admin_theme);
+
+  // Activate admin theme when editing a node.
+  variable_set('node_admin_theme', '1');
+
+  // Enable User tracking in Google Analytics.
+  variable_set('googleanalytics_trackuserid', 1);
+
+  // Setup page not found.
+  loop_page_not_found();
+
+  // Setup access denied page.
+  loop_access_denied_page();
+
+  // Ignore any other install messages.
+  drupal_get_messages();
+
+  // Clear caches.
+  drupal_flush_all_caches();
+}
+
+/**
+ * Add a basic page for page-not-found.
+ */
+function loop_page_not_found() {
+  $node = new stdClass();
+  $node->uid = 1;
+
+  $node->title = 'Page not found';
+  $node->type = 'page';
+  $node->language = 'und';
+  $node->field_ding_page_body = array(
+    'und' => array(
+      array(
+        'value' => 'Page not found',
+        'format' => 'editor',
+        'safe_value' => '<p>Page not found</p>',
+      ),
+    ),
+  );
+
+  $node->path = array(
+    'alias' => 'page-not-found',
+    'language' => 'und',
+  );
+
+  node_save($node);
+
+  // Set the 404 page.
+  variable_set('site_404', 'page-not-found');
+}
+
+/**
+ * Add a basic access denied page.
+ */
+function loop_access_denied_page() {
+  $node = new stdClass();
+  $node->uid = 1;
+
+  $node->title = 'Access denied';
+  $node->type = 'page';
+  $node->language = 'und';
+  $node->field_ding_page_body = array(
+    'und' => array(
+      array(
+        'value' => 'Access denied',
+        'format' => 'editor',
+        'safe_value' => '<p>Access denied</p>',
+      ),
+    ),
+  );
+
+  $node->path = array(
+    'alias' => 'access_denied',
+    'language' => 'und',
+  );
+
+  node_save($node);
+
+  // Set the 404 page.
+  variable_set('site_403', 'access_denied');
+}
