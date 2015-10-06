@@ -163,7 +163,7 @@ function loop_search_default_search_api_server() {
       "scheme" : "http",
       "host" : "localhost",
       "port" : "8983",
-      "path" : "\\/solr\\/loop_stg",
+      "path" : "\\/solr\\/loop",
       "http_user" : "",
       "http_pass" : "",
       "excerpt" : 0,
