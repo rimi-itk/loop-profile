@@ -1,7 +1,7 @@
 name = Loop instruction
 description = Content type for instruction
 core = 7.x
-package = Loop content
+package = Loop
 dependencies[] = ctools
 dependencies[] = entity
 dependencies[] = features

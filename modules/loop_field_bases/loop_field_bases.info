@@ -1,7 +1,7 @@
 name = Loop field bases
 description = Holds field bases for entites, required for any field related feature
 core = 7.x
-package = Loop core
+package = Loop
 version = 7.x-1.1
 project = loop_field_bases
 dependencies[] = entityreference

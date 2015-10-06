@@ -1,7 +1,7 @@
 name = Loop user related content profession
 description = View for user related content based on users profession
 core = 7.x
-package = Loop Views / Addons
+package = Loop
 dependencies[] = loop_flag
 dependencies[] = loop_post
 dependencies[] = loop_taxonomy

@@ -1,6 +1,6 @@
 name = Loop taxonomy views
 core = 7.x
-package = Loop Views / Addons
+package = Loop
 dependencies[] = views
 dependencies[] = views_content
 features[ctools][] = views:views_default:3.0
