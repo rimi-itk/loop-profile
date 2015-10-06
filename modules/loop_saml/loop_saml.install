@@ -1,0 +1,17 @@
+<?php
+/**
+ * @file
+ * Handles updates.
+ */
+
+/**
+ * Implements hook_update().
+ *
+ * Set a module weight.
+ */
+function loop_saml_update_7000() {
+  db_update('system')
+    ->fields(array('weight' => 1))
+    ->condition('name', 'loop_saml', '=')
+    ->execute();
+}
