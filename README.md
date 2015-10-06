@@ -81,7 +81,7 @@ The default Solr server settings are
 ```
   host: localhost
   port: 8983
-  path: /solr/loop_stg
+  path: /solr/loop
 ```
 
 After installing Loop these settings should be changed to match the actual Solr server setup (go to `/admin/config/search/search_api`)
@@ -103,9 +103,9 @@ As an alternative to manually creating terms, you can install the module [Loop t
 These script below will
 
 * install Apache Solr 4.9.1 (as a Tomcat servlet) running on port 8983 and
-* create a Solr core named "loop_stg"
+* create a Solr core named "loop"
 
-Change "8983" and "loop_stg" as needed.
+Change "8983" and "loop" as needed.
 
 ```
 # Install tomcat7
@@ -142,14 +142,14 @@ curl http://localhost:8983/
 The first Loop Solr core can be created like this
 
 ```
-# Create Solr core "loop_stg"
-sudo cp -r /var/lib/tomcat7/solr/collection1 /var/lib/tomcat7/solr/loop_stg
-sudo sed -i 's/collection1/loop_stg/' /var/lib/tomcat7/solr/loop_stg/core.properties
+# Create Solr core "loop"
+sudo cp -r /var/lib/tomcat7/solr/collection1 /var/lib/tomcat7/solr/loop
+sudo sed -i 's/collection1/loop/' /var/lib/tomcat7/solr/loop/core.properties
 
 # Get Drupal Solr configuration and copy it into the Solr installion
 cd ~
 drush pm-download search_api_solr
-sudo cp search_api_solr/solr-conf/4.x/* /var/lib/tomcat7/solr/loop_stg/conf/
+sudo cp search_api_solr/solr-conf/4.x/* /var/lib/tomcat7/solr/loop/conf/
 rm -rf search_api_solr
 cd -
 
@@ -159,17 +159,17 @@ sudo chown -R tomcat7:tomcat7 /var/lib/tomcat7/solr
 # Restart tomcat
 sudo service tomcat7 restart
 
-# Check that Solr is running and that we can access the core "loop_stg"
-curl 'http://localhost:8983/solr/loop_stg/select?q=*%3A*&wt=json&indent=true'
+# Check that Solr is running and that we can access the core "loop"
+curl 'http://localhost:8983/solr/loop/select?q=*%3A*&wt=json&indent=true'
 ```
 
 Additional Loop Solr cores can be created as shown above or be created
 as copies of already existing cores:
 
 ```
-# Create Solr core "loopdk" as a copy of "loop_stg"
-sudo cp -r /var/lib/tomcat7/solr/loop_stg /var/lib/tomcat7/solr/loopdk
-sudo sed -i 's/loop_stg/loopdk/' /var/lib/tomcat7/solr/loopdk/core.properties
+# Create Solr core "loop_custom" as a copy of "loop"
+sudo cp -r /var/lib/tomcat7/solr/loop /var/lib/tomcat7/solr/loop_custom
+sudo sed -i 's/loop/loop_custom/' /var/lib/tomcat7/solr/loop_custom/core.properties
 
 # Set file permissions
 sudo chown -R tomcat7:tomcat7 /var/lib/tomcat7/solr
@@ -178,8 +178,8 @@ sudo chown -R tomcat7:tomcat7 /var/lib/tomcat7/solr
 sudo service tomcat7 restart
 
 # Delete all data in the copied core
-curl http://localhost:8983/solr/loopdk/update --data '<delete><query>*:*</query></delete>' -H 'Content-type:text/xml; charset=utf-8'
-curl http://localhost:8983/solr/loopdk/update --data '<commit/>' -H 'Content-type:text/xml; charset=utf-8'
+curl http://localhost:8983/solr/loop_custom/update --data '<delete><query>*:*</query></delete>' -H 'Content-type:text/xml; charset=utf-8'
+curl http://localhost:8983/solr/loop_custom/update --data '<commit/>' -H 'Content-type:text/xml; charset=utf-8'
 ```
 
 # Reindexing all data
