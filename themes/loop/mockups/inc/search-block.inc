@@ -1,5 +1,5 @@
 <?php
-$path_to_theme = "/profiles/loopdk/themes/loop/";
+$path_to_theme = "/profiles/loop/themes/loop/";
 ?>
 <div class="typeahead-block">
   <form>

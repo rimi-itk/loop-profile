@@ -4,4 +4,4 @@ package = Loop
 dependencies[] = features_override
 features[features_api][] = api:2
 features[features_overrides][] = field_instance.user-user-field_profession.required
-project path = profiles/loopdk/modules
+project path = profiles/loop/modules
