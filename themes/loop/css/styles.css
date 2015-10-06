@@ -39,31 +39,61 @@
     height: 0; }
   100% {
     height: 80px; } }
+
 @-webkit-keyframes open-notification-actions {
   0% {
     height: 0; }
   100% {
     height: 80px; } }
+
+@-o-keyframes open-notification-actions {
+  0% {
+    height: 0; }
+  100% {
+    height: 80px; } }
+
+@-ms-keyframes open-notification-actions {
+  0% {
+    height: 0; }
+  100% {
+    height: 80px; } }
+
 @keyframes open-notification-actions {
   0% {
     height: 0; }
   100% {
     height: 80px; } }
+
 @-moz-keyframes close-notification-actions {
   0% {
     height: 80px; }
   100% {
     height: 0; } }
+
 @-webkit-keyframes close-notification-actions {
   0% {
     height: 80px; }
   100% {
     height: 0; } }
+
+@-o-keyframes close-notification-actions {
+  0% {
+    height: 80px; }
+  100% {
+    height: 0; } }
+
+@-ms-keyframes close-notification-actions {
+  0% {
+    height: 80px; }
+  100% {
+    height: 0; } }
+
 @keyframes close-notification-actions {
   0% {
     height: 80px; }
   100% {
     height: 0; } }
+
 @-moz-keyframes spinner {
   0% {
     -webkit-transform: rotate(0deg);
@@ -71,6 +101,7 @@
   100% {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg); } }
+
 @-webkit-keyframes spinner {
   0% {
     -webkit-transform: rotate(0deg);
@@ -78,6 +109,23 @@
   100% {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg); } }
+
+@-o-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+
+@-ms-keyframes spinner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg); } }
+
 @keyframes spinner {
   0% {
     -webkit-transform: rotate(0deg);
@@ -85,6 +133,7 @@
   100% {
     -webkit-transform: rotate(359deg);
     transform: rotate(359deg); } }
+
 /**
  * Normalize
  *
@@ -280,8 +329,7 @@ select {
 /* 2. Correct inability to style clickable `input` types in iOS. */
 /* 3. Improve usability and consistency of cursor style between image-type `input` and others. */
 button,
-html input[type="button"],
-input[type="reset"],
+html input[type="button"], input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -384,11 +432,14 @@ em {
 a:link {
   color: #41ab51;
   text-decoration: underline; }
+
 a:visited {
   color: #3a9948; }
+
 a:hover {
   color: #33863f;
   text-decoration: none; }
+
 a:focus {
   color: #33863f; }
 
@@ -461,21 +512,25 @@ dd {
   background-color: #f2f2f2; }
   @media only screen and (min-width: 75em) {
     .layout-full-width, .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
-      -moz-border-radius: 0.4em;
       -webkit-border-radius: 0.4em;
+      -moz-border-radius: 0.4em;
+      -ms-border-radius: 0.4em;
+      -o-border-radius: 0.4em;
       border-radius: 0.4em;
-      -moz-box-sizing: border-box;
       -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
       box-sizing: border-box; } }
 
 .layout--inner {
-  padding: 1.5em .5em;
+  padding: 1.5em 0.5em;
   background-color: #fff;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em;
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 /**
@@ -489,7 +544,8 @@ input,
 textarea {
   font: 1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-input[type="text"], .autocomplete-deluxe-container,
+input[type="text"],
+.autocomplete-deluxe-container,
 input[type="password"],
 input[type="date"],
 input[type="datetime"],
@@ -507,13 +563,16 @@ textarea {
   padding: .75em;
   color: #595959;
   background-color: #f2f2f2;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em;
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
-  input[type="text"]:focus, .autocomplete-deluxe-container:focus,
+  input[type="text"]:focus,
+  .autocomplete-deluxe-container:focus,
   input[type="password"]:focus,
   input[type="date"]:focus,
   input[type="datetime"]:focus,
@@ -526,7 +585,8 @@ textarea {
   textarea:focus {
     border: 1px solid #737373;
     color: #404040; }
-  input[type="text"][disabled], [disabled].autocomplete-deluxe-container,
+  input[type="text"][disabled],
+  [disabled].autocomplete-deluxe-container,
   input[type="password"][disabled],
   input[type="date"][disabled],
   input[type="datetime"][disabled],
@@ -537,8 +597,8 @@ textarea {
   input[type="time"][disabled],
   input[type="url"][disabled],
   textarea[disabled] {
-    -moz-box-shadow: 0 0 0;
     -webkit-box-shadow: 0 0 0;
+    -moz-box-shadow: 0 0 0;
     box-shadow: 0 0 0;
     border: 1px solid #cccccc;
     color: #b3b3b3;
@@ -575,20 +635,24 @@ label {
     padding-top: .5em;
     color: #b3b3b3; }
 
-.form-type-textarea, .description-form-element,
+.form-type-textarea,
+.description-form-element,
 .form-type-select,
 .form-type-autocomplete-deluxe {
   border: 1px solid #f2f2f2;
   margin-bottom: 1.5em;
   padding: 1em;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em; }
 
 .description-form-element .form-item {
   border: 0;
   margin: 0;
   padding: 0; }
+
 .description-form-element .filter-wrapper {
   display: none; }
 
@@ -602,11 +666,13 @@ label {
   /* For Chrome */
   height: 3em;
   background-color: #f2f2f2;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em;
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 .form-textarea-question {
@@ -629,8 +695,10 @@ label {
   margin-bottom: 2em;
   padding-bottom: 1em;
   padding-left: 1em;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em; }
   .field-group-fieldset:last-child, .user-profile-module--field-group-fieldset:last-child, .user-profile-module--field-group-fieldset-personal-info:last-child {
     margin-bottom: 0; }
@@ -644,6 +712,7 @@ label {
   border: 0;
   margin-bottom: 0;
   padding: 0; }
+
 .vbo-views-form .vbo-fieldset-select-all {
   border: 0;
   padding: 0 0 2em;
@@ -651,16 +720,21 @@ label {
   width: auto; }
   .vbo-views-form .vbo-fieldset-select-all label {
     text-align: left; }
+
 .vbo-views-form .user-profile-module--field, .vbo-views-form .user-profile-module--field-personal-info {
   overflow: hidden; }
+
 .vbo-views-form .user-profile--notification-label {
   float: left;
   width: 90%; }
+
 .vbo-views-form .profile--notification-action {
   float: right; }
+
 .vbo-views-form .form-checkbox {
   float: right;
   margin: 0.4em 0 0 0.5em; }
+
 .vbo-views-form .form-item-operation {
   width: 100%;
   display: block;
@@ -676,10 +750,12 @@ label {
   border: 0;
   padding: 0;
   margin: 0; }
+
 .user-profile-form #edit-field-user-image-und-0-upload-button {
   display: block;
   margin: 1em auto;
   width: 8em; }
+
 .user-profile-form #edit-field-user-image-und-0-remove-button {
   background-color: #ff6138;
   border: 1px solid #ff3905;
@@ -688,16 +764,20 @@ label {
   display: block;
   margin: 1em auto;
   width: 8em; }
+
 .user-profile-form .file,
 .user-profile-form .file-size {
   display: none; }
+
 .user-profile-form .form-file {
   display: block;
   margin-bottom: 1em;
   width: 13em; }
+
 .user-profile-form .image-preview {
   margin: 0 auto;
   width: 192px; }
+
 @media only screen and (min-width: 45em) {
   .user-profile-form .image-preview,
   .user-profile-form #edit-field-user-image-und-0-upload,
@@ -719,16 +799,26 @@ label {
   display: inline-block;
   font-size: 1.25em;
   margin: 0 0.5em 0.5em 0;
-  padding: .4em 1.5em .5em;
+  padding: 0.4em 1.5em 0.5em;
   position: relative;
   cursor: pointer;
   line-height: 150%;
   text-align: center;
   vertical-align: middle;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em; }
-  .button--action:focus, .form-submit:focus, .block-follow-question .flag-action:focus, .typeahead-block--button:focus, .button--neutral:focus, .user-profile-form #edit-field-user-image-und-0-upload-button:focus, .comments--editor-actions .comments--editor-actions-edit:focus, .question--editor-actions .question--editor-actions-edit:focus, .edit-user--image-button-add:focus, .button--warning:focus, .comments--editor-actions .comments--editor-actions-delete:focus, .block-follow-question .unflag-action:focus, .question--editor-actions .question--editor-actions-delete:focus, .edit-user--image-button-remove:focus, .at-add-btn:focus, .button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .typeahead-block--button:hover, .button--neutral:hover, .user-profile-form #edit-field-user-image-und-0-upload-button:hover, .comments--editor-actions .comments--editor-actions-edit:hover, .question--editor-actions .question--editor-actions-edit:hover, .edit-user--image-button-add:hover, .button--warning:hover, .comments--editor-actions .comments--editor-actions-delete:hover, .block-follow-question .unflag-action:hover, .question--editor-actions .question--editor-actions-delete:hover, .edit-user--image-button-remove:hover, .at-add-btn:hover, .button--action:active, .form-submit:active, .block-follow-question .flag-action:active, .typeahead-block--button:active, .button--neutral:active, .user-profile-form #edit-field-user-image-und-0-upload-button:active, .comments--editor-actions .comments--editor-actions-edit:active, .question--editor-actions .question--editor-actions-edit:active, .edit-user--image-button-add:active, .button--warning:active, .comments--editor-actions .comments--editor-actions-delete:active, .block-follow-question .unflag-action:active, .question--editor-actions .question--editor-actions-delete:active, .edit-user--image-button-remove:active, .at-add-btn:active {
+  .button--action:focus,
+  .form-submit:focus, .block-follow-question .flag-action:focus, .typeahead-block--button:focus, .button--neutral:focus,
+  .user-profile-form #edit-field-user-image-und-0-upload-button:focus, .comments--editor-actions .comments--editor-actions-edit:focus, .question--editor-actions .question--editor-actions-edit:focus, .edit-user--image-button-add:focus, .button--warning:focus,
+  .comments--editor-actions .comments--editor-actions-delete:focus, .block-follow-question .unflag-action:focus, .question--editor-actions .question--editor-actions-delete:focus, .edit-user--image-button-remove:focus, .at-add-btn:focus,
+  .button--action:hover,
+  .form-submit:hover, .block-follow-question .flag-action:hover, .typeahead-block--button:hover, .button--neutral:hover,
+  .user-profile-form #edit-field-user-image-und-0-upload-button:hover, .comments--editor-actions .comments--editor-actions-edit:hover, .question--editor-actions .question--editor-actions-edit:hover, .edit-user--image-button-add:hover, .button--warning:hover,
+  .comments--editor-actions .comments--editor-actions-delete:hover, .block-follow-question .unflag-action:hover, .question--editor-actions .question--editor-actions-delete:hover, .edit-user--image-button-remove:hover, .at-add-btn:hover,
+  .button--action:active, .form-submit:active, .block-follow-question .flag-action:active, .typeahead-block--button:active, .button--neutral:active, .user-profile-form #edit-field-user-image-und-0-upload-button:active, .comments--editor-actions .comments--editor-actions-edit:active, .question--editor-actions .question--editor-actions-edit:active, .edit-user--image-button-add:active, .button--warning:active, .comments--editor-actions .comments--editor-actions-delete:active, .block-follow-question .unflag-action:active, .question--editor-actions .question--editor-actions-delete:active, .edit-user--image-button-remove:active, .at-add-btn:active {
     text-decoration: none; }
   .button--action:last-child, .form-submit:last-child, .block-follow-question .flag-action:last-child, .typeahead-block--button:last-child, .button--neutral:last-child, .user-profile-form #edit-field-user-image-und-0-upload-button:last-child, .comments--editor-actions .comments--editor-actions-edit:last-child, .question--editor-actions .question--editor-actions-edit:last-child, .edit-user--image-button-add:last-child, .button--warning:last-child, .comments--editor-actions .comments--editor-actions-delete:last-child, .block-follow-question .unflag-action:last-child, .question--editor-actions .question--editor-actions-delete:last-child, .edit-user--image-button-remove:last-child, .at-add-btn:last-child {
     margin: 0 0 0.5em; }
@@ -738,7 +828,11 @@ label {
   border: 1px solid #41ab51;
   color: #fff;
   text-shadow: 1px 1px 0 #33863f; }
-  .button--action:link, .form-submit:link, .block-follow-question .flag-action:link, .typeahead-block--button:link, .button--action:visited, .form-submit:visited, .block-follow-question .flag-action:visited, .typeahead-block--button:visited {
+  .button--action:link,
+  .form-submit:link,
+  .block-follow-question .flag-action:link,
+  .typeahead-block--button:link,
+  .button--action:visited, .form-submit:visited, .block-follow-question .flag-action:visited, .typeahead-block--button:visited {
     color: #fff;
     text-decoration: none; }
   .button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .typeahead-block--button:hover {
@@ -749,7 +843,12 @@ label {
   border: 1px solid #404040;
   color: #fff;
   text-shadow: 1px 1px 0 #404040; }
-  .button--neutral:link, .user-profile-form #edit-field-user-image-und-0-upload-button:link, .comments--editor-actions .comments--editor-actions-edit:link, .question--editor-actions .question--editor-actions-edit:link, .edit-user--image-button-add:link, .button--neutral:visited, .user-profile-form #edit-field-user-image-und-0-upload-button:visited, .comments--editor-actions .comments--editor-actions-edit:visited, .question--editor-actions .question--editor-actions-edit:visited, .edit-user--image-button-add:visited {
+  .button--neutral:link,
+  .user-profile-form #edit-field-user-image-und-0-upload-button:link,
+  .comments--editor-actions .comments--editor-actions-edit:link,
+  .question--editor-actions .question--editor-actions-edit:link,
+  .edit-user--image-button-add:link,
+  .button--neutral:visited, .user-profile-form #edit-field-user-image-und-0-upload-button:visited, .comments--editor-actions .comments--editor-actions-edit:visited, .question--editor-actions .question--editor-actions-edit:visited, .edit-user--image-button-add:visited {
     color: #fff;
     text-decoration: none; }
   .button--neutral:hover, .user-profile-form #edit-field-user-image-und-0-upload-button:hover, .comments--editor-actions .comments--editor-actions-edit:hover, .question--editor-actions .question--editor-actions-edit:hover, .edit-user--image-button-add:hover {
@@ -760,7 +859,12 @@ label {
   border: 1px solid #ff3905;
   color: #fff;
   text-shadow: 1px 1px 0 #d12b00; }
-  .button--warning:link, .comments--editor-actions .comments--editor-actions-delete:link, .block-follow-question .unflag-action:link, .question--editor-actions .question--editor-actions-delete:link, .edit-user--image-button-remove:link, .button--warning:visited, .comments--editor-actions .comments--editor-actions-delete:visited, .block-follow-question .unflag-action:visited, .question--editor-actions .question--editor-actions-delete:visited, .edit-user--image-button-remove:visited {
+  .button--warning:link,
+  .comments--editor-actions .comments--editor-actions-delete:link,
+  .block-follow-question .unflag-action:link,
+  .question--editor-actions .question--editor-actions-delete:link,
+  .edit-user--image-button-remove:link,
+  .button--warning:visited, .comments--editor-actions .comments--editor-actions-delete:visited, .block-follow-question .unflag-action:visited, .question--editor-actions .question--editor-actions-delete:visited, .edit-user--image-button-remove:visited {
     color: #fff;
     text-decoration: none; }
   .button--warning:hover, .comments--editor-actions .comments--editor-actions-delete:hover, .block-follow-question .unflag-action:hover, .question--editor-actions .question--editor-actions-delete:hover, .edit-user--image-button-remove:hover {
@@ -771,7 +875,9 @@ label {
   border: 1px solid #b3b3b3;
   color: #fff;
   text-shadow: 1px 1px 0 #999999; }
-  .button--deactivated:link, .typeahead-block--button:link:disabled, .button--deactivated:visited, .typeahead-block--button:visited:disabled {
+  .button--deactivated:link,
+  .typeahead-block--button:link:disabled,
+  .button--deactivated:visited, .typeahead-block--button:visited:disabled {
     color: #737373;
     text-decoration: none; }
 
@@ -787,6 +893,7 @@ label {
   src: url("../icons/loop-icons.eot?24139454#iefix") format("embedded-opentype"), url("../icons/loop-icons.woff?24139454") format("woff"), url("../icons/loop-icons.ttf?24139454") format("truetype"), url("../icons/loop-icons.svg?24139454#loop-icons") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
 /* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
 /*
@@ -890,15 +997,17 @@ label {
 /* '' */
 /* Icon shadow classes
    ================================================================================================================== */
-.comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .user-profile--answers-best-count:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .messages.warning:before, .nav-mobile .nav--link:before, .nav-mobile .nav--wrapper .nav--frontpage-link:before, .nav--wrapper .nav-mobile .nav--frontpage-link:before, .nav-mobile .nav--logout:before,
-.nav-mobile .nav-dropdown--header:before,
+.comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .user-profile--answers-best-count:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .messages.warning:before, .nav-mobile .nav--link:before,
+.nav-mobile .nav--wrapper .nav--frontpage-link:before,
+.nav--wrapper .nav-mobile .nav--frontpage-link:before, .nav-mobile .nav--logout:before, .nav-mobile .nav-dropdown--header:before,
 .nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before, .twitter-typeahead:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .comments--abuse a:before, .question--links a:before {
   display: inline-block;
   font-family: "loop-icons";
   line-height: 100%; }
 
-.nav-mobile .nav--link:before, .nav-mobile .nav--wrapper .nav--frontpage-link:before, .nav--wrapper .nav-mobile .nav--frontpage-link:before, .nav-mobile .nav--logout:before,
-.nav-mobile .nav-dropdown--header:before,
+.nav-mobile .nav--link:before,
+.nav-mobile .nav--wrapper .nav--frontpage-link:before,
+.nav--wrapper .nav-mobile .nav--frontpage-link:before, .nav-mobile .nav--logout:before, .nav-mobile .nav-dropdown--header:before,
 .nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .comments--abuse a:before, .comment--flag:before, .guide--nav-list-item .active:before, .question--links a:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .user-profile--answers-best-count:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .messages.status:before, .messages.warning:before, .messages.error:before {
   margin-right: .35em; }
 
@@ -926,8 +1035,9 @@ label {
 .messages.warning:before {
   content: '\e801'; }
 
-.nav-mobile .nav--link:before, .nav-mobile .nav--wrapper .nav--frontpage-link:before, .nav--wrapper .nav-mobile .nav--frontpage-link:before, .nav-mobile .nav--logout:before,
-.nav-mobile .nav-dropdown--header:before,
+.nav-mobile .nav--link:before,
+.nav-mobile .nav--wrapper .nav--frontpage-link:before,
+.nav--wrapper .nav-mobile .nav--frontpage-link:before, .nav-mobile .nav--logout:before, .nav-mobile .nav-dropdown--header:before,
 .nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before {
   content: '\e807'; }
 
@@ -959,8 +1069,10 @@ label {
     margin-top: 0;
     padding: 1em;
     background-color: #fff;
-    -moz-border-radius: 0.4em;
     -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -ms-border-radius: 0.4em;
+    -o-border-radius: 0.4em;
     border-radius: 0.4em; }
     @media only screen and (min-width: 75em) {
       .tabs.primary {
@@ -985,11 +1097,13 @@ label {
       border: 1px solid #cccccc;
       display: block;
       margin: 0;
-      padding: .75em 1.25em;
+      padding: 0.75em 1.25em;
       line-height: 100%;
       text-decoration: none;
-      -moz-border-radius: 0.4em;
       -webkit-border-radius: 0.4em;
+      -moz-border-radius: 0.4em;
+      -ms-border-radius: 0.4em;
+      -o-border-radius: 0.4em;
       border-radius: 0.4em; }
       .tabs li a:hover,
       .tabs li.active a:hover,
@@ -1010,9 +1124,11 @@ label {
         .tabs li:hover a,
         .tabs li.active:hover a {
           border-bottom: 0;
-          padding: .75em 1.25em .5em;
+          padding: 0.75em 1.25em 0.5em;
+          -webkit-border-radius: 0.4em 0.4em 0 0;
           -moz-border-radius: 0.4em 0.4em 0 0;
-          -webkit-border-radius: 0.4em;
+          -ms-border-radius: 0.4em 0.4em 0 0;
+          -o-border-radius: 0.4em 0.4em 0 0;
           border-radius: 0.4em 0.4em 0 0; } }
   .tabs li a {
     background: #f2f2f2; }
@@ -1026,7 +1142,7 @@ label {
     .tabs.secondary li a,
     .tabs.secondary li a:hover {
       border: 1px solid #cccccc;
-      padding: .5em 1.25em;
+      padding: 0.5em 1.25em;
       background: #fff; }
     .tabs.secondary li a.active {
       background: #e6e6e6; }
@@ -1034,8 +1150,10 @@ label {
     .tabs.secondary li.active a,
     .tabs.secondary li:hover a,
     .tabs.secondary li.active:hover a {
-      -moz-border-radius: 0.4em;
       -webkit-border-radius: 0.4em;
+      -moz-border-radius: 0.4em;
+      -ms-border-radius: 0.4em;
+      -o-border-radius: 0.4em;
       border-radius: 0.4em; }
 
 /**
@@ -1051,8 +1169,11 @@ label {
   margin-bottom: 1.5em;
   z-index: 1;
   background-color: #41ab51;
-  /* setting:header_color */ }
-  .header:before, .header:after {
+  /* setting:header_color */
+  *position: relative;
+  *zoom: 1; }
+  .header:before,
+  .header:after {
     content: "";
     display: table; }
   .header:after {
@@ -1072,9 +1193,10 @@ label {
   display: inline-block;
   padding-top: 0;
   text-align: center;
+  -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transform: translateY(-50%); }
 
 .logo--image {
@@ -1109,8 +1231,8 @@ label {
 .layout-element-epsilon {
   float: left;
   width: 100%;
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 @media only screen and (min-width: 45em) {
@@ -1126,6 +1248,9 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
     padding-left: 0; } }
 
 @media only screen and (min-width: 45em) {
@@ -1141,7 +1266,11 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
     padding-left: 0; } }
+
 .layout-frontpage .layout-element-beta {
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 2em;
@@ -1159,6 +1288,9 @@ label {
       -ms-box-sizing: border-box;
       box-sizing: border-box;
       word-wrap: break-word;
+      _display: inline;
+      _overflow: hidden;
+      _overflow-y: visible;
       border-bottom: 0;
       margin-bottom: 0;
       padding-bottom: 0;
@@ -1166,6 +1298,7 @@ label {
       .layout-frontpage .layout-element-beta.js-full-width {
         overflow: hidden;
         width: 100%; } }
+
 @media only screen and (min-width: 75em) {
   .layout-frontpage .layout-element-gamma {
     float: right;
@@ -1179,10 +1312,15 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
     padding-right: 0; } }
+
 .layout-frontpage .layout-element-gamma.js-full-width {
   overflow: hidden;
   width: 100%; }
+
 @media only screen and (min-width: 45em) {
   .layout-frontpage .layout-element-delta {
     float: left;
@@ -1196,6 +1334,9 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
     padding-left: 0; } }
 
 .layout-dashboard .layout-element-alpha {
@@ -1215,10 +1356,14 @@ label {
       -ms-box-sizing: border-box;
       box-sizing: border-box;
       word-wrap: break-word;
+      _display: inline;
+      _overflow: hidden;
+      _overflow-y: visible;
       border-bottom: 0;
       margin-bottom: 0;
       padding-bottom: 0;
       padding-left: 0; } }
+
 @media only screen and (min-width: 75em) {
   .layout-dashboard .layout-element-beta,
   .layout-dashboard .layout-element-delta {
@@ -1233,7 +1378,11 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
     padding-right: 0; } }
+
 .layout-dashboard .layout-element-gamma {
   float: left;
   width: 100%;
@@ -1245,7 +1394,10 @@ label {
   -webkit-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
-  word-wrap: break-word; }
+  word-wrap: break-word;
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible; }
 
 .layout-default .layout-element-alpha {
   border-bottom: 1px solid #e6e6e6;
@@ -1264,10 +1416,14 @@ label {
       -ms-box-sizing: border-box;
       box-sizing: border-box;
       word-wrap: break-word;
+      _display: inline;
+      _overflow: hidden;
+      _overflow-y: visible;
       border-bottom: 0;
       margin-bottom: 0;
       padding-bottom: 0;
       padding-left: 0; } }
+
 @media only screen and (min-width: 45em) {
   .layout-default .layout-element-beta {
     float: right;
@@ -1281,7 +1437,11 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
     padding-right: 0; } }
+
 @media only screen and (min-width: 45em) {
   .layout-default .layout-element-gamma,
   .layout-default .layout-element-delta,
@@ -1298,6 +1458,9 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
     padding-left: 0;
     padding-right: 0; } }
 
@@ -1314,7 +1477,11 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
     padding-left: 0; } }
+
 @media only screen and (min-width: 45em) {
   .layout-default-inverted .layout-element-beta {
     float: right;
@@ -1328,7 +1495,11 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible;
     padding-right: 0; } }
+
 @media only screen and (min-width: 45em) {
   .layout-default-inverted .layout-element-gamma {
     clear: both;
@@ -1342,7 +1513,11 @@ label {
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
-    word-wrap: break-word; } }
+    word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible; } }
+
 @media only screen and (min-width: 45em) {
   .layout-default-inverted .layout-element-delta {
     float: right;
@@ -1355,7 +1530,11 @@ label {
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
-    word-wrap: break-word; } }
+    word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible; } }
+
 @media only screen and (min-width: 45em) {
   .layout-default-inverted .layout-element-epsilon {
     clear: both;
@@ -1369,7 +1548,11 @@ label {
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
-    word-wrap: break-word; } }
+    word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible; } }
+
 .layout-default-inverted .layout-element-gamma,
 .layout-default-inverted .layout-element-delta,
 .layout-default-inverted .layout-element-epsilon {
@@ -1388,7 +1571,11 @@ label {
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
-    word-wrap: break-word; } }
+    word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible; } }
+
 @media only screen and (min-width: 45em) {
   .layout-alternative .layout-element-beta {
     clear: both;
@@ -1402,7 +1589,11 @@ label {
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
-    word-wrap: break-word; } }
+    word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible; } }
+
 @media only screen and (min-width: 45em) {
   .layout-alternative .layout-element-gamma {
     clear: both;
@@ -1416,7 +1607,11 @@ label {
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
-    word-wrap: break-word; } }
+    word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible; } }
+
 @media only screen and (min-width: 45em) {
   .layout-alternative .layout-element-delta {
     float: right;
@@ -1429,7 +1624,11 @@ label {
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
-    word-wrap: break-word; } }
+    word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible; } }
+
 @media only screen and (min-width: 45em) {
   .layout-alternative .layout-element-epsilon {
     clear: both;
@@ -1443,7 +1642,10 @@ label {
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
-    word-wrap: break-word; } }
+    word-wrap: break-word;
+    _display: inline;
+    _overflow: hidden;
+    _overflow-y: visible; } }
 
 .layout-no-wrapper .layout--inner {
   padding: 1.5em; }
@@ -1482,9 +1684,7 @@ label {
     text-align: center; }
   .nav--wrapper .nav-dropdown--header,
   .nav--wrapper .nav--toggle-mobile-nav,
-  .nav--wrapper .nav--link,
-  .nav--wrapper .nav--frontpage-link,
-  .nav--wrapper .nav--logout {
+  .nav--wrapper .nav--link, .nav--wrapper .nav--frontpage-link, .nav--wrapper .nav--logout {
     position: relative;
     display: inline-block;
     height: 2.75em;
@@ -1493,54 +1693,43 @@ label {
     background-color: #5dc26d;
     line-height: 2em;
     text-align: center;
-    -moz-border-radius: 100%;
     -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
     border-radius: 100%; }
-    .nav--wrapper .nav-dropdown--header:link, .nav--wrapper .nav-dropdown--header:visited,
+    .nav--wrapper .nav-dropdown--header:link,
+    .nav--wrapper .nav-dropdown--header:visited,
     .nav--wrapper .nav--toggle-mobile-nav:link,
     .nav--wrapper .nav--toggle-mobile-nav:visited,
     .nav--wrapper .nav--link:link,
-    .nav--wrapper .nav--frontpage-link:link,
-    .nav--wrapper .nav--logout:link,
-    .nav--wrapper .nav--link:visited,
-    .nav--wrapper .nav--frontpage-link:visited,
-    .nav--wrapper .nav--logout:visited {
+    .nav--wrapper .nav--frontpage-link:link, .nav--wrapper .nav--logout:link, .nav--wrapper .nav--link:visited, .nav--wrapper .nav--frontpage-link:visited, .nav--wrapper .nav--logout:visited {
       color: #fff;
       text-decoration: none; }
     .nav--wrapper .nav-dropdown--header:hover,
     .nav--wrapper .nav--toggle-mobile-nav:hover,
-    .nav--wrapper .nav--link:hover,
-    .nav--wrapper .nav--frontpage-link:hover,
-    .nav--wrapper .nav--logout:hover {
+    .nav--wrapper .nav--link:hover, .nav--wrapper .nav--frontpage-link:hover, .nav--wrapper .nav--logout:hover {
       background-color: #82d08e; }
-    .nav--wrapper .nav-dropdown--header.active-trail, .nav--wrapper .nav-dropdown--header.active,
+    .nav--wrapper .nav-dropdown--header.active-trail,
+    .nav--wrapper .nav-dropdown--header.active,
     .nav--wrapper .nav--toggle-mobile-nav.active-trail,
     .nav--wrapper .nav--toggle-mobile-nav.active,
     .nav--wrapper .nav--link.active-trail,
-    .nav--wrapper .active-trail.nav--frontpage-link,
-    .nav--wrapper .active-trail.nav--logout,
-    .nav--wrapper .nav--link.active,
-    .nav--wrapper .active.nav--frontpage-link,
-    .nav--wrapper .active.nav--logout {
+    .nav--wrapper .active-trail.nav--frontpage-link, .nav--wrapper .active-trail.nav--logout, .nav--wrapper .nav--link.active, .nav--wrapper .active.nav--frontpage-link, .nav--wrapper .active.nav--logout {
       background-color: #f2f2f2;
       color: #41ab51; }
-      .nav--wrapper .nav-dropdown--header.active-trail:hover, .nav--wrapper .nav-dropdown--header.active:hover,
+      .nav--wrapper .nav-dropdown--header.active-trail:hover,
+      .nav--wrapper .nav-dropdown--header.active:hover,
       .nav--wrapper .nav--toggle-mobile-nav.active-trail:hover,
       .nav--wrapper .nav--toggle-mobile-nav.active:hover,
       .nav--wrapper .nav--link.active-trail:hover,
-      .nav--wrapper .active-trail.nav--frontpage-link:hover,
-      .nav--wrapper .active-trail.nav--logout:hover,
-      .nav--wrapper .nav--link.active:hover,
-      .nav--wrapper .active.nav--frontpage-link:hover,
-      .nav--wrapper .active.nav--logout:hover {
+      .nav--wrapper .active-trail.nav--frontpage-link:hover, .nav--wrapper .active-trail.nav--logout:hover, .nav--wrapper .nav--link.active:hover, .nav--wrapper .active.nav--frontpage-link:hover, .nav--wrapper .active.nav--logout:hover {
         background-color: #5dc26d;
         color: #f2f2f2; }
     @media only screen and (min-width: 35em) {
       .nav--wrapper .nav-dropdown--header,
       .nav--wrapper .nav--toggle-mobile-nav,
-      .nav--wrapper .nav--link,
-      .nav--wrapper .nav--frontpage-link,
-      .nav--wrapper .nav--logout {
+      .nav--wrapper .nav--link, .nav--wrapper .nav--frontpage-link, .nav--wrapper .nav--logout {
         height: 3.25em;
         margin-left: 1em;
         width: 3.25em;
@@ -1548,16 +1737,16 @@ label {
     @media only screen and (min-width: 43em) {
       .nav--wrapper .nav-dropdown--header,
       .nav--wrapper .nav--toggle-mobile-nav,
-      .nav--wrapper .nav--link,
-      .nav--wrapper .nav--frontpage-link,
-      .nav--wrapper .nav--logout {
+      .nav--wrapper .nav--link, .nav--wrapper .nav--frontpage-link, .nav--wrapper .nav--logout {
         padding-right: 1.25em;
         padding-left: 1.25em;
         height: auto;
         width: auto;
         line-height: 2.5em;
+        -webkit-border-radius: 0.4em 0.4em 0 0;
         -moz-border-radius: 0.4em 0.4em 0 0;
-        -webkit-border-radius: 0.4em;
+        -ms-border-radius: 0.4em 0.4em 0 0;
+        -o-border-radius: 0.4em 0.4em 0 0;
         border-radius: 0.4em 0.4em 0 0; } }
   .nav--wrapper .nav--frontpage-link {
     display: none; }
@@ -1626,8 +1815,10 @@ label {
     padding-left: 1.25em;
     background-color: #5dc26d;
     line-height: 2.5em;
+    -webkit-border-radius: 0 0 0.4em 0.4em;
     -moz-border-radius: 0 0 0.4em 0.4em;
-    -webkit-border-radius: 0;
+    -ms-border-radius: 0 0 0.4em 0.4em;
+    -o-border-radius: 0 0 0.4em 0.4em;
     border-radius: 0 0 0.4em 0.4em; }
   .nav-dropdown .nav-dropdown--wrapper {
     position: relative;
@@ -1653,7 +1844,8 @@ label {
     display: block;
     min-width: 10em;
     text-align: right; }
-    .nav-dropdown .nav-dropdown--link:link, .nav-dropdown .nav-dropdown--link:visited {
+    .nav-dropdown .nav-dropdown--link:link,
+    .nav-dropdown .nav-dropdown--link:visited {
       color: #fff;
       text-decoration: none; }
     .nav-dropdown .nav-dropdown--link:hover {
@@ -1681,18 +1873,21 @@ label {
   height: 100%;
   width: 76%;
   background-color: #41ab51;
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -moz-box-shadow: 5px 0 8px #33863f inset;
   -webkit-box-shadow: 5px 0 8px #33863f inset;
+  -moz-box-shadow: 5px 0 8px #33863f inset;
   box-shadow: 5px 0 8px #33863f inset;
+  -webkit-transform: translate3d(100%, 0, 0);
   -moz-transform: translate3d(100%, 0, 0);
   -ms-transform: translate3d(100%, 0, 0);
-  -webkit-transform: translate3d(100%, 0, 0);
+  -o-transform: translate3d(100%, 0, 0);
   transform: translate3d(100%, 0, 0);
-  -moz-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
   backface-visibility: hidden; }
   .nav-mobile a:link {
     color: #fff;
@@ -1704,8 +1899,9 @@ label {
     text-decoration: underline; }
   .nav-mobile a:focus {
     color: #fff; }
-  .nav-mobile .nav--link, .nav-mobile .nav--wrapper .nav--frontpage-link, .nav--wrapper .nav-mobile .nav--frontpage-link, .nav-mobile .nav--logout,
-  .nav-mobile .nav-dropdown--header,
+  .nav-mobile .nav--link,
+  .nav-mobile .nav--wrapper .nav--frontpage-link,
+  .nav--wrapper .nav-mobile .nav--frontpage-link, .nav-mobile .nav--logout, .nav-mobile .nav-dropdown--header,
   .nav-mobile .nav-dropdown--link {
     border-bottom: 1px solid #e6e6e6;
     margin-bottom: 1em;
@@ -1963,8 +2159,10 @@ This file is generated by `grunt build`, do not edit it by hand.
   cursor: text;
   min-height: 1.25em;
   padding: 0.75em;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em; }
 
 .chosen-container-multi .chosen-choices li {
@@ -2148,7 +2346,8 @@ This file is generated by `grunt build`, do not edit it by hand.
 /* @end */
 /* @group Retina compatibility */
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi) {
-  .chosen-rtl .chosen-search input[type="text"], .chosen-rtl .chosen-search .autocomplete-deluxe-container,
+  .chosen-rtl .chosen-search input[type="text"],
+  .chosen-rtl .chosen-search .autocomplete-deluxe-container,
   .chosen-container-single .chosen-single abbr,
   .chosen-container-single .chosen-single div b,
   .chosen-container-single .chosen-search input[type="text"],
@@ -2159,6 +2358,7 @@ This file is generated by `grunt build`, do not edit it by hand.
     background-image: url("../images/chosen-sprite@2x.png") !important;
     background-size: 52px 37px !important;
     background-repeat: no-repeat !important; } }
+
 /* @end */
 /**
  *
@@ -2173,6 +2373,7 @@ This file is generated by `grunt build`, do not edit it by hand.
    ================================================================================================================== */
 .page-abuse-report .form-type-item label:after {
   content: ':'; }
+
 .page-abuse-report label {
   text-transform: capitalize; }
 
@@ -2180,10 +2381,12 @@ This file is generated by `grunt build`, do not edit it by hand.
    ================================================================================================================== */
 .page-admin-content-abuse .details {
   display: none; }
+
 .page-admin-content-abuse .abuse-report label {
   clear: left;
   float: left;
   padding-right: 1em; }
+
 .page-admin-content-abuse .links,
 .page-admin-content-abuse .description {
   float: left; }
@@ -2198,8 +2401,10 @@ This file is generated by `grunt build`, do not edit it by hand.
 .block-follow-question, .block-user-links {
   margin-bottom: 1.5em;
   background-color: #f2f2f2;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em; }
 
 .block-module--inner {
@@ -2338,9 +2543,11 @@ This file is generated by `grunt build`, do not edit it by hand.
 .block-questions--link {
   display: block;
   margin-bottom: .5em; }
-  .block-questions--link:link, .block-questions--link:visited {
+  .block-questions--link:link,
+  .block-questions--link:visited {
     text-decoration: none; }
-  .block-questions--link:hover, .block-questions--link:active {
+  .block-questions--link:hover,
+  .block-questions--link:active {
     text-decoration: underline; }
 
 /**
@@ -2360,8 +2567,10 @@ This file is generated by `grunt build`, do not edit it by hand.
     margin-bottom: 2.5em;
     padding: 1.5em;
     background-color: #f5ffe7;
-    -moz-border-radius: 0.4em;
     -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -ms-border-radius: 0.4em;
+    -o-border-radius: 0.4em;
     border-radius: 0.4em; }
   .comments--comment:last-child {
     border-bottom: 0;
@@ -2397,7 +2606,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   font-size: 80%;
   margin-bottom: 1em;
   overflow: hidden;
-  padding: .5em 1.25em .65em; }
+  padding: 0.5em 1.25em 0.65em; }
   @media only screen and (min-width: 65em) {
     .comments--files {
       max-width: 16em; } }
@@ -2583,13 +2792,15 @@ This file is generated by `grunt build`, do not edit it by hand.
 .comment--flag {
   border: 1px solid #b3b3b3;
   display: block;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   background-color: #fff;
   font-size: .85em;
   font-weight: bold;
   text-align: center;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em;
   /* States */ }
   .comment--flag:before {
@@ -2597,45 +2808,68 @@ This file is generated by `grunt build`, do not edit it by hand.
     vertical-align: top; }
   .comment--flag.is-sticky {
     font-size: 1em; }
-  .comment--flag.is-active, .comment--flag.is-sticky, .comment--flag.unflag-action {
+  .comment--flag.is-active,
+  .comment--flag.is-sticky,
+  .comment--flag.unflag-action {
     border: 1px solid #41ab51;
     color: #41ab51; }
 
 .flag-ranking a.comment--flag {
   /* States */ }
-  .flag-ranking a.comment--flag:link, .flag-ranking a.comment--flag:visited, .flag-ranking a.comment--flag:hover, .flag-ranking a.comment--flag:active {
+  .flag-ranking a.comment--flag:link,
+  .flag-ranking a.comment--flag:visited,
+  .flag-ranking a.comment--flag:hover,
+  .flag-ranking a.comment--flag:active {
     color: #b3b3b3;
     text-decoration: none; }
   .flag-ranking a.comment--flag:hover {
     border: 1px solid #737373;
     color: #737373; }
-  .flag-ranking a.comment--flag.is-active:link, .flag-ranking a.comment--flag.is-active:visited, .flag-ranking a.comment--flag.is-active:hover, .flag-ranking a.comment--flag.is-active:active, .flag-ranking a.comment--flag.is-sticky:link, .flag-ranking a.comment--flag.is-sticky:visited, .flag-ranking a.comment--flag.is-sticky:hover, .flag-ranking a.comment--flag.is-sticky:active, .flag-ranking a.comment--flag.unflag-action:link, .flag-ranking a.comment--flag.unflag-action:visited, .flag-ranking a.comment--flag.unflag-action:hover, .flag-ranking a.comment--flag.unflag-action:active {
+  .flag-ranking a.comment--flag.is-active:link,
+  .flag-ranking a.comment--flag.is-active:visited,
+  .flag-ranking a.comment--flag.is-active:hover,
+  .flag-ranking a.comment--flag.is-active:active,
+  .flag-ranking a.comment--flag.is-sticky:link,
+  .flag-ranking a.comment--flag.is-sticky:visited,
+  .flag-ranking a.comment--flag.is-sticky:hover,
+  .flag-ranking a.comment--flag.is-sticky:active,
+  .flag-ranking a.comment--flag.unflag-action:link,
+  .flag-ranking a.comment--flag.unflag-action:visited,
+  .flag-ranking a.comment--flag.unflag-action:hover,
+  .flag-ranking a.comment--flag.unflag-action:active {
     border: 1px solid #41ab51;
     color: #41ab51;
     text-decoration: none; }
-  .flag-ranking a.comment--flag.is-active:hover, .flag-ranking a.comment--flag.is-sticky:hover, .flag-ranking a.comment--flag.unflag-action:hover {
+  .flag-ranking a.comment--flag.is-active:hover,
+  .flag-ranking a.comment--flag.is-sticky:hover,
+  .flag-ranking a.comment--flag.unflag-action:hover {
     border: 1px solid #737373;
     color: #737373; }
-  .flag-ranking a.comment--flag.is-active:hover, .flag-ranking a.comment--flag.is-sticky:hover, .flag-ranking a.comment--flag.unflag-action:hover {
+  .flag-ranking a.comment--flag.is-active:hover,
+  .flag-ranking a.comment--flag.is-sticky:hover,
+  .flag-ranking a.comment--flag.unflag-action:hover {
     border: 1px solid #33863f;
     color: #33863f; }
 
 .block-follow-question .node--flag {
   width: 100%;
   font-size: 1em;
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
+
 .block-follow-question .flag-message {
   display: block;
   margin-top: 1em;
   padding: 1.5em;
   background-color: #d6ff9a;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em;
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 .flag-outer-subscribe-node {
@@ -2649,8 +2883,8 @@ This file is generated by `grunt build`, do not edit it by hand.
   right: 0;
   padding-bottom: 1em;
   text-align: center;
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 .message--flag {
@@ -2660,9 +2894,10 @@ This file is generated by `grunt build`, do not edit it by hand.
   height: 1.5em;
   overflow: hidden;
   width: 1.5em;
+  -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transform: translateY(-50%); }
   .message--flag:before {
     font-size: 1.5em; }
@@ -2673,13 +2908,17 @@ This file is generated by `grunt build`, do not edit it by hand.
 .abuse_flag_node .flag-content {
   color: #fff;
   background-color: #595959;
-  padding: .4em 1em;
+  padding: 0.4em 1em;
   display: inline-block;
   font-size: .8em;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em; }
-  .abuse_flag_comment .flag-content:link, .abuse_flag_comment .flag-content:active, .abuse_flag_comment .flag-content:visited,
+  .abuse_flag_comment .flag-content:link,
+  .abuse_flag_comment .flag-content:active,
+  .abuse_flag_comment .flag-content:visited,
   .abuse_flag_node .flag-content:link,
   .abuse_flag_node .flag-content:active,
   .abuse_flag_node .flag-content:visited {
@@ -2695,11 +2934,13 @@ This file is generated by `grunt build`, do not edit it by hand.
   padding-bottom: 1.5em;
   padding-left: 1.5em;
   background-color: #f2f2f2;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em;
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 .guide--nav-wrapper-inner {
@@ -2763,8 +3004,10 @@ This file is generated by `grunt build`, do not edit it by hand.
   max-height: 3em;
   max-width: 3em;
   background-color: #fff;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em; }
 
 .meta-data--author-wrapper {
@@ -2801,13 +3044,17 @@ This file is generated by `grunt build`, do not edit it by hand.
   text-align: center;
   text-decoration: none;
   vertical-align: top;
-  -moz-border-radius: 100%;
   -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
   border-radius: 100%;
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
-  .notification:link, .notification--inline:link, .notification:visited, .notification--inline:visited {
+  .notification:link,
+  .notification--inline:link,
+  .notification:visited, .notification--inline:visited {
     text-decoration: none; }
 
 .notification {
@@ -2821,14 +3068,18 @@ This file is generated by `grunt build`, do not edit it by hand.
 
 .notification--user-subscriptions th {
   padding-bottom: 1em; }
+
 .notification--user-subscriptions tr {
   border-bottom: 1px solid #e6e6e6; }
+
 .notification--user-subscriptions .form-type-checkbox {
   border: 0;
   margin-bottom: 0; }
+
 .notification--user-subscriptions .links {
   list-style: none;
   padding: 0; }
+
 .notification--user-subscriptions .empty {
   padding: 1em; }
 
@@ -2863,19 +3114,20 @@ This file is generated by `grunt build`, do not edit it by hand.
   position: relative;
   width: 100%; }
   .page-wrapper.is-moved-left .page-inner {
+    -webkit-transform: translate3d(-76%, 0, 0);
     -moz-transform: translate3d(-76%, 0, 0);
     -ms-transform: translate3d(-76%, 0, 0);
-    -webkit-transform: translate3d(-76%, 0, 0);
+    -o-transform: translate3d(-76%, 0, 0);
     transform: translate3d(-76%, 0, 0); }
 
 .page-inner {
   position: relative;
   min-height: 100%;
   width: 100%;
-  -moz-transition: -moz-transform 500ms ease 0s;
-  -o-transition: -o-transform 500ms ease 0s;
   -webkit-transition: -webkit-transform 500ms ease;
   -webkit-transition-delay: 0s;
+  -moz-transition: -moz-transform 500ms ease 0s;
+  -o-transition: -o-transform 500ms ease 0s;
   transition: transform 500ms ease 0s; }
 
 .page-title {
@@ -2898,12 +3150,14 @@ This file is generated by `grunt build`, do not edit it by hand.
     border-bottom: 1px solid #e6e6e6; }
 
 .question--meta-data {
-  padding: .5em 1.25em .65em;
+  padding: 0.5em 1.25em 0.65em;
   background-color: #f2f2f2;
   color: #999;
   font-size: 80%;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em; }
   @media only screen and (min-width: 51em) {
     .question--meta-data {
@@ -3034,12 +3288,14 @@ This file is generated by `grunt build`, do not edit it by hand.
 
 .external-sources--meta-data {
   margin-bottom: 1.5em;
-  padding: .5em 1.25em .65em;
+  padding: 0.5em 1.25em 0.65em;
   background-color: #f2f2f2;
   color: #999;
   font-size: 80%;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em; }
   @media only screen and (min-width: 51em) {
     .external-sources--meta-data {
@@ -3085,9 +3341,11 @@ This file is generated by `grunt build`, do not edit it by hand.
 .search-result--link {
   display: block;
   margin-bottom: .5em; }
-  .search-result--link:link, .search-result--link:visited {
+  .search-result--link:link,
+  .search-result--link:visited {
     text-decoration: none; }
-  .search-result--link:hover, .search-result--link:active {
+  .search-result--link:hover,
+  .search-result--link:active {
     text-decoration: underline; }
 
 .search-result--lead {
@@ -3095,20 +3353,26 @@ This file is generated by `grunt build`, do not edit it by hand.
 
 .search-result--comments, .question--number-of-comments {
   display: block; }
-  .search-result--comments:link, .question--number-of-comments:link, .search-result--comments:visited, .question--number-of-comments:visited {
+  .search-result--comments:link,
+  .question--number-of-comments:link,
+  .search-result--comments:visited, .question--number-of-comments:visited {
     color: #737373;
     text-decoration: none; }
-  .search-result--comments:hover, .question--number-of-comments:hover, .search-result--comments:active, .question--number-of-comments:active {
+  .search-result--comments:hover,
+  .question--number-of-comments:hover,
+  .search-result--comments:active, .question--number-of-comments:active {
     color: #404040; }
 
 .search-result--meta-data {
   margin-bottom: 1.5em;
-  padding: .5em 1.25em .65em;
+  padding: 0.5em 1.25em 0.65em;
   background-color: #f2f2f2;
   color: #999;
   font-size: 80%;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em; }
   @media only screen and (min-width: 51em) {
     .search-result--meta-data {
@@ -3125,15 +3389,32 @@ This file is generated by `grunt build`, do not edit it by hand.
 .comments--user-page-comments-new, .question--term, .question--user-page-nodes-new, .external-sources--term, .at-term {
   display: inline-block;
   margin-bottom: .25em;
-  padding: .1em 1em;
+  padding: 0.1em 1em;
   background-color: #ff6138;
   color: #fff;
   cursor: pointer;
   font-size: 85%;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em; }
-  .comments--user-page-comments-new:link, .question--term:link, .question--user-page-nodes-new:link, .external-sources--term:link, .at-term:link, .comments--user-page-comments-new:visited, .question--term:visited, .question--user-page-nodes-new:visited, .external-sources--term:visited, .at-term:visited, .comments--user-page-comments-new:hover, .question--term:hover, .question--user-page-nodes-new:hover, .external-sources--term:hover, .at-term:hover, .comments--user-page-comments-new:active, .question--term:active, .question--user-page-nodes-new:active, .external-sources--term:active, .at-term:active {
+  .comments--user-page-comments-new:link,
+  .question--term:link,
+  .question--user-page-nodes-new:link,
+  .external-sources--term:link,
+  .at-term:link,
+  .comments--user-page-comments-new:visited,
+  .question--term:visited,
+  .question--user-page-nodes-new:visited,
+  .external-sources--term:visited,
+  .at-term:visited,
+  .comments--user-page-comments-new:hover,
+  .question--term:hover,
+  .question--user-page-nodes-new:hover,
+  .external-sources--term:hover,
+  .at-term:hover,
+  .comments--user-page-comments-new:active, .question--term:active, .question--user-page-nodes-new:active, .external-sources--term:active, .at-term:active {
     color: #fff;
     text-decoration: none; }
   .comments--user-page-comments-new:hover, .question--term:hover, .question--user-page-nodes-new:hover, .external-sources--term:hover, .at-term:hover {
@@ -3165,8 +3446,10 @@ This file is generated by `grunt build`, do not edit it by hand.
     padding: 0; }
   @media only screen and (min-width: 75em) {
     .typeahead-block {
+      -webkit-border-radius: 0 0 0.4em 0.4em;
       -moz-border-radius: 0 0 0.4em 0.4em;
-      -webkit-border-radius: 0;
+      -ms-border-radius: 0 0 0.4em 0.4em;
+      -o-border-radius: 0 0 0.4em 0.4em;
       border-radius: 0 0 0.4em 0.4em; } }
 
 .typeahead-block--wrapper {
@@ -3189,15 +3472,19 @@ This file is generated by `grunt build`, do not edit it by hand.
         margin-bottom: 0;
         padding-right: 6em;
         width: 90%;
+        -webkit-border-radius: 0.4em 0 0 0.4em;
         -moz-border-radius: 0.4em 0 0 0.4em;
-        -webkit-border-radius: 0.4em;
+        -ms-border-radius: 0.4em 0 0 0.4em;
+        -o-border-radius: 0.4em 0 0 0.4em;
         border-radius: 0.4em 0 0 0.4em; } }
 
 .twitter-typeahead {
   display: block !important;
   background-color: #fff;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em; }
   .twitter-typeahead:before {
     position: absolute;
@@ -3224,8 +3511,10 @@ This file is generated by `grunt build`, do not edit it by hand.
       padding-bottom: .65em;
       width: auto;
       font-size: 150%;
+      -webkit-border-radius: 0 0.4em 0.4em 0;
       -moz-border-radius: 0 0.4em 0.4em 0;
-      -webkit-border-radius: 0;
+      -ms-border-radius: 0 0.4em 0.4em 0;
+      -o-border-radius: 0 0.4em 0.4em 0;
       border-radius: 0 0.4em 0.4em 0; } }
 
 /* Suggestions
@@ -3238,11 +3527,13 @@ This file is generated by `grunt build`, do not edit it by hand.
   padding: 1em;
   width: 100%;
   background-color: #fff;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em;
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
   @media only screen and (min-width: 28em) {
     .tt-dropdown-menu {
@@ -3262,9 +3553,11 @@ This file is generated by `grunt build`, do not edit it by hand.
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 1em;
   padding-bottom: 1em; }
-  .tt-suggestion:link, .tt-suggestion:visited {
+  .tt-suggestion:link,
+  .tt-suggestion:visited {
     text-decoration: none; }
-  .tt-suggestion:hover, .tt-suggestion:active {
+  .tt-suggestion:hover,
+  .tt-suggestion:active {
     text-decoration: underline; }
   .tt-suggestion:last-child {
     border-bottom: 0;
@@ -3348,18 +3641,24 @@ This file is generated by `grunt build`, do not edit it by hand.
   overflow: hidden;
   height: 0;
   margin-bottom: 1.5em;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em; }
   .user-profile--notification-actions.anim-open-notification-tab {
-    -moz-animation: open-notification-actions 1.5s;
     -webkit-animation: open-notification-actions 1.5s;
+    -moz-animation: open-notification-actions 1.5s;
+    -ms-animation: open-notification-actions 1.5s;
+    -o-animation: open-notification-actions 1.5s;
     animation: open-notification-actions 1.5s;
     animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards; }
   .user-profile--notification-actions.anim-close-notification-tab {
-    -moz-animation: close-notification-actions 1.5s;
     -webkit-animation: close-notification-actions 1.5s;
+    -moz-animation: close-notification-actions 1.5s;
+    -ms-animation: close-notification-actions 1.5s;
+    -o-animation: close-notification-actions 1.5s;
     animation: close-notification-actions 1.5s;
     animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards; }
@@ -3453,9 +3752,10 @@ This file is generated by `grunt build`, do not edit it by hand.
   top: 50%;
   display: inline-block;
   margin-left: 25%;
+  -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   transform: translateY(-50%); }
 
 .edit-user--image-button-remove {
@@ -3659,6 +3959,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 .dashboard-image-list--item .dashboard-list--text,
 .dashboard-user-list--item .dashboard-list--text {
   padding-left: 4em; }
+
 .dashboard-image-list--item .dashboard-list--meta-data,
 .dashboard-user-list--item .dashboard-list--meta-data {
   display: block; }
@@ -3682,8 +3983,10 @@ This file is generated by `grunt build`, do not edit it by hand.
   height: 20px;
   width: 20px;
   margin: 0 auto;
-  -moz-animation: spinner 1s;
   -webkit-animation: spinner 1s;
+  -moz-animation: spinner 1s;
+  -ms-animation: spinner 1s;
+  -o-animation: spinner 1s;
   animation: spinner 1s;
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
@@ -3758,18 +4061,18 @@ This file is generated by `grunt build`, do not edit it by hand.
   @media only screen and (min-width: 80em) {
     .dashboard--content-statistics-table, .dashboard--content-overview {
       width: 33%; } }
-  .dashboard--content-statistics-table th, .dashboard--content-overview th,
-  .dashboard--content-statistics-table td,
-  .dashboard--content-overview td {
+  .dashboard--content-statistics-table th,
+  .dashboard--content-overview th,
+  .dashboard--content-statistics-table td, .dashboard--content-overview td {
     width: 75%; }
-  .dashboard--content-statistics-table td:last-child, .dashboard--content-overview td:last-child,
-  .dashboard--content-statistics-table th:last-child,
-  .dashboard--content-overview th:last-child {
+  .dashboard--content-statistics-table td:last-child,
+  .dashboard--content-overview td:last-child,
+  .dashboard--content-statistics-table th:last-child, .dashboard--content-overview th:last-child {
     text-align: center;
     width: 25%; }
-  .dashboard--content-statistics-table thead, .dashboard--content-overview thead,
-  .dashboard--content-statistics-table tbody,
-  .dashboard--content-overview tbody {
+  .dashboard--content-statistics-table thead,
+  .dashboard--content-overview thead,
+  .dashboard--content-statistics-table tbody, .dashboard--content-overview tbody {
     display: inline-table;
     min-height: 4em;
     width: 100%; }
@@ -3818,7 +4121,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   margin-bottom: .5em; }
 
 .at-add-btn {
-  padding: .25em .75em;
+  padding: 0.25em 0.75em;
   width: 100%;
   background-color: #595959;
   border: 1px solid #404040;
@@ -3838,8 +4141,10 @@ This file is generated by `grunt build`, do not edit it by hand.
 .messages {
   margin-bottom: 1.5em;
   padding: 1.5em;
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em; }
   .messages ul {
     display: inline-block;
@@ -3856,7 +4161,9 @@ This file is generated by `grunt build`, do not edit it by hand.
     .messages.status a:link {
       color: #000;
       text-decoration: underline; }
-    .messages.status a:visited, .messages.status a:hover, .messages.status a:focus {
+    .messages.status a:visited,
+    .messages.status a:hover,
+    .messages.status a:focus {
       color: #000;
       text-decoration: none; }
     .messages.status:before {
@@ -3867,7 +4174,9 @@ This file is generated by `grunt build`, do not edit it by hand.
     .messages.warning a:link {
       color: #000;
       text-decoration: underline; }
-    .messages.warning a:visited, .messages.warning a:hover, .messages.warning a:focus {
+    .messages.warning a:visited,
+    .messages.warning a:hover,
+    .messages.warning a:focus {
       color: #000;
       text-decoration: none; }
     .messages.warning:before {
@@ -3878,7 +4187,9 @@ This file is generated by `grunt build`, do not edit it by hand.
     .messages.error a:link {
       color: #fff;
       text-decoration: underline; }
-    .messages.error a:visited, .messages.error a:hover, .messages.error a:focus {
+    .messages.error a:visited,
+    .messages.error a:hover,
+    .messages.error a:focus {
       color: #fff;
       text-decoration: none; }
     .messages.error:before {
@@ -3903,8 +4214,8 @@ This file is generated by `grunt build`, do not edit it by hand.
   overflow-y: scroll;
   /* Override inline styling */
   width: 70% !important;
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
 .ui-widget-content {
@@ -3972,8 +4283,10 @@ This file is generated by `grunt build`, do not edit it by hand.
   background: url("../images/loader.png") no-repeat 100% 0; }
 
 .autocomplete-deluxe-item {
-  -moz-border-radius: 0.4em;
   -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
   border-radius: 0.4em;
   float: left;
   position: relative;
@@ -4002,9 +4315,8 @@ This file is generated by `grunt build`, do not edit it by hand.
   width: 18px;
   width: 18px;
   /* Prevent text selection. */
-  -moz-user-select: -moz-none;
-  -ms-user-select: none;
   -webkit-user-select: none;
+  -moz-user-select: none;
   user-select: none; }
 
 .autocomplete-deluxe-highlight-char {

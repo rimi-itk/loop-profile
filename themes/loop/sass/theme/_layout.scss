@@ -13,7 +13,7 @@
 .header {
   margin-bottom: $margin-bottom;
   z-index: 1;
-  background-color: $green;/* setting:header_color */
+  background-color: $green;/*! setting:header_color */
   @include zen-grid-container();
 }
 
@@ -46,7 +46,7 @@
 .logo--image {
   margin-right: auto;
   margin-left: auto;
-  max-height: 2em;/* setting:header_logo_height */
+  max-height: 2em;/*! setting:header_logo_height */
   max-width: 4em;
 
   vertical-align: middle;
