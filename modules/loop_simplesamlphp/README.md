@@ -1,12 +1,12 @@
-# LOOP SimpleSAMLphp
+# Loop SimpleSAMLphp
 
-This module allows users to authenticate to LOOP using SAML when 
+This module allows users to authenticate to Loop using SAML when
 SimpleSAMLphp has been properly installed and configured.
 
 It redirects users to the SAML login page instead of allowing them to login 
 using the normal Drupal login form (unless you visit the /user/login page).
 
-It also provides a way to map SAML attributes to LOOP user profile fields from 
+It also provides a way to map SAML attributes to Loop user profile fields from
 the SimpleSAMLphp Auth configuration page.
 
 # Installation and configuration
@@ -26,7 +26,6 @@ the SimpleSAMLphp Auth configuration page.
 
 5.  Configure and activate the `simplesamlphp_auth` module at 
     `/admin/config/people/simplesamlphp_auth`
-    
-    At the bottom of the page, SAML attributes can be mapped to LOOP user 
-    profile fields. Defaults are provided. If you would not like to map 
+    At the bottom of the page, SAML attributes can be mapped to Loop user
+    profile fields. Defaults are provided. If you would not like to map
     certain attributes, then leave them blank.

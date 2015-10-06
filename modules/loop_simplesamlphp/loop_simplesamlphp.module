@@ -43,14 +43,14 @@ function loop_simplesamlphp_get_default_mapping($field_name = NULL) {
 /**
  * Implements hook_form_FORM_ID_alter().
  *
- * Add settings for mapping SAML attributes to LOOP user profile fields
+ * Add settings for mapping SAML attributes to Loop user profile fields
  * to the simplesamlphp_auth configuration form located at
  * /admin/config/people/simplesamlphp_auth.
  */
 function loop_simplesamlphp_form_simplesamlphp_auth_settings_alter(&$form, &$form_state, $form_id) {
   $loop_fieldset = array(
     '#type' => 'fieldset',
-    '#title' => t('LOOP User Attribute Mapping'),
+    '#title' => t('Loop User Attribute Mapping'),
     '#collapsible' => TRUE,
     '#collapsed' => FALSE
   );
@@ -158,7 +158,7 @@ function loop_simplesamlphp_form_simplesamlphp_auth_settings_alter(&$form, &$for
 /**
  * Implements hook_user_login().
  *
- * Updates the user's LOOP account details.
+ * Updates the user's Loop account details.
  */
 function loop_simplesamlphp_user_login(&$edit, $account) {
   $attributes = simplesamlphp_auth_get_attributes();

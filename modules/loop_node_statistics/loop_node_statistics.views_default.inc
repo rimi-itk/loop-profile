@@ -15,14 +15,14 @@ function loop_node_statistics_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'LOOP Node statistics';
+  $view->human_name = 'Loop Node statistics';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'LOOP Node statistics';
+  $handler->display->display_options['title'] = 'Loop Node statistics';
   $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
@@ -295,7 +295,7 @@ function loop_node_statistics_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['path'] = 'editor/dashboard/node-statistics';
   $handler->display->display_options['menu']['type'] = 'normal';
-  $handler->display->display_options['menu']['title'] = 'LOOP Node Statistics';
+  $handler->display->display_options['menu']['title'] = 'Loop Node Statistics';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'menu-loop-primary-menu';
   $handler->display->display_options['menu']['context'] = 0;
