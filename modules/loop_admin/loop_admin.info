@@ -1,4 +1,4 @@
-name = Loop Admin
+name = Loop admin
 description = Admin functionallity
 core = 7.x
 package = Loop

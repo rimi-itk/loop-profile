@@ -1,4 +1,4 @@
-name = Loop Post WYSIWYG
+name = Loop post wysiwyg
 description = Make posts/comments use WYSIWYG editor
 core = 7.x
 package = Loop

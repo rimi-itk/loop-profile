@@ -1,4 +1,4 @@
-name = Loop Saml
+name = Loop SAML
 description = SAML functionality
 core = 7.x
 package = Loop

@@ -1,4 +1,4 @@
-name = Loop Frontpage
+name = Loop frontpage
 description = Frontpage settings for Loop
 core = 7.x
 package = Loop

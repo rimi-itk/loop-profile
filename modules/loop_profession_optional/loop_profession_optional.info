@@ -1,4 +1,4 @@
-name = Loop Profession Optional
+name = Loop profession optional
 core = 7.x
 package = Loop
 dependencies[] = features_override

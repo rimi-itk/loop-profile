@@ -1,4 +1,4 @@
-name = Loop Flag
+name = Loop flag
 description = Holds flags for ranking, and marking content inappropriate
 core = 7.x
 package = Loop

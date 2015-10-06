@@ -1,4 +1,4 @@
-name = Loop Role/permissions
+name = Loop role/permissions
 description = Role and permission settings for the site.
 core = 7.x
 dependencies[] = ctools

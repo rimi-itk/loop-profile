@@ -1,4 +1,4 @@
-name = Loop Navigation
+name = Loop navigation
 description = Provides various navigation features
 core = 7.x
 package = Loop

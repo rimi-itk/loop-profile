@@ -1,4 +1,4 @@
-name = Loop External data
+name = Loop external data
 description = Generic importing tool
 core = 7.x
 package = Loop

@@ -1,4 +1,4 @@
-name = Loop Frontend
+name = Loop frontend
 description = Frontend setting and hooks for Loop
 core = 7.x
 package = Loop
