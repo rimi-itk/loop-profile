@@ -1,0 +1,36 @@
+<?php
+/**
+ * Implements hook_FORM_ID_alter().
+ *
+ * Add fields to a form, letting the administrator choose the header color and logo height.
+ */
+function loop_configure_theme_form_system_theme_settings_alter(&$form, $form_state) {
+
+  $form['header'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Header'),
+    '#collapsible' => FALSE,
+    '#description' => t("Settings for the page header"),
+  );
+
+  $form['header']['header_color'] = array(
+    '#type'          => 'style_settings_colorpicker',
+    '#title'         => t('Header background color'),
+    '#default_value' => theme_get_setting('header_color', 'loop'),
+    '#description'   => t("Choose a color for the header background"),
+  );
+
+  $form['header']['header_logo_height'] = array(
+    '#type'          => 'textfield',
+    '#title'         => t('Header logo height'),
+    '#default_value' => theme_get_setting('header_logo_height', 'loop'),
+    '#description'   => t("Choose a height for the header logo"),
+  );
+
+  $form['#submit'][] = 'loop_configure_theme_flush';
+}
+
+function loop_configure_theme_flush() {
+  _drupal_flush_css_js();
+  cache_clear_all('style_settings_', 'cache', TRUE);
+}
