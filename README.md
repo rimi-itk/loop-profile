@@ -23,22 +23,15 @@ drush make --working-copy https://raw.github.com/loopdk/loop/development/drupal.
 
 After running the make file you should install the site as any other Drupal website.
 
-First, create a database (loopdk) and a database user (loopdk) with access to the database
+First, create a database (loop) and a database user (loop) with access to the database
 
 ```
 mysql --user=root --password --host=localhost
 [enter root password]
-create database loopdk;
-create user 'loopdk'@'localhost' identified by 'loopdk';
-grant all privileges on loopdk.* to 'loopdk'@'localhost';
+create database `loop`;
+create user 'loop'@'localhost' identified by 'loop';
+grant all privileges on `loop`.* to 'loop'@'localhost';
 quit
-```
-
-Then install drupal using the database settings from above:
-
-```
-cd htdocs
-drush --yes site-install loopdk --db-url='mysql://loopdk:loopdk@localhost/loopdk' --site-name=loopdk --account-name=admin --account-pass=admin
 ```
 
 Now you can sign into Loop as `admin` with password `admin` – remember to change this!
@@ -57,12 +50,6 @@ drush --yes dl devel
 drush --yes pm-enable devel_generate
 ```
 
-You can then generate 10 posts with (at most) 2 comment each like this:
-
-```
-drush generate-content --types=post 10 2
-```
-
 Create taxonomi terms like this:
 
 ```
@@ -71,6 +58,11 @@ drush generate-terms profession 10
 drush generate-terms subject 10
 ```
 
+Create 10 posts with (at most) 2 comment each like this:
+
+```
+drush generate-content --types=post 10 2
+```
 
 ## Apache Solr
 
@@ -92,7 +84,7 @@ See [Installing Apache Solr](#installing-apache-solr) below for details on how t
 
 ## Adding taxonomies
 
-After installing the loopdk profile you should create some taxomony terms in the vocabularies Keyword, Profession and Subject. At lease one term must be defined in the Subject vocabulary before users can create new posts.
+After installing the Loop profile you should create some taxomony terms in the vocabularies Keyword, Profession and Subject. At lease one term must be defined in the Subject vocabulary before users can create new posts.
 
 Go to `/admin/structure/taxonomy` to add terms to the vocabularies.
 
