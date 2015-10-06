@@ -55,14 +55,14 @@ function loop_preprocess_page(&$variables) {
     $variables['loop_frontpage_welcometext'] = module_invoke('loop_frontpage', 'block_view', 'loop_frontpage_welcometext');
   }
 
-  // Load LOOP primary menu.
+  // Load Loop primary menu.
   if (module_exists('loop_navigation') && ($user->uid > 0)) {
     $variables['main_menu_block'] = module_invoke('system', 'block_view', 'main-menu');
     $variables['management_menu_block'] = module_invoke('system', 'block_view', 'management');
     $variables['primary_menu_block'] = module_invoke('menu', 'block_view', 'menu-loop-primary-menu');
   }
 
-  // Load LOOP user menu.
+  // Load Loop user menu.
   if (module_exists('loop_user') && $arg[0] == 'user') {
     $variables['user_menu_block'] = module_invoke('system', 'block_view', 'user-menu');
     $variables['user_public_block'] = module_invoke('loop_user', 'block_view', 'loop_user_my_content');

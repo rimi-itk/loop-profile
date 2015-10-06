@@ -2,7 +2,7 @@
 $path_to_theme = "/profiles/loopdk/themes/loop/";
 ?>
 <?php include('inc/head.inc') ?>
-<title>LOOP - layouts</title>
+<title>Loop - layouts</title>
 </head>
 
 <body>

@@ -1,7 +1,7 @@
-name = Loop External data
+name = Loop external data
 description = Generic importing tool
 core = 7.x
-package = LOOP
+package = Loop
 version = 7.x-0.1
 project = loop_external_data
 dependencies[] = ctools

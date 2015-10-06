@@ -1,6 +1,6 @@
-name = Loop Node Statistics
+name = Loop node statistics
 core = 7.x
-package = LOOP
+package = Loop
 version = 7.x-1.0
 project = loop_node_statistics
 dependencies[] = comment_counter

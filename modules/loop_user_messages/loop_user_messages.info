@@ -1,7 +1,7 @@
 name = Loop user messages
 description = View for displaying user messages
 core = 7.x
-package = Loop Views / Addons
+package = Loop
 dependencies[] = ctools
 dependencies[] = loop_notification
 dependencies[] = loop_user

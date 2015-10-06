@@ -41,7 +41,7 @@ function loop_search_menu() {
  * @throws \SearchApiException
  */
 function loop_search_callback($content_type, $terms) {
-  // Create a query against the default LOOP search index.
+  // Create a query against the default Loop search index.
   $query = search_api_query('post');
 
   // Filter by content type.

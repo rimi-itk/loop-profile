@@ -1,7 +1,7 @@
 name = Loop taxonomy terms
-description = Holds default taxonomy terms for LOOP
+description = Holds default taxonomy terms for Loop
 core = 7.x
-package = LOOP content
+package = Loop
 dependencies[] = taxonomy
 dependencies[] = uuid
 dependencies[] = uuid_features

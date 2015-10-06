@@ -26,7 +26,7 @@ function loop_locale_selection(&$install_state) {
  */
 if (!function_exists("system_form_install_configure_form_alter")) {
   function system_form_install_configure_form_alter(&$form, $form_state) {
-    $form['site_information']['site_name']['#default_value'] = 'LOOP';
+    $form['site_information']['site_name']['#default_value'] = 'Loop';
     $form['server_settings']['site_default_country']['#default_value'] = 'DK';
     $form['server_settings']['date_default_timezone']['#default_value'] = 'Europe/Copenhagen';
   }
@@ -80,7 +80,7 @@ function loop_module_selection_form($form, &$form_state) {
 }
 
 /**
- * Formula submit function for LOOP settings.
+ * Formula submit function for Loop settings.
  */
 function loop_module_selection_form_submit($form, &$form_state) {
   $dependency_modules = array();
@@ -391,7 +391,7 @@ function loop_setup_filter_and_wysiwyg() {
 }
 
 /**
- * Final LOOP install profile settings.
+ * Final Loop install profile settings.
  *
  * 1. Revert every feature.
  * 2. Enable Transliterate contribute module setting.

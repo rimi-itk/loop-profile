@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the LOOP Node Statistics feature.
+ * Code for the Loop Node Statistics feature.
  */
 
 include_once 'loop_node_statistics.features.inc';

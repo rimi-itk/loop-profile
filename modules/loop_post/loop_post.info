@@ -1,7 +1,7 @@
-name = Loop Post
+name = Loop post
 description = Post content type
 core = 7.x
-package = LOOP
+package = Loop
 version = 7.x-1.14
 project = loop_post
 dependencies[] = auto_entitylabel
