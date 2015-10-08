@@ -11,9 +11,8 @@ include_once 'loop_post_wysiwyg.features.inc';
  */
 function loop_post_wysiwyg_form_node_form_alter(&$form, &$form_state) {
   if ($form['type']['#value'] == 'post') {
-    global $user;
     $field_description_language = $form['field_description']['#language'];
-    $form['field_description'][$field_description_language]['0']['#format'] = 'wysiwyg';
+    $form['field_description'][$field_description_language]['0']['#format'] = 'editor';
   }
 }
 
