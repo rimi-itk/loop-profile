@@ -7,7 +7,7 @@ working Apache/Nginx. The stack should be optimized to run a Drupal site.
 
 ## Production
 ```
-drush make https://raw.github.com/loopdk/profile/master/drupal.make htdocs
+drush make https://raw.github.com/loopdk/profile/release-1.0.0/drupal.make htdocs
 ```
 
 ## Development
@@ -15,7 +15,7 @@ If you want a developer version with _working copies_ of the Git repositories,
 run this command instead.
 
 ```
-drush make --working-copy https://raw.github.com/loopdk/profile/development/drupal.make htdocs
+drush make --working-copy https://raw.github.com/loopdk/profile/release-1.0.0/drupal.make htdocs
 ```
 
 
