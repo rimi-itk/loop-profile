@@ -1,5 +1,5 @@
-name = Loop editor pages
-description = Holds views and pages for editor pages
+name = Loop dashboard
+description = Holds views and pages for the Loop dashboard
 core = 7.x
 package = Loop
 dependencies[] = loop_admin

@@ -10150,7 +10150,7 @@ msgid ""
 "error.!message"
 msgstr ""
 
-#: /loop_editor_pages_comments
+#: /loop_dashboard_comments
 msgid "edit page"
 msgstr ""
 
@@ -10257,33 +10257,33 @@ msgstr ""
 msgid "Dashboard other content"
 msgstr ""
 
-#: /admin/structure/features/loop_editor_pages
+#: /admin/structure/features/loop_dashboard
 msgid "Display components of a feature."
 msgstr ""
 
-#: /admin/structure/features/loop_editor_pages
+#: /admin/structure/features/loop_dashboard
 msgid "Review overrides"
 msgstr ""
 
-#: /admin/structure/features/loop_editor_pages
+#: /admin/structure/features/loop_dashboard
 msgid "Compare default and current feature."
 msgstr ""
 
-#: /admin/structure/features/loop_editor_pages
+#: /admin/structure/features/loop_dashboard
 msgid "Revert components"
 msgstr ""
 
-#: /admin/structure/features/loop_editor_pages
+#: /admin/structure/features/loop_dashboard
 msgid "Dependency"
 msgstr ""
 
-#: /admin/structure/features/loop_editor_pages
+#: /admin/structure/features/loop_dashboard
 msgid ""
 "Reverted all <strong>@component</strong> components for "
 "<strong>@module</strong>."
 msgstr ""
 
-#: /admin/structure/features/loop_editor_pages
+#: /admin/structure/features/loop_dashboard
 msgid ""
 "The reverted panels display(s) were exported, please run a <a "
 "href=\"!link\">string refresh</a> to update the translatable strings."
