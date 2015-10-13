@@ -1,2 +1,3 @@
-# loop_friend_notification
+# Loop friend notification
+
 Loop module to notify another user about a node
