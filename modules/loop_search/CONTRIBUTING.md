@@ -1,1 +1,0 @@
-Please review the [guidelines for contributing](https://github.com/loopdk/guidelines) to this repository.
