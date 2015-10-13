@@ -90,7 +90,7 @@ function loop_module_selection_form_submit($form, &$form_state) {
   }
 
   if ($form_state['values']['dashboard']) {
-    $dependency_modules[] = 'loop_editor_pages';
+    $dependency_modules[] = 'loop_dashboard';
   }
 
   if ($form_state['values']['user_pages']) {

@@ -1,4 +1,4 @@
-# Loop editor pages
+# Loop dashboard
 
 This generates a menu item called dashboard and the JS on the page. 
 

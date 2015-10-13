@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * loop_editor_pages.pages_default.inc
+ * loop_dashboard.pages_default.inc
  */
 
 /**
  * Implements hook_default_page_manager_pages().
  */
-function loop_editor_pages_default_page_manager_pages() {
+function loop_dashboard_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
@@ -92,7 +92,7 @@ function loop_editor_pages_default_page_manager_pages() {
     $pane->pid = 'new-150e7490-581d-4d5a-80e7-e7acdbb8bdb7';
     $pane->panel = 'alpha';
     $pane->type = 'block';
-    $pane->subtype = 'loop_editor_pages-loop_dashboard_questions';
+    $pane->subtype = 'loop_dashboard-loop_dashboard_questions';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -114,7 +114,7 @@ function loop_editor_pages_default_page_manager_pages() {
     $pane->pid = 'new-fabae8f8-da05-4cd3-90ff-b24e0ae98979';
     $pane->panel = 'beta';
     $pane->type = 'block';
-    $pane->subtype = 'loop_editor_pages-loop_dashboard_comments';
+    $pane->subtype = 'loop_dashboard-loop_dashboard_comments';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -136,7 +136,7 @@ function loop_editor_pages_default_page_manager_pages() {
     $pane->pid = 'new-aaff6e5e-6bc6-41f2-89e4-d988a495466a';
     $pane->panel = 'gamma';
     $pane->type = 'block';
-    $pane->subtype = 'loop_editor_pages-loop_dashboard_other_content';
+    $pane->subtype = 'loop_dashboard-loop_dashboard_other_content';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
