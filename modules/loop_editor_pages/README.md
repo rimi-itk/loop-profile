@@ -1,8 +1,8 @@
 # Loop editor pages
 
-This generates a menu item called dashboard. 
+This generates a menu item called dashboard and the JS on the page. 
 
-The dashboard contains
+The dashboard automatically contains
 * All content
 * All questions
 * All answers
