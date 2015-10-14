@@ -1,15 +1,16 @@
 # Loop saml
 
-Special needs for Aarhus municipality
+## Post-installation configuration
 
-Two patches:
-`https://www.drupal.org/files/issues/2316693-make-version2-compatible-11.patch`
-`https://www.drupal.org/files/issues/2316693-make-version2-compatible-12.patch`
+Users must be created automatically after signing in through ADFS. To
+enable this, go to `/admin/config/people/accounts > Registration and
+cancellation > Who can register accounts?` and check "Visitors".
 
-As Aarhus municipality isn't supporting RequestedAuthnContext this should be removed from: includes/saml sp.AuthnRequest.inc:
 
-`
-<samlp:RequestedAuthnContext Comparison="exact">
-	<saml:AuthnContextClassRef>{$idpData['AuthnContextClassRef']}</saml:AuthnContextClassRef>
-</samlp:RequestedAuthnContext>
-`
+## Special needs for Aarhus municipality
+
+Aarhus municipality does not support RequestedAuthnContext so we need
+to apply the patch
+[Aarhus-municipality-does-not-support-RequestedAuthnContext.patch](https://github.com/loopdk/profile/blob/development/patches/Aarhus-municipality-does-not-support-RequestedAuthnContext.patch)
+to the contrib module
+[saml_sp](https://www.drupal.org/project/saml_sp).
