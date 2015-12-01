@@ -305,3 +305,14 @@ function _loop_dashboard_fetch_full_name($uid) {
 
   return $name;
 }
+
+/**
+ * Implements hook_menu_link_alter().
+ *
+ * Makes Dashboard menu item show as expanded.
+ */
+function loop_dashboard_menu_link_alter(&$item) {
+  if ($item['link_path'] == 'editor/dashboard') {
+    $item['expanded'] = TRUE;
+  }
+}

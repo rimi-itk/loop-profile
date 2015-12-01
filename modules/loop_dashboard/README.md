@@ -7,3 +7,8 @@ The dashboard automatically contains
 * All questions
 * All answers
 * Statistics
+
+## Important note
+
+The Dashboard menu is only visible to users with any of the roles
+"administrator", "documentation coordinator" or "manager".
