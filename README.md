@@ -32,9 +32,8 @@ drush make --working-copy https://raw.github.com/loopdk/profile/development/drup
 
 ## Installing Loop
 
-After running the make file you should install the site as any other Drupal website.
-
-First, create a database (loop) and a database user (loop) with access to the database
+After running the make file you should install the site as any other Drupal website. 
+First, create a database (loop) and a database user (loop) with access to the database or use an exiting database.
 
 ```
 mysql --user=root --password --host=localhost
@@ -45,7 +44,9 @@ grant all privileges on `loop`.* to 'loop'@'localhost';
 quit
 ```
 
-Now you can sign into Loop as `admin` with password `admin` – remember to change this!
+Then install Drupal either by visiting the site or using drush. 
+
+Now you can sign into Loop with the admin credentials you selected during install.
 
 By default only the core features are enabled so you should visit the features overview and enable any additional features you would need.
 
