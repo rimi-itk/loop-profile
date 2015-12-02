@@ -1,6 +1,7 @@
 # Installation
-This README assumes that you have install a configured your server with a
-working Apache/Nginx. The stack should be optimized to run a Drupal site.
+This README assumes that you have install a configured your server with a working Apache/Nginx. The stack should be optimized to run a Drupal site.
+
+Loop uses [Apache Solr](http://lucene.apache.org/solr/) for searching (and indexing) content using the "[Search API Solr Search](https://www.drupal.org/project/search_api_solr)" module. See the section on Apache Solr for installation and setup instructions.
 
 ## Dependencies
 * [Drush 6.1.0](https://github.com/drush-ops/drush)
