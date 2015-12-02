@@ -3,7 +3,7 @@ This README assumes that you are running a Debian based system and have configur
 
 Loop uses [Apache Solr](http://lucene.apache.org/solr/) for searching (and indexing) content using the "[Search API Solr Search](https://www.drupal.org/project/search_api_solr)" module. See the section on Apache Solr for installation instructions.
 
-For installation and setup you should have drush and unzip installed:
+For installation and setup you should have drush and unzip installed, if not run:
 ```
 sudo apt-get install drush
 sudo apt-get install unzip
