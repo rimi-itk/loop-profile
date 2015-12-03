@@ -12170,7 +12170,7 @@ msgid "Danish"
 msgstr "Dansk"
 
 msgid "Dashboard"
-msgstr "Dashboard"
+msgstr "Kontrolpanel"
 
 msgid "Dashed"
 msgstr "Stiplet"
