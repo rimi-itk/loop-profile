@@ -17,18 +17,29 @@ function loop_dashboard_menu() {
     'page callback' => 'loop_dashboard_all_questions',
     'type' => MENU_NORMAL_ITEM,
     'access arguments' => array('administer nodes'),
+    'weight' => -50,
   );
   $items['editor/dashboard/replies'] = array(
     'title' => 'All replies',
     'page callback' => 'loop_dashboard_all_replies',
     'type' => MENU_NORMAL_ITEM,
     'access arguments' => array('administer nodes'),
+    'weight' => -49,
   );
   $items['editor/dashboard/other_content'] = array(
     'title' => 'All other content',
     'page callback' => 'loop_dashboard_all_other_content',
     'type' => MENU_NORMAL_ITEM,
     'access arguments' => array('administer nodes'),
+    'weight' => -48,
+  );
+  $items['editor/dashboard/abuse'] = array(
+    'title' => 'Abuse',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/content/abuse'),
+    'type' => MENU_NORMAL_ITEM,
+    'access arguments' => array('administer nodes'),
+    'weight' => -47,
   );
 
   $items['loop_dashboard_search_questions'] = array(
