@@ -1,0 +1,15 @@
+<?php
+/**
+ * @file
+ * Handles updates.
+ */
+
+/**
+ * Implements hook_update_N().
+ *
+ * Removes Profession field from External Sources Content.
+ */
+function loop_external_sources_content_update_7001() {
+  field_delete_field('field_profession');
+  field_purge_batch(1);
+}
