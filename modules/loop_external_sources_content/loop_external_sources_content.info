@@ -16,7 +16,6 @@ features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
 features[field_instance][] = node-external_sources-field_external_link
 features[field_instance][] = node-external_sources-field_keyword
-features[field_instance][] = node-external_sources-field_profession
 features[field_instance][] = node-external_sources-field_subject
 features[node][] = external_sources
 features[variable][] = additional_settings__active_tab_external_sources
