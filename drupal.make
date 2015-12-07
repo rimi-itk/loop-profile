@@ -5,7 +5,7 @@ core = 7.x
 ; As d.o is having issues with the update XML file, we are using this form for downloading core.
 ; See this: https://drupal.org/node/2126123
 projects[drupal][type] = core
-projects[drupal][version] = 7.39
+projects[drupal][version] = 7.41
 projects[drupal][download][type] = get
 projects[drupal][download][url] = http://ftp.drupal.org/files/projects/drupal-7.39.tar.gz
 projects[drupal][patch][] = "https://drupal.org/files/drupal-menu_navigation_links-1018614-83.patch"
