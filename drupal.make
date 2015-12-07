@@ -15,4 +15,4 @@ projects[drupal][patch][] = "https://drupal.org/files/issues/translate_role_name
 projects[loop][type] = "profile"
 projects[loop][download][type] = "git"
 projects[loop][download][url] = "git@github.com:loopdk/profile.git"
-projects[loop][download][branch] = "development"
+projects[loop][download][branch] = "release-v1.2.0"
