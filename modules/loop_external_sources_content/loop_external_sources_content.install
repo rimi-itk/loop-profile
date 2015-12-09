@@ -5,9 +5,7 @@
  */
 
 /**
- * Implements hook_update_N().
- *
- * Removes Profession field from External Sources Content.
+ * Remove Profession field from External Sources Content.
  */
 function loop_external_sources_content_update_7001() {
   $instance = field_info_instance('node', 'field_profession', 'external_sources');
