@@ -112,12 +112,9 @@ These script below will
 Change "8983" and "loop" as needed.
 
 ```
-# Install tomcat7
+# Install tomcat7 and Java 7
 sudo apt-get update
-sudo apt-get install -y tomcat7
-
-# Install Java 7
-sudo apt-get install -y openjdk-7-jre
+sudo apt-get install -y tomcat7 openjdk-7-jre
 
 # Make Tomcat run on post 8983 (rather than 8080)
 sudo sed --in-place '/\<Connector port="8080" protocol="HTTP\/1.1"/c \<Connector port="8983" protocol="HTTP\/1.1"' /var/lib/tomcat7/conf/server.xml
