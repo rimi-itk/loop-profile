@@ -125,8 +125,8 @@ sudo sed --in-place 's@.*JAVA_HOME.*@JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
 # Restart tomcat
 sudo service tomcat7 restart
 
-# Check that tomcat is running
-curl http://localhost:8983/
+# Check that tomcat is running (expect "HTTP/1.1 200 OK")
+curl --head http://localhost:8983/
 
 # Install Solr
 cd ~
@@ -145,8 +145,8 @@ sudo chown -R tomcat7:tomcat7 /var/lib/tomcat7/solr
 # Restart tomcat
 sudo service tomcat7 restart
 
-# Check that solr is running on tomcat
-curl http://localhost:8983/solr
+# Check that solr is running on tomcat (expect "HTTP/1.1 200 OK")
+curl --head http://localhost:8983/solr/
 ```
 
 ## Adding a Solr core
@@ -171,8 +171,8 @@ sudo chown -R tomcat7:tomcat7 /var/lib/tomcat7/solr
 # Restart tomcat
 sudo service tomcat7 restart
 
-# Check that Solr is running and that we can access the core "loop"
-curl 'http://localhost:8983/solr/loop/select?q=*%3A*&wt=json&indent=true'
+# Check that Solr is running and that we can access the core "loop" (expect "HTTP/1.1 200 OK")
+curl --head 'http://localhost:8983/solr/loop/select?q=*%3A*&wt=json&indent=true'
 ```
 
 Additional Loop Solr cores can be created as shown above or be created
