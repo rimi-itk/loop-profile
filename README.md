@@ -116,6 +116,21 @@ Change "8983" and "loop" as needed.
 sudo apt-get update
 sudo apt-get install -y tomcat7
 
+# Install Java 7
+sudo apt-get install -y openjdk-7-jre
+
+# Make Tomcat run on post 8983 (rather than 8080)
+sudo sed --in-place '/\<Connector port="8080" protocol="HTTP\/1.1"/c \<Connector port="8983" protocol="HTTP\/1.1"' /var/lib/tomcat7/conf/server.xml
+
+# Make Tomcat use Java 7
+sudo sed --in-place 's@.*JAVA_HOME.*@JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64@' /etc/default/tomcat7
+
+# Restart tomcat
+sudo service tomcat7 restart
+
+# Check that tomcat is running
+curl http://localhost:8983/
+
 # Install Solr
 cd ~
 wget http://archive.apache.org/dist/lucene/solr/4.9.1/solr-4.9.1.tgz -O solr.tgz
@@ -127,18 +142,14 @@ sudo cp -R solr-*/example/solr /var/lib/tomcat7
 rm -rf solr-*
 cd -
 
-# Make Solr run on post 8983 (rather than 8080)
-sudo sed -i '/\<Connector port="8080" protocol="HTTP\/1.1"/c \<Connector port="8983" protocol="HTTP\/1.1"' /var/lib/tomcat7/conf/server.xml
-
 # Set file permissions
 sudo chown -R tomcat7:tomcat7 /var/lib/tomcat7/solr
 
 # Restart tomcat
 sudo service tomcat7 restart
 
-# Check that tomcat is running
-curl http://localhost:8983/
-
+# Check that solr is running on tomcat
+curl http://localhost:8983/solr
 ```
 
 ## Adding a Solr core
