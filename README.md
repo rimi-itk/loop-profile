@@ -9,9 +9,15 @@ sudo apt-get install drush
 sudo apt-get install unzip
 ```
 
-## Important post installation notes
+## Important post-installation notes
 
-[Loop Saml](modules/loop_saml/README.md)
+Check out the notes on the [Loop saml](modules/loop_saml/README.md) module if it's installed.
+
+## Upgrading existing Loop installations
+
+See
+[Upgrading an old Loop installation](https://github.com/loopdk/upgrading-loop/blob/master/README.md)
+for details on how to upgrade existing Loop installations.
 
 ## Dependencies
 * Apache/Nginx
