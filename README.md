@@ -9,9 +9,13 @@ sudo apt-get install drush
 sudo apt-get install unzip
 ```
 
+## Important post installation notes
+
+[Loop Saml](modules/loop_saml/README.md)
+
 ## Dependencies
 * Apache/Nginx
-* MySQL/MariaDB/Etc. 
+* MySQL/MariaDB/Etc.
 * Apache Solr
 * [Drush 6.1.0](https://github.com/drush-ops/drush)
 * Unzip (used by the make-files)
@@ -32,7 +36,7 @@ drush make --working-copy https://raw.github.com/loopdk/profile/development/drup
 
 ## Installing Loop
 
-After running the make file you should install the site as any other Drupal website. 
+After running the make file you should install the site as any other Drupal website.
 First, create a database (loop) and a database user (loop) with access to the database or use an exiting database.
 
 ```
@@ -44,7 +48,7 @@ grant all privileges on `loop`.* to 'loop'@'localhost';
 quit
 ```
 
-Then install Drupal either by visiting the site or using drush. 
+Then install Drupal either by visiting the site or using drush.
 
 Now you can sign into Loop with the admin credentials you selected during install.
 

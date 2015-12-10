@@ -11,6 +11,11 @@ cancellation > Who can register accounts?` and check "Visitors".
 
 Aarhus municipality does not support RequestedAuthnContext so we need
 to apply the patch
-[Aarhus-municipality-does-not-support-RequestedAuthnContext.patch](https://github.com/loopdk/profile/blob/development/patches/Aarhus-municipality-does-not-support-RequestedAuthnContext.patch)
+[Aarhus-municipality-does-not-support-RequestedAuthnContext.patch](https://raw.githubusercontent.com/loopdk/profile/development/patches/Aarhus-municipality-does-not-support-RequestedAuthnContext.patch)
 to the contrib module
-[saml_sp](https://www.drupal.org/project/saml_sp).
+[saml_sp](https://www.drupal.org/project/saml_sp):
+
+```
+cd profiles/loopdk/modules/contrib/saml_sp/
+curl --silent https://raw.githubusercontent.com/loopdk/profile/development/patches/Aarhus-municipality-does-not-support-RequestedAuthnContext.patch | patch --strip=1
+```

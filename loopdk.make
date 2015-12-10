@@ -172,7 +172,6 @@ projects[saml_sp][subdir] = "contrib"
 projects[saml_sp][download][type] = "git"
 projects[saml_sp][download][url] = "http://git.drupal.org/project/saml_sp.git"
 projects[saml_sp][download][branch] = "7.x-2.x"
-# projects[saml_sp][patch][] = "https://raw.githubusercontent.com/loopdk/profile/development/patches/Aarhus-municipality-does-not-support-RequestedAuthnContext.patch"
 
 projects[search_api][subdir] = "contrib"
 projects[search_api][version] = "1.16"
