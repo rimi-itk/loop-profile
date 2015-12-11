@@ -39,7 +39,7 @@ projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.6"
 
 projects[entitycache][subdir] = "contrib"
-projects[entitycache][version] = "1.2"
+projects[entitycache][version] = "1.5"
 
 projects[entityreference][subdir] = "contrib"
 projects[entityreference][version] = "1.1"
@@ -48,7 +48,7 @@ projects[facetapi][subdir] = "contrib"
 projects[facetapi][version] = "1.5"
 
 projects[features][subdir] = "contrib"
-projects[features][version] = "2.6"
+projects[features][version] = "2.7"
 
 projects[features_extra][subdir] = "contrib"
 projects[features_extra][version] = "1.0"
@@ -60,7 +60,7 @@ projects[field_group][subdir] = "contrib"
 projects[field_group][version] = "1.4"
 
 projects[flag][subdir] = "contrib"
-projects[flag][version] = "3.6"
+projects[flag][version] = "3.7"
 
 projects[globalredirect][subdir] = "contrib"
 projects[globalredirect][version] = "1.5"
@@ -72,7 +72,7 @@ projects[google_analytics_counter][subdir] = "contrib"
 projects[google_analytics_counter][version] = "3.1"
 
 projects[html5_tools][subdir] = "contrib"
-projects[html5_tools][version] = "1.2"
+projects[html5_tools][version] = "1.3"
 
 projects[i18n][subdir] = "contrib"
 projects[i18n][version] = "1.13"
@@ -81,7 +81,7 @@ projects[i18nviews][subdir] = "contrib"
 projects[i18nviews][version] = "3.x-dev"
 
 projects[jquery_update][subdir] = "contrib"
-projects[jquery_update][version] = "3.0-alpha2"
+projects[jquery_update][version] = "3.0-alpha3"
 
 projects[l10n_update][subdir] = "contrib"
 projects[l10n_update][version] = "1.1"
@@ -114,7 +114,7 @@ projects[menu_token][subdir] = "contrib"
 projects[menu_token][version] = "1.0-beta5"
 
 projects[menu_position][subdir] = "contrib"
-projects[menu_position][version] = "1.1"
+projects[menu_position][version] = "1.2"
 
 projects[metatag][subdir] = "contrib"
 projects[metatag][version] = "1.7"
@@ -150,7 +150,7 @@ projects[panels][subdir] = "contrib"
 projects[panels][version] = "3.5"
 
 projects[pathauto][subdir] = "contrib"
-projects[pathauto][version] = "1.2"
+projects[pathauto][version] = "1.3"
 
 projects[path_breadcrumbs][subdir] = "contrib"
 projects[path_breadcrumbs][version] = "3.3"
@@ -172,7 +172,6 @@ projects[saml_sp][subdir] = "contrib"
 projects[saml_sp][download][type] = "git"
 projects[saml_sp][download][url] = "http://git.drupal.org/project/saml_sp.git"
 projects[saml_sp][download][branch] = "7.x-2.x"
-projects[saml_sp][patch][] = "https://raw.githubusercontent.com/loopdk/profile/development/patches/Aarhus-municipality-does-not-support-RequestedAuthnContext.patch"
 
 projects[search_api][subdir] = "contrib"
 projects[search_api][version] = "1.16"
@@ -223,7 +222,7 @@ projects[transliteration][subdir] = "contrib"
 projects[transliteration][version] = "3.2"
 
 projects[uuid][subdir] = "contrib"
-projects[uuid][version] = "1.0-alpha6"
+projects[uuid][version] = "1.0-beta1"
 
 projects[uuid_features][subdir] = "contrib"
 projects[uuid_features][version] = "1.0-alpha4"
@@ -232,7 +231,7 @@ projects[variable][subdir] = "contrib"
 projects[variable][version] = "2.5"
 
 projects[views][subdir] = "contrib"
-projects[views][version] = "3.11"
+projects[views][version] = "3.13"
 projects[views][patch][] = "https://drupal.org/files/views-make_destination_parameter_configurable-1239566-26.patch"
 projects[views][patch][] = "https://drupal.org/files/views-1685144-localization-bug_1.patch"
 

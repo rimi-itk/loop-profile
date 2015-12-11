@@ -9,9 +9,19 @@ sudo apt-get install drush
 sudo apt-get install unzip
 ```
 
+## Important post-installation notes
+
+Check out the notes on the [Loop saml](modules/loop_saml/README.md) module if it's installed.
+
+## Upgrading existing Loop installations
+
+See
+[Upgrading an old Loop installation](https://github.com/loopdk/upgrading-loop/blob/master/README.md)
+for details on how to upgrade existing Loop installations.
+
 ## Dependencies
 * Apache/Nginx
-* MySQL/MariaDB/Etc. 
+* MySQL/MariaDB/Etc.
 * Apache Solr
 * [Drush 6.1.0](https://github.com/drush-ops/drush)
 * Unzip (used by the make-files)
@@ -32,7 +42,7 @@ drush make --working-copy https://raw.github.com/loopdk/profile/development/drup
 
 ## Installing Loop
 
-After running the make file you should install the site as any other Drupal website. 
+After running the make file you should install the site as any other Drupal website.
 First, create a database (loop) and a database user (loop) with access to the database or use an exiting database.
 
 ```
@@ -44,7 +54,7 @@ grant all privileges on `loop`.* to 'loop'@'localhost';
 quit
 ```
 
-Then install Drupal either by visiting the site or using drush. 
+Then install Drupal either by visiting the site or using drush.
 
 Now you can sign into Loop with the admin credentials you selected during install.
 
@@ -112,9 +122,21 @@ These script below will
 Change "8983" and "loop" as needed.
 
 ```
-# Install tomcat7
+# Install tomcat7 and Java 7
 sudo apt-get update
-sudo apt-get install -y tomcat7
+sudo apt-get install -y tomcat7 openjdk-7-jre
+
+# Make Tomcat run on post 8983 (rather than 8080)
+sudo sed --in-place '/\<Connector port="8080" protocol="HTTP\/1.1"/c \<Connector port="8983" protocol="HTTP\/1.1"' /var/lib/tomcat7/conf/server.xml
+
+# Make Tomcat use Java 7
+sudo sed --in-place 's@.*JAVA_HOME.*@JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64@' /etc/default/tomcat7
+
+# Restart tomcat
+sudo service tomcat7 restart
+
+# Check that tomcat is running (expect "HTTP/1.1 200 OK")
+curl --head http://localhost:8983/
 
 # Install Solr
 cd ~
@@ -127,18 +149,14 @@ sudo cp -R solr-*/example/solr /var/lib/tomcat7
 rm -rf solr-*
 cd -
 
-# Make Solr run on post 8983 (rather than 8080)
-sudo sed -i '/\<Connector port="8080" protocol="HTTP\/1.1"/c \<Connector port="8983" protocol="HTTP\/1.1"' /var/lib/tomcat7/conf/server.xml
-
 # Set file permissions
 sudo chown -R tomcat7:tomcat7 /var/lib/tomcat7/solr
 
 # Restart tomcat
 sudo service tomcat7 restart
 
-# Check that tomcat is running
-curl http://localhost:8983/
-
+# Check that solr is running on tomcat (expect "HTTP/1.1 200 OK")
+curl --head http://localhost:8983/solr/
 ```
 
 ## Adding a Solr core
@@ -163,8 +181,8 @@ sudo chown -R tomcat7:tomcat7 /var/lib/tomcat7/solr
 # Restart tomcat
 sudo service tomcat7 restart
 
-# Check that Solr is running and that we can access the core "loop"
-curl 'http://localhost:8983/solr/loop/select?q=*%3A*&wt=json&indent=true'
+# Check that Solr is running and that we can access the core "loop" (expect "HTTP/1.1 200 OK")
+curl --head 'http://localhost:8983/solr/loop/select?q=*%3A*&wt=json&indent=true'
 ```
 
 Additional Loop Solr cores can be created as shown above or be created
