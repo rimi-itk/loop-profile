@@ -38,4 +38,7 @@ dependencies[] = style_settings
 ; Defaults for the theme configuration
 settings[header_color] = #41ab51
 settings[header_logo_height] = 3em
-
+settings[term_background_color] = #ff6138
+settings[term_hover_background_color] = #eb3000
+settings[keyword_background_color] = #007700
+settings[keyword_hover_background_color] = #006600
