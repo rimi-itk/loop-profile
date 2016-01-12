@@ -28,28 +28,36 @@ function loop_configure_theme_form_system_theme_settings_alter(&$form, $form_sta
     '#description'   => t("Choose a height for the header logo"),
   );
 
-  $form['header']['term_background_color'] = array(
+  $form['terms_keywords'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Term/keyword buttons'),
+    '#collapsible' => FALSE,
+    '#description' => t("Settings for the term/keyword buttons"),
+  );
+
+
+  $form['terms_keywords']['term_background_color'] = array(
     '#type'          => 'style_settings_colorpicker',
     '#title'         => t('Term background color'),
     '#default_value' => theme_get_setting('term_background_color', 'loop'),
     '#description'   => t("Choose a color for the term background"),
   );
 
-  $form['header']['term_hover_background_color'] = array(
+  $form['terms_keywords']['term_hover_background_color'] = array(
     '#type'          => 'style_settings_colorpicker',
     '#title'         => t('Term hover background color'),
     '#default_value' => theme_get_setting('term_hover_background_color', 'loop'),
     '#description'   => t("Choose a color for the term background on hover"),
   );
 
-  $form['header']['keyword_background_color'] = array(
+  $form['terms_keywords']['keyword_background_color'] = array(
     '#type'          => 'style_settings_colorpicker',
     '#title'         => t('Keyword background color'),
     '#default_value' => theme_get_setting('keyword_background_color', 'loop'),
     '#description'   => t("Choose a color for the keyword background"),
   );
 
-  $form['header']['keyword_hover_background_color'] = array(
+  $form['terms_keywords']['keyword_hover_background_color'] = array(
     '#type'          => 'style_settings_colorpicker',
     '#title'         => t('Keyword hover background color'),
     '#default_value' => theme_get_setting('keyword_hover_background_color', 'loop'),
