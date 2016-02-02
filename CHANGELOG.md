@@ -11,4 +11,6 @@
   * Term background color
   * Keyword background color
 * "Send to a friend": Send a question to another Loop user
-* New content type "Intructions"
+* New content type "Instructions"
+* "Profession" is optional on user profile
+* Optional use of rich text (wysiwyg) editor in posts and comments
