@@ -16,7 +16,7 @@ Check out the notes on the [Loop saml](modules/loop_saml/README.md) module if it
 ## Upgrading existing Loop installations
 
 See
-[Upgrading an old Loop installation](https://github.com/loopdk/upgrading-loop/blob/master/README.md)
+[Upgrading an old Loop installation](https://github.com/os2loop/upgrading-loop/blob/master/README.md)
 for details on how to upgrade existing Loop installations.
 
 ## Dependencies
@@ -28,7 +28,7 @@ for details on how to upgrade existing Loop installations.
 
 ## Production
 ```
-drush make https://raw.github.com/loopdk/profile/development/drupal.make htdocs
+drush make https://raw.github.com/os2loop/profile/master/drupal.make htdocs
 ```
 
 ## Development
@@ -36,7 +36,7 @@ If you want a developer version with _working copies_ of the Git repositories,
 run this command instead.
 
 ```
-drush make --working-copy https://raw.github.com/loopdk/profile/development/drupal.make htdocs
+drush make --working-copy https://raw.github.com/os2loop/profile/development/drupal.make htdocs
 ```
 
 

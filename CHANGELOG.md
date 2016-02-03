@@ -3,7 +3,7 @@
 ## Loop v1.2.0
 
 * Code clean-up and upgrade of Drupal and contrib modules
-  * All code is now consolidated into a single repository (https://github.com/loopdk/profile/)
+  * All code is now consolidated into a single repository (https://github.com/os2loop/profile/)
 * Optional display of breadcrumb
 * The "Log out" button can be hidden depending on how the user has signed in (regular login or via SAML)
 * Configurable theme
