@@ -10,9 +10,11 @@ projects[drupal][download][type] = get
 projects[drupal][download][url] = http://ftp.drupal.org/files/projects/drupal-7.41.tar.gz
 projects[drupal][patch][] = "https://drupal.org/files/drupal-menu_navigation_links-1018614-83.patch"
 projects[drupal][patch][] = "https://drupal.org/files/issues/translate_role_names-2205581-1.patch"
+; Drupal has issues clearing caches when node_modules/ or bower_components/ directories are present.
+projects[drupal][patch][] = "https://www.drupal.org/files/issues/optimize_scan-2329453-89-d7-do-not-test.patch"
 
 ; Install profile.
 projects[loopdk][type] = "profile"
 projects[loopdk][download][type] = "git"
-projects[loopdk][download][url] = "git@github.com:loopdk/profile.git"
+projects[loopdk][download][url] = "git@github.com:os2loop/profile.git"
 projects[loopdk][download][branch] = "master"

@@ -329,7 +329,8 @@ select {
 /* 2. Correct inability to style clickable `input` types in iOS. */
 /* 3. Improve usability and consistency of cursor style between image-type `input` and others. */
 button,
-html input[type="button"], input[type="reset"],
+html input[type="button"],
+input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -522,7 +523,7 @@ dd {
       box-sizing: border-box; } }
 
 .layout--inner {
-  padding: 1.5em 0.5em;
+  padding: 1.5em .5em;
   background-color: #fff;
   -webkit-border-radius: 0.4em;
   -moz-border-radius: 0.4em;
@@ -544,8 +545,7 @@ input,
 textarea {
   font: 1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
-input[type="text"],
-.autocomplete-deluxe-container,
+input[type="text"], .autocomplete-deluxe-container,
 input[type="password"],
 input[type="date"],
 input[type="datetime"],
@@ -571,8 +571,7 @@ textarea {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-  input[type="text"]:focus,
-  .autocomplete-deluxe-container:focus,
+  input[type="text"]:focus, .autocomplete-deluxe-container:focus,
   input[type="password"]:focus,
   input[type="date"]:focus,
   input[type="datetime"]:focus,
@@ -585,8 +584,7 @@ textarea {
   textarea:focus {
     border: 1px solid #737373;
     color: #404040; }
-  input[type="text"][disabled],
-  [disabled].autocomplete-deluxe-container,
+  input[type="text"][disabled], [disabled].autocomplete-deluxe-container,
   input[type="password"][disabled],
   input[type="date"][disabled],
   input[type="datetime"][disabled],
@@ -635,8 +633,7 @@ label {
     padding-top: .5em;
     color: #b3b3b3; }
 
-.form-type-textarea,
-.description-form-element,
+.form-type-textarea, .description-form-element,
 .form-type-select,
 .form-type-autocomplete-deluxe {
   border: 1px solid #f2f2f2;
@@ -799,7 +796,7 @@ label {
   display: inline-block;
   font-size: 1.25em;
   margin: 0 0.5em 0.5em 0;
-  padding: 0.4em 1.5em 0.5em;
+  padding: .4em 1.5em .5em;
   position: relative;
   cursor: pointer;
   line-height: 150%;
@@ -810,15 +807,7 @@ label {
   -ms-border-radius: 0.4em;
   -o-border-radius: 0.4em;
   border-radius: 0.4em; }
-  .button--action:focus,
-  .form-submit:focus, .block-follow-question .flag-action:focus, .typeahead-block--button:focus, .button--neutral:focus,
-  .user-profile-form #edit-field-user-image-und-0-upload-button:focus, .comments--editor-actions .comments--editor-actions-edit:focus, .question--editor-actions .question--editor-actions-edit:focus, .edit-user--image-button-add:focus, .button--warning:focus,
-  .comments--editor-actions .comments--editor-actions-delete:focus, .block-follow-question .unflag-action:focus, .question--editor-actions .question--editor-actions-delete:focus, .edit-user--image-button-remove:focus, .at-add-btn:focus,
-  .button--action:hover,
-  .form-submit:hover, .block-follow-question .flag-action:hover, .typeahead-block--button:hover, .button--neutral:hover,
-  .user-profile-form #edit-field-user-image-und-0-upload-button:hover, .comments--editor-actions .comments--editor-actions-edit:hover, .question--editor-actions .question--editor-actions-edit:hover, .edit-user--image-button-add:hover, .button--warning:hover,
-  .comments--editor-actions .comments--editor-actions-delete:hover, .block-follow-question .unflag-action:hover, .question--editor-actions .question--editor-actions-delete:hover, .edit-user--image-button-remove:hover, .at-add-btn:hover,
-  .button--action:active, .form-submit:active, .block-follow-question .flag-action:active, .typeahead-block--button:active, .button--neutral:active, .user-profile-form #edit-field-user-image-und-0-upload-button:active, .comments--editor-actions .comments--editor-actions-edit:active, .question--editor-actions .question--editor-actions-edit:active, .edit-user--image-button-add:active, .button--warning:active, .comments--editor-actions .comments--editor-actions-delete:active, .block-follow-question .unflag-action:active, .question--editor-actions .question--editor-actions-delete:active, .edit-user--image-button-remove:active, .at-add-btn:active {
+  .button--action:focus, .form-submit:focus, .block-follow-question .flag-action:focus, .typeahead-block--button:focus, .button--neutral:focus, .user-profile-form #edit-field-user-image-und-0-upload-button:focus, .comments--editor-actions .comments--editor-actions-edit:focus, .question--editor-actions .question--editor-actions-edit:focus, .edit-user--image-button-add:focus, .button--warning:focus, .comments--editor-actions .comments--editor-actions-delete:focus, .block-follow-question .unflag-action:focus, .question--editor-actions .question--editor-actions-delete:focus, .edit-user--image-button-remove:focus, .at-add-btn:focus, .button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .typeahead-block--button:hover, .button--neutral:hover, .user-profile-form #edit-field-user-image-und-0-upload-button:hover, .comments--editor-actions .comments--editor-actions-edit:hover, .question--editor-actions .question--editor-actions-edit:hover, .edit-user--image-button-add:hover, .button--warning:hover, .comments--editor-actions .comments--editor-actions-delete:hover, .block-follow-question .unflag-action:hover, .question--editor-actions .question--editor-actions-delete:hover, .edit-user--image-button-remove:hover, .at-add-btn:hover, .button--action:active, .form-submit:active, .block-follow-question .flag-action:active, .typeahead-block--button:active, .button--neutral:active, .user-profile-form #edit-field-user-image-und-0-upload-button:active, .comments--editor-actions .comments--editor-actions-edit:active, .question--editor-actions .question--editor-actions-edit:active, .edit-user--image-button-add:active, .button--warning:active, .comments--editor-actions .comments--editor-actions-delete:active, .block-follow-question .unflag-action:active, .question--editor-actions .question--editor-actions-delete:active, .edit-user--image-button-remove:active, .at-add-btn:active {
     text-decoration: none; }
   .button--action:last-child, .form-submit:last-child, .block-follow-question .flag-action:last-child, .typeahead-block--button:last-child, .button--neutral:last-child, .user-profile-form #edit-field-user-image-und-0-upload-button:last-child, .comments--editor-actions .comments--editor-actions-edit:last-child, .question--editor-actions .question--editor-actions-edit:last-child, .edit-user--image-button-add:last-child, .button--warning:last-child, .comments--editor-actions .comments--editor-actions-delete:last-child, .block-follow-question .unflag-action:last-child, .question--editor-actions .question--editor-actions-delete:last-child, .edit-user--image-button-remove:last-child, .at-add-btn:last-child {
     margin: 0 0 0.5em; }
@@ -828,11 +817,7 @@ label {
   border: 1px solid #41ab51;
   color: #fff;
   text-shadow: 1px 1px 0 #33863f; }
-  .button--action:link,
-  .form-submit:link,
-  .block-follow-question .flag-action:link,
-  .typeahead-block--button:link,
-  .button--action:visited, .form-submit:visited, .block-follow-question .flag-action:visited, .typeahead-block--button:visited {
+  .button--action:link, .form-submit:link, .block-follow-question .flag-action:link, .typeahead-block--button:link, .button--action:visited, .form-submit:visited, .block-follow-question .flag-action:visited, .typeahead-block--button:visited {
     color: #fff;
     text-decoration: none; }
   .button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .typeahead-block--button:hover {
@@ -843,12 +828,7 @@ label {
   border: 1px solid #404040;
   color: #fff;
   text-shadow: 1px 1px 0 #404040; }
-  .button--neutral:link,
-  .user-profile-form #edit-field-user-image-und-0-upload-button:link,
-  .comments--editor-actions .comments--editor-actions-edit:link,
-  .question--editor-actions .question--editor-actions-edit:link,
-  .edit-user--image-button-add:link,
-  .button--neutral:visited, .user-profile-form #edit-field-user-image-und-0-upload-button:visited, .comments--editor-actions .comments--editor-actions-edit:visited, .question--editor-actions .question--editor-actions-edit:visited, .edit-user--image-button-add:visited {
+  .button--neutral:link, .user-profile-form #edit-field-user-image-und-0-upload-button:link, .comments--editor-actions .comments--editor-actions-edit:link, .question--editor-actions .question--editor-actions-edit:link, .edit-user--image-button-add:link, .button--neutral:visited, .user-profile-form #edit-field-user-image-und-0-upload-button:visited, .comments--editor-actions .comments--editor-actions-edit:visited, .question--editor-actions .question--editor-actions-edit:visited, .edit-user--image-button-add:visited {
     color: #fff;
     text-decoration: none; }
   .button--neutral:hover, .user-profile-form #edit-field-user-image-und-0-upload-button:hover, .comments--editor-actions .comments--editor-actions-edit:hover, .question--editor-actions .question--editor-actions-edit:hover, .edit-user--image-button-add:hover {
@@ -859,12 +839,7 @@ label {
   border: 1px solid #ff3905;
   color: #fff;
   text-shadow: 1px 1px 0 #d12b00; }
-  .button--warning:link,
-  .comments--editor-actions .comments--editor-actions-delete:link,
-  .block-follow-question .unflag-action:link,
-  .question--editor-actions .question--editor-actions-delete:link,
-  .edit-user--image-button-remove:link,
-  .button--warning:visited, .comments--editor-actions .comments--editor-actions-delete:visited, .block-follow-question .unflag-action:visited, .question--editor-actions .question--editor-actions-delete:visited, .edit-user--image-button-remove:visited {
+  .button--warning:link, .comments--editor-actions .comments--editor-actions-delete:link, .block-follow-question .unflag-action:link, .question--editor-actions .question--editor-actions-delete:link, .edit-user--image-button-remove:link, .button--warning:visited, .comments--editor-actions .comments--editor-actions-delete:visited, .block-follow-question .unflag-action:visited, .question--editor-actions .question--editor-actions-delete:visited, .edit-user--image-button-remove:visited {
     color: #fff;
     text-decoration: none; }
   .button--warning:hover, .comments--editor-actions .comments--editor-actions-delete:hover, .block-follow-question .unflag-action:hover, .question--editor-actions .question--editor-actions-delete:hover, .edit-user--image-button-remove:hover {
@@ -875,9 +850,7 @@ label {
   border: 1px solid #b3b3b3;
   color: #fff;
   text-shadow: 1px 1px 0 #999999; }
-  .button--deactivated:link,
-  .typeahead-block--button:link:disabled,
-  .button--deactivated:visited, .typeahead-block--button:visited:disabled {
+  .button--deactivated:link, .typeahead-block--button:link:disabled, .button--deactivated:visited, .typeahead-block--button:visited:disabled {
     color: #737373;
     text-decoration: none; }
 
@@ -997,17 +970,15 @@ label {
 /* '' */
 /* Icon shadow classes
    ================================================================================================================== */
-.comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .user-profile--answers-best-count:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .messages.warning:before, .nav-mobile .nav--link:before,
-.nav-mobile .nav--wrapper .nav--frontpage-link:before,
-.nav--wrapper .nav-mobile .nav--frontpage-link:before, .nav-mobile .nav--logout:before, .nav-mobile .nav-dropdown--header:before,
+.comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .user-profile--answers-best-count:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .messages.warning:before, .nav-mobile .nav--link:before, .nav-mobile .nav--wrapper .nav--frontpage-link:before, .nav--wrapper .nav-mobile .nav--frontpage-link:before, .nav-mobile .nav--logout:before,
+.nav-mobile .nav-dropdown--header:before,
 .nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before, .twitter-typeahead:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .comments--abuse a:before, .question--links a:before {
   display: inline-block;
   font-family: "loop-icons";
   line-height: 100%; }
 
-.nav-mobile .nav--link:before,
-.nav-mobile .nav--wrapper .nav--frontpage-link:before,
-.nav--wrapper .nav-mobile .nav--frontpage-link:before, .nav-mobile .nav--logout:before, .nav-mobile .nav-dropdown--header:before,
+.nav-mobile .nav--link:before, .nav-mobile .nav--wrapper .nav--frontpage-link:before, .nav--wrapper .nav-mobile .nav--frontpage-link:before, .nav-mobile .nav--logout:before,
+.nav-mobile .nav-dropdown--header:before,
 .nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .comments--abuse a:before, .comment--flag:before, .guide--nav-list-item .active:before, .question--links a:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .user-profile--answers-best-count:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .messages.status:before, .messages.warning:before, .messages.error:before {
   margin-right: .35em; }
 
@@ -1035,9 +1006,8 @@ label {
 .messages.warning:before {
   content: '\e801'; }
 
-.nav-mobile .nav--link:before,
-.nav-mobile .nav--wrapper .nav--frontpage-link:before,
-.nav--wrapper .nav-mobile .nav--frontpage-link:before, .nav-mobile .nav--logout:before, .nav-mobile .nav-dropdown--header:before,
+.nav-mobile .nav--link:before, .nav-mobile .nav--wrapper .nav--frontpage-link:before, .nav--wrapper .nav-mobile .nav--frontpage-link:before, .nav-mobile .nav--logout:before,
+.nav-mobile .nav-dropdown--header:before,
 .nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before {
   content: '\e807'; }
 
@@ -1097,7 +1067,7 @@ label {
       border: 1px solid #cccccc;
       display: block;
       margin: 0;
-      padding: 0.75em 1.25em;
+      padding: .75em 1.25em;
       line-height: 100%;
       text-decoration: none;
       -webkit-border-radius: 0.4em;
@@ -1124,7 +1094,7 @@ label {
         .tabs li:hover a,
         .tabs li.active:hover a {
           border-bottom: 0;
-          padding: 0.75em 1.25em 0.5em;
+          padding: .75em 1.25em .5em;
           -webkit-border-radius: 0.4em 0.4em 0 0;
           -moz-border-radius: 0.4em 0.4em 0 0;
           -ms-border-radius: 0.4em 0.4em 0 0;
@@ -1142,7 +1112,7 @@ label {
     .tabs.secondary li a,
     .tabs.secondary li a:hover {
       border: 1px solid #cccccc;
-      padding: 0.5em 1.25em;
+      padding: .5em 1.25em;
       background: #fff; }
     .tabs.secondary li a.active {
       background: #e6e6e6; }
@@ -1172,8 +1142,7 @@ label {
   /* setting:header_color */
   *position: relative;
   *zoom: 1; }
-  .header:before,
-  .header:after {
+  .header:before, .header:after {
     content: "";
     display: table; }
   .header:after {
@@ -1698,32 +1667,29 @@ label {
     -ms-border-radius: 100%;
     -o-border-radius: 100%;
     border-radius: 100%; }
-    .nav--wrapper .nav-dropdown--header:link,
-    .nav--wrapper .nav-dropdown--header:visited,
+    .nav--wrapper .nav-dropdown--header:link, .nav--wrapper .nav-dropdown--header:visited,
     .nav--wrapper .nav--toggle-mobile-nav:link,
     .nav--wrapper .nav--toggle-mobile-nav:visited,
-    .nav--wrapper .nav--link:link,
-    .nav--wrapper .nav--frontpage-link:link, .nav--wrapper .nav--logout:link, .nav--wrapper .nav--link:visited, .nav--wrapper .nav--frontpage-link:visited, .nav--wrapper .nav--logout:visited {
+    .nav--wrapper .nav--link:link, .nav--wrapper .nav--frontpage-link:link, .nav--wrapper .nav--logout:link,
+    .nav--wrapper .nav--link:visited, .nav--wrapper .nav--frontpage-link:visited, .nav--wrapper .nav--logout:visited {
       color: #fff;
       text-decoration: none; }
     .nav--wrapper .nav-dropdown--header:hover,
     .nav--wrapper .nav--toggle-mobile-nav:hover,
     .nav--wrapper .nav--link:hover, .nav--wrapper .nav--frontpage-link:hover, .nav--wrapper .nav--logout:hover {
       background-color: #82d08e; }
-    .nav--wrapper .nav-dropdown--header.active-trail,
-    .nav--wrapper .nav-dropdown--header.active,
+    .nav--wrapper .nav-dropdown--header.active-trail, .nav--wrapper .nav-dropdown--header.active,
     .nav--wrapper .nav--toggle-mobile-nav.active-trail,
     .nav--wrapper .nav--toggle-mobile-nav.active,
-    .nav--wrapper .nav--link.active-trail,
-    .nav--wrapper .active-trail.nav--frontpage-link, .nav--wrapper .active-trail.nav--logout, .nav--wrapper .nav--link.active, .nav--wrapper .active.nav--frontpage-link, .nav--wrapper .active.nav--logout {
+    .nav--wrapper .nav--link.active-trail, .nav--wrapper .active-trail.nav--frontpage-link, .nav--wrapper .active-trail.nav--logout,
+    .nav--wrapper .nav--link.active, .nav--wrapper .active.nav--frontpage-link, .nav--wrapper .active.nav--logout {
       background-color: #f2f2f2;
       color: #41ab51; }
-      .nav--wrapper .nav-dropdown--header.active-trail:hover,
-      .nav--wrapper .nav-dropdown--header.active:hover,
+      .nav--wrapper .nav-dropdown--header.active-trail:hover, .nav--wrapper .nav-dropdown--header.active:hover,
       .nav--wrapper .nav--toggle-mobile-nav.active-trail:hover,
       .nav--wrapper .nav--toggle-mobile-nav.active:hover,
-      .nav--wrapper .nav--link.active-trail:hover,
-      .nav--wrapper .active-trail.nav--frontpage-link:hover, .nav--wrapper .active-trail.nav--logout:hover, .nav--wrapper .nav--link.active:hover, .nav--wrapper .active.nav--frontpage-link:hover, .nav--wrapper .active.nav--logout:hover {
+      .nav--wrapper .nav--link.active-trail:hover, .nav--wrapper .active-trail.nav--frontpage-link:hover, .nav--wrapper .active-trail.nav--logout:hover,
+      .nav--wrapper .nav--link.active:hover, .nav--wrapper .active.nav--frontpage-link:hover, .nav--wrapper .active.nav--logout:hover {
         background-color: #5dc26d;
         color: #f2f2f2; }
     @media only screen and (min-width: 35em) {
@@ -1844,8 +1810,7 @@ label {
     display: block;
     min-width: 10em;
     text-align: right; }
-    .nav-dropdown .nav-dropdown--link:link,
-    .nav-dropdown .nav-dropdown--link:visited {
+    .nav-dropdown .nav-dropdown--link:link, .nav-dropdown .nav-dropdown--link:visited {
       color: #fff;
       text-decoration: none; }
     .nav-dropdown .nav-dropdown--link:hover {
@@ -1899,9 +1864,8 @@ label {
     text-decoration: underline; }
   .nav-mobile a:focus {
     color: #fff; }
-  .nav-mobile .nav--link,
-  .nav-mobile .nav--wrapper .nav--frontpage-link,
-  .nav--wrapper .nav-mobile .nav--frontpage-link, .nav-mobile .nav--logout, .nav-mobile .nav-dropdown--header,
+  .nav-mobile .nav--link, .nav-mobile .nav--wrapper .nav--frontpage-link, .nav--wrapper .nav-mobile .nav--frontpage-link, .nav-mobile .nav--logout,
+  .nav-mobile .nav-dropdown--header,
   .nav-mobile .nav-dropdown--link {
     border-bottom: 1px solid #e6e6e6;
     margin-bottom: 1em;
@@ -2346,8 +2310,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 /* @end */
 /* @group Retina compatibility */
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 144dpi) {
-  .chosen-rtl .chosen-search input[type="text"],
-  .chosen-rtl .chosen-search .autocomplete-deluxe-container,
+  .chosen-rtl .chosen-search input[type="text"], .chosen-rtl .chosen-search .autocomplete-deluxe-container,
   .chosen-container-single .chosen-single abbr,
   .chosen-container-single .chosen-single div b,
   .chosen-container-single .chosen-search input[type="text"],
@@ -2543,11 +2506,9 @@ This file is generated by `grunt build`, do not edit it by hand.
 .block-questions--link {
   display: block;
   margin-bottom: .5em; }
-  .block-questions--link:link,
-  .block-questions--link:visited {
+  .block-questions--link:link, .block-questions--link:visited {
     text-decoration: none; }
-  .block-questions--link:hover,
-  .block-questions--link:active {
+  .block-questions--link:hover, .block-questions--link:active {
     text-decoration: underline; }
 
 /**
@@ -2606,7 +2567,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   font-size: 80%;
   margin-bottom: 1em;
   overflow: hidden;
-  padding: 0.5em 1.25em 0.65em; }
+  padding: .5em 1.25em .65em; }
   @media only screen and (min-width: 65em) {
     .comments--files {
       max-width: 16em; } }
@@ -2792,7 +2753,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 .comment--flag {
   border: 1px solid #b3b3b3;
   display: block;
-  padding: 0.5em 1em;
+  padding: .5em 1em;
   background-color: #fff;
   font-size: .85em;
   font-weight: bold;
@@ -2808,46 +2769,26 @@ This file is generated by `grunt build`, do not edit it by hand.
     vertical-align: top; }
   .comment--flag.is-sticky {
     font-size: 1em; }
-  .comment--flag.is-active,
-  .comment--flag.is-sticky,
-  .comment--flag.unflag-action {
+  .comment--flag.is-active, .comment--flag.is-sticky, .comment--flag.unflag-action {
     border: 1px solid #41ab51;
     color: #41ab51; }
 
 .flag-ranking a.comment--flag {
   /* States */ }
-  .flag-ranking a.comment--flag:link,
-  .flag-ranking a.comment--flag:visited,
-  .flag-ranking a.comment--flag:hover,
-  .flag-ranking a.comment--flag:active {
+  .flag-ranking a.comment--flag:link, .flag-ranking a.comment--flag:visited, .flag-ranking a.comment--flag:hover, .flag-ranking a.comment--flag:active {
     color: #b3b3b3;
     text-decoration: none; }
   .flag-ranking a.comment--flag:hover {
     border: 1px solid #737373;
     color: #737373; }
-  .flag-ranking a.comment--flag.is-active:link,
-  .flag-ranking a.comment--flag.is-active:visited,
-  .flag-ranking a.comment--flag.is-active:hover,
-  .flag-ranking a.comment--flag.is-active:active,
-  .flag-ranking a.comment--flag.is-sticky:link,
-  .flag-ranking a.comment--flag.is-sticky:visited,
-  .flag-ranking a.comment--flag.is-sticky:hover,
-  .flag-ranking a.comment--flag.is-sticky:active,
-  .flag-ranking a.comment--flag.unflag-action:link,
-  .flag-ranking a.comment--flag.unflag-action:visited,
-  .flag-ranking a.comment--flag.unflag-action:hover,
-  .flag-ranking a.comment--flag.unflag-action:active {
+  .flag-ranking a.comment--flag.is-active:link, .flag-ranking a.comment--flag.is-active:visited, .flag-ranking a.comment--flag.is-active:hover, .flag-ranking a.comment--flag.is-active:active, .flag-ranking a.comment--flag.is-sticky:link, .flag-ranking a.comment--flag.is-sticky:visited, .flag-ranking a.comment--flag.is-sticky:hover, .flag-ranking a.comment--flag.is-sticky:active, .flag-ranking a.comment--flag.unflag-action:link, .flag-ranking a.comment--flag.unflag-action:visited, .flag-ranking a.comment--flag.unflag-action:hover, .flag-ranking a.comment--flag.unflag-action:active {
     border: 1px solid #41ab51;
     color: #41ab51;
     text-decoration: none; }
-  .flag-ranking a.comment--flag.is-active:hover,
-  .flag-ranking a.comment--flag.is-sticky:hover,
-  .flag-ranking a.comment--flag.unflag-action:hover {
+  .flag-ranking a.comment--flag.is-active:hover, .flag-ranking a.comment--flag.is-sticky:hover, .flag-ranking a.comment--flag.unflag-action:hover {
     border: 1px solid #737373;
     color: #737373; }
-  .flag-ranking a.comment--flag.is-active:hover,
-  .flag-ranking a.comment--flag.is-sticky:hover,
-  .flag-ranking a.comment--flag.unflag-action:hover {
+  .flag-ranking a.comment--flag.is-active:hover, .flag-ranking a.comment--flag.is-sticky:hover, .flag-ranking a.comment--flag.unflag-action:hover {
     border: 1px solid #33863f;
     color: #33863f; }
 
@@ -2908,7 +2849,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 .abuse_flag_node .flag-content {
   color: #fff;
   background-color: #595959;
-  padding: 0.4em 1em;
+  padding: .4em 1em;
   display: inline-block;
   font-size: .8em;
   -webkit-border-radius: 0.4em;
@@ -2916,9 +2857,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   -ms-border-radius: 0.4em;
   -o-border-radius: 0.4em;
   border-radius: 0.4em; }
-  .abuse_flag_comment .flag-content:link,
-  .abuse_flag_comment .flag-content:active,
-  .abuse_flag_comment .flag-content:visited,
+  .abuse_flag_comment .flag-content:link, .abuse_flag_comment .flag-content:active, .abuse_flag_comment .flag-content:visited,
   .abuse_flag_node .flag-content:link,
   .abuse_flag_node .flag-content:active,
   .abuse_flag_node .flag-content:visited {
@@ -3052,9 +2991,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-  .notification:link,
-  .notification--inline:link,
-  .notification:visited, .notification--inline:visited {
+  .notification:link, .notification--inline:link, .notification:visited, .notification--inline:visited {
     text-decoration: none; }
 
 .notification {
@@ -3150,7 +3087,7 @@ This file is generated by `grunt build`, do not edit it by hand.
     border-bottom: 1px solid #e6e6e6; }
 
 .question--meta-data {
-  padding: 0.5em 1.25em 0.65em;
+  padding: .5em 1.25em .65em;
   background-color: #f2f2f2;
   color: #999;
   font-size: 80%;
@@ -3206,6 +3143,13 @@ This file is generated by `grunt build`, do not edit it by hand.
 
 .question--terms {
   margin-bottom: 2em; }
+
+a.question--term {
+  background-color: #ff6138;
+  /* setting:term_background_color */ }
+  a.question--term:hover {
+    background-color: #eb3000;
+    /* setting:term_hover_background_color */ }
 
 .question--links {
   font-size: .8em;
@@ -3288,7 +3232,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 
 .external-sources--meta-data {
   margin-bottom: 1.5em;
-  padding: 0.5em 1.25em 0.65em;
+  padding: .5em 1.25em .65em;
   background-color: #f2f2f2;
   color: #999;
   font-size: 80%;
@@ -3341,11 +3285,9 @@ This file is generated by `grunt build`, do not edit it by hand.
 .search-result--link {
   display: block;
   margin-bottom: .5em; }
-  .search-result--link:link,
-  .search-result--link:visited {
+  .search-result--link:link, .search-result--link:visited {
     text-decoration: none; }
-  .search-result--link:hover,
-  .search-result--link:active {
+  .search-result--link:hover, .search-result--link:active {
     text-decoration: underline; }
 
 .search-result--lead {
@@ -3353,19 +3295,15 @@ This file is generated by `grunt build`, do not edit it by hand.
 
 .search-result--comments, .question--number-of-comments {
   display: block; }
-  .search-result--comments:link,
-  .question--number-of-comments:link,
-  .search-result--comments:visited, .question--number-of-comments:visited {
+  .search-result--comments:link, .question--number-of-comments:link, .search-result--comments:visited, .question--number-of-comments:visited {
     color: #737373;
     text-decoration: none; }
-  .search-result--comments:hover,
-  .question--number-of-comments:hover,
-  .search-result--comments:active, .question--number-of-comments:active {
+  .search-result--comments:hover, .question--number-of-comments:hover, .search-result--comments:active, .question--number-of-comments:active {
     color: #404040; }
 
 .search-result--meta-data {
   margin-bottom: 1.5em;
-  padding: 0.5em 1.25em 0.65em;
+  padding: .5em 1.25em .65em;
   background-color: #f2f2f2;
   color: #999;
   font-size: 80%;
@@ -3389,7 +3327,7 @@ This file is generated by `grunt build`, do not edit it by hand.
 .comments--user-page-comments-new, .question--term, .question--user-page-nodes-new, .external-sources--term, .at-term {
   display: inline-block;
   margin-bottom: .25em;
-  padding: 0.1em 1em;
+  padding: .1em 1em;
   background-color: #ff6138;
   color: #fff;
   cursor: pointer;
@@ -3399,22 +3337,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   -ms-border-radius: 0.4em;
   -o-border-radius: 0.4em;
   border-radius: 0.4em; }
-  .comments--user-page-comments-new:link,
-  .question--term:link,
-  .question--user-page-nodes-new:link,
-  .external-sources--term:link,
-  .at-term:link,
-  .comments--user-page-comments-new:visited,
-  .question--term:visited,
-  .question--user-page-nodes-new:visited,
-  .external-sources--term:visited,
-  .at-term:visited,
-  .comments--user-page-comments-new:hover,
-  .question--term:hover,
-  .question--user-page-nodes-new:hover,
-  .external-sources--term:hover,
-  .at-term:hover,
-  .comments--user-page-comments-new:active, .question--term:active, .question--user-page-nodes-new:active, .external-sources--term:active, .at-term:active {
+  .comments--user-page-comments-new:link, .question--term:link, .question--user-page-nodes-new:link, .external-sources--term:link, .at-term:link, .comments--user-page-comments-new:visited, .question--term:visited, .question--user-page-nodes-new:visited, .external-sources--term:visited, .at-term:visited, .comments--user-page-comments-new:hover, .question--term:hover, .question--user-page-nodes-new:hover, .external-sources--term:hover, .at-term:hover, .comments--user-page-comments-new:active, .question--term:active, .question--user-page-nodes-new:active, .external-sources--term:active, .at-term:active {
     color: #fff;
     text-decoration: none; }
   .comments--user-page-comments-new:hover, .question--term:hover, .question--user-page-nodes-new:hover, .external-sources--term:hover, .at-term:hover {
@@ -3425,10 +3348,12 @@ This file is generated by `grunt build`, do not edit it by hand.
   color: #b3b3b3;
   font-size: .85em; }
 
-.taxonomy-keyword {
-  background-color: #007700; }
-  .taxonomy-keyword:hover {
-    background-color: #006600; }
+a.question--term.taxonomy-keyword {
+  background-color: #007700;
+  /* setting:keyword_background_color */ }
+  a.question--term.taxonomy-keyword:hover {
+    background-color: #006600;
+    /* setting:keyword_hover_background_color */ }
 
 /**
  * Twitter typeahead
@@ -3553,11 +3478,9 @@ This file is generated by `grunt build`, do not edit it by hand.
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 1em;
   padding-bottom: 1em; }
-  .tt-suggestion:link,
-  .tt-suggestion:visited {
+  .tt-suggestion:link, .tt-suggestion:visited {
     text-decoration: none; }
-  .tt-suggestion:hover,
-  .tt-suggestion:active {
+  .tt-suggestion:hover, .tt-suggestion:active {
     text-decoration: underline; }
   .tt-suggestion:last-child {
     border-bottom: 0;
@@ -4061,17 +3984,14 @@ This file is generated by `grunt build`, do not edit it by hand.
   @media only screen and (min-width: 80em) {
     .dashboard--content-statistics-table, .dashboard--content-overview {
       width: 33%; } }
-  .dashboard--content-statistics-table th,
-  .dashboard--content-overview th,
+  .dashboard--content-statistics-table th, .dashboard--content-overview th,
   .dashboard--content-statistics-table td, .dashboard--content-overview td {
     width: 75%; }
-  .dashboard--content-statistics-table td:last-child,
-  .dashboard--content-overview td:last-child,
+  .dashboard--content-statistics-table td:last-child, .dashboard--content-overview td:last-child,
   .dashboard--content-statistics-table th:last-child, .dashboard--content-overview th:last-child {
     text-align: center;
     width: 25%; }
-  .dashboard--content-statistics-table thead,
-  .dashboard--content-overview thead,
+  .dashboard--content-statistics-table thead, .dashboard--content-overview thead,
   .dashboard--content-statistics-table tbody, .dashboard--content-overview tbody {
     display: inline-table;
     min-height: 4em;
@@ -4121,7 +4041,7 @@ This file is generated by `grunt build`, do not edit it by hand.
   margin-bottom: .5em; }
 
 .at-add-btn {
-  padding: 0.25em 0.75em;
+  padding: .25em .75em;
   width: 100%;
   background-color: #595959;
   border: 1px solid #404040;
@@ -4161,9 +4081,7 @@ This file is generated by `grunt build`, do not edit it by hand.
     .messages.status a:link {
       color: #000;
       text-decoration: underline; }
-    .messages.status a:visited,
-    .messages.status a:hover,
-    .messages.status a:focus {
+    .messages.status a:visited, .messages.status a:hover, .messages.status a:focus {
       color: #000;
       text-decoration: none; }
     .messages.status:before {
@@ -4174,9 +4092,7 @@ This file is generated by `grunt build`, do not edit it by hand.
     .messages.warning a:link {
       color: #000;
       text-decoration: underline; }
-    .messages.warning a:visited,
-    .messages.warning a:hover,
-    .messages.warning a:focus {
+    .messages.warning a:visited, .messages.warning a:hover, .messages.warning a:focus {
       color: #000;
       text-decoration: none; }
     .messages.warning:before {
@@ -4187,9 +4103,7 @@ This file is generated by `grunt build`, do not edit it by hand.
     .messages.error a:link {
       color: #fff;
       text-decoration: underline; }
-    .messages.error a:visited,
-    .messages.error a:hover,
-    .messages.error a:focus {
+    .messages.error a:visited, .messages.error a:hover, .messages.error a:focus {
       color: #fff;
       text-decoration: none; }
     .messages.error:before {
