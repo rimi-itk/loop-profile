@@ -216,7 +216,6 @@ projects[style_settings][subdir] = "contrib"
 projects[style_settings][download][type] = "git"
 projects[style_settings][download][url] = "http://git.drupal.org/project/style_settings.git"
 projects[style_settings][download][branch] = "7.x-2.x"
-projects[style_settings][patch][] = "https://www.drupal.org/files/issues/style_settings-fix-clobbering-of-pseudo-classes-2648698-1-7.patch"
 
 projects[taxonomy_manager][subdir] = "contrib"
 projects[taxonomy_manager][version] = "1.0"
