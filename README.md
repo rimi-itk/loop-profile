@@ -36,7 +36,7 @@ If you want a developer version with _working copies_ of the Git repositories,
 run this command instead.
 
 ```
-drush make --working-copy https://raw.github.com/os2loop/profile/development/drupal.make htdocs
+drush make --working-copy https://raw.github.com/os2loop/profile/develop/drupal.make htdocs
 ```
 
 
