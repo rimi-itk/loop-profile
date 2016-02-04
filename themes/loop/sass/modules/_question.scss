@@ -92,6 +92,15 @@
   @extend %tag;
 }
 
+// Allow style settings to override these colors.
+a.question--term {
+  background-color: $red;/*! setting:term_background_color */
+
+  &:hover {
+    background-color: darken($red, 15%);/*! setting:term_hover_background_color */
+  }
+}
+
 .question--links {
   font-size: .8em;
   list-style-type: none;
