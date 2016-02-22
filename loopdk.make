@@ -177,6 +177,8 @@ projects[saml_sp][patch][] = "https://www.drupal.org/files/issues/2649458-saml_s
 ; SAML SP bugfixes:
 projects[saml_sp][patch][] = "https://www.drupal.org/files/issues/nameid-correction.patch"
 projects[saml_sp][patch][] = "https://www.drupal.org/files/issues/2649478-saml_sp-validation_of_signed_elements_fails-2.patch"
+; Custom SAML SP hooks
+projects[saml_sp][patch][] = "https://raw.githubusercontent.com/os2loop/profile/master/patches/saml_sp_drupal_login-alter_user_hooks.patch"
 
 projects[search_api][subdir] = "contrib"
 projects[search_api][version] = "1.16"
