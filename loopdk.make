@@ -57,7 +57,7 @@ projects[features_override][subdir] = "contrib"
 projects[features_override][version] = "2.0-rc2"
 
 projects[field_group][subdir] = "contrib"
-projects[field_group][version] = "1.4"
+projects[field_group][version] = "1.5"
 
 projects[flag][subdir] = "contrib"
 projects[flag][version] = "3.7"
@@ -69,7 +69,7 @@ projects[google_analytics][subdir] = "contrib"
 projects[google_analytics][version] = "2.x-dev"
 
 projects[google_analytics_counter][subdir] = "contrib"
-projects[google_analytics_counter][version] = "3.1"
+projects[google_analytics_counter][version] = "3.2"
 
 projects[html5_tools][subdir] = "contrib"
 projects[html5_tools][version] = "1.3"
