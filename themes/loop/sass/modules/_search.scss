@@ -31,8 +31,7 @@
 .search-box-block--wrapper {
   position: relative;
 
-  .tt-hint,
-  .typeahead {
+ .typeahead {
     margin-bottom: 1em;
     padding-top: 1.25em;
     padding-right: 1.25em;
@@ -62,6 +61,10 @@
   margin: 0;
   height: 65px;
   width: 100%;
+
+  &:last-child {
+    margin: 0 0 1em;
+  }
 
   &:disabled {
     @extend .button--deactivated;

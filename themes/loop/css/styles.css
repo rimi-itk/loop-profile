@@ -3314,7 +3314,6 @@ a.question--term {
 
 .search-box-block--wrapper {
   position: relative; }
-  .search-box-block--wrapper .tt-hint,
   .search-box-block--wrapper .typeahead {
     margin-bottom: 1em;
     padding-top: 1.25em;
@@ -3323,11 +3322,9 @@ a.question--term {
     padding-left: 3em;
     height: 65px;
     background-color: #fff; }
-    .search-box-block--wrapper .tt-hint:focus,
     .search-box-block--wrapper .typeahead:focus {
       outline: none; }
     @media only screen and (min-width: 28em) {
-      .search-box-block--wrapper .tt-hint,
       .search-box-block--wrapper .typeahead {
         margin-bottom: 0;
         padding-right: 6em;
@@ -3342,6 +3339,8 @@ a.question--term {
   margin: 0;
   height: 65px;
   width: 100%; }
+  .search-box-block--button:last-child {
+    margin: 0 0 1em; }
   @media only screen and (min-width: 28em) {
     .search-box-block--button {
       position: absolute;
