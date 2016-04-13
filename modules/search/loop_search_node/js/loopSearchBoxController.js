@@ -5,7 +5,7 @@
  * It controls the search box and filters.
  */
 
-angular.module('searchBoxApp').controller('loopBoxController', ['CONFIG', 'communicatorService', 'searchProxyService', '$scope',
+angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 'communicatorService', 'searchProxyService', '$scope',
   function (CONFIG, communicatorService, searchProxyService, $scope) {
     'use strict';
 

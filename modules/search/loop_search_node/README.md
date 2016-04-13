@@ -123,7 +123,33 @@
         "raw": false,
         "geopoint": false,
         "field": "comments:comment_body:value"
+      },
+      {
+         "type": "string",
+         "country": "DK",
+         "language": "da",
+         "default_analyzer": "string_index",
+         "default_indexer": "analysed",
+         "sort": false,
+         "indexable": false,
+         "raw": false,
+         "geopoint": false,
+         "field": "url"
+      },
+      {
+        "type": "string",
+        "country": "DK",
+        "language": "da",
+        "default_analyzer": "string_index",
+        "default_indexer": "analysed",
+        "sort": false,
+        "indexable": false,
+        "raw": false,
+        "geopoint": false,
+        "field": "field_external_link:url"
       }
+      
+      	
     ],
     "dates": [
       "created",
