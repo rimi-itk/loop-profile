@@ -1,0 +1,135 @@
+<?php
+/**
+ * @file
+ * Mainly used to change the different configuration forms.
+ */
+
+/**
+ * Implements hook_search_api_service_info().
+ */
+function search_api_search_node_search_api_service_info() {
+  return array(
+    'search_api_search_node_service' => array(
+      'name' => t('Search node service'),
+      'description' => t('<p>Index items using search node, for simple searches.</p>'),
+      'class' => 'SearchApiSearchNodeService',
+    )
+  );
+}
+
+/**
+ * Implements hook_search_api_alter_callback_info().
+ */
+function search_api_search_node_search_api_alter_callback_info() {
+  return array(
+    'exclude' => array(
+      'name' => t('Exclude items'),
+      'description' => t('Exclude items from index based field and pattern.'),
+      'class' => 'SearchNodeExcludeItemsFilter',
+      'weight' => 100,
+    ),
+    'location' => array(
+      'name' => t('Location'),
+      'description' => t('Include location information from the location modules.'),
+      'class' => 'SearchNodeLocationFilter',
+      'weight' => 101,
+    )
+  );
+}
+
+/**
+ * Implements hook_from_HOOK_alter().
+ *
+ * @see search_api_search_node_form_search_api_admin_index_edit_alter.
+ */
+function search_api_search_node_form_search_api_admin_add_index_alter(&$form, &$form_state, $form_id) {
+  search_api_search_node_form_search_api_admin_index_edit_alter($form, $form_state, $form_id);
+}
+
+/**
+ * Implements hook_from_HOOK_alter().
+ *
+ * Change the index edit form to support extra configuration options needed by
+ * search node to index the data correctly.
+ */
+function search_api_search_node_form_search_api_admin_index_edit_alter(&$form, &$form_state, $form_id) {
+  // Get the element to be places inside the array.
+  $form['options']['search_node_indexes'] = array(
+    '#prefix' => '<div id="search-api-search-node-indexes">',
+    '#suffix' => '</div>',
+  );
+
+  $default = array();
+
+  // Try to get hold of the current selected server.
+  $servers = search_api_server_load_multiple(FALSE, array('enabled' => 1));
+  $server = NULL;
+  if (isset($form_state['values']['server'])) {
+    $server = $servers[$form_state['values']['server']];
+
+    // Check if this is a search node server index.
+    if ($server->class != 'search_api_search_node_service') {
+      return;
+    }
+
+    $default = $form_state['values']['options']['search_node_indexes'];
+  }
+  else if (!empty($form_state['index']->server)) {
+    $server = $servers[$form_state['index']->server];
+
+    // Check if this is a search node server index.
+    if ($server->class != 'search_api_search_node_service') {
+      return;
+    }
+
+    $default = $form_state['index']->options['search_node_indexes'];
+  }
+
+  // Check if this is a search node server.
+  if (isset($server) && $server->class == 'search_api_search_node_service') {
+    // Check for overridden api-key and host from settings.php
+    $apikey = variable_get('search_api_' . $server->machine_name . '_apikey', $server->options['apikey']);
+    $host = variable_get('search_api_' . $server->machine_name . '_host', $server->options['host']);
+
+    // Get connection to the client.
+    $client = new SearchNodeClient($host, $apikey);
+
+    // Authenticate and get indexes.
+    $options = array();
+    $result = $client->authenticate();
+    if ($result['status'] == 200) {
+      $indexes = $client->getIndexes();
+      foreach ($indexes as $index) {
+        $options[$index->index] = $index->name;
+      }
+    }
+    else {
+      drupal_set_message(t($result['message']), 'error');
+    }
+
+    $form['options']['search_node_indexes'] += array(
+      '#type' => 'radios',
+      '#title' => t('Search node indexes'),
+      '#description' => t('Select the search node index to use'),
+      '#default_value' => $default,
+      '#options' => $options,
+    );
+  }
+
+  $form['server'] += array(
+    '#ajax' => array(
+      'callback' => 'search_api_search_node_index_ajax_callback',
+      'wrapper' => 'search-api-search-node-indexes',
+    ),
+  );
+}
+
+/**
+ * AJAX submit callback for search_api_admin_add_index().
+ *
+ * Used for displaying the matching data source configuration form for the
+ * selected item type.
+ */
+function search_api_search_node_index_ajax_callback(array $form, array &$form_state) {
+  return $form['options']['search_node_indexes'];
+}

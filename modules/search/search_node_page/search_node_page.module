@@ -1,0 +1,876 @@
+<?php
+/**
+ * @file
+ * This is implements the blocks used to display the search.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function search_node_page_menu() {
+  $items = array();
+
+  $items ['search_node/api/%/auth'] = array(
+    'title' => 'Search node authentication',
+    'description' => 'Authentication call to get token based on API key',
+    'page callback' => 'search_node_page_authenticate',
+    'page arguments' => array(2),
+    'access arguments' => array('search content'),
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function search_node_page_permission() {
+  return array(
+    'search content' => array(
+      'title' => t('Search node - search content'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function search_node_page_theme() {
+  return array(
+    'search_node_page_search_box' => array(
+      'variables' => array(),
+      'template' => 'search-node-page-search-box',
+      'path' => drupal_get_path('module', 'search_node_page') . '/templates',
+    ),
+    'search_node_page_search_results' => array(
+      'variables' => array(),
+      'template' => 'search-node-page-search-results',
+      'path' => drupal_get_path('module', 'search_node_page') . '/templates',
+    ),
+  );
+}
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function search_node_page_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools' || $module == 'panels') {
+    return 'plugins/' . $plugin;
+  }
+}
+
+/**
+ * Authentication callback.
+ *
+ * @param $search_server
+ *   The machine name of the search api server to use.
+ */
+function search_node_page_authenticate($search_server) {
+  $server = search_api_server_load($search_server);
+  if ($server) {
+    // Check for overridden api-key and host from settings.php
+    $apikey = variable_get('search_api_' . $server->machine_name . '_apikey_readonly', $server->options['apikey_readonly']);
+    $host = variable_get('search_api_' . $server->machine_name . '_host', $server->options['host']);
+
+    $search_node = new SearchNodeClient($host, $apikey);
+    $auth = $search_node->authenticate();
+    if ($auth['status'] == 200) {
+      drupal_json_output(array(
+        'status' => $auth['status'],
+        'token' => $search_node->getToken(),
+      ));
+    }
+    else {
+      // Auth failed.
+      drupal_json_output($auth);
+    }
+  }
+  else {
+    drupal_json_output(array(
+      'status' => 404,
+      'token' => t('Search node server not found.'),
+    ));
+  }
+}
+
+/**
+ * Implements hook_libraries_info().
+ *
+ * For defining external libraries.
+ */
+function search_node_page_libraries_info() {
+  // A very simple library. No changing APIs (hence, no versions), no variants.
+  // Expected to be extracted into 'sites/all/libraries/simple'.
+  $libraries['angular'] = array(
+    'name' => 'Angular JS',
+    'vendor url' => 'https://angularjs.org/',
+    'download url' => 'https://angularjs.org/',
+    'version arguments' => array(
+      'file' => 'angular.js',
+      'pattern' => '/AngularJS v(\d+\.\d+.\d+)/',
+      'lines' => 5,
+    ),
+    'files' => array(
+      'js' => array('angular.js'),
+    ),
+  );
+
+  $libraries['search_node'] = array(
+    'name' => 'Search node Angular library',
+    'vendor url' => 'http://example.com/simple',
+    'download url' => 'http://example.com/simple',
+    'version arguments' => array(
+      'file' => 'search.min.js',
+      'pattern' => '/@version v(\d+\.\d+.\d+(-\w*\d*)*)/',
+      'lines' => 5,
+    ),
+    'library path' => drupal_get_path('module', 'search_node_page') . '/js',
+    'files' => array(
+      'js' => array(
+        'assets.min.js',
+        'search.min.js'
+      ),
+    ),
+  );
+
+  return $libraries;
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function search_node_page_block_info() {
+  return array(
+    'search_node_search_box' => array(
+      'info' => t('Search node - Search field'),
+    ),
+    'search_node_search_result' => array(
+      'info' => t('Search node - Results'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_configure().
+ */
+function search_node_page_block_configure($delta) {
+  $form = array();
+
+  switch($delta) {
+    case 'search_node_search_box':
+      // Load saved configuration.
+      $defaults = variable_get('search_node_page_search_box', array());
+      $form_state = array();
+      $form = search_node_page_configuration_form($form, $form_state, $defaults);
+      break;
+
+    case 'search_node_search_result' :
+      /**
+       * @TODO: What options should be here?
+       */
+      break;
+  }
+
+  return $form;
+}
+
+/**
+ * Implements hook_form_HOOK_alter().
+ *
+ * Change the block configuration form to support ajax updates.
+ */
+function search_node_page_form_block_admin_configure_alter(&$form, &$form_state, $form_id) {
+  if ($form['delta']['#value'] == 'search_node_search_box') {
+
+    // Try to load selected server.
+    $selected_server = !empty($form_state['values']['search_node']['server']) ? $form_state['values']['search_node']['server'] : $form['settings']['search_node']['server']['#default_value'];
+    $server = search_api_server_load($selected_server);
+
+    // Build indexes available base on the loaded server.
+    if ($server) {
+      $server_indexes = search_api_index_load_multiple(FALSE, array('server' => $server->machine_name));
+    }
+
+    if (!empty($server_indexes)) {
+      // Build index selection.
+      $indexes = array('_none_' => t('Select index'));
+      foreach ($server_indexes as $index) {
+        $indexes[$index->machine_name] = $index->name . ' (' . $index->options['search_node_indexes'] . ')';
+      }
+      $form['settings']['search_node']['index']['#options'] = $indexes;
+
+      // Build field and filter selection.
+      $fields = array();
+      $filters = array();
+      $selected_index = !empty($form_state['values']['search_node']['index']) ? $form_state['values']['search_node']['index'] : $form['settings']['search_node']['index']['#default_value'];
+      $index = search_api_index_load($selected_index);
+      foreach ($index->options['fields'] as $field => $options) {
+        if (isset($options['entity_type']) && $options['entity_type'] == 'taxonomy_term') {
+          // Load field.
+          $info = field_info_field($field);
+          $vocab = taxonomy_vocabulary_machine_name_load($info['settings']['allowed_values'][0]['vocabulary']);
+          $filters[$field] = $vocab->name . ' (' . $field .')';
+        }
+        else {
+          // The index save some fields with ":".
+          $name = explode(':', $field);
+          $fields[$field] = array_shift($name) . ' (' . $field .')';
+        }
+      }
+      $form['settings']['search_node']['options']['fields']['#options'] = $fields;
+      $form['settings']['search_node']['options']['filters']['#options'] = $filters;
+
+      // Updater interval fields.
+      $form['settings']['search_node']['intervals']['fields']['#options'] = $fields;
+
+      // Update force filters with the options.
+      $form['settings']['search_node']['forces']['field']['#options'] = $fields;
+
+      // Update force filters with the options.
+      $form['settings']['search_node']['forces']['field']['#options'] = array('_none_' => t('Select field')) + $filters;
+
+      // Load taxonomy based on selected field.
+      $field = !empty($form_state['values']['search_node']['forces']['field']) ? $form_state['values']['search_node']['forces']['field'] : $form['search_node']['forces']['field']['#default_value'];
+      $info = field_info_field($field);
+      $vocab = taxonomy_vocabulary_machine_name_load($info['settings']['allowed_values'][0]['vocabulary']);
+      $terms = array();
+      foreach (taxonomy_get_tree($vocab->vid) as $term) {
+        $terms[$term->name] = $term->name;
+      }
+      $form['settings']['search_node']['forces']['selected']['#options'] = $terms;
+    }
+  }
+}
+
+/**
+ * Implements hook_form_HOOK_alter().
+ *
+ * @TODO: Merge the two alter functions, they differ in the way they access
+ *        the form elements.
+ *
+ * Change the panes configuration form to support ajax updates.
+ */
+function search_node_page_form_search_node_page_search_box_content_type_edit_form_alter(&$form, &$form_state, $form_id) {
+  if (!isset($form['search_node'])) {
+    // When forms are ajaxed in panels, the form is missing.
+    $form = search_node_page_configuration_form($form, $form_state, $form_state['input']['search_node']);
+  }
+
+  // Try to load selected server.
+  $selected_server = !empty($form_state['input']['search_node']['server']) ? $form_state['input']['search_node']['server'] : $form['search_node']['server']['#default_value'];
+  $server = search_api_server_load($selected_server);
+
+  // Build indexes available base on the loaded server.
+  if ($server) {
+    $server_indexes = search_api_index_load_multiple(FALSE, array('server' => $server->machine_name));
+  }
+
+  if (!empty($server_indexes)) {
+    // Build index selection.
+    $indexes = array('_none_' => t('Select index'));
+    foreach ($server_indexes as $index) {
+      $indexes[$index->machine_name] = $index->name . ' (' . $index->options['search_node_indexes'] . ')';
+    }
+    $form['search_node']['index']['#options'] = $indexes;
+
+    // Build field and filter selection.
+    $fields = array();
+    $dates = array();
+    $filters = array(
+      'taxonomy' => array(),
+      'boolean' => array(),
+    );
+    $selected_index = !empty($form_state['input']['search_node']['index']) ? $form_state['input']['search_node']['index'] : $form['search_node']['index']['#default_value'];
+    $index = search_api_index_load($selected_index);
+    foreach ($index->options['fields'] as $field => $options) {
+      $type = isset($options['entity_type']) ? $options['entity_type'] : $options['type'];
+      switch ($type) {
+        case 'taxonomy_term':
+          // Load field.
+          $info = field_info_field($field);
+          $vocab = taxonomy_vocabulary_machine_name_load($info['settings']['allowed_values'][0]['vocabulary']);
+          $filters['taxonomy'][$field] = $vocab->name . ' (' . $field .')';
+
+          // Also add it to searchable fields.
+          $fields[$field] = $vocab->name . ' (' . $field .')';
+          break;
+
+        case 'boolean':
+          $info = field_info_field($field);
+          $bundles = array_keys($info['bundles']);
+          $entity_type = reset($bundles);
+          $bundle_name = reset($info['bundles'])[0];
+          $info = field_info_instance($entity_type, $field, $bundle_name);
+          $filters['boolean'][$field] = t($info['label']) . ' (' . $field .')';;
+          break;
+
+        case 'date':
+          // Check if date has an value2 in the index to indicate a to date.
+          if (isset($index->options['fields'][$field . '2'])) {
+            $field_name = explode(':', $field)[0];
+            $info = field_info_field($field_name);
+            $bundles = array_keys($info['bundles']);
+            $entity_type = reset($bundles);
+            $bundle_name = reset($info['bundles'])[0];
+            $info = field_info_instance($entity_type, $field_name, $bundle_name);
+            $dates[$field] = t($info['label']) . ' (' . $field_name .')';
+            break;
+          }
+          // Fall through to default.
+
+        default:
+          // The index save some fields with ":".
+          $name = explode(':', $field);
+          $fields[$field] = array_shift($name) . ' (' . $field .')';
+          break;
+      }
+    }
+    $form['search_node']['options']['fields']['#options'] = $fields;
+    $form['search_node']['options']['filters']['taxonomy']['#options'] = $filters['taxonomy'];
+    $form['search_node']['options']['filters']['boolean']['#options'] = $filters['boolean'];
+
+    // Update sort fields.
+    $form['search_node']['sorting']['field']['#options'] = array('_none_' => t('None')) + $fields;
+
+    // Updater interval fields.
+    $form['search_node']['intervals']['fields']['#options'] = $fields;
+
+    // Update dates intervals.
+    $form['search_node']['dates']['fields']['#options'] = $dates;
+
+    // Update force filters with the options.
+    $form['search_node']['forces']['field']['#options'] = array('_none_' => t('Select field')) + $filters['taxonomy'];
+
+    // Load taxonomy based on selected field.
+    $field = !empty($form_state['input']['search_node']['forces']['field']) ? $form_state['input']['search_node']['forces']['field'] : $form['search_node']['forces']['field']['#default_value'];
+    $info = field_info_field($field);
+    $vocab = taxonomy_vocabulary_machine_name_load($info['settings']['allowed_values'][0]['vocabulary']);
+    $terms = array();
+    foreach (taxonomy_get_tree($vocab->vid) as $term) {
+      $terms[$term->name] = $term->name;
+    }
+    $form['search_node']['forces']['selected']['#options'] = $terms;
+  }
+}
+
+/**
+ * The block and pane configuration form.
+ *
+ * @param $form
+ * @param array $form_state
+ * @param array $defaults
+ * @return mixed
+ */
+function search_node_page_configuration_form($form, array &$form_state = array(), $defaults = array()) {
+  $form['search_node'] = array(
+    '#type' => 'fieldset',
+    '#title' => 'Search node configuration',
+    '#tree' => TRUE,
+  );
+
+  $form['search_node']['id'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Search id'),
+    '#description' => t('This is used to uniquely identify this search field in frontend cache.'),
+    '#default_value' => isset($defaults['id']) ? $defaults['id'] : REQUEST_TIME,
+    '#required' => TRUE,
+  );
+
+  // Get list of all search node search API servers.
+  $search_nodes = array();
+  $servers = search_api_server_load_multiple(FALSE);
+  foreach ($servers as $server) {
+    if ($server->class == 'search_api_search_node_service') {
+      $search_nodes[$server->machine_name] = $server->name;
+    }
+  }
+
+  // Allow selection of search server.
+  $form['search_node']['server'] = array(
+    '#type' => 'select',
+    '#title' => t('Search node server'),
+    '#description' => t('Select the search api search node server to use'),
+    '#options' => array('_none_' => t('Select server')) + $search_nodes,
+    '#default_value' => isset($defaults['server']) ? $defaults['server'] : '_none_',
+    '#required' => TRUE,
+    '#ajax' => array(
+      'callback' => 'search_node_page_block_index_ajax_callback',
+      'wrapper' => 'search-node-page-block-indexes',
+    ),
+  );
+
+  $indexes = array('_none_' => t('Select index'));
+  $form['search_node']['index'] = array(
+    '#type' => 'select',
+    '#title' => t('Search index'),
+    '#description' => t('Select the search api search node server to use'),
+    '#options' => $indexes,
+    '#default_value' => isset($defaults['index']) ? $defaults['index'] : '_none_',
+    '#required' => TRUE,
+    '#prefix' => '<div id="search-node-page-block-indexes">',
+    '#suffix' => '</div>',
+    '#ajax' => array(
+      'callback' => 'search_node_page_block_options_ajax_callback',
+      'wrapper' => 'search-node-page-block-options',
+    ),
+  );
+
+  $form['search_node']['options'] = array(
+    '#type' => 'fieldset',
+    '#title' => 'Search options',
+    '#tree' => TRUE,
+    '#prefix' => '<div id="search-node-page-block-options">',
+    '#suffix' => '</div>',
+  );
+
+  $form['search_node']['options']['cache_expire'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Cache expire'),
+    '#description' => t('Filter and search cache expire time in seconds.'),
+    '#default_value' => isset($defaults['options']['cache_expire']) ? $defaults['options']['cache_expire'] : '30',
+    '#required' => TRUE,
+  );
+
+  $form['search_node']['options']['size'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Result size'),
+    '#description' => t('The number of results to show on the search result page - more result will be displayed using a pager.'),
+    '#default_value' => isset($defaults['options']['size']) ? $defaults['options']['size'] : '8',
+    '#required' => TRUE,
+  );
+
+  $form['search_node']['options']['initial_query_enable'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Enable initial query text'),
+    '#description' => t('Enable a default/initial search query to perform when the search is loaded.'),
+    '#default_value' => isset($defaults['options']['initial_query_enable']) ? $defaults['options']['initial_query_enable'] : array(),
+    '#required' => FALSE,
+  );
+
+  $form['search_node']['options']['initial_query_text'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Initial query text'),
+    '#description' => t('Search string to perform when the search is loaded.'),
+    '#default_value' => isset($defaults['options']['initial_query_text']) ? $defaults['options']['initial_query_text'] : '',
+    '#required' => FALSE,
+    '#states' => array(
+      'visible' => array(
+        ':input[id="edit-search-node-options-initial-query-enable"]' => array('checked' => TRUE),
+      ),
+    ),
+  );
+
+  $search_fields = array();
+  $form['search_node']['options']['fields'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Search fields'),
+    '#description' => t('Select the fields to search in the index'),
+    '#options' => $search_fields,
+    '#default_value' => isset($defaults['options']['fields']) ? $defaults['options']['fields'] : array(),
+    '#required' => TRUE,
+  );
+
+  $filters = array();
+  $form['search_node']['options']['filters']['taxonomy'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Search filters'),
+    '#description' => t('Select the filters to use'),
+    '#options' => $filters,
+    '#default_value' => isset($defaults['options']['filters']['taxonomy']) ? $defaults['options']['filters']['taxonomy'] : array(),
+  );
+
+  $filters = array();
+  $form['search_node']['options']['filters']['boolean'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Search filters (boolean)'),
+    '#description' => t('Select the filters to use as true/false filters'),
+    '#options' => $filters,
+    '#default_value' => isset($defaults['options']['filters']['boolean']) ? $defaults['options']['filters']['boolean'] : array(),
+  );
+
+  $form['search_node']['sorting'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Sorting'),
+    '#description' => t('Sorting the search result.'),
+    '#tree' => TRUE,
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+
+  $selected = array();
+  $form['search_node']['sorting']['field'] = array(
+    '#type' => 'radios',
+    '#title' => t('Date fields'),
+    '#options' => $selected,
+    '#default_value' => isset($defaults['sorting']['field']) ? $defaults['sorting']['field'] : array(),
+  );
+
+  $form['search_node']['sorting']['order'] = array(
+    '#type' => 'radios',
+    '#title' => t('Sort direction'),
+    '#options' => array(
+      'asc' => t('Ascending'),
+      'desc' => t('Descending'),
+    ),
+    '#default_value' => isset($defaults['sorting']['order']) ? $defaults['sorting']['order'] : array(),
+  );
+
+  $form['search_node']['dates'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Search dates'),
+    '#description' => t('Search items with both start and end dates.'),
+    '#tree' => TRUE,
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+
+  $search_fields = array();
+  $form['search_node']['dates']['fields'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Date fields'),
+    '#options' => $search_fields,
+    '#default_value' => isset($defaults['dates']['fields']) ? $defaults['dates']['fields'] : array(),
+  );
+
+  $form['search_node']['intervals'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Search intervals'),
+    '#description' => t('Special search fields (boxes) that allows range searches (intervals).'),
+    '#tree' => TRUE,
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+
+  $search_fields = array();
+  $form['search_node']['intervals']['fields'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Interval fields'),
+    '#description' => t('Select the interval fields to search.'),
+    '#options' => $search_fields,
+    '#default_value' => isset($defaults['intervals']['fields']) ? $defaults['intervals']['fields'] : array(),
+  );
+
+  $form['search_node']['forces'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Forced filters'),
+    '#description' => t('Forced filters are filters that is allways applied and can not be removed be the user. You should not select an allready used filter, as that would create some strange UI behaviour.'),
+    '#tree' => TRUE,
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+
+  /**
+   * @TODO: Added support for more than one field.
+   */
+  $form['search_node']['forces']['field'] = array(
+    '#type' => 'select',
+    '#title' => t('Field to force'),
+    '#description' => t('Select the filter field to force'),
+    '#options' => array('_none_' => t('Select field')),
+    '#default_value' => isset($defaults['forces']['field']) ? $defaults['forces']['field'] : '_none_',
+    '#ajax' => array(
+      'callback' => 'search_node_page_block_force_field_ajax_callback',
+      'wrapper' => 'search-node-page-block-force-field-selected',
+    ),
+  );
+
+  $selected = array();
+  $form['search_node']['forces']['selected'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Search filters'),
+    '#description' => t('Select the filters to use'),
+    '#options' => $selected,
+    '#default_value' => isset($defaults['forces']['selected']) ? $defaults['forces']['selected'] : array(),
+    '#prefix' => '<div id="search-node-page-block-force-field-selected">',
+    '#suffix' => '</div>',
+  );
+
+  $form['search_node']['templates'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Search templates'),
+    '#description' => t('The AngularJS templates use by the frontend. You should customize these to fit your search results.'),
+    '#tree' => TRUE,
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  );
+
+  $path = drupal_get_path('module', 'search_node_page');
+  $form['search_node']['templates']['box'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Search box and filters',
+    '#default_value' => isset($defaults['templates']['box']) ? $defaults['templates']['box'] : '/' . $path . '/templates/angular/search.html',
+    '#required' => TRUE,
+  );
+
+  $path = drupal_get_path('module', 'search_node_page');
+  $form['search_node']['templates']['result'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Search result',
+    '#default_value' => isset($defaults['templates']['result']) ? $defaults['templates']['result'] : '/' . $path . '/templates/angular/result.html',
+    '#required' => TRUE,
+  );
+
+  $path = drupal_get_path('module', 'search_node_page');
+  $form['search_node']['templates']['pager'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Search pager',
+    '#default_value' => isset($defaults['templates']['pager']) ? $defaults['templates']['pager'] : '/' . $path . '/templates/angular/pager.html',
+    '#required' => TRUE,
+  );
+
+  return $form;
+}
+
+/**
+ * Ajax callback to update the block and panes configuration form.
+ */
+function search_node_page_block_index_ajax_callback(array $form, array &$form_state) {
+  return isset($form['settings']['search_node']['index']) ? $form['settings']['search_node']['index'] : $form['search_node']['index'];
+}
+
+/**
+ * Ajax callback to update the block and panes configuration form.
+ */
+function search_node_page_block_options_ajax_callback(array $form, array &$form_state) {
+  return isset($form['settings']['search_node']['options']) ? $form['settings']['search_node']['options'] : $form['search_node']['options'];
+}
+
+/**
+ * Ajax callback to update the block and panes configuration form.
+ */
+function search_node_page_block_force_field_ajax_callback(array $form, array &$form_state) {
+  return isset($form['settings']['search_node']['forces']['selected']) ? $form['settings']['search_node']['forces']['selected'] : $form['search_node']['forces']['selected'];
+}
+
+
+/**
+ * Implements hook_block_save().
+ */
+function search_node_page_block_save($delta = '', $edit = array()) {
+  switch($delta) {
+    case 'search_node_search_box':
+      variable_set('search_node_page_search_box', $edit['search_node']);
+      break;
+  }
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function search_node_page_block_view($delta='') {
+  $block = array();
+
+  switch($delta) {
+    case 'search_node_search_box' :
+
+      // Build configuration object.
+      $configuration = variable_get('search_node_page_search_box', array());
+      $block['content'] = search_node_page_build_search_box($configuration);
+      break;
+
+    case 'search_node_search_result':
+      $block['content'] = array(
+        '#theme' => 'search_node_page_search_results',
+      );
+      break;
+  }
+
+  return $block;
+}
+
+/**
+ * Builds the angular configuration and injects it into the page.
+ *
+ * @param array $configuration
+ *   The configuration for this search box.
+ *
+ * @return array
+ *   Render array to display the search box placeholder.
+ */
+function search_node_page_build_search_box($configuration = array()) {
+  if (empty($configuration)) {
+    drupal_set_message(t('Search node - search box needs to be configured before it can be used.'), 'error');
+  }
+  else {
+    // Check if the angular library is installed.
+    if (($library = libraries_load('angular')) && empty($library['installed'])) {
+      // Something went wrong.
+      drupal_set_message($library['error message'], 'error');
+    }
+
+    // Load server settings.
+    $server = search_api_server_load($configuration['server']);
+
+    // Load index.
+    $index = search_api_index_load($configuration['index']);
+
+    // Load boost for the fields.
+    $boost = array();
+    $fields = array_filter($configuration['options']['fields']);
+    $fieldsOptions = array_intersect_key($index->options['fields'], $fields);
+    foreach ($fieldsOptions as $field => $fieldOption) {
+      if (!empty($fieldOption['boost'])) {
+        $boost[$field] = $fieldOption['boost'];
+      }
+    }
+
+    // Check for host override in settings.php.
+    $host = variable_get('search_api_' . $server->machine_name . '_host', $server->options['host']);
+
+    // Build array to convert to json configuration.
+    $conf = array(
+      'id' => $configuration['id'],
+      'templates' => array(
+        'box' => $configuration['templates']['box'],
+        'result' => $configuration['templates']['result'],
+        'pager' => $configuration['templates']['pager'],
+      ),
+      'provider' => array(
+        'service' => 'searchNodeProvider',
+        'host' => $host,
+        'auth' => '/search_node/api/' . $server->machine_name . '/auth',
+        'index' => $index->options['search_node_indexes'],
+        'fields' => array_values($fields),
+        'boost' => $boost,
+        'pager' => array(
+          'size' => (int) $configuration['options']['size'],
+          'page' => 0
+        ),
+        'cacheExpire' => (int) $configuration['options']['cache_expire'],
+      ),
+    );
+
+    // Add initial query search string.
+    if (isset($configuration['options']['initial_query_enable']) && $configuration['options']['initial_query_enable']) {
+      $conf['initialQueryText'] = $configuration['options']['initial_query_text'];
+    }
+
+    // Build taxonomy filters.
+    if (!empty($configuration['options']['filters']['taxonomy'])) {
+      $filters = array();
+      foreach (array_filter($configuration['options']['filters']['taxonomy']) as $field) {
+        $info = field_info_field($field);
+        $vocab = taxonomy_vocabulary_machine_name_load($info['settings']['allowed_values'][0]['vocabulary']);
+
+        $terms = array();
+        foreach (taxonomy_get_tree($vocab->vid) as $term) {
+          $terms[$term->name] = array(
+            'value' => $term->name,
+          );
+        }
+
+        /**
+         * @TODO: Fix type, so it's not hardcoded.
+         */
+        // Add filters.
+        $filters[] = array(
+          'field' => $field,
+          'name' => $vocab->name,
+          'type' => 'and',
+          'terms' => $terms,
+        );
+      }
+
+      // Add the filters.
+      $conf['provider']['filters'] = array(
+        'taxonomy' => $filters,
+      );
+    }
+
+    // Build boolean filters.
+    if (!empty($configuration['options']['filters']['boolean'])) {
+      $filters = array();
+      foreach (array_filter($configuration['options']['filters']['boolean']) as $field) {
+        $info = field_info_field($field);
+        $bundles = array_keys($info['bundles']);
+        $entity_type = reset($bundles);
+        $bundle_name = reset($info['bundles'])[0];
+        $info = field_info_instance($entity_type, $field, $bundle_name);
+
+        // Add filters.
+        $filters[] = array(
+          'field' => $field,
+          'name' => $info['label'],
+          'type' => 'and',
+        );
+      }
+
+      // Add the filters.
+      if (!isset($conf['provider']['filters'])) {
+        $conf['provider']['filters'] = array();
+      }
+      $conf['provider']['filters']['boolean'] = $filters;
+    }
+
+    // Add intervals to the configuration.
+    if (!empty($configuration['intervals']['fields'])) {
+      $intervals = array_filter($configuration['intervals']['fields']);
+      $conf['provider']['intervals'] = array_values($intervals);
+    }
+
+    // Add sorting configuration.
+    if (!empty($configuration['sorting']['field']) && $configuration['sorting']['field'] != '_none_') {
+      $conf['provider']['sorting'] = array(
+        'field' => $configuration['sorting']['field'],
+        'order' => $configuration['sorting']['order'],
+      );
+    }
+
+    // Add dates to the configuration.
+    if (!empty($configuration['dates']['fields'])) {
+      $conf['provider']['dates'] = array();
+      $dates = array_values(array_filter($configuration['dates']['fields']));
+      foreach ($dates as $date) {
+        $name = explode(':', $date);
+        // @TODO: Find a better way to handle value2.
+        $conf['provider']['dates'][array_shift($name)] = array(
+          'label' => $name,
+          'from' => $date,
+          'to' => $date . '2',
+        );
+      }
+    }
+
+    // Check if any filters have been forced.
+    if (!empty($configuration['forces']['selected'])) {
+      $conf['provider']['force'] = array(
+        array(
+          'field' => $configuration['forces']['field'],
+          'type' => 'taxonomy',
+          'values' => array_filter($configuration['forces']['selected']),
+        ),
+      );
+    }
+
+    // Allow other module to change the configuration.
+    drupal_alter('search_node_page_configuration', $conf, $configuration);
+
+    // Add the configuration to the page.
+    drupal_add_js("angular.module('searchAppConfig', []).constant('CONFIG', " . json_encode($conf). ");", array(
+        'type' => 'inline',
+        'scope' => 'footer',
+        'weight' => 5,
+      )
+    );
+
+    // Load search framework and ensure that it's loaded after the configuration.
+    $library = libraries_detect('search_node');
+    if (empty($library['installed'])) {
+      drupal_set_message($library['error message'], 'error');
+    }
+    else {
+      foreach ($library['files']['js'] as $file => $v) {
+        drupal_add_js($library['library path'] . '/' . $file, array(
+            'type' => 'file',
+            'scope' => 'footer',
+            'weight' => 6,
+          )
+        );
+      }
+    }
+
+    return array(
+      '#theme' => 'search_node_page_search_box',
+    );
+  }
+}

@@ -4,6 +4,83 @@
  *
  */
 
+/* Search block
+   ========================================================================== */
+.search-box-block {
+  @extend %set-max-width-and-center-element;
+  @extend %basic-element-styling;
+
+  z-index: 1;
+  position: relative;
+
+  // Compensate for margin from header (necessary when not logged in)
+  margin-top: -$margin-bottom;
+
+  // Override Drupal's classes.
+  .form-item {
+    border: 0;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  @include breakpoint($layout-max-width) {
+    @include border-radius(0 0 $border-radius $border-radius);
+  }
+}
+
+.search-box-block--wrapper {
+  position: relative;
+
+  .tt-hint,
+  .typeahead {
+    margin-bottom: 1em;
+    padding-top: 1.25em;
+    padding-right: 1.25em;
+    padding-bottom: 1.25em;
+    padding-left: 3em;
+    height: 65px;
+
+    background-color: $white;
+
+    // Removing the browsers outline border when field is in focus
+    &:focus {
+      outline: none;
+    }
+
+    @include breakpoint($breakpoint-3) {
+      margin-bottom: 0;
+      padding-right: 6em;
+      width: 90%;
+
+      @include border-radius($border-radius 0 0 $border-radius);
+    }
+  }
+}
+
+.search-box-block--button {
+  @extend .button--action;
+  margin: 0;
+  height: 65px;
+  width: 100%;
+
+  &:disabled {
+    @extend .button--deactivated;
+  }
+
+  @include breakpoint($breakpoint-3) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    padding-top: .5em;
+    padding-bottom: .65em;
+    width: auto;
+
+    font-size: 150%;
+
+    @include border-radius(0 $border-radius $border-radius 0);
+  }
+}
 
 
 /* Search result

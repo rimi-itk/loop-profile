@@ -274,3 +274,8 @@ libraries[xmlseclibs][download][type] = "git"
 libraries[xmlseclibs][download][url] = "https://github.com/Maks3w/xmlseclibs.git"
 libraries[xmlseclibs][directory_name] = "xmlseclibs"
 libraries[xmlseclibs][destination] = "libraries"
+
+libraries[zen-grids][download][type] = "git"
+libraries[zen-grids][download][url] = "https://github.com/JohnAlbin/zen-grids.git"
+libraries[zen-grids][download][tag] = "1.4"
+libraries[zen-grids][destination] = "libraries"
