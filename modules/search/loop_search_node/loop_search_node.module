@@ -1,0 +1,21 @@
+<?php
+/**
+ * @file
+ * Adds the javascript need to search the sites content.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Overrides/adds new Angular JS controller for the search field.
+ */
+function loop_search_node_preprocess_search_node_page_search_box(&$variables) {
+  $path = drupal_get_path('module', 'loop_search_node');
+
+  // Add the search controller.
+  drupal_add_js($path . '/js/searchBoxController.js', array(
+    'type' => 'file',
+    'scope' => 'footer',
+    'weight' => 7,
+  ));
+}

@@ -1,0 +1,6 @@
+name = Loop search node
+description = Providing search configuration and overrides
+package = Loop
+core = 7.x
+dependencies[] = search_api_search_node
+dependencies[] = search_node_page
