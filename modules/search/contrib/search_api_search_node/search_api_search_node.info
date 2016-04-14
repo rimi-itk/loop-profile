@@ -1,9 +1,0 @@
-name = Search node
-description = "Offers an implementation of the Search API that uses search node for indexing content."
-dependencies[] = search_api
-core = 7.x
-package = Search
-files[] = includes/service.inc
-files[] = includes/search_node_client.inc
-files[] = includes/callback_exclude_items_filter.inc
-files[] = includes/callback_location_filter.inc
