@@ -27,4 +27,10 @@ function loop_search_node_preprocess_search_node_page_search_box(&$variables) {
     'weight' => 7,
   ));
 
+  drupal_add_js($path . '/js/angular-locale_da-dk.js', array(
+    'type' => 'file',
+    'scope' => 'footer',
+    'weight' => 7,
+  ));
+
 }

@@ -5,6 +5,15 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_api().
+ */
+function loop_search_node_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "page_manager" && $api == "pages_default") {
+    return array("version" => "1");
+  }
+}
+
+/**
  * Implements hook_default_search_api_index().
  */
 function loop_search_node_default_search_api_index() {
@@ -24,6 +33,7 @@ function loop_search_node_default_search_api_index() {
         "body:summary" : { "type" : "text" },
         "body:value" : { "type" : "text" },
         "changed" : { "type" : "date" },
+        "comment_count" : { "type" : "integer" },
         "comments" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "comment" },
         "comments:comment_body:value" : { "type" : "list\\u003Ctext\\u003E" },
         "created" : { "type" : "date" },
