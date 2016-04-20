@@ -191,6 +191,18 @@ projects[search_api_solr][version] = "1.9"
 projects[search_api_spellcheck][subdir] = "contrib"
 projects[search_api_spellcheck][version] = "1.0"
 
+projects[search_api_search_node][type] = "module"
+projects[search_api_search_node][subdir] = "contrib"
+projects[search_api_search_node][download][type] = "git"
+projects[search_api_search_node][download][url] = "http://github.com/search-node/search_api_search_node.git"
+projects[search_api_search_node][download][branch] = "7.x-1.x"
+
+projects[search_node_page][type] = "module"
+projects[search_node_page][subdir] = "contrib"
+projects[search_node_page][download][type] = "git"
+projects[search_node_page][download][url] = "http://github.com/search-node/search_node_page.git"
+projects[search_node_page][download][branch] = "7.x-1.x"
+
 projects[secure_permissions][subdir] = "contrib"
 projects[secure_permissions][version] = "1.6"
 
