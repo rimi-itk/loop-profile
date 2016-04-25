@@ -32,5 +32,4 @@ function loop_search_node_preprocess_search_node_page_search_box(&$variables) {
     'scope' => 'footer',
     'weight' => 7,
   ));
-
 }

@@ -148,6 +148,12 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
      * search.
      */
     $scope.searchClicked = function searchClicked() {
+      // If this is not the search page redirect to the search page with the
+      // query.
+      if (window.location.pathname != '/search') {
+        window.location = '/search/' + '#text=' + $scope.query.text;
+      }
+
       // Reset pager.
       if ($scope.query.hasOwnProperty('pager')) {
         $scope.query.pager = angular.copy(CONFIG.provider.pager);
@@ -180,6 +186,30 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
             }
           );
         }
+      }
+    };
+
+    /**
+     * Resets the current search to default.
+     */
+    $scope.reset = function reset() {
+      // Reset pager.
+      if (CONFIG.provider.hasOwnProperty('pager')) {
+        $scope.query.pager = angular.copy(CONFIG.provider.pager);
+      }
+
+      // Check if initial query exists.
+      if (CONFIG.hasOwnProperty('initialQueryText')) {
+        $scope.query.text = angular.copy(CONFIG.initialQueryText);
+
+        search();
+      }
+      else {
+        // No initial query.
+        $scope.query.text = '';
+
+        // Remove hits.
+        communicatorService.$emit('hits', {"hits" : {}});
       }
     };
 
