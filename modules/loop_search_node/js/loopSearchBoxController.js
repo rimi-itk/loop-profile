@@ -112,6 +112,14 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
       // Get state from previous search.
       var state = searchProxyService.getState();
 
+      // Set suggestion to empty.
+      $scope.suggestions = {
+        'show': false,
+        'hits': 0,
+        'post': [],
+        'external_sources': []
+      };
+
       // Get filters.
       $scope.filters = state.filters;
 
@@ -208,7 +216,12 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
       // query.
       if (window.location.pathname != '/search') {
         window.location = '/search#/#text=' + $scope.query.text;
+        return;
       }
+
+      $scope.suggestions.hits = 0;
+      _suggestionSearch('external_sources');
+      _suggestionSearch('post');
 
       // Reset pager.
       if ($scope.query.hasOwnProperty('pager')) {
@@ -244,6 +257,80 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
         }
       }
     };
+
+    /**
+     * Toggle the suggestions dropdown box.
+     */
+    $scope.suggestToggle = function suggestToggle() {
+      $scope.suggestions.show = !$scope.suggestions.show;
+
+      // Page may have been reload and no suggestions fetched. So try to execute
+      // the current search.
+      if ($scope.suggestions.hits == 0) {
+        _suggestionSearch('external_sources');
+        _suggestionSearch('post');
+      }
+    };
+
+    /**
+     * Helper function to get search suggestions.
+     *
+     * @param type
+     *   The content type to get suggestions for.
+     *
+     * @private
+     */
+    function _suggestionSearch(type) {
+      var query = {
+        index: '',
+        query: {
+          filtered: {
+            query: {
+              multi_match: {
+                query: $scope.query.text,
+                type: 'phrase',
+                fields: [ 'body:summary', 'body:value', 'title'  ],
+                analyzer: 'string_search'
+              }
+            },
+            filter: {
+              bool: {
+                must: {
+                  term: {
+                    'type': type
+                  }
+                }
+              }
+            }
+          }
+        },
+        size: 5
+      };
+
+      // Start the search request.
+      searchProxyService.rawQuerySearch(query).then(
+        function (data) {
+
+          var suggestions = [];
+
+          for (var i = 0; i < data.results.length; i++) {
+            var current = data.results[i];
+            suggestions.push({
+              'title': current.title,
+              'url': current.url
+            });
+          }
+
+          // Filter results based on types.
+          $scope.suggestions.hits += suggestions.length;
+          $scope.suggestions[type] = suggestions;
+
+        },
+        function (reason) {
+          console.error(reason);
+        }
+      );
+    }
 
     /**
      * Resets the current search to default.
