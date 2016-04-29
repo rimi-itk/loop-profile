@@ -10,6 +10,20 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
     'use strict';
 
     /**
+     * Expose the Drupal.t() function to angular templates.
+     *
+     * @param str
+     *   The string to translate.
+     * @returns string
+     *   The translated string.
+     */
+    $scope.Drupal = {
+      "t": function t(str, args, options) {
+        return $window.Drupal.t(str, args, options);
+      }
+    };
+
+    /**
      * Listen to location change event to handle (back/forward button).
      */
     $rootScope.$on('$locationChangeSuccess', function(newLocation, oldLocation) {

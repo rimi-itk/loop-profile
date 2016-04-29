@@ -21,15 +21,43 @@ function loop_search_node_preprocess_search_node_page_search_box(&$variables) {
     'weight' => 7,
   ));
 
-  drupal_add_js($path . '/js/loopBoxTypeAheadController.js', array(
-    'type' => 'file',
-    'scope' => 'footer',
-    'weight' => 7,
-  ));
-
   drupal_add_js($path . '/js/angular-locale_da-dk.js', array(
     'type' => 'file',
     'scope' => 'footer',
     'weight' => 7,
   ));
+}
+
+/**
+ * Implements hook_js_alter().
+ *
+ * Search the angular application for drupal translations.
+ */
+function loop_search_node_js_alter(&$javascript) {
+  $path = drupal_get_path('module', 'loop_search_node');
+
+  // Find the files javascript files.
+  $it = new RecursiveDirectoryIterator(__DIR__ . '/js');
+  foreach(new RecursiveIteratorIterator($it) as $file)  {
+    $ext = pathinfo($file, PATHINFO_EXTENSION);
+    if (in_array($ext, [ 'js' ])) {
+      _locale_parse_js_file($path . str_replace(__DIR__, '', $file));
+    }
+  }
+
+  // Scan template files.
+  $path = path_to_theme();
+  $path .= '/templates/search/angular';
+  $dir = DRUPAL_ROOT . '/' . $path;
+
+  // Find the files.
+  if (file_exists($dir)) {
+    $it = new RecursiveDirectoryIterator($dir);
+    foreach(new RecursiveIteratorIterator($it) as $file)  {
+      $ext = pathinfo($file, PATHINFO_EXTENSION);
+      if (in_array($ext, [ 'html' ])) {
+        _locale_parse_js_file($path . str_replace($dir, '', $file));
+      }
+    }
+  }
 }
