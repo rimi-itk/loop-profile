@@ -19,7 +19,7 @@
             <input class="typeahead form-text" style="position: relative; vertical-align: top; background-color: transparent;"
                    spellcheck="false" autocomplete="off" type="text" placeholder="F.eks. med søgeord som &quot;fokusområde handlingsevaluering&quot;" data-code="13" data-key-code="searchClicked()"
                    data-ng-model="query.text" data-ng-change='autocomplete()'
-                   data-ng-focus="suggestToggle()" data-ng-blur="suggestToggle()">
+                   data-ng-focus="suggestToggle(true)">
 
             <!-- Suggestions -->
             <span data-ng-if="suggestions.hits && suggestions.show == true" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: block; right: auto;" class="tt-dropdown-menu">
@@ -49,7 +49,7 @@
 
           </span>
         </div>
-        <input class="search-box-block--button" type="submit" data-ng-click="searchClicked()" value="Søg">
+        <input class="search-box-block--button js-hide-suggest" type="submit" data-ng-click="searchClicked()" value="Søg">
       </div>
 
       <span class="search--reset" data-ng-click="reset()">Nulstil søgning</span>

@@ -5,8 +5,8 @@
  * It controls the search box and filters.
  */
 
-angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 'communicatorService', 'searchProxyService', '$scope', '$location', '$rootScope', '$window',
-  function (CONFIG, communicatorService, searchProxyService, $scope, $location, $rootScope, $window) {
+angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 'communicatorService', 'searchProxyService', '$scope', '$location', '$rootScope', '$window', '$document',
+  function (CONFIG, communicatorService, searchProxyService, $scope, $location, $rootScope, $window, $document) {
     'use strict';
 
     /**
@@ -69,9 +69,6 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
      * Execute the search and emit the results.
      */
     function search() {
-      // Clear auto-complete.
-      $scope.autocompleteString = '';
-
       // Send info to results that a new search have started.
       communicatorService.$emit('searching', {});
 
@@ -176,6 +173,18 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
           );
         }
       }
+
+      /**
+       * Handle click event outside search area.
+       *
+       * Hide the suggestions box.
+       */
+      $document.bind('click', function(event){
+        var element = angular.element('.search-box-block').find(event.target);
+        if (element.length === 0 || element.hasClass('js-hide-suggest')) {
+         $scope.suggestToggle(false);
+        }
+      });
     }
 
     /**
@@ -219,10 +228,6 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
         return;
       }
 
-      $scope.suggestions.hits = 0;
-      _suggestionSearch('external_sources');
-      _suggestionSearch('post');
-
       // Reset pager.
       if ($scope.query.hasOwnProperty('pager')) {
         $scope.query.pager = angular.copy(CONFIG.provider.pager);
@@ -235,6 +240,10 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
      * Auto-complete callback.
      */
     $scope.autocomplete = function autocomplete() {
+      // Update suggestion box.
+      _suggestionSearch('external_sources');
+      _suggestionSearch('post');
+
       if (CONFIG.provider.hasOwnProperty('autocomplete')) {
         $scope.autocompleteString = '';
         if ($scope.query.text.length >= CONFIG.provider.autocomplete.minChars) {
@@ -259,16 +268,38 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
     };
 
     /**
-     * Toggle the suggestions dropdown box.
+     * Toggle the suggestions drop-down box.
      */
-    $scope.suggestToggle = function suggestToggle() {
-      $scope.suggestions.show = !$scope.suggestions.show;
+    $scope.suggestToggle = function suggestToggle(display) {
+      var phase = this.$root.$$phase;
+      if (phase === '$apply' || phase === '$digest') {
+        $scope.suggestions.show = display;
+      }
+      else {
+        $scope.$apply(function () {
+          $scope.suggestions.show = display;
+        });
+      }
 
-      // Page may have been reload and no suggestions fetched. So try to execute
-      // the current search.
-      if ($scope.suggestions.hits == 0) {
-        _suggestionSearch('external_sources');
-        _suggestionSearch('post');
+      // Hide/show the auto-complete string based on toggle mode.
+      if (!$scope.suggestions.show) {
+        $scope.autocompletePrevString = $scope.autocompleteString;
+        $scope.autocompleteString = '';
+      }
+      else {
+        if (!$scope.hasOwnProperty('autocompletePrevString')) {
+          $scope.autocomplete();
+        }
+        else {
+          // Page may have been reload and no suggestions fetched. So try to execute
+          // the current search.
+          if ($scope.suggestions.hits == 0) {
+            _suggestionSearch('external_sources');
+            _suggestionSearch('post');
+          }
+
+          $scope.autocompleteString = $scope.autocompletePrevString;
+        }
       }
     };
 
@@ -324,7 +355,6 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
           // Filter results based on types.
           $scope.suggestions.hits += suggestions.length;
           $scope.suggestions[type] = suggestions;
-
         },
         function (reason) {
           console.error(reason);
