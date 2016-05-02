@@ -1,6 +1,30 @@
 # Search node mappings
 <pre>
 {
+  "bd6f534b05ab6073e04afef2c67e7e44": {
+    "name": "LOOP typeahead",
+    "fields": [
+      {
+        "type": "string",
+        "country": "DK",
+        "language": "da",
+        "default_analyzer": "analyzer_startswith",
+        "sort": false,
+        "indexable": true,
+        "raw": false,
+        "geopoint": false,
+        "field": "title",
+        "default_indexer": "analyzed"
+      }
+    ],
+    "dates": [],
+    "tag": "private"
+  }
+}
+</pre>
+
+<pre>
+{
   "833bc3ffdcd187e4bf72945e7fe4a08d": {
     "name": "LOOP posts",
     "fields": [
@@ -125,16 +149,16 @@
         "field": "comments:comment_body:value"
       },
       {
-         "type": "string",
-         "country": "DK",
-         "language": "da",
-         "default_analyzer": "string_index",
-         "default_indexer": "analysed",
-         "sort": false,
-         "indexable": false,
-         "raw": false,
-         "geopoint": false,
-         "field": "url"
+        "type": "string",
+        "country": "DK",
+        "language": "da",
+        "default_analyzer": "string_index",
+        "default_indexer": "analysed",
+        "sort": false,
+        "indexable": false,
+        "raw": false,
+        "geopoint": false,
+        "field": "url"
       },
       {
         "type": "string",
@@ -148,14 +172,18 @@
         "geopoint": false,
         "field": "field_external_link:url"
       }
-      
-      	
     ],
     "dates": [
       "created",
       "changed"
     ],
-    "tag": "private"
+    "tag": "private",
+    "suggesters": [
+      {
+        "field": "title",
+        "type": "completion"
+      }
+    ]
   }
 }
 </pre>
