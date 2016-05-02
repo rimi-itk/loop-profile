@@ -5,5 +5,5 @@
  */
 ?>
 <div id="searchBoxApp" data-ng-strict-di data-ng-controller="loopSearchBoxController" data-ng-include="template">
-  <p>Search requires javascript enabled</p>
+  <p><?php echo t('Search requires javascript enabled'); ?></p>
 </div>

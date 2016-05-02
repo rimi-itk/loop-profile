@@ -3,14 +3,18 @@
 
   You should not change this but point to another custom template in the
   configuration object.
+
+  // Translation hack. The lines need to be here.
+  {{ Drupal.t('post', { }, { 'context': 'angular' }) }}
+  {{ Drupal.t('external_sources', { }, { 'context': 'angular' }) }}
 -->
-<h1 class="page-title">Søgeresultater <span data-ng-if="hits.hits > 0">({{ hits.hits }})</span></h1>
+<h1 class="page-title">{{ Drupal.t('Search results', {}, { 'context': 'angular' }) }} <span data-ng-if="hits.hits > 0">({{ hits.hits }})</span></h1>
 
 <div class="search-result">
   <div data-ng-repeat="hit in hits.results" class="search-result--item">
     <div class="search-result--meta-data">
-      <div class="search-result--meta-data-date">Oprettet {{ hit.created*1000 | date : 'd. MMMM yyyy' }}</div>
-      <div class="search-result--meta-data-type">Type: {{ hit.type }}</div>
+      <div class="search-result--meta-data-date">{{ Drupal.t('Created at', { }, { 'context': 'angular' }) }} {{ hit.created*1000 | date : 'd. MMMM yyyy' }}</div>
+      <div class="search-result--meta-data-type">{{ Drupal.t('Type:', { }, { 'context': 'angular' }) }} {{ Drupal.t(hit.type, { }, { 'context': 'angular' }) }}</div>
     </div>
     <a href="{{ hit.url }}" class="search-result--link">{{ hit.title }}</a>
     <a href="{{ hit.url }}" class="search-result--comments">{{ hit.comment_count }} Svar</a>
@@ -19,7 +23,7 @@
 
 <!-- No results -->
 <span class="no-results" data-ng-if="!hits.hits">
-  <p>No results found.</p>
+  <p>{{ Drupal.t('No results found.', { }, { 'context': 'angular' }) }}</p>
 </span>
 
 <!-- Search pager if the provider supports it -->
