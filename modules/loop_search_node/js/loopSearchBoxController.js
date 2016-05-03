@@ -255,6 +255,7 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
      */
     $scope.autocomplete = function autocomplete() {
       // Update suggestion box.
+      $scope.suggestions.hits = 0;
       _suggestionSearch('external_sources');
       _suggestionSearch('post');
 
