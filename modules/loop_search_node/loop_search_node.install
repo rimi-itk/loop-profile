@@ -1,0 +1,34 @@
+<?php
+/**
+ * @file
+ * Handle search node configuration settings.
+ */
+
+
+/**
+ * Implements hook_install().
+ */
+function loop_search_node_install() {
+  // Enable search node page block.
+  db_update('block')
+    ->fields(array('weight' => -17, 'region' => 'content', 'pages' => "admin\r\nadmin/*", 'status' => 1))
+    ->condition('theme', 'loop')
+    ->condition('delta', 'search_node_search_box');
+
+  // Set block configuration
+  variable_set('search_node_page_search_box', _loop_search_node_box_settings());
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function loop_search_node_uninstall() {
+  variable_del('search_node_page_search_box');
+}
+
+/**
+ * Update angular search templates path.
+ */
+function loop_search_node_update_7001(&$sandbox) {
+  variable_set('search_node_page_search_box', _loop_search_node_box_settings());
+}

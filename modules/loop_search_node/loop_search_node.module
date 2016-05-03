@@ -219,3 +219,95 @@ function _loop_search_node_locale_rebuild_js($langcode = NULL) {
       return TRUE;
   }
 }
+
+/**
+ * The current search box block configuration.
+ *
+ * This is used by update and install hooks to provide easy update of
+ * configuration for the search block.
+ *
+ * @return array
+ *   The settings array for the block.
+ */
+function _loop_search_node_box_settings() {
+  return array(
+    'id' => 1460537555,
+    'server' => 'loop_search_node',
+    'index' => 'posts',
+    'options' => array(
+      'match_type' => 'phrase',
+      'cache_expire' => 1,
+      'size' => 8,
+      'initial_query_enable' => 0,
+      'initial_query_text' => '',
+      'fields' => array(
+        'body:summary' => 'body:summary',
+        'body:value' => 'body:value',
+        'title' => 'title',
+        'changed' => 0,
+        'comment_count' => 0,
+        'comments' => 0,
+        'comments:comment_body:value' => 0,
+        'created' => 0,
+        'field_description:value' => 0,
+        'field_external_link:url' => 0,
+        'field_keyword:name' => 0,
+        'field_profession:name' => 0,
+        'field_subject:name' => 0,
+        'nid' => 0,
+        'search_api_language' => 0,
+        'status' => 0,
+        'type' => 0,
+        'url' => 0,
+      ),
+      'filters' => array(
+        'taxonomy' => array(),
+        'boolean' => array(),
+      ),
+    ),
+    'sorting' => array(
+      'field' => array(),
+      'order' => array(),
+    ),
+    'dates' => array(
+      'fields' => array(),
+    ),
+    'intervals' => array(
+      'fields' => array(
+        'body:summary' => 0,
+        'body:value' => 0,
+        'title' => 0,
+        'changed' => 0,
+        'comment_count' => 0,
+        'comments' => 0,
+        'comments:comment_body:value' => 0,
+        'created' => 0,
+        'field_description:value' => 0,
+        'field_external_link:url' => 0,
+        'field_keyword:name' => 0,
+        'field_profession:name' => 0,
+        'field_subject:name' => 0,
+        'nid' => 0,
+        'search_api_language' => 0,
+        'status' => 0,
+        'type' => 0,
+        'url' => 0,
+      ),
+    ),
+    'forces' => array(
+      'field' => '_none_',
+      'selected' => array(),
+    ),
+    'templates' => array(
+      'box' => '/profiles/loopdk/themes/loop/templates/search/angular/search.html',
+      'result' => '/profiles/loopdk/themes/loop/templates/search/angular/result.html',
+      'pager' => '/profiles/loopdk/themes/loop/templates/search/angular/pager.html',
+    ),
+    'autocomplete' => array(
+      'index' => 'auto_complete',
+      'field' => 'title',
+      'minChars' => 2,
+      'size' => 10,
+    ),
+  );
+}
