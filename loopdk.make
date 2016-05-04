@@ -48,7 +48,7 @@ projects[facetapi][subdir] = "contrib"
 projects[facetapi][version] = "1.5"
 
 projects[features][subdir] = "contrib"
-projects[features][version] = "2.7"
+projects[features][version] = "2.10"
 
 projects[features_extra][subdir] = "contrib"
 projects[features_extra][version] = "1.0"
@@ -57,7 +57,7 @@ projects[features_override][subdir] = "contrib"
 projects[features_override][version] = "2.0-rc2"
 
 projects[field_group][subdir] = "contrib"
-projects[field_group][version] = "1.4"
+projects[field_group][version] = "1.5"
 
 projects[flag][subdir] = "contrib"
 projects[flag][version] = "3.7"
@@ -69,7 +69,7 @@ projects[google_analytics][subdir] = "contrib"
 projects[google_analytics][version] = "2.x-dev"
 
 projects[google_analytics_counter][subdir] = "contrib"
-projects[google_analytics_counter][version] = "3.1"
+projects[google_analytics_counter][version] = "3.3"
 
 projects[html5_tools][subdir] = "contrib"
 projects[html5_tools][version] = "1.3"
@@ -179,7 +179,7 @@ projects[saml_sp][patch][] = "https://www.drupal.org/files/issues/2649478-saml_s
 projects[saml_sp][patch][] = "https://raw.githubusercontent.com/os2loop/profile/master/patches/saml_sp_drupal_login-alter_user_hooks.patch"
 
 projects[search_api][subdir] = "contrib"
-projects[search_api][version] = "1.16"
+projects[search_api][version] = "1.18"
 
 projects[search_api_page][subdir] = "contrib"
 projects[search_api_page][version] = "1.2"
