@@ -11,7 +11,7 @@
 function loop_search_node_install() {
   // Enable search node page block.
   db_update('block')
-    ->fields(array('weight' => -17, 'region' => 'content', 'pages' => "admin\r\nadmin/*", 'status' => 1))
+    ->fields(_loop_search_node_search_block_settings())
     ->condition('theme', 'loop')
     ->condition('delta', 'search_node_search_box');
 
@@ -33,9 +33,12 @@ function loop_search_node_update_7001(&$sandbox) {
   variable_set('search_node_page_search_box', _loop_search_node_box_settings());
 }
 
+/**
+ * Update search box visibility paths.
+ */
 function loop_search_node_update_7002(&$sandbox) {
   db_update('block')
-    ->fields(array('weight' => -17, 'region' => 'content', 'pages' => "admin\r\nadmin/*\r\nuser\r\nuser/*", 'status' => 1))
+    ->fields(_loop_search_node_search_block_settings())
     ->condition('theme', 'loop')
     ->condition('delta', 'search_node_search_box');
 }

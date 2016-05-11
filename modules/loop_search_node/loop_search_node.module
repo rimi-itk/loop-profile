@@ -311,3 +311,15 @@ function _loop_search_node_box_settings() {
     ),
   );
 }
+
+/**
+ * The search block configuration.
+ */
+function _loop_search_node_search_block_settings() {
+  return array(
+    'weight' => -17,
+    'region' => 'content',
+    'pages' => "admin\r\nadmin/*\r\nuser\r\nuser/*",
+    'status' => 1
+  );
+}
