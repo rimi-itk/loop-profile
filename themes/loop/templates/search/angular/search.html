@@ -22,7 +22,7 @@
                    data-ng-focus="suggestToggle(true)">
 
             <!-- Suggestions -->
-            <span data-ng-if="suggestions.hits && suggestions.show == true" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: block; right: auto;" class="tt-dropdown-menu">
+            <span data-ng-if="suggestionExists() && suggestions.show == true" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: block; right: auto;" class="tt-dropdown-menu">
               <!-- type ==  'external_sources' -->
               <div data-ng-if="suggestions.external_sources.length" class="tt-dataset-0">
                 <h3 class="tt-suggestion-header">{{ Drupal.t('Tutorials and external documents', {}, { 'context': 'angular' }) }}</h3>

@@ -3340,7 +3340,7 @@ a.question--term {
   height: 65px;
   width: 100%; }
   .search-box-block--button:last-child {
-    margin: 0 0 1em; }
+    margin: 0 0 0; }
   @media only screen and (min-width: 28em) {
     .search-box-block--button {
       position: absolute;

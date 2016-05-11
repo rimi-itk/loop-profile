@@ -126,7 +126,6 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
       // Set suggestion to empty.
       $scope.suggestions = {
         'show': false,
-        'hits': 0,
         'post': [],
         'external_sources': []
       };
@@ -255,7 +254,6 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
      */
     $scope.autocomplete = function autocomplete() {
       // Update suggestion box.
-      $scope.suggestions.hits = 0;
       _suggestionSearch('external_sources');
       _suggestionSearch('post');
 
@@ -308,7 +306,7 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
         else {
           // Page may have been reload and no suggestions fetched. So try to execute
           // the current search.
-          if ($scope.suggestions.hits == 0) {
+          if (!$scope.suggestionExists()) {
             _suggestionSearch('external_sources');
             _suggestionSearch('post');
           }
@@ -316,6 +314,24 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
           $scope.autocompleteString = $scope.autocompletePrevString;
         }
       }
+    };
+
+    /**
+     * Helper to check if suggestions exists.
+     *
+     * @returns {boolean}
+     *  If they do true else false.
+     */
+    $scope.suggestionExists = function suggestionExists() {
+      if ($scope.suggestions['post'].length) {
+        return true;
+      }
+
+      if ($scope.suggestions['external_sources'].length) {
+        return true;
+      }
+
+      return false;
     };
 
     /**
@@ -368,7 +384,6 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
           }
 
           // Filter results based on types.
-          $scope.suggestions.hits += suggestions.length;
           $scope.suggestions[type] = suggestions;
         },
         function (reason) {
