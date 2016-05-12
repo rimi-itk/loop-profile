@@ -28,16 +28,27 @@
   padding: 0;
   overflow: hidden;
   text-align: center;
+  width: 100%;
 
   li {
     display: inline;
   }
 
-  a {
+  a,
+  span {
+    color: $link-color;
     padding: 1em;
     line-height: 2.5em;
     background: $gray-lightest;
     text-decoration: none;
+
+    &:hover {
+      color: $link-color-hover;
+    }
+  }
+
+  span {
+    cursor: pointer;
   }
 
   .pager-current {
