@@ -34,21 +34,15 @@
     display: inline;
   }
 
-  a,
-  span {
-    color: $link-color;
+  a {
     padding: 1em;
     line-height: 2.5em;
     background: $gray-lightest;
     text-decoration: none;
-
-    &:hover {
-      color: $link-color-hover;
-    }
   }
 
-  span {
-    cursor: pointer;
+  .current a {
+    background: $gray-light;
   }
 
   .pager-current {

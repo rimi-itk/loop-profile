@@ -1,18 +1,17 @@
 <div class="item-list">
-  <ul data-ng-hide="pager.max == 0" class="pager">
-
-    <!--<li class="pager-first first"><a title="Gå til første side" href="/search/hvad">« første</a></li>-->
-
-    <li data-ng-click="prevPage()" data-ng-class="{ 'is-disabled': pager.page == 0 }" class="pager-previous">
-      <span>‹ forrige</span>
-    </li>
-
-    <li data-ng-repeat="i in pager.pages" data-ng-click="changePage(i)" data-ng-class="{ 'pager-current': pager.page == i, 'pager-item': pager.page != i }">
-      <span data-ng-if="pager.page != i">{{ $index + 1 }}</span>
-      {{ pager.page == i ? '' + ($index + 1) : '' }}</li>
-
-    <li data-ng-click="nextPage()" data-ng-class="{ 'is-disabled': pager.page == pager.max - 1 }" class="pager-next"><span>næste ›</span></li>
-
-    <!--<li class="pager-last last"><a title="Gå til sidste side" href="/search/hvad?page=6">sidste »</a></li>-->
-  </ul>
+  <!-- https://github.com/brantwills/Angular-Paging -->
+  <div paging
+       class="pager"
+       hide-if-empty="true"
+       page="pager.page + 1"
+       total="pager.max"
+       show-prev-next="true"
+       show-first-last="true"
+       text-first="&laquo; {{ Drupal.t('first', { }, { 'context': 'angular' }) }}"
+       text-last="{{ Drupal.t('last', { }, { 'context': 'angular' }) }} &raquo;"
+       text-next="{{ Drupal.t('next', { }, { 'context': 'angular' }) }} &rsaquo;"
+       text-prev="&lsaquo; {{ Drupal.t('previous', { }, { 'context': 'angular' }) }}"
+       active-class="current"
+       paging-action="changePage(page - 1)">
+  </div>
 </div>
