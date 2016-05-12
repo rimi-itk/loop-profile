@@ -9,6 +9,10 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
   function (CONFIG, communicatorService, searchProxyService, $scope, $location, $rootScope, $window, $document) {
     'use strict';
 
+    // Set default search button text and state.
+    $scope.searchBtnText = 'Search';
+    $scope.searching = false;
+
     /**
      * Expose the Drupal.t() function to angular templates.
      *
@@ -108,6 +112,8 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
           );
 
           // Send results.
+          $scope.searchBtnText = 'Search';
+          $scope.searching = false;
           communicatorService.$emit('hits', {"hits": data});
         },
         function (reason) {
@@ -234,6 +240,9 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
      * search.
      */
     $scope.searchClicked = function searchClicked() {
+      $scope.searchBtnText = 'Searching...';
+      $scope.searching = true;
+
       // If this is not the search page redirect to the search page with the
       // query.
       if (window.location.pathname != '/search') {

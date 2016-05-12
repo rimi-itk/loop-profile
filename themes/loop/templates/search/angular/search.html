@@ -3,6 +3,10 @@
 
   You should not change this but point to another custom template in the
   configuration object.
+
+    // Translation hack. The lines need to be here.
+  {{ Drupal.t('Search', { }, { 'context': 'angular' }) }}
+  {{ Drupal.t('Searching...', { }, { 'context': 'angular' }) }}
 -->
 <div class="search-box-block">
   <div class="search-box-block--wrapper">
@@ -49,7 +53,7 @@
 
           </span>
         </div>
-        <input class="search-box-block--button js-hide-suggest" type="submit" data-ng-click="searchClicked()" value="{{ Drupal.t('Search', {}, { 'context': 'angular' }) }}">
+        <input class="search-box-block--button js-hide-suggest" data-ng-disabled="searching" type="submit" data-ng-click="searchClicked()" value="{{ Drupal.t(searchBtnText, {}, { 'context': 'angular' }) }}">
       </div>
   </div>
 </div>
