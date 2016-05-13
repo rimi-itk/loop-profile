@@ -14,6 +14,12 @@ include_once 'loop_search_node.features.inc';
 function loop_search_node_preprocess_search_node_page_search_box(&$variables) {
   $path = drupal_get_path('module', 'loop_search_node');
 
+  drupal_add_js($path . '/js/angular-locale_da-dk.js', array(
+    'type' => 'file',
+    'scope' => 'footer',
+    'weight' => 7,
+  ));
+
   // Add the search controller.
   drupal_add_js($path . '/js/loopSearchBoxController.js', array(
     'type' => 'file',
@@ -22,12 +28,6 @@ function loop_search_node_preprocess_search_node_page_search_box(&$variables) {
   ));
 
   drupal_add_js($path . '/js/loopResultController.js', array(
-    'type' => 'file',
-    'scope' => 'footer',
-    'weight' => 7,
-  ));
-
-  drupal_add_js($path . '/js/angular-locale_da-dk.js', array(
     'type' => 'file',
     'scope' => 'footer',
     'weight' => 7,
