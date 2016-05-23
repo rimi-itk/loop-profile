@@ -375,19 +375,28 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
             }
           }
         },
-        size: 5
+        size: 5,
+        highlight: {
+          pre_tags : [ "<strong>" ],
+          post_tags : [ "</strong>" ],
+          fields: {
+            title: {}
+          }
+        }
       };
 
       // Start the search request.
       searchProxyService.rawQuerySearch(query).then(
         function (data) {
 
+          console.log(data);
+
           var suggestions = [];
 
           for (var i = 0; i < data.results.length; i++) {
             var current = data.results[i];
             suggestions.push({
-              'title': current.title,
+              'title': current._highlight.title[0],
               'url': current.url
             });
           }
