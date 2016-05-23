@@ -255,7 +255,7 @@ function _loop_search_node_box_settings() {
         'created' => 0,
         'field_description:value' => 0,
         'field_external_link:url' => 0,
-        'field_keyword:name' => 0,
+        'field_keyword:name' => 'field_keyword:name',
         'field_profession:name' => 0,
         'field_subject:name' => 0,
         'nid' => 0,
