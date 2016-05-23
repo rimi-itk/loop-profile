@@ -238,7 +238,8 @@ function _loop_search_node_box_settings() {
     'server' => 'loop_search_node',
     'index' => 'posts',
     'options' => array(
-      'match_type' => 'phrase',
+      'match_type' => 'best_fields',
+      'match_operator' => 'and',
       'cache_expire' => 1,
       'size' => 8,
       'initial_query_enable' => 0,

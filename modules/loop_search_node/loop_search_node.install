@@ -52,3 +52,13 @@ function loop_search_node_update_7003(&$sandbox) {
     ->condition('theme', 'loop')
     ->condition('delta', 'search_node_search_box');
 }
+
+/**
+ * Update search box match operator.
+ */
+function loop_search_node_update_7004(&$sandbox) {
+  db_update('block')
+    ->fields(_loop_search_node_search_block_settings())
+    ->condition('theme', 'loop')
+    ->condition('delta', 'search_node_search_box');
+}
