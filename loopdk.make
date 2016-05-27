@@ -270,6 +270,7 @@ libraries[php-saml][directory_name] = "php-saml"
 libraries[php-saml][destination] = "libraries"
 
 libraries[xmlseclibs][download][type] = "git"
-libraries[xmlseclibs][download][url] = "https://github.com/Maks3w/xmlseclibs.git"
+libraries[xmlseclibs][download][url] = "https://github.com/robrichards/xmlseclibs.git"
+libraries[xmlseclibs][download][branch] = "1.3.2"
 libraries[xmlseclibs][directory_name] = "xmlseclibs"
 libraries[xmlseclibs][destination] = "libraries"
