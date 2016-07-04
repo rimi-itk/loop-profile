@@ -22,7 +22,7 @@
 </div>
 
 <!-- No results -->
-<span class="no-results" data-ng-if="!hits.hits">
+<span class="no-results" data-ng-if="!hits.hits && !searching">
   <p>{{ Drupal.t('No results found.', { }, { 'context': 'angular' }) }}</p>
 </span>
 

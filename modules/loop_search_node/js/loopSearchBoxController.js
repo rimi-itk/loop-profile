@@ -243,7 +243,7 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
       $scope.searchBtnText = 'Searching...';
       $scope.searching = true;
 
-      // Hidde suggestions.
+      // Hide suggestions.
       $scope.suggestToggle(false);
 
       // If this is not the search page redirect to the search page with the
