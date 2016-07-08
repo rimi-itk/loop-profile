@@ -160,3 +160,19 @@ function _loop_saml_setup_account($account, array $attributes) {
 function loop_saml_preprocess(&$variables) {
   $variables['logged_in_via_saml'] = saml_sp_drupal_login_is_authenticated();
 }
+
+/**
+ * Implements hook_menu_alter().
+ *
+ * Hack to prevent user from accessing the external user registration page.
+ */
+function loop_saml_menu_alter(&$items) {
+  $items['user/register']['page callback'] = 'loop_saml_user_register_page_callback';
+}
+
+/**
+ * Prevent access to the external user registration page.
+ */
+function loop_saml_user_register_page_callback() {
+  drupal_goto('user');
+}
