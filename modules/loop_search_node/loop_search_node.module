@@ -345,7 +345,7 @@ function _loop_search_node_search_block_settings() {
   return array(
     'weight' => -17,
     'region' => 'content',
-    'pages' => "admin\r\nadmin/*\r\nuser/*/edit\r\nnode/*",
-    'status' => 1
+    'pages' => "admin\r\nadmin/*\r\nuser/*/edit",
+    'status' => 0
   );
 }
