@@ -48,14 +48,22 @@ angular.module('searchResultApp').controller('loopResultController', ['CONFIG', 
      */
     $scope.hits = [];
     communicatorService.$on('hits', function onHits(event, data) {
+      // Ensure that hits titles are stream lined.
+      var hits = data.hits;
+      for (var i in hits.results) {
+       if (hits.results[i].hasOwnProperty('_highlight')) {
+          hits.results[i].title = hits.results[i]._highlight.title[0];
+        }
+      }
+
       var phase = this.$root.$$phase;
       if (phase === '$apply' || phase === '$digest') {
-        $scope.hits = data.hits;
+        $scope.hits = hits;
         $scope.searching = false;
       }
       else {
         $scope.$apply(function () {
-          $scope.hits = data.hits;
+          $scope.hits = hits;
           $scope.searching = false;
         });
       }

@@ -335,15 +335,7 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
      *  If they do true else false.
      */
     $scope.suggestionExists = function suggestionExists() {
-      if ($scope.suggestions['post'].length) {
-        return true;
-      }
-
-      if ($scope.suggestions['external_sources'].length) {
-        return true;
-      }
-
-      return false;
+      return ($scope.suggestions['post'].length || $scope.suggestions['external_sources'].length);
     };
 
     /**
@@ -363,7 +355,7 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
               multi_match: {
                 query: $scope.query.text,
                 type: 'phrase',
-                fields: [ 'body:summary', 'body:value', 'title'  ],
+                fields: CONFIG.provider.fields,
                 analyzer: 'string_search'
               }
             },
@@ -391,15 +383,12 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
       // Start the search request.
       searchProxyService.rawQuerySearch(query).then(
         function (data) {
-
-          console.log(data);
-
           var suggestions = [];
 
           for (var i = 0; i < data.results.length; i++) {
             var current = data.results[i];
             suggestions.push({
-              'title': current._highlight.title[0],
+              'title': current.hasOwnProperty('_highlight') ? current._highlight.title[0] : current.title,
               'url': current.url
             });
           }

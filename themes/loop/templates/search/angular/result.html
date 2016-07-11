@@ -16,7 +16,7 @@
       <div class="search-result--meta-data-date">{{ Drupal.t('Created at', { }, { 'context': 'angular' }) }} {{ hit.created*1000 | date : 'd. MMMM yyyy' }}</div>
       <div class="search-result--meta-data-type">{{ Drupal.t('Type:', { }, { 'context': 'angular' }) }} {{ Drupal.t(hit.type, { }, { 'context': 'angular' }) }}</div>
     </div>
-    <a href="{{ hit.url }}" class="search-result--link" data-ng-bind-html="hit._highlight.title[0]"></a>
+    <a href="{{ hit.url }}" class="search-result--link" data-ng-bind-html="hit.title"></a>
     <a href="{{ hit.url }}" class="search-result--comments">{{ hit.comment_count }} Svar</a>
   </div>
 </div>

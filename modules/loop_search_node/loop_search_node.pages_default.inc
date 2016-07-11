@@ -69,7 +69,7 @@ function loop_search_node_default_page_manager_pages() {
     ),
   );
   $display->cache = array();
-  $display->title = '';
+  $display->title = 'Search';
   $display->uuid = '8e14edd0-235e-4fed-862c-469e3caac2de';
   $display->content = array();
   $display->panels = array();
