@@ -354,7 +354,6 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
             query: {
               multi_match: {
                 query: $scope.query.text,
-                type: 'phrase',
                 fields: CONFIG.provider.fields,
                 analyzer: 'string_search'
               }
