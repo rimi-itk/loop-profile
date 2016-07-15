@@ -19,12 +19,27 @@
     <a href="{{ hit.url }}" class="search-result--link" data-ng-bind-html="hit.title"></a>
     <a href="{{ hit.url }}" class="search-result--comments">{{ hit.comment_count }} Svar</a>
   </div>
+
+  <!-- No results -->
+  <span data-ng-if="!hits.hits && !searching">
+    <div class="search-result--lead">
+      <div class="messages warning">
+      {{ Drupal.t('No results found.', { }, { 'context': 'angular' }) }}
+      </div>
+    </div>
+    <p>Hvis du tror, at dit spørgsmål ikke stillet før med anden ordlyd, kan du oprette spørgsmålet ved hjælp af nedenstående skema. Du kan også ændre din søgning og søge igen.</p>
+
+    <div class="layout--inner" id="ask-question">
+      <div class="layout-element-epsilon">
+        <h3 class="page-title">Opret spørgsmål</h3>
+        <span id="no_result_form"></span>
+      </div>
+    </div>
+  </span>
+
 </div>
 
-<!-- No results -->
-<span class="no-results" data-ng-if="!hits.hits && !searching">
-  <p>{{ Drupal.t('No results found.', { }, { 'context': 'angular' }) }}</p>
-</span>
+
 
 <!-- Search pager if the provider supports it -->
 <search-pager></search-pager>

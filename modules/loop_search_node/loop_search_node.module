@@ -7,6 +7,62 @@
 include_once 'loop_search_node.features.inc';
 
 /**
+ * Implements hook_menu().
+ */
+function loop_search_node_menu() {
+  $items = array();
+
+  $items['loop_search_node/not_found'] = array(
+    'title' => 'No search results',
+    'type' => MENU_CALLBACK,
+    'page callback' => 'loop_search_node_no_results',
+    'access callback' =>  'node_access',
+    'access arguments' => array('create', 'post')
+  );
+
+  return $items;
+}
+
+/**
+ * Menu callback that generates post node add form.
+ *
+ * @return string
+ *   JSON encode string with the node create form.
+ */
+function loop_search_node_no_results() {
+  global $user;
+
+  module_load_include('inc', 'node', 'node.pages');
+  $node = new stdClass();
+  $node->type = 'post';
+  $node->langauge = LANGUAGE_NONE;
+  $node->uid = $user->uid;
+  $node->name = $user->name;
+
+  // Get "post" node create form.
+  $form = drupal_get_form('node_form', $node);
+  $form['additional_settings']['#access'] = FALSE;
+
+  drupal_json_output(array(
+    'settings' => $form['field_keyword']['und']['#attached']['js'],
+    'form' => drupal_render($form),
+  ));
+}
+
+/**
+ * Implements hook_init().
+ *
+ * Ensure that auto-complete is available for usage with auto complete deluxe.
+ *
+ * It's used in the "no result" submit form.
+ */
+function loop_search_node_init() {
+  if (current_path() == 'search') {
+    drupal_add_library('system', 'ui.autocomplete');
+  }
+}
+
+/**
  * Implements hook_preprocess_HOOK().
  *
  * Overrides/adds new Angular JS controller for the search field.

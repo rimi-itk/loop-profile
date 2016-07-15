@@ -5,8 +5,8 @@
  * It simply updates the view when hits have been received.
  */
 
-angular.module('searchResultApp').controller('loopResultController', ['CONFIG', 'communicatorService', '$scope', '$window',
-  function (CONFIG, communicatorService, $scope, $window) {
+angular.module('searchResultApp').controller('loopResultController', ['CONFIG', 'communicatorService', '$scope', '$window', '$http',
+  function (CONFIG, communicatorService, $scope, $window, $http) {
     'use strict';
 
     // Set template to use.
@@ -60,11 +60,19 @@ angular.module('searchResultApp').controller('loopResultController', ['CONFIG', 
       if (phase === '$apply' || phase === '$digest') {
         $scope.hits = hits;
         $scope.searching = false;
+
+        if ($scope.hits.hits === 0) {
+          no_results_post_form();
+        }
       }
       else {
         $scope.$apply(function () {
           $scope.hits = hits;
           $scope.searching = false;
+
+          if ($scope.hits.hits === 0) {
+            no_results_post_form();
+          }
         });
       }
     });
@@ -98,5 +106,33 @@ angular.module('searchResultApp').controller('loopResultController', ['CONFIG', 
         });
       }
     });
+
+    /**
+     * Callback to get the "no results found" create new post form.
+     */
+    function no_results_post_form() {
+      $http({
+        method: 'GET',
+        url: '/loop_search_node/not_found'
+      }).then(function successCallback(response) {
+        document.getElementById('no_result_form').innerHTML = response.data.form;
+
+        jQuery('.js-chosen-select-area-of-expertise').chosen({
+          no_results_text: "Angiv værdi.",
+          placeholder_text : "Angiv værdi."
+        });
+
+        jQuery('.js-chosen-select-profession').chosen({
+          no_results_text: "Angiv værdi.",
+          placeholder_text : "Angiv værdi."
+        });
+
+        // Make auto-comaple delux work (hackise).
+        Drupal.settings.autocomplete_deluxe = response.data.settings[1].data.autocomplete_deluxe;
+        jQuery.getScript(response.data.settings[0], function() {
+          Drupal.attachBehaviors();
+        });
+      });
+    }
   }
 ]);
