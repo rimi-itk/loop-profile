@@ -119,7 +119,7 @@ function loop_search_node_js_alter(&$javascript) {
   // Find the files.
   if (file_exists($dir)) {
     $it = new RecursiveDirectoryIterator($dir);
-    foreach(new RecursiveIteratorIterator($it) as $file)  {
+    foreach (new RecursiveIteratorIterator($it) as $file)  {
       $file_abs = $path . str_replace($dir, '', $file);
       if (!in_array($file_abs, $parsed)) {
         $ext = pathinfo($file, PATHINFO_EXTENSION);
@@ -145,7 +145,7 @@ function loop_search_node_js_alter(&$javascript) {
  *       with loading translations for files that have the context "angular"
  *       this will ensure translations from angular template files.
  *
- * @param $language
+ * @param mixed $langcode
  *   The language, the translation file should be (re)created for.
  *
  * @return bool
@@ -190,7 +190,7 @@ function _loop_search_node_locale_rebuild_js($langcode = NULL) {
     $data_hash = drupal_hash_base64($data);
   }
 
-  // Construct the filepath where JS translation files are stored.
+  // Construct the file path where JS translation files are stored.
   // There is (on purpose) no front end to edit that variable.
   $dir = 'public://' . variable_get('locale_js_directory', 'languages');
 
@@ -260,19 +260,24 @@ function _loop_search_node_locale_rebuild_js($langcode = NULL) {
     case 'updated':
       watchdog('locale', 'Updated JavaScript translation file for the language %language.', array('%language' => t($language->name)));
       return TRUE;
+
     case 'rebuilt':
       watchdog('locale', 'JavaScript translation file %file.js was lost.', array('%file' => $language->javascript), WATCHDOG_WARNING);
-    // Proceed to the 'created' case as the JavaScript translation file has
-    // been created again.
+      // Proceed to the 'created' case as the JavaScript translation file has
+      // been created again.
+
     case 'created':
       watchdog('locale', 'Created JavaScript translation file for the language %language.', array('%language' => t($language->name)));
       return TRUE;
+
     case 'deleted':
       watchdog('locale', 'Removed JavaScript translation file for the language %language, because no translations currently exist for that language.', array('%language' => t($language->name)));
       return TRUE;
+
     case 'error':
       watchdog('locale', 'An error occurred during creation of the JavaScript translation file for the language %language.', array('%language' => t($language->name)), WATCHDOG_ERROR);
       return FALSE;
+
     default:
       // No operation needed.
       return TRUE;

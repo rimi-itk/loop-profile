@@ -44,7 +44,7 @@ angular.module('searchResultApp').controller('loopResultController', ['CONFIG', 
     };
 
     /**
-     * Hanled search results hits from the search box application.
+     * Handle search results hits from the search box application.
      */
     $scope.hits = [];
     communicatorService.$on('hits', function onHits(event, data) {
@@ -78,7 +78,7 @@ angular.module('searchResultApp').controller('loopResultController', ['CONFIG', 
     });
 
     /**
-     * Hanled searching message, send when search is called.
+     * Handle searching message, send when search is called.
      */
     communicatorService.$on('searching', function onSearching(event, data) {
       var phase = this.$root.$$phase;
@@ -93,7 +93,7 @@ angular.module('searchResultApp').controller('loopResultController', ['CONFIG', 
     });
 
     /**
-     * Handled pager updates.
+     * Handle pager updates.
      */
     communicatorService.$on('pager', function onPager(event, data) {
       var phase = this.$root.$$phase;
@@ -117,17 +117,20 @@ angular.module('searchResultApp').controller('loopResultController', ['CONFIG', 
       }).then(function successCallback(response) {
         document.getElementById('no_result_form').innerHTML = response.data.form;
 
+        var no_result_text = $scope.Drupal.t('Enter value.', { }, { 'context': 'angular' });
+        var placeholder_text = $scope.Drupal.t('Enter value.', { }, { 'context': 'angular' });
+
         jQuery('.js-chosen-select-area-of-expertise').chosen({
-          no_results_text: "Angiv værdi.",
-          placeholder_text : "Angiv værdi."
+          no_results_text: no_result_text,
+          placeholder_text : placeholder_text
         });
 
         jQuery('.js-chosen-select-profession').chosen({
-          no_results_text: "Angiv værdi.",
-          placeholder_text : "Angiv værdi."
+          no_results_text: no_result_text,
+          placeholder_text : placeholder_text
         });
 
-        // Make auto-comaple delux work (hackise).
+        // Make auto-complete deluxe work (hackish).
         Drupal.settings.autocomplete_deluxe = response.data.settings[1].data.autocomplete_deluxe;
         jQuery.getScript(response.data.settings[0], function() {
           Drupal.attachBehaviors();

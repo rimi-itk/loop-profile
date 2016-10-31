@@ -17,7 +17,7 @@
       <div class="search-result--meta-data-type">{{ Drupal.t('Type:', { }, { 'context': 'angular' }) }} {{ Drupal.t(hit.type, { }, { 'context': 'angular' }) }}</div>
     </div>
     <a href="{{ hit.url }}" class="search-result--link" data-ng-bind-html="hit.title"></a>
-    <a href="{{ hit.url }}" class="search-result--comments">{{ hit.comment_count }} Svar</a>
+    <a href="{{ hit.url }}" class="search-result--comments">{{ hit.comment_count }} {{ Drupal.t('Reply', { }, { 'context': 'angular' }) }}</a>
   </div>
 
   <!-- No results -->
@@ -27,11 +27,11 @@
       {{ Drupal.t('No results found.', { }, { 'context': 'angular' }) }}
       </div>
     </div>
-    <p>Hvis du tror, at dit spørgsmål ikke stillet før med anden ordlyd, kan du oprette spørgsmålet ved hjælp af nedenstående skema. Du kan også ændre din søgning og søge igen.</p>
+    <p>{{ Drupal.t('If you think that your question is not asked before with different wording, you can create the question using the form below. You can also change your search and search again.', { }, { 'context': 'angular'}) }}</p>
 
     <div class="layout--inner" id="ask-question">
       <div class="layout-element-epsilon">
-        <h3 class="page-title">Opret spørgsmål</h3>
+        <h3 class="page-title">{{ Drupal.t('Create question', { }, { 'context': 'angular' }) }}</h3>
         <span id="no_result_form"></span>
       </div>
     </div>
