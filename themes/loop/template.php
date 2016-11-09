@@ -837,6 +837,8 @@ function loop_theme($existing, $type, $theme, $path) {
 
 /**
  * User login form.
+ *
+ * Adds a list of active login services to the template variables.
  */
 function loop_preprocess_user_login(&$variables) {
   $login_services = array();
@@ -845,7 +847,7 @@ function loop_preprocess_user_login(&$variables) {
   $returnTo = $destination['destination'];
   $options = array('query' => array('returnTo' => $returnTo));
 
-  // Saml log in services.
+  // Add Saml log in services.
   if (function_exists('saml_sp__load_all_idps')) {
     $idps = saml_sp__load_all_idps();
     foreach ($idps as $idp) {
@@ -856,7 +858,7 @@ function loop_preprocess_user_login(&$variables) {
     }
   }
 
-  // Uni-login service.
+  // Add UNI•Login service.
   if (module_exists('unilogin')) {
     $login_services['unilogin'] = array(
       'name' => t('UNI•Login'),
@@ -865,7 +867,7 @@ function loop_preprocess_user_login(&$variables) {
   }
 
   if (count($login_services) > 0) {
-    // "Regular user" login service.
+    // Add "Regular user" login service.
     if (theme_get_setting('show_login_for_regular_users')) {
       $login_services['loop-login'] = array(
         'name' => t('Loop login'),
