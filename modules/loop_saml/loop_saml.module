@@ -84,27 +84,6 @@ function loop_saml_saml_sp_post_update_user_alter($account, $attributes) {
 }
 
 /**
- * Implements hook_form_ID_alter().
- *
- * Be sure to redirect to /user page.
- */
-function loop_saml_form_user_login_alter(&$form, &$form_state) {
-  $idp_selection = variable_get('saml_sp_drupal_login__idp', '');
-  $idp = saml_sp_idp_load($idp_selection);
-
-  $destination = drupal_get_destination();
-  $returnTo = $destination['destination'];
-  $options = array('query' => array('returnTo' => $returnTo));
-  $items['link'] = array(
-    'content' => l(t('Log in using @idp_name', array('@idp_name' => $idp->name)), 'saml/drupal_login', $options),
-    'class' => array('saml-link'),
-  );
-
-  $form['name']['#prefix'] = theme('loop_saml_prefix_login', $items);
-  unset($form['saml_sp_drupal_login_links']);
-}
-
-/**
  * Implements hook_theme().
  */
 function loop_saml_theme() {

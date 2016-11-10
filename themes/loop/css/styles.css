@@ -787,6 +787,43 @@ label {
     float: right;
     overflow: hidden; } }
 
+.page-user .user-profile-wrapper {
+  background-color: #f2f2f2;
+  border-radius: 0.4em;
+  padding: 1.5em;
+  margin-bottom: 2em; }
+
+.page-user .user-profile-header {
+  border-bottom: 1px solid #e6e6e6;
+  padding-bottom: 0.5em;
+  font-size: 130%;
+  font-weight: bold; }
+
+.page-user .form-items-title {
+  margin: 2em 0; }
+
+.page-user .user-form {
+  margin-top: 3em; }
+
+.page-user .user-profile--login-link {
+  margin-bottom: 0.75em; }
+
+.page-user .user-profile--login-text {
+  margin-bottom: 0;
+  margin-top: 1.5em; }
+
+.page-user .button--action:last-child, .page-user .form-submit:last-child, .page-user .block-follow-question .flag-action:last-child, .block-follow-question .page-user .flag-action:last-child, .page-user .typeahead-block--button:last-child {
+  margin-bottom: 0.75em; }
+
+.page-user .user-form--password-link {
+  float: left; }
+
+.page-user #loop-login {
+  display: none; }
+
+.page-user #loop-login:target {
+  display: block; }
+
 /**
  * Buttons
  *
@@ -4231,6 +4268,7 @@ a.question--term.taxonomy-keyword {
   /* Prevent text selection. */
   -webkit-user-select: none;
   -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none; }
 
 .autocomplete-deluxe-highlight-char {

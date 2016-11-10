@@ -1,0 +1,58 @@
+<?php
+/**
+ * @file
+ * UNI•Login module file.
+ */
+
+/**
+ * Implements hook_user_login().
+ */
+function loop_unilogin_user_login(&$edit, $user) {
+  loop_unilogin_update_user_data($user);
+}
+
+/**
+ * Update user with data from UNI•Login.
+ *
+ * @param object $user
+ *   The user to update.
+ */
+function loop_unilogin_update_user_data($user) {
+  $authmaps = user_get_authmaps($user->name);
+  if (is_array($authmaps) && isset($authmaps['unilogin'])) {
+    // Get UNI•Login user id from auth map.
+    $unilogin_id = preg_replace('/^unilogin:/', '', $authmaps['unilogin']);
+    // Fetch user data from UNI•Login web service w02 [https://goo.gl/voJXHo].
+    $info = unilogin_services_w02_load($unilogin_id, array('hentPerson'));
+
+    // Edit (updates) to be applied to the user.
+    $edit = array();
+
+    if (isset($info->hentPerson)) {
+      $person = $info->hentPerson;
+      $field_mapping = array(
+        // UNI•Login field name => Drupal user custom field name.
+        'Fornavn' => 'field_first_name',
+        'Efternavn' => 'field_last_name',
+      );
+      foreach ($field_mapping as $person_field => $user_field) {
+        if (isset($person->{$person_field})) {
+          // Only update empty values.
+          if (!isset($user->{$user_field}['und'][0]['value'])) {
+            $edit[$user_field] = array(
+              'und' => array(
+                0 => array(
+                  'value' => $person->{$person_field},
+                ),
+              ),
+            );
+          }
+        }
+      }
+    }
+
+    if (!empty($edit)) {
+      user_save($user, $edit);
+    }
+  }
+}

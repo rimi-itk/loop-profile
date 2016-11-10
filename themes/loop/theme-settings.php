@@ -21,6 +21,20 @@ function loop_form_system_theme_settings_alter(&$form, &$form_state) {
     '#description' => t("Show breadcrumbs at the top each page."),
   );
 
+  $form['login_settings'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Log in settings'),
+    '#collapsible' => FALSE,
+    '#description' => t("Settings for log in behaviour"),
+  );
+
+  $form['login_settings']['show_login_for_regular_users'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show regular log in button'),
+    '#default_value' => theme_get_setting('show_login_for_regular_users', 'loop'),
+    '#description' => t("Show log in button for regular users, i.e. username and password fields"),
+  );
+
   $form['logout_settings'] = array(
     '#type' => 'fieldset',
     '#title' => t('Logout button settings'),

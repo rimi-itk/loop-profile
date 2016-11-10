@@ -578,6 +578,9 @@ function loop_panels_default_style_render_region($vars) {
  * Change html of user login.
  */
 function loop_form_user_login_alter(&$form) {
+  // Saml (and other) log in providers will be handled in the template.
+  unset($form['saml_sp_drupal_login_links']);
+
   $form['#prefix'] = '<h2>' . t('User login') . '</h2>';
   $form['pass']['#suffix'] = '<ul class="user-form--password-link"><li><a href="/user/password">' . t('Request new password') . '</a></li></ul>';
   $form['name']['#description'] = FALSE;
@@ -821,7 +824,59 @@ function loop_theme($existing, $type, $theme, $path) {
       'path' => drupal_get_path('theme', 'loop') . '/templates/forms',
       'template' => 'comment-form-prefix',
     ),
+    'user_login' => array(
+      'render element' => 'form',
+      'path' => drupal_get_path('theme', 'loop') . '/templates/user',
+      'template' => 'user-login',
+      'preprocess functions' => array(
+        'loop_preprocess_user_login',
+      ),
+    ),
   );
+}
+
+/**
+ * User login form.
+ *
+ * Adds a list of active login services to the template variables.
+ */
+function loop_preprocess_user_login(&$variables) {
+  $login_services = array();
+
+  $destination = drupal_get_destination();
+  $returnTo = $destination['destination'];
+  $options = array('query' => array('returnTo' => $returnTo));
+
+  // Add Saml log in services.
+  if (function_exists('saml_sp__load_all_idps')) {
+    $idps = saml_sp__load_all_idps();
+    foreach ($idps as $idp) {
+      $login_services[$idp->machine_name] = array(
+        'name' => $idp->name,
+        'url' => url('saml/drupal_login', $options),
+      );
+    }
+  }
+
+  // Add UNI•Login service.
+  if (module_exists('unilogin')) {
+    $login_services['unilogin'] = array(
+      'name' => t('UNI•Login'),
+      'url' => url('unilogin', $options),
+    );
+  }
+
+  if (count($login_services) > 0) {
+    // Add "Regular user" login service.
+    if (theme_get_setting('show_login_for_regular_users')) {
+      $login_services['loop-login'] = array(
+        'name' => t('Loop login'),
+        'url' => '#loop-login',
+      );
+    }
+  }
+
+  $variables['login_services'] = $login_services;
 }
 
 /**
