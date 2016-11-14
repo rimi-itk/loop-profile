@@ -163,5 +163,4 @@ function loop_friend_notification_mail($key, &$message, $params) {
       break;
   }
 }
-?>
 
