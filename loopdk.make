@@ -9,7 +9,7 @@ projects[abuse][download][url] = "http://git.drupal.org/project/abuse.git"
 projects[abuse][download][branch] = "7.x-1.x-dev"
 
 projects[admin_views][subdir] = "contrib"
-projects[admin_views][version] = "1.5"
+projects[admin_views][version] = "1.6"
 
 projects[auto_entitylabel][subdir] = "contrib"
 projects[auto_entitylabel][version] = "1.3"
@@ -60,7 +60,7 @@ projects[field_group][subdir] = "contrib"
 projects[field_group][version] = "1.5"
 
 projects[flag][subdir] = "contrib"
-projects[flag][version] = "3.7"
+projects[flag][version] = "3.9"
 
 projects[globalredirect][subdir] = "contrib"
 projects[globalredirect][version] = "1.5"
@@ -147,7 +147,7 @@ projects[page_title][subdir] = "contrib"
 projects[page_title][version] = "2.7"
 
 projects[panels][subdir] = "contrib"
-projects[panels][version] = "3.5"
+projects[panels][version] = "3.8"
 
 projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = "1.3"
@@ -238,9 +238,9 @@ projects[variable][subdir] = "contrib"
 projects[variable][version] = "2.5"
 
 projects[views][subdir] = "contrib"
-projects[views][version] = "3.13"
+projects[views][version] = "3.14"
 projects[views][patch][] = "https://drupal.org/files/views-make_destination_parameter_configurable-1239566-26.patch"
-projects[views][patch][] = "https://drupal.org/files/views-1685144-localization-bug_1.patch"
+; projects[views][patch][] = "https://drupal.org/files/views-1685144-localization-bug_1.patch"
 
 projects[views_calc][subdir] = "contrib"
 projects[views_calc][version] = "1.1"
