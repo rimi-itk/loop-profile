@@ -12,7 +12,6 @@ Building the stylesheet
 First, install requirements:
 
 ```
-bower install
 npm install
 ```
 

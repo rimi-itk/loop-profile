@@ -1,12 +1,10 @@
 <?php
-
-include_once 'loop_instruction.features.inc';
-
-
 /**
  * @file
  * Code for the Loop instruction feature.
  */
+
+include_once 'loop_instruction.features.inc';
 
 /**
  * Implements hook_init().
@@ -15,7 +13,7 @@ include_once 'loop_instruction.features.inc';
  */
 function loop_instruction_init() {
   // Check if it's a registered user.
-  if (user_is_logged_in()) {
+  if (user_is_logged_in() && module_exists('loop_search')) {
     drupal_add_js(drupal_get_path('module', 'loop_instruction') . '/js/search.js');
   }
 }
@@ -38,9 +36,6 @@ function loop_instruction_menu() {
 
 /**
  * Find external sources and output as JSON.
- *
- * @param string $scope
- *   Comma separated list to search for.
  */
 function loop_instruction_documents() {
   // Select nodes.
