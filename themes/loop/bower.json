@@ -1,9 +1,0 @@
-{
-  "name": "loop",
-  "description": "Loop theme",
-  "version": "0.0.1",
-  "private": true,
-  "dependencies": {
-    "zen-grids": "1.x"
-  }
-}

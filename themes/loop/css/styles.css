@@ -19,6 +19,8 @@
    ================================================================================================================== */
 /* Link colors
    ================================================================================================================== */
+/* Add boxsizing polyfill
+   ================================================================================================================== */
 /**
  * Theme variables
  *
@@ -465,6 +467,9 @@ img {
 .is-hidden {
   display: none; }
 
+html.js .no-js {
+  display: none; }
+
 /* Description list (Drupals node/add page)
    ========================================================================== */
 dd {
@@ -499,12 +504,12 @@ dd {
 /* Layout placeholders
    ========================================================================== */
 /* Used for centering an element */
-.header--inner, .layout-full-width, .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, #breadcrumb, .typeahead-block {
+.header--inner, .layout-full-width, .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, #breadcrumb, .search-box-block, .typeahead-block {
   margin-right: auto;
   margin-left: auto;
   clear: both; }
   @media only screen and (min-width: 18.75em) {
-    .header--inner, .layout-full-width, .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, #breadcrumb, .typeahead-block {
+    .header--inner, .layout-full-width, .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, #breadcrumb, .search-box-block, .typeahead-block {
       max-width: 75em; } }
 
 .layout-full-width, .layout-frontpage, .layout-dashboard, .layout-default, .layout-default-inverted, .layout-alternative, .layout-no-wrapper, .content-list--item, .typeahead-block {
@@ -829,7 +834,7 @@ label {
  *
  * @author magnify
  */
-.button--action, .form-submit, .block-follow-question .flag-action, .typeahead-block--button, .button--neutral, .user-profile-form #edit-field-user-image-und-0-upload-button, .comments--editor-actions .comments--editor-actions-edit, .question--editor-actions .question--editor-actions-edit, .edit-user--image-button-add, .button--warning, .comments--editor-actions .comments--editor-actions-delete, .block-follow-question .unflag-action, .question--editor-actions .question--editor-actions-delete, .edit-user--image-button-remove, .at-add-btn {
+.button--action, .form-submit, .block-follow-question .flag-action, .search-box-block--button, .typeahead-block--button, .button--neutral, .user-profile-form #edit-field-user-image-und-0-upload-button, .comments--editor-actions .comments--editor-actions-edit, .question--editor-actions .question--editor-actions-edit, .edit-user--image-button-add, .button--warning, .comments--editor-actions .comments--editor-actions-delete, .block-follow-question .unflag-action, .question--editor-actions .question--editor-actions-delete, .edit-user--image-button-remove, .at-add-btn {
   display: inline-block;
   font-size: 1.25em;
   margin: 0 0.5em 0.5em 0;
@@ -844,20 +849,20 @@ label {
   -ms-border-radius: 0.4em;
   -o-border-radius: 0.4em;
   border-radius: 0.4em; }
-  .button--action:focus, .form-submit:focus, .block-follow-question .flag-action:focus, .typeahead-block--button:focus, .button--neutral:focus, .user-profile-form #edit-field-user-image-und-0-upload-button:focus, .comments--editor-actions .comments--editor-actions-edit:focus, .question--editor-actions .question--editor-actions-edit:focus, .edit-user--image-button-add:focus, .button--warning:focus, .comments--editor-actions .comments--editor-actions-delete:focus, .block-follow-question .unflag-action:focus, .question--editor-actions .question--editor-actions-delete:focus, .edit-user--image-button-remove:focus, .at-add-btn:focus, .button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .typeahead-block--button:hover, .button--neutral:hover, .user-profile-form #edit-field-user-image-und-0-upload-button:hover, .comments--editor-actions .comments--editor-actions-edit:hover, .question--editor-actions .question--editor-actions-edit:hover, .edit-user--image-button-add:hover, .button--warning:hover, .comments--editor-actions .comments--editor-actions-delete:hover, .block-follow-question .unflag-action:hover, .question--editor-actions .question--editor-actions-delete:hover, .edit-user--image-button-remove:hover, .at-add-btn:hover, .button--action:active, .form-submit:active, .block-follow-question .flag-action:active, .typeahead-block--button:active, .button--neutral:active, .user-profile-form #edit-field-user-image-und-0-upload-button:active, .comments--editor-actions .comments--editor-actions-edit:active, .question--editor-actions .question--editor-actions-edit:active, .edit-user--image-button-add:active, .button--warning:active, .comments--editor-actions .comments--editor-actions-delete:active, .block-follow-question .unflag-action:active, .question--editor-actions .question--editor-actions-delete:active, .edit-user--image-button-remove:active, .at-add-btn:active {
+  .button--action:focus, .form-submit:focus, .block-follow-question .flag-action:focus, .search-box-block--button:focus, .typeahead-block--button:focus, .button--neutral:focus, .user-profile-form #edit-field-user-image-und-0-upload-button:focus, .comments--editor-actions .comments--editor-actions-edit:focus, .question--editor-actions .question--editor-actions-edit:focus, .edit-user--image-button-add:focus, .button--warning:focus, .comments--editor-actions .comments--editor-actions-delete:focus, .block-follow-question .unflag-action:focus, .question--editor-actions .question--editor-actions-delete:focus, .edit-user--image-button-remove:focus, .at-add-btn:focus, .button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .search-box-block--button:hover, .typeahead-block--button:hover, .button--neutral:hover, .user-profile-form #edit-field-user-image-und-0-upload-button:hover, .comments--editor-actions .comments--editor-actions-edit:hover, .question--editor-actions .question--editor-actions-edit:hover, .edit-user--image-button-add:hover, .button--warning:hover, .comments--editor-actions .comments--editor-actions-delete:hover, .block-follow-question .unflag-action:hover, .question--editor-actions .question--editor-actions-delete:hover, .edit-user--image-button-remove:hover, .at-add-btn:hover, .button--action:active, .form-submit:active, .block-follow-question .flag-action:active, .search-box-block--button:active, .typeahead-block--button:active, .button--neutral:active, .user-profile-form #edit-field-user-image-und-0-upload-button:active, .comments--editor-actions .comments--editor-actions-edit:active, .question--editor-actions .question--editor-actions-edit:active, .edit-user--image-button-add:active, .button--warning:active, .comments--editor-actions .comments--editor-actions-delete:active, .block-follow-question .unflag-action:active, .question--editor-actions .question--editor-actions-delete:active, .edit-user--image-button-remove:active, .at-add-btn:active {
     text-decoration: none; }
-  .button--action:last-child, .form-submit:last-child, .block-follow-question .flag-action:last-child, .typeahead-block--button:last-child, .button--neutral:last-child, .user-profile-form #edit-field-user-image-und-0-upload-button:last-child, .comments--editor-actions .comments--editor-actions-edit:last-child, .question--editor-actions .question--editor-actions-edit:last-child, .edit-user--image-button-add:last-child, .button--warning:last-child, .comments--editor-actions .comments--editor-actions-delete:last-child, .block-follow-question .unflag-action:last-child, .question--editor-actions .question--editor-actions-delete:last-child, .edit-user--image-button-remove:last-child, .at-add-btn:last-child {
+  .button--action:last-child, .form-submit:last-child, .block-follow-question .flag-action:last-child, .search-box-block--button:last-child, .typeahead-block--button:last-child, .button--neutral:last-child, .user-profile-form #edit-field-user-image-und-0-upload-button:last-child, .comments--editor-actions .comments--editor-actions-edit:last-child, .question--editor-actions .question--editor-actions-edit:last-child, .edit-user--image-button-add:last-child, .button--warning:last-child, .comments--editor-actions .comments--editor-actions-delete:last-child, .block-follow-question .unflag-action:last-child, .question--editor-actions .question--editor-actions-delete:last-child, .edit-user--image-button-remove:last-child, .at-add-btn:last-child {
     margin: 0 0 0.5em; }
 
-.button--action, .form-submit, .block-follow-question .flag-action, .typeahead-block--button {
+.button--action, .form-submit, .block-follow-question .flag-action, .search-box-block--button, .typeahead-block--button {
   background-color: #5dc26d;
   border: 1px solid #41ab51;
   color: #fff;
   text-shadow: 1px 1px 0 #33863f; }
-  .button--action:link, .form-submit:link, .block-follow-question .flag-action:link, .typeahead-block--button:link, .button--action:visited, .form-submit:visited, .block-follow-question .flag-action:visited, .typeahead-block--button:visited {
+  .button--action:link, .form-submit:link, .block-follow-question .flag-action:link, .search-box-block--button:link, .typeahead-block--button:link, .button--action:visited, .form-submit:visited, .block-follow-question .flag-action:visited, .search-box-block--button:visited, .typeahead-block--button:visited {
     color: #fff;
     text-decoration: none; }
-  .button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .typeahead-block--button:hover {
+  .button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .search-box-block--button:hover, .typeahead-block--button:hover {
     background-color: #41ab51; }
 
 .button--neutral, .user-profile-form #edit-field-user-image-und-0-upload-button, .comments--editor-actions .comments--editor-actions-edit, .question--editor-actions .question--editor-actions-edit, .edit-user--image-button-add {
@@ -882,12 +887,12 @@ label {
   .button--warning:hover, .comments--editor-actions .comments--editor-actions-delete:hover, .block-follow-question .unflag-action:hover, .question--editor-actions .question--editor-actions-delete:hover, .edit-user--image-button-remove:hover {
     background-color: #ff3905; }
 
-.button--deactivated, .typeahead-block--button:disabled {
+.button--deactivated, .search-box-block--button:disabled, .typeahead-block--button:disabled {
   background-color: #cccccc;
   border: 1px solid #b3b3b3;
   color: #fff;
   text-shadow: 1px 1px 0 #999999; }
-  .button--deactivated:link, .typeahead-block--button:link:disabled, .button--deactivated:visited, .typeahead-block--button:visited:disabled {
+  .button--deactivated:link, .search-box-block--button:link:disabled, .typeahead-block--button:link:disabled, .button--deactivated:visited, .search-box-block--button:visited:disabled, .typeahead-block--button:visited:disabled {
     color: #737373;
     text-decoration: none; }
 
@@ -1254,6 +1259,7 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    *behavior: url(url("../lib/boxsizing.htc"));
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible;
@@ -1272,6 +1278,7 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    *behavior: url(url("../lib/boxsizing.htc"));
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible;
@@ -1294,6 +1301,7 @@ label {
       -ms-box-sizing: border-box;
       box-sizing: border-box;
       word-wrap: break-word;
+      *behavior: url(url("../lib/boxsizing.htc"));
       _display: inline;
       _overflow: hidden;
       _overflow-y: visible;
@@ -1318,6 +1326,7 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    *behavior: url(url("../lib/boxsizing.htc"));
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible;
@@ -1340,6 +1349,7 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    *behavior: url(url("../lib/boxsizing.htc"));
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible;
@@ -1362,6 +1372,7 @@ label {
       -ms-box-sizing: border-box;
       box-sizing: border-box;
       word-wrap: break-word;
+      *behavior: url(url("../lib/boxsizing.htc"));
       _display: inline;
       _overflow: hidden;
       _overflow-y: visible;
@@ -1384,6 +1395,7 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    *behavior: url(url("../lib/boxsizing.htc"));
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible;
@@ -1401,6 +1413,7 @@ label {
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   word-wrap: break-word;
+  *behavior: url(url("../lib/boxsizing.htc"));
   _display: inline;
   _overflow: hidden;
   _overflow-y: visible; }
@@ -1422,6 +1435,7 @@ label {
       -ms-box-sizing: border-box;
       box-sizing: border-box;
       word-wrap: break-word;
+      *behavior: url(url("../lib/boxsizing.htc"));
       _display: inline;
       _overflow: hidden;
       _overflow-y: visible;
@@ -1443,6 +1457,7 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    *behavior: url(url("../lib/boxsizing.htc"));
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible;
@@ -1464,6 +1479,7 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    *behavior: url(url("../lib/boxsizing.htc"));
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible;
@@ -1483,6 +1499,7 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    *behavior: url(url("../lib/boxsizing.htc"));
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible;
@@ -1501,6 +1518,7 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    *behavior: url(url("../lib/boxsizing.htc"));
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible;
@@ -1520,6 +1538,7 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    *behavior: url(url("../lib/boxsizing.htc"));
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible; } }
@@ -1537,6 +1556,7 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    *behavior: url(url("../lib/boxsizing.htc"));
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible; } }
@@ -1555,6 +1575,7 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    *behavior: url(url("../lib/boxsizing.htc"));
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible; } }
@@ -1578,6 +1599,7 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    *behavior: url(url("../lib/boxsizing.htc"));
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible; } }
@@ -1596,6 +1618,7 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    *behavior: url(url("../lib/boxsizing.htc"));
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible; } }
@@ -1614,6 +1637,7 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    *behavior: url(url("../lib/boxsizing.htc"));
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible; } }
@@ -1631,6 +1655,7 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    *behavior: url(url("../lib/boxsizing.htc"));
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible; } }
@@ -1649,6 +1674,7 @@ label {
     -ms-box-sizing: border-box;
     box-sizing: border-box;
     word-wrap: break-word;
+    *behavior: url(url("../lib/boxsizing.htc"));
     _display: inline;
     _overflow: hidden;
     _overflow-y: visible; } }
@@ -2745,7 +2771,8 @@ This file is generated by `grunt build`, do not edit it by hand.
   list-style-type: none;
   padding: 0;
   overflow: hidden;
-  text-align: center; }
+  text-align: center;
+  width: 100%; }
   .pager li {
     display: inline; }
   .pager a {
@@ -2753,6 +2780,8 @@ This file is generated by `grunt build`, do not edit it by hand.
     line-height: 2.5em;
     background: #f2f2f2;
     text-decoration: none; }
+  .pager .current a {
+    background: #cccccc; }
   .pager .pager-current {
     background: #cccccc;
     padding: 1em;
@@ -3308,6 +3337,67 @@ a.question--term {
  * Search module
  *
  */
+/* Search block
+   ========================================================================== */
+.search-box-block {
+  z-index: 1;
+  position: relative; }
+  .search-box-block .form-item {
+    border: 0;
+    margin-bottom: 0;
+    padding: 0; }
+  @media only screen and (min-width: 75em) {
+    .search-box-block {
+      -webkit-border-radius: 0 0 0.4em 0.4em;
+      -moz-border-radius: 0 0 0.4em 0.4em;
+      -ms-border-radius: 0 0 0.4em 0.4em;
+      -o-border-radius: 0 0 0.4em 0.4em;
+      border-radius: 0 0 0.4em 0.4em; } }
+
+.search-box-block--wrapper {
+  position: relative; }
+  .search-box-block--wrapper .typeahead {
+    margin-bottom: 1em;
+    padding-top: 1.25em;
+    padding-right: 1.25em;
+    padding-bottom: 1.25em;
+    padding-left: 3em;
+    height: 65px;
+    background-color: #fff; }
+    .search-box-block--wrapper .typeahead:focus {
+      outline: none; }
+    @media only screen and (min-width: 28em) {
+      .search-box-block--wrapper .typeahead {
+        margin-bottom: 0;
+        padding-right: 6em;
+        width: 90%;
+        -webkit-border-radius: 0.4em 0 0 0.4em;
+        -moz-border-radius: 0.4em 0 0 0.4em;
+        -ms-border-radius: 0.4em 0 0 0.4em;
+        -o-border-radius: 0.4em 0 0 0.4em;
+        border-radius: 0.4em 0 0 0.4em; } }
+
+.search-box-block--button {
+  margin: 0;
+  height: 65px;
+  width: 100%; }
+  .search-box-block--button:last-child {
+    margin: 0 0 0; }
+  @media only screen and (min-width: 28em) {
+    .search-box-block--button {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding-top: .5em;
+      padding-bottom: .65em;
+      width: auto;
+      font-size: 150%;
+      -webkit-border-radius: 0 0.4em 0.4em 0;
+      -moz-border-radius: 0 0.4em 0.4em 0;
+      -ms-border-radius: 0 0.4em 0.4em 0;
+      -o-border-radius: 0 0.4em 0.4em 0;
+      border-radius: 0 0.4em 0.4em 0; } }
+
 /* Search result
    ========================================================================== */
 .search-result--item {

@@ -28,6 +28,7 @@
   padding: 0;
   overflow: hidden;
   text-align: center;
+  width: 100%;
 
   li {
     display: inline;
@@ -38,6 +39,10 @@
     line-height: 2.5em;
     background: $gray-lightest;
     text-decoration: none;
+  }
+
+  .current a {
+    background: $gray-light;
   }
 
   .pager-current {
