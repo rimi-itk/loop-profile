@@ -25,7 +25,7 @@ function loop_search_node_default_search_api_index() {
     "server" : "loop_search_node",
     "item_type" : "node",
     "options" : {
-      "datasource" : { "bundles" : [ "external_sources", "post" ] },
+      "datasource" : { "bundles" : [ "external_sources", "instruction", "leaf", "post" ] },
       "index_directly" : 0,
       "cron_limit" : "50",
       "search_node_indexes" : "bd6f534b05ab6073e04afef2c67e7e44",
