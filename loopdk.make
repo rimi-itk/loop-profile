@@ -267,6 +267,11 @@ projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][version] = "2.x-dev"
 
 ; Libraries
+libraries[angular][download][type] = "get"
+libraries[angular][download][url] = "https://code.angularjs.org/1.5.5/angular.min.js"
+libraries[angular][directory_name] = "angular"
+libraries[angular][destination] = "libraries"
+
 libraries[ckeditor][download][type] = "get"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.5.3/ckeditor_4.5.3_full.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
