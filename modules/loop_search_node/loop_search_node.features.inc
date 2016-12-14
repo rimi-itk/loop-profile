@@ -18,6 +18,28 @@ function loop_search_node_ctools_plugin_api($module = NULL, $api = NULL) {
  */
 function loop_search_node_default_search_api_index() {
   $items = array();
+  $items['auto_complete'] = entity_import('search_api_index', '{
+    "name" : "auto-complete",
+    "machine_name" : "auto_complete",
+    "description" : null,
+    "server" : "loop_search_node",
+    "item_type" : "node",
+    "options" : {
+      "datasource" : { "bundles" : [ "external_sources", "post" ] },
+      "index_directly" : 0,
+      "cron_limit" : "50",
+      "search_node_indexes" : "bd6f534b05ab6073e04afef2c67e7e44",
+      "fields" : {
+        "nid" : { "type" : "integer" },
+        "search_api_language" : { "type" : "string" },
+        "title" : { "type" : "text" },
+        "type" : { "type" : "string" },
+        "url" : { "type" : "uri" }
+      }
+    },
+    "enabled" : "1",
+    "read_only" : "0"
+  }');
   $items['posts'] = entity_import('search_api_index', '{
     "name" : "Posts",
     "machine_name" : "posts",
