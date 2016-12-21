@@ -1,0 +1,414 @@
+<?php
+
+/**
+ * @file
+ * Code for the Loop documents feature.
+ */
+
+include_once 'loop_documents.features.inc';
+
+/**
+ * Implements hook_permission().
+ *
+ * The permission 'administer documents' has rights to …
+ *
+ * The permission 'administer document collections' has rights to …
+ */
+function loop_documents_permission() {
+  return array(
+    'administer documents' => array(
+      'title' => t('Administer documents'),
+      'description' => t('Permission to administer docuements'),
+    ),
+    'administer document collections' => array(
+      'title' => t('Administer document collections'),
+      'description' => t('Permission to administer docuement collections'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function loop_documents_form_node_form_alter(&$form, &$form_state, $form_id) {
+  if (isset($form['#node'])) {
+    $node = $form['#node'];
+    if ($node->type === 'loop_documents_collection') {
+      $form['field_loop_documents_contents'][LANGUAGE_NONE][0]['value']['#value'] = loop_documents_get_menu_name($node);
+      $form['field_loop_documents_contents']['#type'] = 'hidden';
+      $menu = menu_load(loop_documents_get_menu_name($node));
+
+      $form['field_loop_documents_menu_display'] = array(
+        '#type' => 'fieldset',
+        '#attributes' => array('class' => array('loop-documents-collection-content')),
+        '#title' => t('Collection content'),
+        '#weight' => $form['field_loop_documents_contents']['#weight'],
+        '#prefix' => '<div id="loop-documents-menu-display">',
+        '#suffix' => '</div>',
+        'menu_display' => array(
+          '#markup' => loop_documents_render_collection_menu($menu),
+        ),
+      );
+
+      if ($menu) {
+        $form['field_loop_documents_menu_display'] += array(
+          'add_document' => loop_documents_add_document_form($menu),
+        );
+
+        $form['field_loop_documents_menu_display'] += array(
+          'edit_menu' => array(
+            '#markup' => l(t('Edit menu'), 'admin/structure/menu/manage/' . $menu['menu_name'], array('attributes' => array('target' => 'loop_documents_menu'))),
+            '#prefix' => '<div class="edit-menu">',
+            '#suffix' => '</div>',
+            '#weight' => -1,
+          ),
+        );
+      }
+    }
+
+    if (in_array($node->type, array('loop_documents_collection', 'loop_documents_document'))) {
+      if (isset($form['body'])) {
+        // Remove text format selector.
+        $language = $form['body']['#language'];
+        $form['body'][$language]['0']['#format'] = 'loop_documents';
+      }
+      $form['#after_build'][] = 'loop_documents_after_build';
+    }
+  }
+}
+
+/**
+ * Get form for adding a document to the collection menu.
+ *
+ * @param array $menu
+ *   The menu.
+ *
+ * @return array
+ *   The form.
+ */
+function loop_documents_add_document_form($menu) {
+  if ($menu) {
+    $document_options = loop_documents_get_document_options($menu);
+    if ($document_options) {
+      return array(
+        '#type' => 'container',
+        '#attributes' => array('class' => array('container-inline')),
+        '#weight' => 100,
+
+        'document' => array(
+          '#type' => 'select',
+          '#title' => t('Document'),
+          '#options' => $document_options,
+        ),
+        'actions' => array(
+          '#type' => 'submit',
+          '#value' => t('Add document'),
+          '#ajax' => array(
+            'callback' => 'loop_documents_add_document_callback',
+            'wrapper' => 'loop-documents-menu-display',
+            'method' => 'replace',
+            'effect' => 'fade',
+          ),
+        ),
+      );
+    }
+    else {
+      return array(
+        '#markup' => t('No more documents to add'),
+        '#weight' => 100,
+      );
+    }
+  }
+
+  return array();
+}
+
+/**
+ * Get all documents (as select options) that are not yet part of a menu.
+ *
+ * @param array $menu
+ *   The menu.
+ *
+ * @return array
+ *   The select options.
+ */
+function loop_documents_get_document_options($menu) {
+  $options = array();
+
+  $menu_paths = array_map(function ($link) {
+    return $link['link_path'];
+  }, menu_load_links($menu));
+  $documents = node_load_multiple(array(), array('type' => 'loop_documents_document'));
+  // Filter out documents already in the menu.
+  $documents = array_filter($documents, function ($document) use ($menu_paths) {
+    return !in_array('node/' . $document->nid, $menu_paths);
+  });
+
+  if (!empty($documents)) {
+    $options[0] = '';
+    foreach ($documents as $document) {
+      $options[$document->nid] = $document->title;
+    }
+  }
+
+  return $options;
+}
+
+/**
+ * Add custom css to form.
+ */
+function loop_documents_after_build($form, &$form_state) {
+  drupal_add_css(drupal_get_path('module', 'loop_documents') . '/css/loop-documents.css');
+
+  return $form;
+}
+
+/**
+ * Render a collection menu.
+ *
+ * @param array $menu
+ *   The menu.
+ */
+function loop_documents_render_collection_menu($menu) {
+  $content = '';
+  if ($menu) {
+    $menu_tree = menu_tree($menu['menu_name']);
+    $content = empty($menu_tree) ? t('No documents added yet') : render($menu_tree);
+  }
+  else {
+    $content = t('Save collection to create menu');
+  }
+
+  return '<div class="loop-documents-collection-menu">' . $content . '</div>';
+}
+
+/**
+ * Ajax callback to add a document to a collection menu.
+ *
+ * @param array $form
+ *   The form.
+ * @param array $form_state
+ *   The form state.
+ */
+function loop_documents_add_document_callback($form, $form_state) {
+  $node = $form['#node'];
+  $menu = menu_load(loop_documents_get_menu_name($node));
+  $target_node = node_load($form_state['values']['document']);
+  if ($node && $menu && $target_node) {
+    $menu_link = array(
+      'link_path' => 'node/' . $target_node->nid,
+      'link_title' => $target_node->title,
+      'expanded' => TRUE,
+      'menu_name' => $menu['menu_name'],
+      'weight' => 100,
+    );
+    menu_link_save($menu_link);
+
+    // Reload and render menu.
+    $menu = menu_load(loop_documents_get_menu_name($node));
+    $form['field_loop_documents_menu_display']['menu_display']['#markup'] = loop_documents_render_collection_menu($menu);
+
+    $form['field_loop_documents_menu_display']['add_document'] = loop_documents_add_document_form($menu);
+  }
+
+  return $form['field_loop_documents_menu_display'];
+}
+
+/**
+ * Implements hook_node_insert().
+ */
+function loop_documents_node_insert($node) {
+  if ($node->type === 'loop_documents_collection') {
+    loop_documents_create_collection_menu($node);
+  }
+}
+
+/**
+ * Implements hook_node_update().
+ */
+function loop_documents_node_update($node) {
+  if ($node->type === 'loop_documents_collection') {
+    loop_documents_create_collection_menu($node);
+  }
+}
+
+/**
+ * Create a collection menu if it does not exist.
+ *
+ * @param array $node
+ *   The document collection node.
+ */
+function loop_documents_create_collection_menu($node) {
+  $menu_name = loop_documents_get_menu_name($node);
+  $menu = menu_load($menu_name);
+  if (!$menu) {
+    $menu = array(
+      'menu_name' => $menu_name,
+      'title' => t('Document collection menu: @collection_title', array('@collection_title' => $node->title)),
+      'description' => 'Content menu for document collection ' . $node->title . ' (/node/' . $node->nid . ')',
+    );
+
+    menu_save($menu);
+  }
+
+  return $menu;
+}
+
+/**
+ * Get collection menu name.
+ */
+function loop_documents_get_menu_name($node) {
+  if (is_numeric($node)) {
+    $node = node_load($node);
+  }
+  return isset($node->nid) ? 'loop-documents-collection-' . $node->nid : NULL;
+}
+
+/**
+ * Implements hook_wysiwyg_editor_settings_alter().
+ */
+function loop_documents_wysiwyg_editor_settings_alter(&$settings, $context) {
+  $profile = $context['profile'];
+  if ($profile->format === 'loop_documents' && $profile->editor === 'ckeditor') {
+    unset($settings['toolbar']);
+
+    $settings['contentsCss'] = '/' . drupal_get_path('module', 'loop_documents') . '/ckeditor/styles/loop_documents.css';
+    $settings['customConfig'] = '/' . drupal_get_path('module', 'loop_documents') . '/ckeditor/config/loop_documents.js';
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function loop_documents_preprocess_node(&$variables) {
+  global $user;
+
+  if (!isset($variables['node'])) {
+    return;
+  }
+
+  $node = $variables['node'];
+
+  if (!in_array($node->type, array('loop_documents_collection', 'loop_documents_document'))) {
+    return;
+  }
+
+  if (!isset($variables['elements']['#view_mode']) || $variables['elements']['#view_mode'] !== 'full') {
+    return;
+  }
+
+  $collection_id = NULL;
+  if ($node->type === 'loop_documents_collection') {
+    $collection_id = $node->nid;
+  }
+  else {
+    $parameters = drupal_get_query_parameters();
+    if (!empty($parameters['collection'])) {
+      $collection_id = intval($parameters['collection']);
+    }
+  }
+
+  if (!$collection_id) {
+    $menus = loop_documents_get_menus($node);
+
+    if (count($menus) === 1) {
+      $collection_id = array_keys($menus)[0];
+    }
+  }
+
+  if ($collection_id) {
+    $menu_name = loop_documents_get_menu_name($collection_id);
+    if ($menu_name) {
+      $menu = menu_tree($menu_name);
+      if ($menu) {
+        $query = array(
+          'collection' => $collection_id,
+        );
+        loop_documents_add_query_to_menu($menu, $query);
+        $root = node_load($collection_id);
+        if ($root) {
+          $menu['#root'] = $root;
+          if (node_access('update', $root, $user) === TRUE) {
+            $menu['#root_edit_link'] = l(t('Edit document collection'), 'node/' . $root->nid . '/edit');
+          }
+        }
+        $variables['loop_documents_menu'] = $menu;
+      }
+    }
+  }
+  else {
+    $variables['loop_documents_roots'] = $menus;
+  }
+}
+
+/**
+ * Get a menu of all nodes pointing to a menu containing a given node.
+ *
+ * @param object $node
+ *   The node.
+ *
+ * @return array
+ *   The menu.
+ */
+function loop_documents_get_menus($node) {
+  $menus = array();
+
+  $query = db_query('select menu_name from menu_links where link_path = :link_path', array('link_path' => 'node/' . $node->nid));
+  $nids = array_map(function ($name) {
+    return preg_match('/^loop-documents-collection-(?<id>[0-9]+)$/', $name, $matches) ? $matches['id'] : 0;
+  }, $query->fetchCol());
+  $roots = node_load_multiple($nids);
+  foreach ($roots as $root) {
+    $menu_name = loop_documents_get_menu_name($root);
+    $menus[$root->nid] = array(
+      '#theme' => 'menu_link__' . str_replace('-', '_', $menu_name),
+      '#attributes' => array(),
+      '#title' => $root->title,
+      '#href' => 'node/' . $node->nid,
+      '#localized_options' => array(
+        'query' => array(
+          'collection' => $root->nid,
+        ),
+      ),
+      '#below' => array(),
+    );
+  }
+
+  return $menus;
+}
+
+/**
+ * Add a query to all items in a menu.
+ *
+ * @param array $menu
+ *   The menu.
+ * @param array $query
+ *   The query.
+ */
+function loop_documents_add_query_to_menu(array &$menu, array $query) {
+  foreach ($menu as &$item) {
+    if (isset($item['#href'])) {
+      loop_documents_add_query_to_menu_item($item, $query);
+    }
+  }
+}
+
+/**
+ * Add a query to a memu item.
+ *
+ * @param array $item
+ *   The menu item.
+ * @param array $query
+ *   The query.
+ */
+function loop_documents_add_query_to_menu_item(array &$item, array $query) {
+  if (isset($item['#href'])) {
+    if (!isset($item['#localized_options'])) {
+      $item['#localized_options'] = array();
+    }
+    $item['#localized_options'] += array('query' => $query);
+  }
+  if (isset($item['#below'])) {
+    loop_documents_add_query_to_menu($item['#below'], $query);
+  }
+}
