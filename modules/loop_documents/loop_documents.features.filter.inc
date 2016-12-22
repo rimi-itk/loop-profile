@@ -17,7 +17,13 @@ function loop_documents_filter_default_formats() {
     'cache' => 1,
     'status' => 1,
     'weight' => 0,
-    'filters' => array(),
+    'filters' => array(
+      'media_filter' => array(
+        'weight' => 2,
+        'status' => 1,
+        'settings' => array(),
+      ),
+    ),
   );
 
   return $formats;

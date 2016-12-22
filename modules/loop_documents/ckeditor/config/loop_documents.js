@@ -140,6 +140,8 @@ CKEDITOR.editorConfig = function (config) {
 
 		config.toolbar = [
 				[ 'Format', '-', 'Bold', '-', 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent' ],
+				[ 'Link', 'Unlink' ],
+				[ 'media', 'mediaBrowser' ],
 				[ 'Templates' ],
 				[ 'RemoveFormat' ],
 				[ 'Source' ]
