@@ -11,7 +11,7 @@
       <div class="loop-documents--collection-navigation guide--nav-wrapper">
         <?php
         if (isset($loop_documents_menu)) {
-          echo '<h2>', t('Contents'), '</h2>';
+          echo '<h2>', $node->title, '</h2>';
 
           echo render($loop_documents_menu);
         }

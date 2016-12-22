@@ -20,6 +20,12 @@
               echo ' (' . $loop_documents_menu['#root_edit_link'] . ')';
             }
             echo '</h2>';
+					}
+
+          echo render($loop_documents_menu);
+
+					if (isset($loop_documents_menu['#root'])) {
+            $root = $loop_documents_menu['#root'];
 
             echo '<fieldset><legend>' . t('Metadata') . '</legend>';
             foreach (array(
@@ -34,8 +40,6 @@
             }
             echo '</fieldset>';
           }
-
-          echo render($loop_documents_menu);
         }
         ?>
 
