@@ -14,7 +14,7 @@
           if (isset($loop_documents_menu['#root'])) {
             $root = $loop_documents_menu['#root'];
             echo '<h2>';
-            echo $root->title;
+            echo l($root->title, 'node/' . $root->nid);
 
             if (isset($loop_documents_menu['#root_edit_link'])) {
               echo ' (' . $loop_documents_menu['#root_edit_link'] . ')';
