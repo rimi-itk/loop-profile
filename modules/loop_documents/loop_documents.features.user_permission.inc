@@ -31,6 +31,96 @@ function loop_documents_user_default_permissions() {
     'module' => 'menu',
   );
 
+  // Exported permission: 'create loop_documents_collection content'.
+  $permissions['create loop_documents_collection content'] = array(
+    'name' => 'create loop_documents_collection content',
+    'roles' => array(
+      'document editor' => 'document editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create loop_documents_document content'.
+  $permissions['create loop_documents_document content'] = array(
+    'name' => 'create loop_documents_document content',
+    'roles' => array(
+      'document author' => 'document author',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any loop_documents_collection content'.
+  $permissions['delete any loop_documents_collection content'] = array(
+    'name' => 'delete any loop_documents_collection content',
+    'roles' => array(
+      'document editor' => 'document editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any loop_documents_document content'.
+  $permissions['delete any loop_documents_document content'] = array(
+    'name' => 'delete any loop_documents_document content',
+    'roles' => array(
+      'document editor' => 'document editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own loop_documents_collection content'.
+  $permissions['delete own loop_documents_collection content'] = array(
+    'name' => 'delete own loop_documents_collection content',
+    'roles' => array(
+      'document editor' => 'document editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own loop_documents_document content'.
+  $permissions['delete own loop_documents_document content'] = array(
+    'name' => 'delete own loop_documents_document content',
+    'roles' => array(
+      'document editor' => 'document editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any loop_documents_collection content'.
+  $permissions['edit any loop_documents_collection content'] = array(
+    'name' => 'edit any loop_documents_collection content',
+    'roles' => array(
+      'document editor' => 'document editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any loop_documents_document content'.
+  $permissions['edit any loop_documents_document content'] = array(
+    'name' => 'edit any loop_documents_document content',
+    'roles' => array(
+      'document editor' => 'document editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own loop_documents_collection content'.
+  $permissions['edit own loop_documents_collection content'] = array(
+    'name' => 'edit own loop_documents_collection content',
+    'roles' => array(
+      'document editor' => 'document editor',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own loop_documents_document content'.
+  $permissions['edit own loop_documents_document content'] = array(
+    'name' => 'edit own loop_documents_document content',
+    'roles' => array(
+      'document author' => 'document author',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'entity print access bundle comment_node_loop_documents_collection'.
   $permissions['entity print access bundle comment_node_loop_documents_collection'] = array(
     'name' => 'entity print access bundle comment_node_loop_documents_collection',
