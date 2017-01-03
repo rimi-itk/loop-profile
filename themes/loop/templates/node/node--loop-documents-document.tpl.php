@@ -20,11 +20,11 @@
               echo ' (' . $loop_documents_menu['#root_edit_link'] . ')';
             }
             echo '</h2>';
-					}
+          }
 
           echo render($loop_documents_menu);
 
-					if (isset($loop_documents_menu['#root'])) {
+          if (isset($loop_documents_menu['#root'])) {
             $root = $loop_documents_menu['#root'];
 
             echo '<fieldset><legend>' . t('Metadata') . '</legend>';
@@ -55,7 +55,23 @@
 
   <div class="loop-documents--content">
     <div class="loop-documents--document-content">
-      <?php include drupal_get_path('theme', 'loop') . '/templates/node/node--page.tpl.php'; ?>
+      <h1 class="page-title">
+        <?php print $title; ?>
+        <?php
+        // Check if the user is allowed to edit the page.
+        if ($router_item = menu_get_item('node/' . $node->nid . '/edit')) {
+          if ($router_item['access']) {
+            print '<span class="page-title--edit-link">(<a href="/node/' . $node->nid . '/edit">' . t('edit page') . '</a>)</span>';
+          }
+        }
+        ?>
+      </h1>
+      <?php
+      // We hide the comments and links now so that we can render them later.
+      hide($content['comments']);
+      hide($content['links']);
+      print render($content);
+      ?>
     </div>
 
     <div class="loop-documents--metadata">

@@ -10,6 +10,7 @@ dependencies[] = field_group
 dependencies[] = loop_field_bases
 dependencies[] = media_wysiwyg
 dependencies[] = menu_view_unpublished
+dependencies[] = entity_print
 dependencies[] = strongarm
 dependencies[] = text
 dependencies[] = wysiwyg

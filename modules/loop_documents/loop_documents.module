@@ -293,7 +293,10 @@ function loop_documents_preprocess_node(&$variables) {
     return;
   }
 
-  if (!isset($variables['elements']['#view_mode']) || $variables['elements']['#view_mode'] !== 'full') {
+  // Add template suggestion for view mode.
+  $variables['theme_hook_suggestions'][] = 'node__' . $node->type . '__' . $variables['view_mode'];
+
+  if (!in_array($variables['view_mode'], array('full', 'pdf'))) {
     return;
   }
 
@@ -410,5 +413,92 @@ function loop_documents_add_query_to_menu_item(array &$item, array $query) {
   }
   if (isset($item['#below'])) {
     loop_documents_add_query_to_menu($item['#below'], $query);
+  }
+}
+
+/*
+ * Print stuff.
+ */
+
+/**
+ * Implements hook_node_view().
+ */
+function loop_documents_node_view($node, $view_mode = 'full', $langcode = NULL) {
+  if ($node->type == 'loop_documents_collection') {
+    if ($view_mode == 'pdf') {
+      $query = drupal_get_query_parameters();
+      $menu_name = loop_documents_get_menu_name($node);
+      if ($menu_name) {
+        $menu = menu_tree($menu_name);
+
+        $children = loop_documents_menu_to_render_array($menu, $view_mode);
+
+        if (!empty($children)) {
+          $node->content['documents'] = $children
+            + array(
+              '#prefix' => '<div class="loop-documents--documents">',
+              '#suffix' => '</div>',
+              '#weight' => 1000,
+            );
+        }
+
+        $node->content['#attached'] = array(
+          'css' => array(
+            drupal_get_path('theme', 'loop') . '/css/print.css',
+          ),
+        );
+      }
+    }
+  }
+}
+
+function loop_documents_menu_to_render_array(array $menu, $view_mode) {
+  $content = array();
+
+  foreach ($menu as $item) {
+    if (isset($item['#href'])) {
+      $item = loop_documents_menu_item_to_render_array($item, $view_mode);
+      if ($item) {
+        $content[] = $item;
+      }
+    }
+  }
+
+  return $content;
+}
+
+function loop_documents_menu_item_to_render_array(array $item, $view_mode) {
+  if (isset($item['#href']) && preg_match('@^node/(?<nid>[0-9]+)$@', $item['#href'], $matches)) {
+    $id = $item['#href'];
+
+    $content = array(
+      $id => node_view(node_load($matches['nid']), $view_mode)
+      + array(
+        '#prefix' => '<article id="' . $id . '">',
+        '#suffix' => '</article>',
+      ),
+    );
+
+    if (!empty($item['#below'])) {
+      $items = loop_documents_menu_to_render_array($item['#below'], $view_mode);
+      if (!empty($items)) {
+        $content[$id]['children'] = $items + array(
+          '#prefix' => '<section class="loop-documents--children">',
+          '#suffix' => '</section>',
+        );
+      }
+    }
+
+    return $content;
+  }
+
+  return NULL;
+}
+
+function loop_documents_entity_print_css($entity_type, $entity) {
+  if ($entity_type === 'node' && $entity->type === 'loop_documents_collection') {
+    $path = drupal_get_path('theme', 'loop');
+    entity_print_add_css($path . '/css/styles.css');
+    entity_print_add_css($path . '/css/pdf.css');
   }
 }
