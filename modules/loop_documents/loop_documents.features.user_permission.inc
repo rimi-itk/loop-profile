@@ -10,6 +10,27 @@
 function loop_documents_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'access media browser'.
+  $permissions['access media browser'] = array(
+    'name' => 'access media browser',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'document author' => 'document author',
+      'document editor' => 'document editor',
+    ),
+    'module' => 'media',
+  );
+
+  // Exported permission: 'administer menu'.
+  $permissions['administer menu'] = array(
+    'name' => 'administer menu',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'document editor' => 'document editor',
+    ),
+    'module' => 'menu',
+  );
+
   // Exported permission: 'entity print access bundle comment_node_loop_documents_collection'.
   $permissions['entity print access bundle comment_node_loop_documents_collection'] = array(
     'name' => 'entity print access bundle comment_node_loop_documents_collection',
@@ -37,8 +58,6 @@ function loop_documents_user_default_permissions() {
       'administrator' => 'administrator',
       'document author' => 'document author',
       'document editor' => 'document editor',
-      'documentation coordinator' => 'documentation coordinator',
-      'manager' => 'manager',
     ),
     'module' => 'filter',
   );
