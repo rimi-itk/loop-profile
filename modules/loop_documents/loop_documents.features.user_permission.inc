@@ -31,6 +31,17 @@ function loop_documents_user_default_permissions() {
     'module' => 'menu',
   );
 
+  // Exported permission: 'create files'.
+  $permissions['create files'] = array(
+    'name' => 'create files',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'document author' => 'document author',
+      'document editor' => 'document editor',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'create loop_documents_collection content'.
   $permissions['create loop_documents_collection content'] = array(
     'name' => 'create loop_documents_collection content',
@@ -47,6 +58,15 @@ function loop_documents_user_default_permissions() {
       'document author' => 'document author',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'delete any image files'.
+  $permissions['delete any image files'] = array(
+    'name' => 'delete any image files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
   );
 
   // Exported permission: 'delete any loop_documents_collection content'.
@@ -67,6 +87,15 @@ function loop_documents_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete own image files'.
+  $permissions['delete own image files'] = array(
+    'name' => 'delete own image files',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'delete own loop_documents_collection content'.
   $permissions['delete own loop_documents_collection content'] = array(
     'name' => 'delete own loop_documents_collection content',
@@ -85,6 +114,38 @@ function loop_documents_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'download any image files'.
+  $permissions['download any image files'] = array(
+    'name' => 'download any image files',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'document author' => 'document author',
+      'document editor' => 'document editor',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'download own image files'.
+  $permissions['download own image files'] = array(
+    'name' => 'download own image files',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'document author' => 'document author',
+      'document editor' => 'document editor',
+    ),
+    'module' => 'file_entity',
+  );
+
+  // Exported permission: 'edit any image files'.
+  $permissions['edit any image files'] = array(
+    'name' => 'edit any image files',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'document editor' => 'document editor',
+    ),
+    'module' => 'file_entity',
+  );
+
   // Exported permission: 'edit any loop_documents_collection content'.
   $permissions['edit any loop_documents_collection content'] = array(
     'name' => 'edit any loop_documents_collection content',
@@ -101,6 +162,17 @@ function loop_documents_user_default_permissions() {
       'document editor' => 'document editor',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'edit own image files'.
+  $permissions['edit own image files'] = array(
+    'name' => 'edit own image files',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'document author' => 'document author',
+      'document editor' => 'document editor',
+    ),
+    'module' => 'file_entity',
   );
 
   // Exported permission: 'edit own loop_documents_collection content'.
@@ -141,6 +213,17 @@ function loop_documents_user_default_permissions() {
     'module' => 'menu_view_unpublished',
   );
 
+  // Exported permission: 'use media wysiwyg'.
+  $permissions['use media wysiwyg'] = array(
+    'name' => 'use media wysiwyg',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'document author' => 'document author',
+      'document editor' => 'document editor',
+    ),
+    'module' => 'media_wysiwyg',
+  );
+
   // Exported permission: 'use text format loop_documents'.
   $permissions['use text format loop_documents'] = array(
     'name' => 'use text format loop_documents',
@@ -150,6 +233,17 @@ function loop_documents_user_default_permissions() {
       'document editor' => 'document editor',
     ),
     'module' => 'filter',
+  );
+
+  // Exported permission: 'view files'.
+  $permissions['view files'] = array(
+    'name' => 'view files',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'document author' => 'document author',
+      'document editor' => 'document editor',
+    ),
+    'module' => 'file_entity',
   );
 
   return $permissions;
