@@ -193,9 +193,9 @@ function loop_documents_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'entity print access bundle comment_node_loop_documents_collection'.
-  $permissions['entity print access bundle comment_node_loop_documents_collection'] = array(
-    'name' => 'entity print access bundle comment_node_loop_documents_collection',
+  // Exported permission: 'entity print access bundle loop_documents_collection'.
+  $permissions['entity print access bundle loop_documents_collection'] = array(
+    'name' => 'entity print access bundle loop_documents_collection',
     'roles' => array(
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
