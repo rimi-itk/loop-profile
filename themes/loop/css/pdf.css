@@ -2,3 +2,6 @@
   margin-top: 2em; }
   .loop-documents--collection .loop-documents--documents .loop-documents--document {
     margin-top: 1em; }
+
+.page-title--edit-link {
+  display: none; }

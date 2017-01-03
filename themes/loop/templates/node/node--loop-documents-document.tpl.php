@@ -13,13 +13,9 @@
         if (!empty($loop_documents_menu)) {
           if (isset($loop_documents_menu['#root'])) {
             $root = $loop_documents_menu['#root'];
-            echo '<h2>';
-            echo l($root->title, 'node/' . $root->nid);
+            echo '<div class="loop-documents--collection-print">', l(t('Print PDF'), 'entityprint/node/' . $root->nid), '</div>';
 
-            if (isset($loop_documents_menu['#root_edit_link'])) {
-              echo ' (' . $loop_documents_menu['#root_edit_link'] . ')';
-            }
-            echo '</h2>';
+            echo '<h2>', l($root->title, 'node/' . $root->nid), '</h2>';
           }
 
           echo render($loop_documents_menu);
