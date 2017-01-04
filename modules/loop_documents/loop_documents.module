@@ -44,25 +44,54 @@ function loop_documents_form_node_form_alter(&$form, &$form_state, $form_id) {
         '#attributes' => array('class' => array('loop-documents-collection-content')),
         '#title' => t('Collection content'),
         '#weight' => $form['field_loop_documents_contents']['#weight'],
-        '#prefix' => '<div id="loop-documents-menu-display">',
-        '#suffix' => '</div>',
         'menu_display' => array(
           '#markup' => loop_documents_render_collection_menu($menu),
+          '#prefix' => '<div id="loop-documents-menu-display">',
+          '#suffix' => '</div>',
         ),
       );
 
       if ($menu) {
-        $form['field_loop_documents_menu_display'] += array(
-          'add_document' => loop_documents_add_document_form($menu),
+        $form['field_loop_documents_menu_display']['add_document'] = array(
+          '#type' => 'container',
+          '#attributes' => array('class' => array('container-inline')),
+          '#weight' => 100,
+          '#prefix' => '<div id="loop-documents-add-document">',
+          '#suffix' => '</div>',
         );
 
-        $form['field_loop_documents_menu_display'] += array(
-          'edit_menu' => array(
-            '#markup' => l(t('Edit menu'), 'admin/structure/menu/manage/' . $menu['menu_name'], array('attributes' => array('target' => 'loop_documents_menu'))),
-            '#prefix' => '<div class="edit-menu">',
+        $document_options = loop_documents_get_document_options($menu);
+
+        $form['field_loop_documents_menu_display']['add_document']['document'] = array();
+        if ($document_options) {
+          $form['field_loop_documents_menu_display']['add_document']['document'] = array(
+            '#type' => 'select',
+            '#title' => t('Document'),
+            '#options' => $document_options,
+            '#prefix' => '<div id="loop-documents-menu-document-options">',
             '#suffix' => '</div>',
-            '#weight' => -1,
-          ),
+          );
+
+          $form['field_loop_documents_menu_display']['add_document']['actions'] = array(
+            '#type' => 'submit',
+            '#value' => t('Add document'),
+            '#ajax' => array(
+              'callback' => 'loop_documents_add_document_callback',
+            ),
+            '#weight' => 2,
+          );
+        }
+        else {
+          $form['field_loop_documents_menu_display']['add_document']['document'] = array(
+            '#markup' => t('No more documents to add'),
+          );
+        }
+
+        $form['field_loop_documents_menu_display']['edit_menu'] = array(
+          '#markup' => l(t('Edit menu'), 'admin/structure/menu/manage/' . $menu['menu_name'], array('attributes' => array('target' => 'loop_documents_menu'))),
+          '#prefix' => '<div class="loop-documents-edit-menu">',
+          '#suffix' => '</div>',
+          '#weight' => -1,
         );
       }
     }
@@ -73,55 +102,10 @@ function loop_documents_form_node_form_alter(&$form, &$form_state, $form_id) {
         $language = $form['body']['#language'];
         $form['body'][$language]['0']['#format'] = 'loop_documents';
       }
+      $form['#attached']['js'][] = drupal_get_path('module', 'loop_documents') . '/js/loop_documents.admin.js';
       $form['#after_build'][] = 'loop_documents_after_build';
     }
   }
-}
-
-/**
- * Get form for adding a document to the collection menu.
- *
- * @param array $menu
- *   The menu.
- *
- * @return array
- *   The form.
- */
-function loop_documents_add_document_form(array $menu) {
-  if ($menu) {
-    $document_options = loop_documents_get_document_options($menu);
-    if ($document_options) {
-      return array(
-        '#type' => 'container',
-        '#attributes' => array('class' => array('container-inline')),
-        '#weight' => 100,
-
-        'document' => array(
-          '#type' => 'select',
-          '#title' => t('Document'),
-          '#options' => $document_options,
-        ),
-        'actions' => array(
-          '#type' => 'submit',
-          '#value' => t('Add document'),
-          '#ajax' => array(
-            'callback' => 'loop_documents_add_document_callback',
-            'wrapper' => 'loop-documents-menu-display',
-            'method' => 'replace',
-            'effect' => 'fade',
-          ),
-        ),
-      );
-    }
-    else {
-      return array(
-        '#markup' => t('No more documents to add'),
-        '#weight' => 100,
-      );
-    }
-  }
-
-  return array();
 }
 
 /**
@@ -192,27 +176,60 @@ function loop_documents_render_collection_menu($menu) {
  *   The form state.
  */
 function loop_documents_add_document_callback(array $form, array $form_state) {
+  $commands = array();
+
   $node = $form['#node'];
   $menu = menu_load(loop_documents_get_menu_name($node));
   $target_node = node_load($form_state['values']['document']);
   if ($node && $menu && $target_node) {
+    // Get current highest weight at first level in menu.
+    $menu_links = menu_load_links($menu['menu_name']);
+    $weight = max(array_map(function ($link) {
+      return $link['depth'] == 0 ? $link['weight'] : 0;
+    }, $menu_links));
+
     $menu_link = array(
       'link_path' => 'node/' . $target_node->nid,
       'link_title' => $target_node->title,
       'expanded' => TRUE,
       'menu_name' => $menu['menu_name'],
-      'weight' => 100,
+      'weight' => $weight + 1,
     );
     menu_link_save($menu_link);
 
-    // Reload and render menu.
+    // Reload menu.
     $menu = menu_load(loop_documents_get_menu_name($node));
-    $form['field_loop_documents_menu_display']['menu_display']['#markup'] = loop_documents_render_collection_menu($menu);
+    $document_options = loop_documents_get_document_options($menu);
 
-    $form['field_loop_documents_menu_display']['add_document'] = loop_documents_add_document_form($menu);
+    if ($document_options) {
+      $commands = array(
+        ajax_command_html("#loop-documents-menu-display", loop_documents_render_collection_menu($menu)),
+        array(
+          'command' => 'loop_documents_setDocumentOptions',
+          'arguments' => array(
+            'selector' => '#loop-documents-menu-document-options select',
+            'options' => $document_options,
+          ),
+        ),
+      );
+    }
+    else {
+      $commands = array(
+        ajax_command_replace("#loop-documents-menu-display", loop_documents_render_collection_menu($menu)),
+        ajax_command_replace("#loop-documents-add-document", t('No more documents to add')),
+      );
+    }
+  }
+  else {
+    $commands = array(
+      ajax_command_alert(t('Error adding document to collection')),
+    );
   }
 
-  return $form['field_loop_documents_menu_display'];
+  return array(
+    '#type' => 'ajax',
+    '#commands' => $commands,
+  );
 }
 
 /**
