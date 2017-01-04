@@ -67,5 +67,7 @@ function loop_documents_secure_permissions($role) {
     'menu view unpublished',
   );
 
+  $permissions['administrator'] = $permissions['document collections editor'];
+
   return isset($permissions[$role]) ? $permissions[$role] : NULL;
 }
