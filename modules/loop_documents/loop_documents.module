@@ -6,25 +6,26 @@
  */
 
 include_once 'loop_documents.features.inc';
+include_once 'loop_documents.permissions.inc';
+include_once 'loop_documents.admin.inc';
+include_once 'loop_documents.entity_print.inc';
 
 /**
- * Implements hook_permission().
- *
- * The permission 'administer documents' has rights to …
- *
- * The permission 'administer document collections' has rights to …
+ * Implements hook_menu().
  */
-function loop_documents_permission() {
-  return array(
-    'administer documents' => array(
-      'title' => t('Administer documents'),
-      'description' => t('Permission to administer documents'),
-    ),
-    'administer document collections' => array(
-      'title' => t('Administer document collections'),
-      'description' => t('Permission to administer document collections'),
-    ),
+function loop_documents_menu() {
+  $items = array();
+
+  $items['admin/config/content/loop_documents'] = array(
+    'title' => 'Loop documents settings',
+    'description' => 'Settings for the Loop documents module',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('loop_documents_admin'),
+    'access arguments' => array('administer loop_documents settings'),
+    'type' => MENU_NORMAL_ITEM,
   );
+
+  return $items;
 }
 
 /**
@@ -86,7 +87,7 @@ function loop_documents_form_node_form_alter(&$form, &$form_state, $form_id) {
  * @return array
  *   The form.
  */
-function loop_documents_add_document_form($menu) {
+function loop_documents_add_document_form(array $menu) {
   if ($menu) {
     $document_options = loop_documents_get_document_options($menu);
     if ($document_options) {
@@ -132,7 +133,7 @@ function loop_documents_add_document_form($menu) {
  * @return array
  *   The select options.
  */
-function loop_documents_get_document_options($menu) {
+function loop_documents_get_document_options(array $menu) {
   $options = array();
 
   $menu_paths = array_map(function ($link) {
@@ -169,7 +170,7 @@ function loop_documents_after_build($form, &$form_state) {
  * @param array $menu
  *   The menu.
  */
-function loop_documents_render_collection_menu($menu) {
+function loop_documents_render_collection_menu(array $menu) {
   $content = '';
   if ($menu) {
     $menu_tree = menu_tree($menu['menu_name']);
@@ -190,7 +191,7 @@ function loop_documents_render_collection_menu($menu) {
  * @param array $form_state
  *   The form state.
  */
-function loop_documents_add_document_callback($form, $form_state) {
+function loop_documents_add_document_callback(array $form, array $form_state) {
   $node = $form['#node'];
   $menu = menu_load(loop_documents_get_menu_name($node));
   $target_node = node_load($form_state['values']['document']);
@@ -238,7 +239,7 @@ function loop_documents_node_update($node) {
  * @param array $node
  *   The document collection node.
  */
-function loop_documents_create_collection_menu($node) {
+function loop_documents_create_collection_menu(array $node) {
   $menu_name = loop_documents_get_menu_name($node);
   $menu = menu_load($menu_name);
   if (!$menu) {
@@ -296,7 +297,7 @@ function loop_documents_preprocess_node(&$variables) {
   // Add template suggestion for view mode.
   $variables['theme_hook_suggestions'][] = 'node__' . $node->type . '__' . $variables['view_mode'];
 
-  if (!in_array($variables['view_mode'], array('full', 'pdf'))) {
+  if (!in_array($variables['view_mode'], array('full', 'pdf', 'print'))) {
     return;
   }
 
@@ -425,7 +426,7 @@ function loop_documents_add_query_to_menu_item(array &$item, array $query) {
  */
 function loop_documents_node_view($node, $view_mode = 'full', $langcode = NULL) {
   if ($node->type == 'loop_documents_collection') {
-    if ($view_mode == 'pdf') {
+    if (in_array($view_mode, ['pdf', 'print'])) {
       $query = drupal_get_query_parameters();
       $menu_name = loop_documents_get_menu_name($node);
       if ($menu_name) {
@@ -446,6 +447,9 @@ function loop_documents_node_view($node, $view_mode = 'full', $langcode = NULL) 
   }
 }
 
+/**
+ * Convert a menu to render array with page content.
+ */
 function loop_documents_menu_to_render_array(array $menu, $view_mode) {
   $content = array();
 
@@ -461,6 +465,9 @@ function loop_documents_menu_to_render_array(array $menu, $view_mode) {
   return $content;
 }
 
+/**
+ * Convert a menu item to a render array for rendering page content.
+ */
 function loop_documents_menu_item_to_render_array(array $item, $view_mode) {
   if (isset($item['#href']) && preg_match('@^node/(?<nid>[0-9]+)$@', $item['#href'], $matches)) {
     $id = $item['#href'];
@@ -489,10 +496,44 @@ function loop_documents_menu_item_to_render_array(array $item, $view_mode) {
   return NULL;
 }
 
-function loop_documents_entity_print_css($entity_type, $entity) {
-  if ($entity_type === 'node' && $entity->type === 'loop_documents_collection') {
-    $path = drupal_get_path('theme', 'loop');
-    entity_print_add_css($path . '/css/styles.css');
-    entity_print_add_css($path . '/css/pdf.css');
+/**
+ * Get options for wkhtmltopdf.
+ */
+function loop_documents_get_wkhtmltopdf_options($replace_tokens = FALSE, $node = NULL) {
+  // https://www.drupal.org/node/390482#drupal7tokenslist
+  $default_options = array(
+    'page-size' => 'A4',
+    'title' => '[node:title] – [current-date:custom:Y-m-d]',
+    'margin-top' => 20,
+    'margin-right' => 20,
+    'margin-bottom' => 30,
+    'margin-left' => 20,
+    'footer-spacing' => 10,
+    'footer-left' => '[site:name] – [node:title]',
+    'footer-right' => '[page]',
+  );
+
+  $options = $default_options;
+  $pairs = explode(PHP_EOL, variable_get('loop_documents_wkhtmltopdf_options', ''));
+  foreach ($pairs as $pair) {
+    $pair = trim(preg_replace('/#.*/', '', trim($pair)));
+    if (preg_match('/^(?<name>[^#:]+)\s*:\s*(?<value>.+)/', $pair, $matches)) {
+      $options[$matches['name']] = $matches['value'];
+    }
   }
+
+  if ($replace_tokens) {
+    $options = array_map(function (&$value) use ($node) {
+      global $user;
+
+      $data = array(
+        'user' => $user,
+        'node' => $node,
+      );
+
+      return token_replace($value, $data, array('sanitize' => FALSE));
+    }, $options);
+  }
+
+  return $options;
 }

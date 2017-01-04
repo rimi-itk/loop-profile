@@ -13,7 +13,10 @@
         if (!empty($loop_documents_menu)) {
           if (isset($loop_documents_menu['#root'])) {
             $root = $loop_documents_menu['#root'];
-            echo '<div class="loop-documents--collection-print">', l(t('Print PDF'), 'entityprint/node/' . $root->nid), '</div>';
+
+            echo '<div class="loop-documents--collection-print">';
+            echo l('Print PDF', 'entityprint/node/' . $root->nid);
+            echo '</div>';
 
             echo '<h2>', l($root->title, 'node/' . $root->nid), '</h2>';
           }

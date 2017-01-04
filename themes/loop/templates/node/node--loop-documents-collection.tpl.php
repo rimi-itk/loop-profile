@@ -11,7 +11,9 @@
       <div class="loop-documents--collection-navigation guide--nav-wrapper">
         <?php
         if (isset($loop_documents_menu)) {
-          echo '<div class="loop-documents--collection-print">', l(t('Print PDF'), 'entityprint/node/' . $node->nid), '</div>';
+          echo '<div class="loop-documents--collection-print">';
+          echo l('Print PDF', 'entityprint/node/' . $node->nid);
+          echo '</div>';
 
           echo '<h2>', $node->title, '</h2>';
 
