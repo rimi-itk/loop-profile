@@ -167,10 +167,10 @@ function loop_documents_after_build($form, &$form_state) {
 /**
  * Render a collection menu.
  *
- * @param array $menu
+ * @param array|null $menu
  *   The menu.
  */
-function loop_documents_render_collection_menu(array $menu) {
+function loop_documents_render_collection_menu($menu) {
   $content = '';
   if ($menu) {
     $menu_tree = menu_tree($menu['menu_name']);
@@ -236,10 +236,10 @@ function loop_documents_node_update($node) {
 /**
  * Create a collection menu if it does not exist.
  *
- * @param array $node
+ * @param object $node
  *   The document collection node.
  */
-function loop_documents_create_collection_menu(array $node) {
+function loop_documents_create_collection_menu($node) {
   $menu_name = loop_documents_get_menu_name($node);
   $menu = menu_load($menu_name);
   if (!$menu) {
