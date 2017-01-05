@@ -26,6 +26,7 @@ function loop_documents_secure_permissions($role) {
     ),
     'document author' => array(
       'access media browser',
+      'access ckeditor link',
       'create files',
       'create loop_documents_document content',
       'edit own loop_documents_document content',
