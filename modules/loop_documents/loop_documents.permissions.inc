@@ -25,6 +25,10 @@ function loop_documents_secure_permissions($role) {
       'view files',
     ),
     'document author' => array(
+      'access toolbar',
+      'access content overview',
+      'view the administration theme',
+
       'access media browser',
       'access ckeditor link',
       'create files',
