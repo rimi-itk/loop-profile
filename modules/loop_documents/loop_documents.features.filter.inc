@@ -18,6 +18,11 @@ function loop_documents_filter_default_formats() {
     'status' => 1,
     'weight' => 0,
     'filters' => array(
+      'ckeditor_link_filter' => array(
+        'weight' => 0,
+        'status' => 1,
+        'settings' => array(),
+      ),
       'media_filter' => array(
         'weight' => 2,
         'status' => 1,

@@ -26,6 +26,9 @@ projects[comment_counter][version] = "1.0-alpha1"
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.9"
 
+projects[ckeditor_link][subdir] = "contrib"
+projects[ckeditor_link][version] = "2.4"
+
 projects[date][subdir] = "contrib"
 projects[date][version] = "2.9"
 

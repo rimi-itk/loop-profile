@@ -38,6 +38,9 @@ function loop_documents_wysiwyg_default_profiles() {
         'mediaBrowser' => array(
           'mediaBrowser' => 1,
         ),
+        'drupal_path' => array(
+          'Link' => 1,
+        ),
         'drupal' => array(
           'media' => 1,
         ),

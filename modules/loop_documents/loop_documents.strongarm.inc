@@ -13,6 +13,42 @@ function loop_documents_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ckeditor_link_autocomplete_node_types';
+  $strongarm->value = array(
+    'loop_documents_document' => 'loop_documents_document',
+    'loop_documents_collection' => 'loop_documents_collection',
+    '- any -' => 0,
+    'external_sources' => 0,
+    'instruction' => 0,
+    'post' => 0,
+    'page' => 0,
+  );
+  $export['ckeditor_link_autocomplete_node_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ckeditor_link_limit';
+  $strongarm->value = '10';
+  $export['ckeditor_link_limit'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ckeditor_link_type_name';
+  $strongarm->value = 'Internal path';
+  $export['ckeditor_link_type_name'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ckeditor_link_type_selected';
+  $strongarm->value = 1;
+  $export['ckeditor_link_type_selected'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'comment_anonymous_loop_documents_collection';
   $strongarm->value = 0;
   $export['comment_anonymous_loop_documents_collection'] = $strongarm;
