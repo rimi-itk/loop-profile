@@ -6,26 +6,33 @@
  */
 ?>
 <div class="loop-documents loop-documents--collection">
-  <div class="loop-documents--navigation">
-    <?php if (!empty($loop_documents_menu)): ?>
-      <div class="loop-documents--collection-navigation guide--nav-wrapper">
-        <?php
-        if (isset($loop_documents_menu)) {
-          echo '<div class="loop-documents--collection-print">';
-          echo l('Print PDF', 'entityprint/node/' . $node->nid);
-          echo '</div>';
+	<div class="loop-documents--sidebar">
+		<div class="loop-documents--navigation">
+			<?php if (!empty($loop_documents_menu)): ?>
+				<div class="loop-documents--collection-navigation">
+					<h1 class="loop-documents--collection-title">
+						<?php echo $node->title; ?>
+					</h1>
 
-          echo '<h2>', $node->title, '</h2>';
+					<?php echo render($loop_documents_menu); ?>
 
-          echo render($loop_documents_menu);
-        }
-        ?>
-      </div>
-    <?php endif ?>
-  </div>
+					<?php
+					$metadata_view = node_view($loop_documents_collection, 'metadata');
+					echo render($metadata_view);
+					?>
 
-  <div class="loop-documents--content">
-    <div class="loop-documents--collection-content">
+					<?php if (!empty($loop_documents_collection_print_url)): ?>
+						<div class="loop-documents--collection-print">
+							<?php echo l(t('Print collection'), $loop_documents_collection_print_url); ?>
+						</div>
+					<?php endif ?>
+				</div>
+			<?php endif ?>
+		</div>
+	</div>
+
+	<div class="loop-documents--main">
+		<div class="loop-documents--content loop-documents--collection-content">
       <h1 class="page-title">
         <?php print $title; ?>
         <?php
@@ -43,23 +50,6 @@
       hide($content['links']);
       print render($content);
       ?>
-    </div>
-
-    <div class="loop-documents--metadata">
-      <fieldset>
-        <legend><?php echo t('Metadata'); ?></legend>
-        <?php foreach (array(
-          'field_loop_documents_owner',
-          'field_loop_documents_version',
-          'field_loop_documents_approver',
-          'field_loop_documents_approv_date',
-          'field_loop_documents_review_date',
-        ) as $field_name) {
-          $field = field_view_field('node', $node, $field_name);
-          echo render($field);
-        }
-        ?>
-      </fieldset>
     </div>
   </div>
 </div>

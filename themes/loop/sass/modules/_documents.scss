@@ -1,0 +1,31 @@
+/**
+ * Documents module
+ */
+
+.loop-documents {
+	&--sidebar {
+		@include zen-grid-item(3.5, 1, right);
+	}
+
+	&--main {
+		@include zen-grid-item(8.5, 1);
+	}
+
+	&--navigation {
+		@include border-radius(0.4em);
+		margin-bottom: 1.5em;
+		padding: 1.25em;
+		background-color: $gray-background;
+
+		a {
+			text-decoration: none;
+
+			&.active {
+				font-weight: bold;
+			}
+		}
+	}
+
+	&--metadata {
+	}
+}

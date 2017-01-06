@@ -346,19 +346,20 @@ function loop_documents_preprocess_node(&$variables) {
           'collection' => $collection_id,
         );
         loop_documents_add_query_to_menu($menu, $query);
-        $root = node_load($collection_id);
-        if ($root) {
-          $menu['#root'] = $root;
-          if (node_access('update', $root, $user) === TRUE) {
-            $menu['#root_edit_link'] = l(t('Edit document collection'), 'node/' . $root->nid . '/edit');
-          }
-        }
         $variables['loop_documents_menu'] = $menu;
+        $collection = node_load($collection_id);
+        if ($collection) {
+          $variables['loop_documents_collection'] = $collection;
+          if (node_access('update', $collection, $user) === TRUE) {
+            $menu['loop_documents_collection_edit_url'] = 'node/' . $collection->nid . '/edit';
+          }
+          $variables['loop_documents_collection_print_url'] = 'entityprint/node/' . $collection->nid;
+        }
       }
     }
   }
   else {
-    $variables['loop_documents_roots'] = $menus;
+    $variables['loop_documents_collections'] = $menus;
   }
 }
 
@@ -526,7 +527,7 @@ function loop_documents_get_wkhtmltopdf_options($replace_tokens = FALSE, $node =
     'margin-bottom' => 30,
     'margin-left' => 20,
     'footer-spacing' => 10,
-    'footer-left' => '[site:name] – [node:title]',
+    'footer-left' => '[node:title]',
     'footer-right' => '[page]',
   );
 

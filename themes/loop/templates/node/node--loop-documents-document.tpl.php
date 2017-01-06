@@ -6,54 +6,37 @@
  */
 ?>
 <div class="loop-documents loop-documents--document">
-  <div class="loop-documents--navigation">
-    <?php if (!empty($loop_documents_menu) || !empty($loop_documents_roots)): ?>
-      <div class="loop-documents--document-navigation guide--nav-wrapper">
-        <?php
-        if (!empty($loop_documents_menu)) {
-          if (isset($loop_documents_menu['#root'])) {
-            $root = $loop_documents_menu['#root'];
+	<div class="loop-documents--sidebar">
+		<div class="loop-documents--navigation">
+			<?php if (!empty($loop_documents_collection)): ?>
+				<div class="loop-documents--collection-print">
+					<h1 class="loop-documents--collection-title">
+						<?php echo l($loop_documents_collection->title, 'node/' . $loop_documents_collection->nid); ?>
+					</h1>
+				</div>
 
-            echo '<div class="loop-documents--collection-print">';
-            echo l('Print PDF', 'entityprint/node/' . $root->nid);
-            echo '</div>';
+				<?php if (!empty($loop_documents_menu)) { echo render($loop_documents_menu); } ?>
 
-            echo '<h2>', l($root->title, 'node/' . $root->nid), '</h2>';
-          }
+				<?php
+				$metadata_view = node_view($loop_documents_collection, 'metadata');
+				echo render($metadata_view);
+				?>
 
-          echo render($loop_documents_menu);
+				<?php if (!empty($loop_documents_collection_print_url)): ?>
+					<div class="loop-documents--collection-print">
+						<?php echo l(t('Print collection'), $loop_documents_collection_print_url); ?>
+					</div>
+				<?php endif ?>
 
-          if (isset($loop_documents_menu['#root'])) {
-            $root = $loop_documents_menu['#root'];
+			<?php elseif (!empty($loop_documents_collections)): ?>
+				<h1><?php echo t('Document collections'); ?></h1>
+				<?php echo render($loop_documents_roots); ?>
+			<?php endif ?>
+		</div>
+	</div>
 
-            echo '<fieldset><legend>' . t('Metadata') . '</legend>';
-            foreach (array(
-              'field_loop_documents_owner',
-              'field_loop_documents_version',
-              'field_loop_documents_approver',
-              'field_loop_documents_approv_date',
-              'field_loop_documents_review_date',
-            ) as $field_name) {
-              $field = field_view_field('node', $root, $field_name);
-              echo render($field);
-            }
-            echo '</fieldset>';
-          }
-        }
-        ?>
-
-        <?php
-        if (!empty($loop_documents_roots)) {
-          echo '<h2>' . t('Document collections') . '</h2>';
-          echo render($loop_documents_roots);
-        }
-        ?>
-      </div>
-    <?php endif ?>
-  </div>
-
-  <div class="loop-documents--content">
-    <div class="loop-documents--document-content">
+	<div class="loop-documents--main">
+		<div class="loop-documents--content loop-documents--document-content">
       <h1 class="page-title">
         <?php print $title; ?>
         <?php
@@ -73,11 +56,9 @@
       ?>
     </div>
 
-    <div class="loop-documents--metadata">
-      <?php
-      $field = field_view_field('node', $node, 'field_loop_documents_author', array('_label' => 'hidden'));
-      echo render($field);
-      ?>
-    </div>
+		<?php
+		$metadata_view = node_view($node, 'metadata');
+		echo render($metadata_view);
+		?>
   </div>
 </div>

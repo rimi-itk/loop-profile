@@ -15,9 +15,9 @@ function loop_documents_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'ckeditor_link_autocomplete_node_types';
   $strongarm->value = array(
-    'loop_documents_document' => 'loop_documents_document',
-    'loop_documents_collection' => 'loop_documents_collection',
-    '- any -' => 0,
+    '- any -' => '- any -',
+    'loop_documents_document' => 0,
+    'loop_documents_collection' => 0,
     'external_sources' => 0,
     'instruction' => 0,
     'post' => 0,

@@ -4155,6 +4155,57 @@ a.question--term.taxonomy-keyword {
   color: #ff6138; }
 
 /**
+ * Documents module
+ */
+.loop-documents--sidebar {
+  float: right;
+  width: 29.16667%;
+  margin-right: 0%;
+  margin-left: -29.16667%;
+  padding-left: 15px;
+  padding-right: 15px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  *behavior: url(url("../lib/boxsizing.htc"));
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible; }
+
+.loop-documents--main {
+  float: left;
+  width: 70.83333%;
+  margin-left: 0%;
+  margin-right: -70.83333%;
+  padding-left: 15px;
+  padding-right: 15px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  *behavior: url(url("../lib/boxsizing.htc"));
+  _display: inline;
+  _overflow: hidden;
+  _overflow-y: visible; }
+
+.loop-documents--navigation {
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em;
+  margin-bottom: 1.5em;
+  padding: 1.25em;
+  background-color: #f2f2f2; }
+  .loop-documents--navigation a {
+    text-decoration: none; }
+    .loop-documents--navigation a.active {
+      font-weight: bold; }
+
+/**
  * Active Tags module
  *
  * https://drupal.org/project/active_tags
