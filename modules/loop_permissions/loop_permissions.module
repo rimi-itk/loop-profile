@@ -294,6 +294,9 @@ function loop_permissions_secure_permissions($role) {
       'view the administration theme',
     ),
     'external sources editor' => array(
+      'access toolbar',
+      'access content overview',
+      'view the administration theme',
       'create external_sources content',
       'delete any external_sources content',
       'delete own external_sources content',
