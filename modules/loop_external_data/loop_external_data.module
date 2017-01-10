@@ -48,6 +48,9 @@ function loop_external_data_menu() {
 function loop_external_data_init() {
   // Check if it's a registered user.
   if (user_is_logged_in() && module_exists('loop_search')) {
+    if (function_exists('loopdk_load_handlebars')) {
+      loopdk_load_handlebars();
+    }
     drupal_add_js(drupal_get_path('module', 'loop_external_data') . '/js/search.js', array('weight' => 2));
   }
 }

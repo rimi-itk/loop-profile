@@ -297,3 +297,7 @@ libraries[zen-grids][download][type] = "git"
 libraries[zen-grids][download][url] = "https://github.com/JohnAlbin/zen-grids.git"
 libraries[zen-grids][download][tag] = "1.4"
 libraries[zen-grids][destination] = "libraries"
+
+libraries[handlebars][download][type] = "get"
+libraries[handlebars][download][url] = "http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v1.2.1.js"
+libraries[handlebars][destination] = "libraries"

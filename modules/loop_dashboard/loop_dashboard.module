@@ -67,6 +67,17 @@ function loop_dashboard_menu() {
 }
 
 /**
+ * Implements hook_init().
+ */
+function loop_dashboard_init() {
+  if (strpos(current_path(), 'editor/dashboard') === 0) {
+    if (function_exists('loopdk_load_handlebars')) {
+      loopdk_load_handlebars();
+    }
+  }
+}
+
+/**
  * Returns the "all questions" page.
  */
 function loop_dashboard_all_questions() {
