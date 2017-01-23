@@ -5,8 +5,10 @@
  * Document (collection) navigation template.
  */
 ?>
+
 <?php if (!empty($loop_documents_menu)): ?>
-	<div class="guide--nav-wrapper loop-documents--navigation">
+
+  <div class="guide--nav-wrapper loop-documents--navigation">
     <div class="loop-documents--collection-navigation">
       <h1 class="loop-documents--collection-title">
         <?php if ($node->type === 'loop_documents_collection'): ?>
@@ -27,4 +29,17 @@
       <?php endif ?>
     </div>
   </div>
+
+<?php elseif (!empty($loop_documents_collections)): ?>
+
+  <div class="guide--nav-wrapper loop-documents--collections">
+    <div class="loop-documents--collections">
+      <h1 class="loop-documents--collections-title">
+        <?php echo t('Document collections'); ?>
+      </h1>
+
+      <?php echo render($loop_documents_collections); ?>
+    </div>
+  </div>
+
 <?php endif ?>

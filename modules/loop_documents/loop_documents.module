@@ -641,6 +641,7 @@ function loop_documents_theme($existing, $type, $theme, $path) {
         'loop_documents_collection' => NULL,
         'loop_documents_collection_edit_url' => NULL,
         'loop_documents_collection_print_url' => NULL,
+        'loop_documents_collections' => NULL,
       ),
       'template' => 'templates/loop-documents-navigation',
     ),
