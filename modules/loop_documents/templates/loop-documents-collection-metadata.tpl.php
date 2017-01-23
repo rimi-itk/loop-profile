@@ -15,6 +15,8 @@ $metadata_values = array_map(function ($field_name) use ($collection) {
   'approver' => 'field_loop_documents_approver',
   'approval_date' => 'field_loop_documents_approv_date',
   'review_date' => 'field_loop_documents_review_date',
+  'keyword' => 'field_keyword',
+  'subject' => 'field_subject',
 ));
 ?>
 
@@ -36,5 +38,11 @@ $metadata_values = array_map(function ($field_name) use ($collection) {
 
     <dt><?php echo t('Review date') ?></dt>
     <dd><?php echo $metadata_values['review_date']; ?></dd>
-  </dl>
+
+    <dt><?php echo t('Tags') ?></dt>
+    <dd><?php echo $metadata_values['keyword']; ?></dd>
+
+    <dt><?php echo t('Subject') ?></dt>
+    <dd><?php echo $metadata_values['subject']; ?></dd>
+</dl>
 </fieldset>
