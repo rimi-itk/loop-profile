@@ -89,6 +89,50 @@ function loop_documents_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-loop_documents_collection-field_keyword'.
+  $field_instances['node-loop_documents_collection-field_keyword'] = array(
+    'bundle' => 'loop_documents_collection',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_keyword',
+    'label' => 'Keyword',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'autocomplete_deluxe',
+      'settings' => array(
+        'autocomplete_deluxe_path' => 'autocomplete_deluxe/taxonomy',
+        'delimiter' => '',
+        'limit' => 10,
+        'min_length' => 0,
+        'not_found_message' => 'The term \'@term\' will be added.',
+        'size' => 60,
+      ),
+      'type' => 'autocomplete_deluxe_taxonomy',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance:
   // 'node-loop_documents_collection-field_loop_documents_approv_date'.
   $field_instances['node-loop_documents_collection-field_loop_documents_approv_date'] = array(
@@ -469,6 +513,43 @@ function loop_documents_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-loop_documents_collection-field_subject'.
+  $field_instances['node-loop_documents_collection-field_subject'] = array(
+    'bundle' => 'loop_documents_collection',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_subject',
+    'label' => 'Subject',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 6,
+    ),
+  );
+
   // Exported field_instance: 'node-loop_documents_document-body'.
   $field_instances['node-loop_documents_document-body'] = array(
     'bundle' => 'loop_documents_document',
@@ -625,8 +706,10 @@ function loop_documents_field_default_field_instances() {
   t('Author');
   t('Body');
   t('Contents');
+  t('Keyword');
   t('Owner');
   t('Review date');
+  t('Subject');
   t('Version');
 
   return $field_instances;
