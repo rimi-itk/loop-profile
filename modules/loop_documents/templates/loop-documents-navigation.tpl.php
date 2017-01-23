@@ -6,7 +6,7 @@
  */
 ?>
 
-<?php if (!empty($loop_documents_menu)): ?>
+<?php if (!empty($loop_documents_menu) || !empty($loop_documents_collection)): ?>
 
   <div class="guide--nav-wrapper loop-documents--navigation">
     <div class="loop-documents--collection-navigation">
@@ -18,9 +18,13 @@
         <?php endif ?>
       </h1>
 
-      <?php echo render($loop_documents_menu); ?>
+      <?php if (!empty($loop_documents_menu)): ?>
+        <?php echo render($loop_documents_menu); ?>
+      <?php endif ?>
 
-      <?php echo theme('loop_documents_collection_metadata', array('collection' => $loop_documents_collection)); ?>
+      <?php if (!empty($loop_documents_collection)): ?>
+        <?php echo theme('loop_documents_collection_metadata', array('collection' => $loop_documents_collection)); ?>
+      <?php endif ?>
 
       <?php if (!empty($loop_documents_collection_print_url)): ?>
         <div class="loop-documents--collection-print">
