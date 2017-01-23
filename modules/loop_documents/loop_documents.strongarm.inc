@@ -147,6 +147,34 @@ function loop_documents_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_loop_documents_collection';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_loop_documents_collection'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_show_preview_changes_node_loop_documents_document';
+  $strongarm->value = 1;
+  $export['diff_show_preview_changes_node_loop_documents_document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_loop_documents_collection';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_loop_documents_collection'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'diff_view_mode_preview_node_loop_documents_document';
+  $strongarm->value = 'full';
+  $export['diff_view_mode_preview_node_loop_documents_document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__loop_documents_collection';
   $strongarm->value = array(
     'view_modes' => array(
@@ -290,14 +318,14 @@ function loop_documents_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_loop_documents_collection';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_loop_documents_collection'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_loop_documents_document';
-  $strongarm->value = '1';
+  $strongarm->value = '0';
   $export['node_preview_loop_documents_document'] = $strongarm;
 
   $strongarm = new stdClass();
