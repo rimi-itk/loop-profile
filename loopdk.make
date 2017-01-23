@@ -128,6 +128,9 @@ projects[menu_token][version] = "1.0-beta5"
 projects[menu_position][subdir] = "contrib"
 projects[menu_position][version] = "1.2"
 
+projects[view_unpublished][subdir] = "contrib"
+projects[view_unpublished][version] = "7.x-1.2"
+
 projects[menu_view_unpublished][subdir] = "contrib"
 projects[menu_view_unpublished][version] = "1.0-beta3"
 

@@ -47,6 +47,8 @@ function loop_documents_secure_permissions($role) {
       'create loop_documents_collection content',
       'edit any loop_documents_collection content',
       'edit any loop_documents_document content',
+      'view any unpublished loop_documents_collection content',
+      'view any unpublished loop_documents_document content',
       'delete any image files',
       'delete any loop_documents_collection content',
       'delete any loop_documents_document content',
