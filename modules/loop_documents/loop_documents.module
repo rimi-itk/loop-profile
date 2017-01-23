@@ -25,6 +25,14 @@ function loop_documents_menu() {
     'type' => MENU_NORMAL_ITEM,
   );
 
+  $items['loop_documents/autocomplete/loop_documents_collection/%'] = array(
+    'title' => 'Autocomplete for getting documents to add to a collection',
+    'page callback' => '_loop_documents_autocomplete_documents',
+    'page arguments' => array(3),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
   return $items;
 }
 
@@ -60,32 +68,22 @@ function loop_documents_form_node_form_alter(&$form, &$form_state, $form_id) {
           '#suffix' => '</div>',
         );
 
-        $document_options = loop_documents_get_document_options($menu);
+        $form['field_loop_documents_menu_display']['add_document']['document'] = array(
+          '#type' => 'textfield',
+          '#autocomplete_path' => 'loop_documents/autocomplete/loop_documents_collection/' . $node->nid,
+          '#prefix' => '<div id="loop-documents-menu-document-options">',
+          '#suffix' => '</div>',
+        );
 
-        $form['field_loop_documents_menu_display']['add_document']['document'] = array();
-        if ($document_options) {
-          $form['field_loop_documents_menu_display']['add_document']['document'] = array(
-            '#type' => 'select',
-            '#title' => t('Document'),
-            '#options' => $document_options,
-            '#prefix' => '<div id="loop-documents-menu-document-options">',
-            '#suffix' => '</div>',
-          );
-
-          $form['field_loop_documents_menu_display']['add_document']['actions'] = array(
-            '#type' => 'submit',
-            '#value' => t('Add document'),
-            '#ajax' => array(
-              'callback' => 'loop_documents_add_document_callback',
-            ),
-            '#weight' => 2,
-          );
-        }
-        else {
-          $form['field_loop_documents_menu_display']['add_document']['document'] = array(
-            '#markup' => t('No more documents to add'),
-          );
-        }
+        $form['field_loop_documents_menu_display']['add_document']['actions'] = array(
+          '#type' => 'submit',
+          '#value' => t('Add document'),
+          '#ajax' => array(
+            'callback' => 'loop_documents_add_document_callback',
+            'event' => 'click',
+          ),
+          '#weight' => 2,
+        );
 
         $form['field_loop_documents_menu_display']['edit_menu'] = array(
           '#markup' => l(t('Edit menu'), 'admin/structure/menu/manage/' . $menu['menu_name'], array('attributes' => array('target' => 'loop_documents_menu'))),
@@ -102,10 +100,59 @@ function loop_documents_form_node_form_alter(&$form, &$form_state, $form_id) {
         $language = $form['body']['#language'];
         $form['body'][$language]['0']['#format'] = 'loop_documents';
       }
+      $form['#attached']['css'][] = drupal_get_path('module', 'loop_documents') . '/css/loop_documents.admin.css';
       $form['#attached']['js'][] = drupal_get_path('module', 'loop_documents') . '/js/loop_documents.admin.js';
       $form['#after_build'][] = 'loop_documents_after_build';
     }
   }
+}
+
+/**
+ * Autocomplete callback.
+ */
+function _loop_documents_autocomplete_documents($collection_id, $query) {
+  $options = array();
+
+  $collection = node_load($collection_id);
+  if ($collection) {
+    $menu = menu_load(loop_documents_get_menu_name($collection));
+    if ($menu) {
+      $menu_paths = array_map(function ($link) {
+        return $link['link_path'];
+      }, menu_load_links($menu));
+
+      $document_ids = array();
+      $condition = db_or();
+      $condition->condition('title', '%' . $query . '%', 'LIKE');
+      $result = db_select('node', 'n')
+        ->fields('n', array('nid'))
+        ->condition('type', 'loop_documents_document')
+        ->condition($condition)
+        ->orderBy('title')
+        ->execute();
+      foreach ($result as $row) {
+        $document_ids[] = $row->nid;
+      }
+
+      $documents = node_load_multiple($document_ids);
+
+      // Filter out documents already in the menu.
+      $documents = array_filter($documents, function ($document) use ($menu_paths) {
+        return !in_array('node/' . $document->nid, $menu_paths);
+      });
+
+      if (empty($documents)) {
+        $options[''] = t('No documents found');
+      }
+      else {
+        foreach ($documents as $document) {
+          $options[$document->title . ' (node/' . $document->nid . ')'] = $document->title . ' (node/' . $document->nid . ')';
+        }
+      }
+    }
+  }
+
+  drupal_json_output($options);
 }
 
 /**
@@ -130,9 +177,9 @@ function loop_documents_get_document_options(array $menu) {
   });
 
   if (!empty($documents)) {
-    $options[0] = '';
+    $options[''] = '';
     foreach ($documents as $document) {
-      $options[$document->nid] = $document->title;
+      $options['node/' . $document->nid] = $document->title;
     }
   }
 
@@ -180,12 +227,17 @@ function loop_documents_add_document_callback(array $form, array $form_state) {
 
   $node = $form['#node'];
   $menu = menu_load(loop_documents_get_menu_name($node));
-  $target_node = node_load($form_state['values']['document']);
+  $target_node = NULL;
+
+  if (!empty($form_state['values']['document']) && preg_match('@node/(?<nid>[0-9]+)@', $form_state['values']['document'], $matches)) {
+    $target_node = node_load($matches['nid']);
+  }
+
   if ($node && $menu && $target_node) {
     // Get current highest weight at first level in menu.
     $menu_links = menu_load_links($menu['menu_name']);
     $weight = max(array_map(function ($link) {
-      return $link['depth'] == 0 ? $link['weight'] : 0;
+      return $link['depth'] == 1 ? $link['weight'] : 0;
     }, $menu_links));
 
     $menu_link = array(
@@ -199,31 +251,17 @@ function loop_documents_add_document_callback(array $form, array $form_state) {
 
     // Reload menu.
     $menu = menu_load(loop_documents_get_menu_name($node));
-    $document_options = loop_documents_get_document_options($menu);
-
-    if ($document_options) {
-      $commands = array(
-        ajax_command_html("#loop-documents-menu-display", loop_documents_render_collection_menu($menu)),
-        array(
-          'command' => 'loop_documents_setDocumentOptions',
-          'arguments' => array(
-            'selector' => '#loop-documents-menu-document-options select',
-            'options' => $document_options,
-          ),
-        ),
-      );
-    }
-    else {
-      $commands = array(
-        ajax_command_replace("#loop-documents-menu-display", loop_documents_render_collection_menu($menu)),
-        ajax_command_replace("#loop-documents-add-document", t('No more documents to add')),
-      );
-    }
+    $commands[] = ajax_command_html("#loop-documents-menu-display", loop_documents_render_collection_menu($menu));
+    $commands[] = array(
+      'command' => 'loop_documents_setValue',
+      'arguments' => array(
+        'selector' => '#loop-documents-menu-document-options input[type="text"]',
+        'value' => '',
+      ),
+    );
   }
   else {
-    $commands = array(
-      ajax_command_alert(t('Error adding document to collection')),
-    );
+    $commands[] = ajax_command_alert(t('Error adding document to collection'));
   }
 
   return array(

@@ -1,0 +1,8 @@
+.loop-documents-collection-content .loop-documents-edit-menu {
+	float: right;
+}
+
+.loop-documents-collection-content .form-item-document input[type=text] {
+	display: inline-block;
+	width: auto;
+}
