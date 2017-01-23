@@ -193,20 +193,23 @@ function loop_documents_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'pdf' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '5',
+          'weight' => '8',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '1',
+          'weight' => '6',
         ),
         'redirect' => array(
-          'weight' => '2',
+          'weight' => '7',
         ),
       ),
       'display' => array(),
@@ -233,6 +236,9 @@ function loop_documents_strongarm() {
         'custom_settings' => FALSE,
       ),
       'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'pdf' => array(
         'custom_settings' => FALSE,
       ),
     ),

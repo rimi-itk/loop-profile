@@ -21,7 +21,7 @@ function loop_documents_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '8',
+    'weight' => '5',
     'children' => array(
       0 => 'field_loop_documents_owner',
       1 => 'field_loop_documents_version',
@@ -53,7 +53,7 @@ function loop_documents_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '7',
+    'weight' => '6',
     'children' => array(
       0 => 'field_loop_documents_author',
     ),
