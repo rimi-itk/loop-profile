@@ -6,6 +6,20 @@
  */
 
 /**
+ * Implements hook_enable().
+ */
+function loop_documents_enable() {
+  secure_permissions_rebuild();
+}
+
+/**
+ * Implements hook_disable().
+ */
+function loop_documents_disable() {
+  secure_permissions_rebuild();
+}
+
+/**
  * Import Danish translations.
  */
 function loop_documents_update_7001() {
