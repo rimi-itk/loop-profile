@@ -12,16 +12,18 @@
     <meta charset="utf-8"/>
     <title>print – header – <?php echo $collection->title; ?></title>
     <style>
-     .metadata {
-       display: flex;
-       flex-flow: row wrap;
+     html, body {
+       margin: 0;
+       padding: 0;
+     }
 
-       align-items: center;
-       justify-content: space-between;
+     .metadata {
+       height: 25mm;
      }
 
      .metadata .item {
-       width: 50%;
+       display: inline-block;
+       width: 45%;
      }
 
      .metadata .label, .metadata .value {
@@ -31,7 +33,6 @@
      .metadata .label::after {
        content: ':';
      }
-
     </style>
   </head>
   <body>

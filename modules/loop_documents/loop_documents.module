@@ -647,10 +647,12 @@ function loop_documents_get_wkhtmltopdf_options($replace_tokens = FALSE, $node =
   $default_options = array(
     'page-size' => 'A4',
     'title' => '[node:title] – [current-date:custom:Y-m-d]',
-    'margin-top' => 20,
+    'margin-top' => 30,
     'margin-right' => 20,
     'margin-bottom' => 30,
     'margin-left' => 20,
+    'header-html' => '[site:url]/loop_documents/print/node/[node:nid]/header',
+    'footer-html' => '[site:url]/loop_documents/print/node/[node:nid]/footer',
   );
 
   $options = $default_options;

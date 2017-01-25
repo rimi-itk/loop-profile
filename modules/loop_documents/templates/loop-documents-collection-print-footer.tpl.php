@@ -12,10 +12,23 @@
     <meta charset="utf-8"/>
     <title>print – footer – <?php echo $collection->title; ?></title>
     <style>
+     html, body {
+       margin: 0;
+       padding: 0;
+     }
+
      .container {
-       display: flex;
-       align-items: center;
-       justify-content: space-between;
+       display: table;
+       width: 100%;
+     }
+
+     .container > div {
+       display: table-cell;
+       vertical-align: middle;
+     }
+
+     .container > div + div {
+       text-align: right;
      }
     </style>
     <script>
