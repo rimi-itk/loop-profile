@@ -47,6 +47,11 @@ function loop_documents_secure_permissions($role) {
   $permissions['document collection editor'] = array_merge(
     $permissions['document author'],
     array(
+      'publish any loop_documents_collection content',
+      'unpublish any loop_documents_collection content',
+      'publish any loop_documents_document content',
+      'unpublish any loop_documents_document content',
+
       'administer menu',
       'create loop_documents_collection content',
       'edit any loop_documents_collection content',

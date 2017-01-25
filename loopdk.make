@@ -128,9 +128,6 @@ projects[menu_token][version] = "1.0-beta5"
 projects[menu_position][subdir] = "contrib"
 projects[menu_position][version] = "1.2"
 
-projects[view_unpublished][subdir] = "contrib"
-projects[view_unpublished][version] = "7.x-1.2"
-
 projects[menu_view_unpublished][subdir] = "contrib"
 projects[menu_view_unpublished][version] = "1.0-beta3"
 
@@ -178,6 +175,9 @@ projects[pcp][version] = "1.7"
 
 projects[phpwkhtmltopdf][subdir] = "contrib"
 projects[phpwkhtmltopdf][version] = "2.1"
+
+projects[publishcontent][subdir] = "contrib"
+projects[publishcontent][version] = "1.4"
 
 projects[redirect][subdir] = "contrib"
 projects[redirect][version] = "1.0-rc3"
@@ -269,6 +269,9 @@ projects[uuid_features][version] = "1.0-alpha4"
 
 projects[variable][subdir] = "contrib"
 projects[variable][version] = "2.5"
+
+projects[view_unpublished][subdir] = "contrib"
+projects[view_unpublished][version] = "7.x-1.2"
 
 projects[views][subdir] = "contrib"
 projects[views][version] = "3.13"

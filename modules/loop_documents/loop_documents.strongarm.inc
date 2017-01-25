@@ -346,5 +346,26 @@ function loop_documents_strongarm() {
   $strongarm->value = 1;
   $export['node_submitted_loop_documents_document'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'publishcontent_loop_documents_collection';
+  $strongarm->value = 1;
+  $export['publishcontent_loop_documents_collection'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'publishcontent_loop_documents_document';
+  $strongarm->value = 1;
+  $export['publishcontent_loop_documents_document'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'publishcontent_method';
+  $strongarm->value = '0';
+  $export['publishcontent_method'] = $strongarm;
+
   return $export;
 }
