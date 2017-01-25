@@ -73,11 +73,6 @@
       </div>
 
       <div class="item">
-        <div class="label"><?php echo t('Author') ?></div>
-        <div class="value"><div id="document-author"></div></div>
-      </div>
-
-      <div class="item">
         <div class="label"><?php echo t('Review date') ?></div>
         <div class="value"><?php echo $metadata_values['review_date']; ?></div>
       </div>
