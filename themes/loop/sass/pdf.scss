@@ -1,16 +1,15 @@
 .loop-documents--collection {
-	.loop-documents--document {
-	}
+  .loop-documents--document-title {
+    page-break-before: always;
+  }
 
-	.loop-documents--documents {
-		margin-top: 2em;
-
-		.loop-documents--document {
-			margin-top: 1em;
-		}
-	}
-}
-
-.page-title--edit-link {
-	display: none;
+  // line-height stuff from styles.css mangles page breaks …
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: normal;
+  }
 }
