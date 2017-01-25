@@ -145,7 +145,6 @@ CKEDITOR.editorConfig = function (config) {
         [ 'Link', 'Unlink' ],
         [ 'media', 'mediaBrowser', 'drupal_path' ],
         [ 'Templates' ],
-        [ 'RemoveFormat' ],
         [ 'Source' ]
     ];
 
