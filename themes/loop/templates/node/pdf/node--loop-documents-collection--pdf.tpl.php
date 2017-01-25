@@ -32,7 +32,5 @@
     <div class="loop-documents--collection-documents">
       <?php print render($content['documents']); ?>
     </div>
-
-    <?php echo theme('loop_documents_collection_metadata', array('collection' => $node)); ?>
   </div>
 </div>

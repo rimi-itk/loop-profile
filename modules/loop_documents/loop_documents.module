@@ -33,7 +33,47 @@ function loop_documents_menu() {
     'type' => MENU_CALLBACK,
   );
 
+  $items['loop_documents/print/node/%/header'] = array(
+    'title' => '',
+    'page callback' => '_loop_documents_print',
+    'page arguments' => array(3, 4),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['loop_documents/print/node/%/footer'] = array(
+    'title' => '',
+    'page callback' => '_loop_documents_print',
+    'page arguments' => array(3, 4),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
   return $items;
+}
+
+/**
+ * Render header or footer for printing a collection.
+ *
+ * @param int $collection_id
+ *   The collection id.
+ * @param string $view_mode
+ *   The view mode (header|footer).
+ */
+function _loop_documents_print($collection_id, $view_mode) {
+  $collection = node_load($collection_id);
+  if ($collection && $collection->type === 'loop_documents_collection'
+      && in_array($view_mode, array('header', 'footer'))) {
+    $image = file_load(variable_get('loop_documents_' . $view_mode . '_image', 0));
+    print theme('loop_documents_collection_print_' . $view_mode, array(
+      'collection' => $collection,
+      'image' => $image,
+      'view_mode' => $view_mode,
+    ));
+    exit;
+  }
+
+  drupal_not_found();
 }
 
 /**
@@ -611,9 +651,6 @@ function loop_documents_get_wkhtmltopdf_options($replace_tokens = FALSE, $node =
     'margin-right' => 20,
     'margin-bottom' => 30,
     'margin-left' => 20,
-    'footer-spacing' => 10,
-    'footer-left' => '[node:title]',
-    'footer-right' => '[page]',
   );
 
   $options = $default_options;
@@ -657,6 +694,22 @@ function loop_documents_theme($existing, $type, $theme, $path) {
         'collection' => NULL,
       ),
       'template' => 'templates/loop-documents-collection-metadata',
+    ),
+    'loop_documents_collection_print_header' => array(
+      'variables' => array(
+        'collection' => NULL,
+        'image' => NULL,
+        'view_mode' => NULL,
+      ),
+      'template' => 'templates/loop-documents-collection-print-header',
+    ),
+    'loop_documents_collection_print_footer' => array(
+      'variables' => array(
+        'collection' => NULL,
+        'image' => NULL,
+        'view_mode' => NULL,
+      ),
+      'template' => 'templates/loop-documents-collection-print-footer',
     ),
 
     'node__loop_documents_document' => array(

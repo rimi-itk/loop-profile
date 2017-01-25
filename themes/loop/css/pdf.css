@@ -1,7 +1,10 @@
-.loop-documents--collection .loop-documents--documents {
-  margin-top: 2em; }
-  .loop-documents--collection .loop-documents--documents .loop-documents--document {
-    margin-top: 1em; }
+.loop-documents--collection .loop-documents--document-title {
+  page-break-before: always; }
 
-.page-title--edit-link {
-  display: none; }
+.loop-documents--collection h1,
+.loop-documents--collection h2,
+.loop-documents--collection h3,
+.loop-documents--collection h4,
+.loop-documents--collection h5,
+.loop-documents--collection h6 {
+  line-height: normal; }

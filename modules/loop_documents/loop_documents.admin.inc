@@ -40,6 +40,24 @@ function loop_documents_admin() {
         '#theme' => 'token_tree_link',
         '#token_types' => array('node', 'site', 'user'),
       ),
+
+      'loop_documents_header_image' => array(
+        '#type' => 'managed_file',
+        '#name' => 'header_image',
+        '#title' => t('Header image file'),
+        '#description' => t('Optional image that can be used in print headers.'),
+        '#default_value' => variable_get('loop_documents_header_image', NULL),
+        '#upload_location' => 'public://files/',
+      ),
+
+      'loop_documents_footer_image' => array(
+        '#type' => 'managed_file',
+        '#name' => 'footer_image',
+        '#title' => t('Footer image file'),
+        '#description' => t('Optional image that can be used in print footers.'),
+        '#default_value' => variable_get('loop_documents_footer_image', NULL),
+        '#upload_location' => 'public://files/',
+      ),
     ),
   );
 
