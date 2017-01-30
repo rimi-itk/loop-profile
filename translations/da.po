@@ -61465,3 +61465,80 @@ msgctxt "Sort order"
 msgid "Alphabetical"
 msgstr "Alfabetisk"
 
+msgid "A collection of documents"
+msgstr "En samling af dokumenter"
+
+msgid "A document that can be put into a document collection"
+msgstr "Et dokument der kan puttes i en samling"
+
+msgid "Add document"
+msgstr "Tilføj dokument"
+
+msgid "Administer Loop documents settings"
+msgstr "Administrer Loop-dokument-indstillinger"
+
+msgid "Approval date"
+msgstr "Godkendelsesdato"
+
+msgid "Approver"
+msgstr "Godkender"
+
+msgid "Collection content"
+msgstr "Indhold af samling"
+
+msgid "Collection metadata"
+msgstr "Samlingsmetadata"
+
+msgid "Contents"
+msgstr "Indhold"
+
+msgid "Document collection menu: @collection_title"
+msgstr "Dokumentsamlingsmenu: @collection_title"
+
+msgid "Document collection"
+msgstr "Dokumentsamling"
+
+msgid "Document collections"
+msgstr "Dokumentsamlinger"
+
+msgid "Document metadata"
+msgstr "Dokumentmetadata"
+
+msgid "Document"
+msgstr "Dokument"
+
+msgid "Error adding document to collection"
+msgstr "Fejl under tilføjelse af dokument"
+
+msgid "Footer image file"
+msgstr "Billede til sidefod"
+
+msgid "Header image file"
+msgstr "Billede til sidehoved"
+
+msgid "No documents added yet"
+msgstr "Ingen dokumenter tilføjet"
+
+msgid "No documents found"
+msgstr "Ingen dokumenter fundet"
+
+msgid "Optional image that can be used in print footers."
+msgstr "Billede der kan bruges i sidefod."
+
+msgid "Optional image that can be used in print headers."
+msgstr "Billede der kan bruges i sidehoved."
+
+msgid "Page @page of @total_pages"
+msgstr "Side @page af @total_pages"
+
+msgid "Print collection"
+msgstr "Udskriv samling"
+
+msgid "Review date"
+msgstr "Revideringsdato"
+
+msgid "Save collection to create menu"
+msgstr "Gem samlingen for at oprette menu"
+
+msgid "wkhtmltopdf settings"
+msgstr "Indstillinger for wkhtmltopdf"

@@ -18,14 +18,3 @@ function loop_documents_enable() {
 function loop_documents_disable() {
   secure_permissions_rebuild();
 }
-
-/**
- * Import Danish translations.
- */
-function loop_documents_update_7001() {
-  include_once DRUPAL_ROOT . '/includes/locale.inc';
-  $file = new stdClass();
-  $file->uri = DRUPAL_ROOT . '/' . drupal_get_path('module', 'loop_documents') . '/translations/da.po';
-  $file->filename = basename($file->uri);
-  _locale_import_po($file, 'da', LOCALE_IMPORT_KEEP, 'default');
-}
