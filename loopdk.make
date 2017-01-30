@@ -271,7 +271,7 @@ projects[variable][subdir] = "contrib"
 projects[variable][version] = "2.5"
 
 projects[view_unpublished][subdir] = "contrib"
-projects[view_unpublished][version] = "7.x-1.2"
+projects[view_unpublished][version] = "1.2"
 
 projects[views][subdir] = "contrib"
 projects[views][version] = "3.13"
