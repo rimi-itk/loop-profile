@@ -72,6 +72,8 @@
         <div class="value"><?php echo $metadata_values['approval_date']; ?></div>
       </div>
 
+      <div class="item"><!-- @author --></div>
+
       <div class="item">
         <div class="label"><?php echo t('Review date') ?></div>
         <div class="value"><?php echo $metadata_values['review_date']; ?></div>
