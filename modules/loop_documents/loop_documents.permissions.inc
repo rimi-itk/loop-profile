@@ -16,6 +16,22 @@ function loop_documents_secure_permissions_roles() {
 }
 
 /**
+ * Implements hook_permissions().
+ *
+ * Add permission to restrict access to certain admin paths.
+ */
+function loop_documents_permission() {
+  $permissions = array(
+    'administer loop_documents settings' => array(
+      'title' => t('Administer Loop documents settings'),
+      'description' => t('Administer Loop documents settings'),
+    ),
+  );
+
+  return $permissions;
+}
+
+/**
  * Implements hook_secure_permissions().
  */
 function loop_documents_secure_permissions($role) {
@@ -65,7 +81,12 @@ function loop_documents_secure_permissions($role) {
       'menu view unpublished',
     ));
 
-  $permissions['administrator'] = $permissions['document collection editor'];
+  $permissions['administrator'] = array_merge(
+    $permissions['document collection editor'],
+    array(
+      'administer loop_documents settings',
+    )
+  );
 
   return isset($permissions[$role]) ? $permissions[$role] : NULL;
 }
