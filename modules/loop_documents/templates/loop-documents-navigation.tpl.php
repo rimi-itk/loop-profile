@@ -29,7 +29,7 @@
       <?php endif ?>
     </div>
   </div>
-  
+
   <div class="loop-documents--box">
     <h2 class="loop-documents--document-meta-title no-margin">
       <?php echo t('Document metadata'); ?>
@@ -57,7 +57,8 @@
       <h2 class="loop-documents--document-meta-title no-margin">
         <?php echo t('Document collections'); ?>
       </h2>
-      <ul><?php echo render($loop_documents_collections); ?></ul>
+
+      <?php echo render($loop_documents_collections); ?>
     </div>
   </div>
 

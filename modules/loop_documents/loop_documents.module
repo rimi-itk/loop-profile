@@ -488,7 +488,12 @@ function loop_documents_add_collection_data($node, array &$variables) {
  *   The menu.
  */
 function loop_documents_get_menus($node) {
-  $menus = array();
+  $menus = array(
+    '#sorted' => TRUE,
+    '#theme_wrappers' => array(
+      'menu_tree__loop_documents_document' . $node->nid,
+    ),
+  );
 
   $query = db_query('select menu_name from menu_links where link_path = :link_path', array('link_path' => 'node/' . $node->nid));
   $nids = array_map(function ($name) {

@@ -13,10 +13,10 @@ $metadata_values = array_map(function ($field_name) use ($document) {
   'author' => 'field_loop_documents_author',
 ));
 ?>
-  
-  <div class="loop-documents--document-metadata">
-    <p class="loop-documents--meta-title">
-      <?php echo t('Author') ?>
-    </p>
-    <?php echo $metadata_values['author']; ?>
-  </div>
+
+<div class="loop-documents--document-metadata">
+  <p class="loop-documents--meta-title">
+    <?php echo t('Author') ?>
+  </p>
+  <?php echo $metadata_values['author'] ? $metadata_values['author'] : t('No author specified'); ?>
+</div>

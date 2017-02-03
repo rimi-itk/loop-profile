@@ -61487,7 +61487,7 @@ msgid "Collection content"
 msgstr "Indhold af samling"
 
 msgid "Collection metadata"
-msgstr "Samlingsmetadata"
+msgstr "Om samlingen"
 
 msgid "Contents"
 msgstr "Indhold"
@@ -61501,8 +61501,11 @@ msgstr "Dokumentsamling"
 msgid "Document collections"
 msgstr "Dokumentsamlinger"
 
+msgid "No author specified"
+msgstr "(Ingen forfatter angivet)"
+
 msgid "Document metadata"
-msgstr "Dokumentmetadata"
+msgstr "Om dokumentet"
 
 msgid "Document"
 msgstr "Dokument"
