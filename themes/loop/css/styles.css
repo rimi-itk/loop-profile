@@ -4160,7 +4160,7 @@ a.question--term.taxonomy-keyword {
 /**
  * Documents module
  */
-.loop-documents--document-meta-title, .loop-documents--collection-meta-title {
+.loop-documents--collection-title, .loop-documents--document-meta-title, .loop-documents--collection-meta-title {
   font-size: 130%;
   font-weight: bold;
   border-bottom: 1px solid #e6e6e6;

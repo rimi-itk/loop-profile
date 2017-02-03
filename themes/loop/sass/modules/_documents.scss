@@ -4,7 +4,7 @@
 
 .loop-documents {
 
-  &--document-meta-title, &--collection-meta-title {
+  &--collection-title, &--document-meta-title, &--collection-meta-title {
     font-size: 130%;
     font-weight: bold;
     border-bottom: 1px solid $gray-lighter;
@@ -24,7 +24,7 @@
     &.is-shown {
 
       &:after {
-        @extend %icon-arrow-down-medium; 
+        @extend %icon-arrow-down-medium;
       }
     }
   }
@@ -59,7 +59,7 @@
       list-style-position: inside;
       padding-left: .8em;
     }
-    
+
     > ul {
       padding: 0;
       padding-bottom: .8em;
@@ -103,7 +103,7 @@
       display: block;
 
       .loop-documents--collection-meta-title:after {
-        @extend %icon-arrow-down-medium; 
+        @extend %icon-arrow-down-medium;
       }
     }
   }
