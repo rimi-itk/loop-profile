@@ -52,13 +52,12 @@
 
 <?php elseif (!empty($loop_documents_collections)): ?>
 
-  <div class="loop-documents--collections">
-    <div class="loop-documents--collections">
-      <h1 class="loop-documents--collections-title">
+  <div class="loop-documents--navigation">
+    <div class="loop-documents--collection-navigation">
+      <h2 class="loop-documents--document-meta-title no-margin">
         <?php echo t('Document collections'); ?>
-      </h1>
-
-      <?php echo render($loop_documents_collections); ?>
+      </h2>
+      <ul><?php echo render($loop_documents_collections); ?></ul>
     </div>
   </div>
 
