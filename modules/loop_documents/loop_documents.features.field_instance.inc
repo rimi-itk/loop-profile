@@ -10,6 +10,82 @@
 function loop_documents_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-loop_documents_collection-body'.
+  $field_instances['node-loop_documents_collection-body'] = array(
+    'bundle' => 'loop_documents_collection',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Body',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'editor' => 'editor',
+          'html' => 'html',
+          'loop_book' => 'loop_book',
+          'loop_documents' => 'loop_documents',
+          'plain_text' => 'plain_text',
+          'simple' => 'simple',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'editor' => array(
+              'weight' => 0,
+            ),
+            'html' => array(
+              'weight' => -10,
+            ),
+            'loop_book' => array(
+              'weight' => 0,
+            ),
+            'loop_documents' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'simple' => array(
+              'weight' => -10,
+            ),
+          ),
+        ),
+      ),
+      'display_summary' => 0,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'node-loop_documents_collection-field_keyword'.
   $field_instances['node-loop_documents_collection-field_keyword'] = array(
     'bundle' => 'loop_documents_collection',
@@ -169,81 +245,6 @@ function loop_documents_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 9,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'node-loop_documents_collection-field_loop_documents_body'.
-  $field_instances['node-loop_documents_collection-field_loop_documents_body'] = array(
-    'bundle' => 'loop_documents_collection',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_loop_documents_body',
-    'label' => 'Body',
-    'required' => 1,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'editor' => 0,
-          'html' => 0,
-          'loop_book' => 0,
-          'loop_documents' => 'loop_documents',
-          'plain_text' => 0,
-          'simple' => 0,
-        ),
-        'allowed_formats_toggle' => 1,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'editor' => array(
-              'weight' => 0,
-            ),
-            'html' => array(
-              'weight' => -10,
-            ),
-            'loop_book' => array(
-              'weight' => 0,
-            ),
-            'loop_documents' => array(
-              'weight' => 0,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-            'simple' => array(
-              'weight' => -10,
-            ),
-          ),
-        ),
-      ),
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 1,
     ),
   );
 
@@ -546,6 +547,82 @@ function loop_documents_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-loop_documents_document-body'.
+  $field_instances['node-loop_documents_document-body'] = array(
+    'bundle' => 'loop_documents_document',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'body',
+    'label' => 'Body',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'editor' => 0,
+          'html' => 0,
+          'loop_book' => 0,
+          'loop_documents' => 'loop_documents',
+          'plain_text' => 0,
+          'simple' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'editor' => array(
+              'weight' => 0,
+            ),
+            'html' => array(
+              'weight' => -10,
+            ),
+            'loop_book' => array(
+              'weight' => 0,
+            ),
+            'loop_documents' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'simple' => array(
+              'weight' => -10,
+            ),
+          ),
+        ),
+      ),
+      'display_summary' => 0,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance:
   // 'node-loop_documents_document-field_loop_documents_author'.
   $field_instances['node-loop_documents_document-field_loop_documents_author'] = array(
@@ -613,81 +690,6 @@ function loop_documents_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 41,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'node-loop_documents_document-field_loop_documents_body'.
-  $field_instances['node-loop_documents_document-field_loop_documents_body'] = array(
-    'bundle' => 'loop_documents_document',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_loop_documents_body',
-    'label' => 'Body',
-    'required' => 1,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'editor' => 0,
-          'html' => 0,
-          'loop_book' => 0,
-          'loop_documents' => 'loop_documents',
-          'plain_text' => 0,
-          'simple' => 0,
-        ),
-        'allowed_formats_toggle' => 1,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'editor' => array(
-              'weight' => 0,
-            ),
-            'html' => array(
-              'weight' => -10,
-            ),
-            'loop_book' => array(
-              'weight' => 0,
-            ),
-            'loop_documents' => array(
-              'weight' => 0,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-            'simple' => array(
-              'weight' => -10,
-            ),
-          ),
-        ),
-      ),
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 1,
     ),
   );
 
