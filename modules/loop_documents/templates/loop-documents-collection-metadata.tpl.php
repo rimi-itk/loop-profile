@@ -20,29 +20,53 @@ $metadata_values = array_map(function ($field_name) use ($collection) {
 ));
 ?>
 
-<fieldset class="loop-documents--metadata loop-documents--collection-metadata">
-  <legend><?php echo t('Collection metadata'); ?></legend>
+    <div class="loop-documents--collection-metadata">
+      <p class="loop-documents--meta-title">
+        <?php echo t('Owner') ?>
+      </p>
+      <?php echo $metadata_values['owner']; ?>
+    </div>
 
-  <dl>
-    <dt><?php echo t('Owner') ?></dt>
-    <dd><?php echo $metadata_values['owner']; ?></dd>
+    <div class="loop-documents--collection-metadata">
+      <p class="loop-documents--meta-title">
+        <?php echo t('Version') ?>
+      </p>
+      <?php echo $metadata_values['version']; ?>
+    </div>
 
-    <dt><?php echo t('Version') ?></dt>
-    <dd><?php echo $metadata_values['version']; ?></dd>
+    <div class="loop-documents--collection-metadata">
+      <p class="loop-documents--meta-title">
+        <?php echo t('Approver') ?>
+      </p>
+      <?php echo $metadata_values['approver']; ?>
+    </div>
 
-    <dt><?php echo t('Approver') ?></dt>
-    <dd><?php echo $metadata_values['approver']; ?></dd>
+    <div class="loop-documents--collection-metadata">
+      <p class="loop-documents--meta-title">
+        <?php echo t('Approval date') ?>
+      </p>
+      <?php echo $metadata_values['approval_date']; ?>
+    </div>
 
-    <dt><?php echo t('Approval date') ?></dt>
-    <dd><?php echo $metadata_values['approval_date']; ?></dd>
+    <div class="loop-documents--collection-metadata">
+      <p class="loop-documents--meta-title">
+        <?php echo t('Review date') ?>
+      </p>
+      <?php echo $metadata_values['review_date']; ?>
+    </div>
 
-    <dt><?php echo t('Review date') ?></dt>
-    <dd><?php echo $metadata_values['review_date']; ?></dd>
+    <div class="loop-documents--collection-metadata">
+      <p class="loop-documents--meta-title">
+        <?php echo t('Tags') ?>
+      </p>
+      <?php echo $metadata_values['keyword']; ?>
+    </div>
 
-    <dt><?php echo t('Tags') ?></dt>
-    <dd><?php echo $metadata_values['keyword']; ?></dd>
-
-    <dt><?php echo t('Subject') ?></dt>
-    <dd><?php echo $metadata_values['subject']; ?></dd>
+    <div class="loop-documents--collection-metadata">
+      <p class="loop-documents--meta-title">
+        <?php echo t('Subject') ?>
+      </p>
+      <?php echo $metadata_values['subject']; ?>
+    </div>
 </dl>
 </fieldset>

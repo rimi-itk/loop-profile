@@ -25,6 +25,4 @@
     print render($content);
     ?>
   </div>
-
-  <?php echo theme('loop_documents_document_metadata', array('document' => $node)); ?>
 </div>

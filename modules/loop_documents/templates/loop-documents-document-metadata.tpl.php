@@ -13,12 +13,10 @@ $metadata_values = array_map(function ($field_name) use ($document) {
   'author' => 'field_loop_documents_author',
 ));
 ?>
-
-<fieldset class="loop-documents--metadata loop-documents--document-metadata">
-  <legend><?php echo t('Document metadata'); ?></legend>
-
-  <dl>
-    <dt><?php echo t('Author') ?></dt>
-    <dd><?php echo $metadata_values['author']; ?></dd>
-  </dl>
-</fieldset>
+  
+  <div class="loop-documents--document-metadata">
+    <p class="loop-documents--meta-title">
+      <?php echo t('Author') ?>
+    </p>
+    <?php echo $metadata_values['author']; ?>
+  </div>
