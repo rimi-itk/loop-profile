@@ -53,7 +53,7 @@ function loop_documents_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Metadata',
-    'weight' => '6',
+    'weight' => '5',
     'children' => array(
       0 => 'field_loop_documents_author',
     ),
