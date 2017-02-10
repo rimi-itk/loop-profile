@@ -387,6 +387,8 @@ function loop_documents_preprocess_node(&$variables) {
     return;
   }
 
+  drupal_add_js(drupal_get_path('module', 'loop_documents') . '/js/loop_documents.js');
+
   // Add template suggestion for view mode.
   $variables['theme_hook_suggestions'][] = 'node__' . $node->type . '__' . $variables['view_mode'];
 
