@@ -4,8 +4,6 @@
  * Adds the javascript need to search the sites content.
  */
 
-include_once 'loop_search_node.features.inc';
-
 /**
  * Implements hook_menu().
  */

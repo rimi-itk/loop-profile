@@ -1,0 +1,16 @@
+name = Loop search node settings
+description = Providing search configuration
+core = 7.x
+package = Loop
+dependencies[] = ctools
+dependencies[] = entity
+dependencies[] = fe_block
+dependencies[] = loop_search_node
+dependencies[] = page_manager
+dependencies[] = search_api
+dependencies[] = search_api_search_node
+features[ctools][] = page_manager:pages_default:1
+features[features_api][] = api:2
+features[page_manager_pages][] = search_node
+features[search_api_index][] = posts
+features[search_api_server][] = loop_search_node

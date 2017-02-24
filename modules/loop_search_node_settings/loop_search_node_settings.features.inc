@@ -7,7 +7,7 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function loop_search_node_ctools_plugin_api($module = NULL, $api = NULL) {
+function loop_search_node_settings_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "page_manager" && $api == "pages_default") {
     return array("version" => "1");
   }
@@ -16,7 +16,7 @@ function loop_search_node_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_default_search_api_index().
  */
-function loop_search_node_default_search_api_index() {
+function loop_search_node_settings_default_search_api_index() {
   $items = array();
   $items['auto_complete'] = entity_import('search_api_index', '{
     "name" : "auto-complete",
@@ -157,7 +157,7 @@ function loop_search_node_default_search_api_index() {
 /**
  * Implements hook_default_search_api_server().
  */
-function loop_search_node_default_search_api_server() {
+function loop_search_node_settings_default_search_api_server() {
   $items = array();
   $items['loop_search_node'] = entity_import('search_api_server', '{
     "name" : "Loop search node",
@@ -165,7 +165,7 @@ function loop_search_node_default_search_api_server() {
     "description" : "",
     "class" : "search_api_search_node_service",
     "options" : {
-      "host" : "http:\\/\\/search.node.vm",
+      "host" : "http:\\/\\/search.node.local",
       "apikey" : "2d72e44305d22db33c86400ce27486b1",
       "apikey_readonly" : "1c324b1a808006b080e9da60f7695510"
     },
