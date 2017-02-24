@@ -9,12 +9,6 @@
  * Implements hook_install().
  */
 function loop_search_node_install() {
-  // Enable search node page block.
-  db_update('block')
-    ->fields(_loop_search_node_search_block_settings())
-    ->condition('theme', 'loop')
-    ->condition('delta', 'search_node_search_box');
-
   // Set block configuration
   variable_set('search_node_page_search_box', _loop_search_node_box_settings());
 }
