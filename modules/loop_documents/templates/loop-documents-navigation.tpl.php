@@ -30,12 +30,14 @@
     </div>
   </div>
 
-  <div class="loop-documents--box">
-    <h2 class="loop-documents--document-meta-title no-margin">
-      <?php echo t('Document metadata'); ?>
-    </h2>
-    <?php echo theme('loop_documents_document_metadata', array('document' => $node)); ?>
-  </div>
+  <?php if ($node->type === 'loop_documents_document'): ?>
+    <div class="loop-documents--box">
+      <h2 class="loop-documents--document-meta-title no-margin">
+        <?php echo t('Document metadata'); ?>
+      </h2>
+      <?php echo theme('loop_documents_document_metadata', array('document' => $node)); ?>
+    </div>
+  <?php endif ?>
 
   <div class="loop-documents--box">
     <h2 class="loop-documents--collection-meta-title no-margin js-toggle">
