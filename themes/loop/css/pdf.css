@@ -8,3 +8,6 @@
 .loop-documents--collection h5,
 .loop-documents--collection h6 {
   line-height: normal; }
+
+.element-invisible {
+  display: none; }
