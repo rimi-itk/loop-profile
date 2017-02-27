@@ -25,7 +25,7 @@ function loop_search_node_settings_default_search_api_index() {
     "server" : "loop_search_node",
     "item_type" : "node",
     "options" : {
-      "datasource" : { "bundles" : [ "external_sources", "instruction", "leaf", "post" ] },
+      "datasource" : { "bundles" : [ "loop_documents_document", "loop_documents_collection", "external_sources", "instruction", "leaf", "post" ] },
       "index_directly" : 0,
       "cron_limit" : "50",
       "search_node_indexes" : "bd6f534b05ab6073e04afef2c67e7e44",
@@ -47,7 +47,7 @@ function loop_search_node_settings_default_search_api_index() {
     "server" : "loop_search_node",
     "item_type" : "node",
     "options" : {
-      "datasource" : { "bundles" : [ "external_sources", "instruction", "leaf", "post" ] },
+      "datasource" : { "bundles" : [ "loop_documents_document", "loop_documents_collection", "external_sources", "instruction", "leaf", "post" ] },
       "index_directly" : 0,
       "cron_limit" : "50",
       "search_node_indexes" : "833bc3ffdcd187e4bf72945e7fe4a08d",
