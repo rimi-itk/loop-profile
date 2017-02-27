@@ -413,6 +413,14 @@ h3,
 h4,
 h5,
 h6 {
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  word-wrap: break-word;
   margin-top: 0;
   margin-bottom: .5em;
   font-family: 1em/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
