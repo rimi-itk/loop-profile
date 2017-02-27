@@ -6,3 +6,8 @@
 	display: inline-block;
 	width: auto;
 }
+
+/* This is a hack – but it works! */
+#edit-body .filter-wrapper {
+	display: none;
+}
