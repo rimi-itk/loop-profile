@@ -871,7 +871,7 @@ function loop_preprocess_user_login(&$variables) {
     if (theme_get_setting('show_login_for_regular_users')) {
       $login_services['loop-login'] = array(
         'name' => t('Loop login'),
-        'url' => url('user/login#loop-login'),
+        'url' => request_uri() . '#loop-login',
       );
     }
   }
