@@ -1,0 +1,412 @@
+<?php
+/**
+ * @file
+ * Adds the javascript need to search the sites content.
+ */
+
+include_once 'loop_search_node.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function loop_search_node_menu() {
+  $items = array();
+
+  $items['loop_search_node/not_found'] = array(
+    'title' => 'No search results',
+    'type' => MENU_CALLBACK,
+    'page callback' => 'loop_search_node_no_results',
+    'access callback' =>  'node_access',
+    'access arguments' => array('create', 'post')
+  );
+
+  return $items;
+}
+
+/**
+ * Menu callback that generates post node add form.
+ *
+ * @return string
+ *   JSON encode string with the node create form.
+ */
+function loop_search_node_no_results() {
+  global $user;
+
+  module_load_include('inc', 'node', 'node.pages');
+  $node = new stdClass();
+  $node->type = 'post';
+  $node->langauge = LANGUAGE_NONE;
+  $node->uid = $user->uid;
+  $node->name = $user->name;
+
+  // Get "post" node create form.
+  $form = drupal_get_form('node_form', $node);
+  $form['additional_settings']['#access'] = FALSE;
+
+  drupal_json_output(array(
+    'settings' => $form['field_keyword']['und']['#attached']['js'],
+    'form' => drupal_render($form),
+  ));
+}
+
+/**
+ * Implements hook_init().
+ *
+ * Ensure that auto-complete is available for usage with auto complete deluxe.
+ *
+ * It's used in the "no result" submit form.
+ */
+function loop_search_node_init() {
+  if (current_path() == 'search') {
+    drupal_add_library('system', 'ui.autocomplete');
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Overrides/adds new Angular JS controller for the search field.
+ */
+function loop_search_node_preprocess_search_node_page_search_box(&$variables) {
+  $path = drupal_get_path('module', 'loop_search_node');
+
+  // Add the search controller.
+  drupal_add_js($path . '/js/loopSearchBoxController.js', array(
+    'type' => 'file',
+    'scope' => 'footer',
+    'weight' => 7,
+    'group' => JS_THEME,
+  ));
+
+  drupal_add_js($path . '/js/loopResultController.js', array(
+    'type' => 'file',
+    'scope' => 'footer',
+    'weight' => 7,
+    'group' => JS_THEME,
+  ));
+
+  drupal_add_js($path . '/js/angular-locale_da-dk.js', array(
+    'type' => 'file',
+    'scope' => 'footer',
+    'weight' => 30,
+    'group' => JS_THEME,
+  ));
+}
+
+/**
+ * Implements hook_flush_caches().
+ *
+ * Empty generated file parsed for translation list.
+ */
+function loop_search_node_flush_caches() {
+  variable_del('loop_search_node_templates_parsed');
+}
+
+/**
+ * Implements hook_js_alter().
+ *
+ * Search the angular application for drupal translations.
+ */
+function loop_search_node_js_alter(&$javascript) {
+  // Scan template files.
+  $path = path_to_theme();
+  $path .= '/templates/search/angular';
+  $dir = DRUPAL_ROOT . '/' . $path;
+
+  $new_files = FALSE;
+  $parsed = variable_get('loop_search_node_templates_parsed', array());
+
+  // Find the files.
+  if (file_exists($dir)) {
+    $it = new RecursiveDirectoryIterator($dir);
+    foreach (new RecursiveIteratorIterator($it) as $file)  {
+      $file_abs = $path . str_replace($dir, '', $file);
+      if (!in_array($file_abs, $parsed)) {
+        $ext = pathinfo($file, PATHINFO_EXTENSION);
+        if (in_array($ext, [ 'html' ])) {
+          _locale_parse_js_file($file_abs);
+          $parsed[] = $file_abs;
+          $new_files = TRUE;
+        }
+      }
+    }
+
+    if ($new_files) {
+      variable_set('loop_search_node_templates_parsed', $parsed);
+      _loop_search_node_locale_rebuild_js();
+    }
+  }
+}
+
+/**
+ * (Re-)Creates the JavaScript translation file for a language.
+ *
+ * NOTE: Copy of the _locale_rebuild_js() function from core that are extended
+ *       with loading translations for files that have the context "angular"
+ *       this will ensure translations from angular template files.
+ *
+ * @param mixed $langcode
+ *   The language, the translation file should be (re)created for.
+ *
+ * @return bool
+ *   TRUE if (re-) created else FALSE.
+ */
+function _loop_search_node_locale_rebuild_js($langcode = NULL) {
+  if (!isset($langcode)) {
+    global $language;
+  }
+  else {
+    // Get information about the locale.
+    $languages = language_list();
+    $language = $languages[$langcode];
+  }
+
+  // Construct the array for JavaScript translations.
+  // Only add strings with a translation to the translations array.
+  $result = db_query("SELECT s.lid, s.source, s.context, t.translation
+    FROM {locales_source} s
+    INNER JOIN {locales_target} t
+      ON s.lid = t.lid
+      AND t.language = :language WHERE (s.location LIKE '%.js%' OR s.context = 'angular')
+      AND s.textgroup = :textgroup", array(':language' => $language->language, ':textgroup' => 'default'));
+
+  $translations = array();
+  foreach ($result as $data) {
+    $translations[$data->context][$data->source] = $data->translation;
+  }
+
+  // Construct the JavaScript file, if there are translations.
+  $data_hash = NULL;
+  $data = $status = '';
+  if (!empty($translations)) {
+
+    $data = "Drupal.locale = { ";
+
+    if (!empty($language->formula)) {
+      $data .= "'pluralFormula': function (\$n) { return Number({$language->formula}); }, ";
+    }
+
+    $data .= "'strings': " . drupal_json_encode($translations) . " };";
+    $data_hash = drupal_hash_base64($data);
+  }
+
+  // Construct the file path where JS translation files are stored.
+  // There is (on purpose) no front end to edit that variable.
+  $dir = 'public://' . variable_get('locale_js_directory', 'languages');
+
+  // Delete old file, if we have no translations anymore, or a different file to be saved.
+  $changed_hash = $language->javascript != $data_hash;
+  if (!empty($language->javascript) && (!$data || $changed_hash)) {
+    file_unmanaged_delete($dir . '/' . $language->language . '_' . $language->javascript . '.js');
+    $language->javascript = '';
+    $status = 'deleted';
+  }
+
+  // Only create a new file if the content has changed or the original file got
+  // lost.
+  $dest = $dir . '/' . $language->language . '_' . $data_hash . '.js';
+  if ($data && ($changed_hash || !file_exists($dest))) {
+    // Ensure that the directory exists and is writable, if possible.
+    file_prepare_directory($dir, FILE_CREATE_DIRECTORY);
+
+    // Save the file.
+    if (file_unmanaged_save_data($data, $dest)) {
+      $language->javascript = $data_hash;
+      // If we deleted a previous version of the file and we replace it with a
+      // new one we have an update.
+      if ($status == 'deleted') {
+        $status = 'updated';
+      }
+      // If the file did not exist previously and the data has changed we have
+      // a fresh creation.
+      elseif ($changed_hash) {
+        $status = 'created';
+      }
+      // If the data hash is unchanged the translation was lost and has to be
+      // rebuilt.
+      else {
+        $status = 'rebuilt';
+      }
+    }
+    else {
+      $language->javascript = '';
+      $status = 'error';
+    }
+  }
+
+  // Save the new JavaScript hash (or an empty value if the file just got
+  // deleted). Act only if some operation was executed that changed the hash
+  // code.
+  if ($status && $changed_hash) {
+    db_update('languages')
+      ->fields(array(
+        'javascript' => $language->javascript,
+      ))
+      ->condition('language', $language->language)
+      ->execute();
+
+    // Update the default language variable if the default language has been altered.
+    // This is necessary to keep the variable consistent with the database
+    // version of the language and to prevent checking against an outdated hash.
+    $default_langcode = language_default('language');
+    if ($default_langcode == $language->language) {
+      $default = db_query("SELECT * FROM {languages} WHERE language = :language", array(':language' => $default_langcode))->fetchObject();
+      variable_set('language_default', $default);
+    }
+  }
+
+  // Log the operation and return success flag.
+  switch ($status) {
+    case 'updated':
+      watchdog('locale', 'Updated JavaScript translation file for the language %language.', array('%language' => t($language->name)));
+      return TRUE;
+
+    case 'rebuilt':
+      watchdog('locale', 'JavaScript translation file %file.js was lost.', array('%file' => $language->javascript), WATCHDOG_WARNING);
+      // Proceed to the 'created' case as the JavaScript translation file has
+      // been created again.
+
+    case 'created':
+      watchdog('locale', 'Created JavaScript translation file for the language %language.', array('%language' => t($language->name)));
+      return TRUE;
+
+    case 'deleted':
+      watchdog('locale', 'Removed JavaScript translation file for the language %language, because no translations currently exist for that language.', array('%language' => t($language->name)));
+      return TRUE;
+
+    case 'error':
+      watchdog('locale', 'An error occurred during creation of the JavaScript translation file for the language %language.', array('%language' => t($language->name)), WATCHDOG_ERROR);
+      return FALSE;
+
+    default:
+      // No operation needed.
+      return TRUE;
+  }
+}
+
+/**
+ * The current search box block configuration.
+ *
+ * This is used by update and install hooks to provide easy update of
+ * configuration for the search block.
+ *
+ * @return array
+ *   The settings array for the block.
+ */
+function _loop_search_node_box_settings() {
+  return array(
+    'id' => 1460537555,
+    'server' => 'loop_search_node',
+    'index' => 'posts',
+    'options' => array(
+      'match_type' => 'best_fields',
+      'match_operator' => 'and',
+      'cache_expire' => 1,
+      'size' => 8,
+      'initial_query_enable' => 0,
+      'initial_query_text' => '',
+      'fields' => array(
+        'body:summary' => 'body:summary',
+        'body:value' => 'body:value',
+        'title' => 'title',
+        'changed' => 0,
+        'comment_count' => 0,
+        'comments' => 0,
+        'comments:comment_body:value' => 0,
+        'created' => 0,
+        'field_description:value' => 0,
+        'field_external_link:url' => 0,
+        'field_keyword:name' => 'field_keyword:name',
+        'field_profession:name' => 0,
+        'field_subject:name' => 0,
+        'nid' => 0,
+        'search_api_language' => 0,
+        'status' => 0,
+        'type' => 0,
+        'url' => 0,
+      ),
+      'filters' => array(
+        'taxonomy' => array(),
+        'boolean' => array(),
+      ),
+    ),
+    'sorting' => array(
+      'field' => array(),
+      'order' => array(),
+    ),
+    'dates' => array(
+      'fields' => array(),
+    ),
+    'intervals' => array(
+      'fields' => array(
+        'body:summary' => 0,
+        'body:value' => 0,
+        'title' => 0,
+        'changed' => 0,
+        'comment_count' => 0,
+        'comments' => 0,
+        'comments:comment_body:value' => 0,
+        'created' => 0,
+        'field_description:value' => 0,
+        'field_external_link:url' => 0,
+        'field_keyword:name' => 0,
+        'field_profession:name' => 0,
+        'field_subject:name' => 0,
+        'nid' => 0,
+        'search_api_language' => 0,
+        'status' => 0,
+        'type' => 0,
+        'url' => 0,
+      ),
+    ),
+    'forces' => array(
+      'field' => '_none_',
+      'selected' => array(),
+    ),
+    'highlight' => array(
+      'fields' => array(
+        'body:summary' => 0,
+        'body:value' => 0,
+        'title' => 'title',
+        'changed' => 0,
+        'comment_count' => 0,
+        'comments' => 0,
+        'comments:comment_body:value' => 0,
+        'created' => 0,
+        'field_description:value' => 0,
+        'field_external_link:url' => 0,
+        'field_keyword:name' => 0,
+        'field_profession:name' => 0,
+        'field_subject:name' => 0,
+        'nid' => 0,
+        'search_api_language' => 0,
+        'status' => 0,
+        'type' => 0,
+        'url' => 0,
+      ),
+    ),
+    'templates' => array(
+      'box' => '/profiles/loopdk/themes/loop/templates/search/angular/search.html',
+      'result' => '/profiles/loopdk/themes/loop/templates/search/angular/result.html',
+      'pager' => '/profiles/loopdk/themes/loop/templates/search/angular/pager.html',
+    ),
+    'autocomplete' => array(
+      'index' => 'auto_complete',
+      'field' => 'title',
+      'minChars' => 2,
+      'size' => 10,
+    ),
+  );
+}
+
+/**
+ * The search block configuration.
+ */
+function _loop_search_node_search_block_settings() {
+  return array(
+    'weight' => -17,
+    'region' => 'content',
+    'pages' => "admin\r\nadmin/*\r\nuser/*/edit",
+    'status' => 0
+  );
+}

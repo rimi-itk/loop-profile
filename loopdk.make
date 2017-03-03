@@ -9,7 +9,7 @@ projects[abuse][download][url] = "http://git.drupal.org/project/abuse.git"
 projects[abuse][download][branch] = "7.x-1.x-dev"
 
 projects[admin_views][subdir] = "contrib"
-projects[admin_views][version] = "1.6"
+projects[admin_views][version] = "1.5"
 
 projects[auto_entitylabel][subdir] = "contrib"
 projects[auto_entitylabel][version] = "1.3"
@@ -60,7 +60,7 @@ projects[field_group][subdir] = "contrib"
 projects[field_group][version] = "1.5"
 
 projects[flag][subdir] = "contrib"
-projects[flag][version] = "3.9"
+projects[flag][version] = "3.7"
 
 projects[globalredirect][subdir] = "contrib"
 projects[globalredirect][version] = "1.5"
@@ -147,7 +147,7 @@ projects[page_title][subdir] = "contrib"
 projects[page_title][version] = "2.7"
 
 projects[panels][subdir] = "contrib"
-projects[panels][version] = "3.8"
+projects[panels][version] = "3.5"
 
 projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = "1.3"
@@ -190,6 +190,18 @@ projects[search_api_solr][version] = "1.9"
 
 projects[search_api_spellcheck][subdir] = "contrib"
 projects[search_api_spellcheck][version] = "1.0"
+
+projects[search_api_search_node][type] = "module"
+projects[search_api_search_node][subdir] = "contrib"
+projects[search_api_search_node][download][type] = "git"
+projects[search_api_search_node][download][url] = "http://github.com/search-node/search_api_search_node.git"
+projects[search_api_search_node][download][branch] = "7.x-1.x"
+
+projects[search_node_page][type] = "module"
+projects[search_node_page][subdir] = "contrib"
+projects[search_node_page][download][type] = "git"
+projects[search_node_page][download][url] = "http://github.com/search-node/search_node_page.git"
+projects[search_node_page][download][branch] = "7.x-1.x"
 
 projects[secure_permissions][subdir] = "contrib"
 projects[secure_permissions][version] = "1.6"
@@ -238,9 +250,9 @@ projects[variable][subdir] = "contrib"
 projects[variable][version] = "2.5"
 
 projects[views][subdir] = "contrib"
-projects[views][version] = "3.14"
+projects[views][version] = "3.13"
 projects[views][patch][] = "https://drupal.org/files/views-make_destination_parameter_configurable-1239566-26.patch"
-; projects[views][patch][] = "https://drupal.org/files/views-1685144-localization-bug_1.patch"
+projects[views][patch][] = "https://drupal.org/files/views-1685144-localization-bug_1.patch"
 
 projects[views_calc][subdir] = "contrib"
 projects[views_calc][version] = "1.1"
@@ -255,6 +267,11 @@ projects[wysiwyg][subdir] = "contrib"
 projects[wysiwyg][version] = "2.x-dev"
 
 ; Libraries
+libraries[angular][download][type] = "get"
+libraries[angular][download][url] = "https://code.angularjs.org/1.5.5/angular.min.js"
+libraries[angular][directory_name] = "angular"
+libraries[angular][destination] = "libraries"
+
 libraries[ckeditor][download][type] = "get"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.5.3/ckeditor_4.5.3_full.zip"
 libraries[ckeditor][directory_name] = "ckeditor"
@@ -275,3 +292,8 @@ libraries[xmlseclibs][download][url] = "https://github.com/robrichards/xmlseclib
 libraries[xmlseclibs][download][branch] = "1.3.2"
 libraries[xmlseclibs][directory_name] = "xmlseclibs"
 libraries[xmlseclibs][destination] = "libraries"
+
+libraries[zen-grids][download][type] = "git"
+libraries[zen-grids][download][url] = "https://github.com/JohnAlbin/zen-grids.git"
+libraries[zen-grids][download][tag] = "1.4"
+libraries[zen-grids][destination] = "libraries"

@@ -107,3 +107,21 @@ function loopdk_access_denied_page() {
   // Set the 404 page.
   variable_set('site_403', 'access_denied');
 }
+
+/**
+ * Update the database with the newest translations.
+ */
+function loopdk_translation_update() {
+  // Update build-in translation group.
+  $file = new stdClass();
+  $file->uri = DRUPAL_ROOT . '/profiles/loopdk/translations/da.po';
+  $file->filename = basename($file->uri);
+  _locale_import_po($file, 'da', LOCALE_IMPORT_KEEP, 'default');
+}
+
+/**
+ * Update our own translations.
+ */
+function loopdk_update_7001() {
+  loopdk_translation_update();
+}

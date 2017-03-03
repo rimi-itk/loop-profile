@@ -10,10 +10,13 @@
 function loop_preprocess_page(&$variables) {
   global $user;
   $arg = arg();
-  if ($user->uid > 0) {
+  if (user_is_logged_in()) {
     // Prepare system search block for page.tpl.
     if (module_exists('search_api_page')) {
       $variables['search'] = module_invoke('search_api_page', 'block_view', 'default');
+    }
+    else if (module_exists('search_node_page')) {
+      $variables['search'] = module_invoke('search_node_page', 'block_view', 'search_node_search_box');
     }
     else {
       $variables['search'] = module_invoke('search', 'block_view', 'form');
