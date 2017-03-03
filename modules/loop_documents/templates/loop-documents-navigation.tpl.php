@@ -12,7 +12,7 @@
     <div class="loop-documents--collection-navigation">
       <h2 class="loop-documents--collection-title">
         <?php if ($node->type === 'loop_documents_collection'): ?>
-          <?php echo $node->title; ?>
+          <span><?php echo $node->title; ?></span>
         <?php elseif (!empty($loop_documents_collection)): ?>
           <?php echo l($loop_documents_collection->title, 'node/' . $loop_documents_collection->nid); ?>
         <?php endif ?>
