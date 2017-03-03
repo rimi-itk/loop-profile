@@ -126,5 +126,9 @@ function loop_saml_preprocess(&$variables) {
  * Redirect from login block to real login page.
  */
 function loop_saml_form_user_login_block_alter(&$form, &$form_state, $form_id) {
-  drupal_goto('user/login', array('query' => drupal_get_destination()));
+  if (current_path() !== 'user/login') {
+    // We just want a plain redirect. Using drupal_goto() will not work.
+    header('Location: ' . url('user/login', array('query' => drupal_get_destination())));
+    drupal_exit();
+  }
 }
