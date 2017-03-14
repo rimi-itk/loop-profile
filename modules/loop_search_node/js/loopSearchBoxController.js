@@ -97,7 +97,7 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
         'post': [],
         'external_sources': [],
         'loop_documents_collection': [],
-        'loop_documents': []
+        'loop_documents_document': []
       };
 
       // Get filters.
@@ -232,7 +232,7 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
       // Update suggestion box.
       _suggestionSearch('external_sources');
       _suggestionSearch('loop_documents_collection');
-      _suggestionSearch('loop_documents');
+      _suggestionSearch('loop_documents_document');
       _suggestionSearch('post');
 
       if (CONFIG.provider.hasOwnProperty('autocomplete')) {
@@ -287,7 +287,7 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
           if (!$scope.suggestionExists()) {
             _suggestionSearch('external_sources');
             _suggestionSearch('loop_documents_collection');
-            _suggestionSearch('loop_documents');
+            _suggestionSearch('loop_documents_document');
             _suggestionSearch('post');
           }
 
@@ -303,7 +303,7 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
      *  If they do true else false.
      */
     $scope.suggestionExists = function suggestionExists() {
-      return ($scope.suggestions['post'].length || $scope.suggestions['external_sources'].length || $scope.suggestions['loop_documents_collection'].length || $scope.suggestions['loop_documents'].length);
+      return ($scope.suggestions['post'].length || $scope.suggestions['external_sources'].length || $scope.suggestions['loop_documents_collection'].length || $scope.suggestions['loop_documents_document'].length);
     };
 
     /**

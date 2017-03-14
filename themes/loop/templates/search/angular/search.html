@@ -39,11 +39,11 @@
 
               <div class="tt-dataset-1"></div>
 
-              <!-- type ==  'loop_documents' -->
-              <div data-ng-if="suggestions.loop_documents.length" class="tt-dataset-0">
+              <!-- type ==  'loop_documents_document' -->
+              <div data-ng-if="suggestions.loop_documents_document.length" class="tt-dataset-0">
                 <h3 class="tt-suggestion-header">{{ Drupal.t('Documents', {}, { 'context': 'angular' }) }}</h3>
                 <span style="display: block;" class="tt-suggestions">
-                  <div data-ng-repeat="hit in suggestions.loop_documents" class="tt-suggestion">
+                  <div data-ng-repeat="hit in suggestions.loop_documents_document" class="tt-suggestion">
                     <a href="{{ hit.url }}" data-ng-bind-html="hit.title"></a>
                   </div>
                 </span>
