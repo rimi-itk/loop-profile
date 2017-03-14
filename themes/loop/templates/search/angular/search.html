@@ -39,6 +39,18 @@
 
               <div class="tt-dataset-1"></div>
 
+              <!-- type ==  'loop_documents' -->
+              <div data-ng-if="suggestions.loop_documents.length" class="tt-dataset-0">
+                <h3 class="tt-suggestion-header">{{ Drupal.t('Documents', {}, { 'context': 'angular' }) }}</h3>
+                <span style="display: block;" class="tt-suggestions">
+                  <div data-ng-repeat="hit in suggestions.loop_documents" class="tt-suggestion">
+                    <a href="{{ hit.url }}" data-ng-bind-html="hit.title"></a>
+                  </div>
+                </span>
+              </div>
+
+              <div class="tt-dataset-1"></div>
+
               <!-- type ==  'external_sources' -->
               <div data-ng-if="suggestions.external_sources.length" class="tt-dataset-0">
                 <h3 class="tt-suggestion-header">{{ Drupal.t('Tutorials and external documents', {}, { 'context': 'angular' }) }}</h3>
@@ -50,7 +62,7 @@
               </div>
 
               <div class="tt-dataset-1"></div>
-              
+
               <!-- type == 'post' -->
               <div data-ng-if="suggestions.post.length" class="tt-dataset-2">
                 <h3 class="tt-suggestion-header">{{ Drupal.t('Questions', {}, { 'context': 'angular' }) }}</h3>
