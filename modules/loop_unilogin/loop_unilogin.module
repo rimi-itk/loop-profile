@@ -56,3 +56,16 @@ function loop_unilogin_update_user_data($user) {
     }
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Redirect from login block to real login page.
+ */
+function loop_unilogin_form_user_login_block_alter(&$form, &$form_state, $form_id) {
+  if (current_path() !== 'user/login') {
+    // We want to set the destination explicitly in drupal_goto().
+    unset($_GET['destination']);
+    drupal_goto('user/login', array('query' => drupal_get_destination()));
+  }
+}
