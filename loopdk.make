@@ -9,40 +9,40 @@ projects[abuse][download][url] = "http://git.drupal.org/project/abuse.git"
 projects[abuse][download][branch] = "7.x-1.x-dev"
 
 projects[admin_views][subdir] = "contrib"
-projects[admin_views][version] = "1.5"
+projects[admin_views][version] = "1.6"
 
 projects[auto_entitylabel][subdir] = "contrib"
 projects[auto_entitylabel][version] = "1.3"
 
 projects[autocomplete_deluxe][subdir] = "contrib"
-projects[autocomplete_deluxe][version] = "2.1"
+projects[autocomplete_deluxe][version] = "2.2"
 
 projects[better_formats][subdir] = "contrib"
-projects[better_formats][version] = "1.0-beta1"
+projects[better_formats][version] = "1.0-beta2"
 
 projects[comment_counter][subdir] = "contrib"
 projects[comment_counter][version] = "1.0-alpha1"
 
 projects[ctools][subdir] = "contrib"
-projects[ctools][version] = "1.9"
+projects[ctools][version] = "1.12"
 
 projects[date][subdir] = "contrib"
 projects[date][version] = "2.9"
 
 projects[diff][subdir] = "contrib"
-projects[diff][version] = "3.2"
+projects[diff][version] = "3.3"
 
 projects[elements][subdir] = "contrib"
 projects[elements][version] = "1.4"
 
 projects[entity][subdir] = "contrib"
-projects[entity][version] = "1.6"
+projects[entity][version] = "1.8"
 
 projects[entitycache][subdir] = "contrib"
 projects[entitycache][version] = "1.5"
 
 projects[entityreference][subdir] = "contrib"
-projects[entityreference][version] = "1.1"
+projects[entityreference][version] = "1.2"
 
 projects[facetapi][subdir] = "contrib"
 projects[facetapi][version] = "1.5"
@@ -54,13 +54,13 @@ projects[features_extra][subdir] = "contrib"
 projects[features_extra][version] = "1.0"
 
 projects[features_override][subdir] = "contrib"
-projects[features_override][version] = "2.0-rc2"
+projects[features_override][version] = "2.0-rc3"
 
 projects[field_group][subdir] = "contrib"
 projects[field_group][version] = "1.5"
 
 projects[flag][subdir] = "contrib"
-projects[flag][version] = "3.7"
+projects[flag][version] = "3.9"
 
 projects[globalredirect][subdir] = "contrib"
 projects[globalredirect][version] = "1.5"
@@ -75,22 +75,22 @@ projects[html5_tools][subdir] = "contrib"
 projects[html5_tools][version] = "1.3"
 
 projects[i18n][subdir] = "contrib"
-projects[i18n][version] = "1.13"
+projects[i18n][version] = "1.15"
 
 projects[i18nviews][subdir] = "contrib"
-projects[i18nviews][version] = "3.x-dev"
+projects[i18nviews][version] = "3.0-alpha1"
 
 projects[jquery_update][subdir] = "contrib"
-projects[jquery_update][version] = "3.0-alpha3"
+projects[jquery_update][version] = "3.0-alpha4"
 
 projects[l10n_update][subdir] = "contrib"
 projects[l10n_update][version] = "1.1"
 
 projects[libraries][subdir] = "contrib"
-projects[libraries][version] = "2.2"
+projects[libraries][version] = "2.3"
 
 projects[link][subdir] = "contrib"
-projects[link][version] = "1.3"
+projects[link][version] = "1.4"
 
 projects[logintoboggan][subdir] = "contrib"
 projects[logintoboggan][version] = "1.5"
@@ -117,10 +117,10 @@ projects[menu_position][subdir] = "contrib"
 projects[menu_position][version] = "1.2"
 
 projects[metatag][subdir] = "contrib"
-projects[metatag][version] = "1.7"
+projects[metatag][version] = "1.21"
 
 projects[message][subdir] = "contrib"
-projects[message][version] = "1.10"
+projects[message][version] = "1.12"
 
 projects[message_notify][subdir] = "contrib"
 projects[message_notify][version] = "2.5"
@@ -147,7 +147,7 @@ projects[page_title][subdir] = "contrib"
 projects[page_title][version] = "2.7"
 
 projects[panels][subdir] = "contrib"
-projects[panels][version] = "3.5"
+projects[panels][version] = "3.9"
 
 projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = "1.3"
@@ -180,13 +180,13 @@ projects[saml_sp][patch][] = "https://www.drupal.org/files/issues/saml_sp_remove
 projects[saml_sp][patch][] = "https://raw.githubusercontent.com/os2loop/profile/master/patches/saml_sp_drupal_login-alter_user_hooks.patch"
 
 projects[search_api][subdir] = "contrib"
-projects[search_api][version] = "1.18"
+projects[search_api][version] = "1.21"
 
 projects[search_api_page][subdir] = "contrib"
-projects[search_api_page][version] = "1.2"
+projects[search_api_page][version] = "1.3"
 
 projects[search_api_solr][subdir] = "contrib"
-projects[search_api_solr][version] = "1.9"
+projects[search_api_solr][version] = "1.12"
 
 projects[search_api_spellcheck][subdir] = "contrib"
 projects[search_api_spellcheck][version] = "1.0"
@@ -210,7 +210,7 @@ projects[shorten][subdir] = "contrib"
 projects[shorten][version] = "1.4"
 
 projects[shurly][subdir] = "contrib"
-projects[shurly][version] = "1.2"
+projects[shurly][version] = "1.3"
 
 projects[simplesamlphp_auth][subdir] = "contrib"
 projects[simplesamlphp_auth][version] = "2.0-alpha2"
@@ -224,41 +224,37 @@ projects[statistics_counter][version] = "1.4"
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = "2.0"
 
-projects[style_settings][type] = "module"
 projects[style_settings][subdir] = "contrib"
-projects[style_settings][download][type] = "git"
-projects[style_settings][download][url] = "http://git.drupal.org/project/style_settings.git"
-projects[style_settings][download][branch] = "7.x-2.x"
+projects[style_settings][version] = "2.0"
 
 projects[taxonomy_manager][subdir] = "contrib"
 projects[taxonomy_manager][version] = "1.0"
 
 projects[token][subdir] = "contrib"
-projects[token][version] = "1.6"
+projects[token][version] = "1.7"
 projects[token][patch] = "https://www.drupal.org/files/issues/token-field_description_overwritten-2474403-12-D7.patch"
 
 projects[transliteration][subdir] = "contrib"
 projects[transliteration][version] = "3.2"
 
 projects[uuid][subdir] = "contrib"
-projects[uuid][version] = "1.0-beta1"
+projects[uuid][version] = "1.0-beta2"
 
 projects[uuid_features][subdir] = "contrib"
-projects[uuid_features][version] = "1.0-alpha4"
+projects[uuid_features][version] = "1.0-rc1"
 
 projects[variable][subdir] = "contrib"
 projects[variable][version] = "2.5"
 
 projects[views][subdir] = "contrib"
-projects[views][version] = "3.13"
+projects[views][version] = "3.15"
 projects[views][patch][] = "https://drupal.org/files/views-make_destination_parameter_configurable-1239566-26.patch"
-projects[views][patch][] = "https://drupal.org/files/views-1685144-localization-bug_1.patch"
 
 projects[views_calc][subdir] = "contrib"
 projects[views_calc][version] = "1.1"
 
 projects[views_bulk_operations][subdir] = "contrib"
-projects[views_bulk_operations][version] = "3.3"
+projects[views_bulk_operations][version] = "3.4"
 
 projects[views_flag_refresh][subdir] = "contrib"
 projects[views_flag_refresh][version] = "1.3"
