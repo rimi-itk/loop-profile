@@ -64,8 +64,8 @@ function loop_unilogin_update_user_data($user) {
  */
 function loop_unilogin_form_user_login_block_alter(&$form, &$form_state, $form_id) {
   if (current_path() !== 'user/login') {
-    // We just want a plain redirect. Using drupal_goto() will not work.
-    header('Location: ' . url('user/login', array('query' => drupal_get_destination())));
-    drupal_exit();
+    // We want to set the destination explicitly in drupal_goto().
+    unset($_GET['destination']);
+    drupal_goto('user/login', array('query' => drupal_get_destination()));
   }
 }
