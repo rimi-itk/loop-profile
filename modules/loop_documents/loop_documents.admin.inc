@@ -8,7 +8,7 @@
 /**
  * Build settings form.
  */
-function loop_documents_admin() {
+function loop_documents_admin_form() {
   $form = array();
 
   $wkhtmltopdf_options_default_value = '';
@@ -61,5 +61,23 @@ function loop_documents_admin() {
     ),
   );
 
+  $form['#submit'][] = 'loop_documents_admin_form_submit';
+
   return system_settings_form($form);
+}
+
+/**
+ * Submit handler for settings form.
+ */
+function loop_documents_admin_form_submit($form, &$form_state) {
+  // Mark header/footer images as permanent files.
+  $image_names = array('loop_documents_header_image', 'loop_documents_footer_image');
+  foreach ($image_names as $name) {
+    if (!empty($form_state['values'][$name])) {
+      $file = file_load($form_state['values'][$name]);
+      $file->status = FILE_STATUS_PERMANENT;
+      file_save($file);
+      file_usage_add($file, 'loop_documents', $name, 1);
+    }
+  }
 }

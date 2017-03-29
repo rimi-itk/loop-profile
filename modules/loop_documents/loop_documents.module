@@ -20,7 +20,7 @@ function loop_documents_menu() {
     'title' => 'Loop documents settings',
     'description' => 'Settings for the Loop documents module',
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('loop_documents_admin'),
+    'page arguments' => array('loop_documents_admin_form'),
     'access arguments' => array('administer loop_documents settings'),
     'type' => MENU_NORMAL_ITEM,
   );
