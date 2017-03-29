@@ -1,13 +1,13 @@
 .loop-documents-collection-content .loop-documents-edit-menu {
-	float: right;
+  float: right;
 }
 
 .loop-documents-collection-content .form-item-document input[type=text] {
-	display: inline-block;
-	width: auto;
+  display: inline-block;
+  width: auto;
 }
 
 /* This is a hack – but it works! */
 #edit-body .filter-wrapper {
-	display: none;
+  display: none;
 }

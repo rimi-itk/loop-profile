@@ -17,26 +17,26 @@ $metadata_values = array_map(function ($field_name) use ($document) {
 ?>
 
 <div class="loop-documents--document-metadata">
-	<p class="loop-documents--meta-title">
-		<?php echo t('Author') ?>
-	</p>
-	<?php echo $metadata_values['author'] ? $metadata_values['author'] : t('No author specified'); ?>
+  <p class="loop-documents--meta-title">
+    <?php echo t('Author') ?>
+  </p>
+  <?php echo $metadata_values['author'] ? $metadata_values['author'] : t('No author specified'); ?>
 </div>
 
 <?php if (!empty($metadata_values['keyword'])): ?>
-	<div class="loop-documents--document-metadata">
-		<p class="loop-documents--meta-title">
-			<?php echo t('Tags') ?>
-		</p>
-		<?php echo $metadata_values['keyword']; ?>
-	</div>
+  <div class="loop-documents--document-metadata">
+    <p class="loop-documents--meta-title">
+      <?php echo t('Tags') ?>
+    </p>
+    <?php echo $metadata_values['keyword']; ?>
+  </div>
 <?php endif ?>
 
 <?php if (!empty($metadata_values['subject'])): ?>
-	<div class="loop-documents--document-metadata">
-		<p class="loop-documents--meta-title">
-			<?php echo t('Subject') ?>
-		</p>
-		<?php echo $metadata_values['subject']; ?>
-	</div>
+  <div class="loop-documents--document-metadata">
+    <p class="loop-documents--meta-title">
+      <?php echo t('Subject') ?>
+    </p>
+    <?php echo $metadata_values['subject']; ?>
+  </div>
 <?php endif ?>

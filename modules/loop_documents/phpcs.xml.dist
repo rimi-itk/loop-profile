@@ -7,6 +7,7 @@
  <exclude-pattern>*.field_group.*</exclude-pattern>
  <exclude-pattern>*.strongarm.*</exclude-pattern>
  <exclude-pattern>*.pages.*</exclude-pattern>
+ <exclude-pattern>ckeditor/styles/loop_documents.css</exclude-pattern>
 
  <arg value="np"/>
  <arg value="s"/>
