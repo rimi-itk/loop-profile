@@ -4241,6 +4241,10 @@ a.question--term.taxonomy-keyword {
   font-weight: bold;
   margin-bottom: .2em; }
 
+.loop-documents--content h2, .loop-documents--content h3 {
+  font-weight: bold;
+  margin-bottom: 0; }
+
 /**
  * Active Tags module
  *
