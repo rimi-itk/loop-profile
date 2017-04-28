@@ -825,7 +825,7 @@ label {
   margin-bottom: 0;
   margin-top: 1.5em; }
 
-.page-user .button--action:last-child, .page-user .form-submit:last-child, .page-user .block-follow-question .flag-action:last-child, .block-follow-question .page-user .flag-action:last-child, .page-user .typeahead-block--button:last-child {
+.page-user .button--action:last-child, .page-user .form-submit:last-child, .page-user .block-follow-question .flag-action:last-child, .block-follow-question .page-user .flag-action:last-child, .page-user .search-box-block--button:last-child, .page-user .typeahead-block--button:last-child {
   margin-bottom: 0.75em; }
 
 .page-user .user-form--password-link {
