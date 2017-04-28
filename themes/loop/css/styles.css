@@ -418,7 +418,6 @@ h6 {
   -webkit-hyphens: auto;
   hyphens: auto;
   overflow-wrap: break-word;
-  -ms-word-break: break-all;
   word-break: break-word;
   word-wrap: break-word;
   margin-top: 0;
