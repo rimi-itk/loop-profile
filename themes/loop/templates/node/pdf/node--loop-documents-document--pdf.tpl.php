@@ -17,6 +17,8 @@
       hide($content['comments']);
       hide($content['links']);
       hide($content['children']);
+      hide($content['field_keyword']);
+      hide($content['field_subject']);
       print render($content);
       print render($content['children']);
       ?>
