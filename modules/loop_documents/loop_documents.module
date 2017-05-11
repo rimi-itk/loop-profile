@@ -447,8 +447,13 @@ function loop_documents_add_collection_data($node, array &$variables) {
               if (!isset($item['#localized_options'])) {
                 $item['#localized_options'] = array();
               }
-              $item['#localized_options'] += array('fragment' => $item['#href']);
-              $item['#href'] = current_path();
+              // We want to generate menu links with fragments ids only.
+              // This is done by emptying '#href' and marking the link as being 'external'.
+              $item['#localized_options'] += array(
+                'fragment' => $item['#href'],
+                'external' => TRUE,
+              );
+              $item['#href'] = '';
             });
           }
           else {
