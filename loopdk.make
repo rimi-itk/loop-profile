@@ -12,7 +12,7 @@ projects[admin_views][subdir] = "contrib"
 projects[admin_views][version] = "1.6"
 
 projects[auto_entitylabel][subdir] = "contrib"
-projects[auto_entitylabel][version] = "1.3"
+projects[auto_entitylabel][version] = "1.4"
 
 projects[autocomplete_deluxe][subdir] = "contrib"
 projects[autocomplete_deluxe][version] = "2.2"
@@ -30,7 +30,7 @@ projects[ckeditor_link][subdir] = "contrib"
 projects[ckeditor_link][version] = "2.4"
 
 projects[date][subdir] = "contrib"
-projects[date][version] = "2.9"
+projects[date][version] = "2.10"
 
 projects[diff][subdir] = "contrib"
 projects[diff][version] = "3.3"
@@ -48,7 +48,7 @@ projects[entitycache][subdir] = "contrib"
 projects[entitycache][version] = "1.5"
 
 projects[entityreference][subdir] = "contrib"
-projects[entityreference][version] = "1.2"
+projects[entityreference][version] = "1.4"
 
 projects[facetapi][subdir] = "contrib"
 projects[facetapi][version] = "1.5"
@@ -84,13 +84,13 @@ projects[html5_tools][subdir] = "contrib"
 projects[html5_tools][version] = "1.3"
 
 projects[i18n][subdir] = "contrib"
-projects[i18n][version] = "1.15"
+projects[i18n][version] = "1.17"
 
 projects[i18nviews][subdir] = "contrib"
 projects[i18nviews][version] = "3.0-alpha1"
 
 projects[jquery_update][subdir] = "contrib"
-projects[jquery_update][version] = "3.0-alpha4"
+projects[jquery_update][version] = "3.0-alpha5"
 
 projects[l10n_update][subdir] = "contrib"
 projects[l10n_update][version] = "1.1"
@@ -144,7 +144,7 @@ projects[message_subscribe][subdir] = "contrib"
 projects[message_subscribe][version] = "1.0-rc2"
 
 projects[mimemail][subdir] = "contrib"
-projects[mimemail][version] = "1.0-beta4"
+projects[mimemail][version] = "1.0"
 
 projects[module_filter][subdir] = "contrib"
 projects[module_filter][version] = "2.0"
@@ -186,7 +186,7 @@ projects[role_delegation][subdir] = "contrib"
 projects[role_delegation][version] = "1.1"
 
 projects[rules][subdir] = "contrib"
-projects[rules][version] = "2.9"
+projects[rules][version] = "2.10"
 
 projects[saml_sp][type] = "module"
 projects[saml_sp][subdir] = "contrib"
@@ -222,7 +222,7 @@ projects[search_node_page][type] = "module"
 projects[search_node_page][subdir] = "contrib"
 projects[search_node_page][download][type] = "git"
 projects[search_node_page][download][url] = "http://github.com/search-node/search_node_page.git"
-projects[search_node_page][download][tag] = "7.x-1.3.1"
+projects[search_node_page][download][tag] = "7.x-1.3.3"
 
 projects[secure_permissions][subdir] = "contrib"
 projects[secure_permissions][version] = "1.6"
@@ -231,7 +231,7 @@ projects[shorten][subdir] = "contrib"
 projects[shorten][version] = "1.4"
 
 projects[shurly][subdir] = "contrib"
-projects[shurly][version] = "1.3"
+projects[shurly][version] = "1.4"
 
 projects[simplesamlphp_auth][subdir] = "contrib"
 projects[simplesamlphp_auth][version] = "2.0-alpha2"
@@ -259,7 +259,7 @@ projects[transliteration][subdir] = "contrib"
 projects[transliteration][version] = "3.2"
 
 projects[uuid][subdir] = "contrib"
-projects[uuid][version] = "1.0-beta2"
+projects[uuid][version] = "1.0"
 
 projects[uuid_features][subdir] = "contrib"
 projects[uuid_features][version] = "1.0-rc1"
@@ -271,7 +271,7 @@ projects[view_unpublished][subdir] = "contrib"
 projects[view_unpublished][version] = "1.2"
 
 projects[views][subdir] = "contrib"
-projects[views][version] = "3.15"
+projects[views][version] = "3.16"
 projects[views][patch][] = "https://drupal.org/files/views-make_destination_parameter_configurable-1239566-26.patch"
 
 projects[views_calc][subdir] = "contrib"
