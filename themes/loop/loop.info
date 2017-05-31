@@ -15,6 +15,7 @@ scripts[] = scripts/mobile-nav.min.js
 scripts[] = scripts/modernizr.min.js
 scripts[] = scripts/chosen.jquery.js
 scripts[] = scripts/use-chosen.min.js
+scripts[] = scripts/toggle.js
 
 ; Stylesheets
 stylesheets[all][] = css/styles.css
@@ -36,6 +37,7 @@ plugins[panels][layouts] = templates/panels/layouts
 dependencies[] = style_settings
 
 ; Defaults for the theme configuration
+settings[show_login_for_regular_users] = true
 settings[show_logout_for_regular_users] = true
 settings[show_logout_for_saml_users] = true
 settings[show_breadcrumbs] = false

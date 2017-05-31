@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Install module for the Loop documents module.
+ */
+
+/**
+ * Implements hook_enable().
+ */
+function loop_documents_enable() {
+  secure_permissions_rebuild();
+}
+
+/**
+ * Implements hook_disable().
+ */
+function loop_documents_disable() {
+  secure_permissions_rebuild();
+}

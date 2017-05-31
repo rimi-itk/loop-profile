@@ -9,7 +9,6 @@ dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = file
 dependencies[] = loop_field_bases
-dependencies[] = loop_search
 dependencies[] = options
 dependencies[] = page_manager
 dependencies[] = strongarm

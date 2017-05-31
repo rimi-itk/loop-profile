@@ -1,0 +1,38 @@
+<?php
+/**
+ * @file
+ * Handle search node configuration settings.
+ */
+
+
+/**
+ * Implements hook_install().
+ */
+function loop_search_node_install() {
+  // Set block configuration
+  variable_set('search_node_page_search_box', _loop_search_node_box_settings());
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function loop_search_node_uninstall() {
+  variable_del('search_node_page_search_box');
+}
+
+/**
+ * Update angular search templates path.
+ */
+function loop_search_node_update_7001(&$sandbox) {
+  variable_set('search_node_page_search_box', _loop_search_node_box_settings());
+}
+
+/**
+ * Update search box visibility paths.
+ */
+function loop_search_node_update_7002(&$sandbox) {
+  db_update('block')
+    ->fields(_loop_search_node_search_block_settings())
+    ->condition('theme', 'loop')
+    ->condition('delta', 'search_node_search_box');
+}

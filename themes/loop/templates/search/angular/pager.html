@@ -1,0 +1,17 @@
+<div class="item-list">
+  <!-- https://github.com/brantwills/Angular-Paging -->
+  <div paging
+       class="pager"
+       hide-if-empty="true"
+       page="pager.page + 1"
+       total="pager.max"
+       show-prev-next="true"
+       show-first-last="true"
+       text-first="&laquo; {{ Drupal.t('first', { }, { 'context': 'angular' }) }}"
+       text-last="{{ Drupal.t('last', { }, { 'context': 'angular' }) }} &raquo;"
+       text-next="{{ Drupal.t('next', { }, { 'context': 'angular' }) }} &rsaquo;"
+       text-prev="&lsaquo; {{ Drupal.t('previous', { }, { 'context': 'angular' }) }}"
+       active-class="current"
+       paging-action="changePage(page - 1)">
+  </div>
+</div>

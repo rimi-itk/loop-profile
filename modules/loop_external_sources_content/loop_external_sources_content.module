@@ -13,7 +13,10 @@ include_once 'loop_external_sources_content.features.inc';
  */
 function loop_external_sources_content_init() {
   // Check if it's a registered user.
-  if (user_is_logged_in()) {
+  if (user_is_logged_in() && module_exists('loop_search')) {
+    if (function_exists('loopdk_load_handlebars')) {
+      loopdk_load_handlebars();
+    }
     drupal_add_js(drupal_get_path('module', 'loop_external_sources_content') . '/js/search.js');
   }
 }
@@ -22,12 +25,7 @@ function loop_external_sources_content_init() {
  * Implements hook_menu().
  */
 function loop_external_sources_content_menu() {
-  $items['loop_search_nodes'] = array(
-    'title' => 'List nodes in JSON format',
-    'page callback' => 'loop_search_nodes',
-    'type' => MENU_CALLBACK,
-    'access arguments' => array('access content'),
-  );
+  $items = array();
 
   $items['loop_external_sources/%'] = array(
     'title' => 'List external sources in JSON format',

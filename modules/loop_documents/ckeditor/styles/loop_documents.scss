@@ -1,0 +1,19 @@
+table.loop-documents-table {
+	width: 100%;
+
+	th {
+		background: #ccc;
+		text-align: center;
+	}
+
+	th, td {
+		vertical-align: top;
+	}
+
+	&-steps {
+		td:first-child {
+			width: 10%;
+			text-align: center;
+		}
+	}
+}
