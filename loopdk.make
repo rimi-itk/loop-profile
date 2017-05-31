@@ -66,7 +66,7 @@ projects[field_group][subdir] = "contrib"
 projects[field_group][version] = "1.5"
 
 projects[file_entity][subdir] = "contrib"
-projects[file_entity][version] = "2.0-beta3"
+projects[file_entity][version] = "2.0"
 
 projects[flag][subdir] = "contrib"
 projects[flag][version] = "3.9"
@@ -111,7 +111,7 @@ projects[mailsystem][subdir] = "contrib"
 projects[mailsystem][version] = "2.34"
 
 projects[media][subdir] = "contrib"
-projects[media][version] = "2.0-beta14"
+projects[media][version] = "2.4"
 
 projects[menu_admin_per_menu][subdir] = "contrib"
 projects[menu_admin_per_menu][version] = "1.1"
@@ -156,7 +156,7 @@ projects[node_limit][subdir] = "contrib"
 projects[node_limit][version] = "1.0-alpha5"
 
 projects[oauth][subdir] = "contrib"
-projects[oauth][version] = "3.2"
+projects[oauth][version] = "3.4"
 
 projects[page_title][subdir] = "contrib"
 projects[page_title][version] = "2.7"
