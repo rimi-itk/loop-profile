@@ -130,6 +130,7 @@ function loop_permissions_secure_permissions($role) {
       'flag subscribe_taxonomy',
       'post comments',
       'Report abuse',
+      'search content',
       'send complaints on comments',
       'skip comment approval',
       'unflag message_read',

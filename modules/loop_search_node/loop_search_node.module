@@ -4,8 +4,6 @@
  * Adds the javascript need to search the sites content.
  */
 
-include_once 'loop_search_node.features.inc';
-
 /**
  * Implements hook_menu().
  */
@@ -301,7 +299,7 @@ function _loop_search_node_box_settings() {
     'options' => array(
       'match_type' => 'best_fields',
       'match_operator' => 'and',
-      'cache_expire' => 1,
+      'cache_expire' => 300,
       'size' => 8,
       'initial_query_enable' => 0,
       'initial_query_text' => '',
@@ -400,13 +398,48 @@ function _loop_search_node_box_settings() {
 }
 
 /**
+ * Implements hook_block_info_alter().
+ */
+function loop_search_node_block_info_alter(&$blocks, $theme, $code_blocks) {
+  if (isset($blocks['search_node_page']) && !isset($blocks['search_node_page']['search_node_search_box']['bid'])) {
+    $blocks['search_node_page']['search_node_search_box']['pages'] = "admin\r\nadmin/*\r\nuser/*/edit\r\nnode/*";
+    $blocks['search_node_page']['search_node_search_box']['region'] = BLOCK_REGION_NONE;
+    $blocks['search_node_page']['search_node_search_box']['status'] = 0;
+
+    // Only authenticated user should see the search block.
+    $res = db_select('block_role', 'br')
+      ->fields('br', array('rid'))
+      ->condition('module', 'search_node_page')
+      ->execute()
+      ->fetchField();
+
+    if (!$res) {
+      db_insert('block_role')
+        ->fields(_loop_search_node_search_block_roll_settings())
+        ->execute();
+    }
+  }
+}
+
+/**
  * The search block configuration.
  */
 function _loop_search_node_search_block_settings() {
   return array(
     'weight' => -17,
-    'region' => 'content',
+    'region' => '-1',
     'pages' => "admin\r\nadmin/*\r\nuser/*/edit",
     'status' => 0
+  );
+}
+
+/**
+ * The search block configuration.
+ */
+function _loop_search_node_search_block_roll_settings() {
+  return array(
+    'module' => 'search_node_page',
+    'delta' => 'search_node_search_box',
+    'rid' => 2,
   );
 }

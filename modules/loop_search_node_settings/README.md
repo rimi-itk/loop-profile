@@ -1,5 +1,21 @@
-# Search node mappings
-<pre>
+This module contains a default configuration for search node.
+
+The API keys and indexes can be overridden in the settings.php using these 
+variables.
+
+```php
+$conf['search_api_loop_search_node_apikey'] = '';
+$conf['search_api_loop_search_node_apikey_readonly'] = '';
+$conf['search_api_loop_search_node_host'] = 'https://localhost';
+
+$conf['search_api_loop_search_node_index_posts'] = '';
+$conf['search_api_loop_search_node_index_auto_complete'] = '';
+```
+
+# Search node mappings`
+This is the mappings/configuration used inside serarch node.
+
+```json
 {
   "bd6f534b05ab6073e04afef2c67e7e44": {
     "name": "LOOP typeahead",
@@ -21,9 +37,9 @@
     "tag": "private"
   }
 }
-</pre>
+```
 
-<pre>
+```json
 {
   "833bc3ffdcd187e4bf72945e7fe4a08d": {
     "name": "LOOP posts",
@@ -186,4 +202,4 @@
     ]
   }
 }
-</pre>
+``

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * loop_search_node.pages_default.inc
+ * loop_search_node_settings.pages_default.inc
  */
 
 /**
  * Implements hook_default_page_manager_pages().
  */
-function loop_search_node_default_page_manager_pages() {
+function loop_search_node_settings_default_page_manager_pages() {
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;
@@ -30,6 +30,8 @@ function loop_search_node_default_page_manager_pages() {
       ),
     ),
     'logic' => 'and',
+    'type' => 'none',
+    'settings' => NULL,
   );
   $page->menu = array();
   $page->arguments = array();
