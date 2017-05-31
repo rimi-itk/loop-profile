@@ -1,0 +1,792 @@
+<?php
+
+/**
+ * @file
+ * Code for the Loop documents feature.
+ */
+
+include_once 'loop_documents.features.inc';
+include_once 'loop_documents.permissions.inc';
+include_once 'loop_documents.admin.inc';
+include_once 'loop_documents.entity_print.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function loop_documents_menu() {
+  $items = array();
+
+  $items['admin/config/content/loop_documents'] = array(
+    'title' => 'Loop documents settings',
+    'description' => 'Settings for the Loop documents module',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('loop_documents_admin_form'),
+    'access arguments' => array('administer loop_documents settings'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['loop_documents/autocomplete/loop_documents_collection/%'] = array(
+    'title' => 'Autocomplete for getting documents to add to a collection',
+    'page callback' => '_loop_documents_autocomplete_documents',
+    'page arguments' => array(3),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['loop_documents/print/node/%/header'] = array(
+    'title' => '',
+    'page callback' => '_loop_documents_print',
+    'page arguments' => array(3, 4),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['loop_documents/print/node/%/footer'] = array(
+    'title' => '',
+    'page callback' => '_loop_documents_print',
+    'page arguments' => array(3, 4),
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+/**
+ * Render header or footer for printing a collection.
+ *
+ * @param int $collection_id
+ *   The collection id.
+ * @param string $view_mode
+ *   The view mode (header|footer).
+ */
+function _loop_documents_print($collection_id, $view_mode) {
+  $collection = node_load($collection_id);
+  if ($collection && $collection->type === 'loop_documents_collection'
+      && in_array($view_mode, array('header', 'footer'))) {
+    $image = file_load(variable_get('loop_documents_' . $view_mode . '_image', 0));
+    print theme('loop_documents_collection_print_' . $view_mode, array(
+      'collection' => $collection,
+      'image' => $image,
+      'view_mode' => $view_mode,
+    ));
+    exit;
+  }
+
+  drupal_not_found();
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter().
+ */
+function loop_documents_form_node_form_alter(&$form, &$form_state, $form_id) {
+  if (isset($form['#node'])) {
+    $node = $form['#node'];
+    if ($node->type === 'loop_documents_collection') {
+      $form['field_loop_documents_contents'][LANGUAGE_NONE][0]['value']['#value'] = loop_documents_get_menu_name($node);
+      $form['field_loop_documents_contents']['#type'] = 'hidden';
+      $menu = menu_load(loop_documents_get_menu_name($node));
+
+      $form['field_loop_documents_menu_display'] = array(
+        '#type' => 'fieldset',
+        '#attributes' => array('class' => array('loop-documents-collection-content')),
+        '#title' => t('Collection content'),
+        '#weight' => $form['field_loop_documents_contents']['#weight'],
+        'menu_display' => array(
+          '#markup' => loop_documents_render_collection_menu($menu),
+          '#prefix' => '<div id="loop-documents-menu-display">',
+          '#suffix' => '</div>',
+        ),
+      );
+
+      if ($menu) {
+        $form['field_loop_documents_menu_display']['add_document'] = array(
+          '#type' => 'container',
+          '#attributes' => array('class' => array('container-inline')),
+          '#weight' => 100,
+          '#prefix' => '<div id="loop-documents-add-document">',
+          '#suffix' => '</div>',
+        );
+
+        $form['field_loop_documents_menu_display']['add_document']['document'] = array(
+          '#type' => 'textfield',
+          '#autocomplete_path' => 'loop_documents/autocomplete/loop_documents_collection/' . $node->nid,
+          '#prefix' => '<div id="loop-documents-menu-document-options">',
+          '#suffix' => '</div>',
+        );
+
+        $form['field_loop_documents_menu_display']['add_document']['actions'] = array(
+          '#type' => 'submit',
+          '#value' => t('Add document'),
+          '#ajax' => array(
+            'callback' => 'loop_documents_add_document_callback',
+            'event' => 'click',
+          ),
+          '#weight' => 2,
+        );
+
+        $form['field_loop_documents_menu_display']['edit_menu'] = array(
+          '#markup' => l(t('Edit menu'), 'admin/structure/menu/manage/' . $menu['menu_name'], array('attributes' => array('target' => 'loop_documents_menu'))),
+          '#prefix' => '<div class="loop-documents-edit-menu">',
+          '#suffix' => '</div>',
+          '#weight' => -1,
+        );
+      }
+    }
+
+    if (in_array($node->type, array('loop_documents_collection', 'loop_documents_document'))) {
+      if (isset($form['body'])) {
+        // Remove text format selector.
+        $language = $form['body']['#language'];
+        $form['body'][$language]['0']['#format'] = 'loop_documents';
+      }
+      $form['#attached']['css'][] = drupal_get_path('module', 'loop_documents') . '/css/loop_documents.admin.css';
+      $form['#attached']['js'][] = drupal_get_path('module', 'loop_documents') . '/js/loop_documents.admin.js';
+      $form['#after_build'][] = 'loop_documents_after_build';
+    }
+  }
+}
+
+/**
+ * Autocomplete callback.
+ */
+function _loop_documents_autocomplete_documents($collection_id, $query) {
+  $options = array();
+
+  $collection = node_load($collection_id);
+  if ($collection) {
+    $menu = menu_load(loop_documents_get_menu_name($collection));
+    if ($menu) {
+      $menu_paths = array_map(function ($link) {
+        return $link['link_path'];
+      }, menu_load_links($menu));
+
+      $document_ids = array();
+      $condition = db_or();
+      $condition->condition('title', '%' . $query . '%', 'LIKE');
+      $result = db_select('node', 'n')
+        ->fields('n', array('nid'))
+        ->condition('type', 'loop_documents_document')
+        ->condition($condition)
+        ->orderBy('title')
+        ->execute();
+      foreach ($result as $row) {
+        $document_ids[] = $row->nid;
+      }
+
+      $documents = node_load_multiple($document_ids);
+
+      // Filter out documents already in the menu.
+      $documents = array_filter($documents, function ($document) use ($menu_paths) {
+        return !in_array('node/' . $document->nid, $menu_paths);
+      });
+
+      if (empty($documents)) {
+        $options[''] = t('No documents found');
+      }
+      else {
+        foreach ($documents as $document) {
+          $options[$document->title . ' (node/' . $document->nid . ')'] = $document->title . ' (node/' . $document->nid . ')';
+        }
+      }
+    }
+  }
+
+  drupal_json_output($options);
+}
+
+/**
+ * Get all documents (as select options) that are not yet part of a menu.
+ *
+ * @param array $menu
+ *   The menu.
+ *
+ * @return array
+ *   The select options.
+ */
+function loop_documents_get_document_options(array $menu) {
+  $options = array();
+
+  $menu_paths = array_map(function ($link) {
+    return $link['link_path'];
+  }, menu_load_links($menu));
+  $documents = node_load_multiple(array(), array('type' => 'loop_documents_document'));
+  // Filter out documents already in the menu.
+  $documents = array_filter($documents, function ($document) use ($menu_paths) {
+    return !in_array('node/' . $document->nid, $menu_paths);
+  });
+
+  if (!empty($documents)) {
+    $options[''] = '';
+    foreach ($documents as $document) {
+      $options['node/' . $document->nid] = $document->title;
+    }
+  }
+
+  return $options;
+}
+
+/**
+ * Add custom css to form.
+ */
+function loop_documents_after_build($form, &$form_state) {
+  drupal_add_css(drupal_get_path('module', 'loop_documents') . '/css/loop-documents.css');
+
+  return $form;
+}
+
+/**
+ * Render a collection menu.
+ *
+ * @param array|null $menu
+ *   The menu.
+ */
+function loop_documents_render_collection_menu($menu) {
+  $content = '';
+  if ($menu) {
+    $menu_tree = menu_tree($menu['menu_name']);
+    $content = empty($menu_tree) ? t('No documents added yet') : render($menu_tree);
+  }
+  else {
+    $content = t('Save collection to create menu');
+  }
+
+  return '<div class="loop-documents-collection-menu">' . $content . '</div>';
+}
+
+/**
+ * Ajax callback to add a document to a collection menu.
+ *
+ * @param array $form
+ *   The form.
+ * @param array $form_state
+ *   The form state.
+ */
+function loop_documents_add_document_callback(array $form, array $form_state) {
+  $commands = array();
+
+  $node = $form['#node'];
+  $menu = menu_load(loop_documents_get_menu_name($node));
+  $target_node = NULL;
+
+  if (!empty($form_state['values']['document']) && preg_match('@node/(?<nid>[0-9]+)@', $form_state['values']['document'], $matches)) {
+    $target_node = node_load($matches['nid']);
+  }
+
+  if ($node && $menu && $target_node) {
+    // Get current highest weight at first level in menu.
+    $menu_links = menu_load_links($menu['menu_name']);
+    $weight = max(array_map(function ($link) {
+      return $link['depth'] == 1 ? $link['weight'] : 0;
+    }, $menu_links));
+
+    $menu_link = array(
+      'link_path' => 'node/' . $target_node->nid,
+      'link_title' => $target_node->title,
+      'expanded' => TRUE,
+      'menu_name' => $menu['menu_name'],
+      'weight' => $weight + 1,
+    );
+    menu_link_save($menu_link);
+
+    // Reload menu.
+    $menu = menu_load(loop_documents_get_menu_name($node));
+    $commands[] = ajax_command_html("#loop-documents-menu-display", loop_documents_render_collection_menu($menu));
+    $commands[] = array(
+      'command' => 'loop_documents_setValue',
+      'arguments' => array(
+        'selector' => '#loop-documents-menu-document-options input[type="text"]',
+        'value' => '',
+      ),
+    );
+  }
+  else {
+    $commands[] = ajax_command_alert(t('Error adding document to collection'));
+  }
+
+  return array(
+    '#type' => 'ajax',
+    '#commands' => $commands,
+  );
+}
+
+/**
+ * Implements hook_node_insert().
+ */
+function loop_documents_node_insert($node) {
+  if ($node->type === 'loop_documents_collection') {
+    loop_documents_create_collection_menu($node);
+  }
+}
+
+/**
+ * Implements hook_node_update().
+ */
+function loop_documents_node_update($node) {
+  if ($node->type === 'loop_documents_collection') {
+    loop_documents_create_collection_menu($node);
+  }
+}
+
+/**
+ * Create a collection menu if it does not exist.
+ *
+ * @param object $node
+ *   The document collection node.
+ */
+function loop_documents_create_collection_menu($node) {
+  $menu_name = loop_documents_get_menu_name($node);
+  $menu = menu_load($menu_name);
+  if (!$menu) {
+    $menu = array(
+      'menu_name' => $menu_name,
+      'title' => t('Document collection menu: @collection_title', array('@collection_title' => $node->title)),
+      'description' => 'Content menu for document collection ' . $node->title . ' (/node/' . $node->nid . ')',
+    );
+
+    menu_save($menu);
+  }
+
+  return $menu;
+}
+
+/**
+ * Get collection menu name.
+ */
+function loop_documents_get_menu_name($node) {
+  if (is_numeric($node)) {
+    $node = node_load($node);
+  }
+  return isset($node->nid) ? 'loop-documents-collection-' . $node->nid : NULL;
+}
+
+/**
+ * Implements hook_wysiwyg_editor_settings_alter().
+ */
+function loop_documents_wysiwyg_editor_settings_alter(&$settings, $context) {
+  $profile = $context['profile'];
+  if ($profile->format === 'loop_documents' && $profile->editor === 'ckeditor') {
+    unset($settings['toolbar']);
+
+    $settings['contentsCss'] = '/' . drupal_get_path('module', 'loop_documents') . '/ckeditor/styles/loop_documents.css';
+    $settings['customConfig'] = '/' . drupal_get_path('module', 'loop_documents') . '/ckeditor/config/loop_documents.js';
+  }
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function loop_documents_preprocess_node(&$variables) {
+  if (!isset($variables['node'])) {
+    return;
+  }
+
+  $node = $variables['node'];
+
+  if (!in_array($node->type, array('loop_documents_collection', 'loop_documents_document'))) {
+    return;
+  }
+
+  drupal_add_js(drupal_get_path('module', 'loop_documents') . '/js/loop_documents.js');
+
+  // Add template suggestion for view mode.
+  $variables['theme_hook_suggestions'][] = 'node__' . $node->type . '__' . $variables['view_mode'];
+
+  if (!in_array($variables['view_mode'], array('full', 'pdf', 'print'))) {
+    return;
+  }
+
+  loop_documents_add_collection_data($node, $variables);
+}
+
+/**
+ * Add collection template variables.
+ *
+ * @param object $node
+ *   The node.
+ * @param array $variables
+ *   The variables.
+ */
+function loop_documents_add_collection_data($node, array &$variables) {
+  global $user;
+
+  $collection_id = NULL;
+  if ($node->type === 'loop_documents_collection') {
+    $collection_id = $node->nid;
+  }
+  else {
+    $parameters = drupal_get_query_parameters();
+    if (!empty($parameters['collection'])) {
+      $collection_id = intval($parameters['collection']);
+    }
+  }
+
+  if (!$collection_id) {
+    $menus = loop_documents_get_menus($node);
+
+    // Get collections ids (numeric indexes in $menus).
+    $collection_ids = array_filter(array_keys($menus), 'is_numeric');
+    if (count($collection_ids) === 1) {
+      $collection_id = array_pop($collection_ids);
+    }
+  }
+
+  if ($collection_id) {
+    $menu_name = loop_documents_get_menu_name($collection_id);
+    if ($menu_name) {
+      $view_mode = isset($variables['view_mode']) ? $variables['view_mode'] : NULL;
+
+      // Render menu tree.
+      // Don't render menu tree with only  a single item in print/pdf view.
+      if (!loop_documents_is_print_view($view_mode) || count(menu_load_links($menu_name)) > 1) {
+        $menu = menu_tree($menu_name);
+        if ($menu) {
+          if (loop_documents_is_print_view($view_mode)) {
+            // Add local urls (with fragment ids) to menu.
+            loop_documents_process_menu($menu, function (&$item) {
+              if (!isset($item['#localized_options'])) {
+                $item['#localized_options'] = array();
+              }
+              // We want to generate menu links with fragments ids only.
+              // This is done by emptying '#href' and marking the link as being 'external'.
+              $item['#localized_options'] += array(
+                'fragment' => $item['#href'],
+                'external' => TRUE,
+              );
+              $item['#href'] = '';
+            });
+          }
+          else {
+            // Add query with collection id to menu item links.
+            $query = array(
+              'collection' => $collection_id,
+            );
+            loop_documents_process_menu($menu, function (&$item) use ($query) {
+              if (!isset($item['#localized_options'])) {
+                $item['#localized_options'] = array();
+              }
+              $item['#localized_options'] += array('query' => $query);
+            });
+          }
+          $variables['loop_documents_menu'] = $menu;
+        }
+      }
+
+      $collection = node_load($collection_id);
+      if ($collection) {
+        $variables['loop_documents_collection'] = $collection;
+        if (node_access('update', $collection, $user) === TRUE) {
+          $menu['loop_documents_collection_edit_url'] = 'node/' . $collection->nid . '/edit';
+        }
+        $variables['loop_documents_collection_print_url'] = 'entityprint/node/' . $collection->nid;
+      }
+    }
+  }
+  else {
+    $variables['loop_documents_collections'] = $menus;
+  }
+}
+
+/**
+ * Get a menu of all nodes pointing to a menu containing a given node.
+ *
+ * @param object $node
+ *   The node.
+ *
+ * @return array
+ *   The menu.
+ */
+function loop_documents_get_menus($node) {
+  $menus = array(
+    '#sorted' => TRUE,
+    '#theme_wrappers' => array(
+      'menu_tree__loop_documents_document' . $node->nid,
+    ),
+  );
+
+  $query = db_query('select menu_name from menu_links where link_path = :link_path', array('link_path' => 'node/' . $node->nid));
+  $nids = array_map(function ($name) {
+    return preg_match('/^loop-documents-collection-(?<id>[0-9]+)$/', $name, $matches) ? $matches['id'] : 0;
+  }, $query->fetchCol());
+  $roots = node_load_multiple($nids);
+  foreach ($roots as $root) {
+    $menu_name = loop_documents_get_menu_name($root);
+    $menus[$root->nid] = array(
+      '#theme' => 'menu_link__' . str_replace('-', '_', $menu_name),
+      '#attributes' => array(),
+      '#title' => $root->title,
+      '#href' => 'node/' . $node->nid,
+      '#localized_options' => array(
+        'query' => array(
+          'collection' => $root->nid,
+        ),
+      ),
+      '#below' => array(),
+    );
+  }
+
+  return $menus;
+}
+
+/**
+ * Process all menu items in a menu tree.
+ *
+ * @param array $menu
+ *   The menu tree.
+ * @param callable $callable
+ *   The callable.
+ */
+function loop_documents_process_menu(array &$menu, callable $callable) {
+  foreach ($menu as &$item) {
+    if (isset($item['#href'])) {
+      loop_documents_process_menu_item($item, $callable);
+    }
+  }
+}
+
+/**
+ * Process a menu item in a menu tree.
+ *
+ * @param array $item
+ *   The menu item.
+ * @param callable $callable
+ *   The callable.
+ */
+function loop_documents_process_menu_item(array &$item, callable $callable) {
+  if (isset($item['#href'])) {
+    $callable($item);
+  }
+  if (isset($item['#below'])) {
+    loop_documents_process_menu($item['#below'], $callable);
+  }
+}
+
+/**
+ * Decide if a view mode is a print/pdf view.
+ *
+ * @param string $view_mode
+ *   The view mode.
+ *
+ * @return bool
+ *   True iff the view mode as a print mode.
+ */
+function loop_documents_is_print_view($view_mode) {
+  return in_array($view_mode, array('pdf', 'print'));
+}
+
+/*
+ * Print stuff.
+ */
+
+/**
+ * Implements hook_node_view().
+ */
+function loop_documents_node_view($node, $view_mode = 'full', $langcode = NULL) {
+  if ($node->type == 'loop_documents_collection') {
+    if (loop_documents_is_print_view($view_mode)) {
+      $query = drupal_get_query_parameters();
+      $menu_name = loop_documents_get_menu_name($node);
+      if ($menu_name) {
+        $menu = menu_tree($menu_name);
+
+        $children = loop_documents_menu_to_render_array($menu, $view_mode);
+
+        if (!empty($children)) {
+          $node->content['documents'] = $children
+            + array(
+              '#prefix' => '<div class="loop-documents--documents">',
+              '#suffix' => '</div>',
+              '#weight' => 1000,
+            );
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Convert a menu to render array with page content.
+ */
+function loop_documents_menu_to_render_array(array $menu, $view_mode) {
+  $content = array();
+
+  foreach ($menu as $item) {
+    if (isset($item['#href'])) {
+      $item = loop_documents_menu_item_to_render_array($item, $view_mode);
+      if ($item) {
+        $content[] = $item;
+      }
+    }
+  }
+
+  return $content;
+}
+
+/**
+ * Convert a menu item to a render array for rendering page content.
+ */
+function loop_documents_menu_item_to_render_array(array $item, $view_mode) {
+  if (isset($item['#href']) && preg_match('@^node/(?<nid>[0-9]+)$@', $item['#href'], $matches)) {
+    $id = $item['#href'];
+
+    $content = array(
+      $id => node_view(node_load($matches['nid']), $view_mode)
+      + array(
+        '#prefix' => '<article id="' . $id . '">',
+        '#suffix' => '</article>',
+      ),
+    );
+
+    if (!empty($item['#below'])) {
+      $items = loop_documents_menu_to_render_array($item['#below'], $view_mode);
+      if (!empty($items)) {
+        $content[$id]['children'] = $items + array(
+          '#prefix' => '<section class="loop-documents--children">',
+          '#suffix' => '</section>',
+        );
+      }
+    }
+
+    return $content;
+  }
+
+  return NULL;
+}
+
+/**
+ * Get options for wkhtmltopdf.
+ */
+function loop_documents_get_wkhtmltopdf_options($replace_tokens = FALSE, $node = NULL) {
+  // https://www.drupal.org/node/390482#drupal7tokenslist
+  $default_options = array(
+    'page-size' => 'A4',
+    'title' => '[node:title] – [current-date:custom:Y-m-d]',
+    'margin-top' => 30,
+    'margin-right' => 20,
+    'margin-bottom' => 30,
+    'margin-left' => 20,
+    'header-html' => '[site:url]/loop_documents/print/node/[node:nid]/header',
+    'footer-html' => '[site:url]/loop_documents/print/node/[node:nid]/footer',
+  );
+
+  $options = $default_options;
+  $pairs = explode(PHP_EOL, variable_get('loop_documents_wkhtmltopdf_options', ''));
+  foreach ($pairs as $pair) {
+    $pair = trim(preg_replace('/#.*/', '', trim($pair)));
+    if (preg_match('/^(?<name>[^#:]+)\s*:\s*(?<value>.+)/', $pair, $matches)) {
+      $options[$matches['name']] = $matches['value'];
+    }
+  }
+
+  if ($replace_tokens) {
+    $options = array_map(function (&$value) use ($node) {
+      global $user;
+
+      $data = array(
+        'user' => $user,
+        'node' => $node,
+      );
+
+      return token_replace($value, $data, array('sanitize' => FALSE));
+    }, $options);
+  }
+
+  return $options;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function loop_documents_theme($existing, $type, $theme, $path) {
+  return array(
+    'node__loop_documents_collection' => array(
+      'render element' => 'content',
+      'base hook' => 'node',
+      'template' => 'node--loop-documents-collection',
+      'path' => drupal_get_path('module', 'loop_documents') . '/templates',
+    ),
+    'loop_documents_collection_metadata' => array(
+      'variables' => array(
+        'collection' => NULL,
+      ),
+      'template' => 'templates/loop-documents-collection-metadata',
+    ),
+    'loop_documents_collection_print_header' => array(
+      'variables' => array(
+        'collection' => NULL,
+        'image' => NULL,
+        'view_mode' => NULL,
+      ),
+      'template' => 'templates/loop-documents-collection-print-header',
+    ),
+    'loop_documents_collection_print_footer' => array(
+      'variables' => array(
+        'collection' => NULL,
+        'image' => NULL,
+        'view_mode' => NULL,
+      ),
+      'template' => 'templates/loop-documents-collection-print-footer',
+    ),
+
+    'node__loop_documents_document' => array(
+      'render element' => 'content',
+      'base hook' => 'node',
+      'template' => 'node--loop-documents-document',
+      'path' => drupal_get_path('module', 'loop_documents') . '/templates',
+    ),
+    'loop_documents_document_metadata' => array(
+      'variables' => array(
+        'document' => NULL,
+      ),
+      'template' => 'templates/loop-documents-document-metadata',
+    ),
+
+    'loop_documents_navigation' => array(
+      'variables' => array(
+        'node' => NULL,
+        'loop_documents_menu' => NULL,
+        'loop_documents_collection' => NULL,
+        'loop_documents_collection_edit_url' => NULL,
+        'loop_documents_collection_print_url' => NULL,
+        'loop_documents_collections' => NULL,
+      ),
+      'template' => 'templates/loop-documents-navigation',
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function loop_documents_block_info() {
+  return array(
+    'loop_documents_navigation' => array(
+      'info' => t('Loop documents navigation'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function loop_documents_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'loop_documents_navigation':
+      if ($node = menu_get_object()) {
+        $block['content'] = array(
+          '#theme' => 'loop_documents_navigation',
+          '#node' => $node,
+        );
+        $variables = array();
+        loop_documents_add_collection_data($node, $variables);
+        foreach ($variables as $key => $value) {
+          $block['content']['#' . $key] = $value;
+        }
+      }
+      break;
+  }
+
+  return $block;
+}

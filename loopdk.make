@@ -26,6 +26,9 @@ projects[comment_counter][version] = "1.0-alpha1"
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = "1.9"
 
+projects[ckeditor_link][subdir] = "contrib"
+projects[ckeditor_link][version] = "2.4"
+
 projects[date][subdir] = "contrib"
 projects[date][version] = "2.9"
 
@@ -37,6 +40,9 @@ projects[elements][version] = "1.4"
 
 projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.6"
+
+projects[entity_print][subdir] = "contrib"
+projects[entity_print][version] = "1.5"
 
 projects[entitycache][subdir] = "contrib"
 projects[entitycache][version] = "1.5"
@@ -58,6 +64,9 @@ projects[features_override][version] = "2.0-rc2"
 
 projects[field_group][subdir] = "contrib"
 projects[field_group][version] = "1.5"
+
+projects[file_entity][subdir] = "contrib"
+projects[file_entity][version] = "2.0-beta3"
 
 projects[flag][subdir] = "contrib"
 projects[flag][version] = "3.7"
@@ -101,6 +110,9 @@ projects[memcache][version] = "1.5"
 projects[mailsystem][subdir] = "contrib"
 projects[mailsystem][version] = "2.34"
 
+projects[media][subdir] = "contrib"
+projects[media][version] = "2.0-beta14"
+
 projects[menu_admin_per_menu][subdir] = "contrib"
 projects[menu_admin_per_menu][version] = "1.1"
 
@@ -115,6 +127,9 @@ projects[menu_token][version] = "1.0-beta5"
 
 projects[menu_position][subdir] = "contrib"
 projects[menu_position][version] = "1.2"
+
+projects[menu_view_unpublished][subdir] = "contrib"
+projects[menu_view_unpublished][version] = "1.0-beta3"
 
 projects[metatag][subdir] = "contrib"
 projects[metatag][version] = "1.7"
@@ -157,6 +172,12 @@ projects[path_breadcrumbs][version] = "3.3"
 
 projects[pcp][subdir] = "contrib"
 projects[pcp][version] = "1.7"
+
+projects[phpwkhtmltopdf][subdir] = "contrib"
+projects[phpwkhtmltopdf][version] = "2.1"
+
+projects[publishcontent][subdir] = "contrib"
+projects[publishcontent][version] = "1.4"
 
 projects[redirect][subdir] = "contrib"
 projects[redirect][version] = "1.0-rc3"
@@ -248,6 +269,9 @@ projects[uuid_features][version] = "1.0-alpha4"
 
 projects[variable][subdir] = "contrib"
 projects[variable][version] = "2.5"
+
+projects[view_unpublished][subdir] = "contrib"
+projects[view_unpublished][version] = "1.2"
 
 projects[views][subdir] = "contrib"
 projects[views][version] = "3.13"

@@ -13,6 +13,73 @@ include_once 'loop_permissions.features.inc';
  */
 
 /**
+ * Implements hook_permissions().
+ *
+ * Add permission to restrict access to certain admin paths.
+ */
+function loop_permissions_permission() {
+  $permissions = array();
+
+  $paths = array(
+    'admin',
+    'admin/content',
+  );
+
+  foreach ($paths as $path) {
+    $permissions['access path ' . $path] = array(
+      'title' => t('Access path %path', array('%path' => $path)),
+      'description' => t('Access path %path', array('%path' => $path)),
+    );
+  }
+
+  return $permissions;
+}
+
+/**
+ * Implements hook_menu_alter().
+ *
+ * See http://stackoverflow.com/a/5125994.
+ */
+function loop_permissions_menu_alter(&$items) {
+  foreach ($items as $path => &$item) {
+    if ($path === 'admin' || strpos($path, 'admin/') === 0) {
+      if (isset($item['access arguments'])) {
+        $item['access arguments'][] = isset($item['access callback']) ? $item['access callback'] : 'user_access';
+      }
+      else {
+        $item['access arguments'] = array();
+      }
+      $item['access arguments'][] = $path;
+      $item['access callback'] = 'loop_permissions_menu_access';
+    }
+  }
+}
+
+/**
+ * Menu access callback.
+ */
+function loop_permissions_menu_access() {
+  $args = func_get_args();
+  $path = array_pop($args);
+  $access_callback = array_pop($args);
+
+  if (is_callable($access_callback) && count($args) > 0 && !call_user_func_array($access_callback, $args)) {
+    return FALSE;
+  }
+
+  // Check admin access for 'document author' and 'document collection editor'.
+  $user_role_names = array_values($GLOBALS['user']->roles);
+  if (array_intersect($user_role_names, array('document author', 'document collection editor', 'external sources editor'))) {
+    if (!user_access('access path ' . $path)) {
+      return FALSE;
+    }
+  }
+
+  return TRUE;
+}
+
+
+/**
  * Define site roles in code.
  *
  * Create a secure_permissions_data module directory and place this function
@@ -29,6 +96,7 @@ function loop_permissions_secure_permissions_roles() {
     'administrator',
     'documentation coordinator',
     'manager',
+    'external sources editor',
   );
 }
 
@@ -291,6 +359,20 @@ function loop_permissions_secure_permissions($role) {
       'use text format editor',
       'View own URL stats',
       'view the administration theme',
+    ),
+    'external sources editor' => array(
+      'access administration pages',
+      // Allow access to some admin paths.
+      'access path admin',
+      'access path admin/content',
+
+      'access content overview',
+      'view the administration theme',
+      'create external_sources content',
+      'delete any external_sources content',
+      'delete own external_sources content',
+      'edit any external_sources content',
+      'edit own external_sources content',
     ),
   );
   if (isset($permissions[$role])) {

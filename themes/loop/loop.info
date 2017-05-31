@@ -15,6 +15,7 @@ scripts[] = scripts/mobile-nav.min.js
 scripts[] = scripts/modernizr.min.js
 scripts[] = scripts/chosen.jquery.js
 scripts[] = scripts/use-chosen.min.js
+scripts[] = scripts/toggle.js
 
 ; Stylesheets
 stylesheets[all][] = css/styles.css
