@@ -448,3 +448,32 @@ function loopdk_final_settings() {
   i18n_string_refresh_group('panels');
   i18n_string_refresh_group('views');
 }
+
+/**
+ * Implements hook_libraries_info().
+ */
+function loopdk_libraries_info() {
+  return array(
+    'handlebars' => array(
+      'name' => 'Handlebars.js',
+      'vendor url' => 'http://handlebarsjs.com/',
+      'download url' => 'https://github.com/wycats/handlebars.js/releases',
+      'version' => '1.2.1',
+      'files' => array(
+        'js' => array('handlebars-v1.2.1.js'),
+      ),
+    ),
+  );
+}
+
+/**
+ * Load the Handlebars.js library.
+ */
+function loopdk_load_handlebars() {
+  $library = libraries_detect('handlebars');
+  if (!empty($library['installed'])) {
+    foreach ($library['files']['js'] as $file => $v) {
+      drupal_add_js($library['library path'] . '/' . $file);
+    }
+  }
+}
