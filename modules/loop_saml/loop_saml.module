@@ -21,26 +21,6 @@ function loop_saml_menu() {
 }
 
 /**
- * Implements hook_init().
- */
-function loop_saml_init() {
-  // Do not run this from CLI.
-  if (php_sapi_name() != 'cli') {
-    global $user;
-    // Verify this is an anonymous user.
-    if ($user->uid === 0) {
-      $arg = arg();
-
-      // Verify this is a front-page request.
-      if (isset($arg[0]) && ($arg[0] == 'front')) {
-        // Redirect the user to the IdP.
-        drupal_goto('saml/drupal_login');
-      }
-    }
-  }
-}
-
-/**
  * Simple iFrame redirect page.
  */
 function loop_saml_redirect() {
@@ -138,4 +118,15 @@ function _loop_saml_setup_account($account, array $attributes) {
  */
 function loop_saml_preprocess(&$variables) {
   $variables['logged_in_via_saml'] = saml_sp_drupal_login_is_authenticated();
+}
+
+/**
+ * Redirect from login block to real login page.
+ */
+function loop_saml_form_user_login_block_alter(&$form, &$form_state, $form_id) {
+  if (current_path() !== 'user/login') {
+    // We want to set the destination explicitly in drupal_goto().
+    unset($_GET['destination']);
+    drupal_goto('user/login', array('query' => drupal_get_destination()));
+  }
 }
