@@ -16,5 +16,5 @@ projects[drupal][patch][] = "https://www.drupal.org/files/issues/optimize_scan-2
 ; Install profile.
 projects[loopdk][type] = "profile"
 projects[loopdk][download][type] = "git"
-projects[loopdk][download][url] = "https://github.com/rimi-itk/loop-profile.git"
-projects[loopdk][download][branch] = "feature/documents"
+projects[loopdk][download][url] = "https://github.com/os2loop/profile.git"
+projects[loopdk][download][branch] = "develop"
