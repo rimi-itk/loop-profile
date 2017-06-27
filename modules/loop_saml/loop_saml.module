@@ -121,6 +121,22 @@ function loop_saml_preprocess(&$variables) {
 }
 
 /**
+ * Implements hook_menu_alter().
+ *
+ * Hack to prevent user from accessing the external user registration page.
+ */
+function loop_saml_menu_alter(&$items) {
+  $items['user/register']['page callback'] = 'loop_saml_user_register_page_callback';
+}
+
+/**
+ * Prevent access to the external user registration page.
+ */
+function loop_saml_user_register_page_callback() {
+  drupal_goto('user');
+}
+
+/**
  * Redirect from login block to real login page.
  */
 function loop_saml_form_user_login_block_alter(&$form, &$form_state, $form_id) {
