@@ -193,10 +193,6 @@ projects[saml_sp][subdir] = "contrib"
 projects[saml_sp][download][type] = "git"
 projects[saml_sp][download][url] = "http://git.drupal.org/project/saml_sp.git"
 projects[saml_sp][download][branch] = "7.x-2.x"
-; SAML SP bugfixes:
-projects[saml_sp][patch][] = "https://www.drupal.org/files/issues/nameid-correction.patch"
-projects[saml_sp][patch][] = "https://www.drupal.org/files/issues/2649478-saml_sp-validation_of_signed_elements_fails-2.patch"
-projects[saml_sp][patch][] = "https://www.drupal.org/files/issues/saml_sp_remove_make_file.patch"
 ; Custom SAML SP hooks
 projects[saml_sp][patch][] = "https://raw.githubusercontent.com/os2loop/profile/master/patches/saml_sp_drupal_login-alter_user_hooks.patch"
 
