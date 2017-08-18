@@ -48,7 +48,7 @@ projects[entitycache][subdir] = "contrib"
 projects[entitycache][version] = "1.5"
 
 projects[entityreference][subdir] = "contrib"
-projects[entityreference][version] = "1.4"
+projects[entityreference][version] = "1.5"
 
 projects[facetapi][subdir] = "contrib"
 projects[facetapi][version] = "1.5"
@@ -271,7 +271,7 @@ projects[view_unpublished][subdir] = "contrib"
 projects[view_unpublished][version] = "1.2"
 
 projects[views][subdir] = "contrib"
-projects[views][version] = "3.16"
+projects[views][version] = "3.17"
 projects[views][patch][] = "https://drupal.org/files/views-make_destination_parameter_configurable-1239566-26.patch"
 
 projects[views_calc][subdir] = "contrib"
