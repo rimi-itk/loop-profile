@@ -241,7 +241,7 @@ function loop_preprocess_search_api_page_results(&$variables) {
   if ($variables['result_count'] == 0) {
     global $user;
 
-    if (!in_array('read only', $user->roles)) {
+    if (!user_is_anonymous() && !in_array('read only', $user->roles)) {
       // No hits. Send formular to template.
       module_load_include('inc', 'node', 'node.pages');
       $node = new stdClass();
