@@ -156,7 +156,7 @@ if (isset($primary_menu_block['content'])): ?>
   <div id="breadcrumb"><?php print $breadcrumb; ?></div>
 <?php endif; ?>
 
-<?php if (user_is_anonymous()): ?>
+<?php if (user_is_anonymous() && !loopdk_allow_anonymous()): ?>
   <div class="layout-no-wrapper">
     <div class="layout--inner">
       <h1>

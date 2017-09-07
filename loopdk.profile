@@ -504,3 +504,24 @@ function loopdk_menu() {
 
   return $items;
 }
+
+/**
+ * Check if anonymous access to content is allowed.
+ *
+ * @return bool
+ *   True iff anonymous access is allowed.
+ */
+function loopdk_allow_anonymous() {
+	// @FIXME: Put this into a setting somewhere.
+  return TRUE;
+}
+
+/**
+ * Check if search ui should be shown.
+ *
+ * @return bool
+ *   True iff search ui should be shown.
+ */
+function loopdk_show_search_ui() {
+  return loopdk_allow_anonymous() || user_is_logged_in();
+}

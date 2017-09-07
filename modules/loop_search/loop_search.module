@@ -130,7 +130,7 @@ function loop_search_init() {
   global $user;
 
   // Check if it's a registered user.
-  if ($user->uid > 0) {
+  if (loopdk_show_search_ui()) {
     if (function_exists('loopdk_load_handlebars')) {
       loopdk_load_handlebars();
     }

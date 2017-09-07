@@ -11,7 +11,7 @@
 function loop_preprocess_page(&$variables) {
   global $user;
   $arg = arg();
-  if (user_is_logged_in()) {
+  if (loopdk_show_search_ui()) {
     // Prepare system search block for page.tpl.
     if (module_exists('search_api_page')) {
       $variables['search'] = module_invoke('search_api_page', 'block_view', 'default');
@@ -182,6 +182,10 @@ function loop_preprocess_node(&$variables) {
 function loop_preprocess_block(&$variables) {
   // Skip login formular.
   if ((isset($variables['elements']['#form_id'])) && ($variables['elements']['#form_id'] == 'user_login')) {
+    return;
+  }
+
+  if (loopdk_allow_anonymous()) {
     return;
   }
 
