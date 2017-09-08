@@ -300,15 +300,6 @@ function loop_permissions_secure_permissions($role) {
     ),
   );
 
-  if (loopdk_allow_anonymous()) {
-    $permissions['anonymous user'] = array(
-      'access comments',
-      'access content',
-      'access search_api_page',
-      'search content',
-    );
-  }
-
   if (isset($permissions[$role])) {
     return $permissions[$role];
   }

@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ * Module file for Loop anonymous.
+ */
+
+/**
+ * Add permission to anonymous user.
+ *
+ * @param string $role
+ *   The role for which the permissions are being requested.
+ *
+ * @return array
+ *   An array defining all the permissions for the site.
+ */
+function loop_anonymous_secure_permissions($role) {
+  $permissions = array(
+    'anonymous user' => array(
+      'access comments',
+      'access content',
+      'access search_api_page',
+      'search content',
+    ),
+  );
+
+  if (isset($permissions[$role])) {
+    return $permissions[$role];
+  }
+}

@@ -512,8 +512,7 @@ function loopdk_menu() {
  *   True iff anonymous access is allowed.
  */
 function loopdk_allow_anonymous() {
-	// @FIXME: Put this into a setting somewhere.
-  return TRUE;
+  return module_exists('loop_anonymous');
 }
 
 /**

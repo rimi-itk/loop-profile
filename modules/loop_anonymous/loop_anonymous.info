@@ -1,0 +1,7 @@
+name = Loop anonymous
+description = Allow anonymous access to content in Loop
+core = 7.x
+package = Loop
+version = 7.x-1.0
+project = loop_anonymous
+dependencies[] = loop_permissions
