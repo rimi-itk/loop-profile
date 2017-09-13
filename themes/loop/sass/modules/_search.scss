@@ -54,6 +54,7 @@
 
 .search-box-block--button {
   @extend .button--action;
+
   margin: 0;
   height: 65px;
   width: 100%;
@@ -64,6 +65,22 @@
 
   &:disabled {
     @extend .button--deactivated;
+  }
+
+  &.is-search-node {
+    bottom: auto;
+    top: auto;
+    width: 90%;
+    margin: 1em auto;
+    display: block;
+
+    @include breakpoint($breakpoint-3) {
+      bottom: auto;
+      top: 56px;
+      right: 20px;
+      width:auto;
+      margin: 0;
+    }
   }
 
   @include breakpoint($breakpoint-3) {
@@ -82,7 +99,7 @@
 }
 
 
-/* Search result
+/* Search result styling.
    ========================================================================== */
 
 .search-result--item {
@@ -90,6 +107,14 @@
 
   &:last-child {
     @include reset-element-spacing();
+  }
+}
+
+.search-result--block {
+  margin-bottom: 1.5em;
+
+  .layout-full-width {
+    @include border-radius(0);
   }
 }
 
@@ -133,7 +158,6 @@
     @extend %icon-before;
   }
 }
-
 
 .search-result--meta-data {
   margin-bottom: $margin-bottom;

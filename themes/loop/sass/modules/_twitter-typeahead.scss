@@ -26,6 +26,14 @@
   @include breakpoint($layout-max-width) {
     @include border-radius(0 0 $border-radius $border-radius);
   }
+
+  &.is-node-search {
+    background: $white;
+    margin: 0 auto;
+    padding: 0;
+
+    @include border-radius(0);
+  }
 }
 
 .typeahead-block--wrapper {

@@ -55,9 +55,7 @@ function loop_search_node_no_results() {
  * It's used in the "no result" submit form.
  */
 function loop_search_node_init() {
-  if (current_path() == 'search') {
-    drupal_add_library('system', 'ui.autocomplete');
-  }
+  drupal_add_library('system', 'ui.autocomplete');
 }
 
 /**
@@ -316,6 +314,7 @@ function _loop_search_node_box_settings() {
         'field_external_link:url' => 0,
         'field_keyword:name' => 'field_keyword:name',
         'field_profession:name' => 0,
+        'field_subject' => 0,
         'field_subject:name' => 0,
         'nid' => 0,
         'search_api_language' => 0,
@@ -324,8 +323,15 @@ function _loop_search_node_box_settings() {
         'url' => 0,
       ),
       'filters' => array(
-        'taxonomy' => array(),
+        'taxonomy' => array(
+          'field_subject' => 'field_subject',
+        ),
         'boolean' => array(),
+      ),
+    ),
+    'filters' => array(
+      'type' => array(
+        'field_subject' => 'or',
       ),
     ),
     'sorting' => array(
@@ -349,6 +355,7 @@ function _loop_search_node_box_settings() {
         'field_external_link:url' => 0,
         'field_keyword:name' => 0,
         'field_profession:name' => 0,
+        'field_subject' => 0,
         'field_subject:name' => 0,
         'nid' => 0,
         'search_api_language' => 0,
@@ -375,6 +382,7 @@ function _loop_search_node_box_settings() {
         'field_external_link:url' => 0,
         'field_keyword:name' => 0,
         'field_profession:name' => 0,
+        'field_subject' => 0,
         'field_subject:name' => 0,
         'nid' => 0,
         'search_api_language' => 0,

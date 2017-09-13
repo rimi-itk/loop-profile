@@ -90,3 +90,38 @@
   word-break: break-word;
   word-wrap: break-word;
 }
+
+@mixin checkbox() {
+  -webkit-appearance: none;
+  -moz-appearance:    none;
+  flex: 0 0 20px;  // Static width of the checkbox.
+  align-self: center;
+
+  display: block;
+  height: 20px;
+  padding: 5px;
+  margin-right: .5em;
+
+  border: 1px solid $green;
+  border-radius: .3em;
+
+  &:focus {
+    border-color: $green;
+  }
+
+  // Add custom background and border when checked.
+  &:checked {
+    border: 2px solid $green;
+
+    background-color: $green;
+    background-image: url("../icons/check.svg");
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+    background-position: center center;
+  }
+
+  // Disable default browser outline.
+  &:focus {
+    outline: none;
+  }
+}

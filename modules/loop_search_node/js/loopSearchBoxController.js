@@ -12,6 +12,38 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
     // Set default search button text and state.
     $scope.searchBtnText = 'Search';
     $scope.searching = false;
+    $scope.selectedFilterCount = 0;
+    $scope.filterActive = 'docs';
+    $scope.sortActive = 'default';
+    $scope.showSort = false;
+    $scope.newSubjects = false;
+
+    /**
+     * Handle toggling of the search filter.
+     */
+    $scope.isFiltersShown = false;
+    $scope.toggleFilter = function () {
+      $scope.isFiltersShown = !$scope.isFiltersShown;
+
+      if ($scope.newSubjects) {
+        $scope.newSubjects = false;
+        $scope.searchClicked(true);
+      }
+    };
+
+    /**
+     * Set flag when new subject filters are selected.
+     */
+    $scope.filterNewSelection = function filterNewSelection() {
+      $scope.newSubjects = true;
+    };
+
+    // Defines the document filter type.
+    var documentFilter = {
+      'loop_documents_document': true,
+      'loop_documents_collection': true,
+      'external_sources': true
+    };
 
     /**
      * Expose the Drupal.t() function to angular templates.
@@ -47,10 +79,18 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
 
     /**
      * Execute the search and emit the results.
+     *
+     * @param {boolean} scrollToTop
+     *   If TRUE the page i scrolled to the top else not.
      */
-    function search() {
+    function search(scrollToTop) {
       // Send info to results that a new search have started.
       communicatorService.$emit('searching', {});
+
+      // Scroll to top.
+      if (scrollToTop) {
+        window.scrollTo(0, 0);
+      }
 
       // Add sorting to the search query. It's added here to make it possible to
       // override or add sorting in search queries from the UI. If it was added
@@ -63,19 +103,13 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
       // Start the search request.
       searchProxyService.search($scope.query).then(
         function (data) {
-          // Updated filters.
-          searchProxyService.getFilters().then(
-            function (filters) {
-              $scope.filters = filters;
-            },
-            function (reason) {
-              console.error(reason);
-            }
-          );
+          // Update filter counts.
+          $scope.selectedFilterCount = countSelectedFilters();
 
           // Send results.
           $scope.searchBtnText = 'Search';
           $scope.searching = false;
+          $scope.showSort = true;
           communicatorService.$emit('hits', {"hits": data});
         },
         function (reason) {
@@ -94,10 +128,7 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
       // Set suggestion to empty.
       $scope.suggestions = {
         'show': false,
-        'post': [],
-        'external_sources': [],
-        'loop_documents_collection': [],
-        'loop_documents_document': []
+        'hits': []
       };
 
       // Get filters.
@@ -109,7 +140,11 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
       // Init the query object.
       $scope.query = {
         'text': '',
-        'filters': {}
+        'filters': {
+          'taxonomy': {
+            'type': documentFilter
+          }
+        }
       };
 
       // Check if any intervals have been configured.
@@ -128,7 +163,35 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
       if (state.hasOwnProperty('query')) {
         // Query found in state, so execute that search.
         $scope.query = state.query;
-        search();
+
+        // Correct active classes in UI based on query for filters.
+        if ($scope.query.hasOwnProperty('filters') && $scope.query.filters.hasOwnProperty('taxonomy') && $scope.query.filters.taxonomy.hasOwnProperty('type')) {
+          for (var type in $scope.query.filters.taxonomy.type) {
+            if ($scope.query.filters.taxonomy.type[type]) {
+              switch (type) {
+                case 'loop_documents_document':
+                case 'loop_documents_collection':
+                case 'external_sources':
+                  $scope.filterActive = 'docs';
+                  break;
+
+                case 'post':
+                  $scope.filterActive = 'post';
+                  break;
+
+                default:
+                  $scope.filterActive = 'all';
+                  break;
+              }
+            }
+
+          }
+        }
+        else {
+          $scope.filterActive = 'all';
+        }
+
+        search(true);
       }
       else {
         // Check if the provider supports an pager.
@@ -142,18 +205,7 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
           $scope.query.text = angular.copy(CONFIG.initialQueryText);
 
           // Execute the search.
-          search();
-        }
-        else {
-          // Get filters based on search content (maybe slow).
-          searchProxyService.getFilters().then(
-            function (filters) {
-              $scope.filters = filters;
-            },
-            function (reason) {
-              console.error(reason);
-            }
-          );
+          search(false);
         }
       }
 
@@ -178,7 +230,23 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
         'size': data.size,
         'page': data.page
       };
-      search();
+      search(true);
+    }
+
+    /**
+     * Update search result after filter request from result controller.
+     *
+     * @param {object} data
+     *   The filter and selection made as strings.
+     */
+    function filterUpdated(data) {
+      $scope.query.text = '';
+
+      delete $scope.query.filters['taxonomy'][data['filter']];
+      $scope.query.filters['taxonomy'][data['filter']] = {};
+      $scope.query.filters['taxonomy'][data['filter']][data['selection']] = true;
+
+      search(true);
     }
 
     /**
@@ -198,43 +266,49 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
     });
 
     /**
+     * Update the search to filter on the selected filter in the results
+     * controller.
+     */
+    communicatorService.$on('filterUpdate', function (event, data) {
+      var phase = this.$root.$$phase;
+      if (phase === '$apply' || phase === '$digest') {
+          filterUpdated(data);
+      }
+      else {
+        $scope.$apply(function () {
+          filterUpdated(data);
+        });
+      }
+    });
+
+    /**
      * Search click handler.
      *
      * Simple wrapper for search that resets the pager before executing the
      * search.
+     *
+     * @param {boolean} scrollToTop
+     *   If TRUE the page i scrolled to the top else not.
      */
-    $scope.searchClicked = function searchClicked() {
+    $scope.searchClicked = function searchClicked(scrollToTop) {
       $scope.searchBtnText = 'Searching...';
       $scope.searching = true;
 
       // Hide suggestions.
       $scope.suggestToggle(false);
 
-      // If this is not the search page redirect to the search page with the
-      // query.
-      if (window.location.pathname != '/search') {
-        window.location = '/search#/#text=' + $scope.query.text;
-        return;
-      }
-
       // Reset pager.
       if ($scope.query.hasOwnProperty('pager')) {
         $scope.query.pager = angular.copy(CONFIG.provider.pager);
       }
 
-      search();
+      search(scrollToTop);
     };
 
     /**
      * Auto-complete callback.
      */
     $scope.autocomplete = function autocomplete() {
-      // Update suggestion box.
-      _suggestionSearch('external_sources');
-      _suggestionSearch('loop_documents_collection');
-      _suggestionSearch('loop_documents_document');
-      _suggestionSearch('post');
-
       if (CONFIG.provider.hasOwnProperty('autocomplete')) {
         $scope.autocompleteString = '';
         if ($scope.query.text.length >= CONFIG.provider.autocomplete.minChars) {
@@ -244,6 +318,7 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
                 // Use regex to ensure cases (letters) are matched.
                 var re = new RegExp('^' + $scope.query.text, 'i');
                 var res = data.results[0][CONFIG.provider.autocomplete.field];
+                $scope.suggestions.hits = data.results;
                 $scope.autocompleteString = res.replace(re, $scope.query.text);
               }
               else {
@@ -285,10 +360,7 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
           // Page may have been reload and no suggestions fetched. So try to execute
           // the current search.
           if (!$scope.suggestionExists()) {
-            _suggestionSearch('external_sources');
-            _suggestionSearch('loop_documents_collection');
-            _suggestionSearch('loop_documents_document');
-            _suggestionSearch('post');
+            // ?????
           }
 
           $scope.autocompleteString = $scope.autocompletePrevString;
@@ -303,71 +375,103 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
      *  If they do true else false.
      */
     $scope.suggestionExists = function suggestionExists() {
-      return ($scope.suggestions['post'].length || $scope.suggestions['external_sources'].length || $scope.suggestions['loop_documents_collection'].length || $scope.suggestions['loop_documents_document'].length);
+      return $scope.suggestions['hits'].length;
     };
 
     /**
-     * Helper function to get search suggestions.
+     * Simply count the number of selected filters.
      *
-     * @param type
-     *   The content type to get suggestions for.
-     *
-     * @private
+     * @return {number}
+     *   The number of selected filters.
      */
-    function _suggestionSearch(type) {
-      var query = {
-        index: '',
-        query: {
-          filtered: {
-            query: {
-              multi_match: {
-                query: $scope.query.text,
-                fields: CONFIG.provider.fields,
-                analyzer: 'string_search'
-              }
-            },
-            filter: {
-              bool: {
-                must: {
-                  term: {
-                    'type': type
-                  }
-                }
-              }
+    function countSelectedFilters() {
+      var count = 0;
+
+      if ($scope.query.hasOwnProperty('filters') && $scope.query.filters.hasOwnProperty('taxonomy')) {
+        for (var i in $scope.query.filters.taxonomy) {
+          if (i === 'type') {
+            // Skip the special type filter.
+            continue;
+          }
+          for (var j in $scope.query.filters.taxonomy[i]) {
+            if ($scope.query.filters.taxonomy[i][j]) {
+              count++;
             }
           }
-        },
-        size: 5,
-        highlight: {
-          pre_tags : [ "<strong>" ],
-          post_tags : [ "</strong>" ],
-          fields: {
-            title: {}
-          }
         }
-      };
+      }
 
-      // Start the search request.
-      searchProxyService.rawQuerySearch(query).then(
-        function (data) {
-          var suggestions = [];
-
-          for (var i = 0; i < data.results.length; i++) {
-            var current = data.results[i];
-            suggestions.push({
-              'title': current.hasOwnProperty('_highlight') ? current._highlight.title[0] : current.title,
-              'url': current.url
-            });
-          }
-
-          // Filter results based on types.
-          $scope.suggestions[type] = suggestions;
-        },
-        function (reason) {
-          console.error(reason);
-        }
-      );
+      return count
     }
+
+    /**
+     * Filter based on content type.
+     *
+     * @param type
+     *   The type to filter on.
+     */
+    $scope.filterType = function filterType(type) {
+      if (!$scope.query.hasOwnProperty('filters')) {
+        $scope.query['filters'] = { };
+      }
+      if (!$scope.query.filters.hasOwnProperty('taxonomy')) {
+        $scope.query.filters['taxonomy'] = { };
+      }
+
+      $scope.filterActive = type;
+
+      switch (type) {
+        case 'all':
+          delete $scope.query.filters['taxonomy']['type'];
+          break;
+
+        case 'docs':
+          $scope.query.filters['taxonomy']['type'] = documentFilter;
+          break;
+
+        case 'post':
+          $scope.query.filters['taxonomy']['type'] = {
+            'post': true
+          };
+          break;
+      }
+
+      $scope.searchClicked(false);
+    };
+
+    /**
+     * Set the sort order for current search.
+     *
+     * @param order
+     *   The order to sort.
+     */
+    $scope.sortOrder = function sortOrder(order) {
+      $scope.sortActive = order;
+
+      switch (order) {
+        case 'desc':
+        case 'asc':
+          $scope.query['sort'] = {
+            'created': order
+          };
+          break;
+
+        case 'alpha':
+          $scope.query['sort'] = {
+            'title': 'asc'
+          };
+          break;
+
+        default:
+          // Remove sort order and default to score order from ES.
+          if ($scope.query.hasOwnProperty('sort')) {
+            delete $scope.query['sort'];
+          }
+          break;
+      }
+
+      $scope.searchClicked(false);
+    };
 
     /**
      * Resets the current search to default.
@@ -382,7 +486,7 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
       if (CONFIG.hasOwnProperty('initialQueryText')) {
         $scope.query.text = angular.copy(CONFIG.initialQueryText);
 
-        search();
+        search(true);
       }
       else {
         // No initial query.

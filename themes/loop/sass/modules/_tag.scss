@@ -11,7 +11,7 @@
   margin-bottom: .25em;
   padding: .1em 1em;
 
-  background-color: $red;
+  background-color: $white;
   color: $white;
   cursor: pointer;
   font-size: 85%;
@@ -22,12 +22,7 @@
   &:visited,
   &:hover,
   &:active {
-    color: $white;
     text-decoration: none;
-  }
-
-  &:hover {
-    background-color: darken($red, 15%);
   }
 }
 
@@ -36,13 +31,4 @@
   margin-bottom: .5em;
   color: #b3b3b3;
   font-size: .85em;
-}
-
-// Allow style settings to override these colors.
-a.question--term.taxonomy-keyword {
-  background-color: #007700; /*! setting:keyword_background_color */
-
-  &:hover {
-    background-color: #006600;/*! setting:keyword_hover_background_color */
-  }
 }

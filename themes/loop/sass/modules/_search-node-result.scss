@@ -1,0 +1,127 @@
+/**
+ *
+ * Search node results.
+ *
+ */
+
+/* Search node results
+   ========================================================================== */
+
+.search-node-result {
+
+  &--item {
+    padding: 2em 0;
+    border-top: 1px solid $gray-light;
+
+    &-content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &--link {
+    display: block;
+    margin-bottom: 1em;
+  }
+
+  &--data-wrapper {
+    flex: 0 0 100%;
+    padding-right: 2em;
+
+    @include breakpoint($breakpoint-4) {
+      flex: 0 0 auto;
+    }
+  }
+
+  &--meta-data-date {
+    color: $gray;
+    font-size: .9em;
+    flex: 0 0 100%;
+    margin-bottom: 1em;
+    padding-right: 2em;
+
+    @include breakpoint($breakpoint-4) {
+      flex: 0 0 auto;
+    }
+  }
+
+  &--meta-data-type {
+    background: $document-type-color;/*! setting:content_type_label_color_default */
+    color: $document-type-color-text;/*! setting:content_type_label_text_color_default */
+    display: inline-block;
+    font-size: .9em;
+    margin-bottom: 1em;
+    padding: .1em .7em;
+
+    &.is-post {
+      background: $post-type-color;/*! setting:content_type_label_color_post */
+      color: $post-type-color-text;/*! setting:content_type_label_text_color_post */
+    }
+
+    @include border-radius(1em);
+  }
+
+  &--subject {
+    background: $white;
+    border: 1px solid $gray;
+    color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    font-size: .9em;
+    margin-bottom: 1em;
+    padding: .1em .7em;
+
+    @include border-radius($border-radius);
+  }
+
+  &--comments {
+    color: $gray;
+    display: block;
+    font-size: .9em;
+    margin-bottom: 1em;
+
+
+    &:before {
+      @extend %icon-comment;
+      @extend %icon-before;
+    }
+
+    &:link {
+      color: $gray;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: $gray;
+    }
+
+    &:hover {
+      color: $gray;
+    }
+
+    &:focus {
+      color: $gray;
+    }
+  }
+}
+
+.pager {
+  ul {
+    padding: 0;
+  }
+
+  li {
+    display: none;
+    @include breakpoint(1000px) {
+      display: inline;
+    }
+  }
+
+  li[title="Previous Page"] {
+    display: inline;
+  }
+
+  li[title="Next Page"] {
+    display: inline;
+  }
+}

@@ -6,6 +6,25 @@
  */
 
 /**
+ * Implements hook_requirements().
+ */
+function loop_search_requirements($phase) {
+  $requirements = [];
+  if ($phase === 'install') {
+    $this_module = 'loop_search';
+    $that_module = 'loop_search_node';
+    if (module_exists($that_module)) {
+      $requirements[$this_module] = [
+        'description' => t('Cannot install "%this_module" when "%that_module" is installed.', ['%this_module' => $this_module, '%that_module' => $that_module]),
+        'severity' => REQUIREMENT_ERROR,
+      ];
+    }
+  }
+
+  return $requirements;
+}
+
+/**
  * Implements hook_install().
  *
  * Check jQuery version.

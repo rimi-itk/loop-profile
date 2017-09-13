@@ -4,6 +4,24 @@
  * Handle search node configuration settings.
  */
 
+/**
+ * Implements hook_requirements().
+ */
+function loop_search_node_requirements($phase) {
+  $requirements = [];
+  if ($phase === 'install') {
+    $this_module = 'loop_search_node';
+    $that_module = 'loop_search';
+    if (module_exists($that_module)) {
+      $requirements[$this_module] = [
+        'description' => t('Cannot install "%this_module" when "%that_module" is installed.', ['%this_module' => $this_module, '%that_module' => $that_module]),
+        'severity' => REQUIREMENT_ERROR,
+      ];
+    }
+  }
+
+  return $requirements;
+}
 
 /**
  * Implements hook_install().
@@ -35,4 +53,18 @@ function loop_search_node_update_7002(&$sandbox) {
     ->fields(_loop_search_node_search_block_settings())
     ->condition('theme', 'loop')
     ->condition('delta', 'search_node_search_box');
+}
+
+/**
+ * Update search node block with field_subject configuration.
+ */
+function loop_search_node_update_7003(&$sandbox) {
+  variable_set('search_node_page_search_box', _loop_search_node_box_settings());
+}
+
+/**
+ * Update search node block with or filter configuration.
+ */
+function loop_search_node_update_7004(&$sandbox) {
+  variable_set('search_node_page_search_box', _loop_search_node_box_settings());
 }

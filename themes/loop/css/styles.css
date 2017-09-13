@@ -22,6 +22,25 @@
 /* Add boxsizing polyfill
    ================================================================================================================== */
 /**
+ * Breakpoints
+ *
+ * Should contain breakpoint variables and breakpoints related mixins
+ *
+ * @author magnify
+ */
+/* Breakpoints
+   *
+   * These are only examples, change/add/remove so they match your needs
+   *
+   ================================================================================================================== */
+/* Mixins
+   *
+   * Use this mixin to change styling for your rulesets depending on a breakpoint (width)
+   *
+   * Usage example: @include breakpoint($breakpoint-x)
+   *
+   ================================================================================================================== */
+/**
  * Theme variables
  *
  * @author magnify
@@ -402,6 +421,7 @@ html {
 body {
   position: relative;
   overflow-x: hidden;
+  overflow-y: scroll;
   height: 100%;
   background-color: #fff;
   color: #333;
@@ -824,7 +844,7 @@ label {
   margin-bottom: 0;
   margin-top: 1.5em; }
 
-.page-user .button--action:last-child, .page-user .form-submit:last-child, .page-user .block-follow-question .flag-action:last-child, .block-follow-question .page-user .flag-action:last-child, .page-user .search-box-block--button:last-child, .page-user .typeahead-block--button:last-child, .page-user .loop-documents--collection-print a:last-child, .loop-documents--collection-print .page-user a:last-child {
+.page-user .button--action:last-child, .page-user .form-submit:last-child, .page-user .block-follow-question .flag-action:last-child, .block-follow-question .page-user .flag-action:last-child, .page-user .search-box-block--button:last-child, .page-user .search-filters--action:last-child, .page-user .typeahead-block--button:last-child, .page-user .loop-documents--collection-print a:last-child, .loop-documents--collection-print .page-user a:last-child {
   margin-bottom: 0.75em; }
 
 .page-user .user-form--password-link {
@@ -841,7 +861,7 @@ label {
  *
  * @author magnify
  */
-.button--action, .form-submit, .block-follow-question .flag-action, .search-box-block--button, .typeahead-block--button, .loop-documents--collection-print a, .button--neutral, .user-profile-form #edit-field-user-image-und-0-upload-button, .comments--editor-actions .comments--editor-actions-edit, .question--editor-actions .question--editor-actions-edit, .edit-user--image-button-add, .button--warning, .comments--editor-actions .comments--editor-actions-delete, .block-follow-question .unflag-action, .question--editor-actions .question--editor-actions-delete, .edit-user--image-button-remove, .at-add-btn {
+.button--action, .form-submit, .block-follow-question .flag-action, .search-box-block--button, .search-filters--action, .typeahead-block--button, .loop-documents--collection-print a, .button--neutral, .user-profile-form #edit-field-user-image-und-0-upload-button, .comments--editor-actions .comments--editor-actions-edit, .question--editor-actions .question--editor-actions-edit, .edit-user--image-button-add, .button--warning, .comments--editor-actions .comments--editor-actions-delete, .block-follow-question .unflag-action, .question--editor-actions .question--editor-actions-delete, .edit-user--image-button-remove, .at-add-btn {
   display: inline-block;
   font-size: 1.25em;
   margin: 0 0.5em 0.5em 0;
@@ -856,20 +876,20 @@ label {
   -ms-border-radius: 0.4em;
   -o-border-radius: 0.4em;
   border-radius: 0.4em; }
-  .button--action:focus, .form-submit:focus, .block-follow-question .flag-action:focus, .search-box-block--button:focus, .typeahead-block--button:focus, .loop-documents--collection-print a:focus, .button--neutral:focus, .user-profile-form #edit-field-user-image-und-0-upload-button:focus, .comments--editor-actions .comments--editor-actions-edit:focus, .question--editor-actions .question--editor-actions-edit:focus, .edit-user--image-button-add:focus, .button--warning:focus, .comments--editor-actions .comments--editor-actions-delete:focus, .block-follow-question .unflag-action:focus, .question--editor-actions .question--editor-actions-delete:focus, .edit-user--image-button-remove:focus, .at-add-btn:focus, .button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .search-box-block--button:hover, .typeahead-block--button:hover, .loop-documents--collection-print a:hover, .button--neutral:hover, .user-profile-form #edit-field-user-image-und-0-upload-button:hover, .comments--editor-actions .comments--editor-actions-edit:hover, .question--editor-actions .question--editor-actions-edit:hover, .edit-user--image-button-add:hover, .button--warning:hover, .comments--editor-actions .comments--editor-actions-delete:hover, .block-follow-question .unflag-action:hover, .question--editor-actions .question--editor-actions-delete:hover, .edit-user--image-button-remove:hover, .at-add-btn:hover, .button--action:active, .form-submit:active, .block-follow-question .flag-action:active, .search-box-block--button:active, .typeahead-block--button:active, .loop-documents--collection-print a:active, .button--neutral:active, .user-profile-form #edit-field-user-image-und-0-upload-button:active, .comments--editor-actions .comments--editor-actions-edit:active, .question--editor-actions .question--editor-actions-edit:active, .edit-user--image-button-add:active, .button--warning:active, .comments--editor-actions .comments--editor-actions-delete:active, .block-follow-question .unflag-action:active, .question--editor-actions .question--editor-actions-delete:active, .edit-user--image-button-remove:active, .at-add-btn:active {
+  .button--action:focus, .form-submit:focus, .block-follow-question .flag-action:focus, .search-box-block--button:focus, .search-filters--action:focus, .typeahead-block--button:focus, .loop-documents--collection-print a:focus, .button--neutral:focus, .user-profile-form #edit-field-user-image-und-0-upload-button:focus, .comments--editor-actions .comments--editor-actions-edit:focus, .question--editor-actions .question--editor-actions-edit:focus, .edit-user--image-button-add:focus, .button--warning:focus, .comments--editor-actions .comments--editor-actions-delete:focus, .block-follow-question .unflag-action:focus, .question--editor-actions .question--editor-actions-delete:focus, .edit-user--image-button-remove:focus, .at-add-btn:focus, .button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .search-box-block--button:hover, .search-filters--action:hover, .typeahead-block--button:hover, .loop-documents--collection-print a:hover, .button--neutral:hover, .user-profile-form #edit-field-user-image-und-0-upload-button:hover, .comments--editor-actions .comments--editor-actions-edit:hover, .question--editor-actions .question--editor-actions-edit:hover, .edit-user--image-button-add:hover, .button--warning:hover, .comments--editor-actions .comments--editor-actions-delete:hover, .block-follow-question .unflag-action:hover, .question--editor-actions .question--editor-actions-delete:hover, .edit-user--image-button-remove:hover, .at-add-btn:hover, .button--action:active, .form-submit:active, .block-follow-question .flag-action:active, .search-box-block--button:active, .search-filters--action:active, .typeahead-block--button:active, .loop-documents--collection-print a:active, .button--neutral:active, .user-profile-form #edit-field-user-image-und-0-upload-button:active, .comments--editor-actions .comments--editor-actions-edit:active, .question--editor-actions .question--editor-actions-edit:active, .edit-user--image-button-add:active, .button--warning:active, .comments--editor-actions .comments--editor-actions-delete:active, .block-follow-question .unflag-action:active, .question--editor-actions .question--editor-actions-delete:active, .edit-user--image-button-remove:active, .at-add-btn:active {
     text-decoration: none; }
-  .button--action:last-child, .form-submit:last-child, .block-follow-question .flag-action:last-child, .search-box-block--button:last-child, .typeahead-block--button:last-child, .loop-documents--collection-print a:last-child, .button--neutral:last-child, .user-profile-form #edit-field-user-image-und-0-upload-button:last-child, .comments--editor-actions .comments--editor-actions-edit:last-child, .question--editor-actions .question--editor-actions-edit:last-child, .edit-user--image-button-add:last-child, .button--warning:last-child, .comments--editor-actions .comments--editor-actions-delete:last-child, .block-follow-question .unflag-action:last-child, .question--editor-actions .question--editor-actions-delete:last-child, .edit-user--image-button-remove:last-child, .at-add-btn:last-child {
+  .button--action:last-child, .form-submit:last-child, .block-follow-question .flag-action:last-child, .search-box-block--button:last-child, .search-filters--action:last-child, .typeahead-block--button:last-child, .loop-documents--collection-print a:last-child, .button--neutral:last-child, .user-profile-form #edit-field-user-image-und-0-upload-button:last-child, .comments--editor-actions .comments--editor-actions-edit:last-child, .question--editor-actions .question--editor-actions-edit:last-child, .edit-user--image-button-add:last-child, .button--warning:last-child, .comments--editor-actions .comments--editor-actions-delete:last-child, .block-follow-question .unflag-action:last-child, .question--editor-actions .question--editor-actions-delete:last-child, .edit-user--image-button-remove:last-child, .at-add-btn:last-child {
     margin: 0 0 0.5em; }
 
-.button--action, .form-submit, .block-follow-question .flag-action, .search-box-block--button, .typeahead-block--button, .loop-documents--collection-print a {
+.button--action, .form-submit, .block-follow-question .flag-action, .search-box-block--button, .search-filters--action, .typeahead-block--button, .loop-documents--collection-print a {
   background-color: #5dc26d;
   border: 1px solid #41ab51;
   color: #fff;
   text-shadow: 1px 1px 0 #33863f; }
-  .button--action:link, .form-submit:link, .block-follow-question .flag-action:link, .search-box-block--button:link, .typeahead-block--button:link, .loop-documents--collection-print a:link, .button--action:visited, .form-submit:visited, .block-follow-question .flag-action:visited, .search-box-block--button:visited, .typeahead-block--button:visited, .loop-documents--collection-print a:visited {
+  .button--action:link, .form-submit:link, .block-follow-question .flag-action:link, .search-box-block--button:link, .search-filters--action:link, .typeahead-block--button:link, .loop-documents--collection-print a:link, .button--action:visited, .form-submit:visited, .block-follow-question .flag-action:visited, .search-box-block--button:visited, .search-filters--action:visited, .typeahead-block--button:visited, .loop-documents--collection-print a:visited {
     color: #fff;
     text-decoration: none; }
-  .button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .search-box-block--button:hover, .typeahead-block--button:hover, .loop-documents--collection-print a:hover {
+  .button--action:hover, .form-submit:hover, .block-follow-question .flag-action:hover, .search-box-block--button:hover, .search-filters--action:hover, .typeahead-block--button:hover, .loop-documents--collection-print a:hover {
     background-color: #41ab51; }
 
 .button--neutral, .user-profile-form #edit-field-user-image-und-0-upload-button, .comments--editor-actions .comments--editor-actions-edit, .question--editor-actions .question--editor-actions-edit, .edit-user--image-button-add {
@@ -1019,7 +1039,7 @@ label {
 /* '' */
 /* Icon shadow classes
    ================================================================================================================== */
-.comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .user-profile--answers-best-count:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .messages.warning:before, .nav-mobile .nav--link:before, .nav-mobile .nav--wrapper .nav--frontpage-link:before, .nav--wrapper .nav-mobile .nav--frontpage-link:before, .nav-mobile .nav--logout:before,
+.comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .user-profile--answers-best-count:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .search-node-result--comments:before, .user-profile--answers-count:before, .messages.warning:before, .nav-mobile .nav--link:before, .nav-mobile .nav--wrapper .nav--frontpage-link:before, .nav--wrapper .nav-mobile .nav--frontpage-link:before, .nav-mobile .nav--logout:before,
 .nav-mobile .nav-dropdown--header:before,
 .nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before, .loop-documents--collection-title a:before, .loop-documents--collection-title span:before, .loop-documents--collection-meta-title:after, .loop-documents--collection-navigation ul li a:before, .loop-documents--collection-meta-title.is-shown:after, .loop-documents--metadata.is-shown .loop-documents--collection-meta-title:after, .twitter-typeahead:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .comments--abuse a:before, .question--links a:before {
   display: inline-block;
@@ -1028,7 +1048,7 @@ label {
 
 .nav-mobile .nav--link:before, .nav-mobile .nav--wrapper .nav--frontpage-link:before, .nav--wrapper .nav-mobile .nav--frontpage-link:before, .nav-mobile .nav--logout:before,
 .nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .comments--abuse a:before, .comment--flag:before, .guide--nav-list-item .active:before, .question--links a:before, .search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before, .user-profile--answers-best-count:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .loop-documents--collection-title a:before, .loop-documents--collection-title span:before, .loop-documents--collection-navigation ul li a:before, .messages.status:before, .messages.warning:before, .messages.error:before {
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .comments--abuse a:before, .comment--flag:before, .guide--nav-list-item .active:before, .question--links a:before, .search-result--comments:before, .question--number-of-comments:before, .search-node-result--comments:before, .user-profile--answers-count:before, .user-profile--answers-best-count:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .loop-documents--collection-title a:before, .loop-documents--collection-title span:before, .loop-documents--collection-navigation ul li a:before, .messages.status:before, .messages.warning:before, .messages.error:before {
   margin-right: .35em; }
 
 .at-term:after {
@@ -1049,7 +1069,7 @@ label {
 .message--flag:before {
   content: '\e80b'; }
 
-.search-result--comments:before, .question--number-of-comments:before, .user-profile--answers-count:before {
+.search-result--comments:before, .question--number-of-comments:before, .search-node-result--comments:before, .user-profile--answers-count:before {
   content: '\e80a'; }
 
 .messages.warning:before {
@@ -3221,11 +3241,9 @@ This file is generated by `grunt build`, do not edit it by hand.
   margin-bottom: 2em; }
 
 a.question--term {
-  background-color: #ff6138;
-  /* setting:term_background_color */ }
-  a.question--term:hover {
-    background-color: #eb3000;
-    /* setting:term_hover_background_color */ }
+  background: #fff;
+  border: 1px solid #b3b3b3;
+  color: inherit; }
 
 .question--links {
   font-size: .8em;
@@ -3393,6 +3411,19 @@ a.question--term {
   width: 100%; }
   .search-box-block--button:last-child {
     margin: 0 !important; }
+  .search-box-block--button.is-search-node {
+    bottom: auto;
+    top: auto;
+    width: 90%;
+    margin: 1em auto;
+    display: block; }
+    @media only screen and (min-width: 28em) {
+      .search-box-block--button.is-search-node {
+        bottom: auto;
+        top: 56px;
+        right: 20px;
+        width: auto;
+        margin: 0; } }
   @media only screen and (min-width: 28em) {
     .search-box-block--button {
       position: absolute;
@@ -3408,7 +3439,7 @@ a.question--term {
       -o-border-radius: 0 0.4em 0.4em 0;
       border-radius: 0 0.4em 0.4em 0; } }
 
-/* Search result
+/* Search result styling.
    ========================================================================== */
 .search-result--item {
   border-bottom: 1px solid #e6e6e6;
@@ -3418,6 +3449,15 @@ a.question--term {
     border-bottom: 0;
     margin-bottom: 0;
     padding-bottom: 0; }
+
+.search-result--block {
+  margin-bottom: 1.5em; }
+  .search-result--block .layout-full-width {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0; }
 
 .search-result--link {
   display: block;
@@ -3457,6 +3497,289 @@ a.question--term {
   min-width: 13em; }
 
 /**
+ *
+ * Search filters for node search.
+ *
+ */
+/* Placeholders related to this document
+   ========================================================================== */
+.search-filters--label, .search-filters--subject-wrapper-label {
+  background: #fff;
+  border-top: 1px solid #41ab51;
+  border-bottom: 1px solid #41ab51;
+  border-right: 1px solid #41ab51;
+  color: #41ab51;
+  cursor: pointer;
+  flex: 1 0 auto;
+  padding: .5em;
+  text-align: center; }
+  .search-filters--label:first-child, .search-filters--subject-wrapper-label:first-child {
+    border-left: 1px solid #41ab51;
+    -webkit-border-radius: 0.4em 0 0 0.4em;
+    -moz-border-radius: 0.4em 0 0 0.4em;
+    -ms-border-radius: 0.4em 0 0 0.4em;
+    -o-border-radius: 0.4em 0 0 0.4em;
+    border-radius: 0.4em 0 0 0.4em; }
+  .search-filters--label:last-child, .search-filters--subject-wrapper-label:last-child {
+    -webkit-border-radius: 0 0.4em 0.4em 0;
+    -moz-border-radius: 0 0.4em 0.4em 0;
+    -ms-border-radius: 0 0.4em 0.4em 0;
+    -o-border-radius: 0 0.4em 0.4em 0;
+    border-radius: 0 0.4em 0.4em 0; }
+  .search-filters--label:first-child:last-child, .search-filters--subject-wrapper-label:first-child:last-child {
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -ms-border-radius: 0.4em;
+    -o-border-radius: 0.4em;
+    border-radius: 0.4em; }
+  .is-active.search-filters--label, .is-active.search-filters--subject-wrapper-label {
+    background: #41ab51;
+    color: #fff; }
+
+/* Search filters
+   ========================================================================== */
+.search-filters {
+  background: #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 2em;
+  padding: 0 1.25em;
+  -webkit-border-radius: 0 0 0.4em 0.4em;
+  -moz-border-radius: 0 0 0.4em 0.4em;
+  -ms-border-radius: 0 0 0.4em 0.4em;
+  -o-border-radius: 0 0 0.4em 0.4em;
+  border-radius: 0 0 0.4em 0.4em; }
+  .search-filters--search-box {
+    background: #f2f2f2;
+    padding: 2em 1.25em;
+    -webkit-border-radius: 0.4em 0.4em 0 0;
+    -moz-border-radius: 0.4em 0.4em 0 0;
+    -ms-border-radius: 0.4em 0.4em 0 0;
+    -o-border-radius: 0.4em 0.4em 0 0;
+    border-radius: 0.4em 0.4em 0 0; }
+  .search-filters--type {
+    display: flex;
+    flex: 0 0 100%;
+    margin: 2em 0; }
+    @media only screen and (min-width: 43em) {
+      .search-filters--type {
+        flex: 0 0 60%; } }
+  .search-filters--subject-wrapper {
+    display: flex;
+    flex: 0 0 100%;
+    margin: 2em 0; }
+    @media only screen and (min-width: 43em) {
+      .search-filters--subject-wrapper {
+        flex: 0 1 35%; } }
+  .search-filters--subjects {
+    background: #fff;
+    box-sizing: border-box;
+    flex: 0 0 100%;
+    margin-bottom: 1.25em;
+    padding: 1em 2em;
+    position: relative;
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -ms-border-radius: 0.4em;
+    -o-border-radius: 0.4em;
+    border-radius: 0.4em; }
+    .search-filters--subjects-inner {
+      display: flex;
+      flex-wrap: wrap; }
+    .search-filters--subjects-item {
+      flex: 1 0 100%; }
+      @media only screen and (min-width: 800px) {
+        .search-filters--subjects-item {
+          flex: 0 1 50%; } }
+      @media only screen and (min-width: 1000px) {
+        .search-filters--subjects-item {
+          flex: 0 1 33%; } }
+      .search-filters--subjects-item-inner {
+        box-sizing: border-box;
+        display: flex;
+        height: 60px;
+        padding-bottom: 1em;
+        padding-left: 21px;
+        padding-right: 2em;
+        padding-top: 1em; }
+        .search-filters--subjects-item-inner input[type=checkbox] {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          flex: 0 0 20px;
+          align-self: center;
+          display: block;
+          height: 20px;
+          padding: 5px;
+          margin-right: .5em;
+          border: 1px solid #41ab51;
+          border-radius: .3em; }
+          .search-filters--subjects-item-inner input[type=checkbox]:focus {
+            border-color: #41ab51; }
+          .search-filters--subjects-item-inner input[type=checkbox]:checked {
+            border: 2px solid #41ab51;
+            background-color: #41ab51;
+            background-image: url("../icons/check.svg");
+            background-repeat: no-repeat;
+            background-size: 15px 15px;
+            background-position: center center; }
+          .search-filters--subjects-item-inner input[type=checkbox]:focus {
+            outline: none; }
+        .search-filters--subjects-item-inner input {
+          margin-left: -21px; }
+  .search-filters--arrow {
+    position: absolute;
+    top: -30px;
+    right: 80px;
+    height: 30px;
+    width: 30px;
+    display: block; }
+    .search-filters--arrow-inner {
+      border-width: 15px;
+      border-style: solid;
+      border-color: transparent;
+      border-bottom-color: #fff; }
+  .search-filters--icon-dropdown {
+    position: absolute;
+    top: .85em;
+    right: 1em;
+    max-width: .85em; }
+  .search-filters--subjects-wrapper {
+    width: 100%; }
+  .search-filters--subject-wrapper-label {
+    position: relative;
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -ms-border-radius: 0.4em;
+    -o-border-radius: 0.4em;
+    border-radius: 0.4em; }
+  .search-filters--action {
+    padding: .4em 0 .5em;
+    width: 100%; }
+  .search-filters--sort {
+    align-items: center;
+    background: #f2f2f2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding: 1.25em;
+    -webkit-border-radius: 0.4em 0.4em 0 0;
+    -moz-border-radius: 0.4em 0.4em 0 0;
+    -ms-border-radius: 0.4em 0.4em 0 0;
+    -o-border-radius: 0.4em 0.4em 0 0;
+    border-radius: 0.4em 0.4em 0 0; }
+    .search-filters--sort-text {
+      color: #737373;
+      font-weight: bold;
+      flex: 0 0 auto; }
+    .search-filters--sort-labels {
+      display: flex;
+      margin-left: 1.5em;
+      flex: 0 0 auto; }
+    .search-filters--sort .search-filters--label {
+      font-size: .85em; }
+
+/**
+ *
+ * Search node results.
+ *
+ */
+/* Search node results
+   ========================================================================== */
+.search-node-result--item {
+  padding: 2em 0;
+  border-top: 1px solid #cccccc; }
+  .search-node-result--item-content {
+    display: flex;
+    flex-wrap: wrap; }
+
+.search-node-result--link {
+  display: block;
+  margin-bottom: 1em; }
+
+.search-node-result--data-wrapper {
+  flex: 0 0 100%;
+  padding-right: 2em; }
+  @media only screen and (min-width: 43em) {
+    .search-node-result--data-wrapper {
+      flex: 0 0 auto; } }
+
+.search-node-result--meta-data-date {
+  color: #b3b3b3;
+  font-size: .9em;
+  flex: 0 0 100%;
+  margin-bottom: 1em;
+  padding-right: 2em; }
+  @media only screen and (min-width: 43em) {
+    .search-node-result--meta-data-date {
+      flex: 0 0 auto; } }
+
+.search-node-result--meta-data-type {
+  background: #B05B63;
+  /* setting:content_type_label_color_default */
+  color: #fff;
+  /* setting:content_type_label_text_color_default */
+  display: inline-block;
+  font-size: .9em;
+  margin-bottom: 1em;
+  padding: .1em .7em;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  -ms-border-radius: 1em;
+  -o-border-radius: 1em;
+  border-radius: 1em; }
+  .search-node-result--meta-data-type.is-post {
+    background: #41658A;
+    /* setting:content_type_label_color_post */
+    color: #fff;
+    /* setting:content_type_label_text_color_post */ }
+
+.search-node-result--subject {
+  background: #fff;
+  border: 1px solid #b3b3b3;
+  color: inherit;
+  cursor: pointer;
+  display: inline-block;
+  font-size: .9em;
+  margin-bottom: 1em;
+  padding: .1em .7em;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em; }
+
+.search-node-result--comments {
+  color: #b3b3b3;
+  display: block;
+  font-size: .9em;
+  margin-bottom: 1em; }
+  .search-node-result--comments:link {
+    color: #b3b3b3;
+    text-decoration: none; }
+  .search-node-result--comments:visited {
+    color: #b3b3b3; }
+  .search-node-result--comments:hover {
+    color: #b3b3b3; }
+  .search-node-result--comments:focus {
+    color: #b3b3b3; }
+
+.pager ul {
+  padding: 0; }
+
+.pager li {
+  display: none; }
+  @media only screen and (min-width: 1000px) {
+    .pager li {
+      display: inline; } }
+
+.pager li[title="Previous Page"] {
+  display: inline; }
+
+.pager li[title="Next Page"] {
+  display: inline; }
+
+/**
  * Tag
  *
  * @author magnify
@@ -3465,7 +3788,7 @@ a.question--term {
   display: inline-block;
   margin-bottom: .25em;
   padding: .1em 1em;
-  background-color: #ff6138;
+  background-color: #fff;
   color: #fff;
   cursor: pointer;
   font-size: 85%;
@@ -3475,22 +3798,12 @@ a.question--term {
   -o-border-radius: 0.4em;
   border-radius: 0.4em; }
   .comments--user-page-comments-new:link, .question--term:link, .question--user-page-nodes-new:link, .external-sources--term:link, .at-term:link, .comments--user-page-comments-new:visited, .question--term:visited, .question--user-page-nodes-new:visited, .external-sources--term:visited, .at-term:visited, .comments--user-page-comments-new:hover, .question--term:hover, .question--user-page-nodes-new:hover, .external-sources--term:hover, .at-term:hover, .comments--user-page-comments-new:active, .question--term:active, .question--user-page-nodes-new:active, .external-sources--term:active, .at-term:active {
-    color: #fff;
     text-decoration: none; }
-  .comments--user-page-comments-new:hover, .question--term:hover, .question--user-page-nodes-new:hover, .external-sources--term:hover, .at-term:hover {
-    background-color: #eb3000; }
 
 .tag--list-description {
   margin-bottom: .5em;
   color: #b3b3b3;
   font-size: .85em; }
-
-a.question--term.taxonomy-keyword {
-  background-color: #007700;
-  /* setting:keyword_background_color */ }
-  a.question--term.taxonomy-keyword:hover {
-    background-color: #006600;
-    /* setting:keyword_hover_background_color */ }
 
 /**
  * Twitter typeahead
@@ -3513,6 +3826,15 @@ a.question--term.taxonomy-keyword {
       -ms-border-radius: 0 0 0.4em 0.4em;
       -o-border-radius: 0 0 0.4em 0.4em;
       border-radius: 0 0 0.4em 0.4em; } }
+  .typeahead-block.is-node-search {
+    background: #fff;
+    margin: 0 auto;
+    padding: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0; }
 
 .typeahead-block--wrapper {
   position: relative; }
@@ -4148,21 +4470,71 @@ a.question--term.taxonomy-keyword {
 .dashboard--content-overview-text {
   font-size: 1.2em; }
 
-.node-subscription,
-.taxonomy-subscription {
-  margin-bottom: 1.5em; }
-  .node-subscription .view-header,
-  .taxonomy-subscription .view-header {
-    font-size: 1.5em; }
-  .node-subscription .user-profile--notification-actions,
-  .taxonomy-subscription .user-profile--notification-actions {
-    margin-bottom: 0; }
-  .node-subscription .view-content,
-  .taxonomy-subscription .view-content {
-    margin-top: 0.25em; }
+.view-loop-user-subscriptions,
+.view-loop-user-taxonomy-subscriptions {
+  margin-bottom: 2em; }
+  .view-loop-user-subscriptions .view-header,
+  .view-loop-user-taxonomy-subscriptions .view-header {
+    border-bottom: 1px solid #e6e6e6;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: 1.5em;
+    font-weight: bold; }
+  .view-loop-user-subscriptions .view-content,
+  .view-loop-user-taxonomy-subscriptions .view-content {
+    display: flex;
+    flex-wrap: wrap; }
+    .view-loop-user-subscriptions .view-content .subscriptions--item,
+    .view-loop-user-taxonomy-subscriptions .view-content .subscriptions--item {
+      margin: 1em 0; }
 
-.taxonomy-subscription .view-content .views-field a {
-  color: #ff6138; }
+.view-loop-user-taxonomy-subscriptions .subscriptions--item {
+  flex: 0 0 100%; }
+  @media only screen and (min-width: 1000px) {
+    .view-loop-user-taxonomy-subscriptions .subscriptions--item {
+      flex: 0 1 50%; } }
+
+.view-loop-user-subscriptions .subscriptions--item {
+  flex: 0 0 100%;
+  margin: 1em 0; }
+
+.subscriptions--item .flag-link-toggle {
+  color: #737373;
+  text-decoration: none; }
+  .subscriptions--item .flag-link-toggle::before {
+    background-size: 16px;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-position: 2px;
+    vertical-align: middle;
+    content: '';
+    height: 20px;
+    width: 20px;
+    border: 1px solid #41ab51;
+    display: inline-block;
+    margin-right: .5em;
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -ms-border-radius: 0.4em;
+    -o-border-radius: 0.4em;
+    border-radius: 0.4em; }
+
+.subscriptions--item .unflag-action:before {
+  background-image: url("../icons/check.svg");
+  background-color: #41ab51; }
+
+.subscriptions--item .flag-message {
+  background-color: #d6ff9a;
+  box-sizing: border-box;
+  display: block;
+  margin-top: 1em;
+  padding: .5em 1em;
+  width: 80%;
+  -webkit-border-radius: 0.4em;
+  -moz-border-radius: 0.4em;
+  -ms-border-radius: 0.4em;
+  -o-border-radius: 0.4em;
+  border-radius: 0.4em; }
 
 /**
  * Documents module

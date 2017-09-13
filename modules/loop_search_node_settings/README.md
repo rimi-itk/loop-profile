@@ -50,7 +50,7 @@ This is the mappings/configuration used inside serarch node.
         "language": "da",
         "default_analyzer": "string_index",
         "default_indexer": "analyzed",
-        "sort": false,
+        "sort": true,
         "indexable": true,
         "raw": false,
         "geopoint": false,
@@ -187,6 +187,30 @@ This is the mappings/configuration used inside serarch node.
         "raw": false,
         "geopoint": false,
         "field": "field_external_link:url"
+      },
+      {
+        "type": "string",
+        "country": "DK",
+        "language": "da",
+        "default_analyzer": "string_index",
+        "default_indexer": "analyzed",
+        "sort": false,
+        "indexable": true,
+        "raw": true,
+        "geopoint": false,
+        "field": "field_subject"
+      },
+      {
+        "type": "string",
+        "country": "DK",
+        "language": "da",
+        "default_analyzer": "string_index",
+        "default_indexer": "not_analyzed",
+        "sort": false,
+        "indexable": true,
+        "raw": true,
+        "geopoint": false,
+        "field": "type"
       }
     ],
     "dates": [
@@ -202,4 +226,4 @@ This is the mappings/configuration used inside serarch node.
     ]
   }
 }
-``
+```
