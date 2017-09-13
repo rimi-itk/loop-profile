@@ -22,7 +22,7 @@ $zen-gutter-width: 30px;
 
 // Include base vars
 @import "base/_vars";
-
+@import "theme/_breakpoints";
 
 
 // Override with theme vars
@@ -71,6 +71,8 @@ $zen-gutter-width: 30px;
 @import "modules/_question";
 @import "modules/_external-sources";
 @import "modules/_search";
+@import "modules/_search-filters";
+@import "modules/_search-node-result";
 @import "modules/_tag";
 @import "modules/_twitter-typeahead";
 @import "modules/_user-profile";

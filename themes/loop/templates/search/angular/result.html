@@ -10,14 +10,15 @@
 -->
 <h1 class="page-title">{{ Drupal.t('Search results', {}, { 'context': 'angular' }) }} <span data-ng-if="hits.hits > 0">({{ hits.hits }})</span></h1>
 
-<div class="search-result">
-  <div data-ng-repeat="hit in hits.results" class="search-result--item">
-    <div class="search-result--meta-data">
-      <div class="search-result--meta-data-date">{{ Drupal.t('Created at', { }, { 'context': 'angular' }) }} {{ hit.created*1000 | date : 'd. MMMM yyyy' }}</div>
-      <div class="search-result--meta-data-type">{{ Drupal.t('Type:', { }, { 'context': 'angular' }) }} {{ Drupal.t(hit.type, { }, { 'context': 'angular' }) }}</div>
+<div class="search-node-result">
+  <div data-ng-repeat="hit in hits.results" class="search-node-result--item">
+    <a href="{{ hit.url }}" class="search-node-result--link" data-ng-bind-html="hit.title"></a>
+    <div class="search-node-result--item-content">
+      <div class="search-node-result--meta-data-date">{{ hit.created*1000 | date : 'd. MMMM yyyy' }}</div>
+      <div class="search-node-result--data-wrapper"><div class="search-node-result--meta-data-type is-{{ hit.type }}">{{ Drupal.t(hit.type, { }, { 'context': 'angular' }) }}</div></div>
+      <div class="search-node-result--data-wrapper"><a href="{{ hit.url }}" class="search-node-result--comments">{{ hit.comment_count }} {{ Drupal.t('Reply', { }, { 'context': 'angular' }) }}</a></div>
     </div>
-    <a href="{{ hit.url }}" class="search-result--link" data-ng-bind-html="hit.title"></a>
-    <a href="{{ hit.url }}" class="search-result--comments">{{ hit.comment_count }} {{ Drupal.t('Reply', { }, { 'context': 'angular' }) }}</a>
+    <div class="search-node-result--subject" data-ng-click="filterUpdate('field_subject', hit.field_subject['0'])">{{ hit.field_subject['0'] }}</div>
   </div>
 
   <!-- No results -->

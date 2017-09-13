@@ -16,6 +16,9 @@ angular.module('searchResultApp').controller('loopResultController', ['CONFIG', 
     // process. E.g display spinner.
     $scope.searching = false;
 
+    // Used to ensure "no-results" is not shown before first search.
+    $scope.no_hits_yet = true;
+
     // Check if the provider supports an pager.
     if (CONFIG.provider.hasOwnProperty('pager')) {
       // Add pager information to the scope.
@@ -44,10 +47,27 @@ angular.module('searchResultApp').controller('loopResultController', ['CONFIG', 
     };
 
     /**
+     * Send filter selection event to search controller.
+     *
+     * @param {string} filter
+     *   The field/filter to use.
+     * @param {string} selection
+     *   The selected term to filter on.
+     */
+    $scope.filterUpdate = function filterUpdate(filter, selection) {
+      communicatorService.$emit('filterUpdate', {
+        'filter': filter,
+        'selection': selection
+      });
+    };
+
+    /**
      * Handle search results hits from the search box application.
      */
     $scope.hits = [];
     communicatorService.$on('hits', function onHits(event, data) {
+      $scope.no_hits_yet = false;
+
       // Ensure that hits titles are stream lined.
       var hits = data.hits;
       for (var i in hits.results) {
@@ -134,6 +154,9 @@ angular.module('searchResultApp').controller('loopResultController', ['CONFIG', 
         Drupal.settings.autocomplete_deluxe = response.data.settings[1].data.autocomplete_deluxe;
         jQuery.getScript(response.data.settings[0], function() {
           Drupal.attachBehaviors();
+
+          // Copy question text into the form.
+          document.getElementById('edit-field-description-und-0-value').innerHTML = document.getElementById('loop-search-field').value;
         });
       });
     }

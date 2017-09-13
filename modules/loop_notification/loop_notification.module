@@ -5,3 +5,208 @@
  */
 
 include_once 'loop_notification.features.inc';
+
+/**
+ * Implements hook_menu().
+ *
+ * A menu item linking to an administration form.
+ */
+function loop_notification_menu() {
+  $items = array();
+
+  $items['admin/config/loop/notifications'] = array(
+    'title' => t('Loop notification settings'),
+    'description' => t('Settings related to the notification module.'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('loop_notification_config_form'),
+    'access arguments' => array('access administration pages')
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_form().
+ *
+ * A form for managing this modules configuration.
+ */
+function loop_notification_config_form($form) {
+  $checkboxes = node_type_get_names();
+
+  $form['loop_notification_wrapper'] = array(
+    '#type' => 'fieldset',
+    '#title' => 'Enable notifications',
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+  );
+
+  $form['loop_notification_wrapper']['loop_notification_content_types'] = array(
+    '#type' => 'checkboxes',
+    '#options' => $checkboxes,
+    '#default_value' => variable_get('loop_notification_content_types'),
+    '#title' => 'Select content types',
+    '#description' => t('Select the content types where you want notifications enabled.')
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_node_insert().
+ *
+ * Invoke rules components when creating a new node.
+ */
+function loop_notification_node_insert($node) {
+  _loop_notification_notify_users($node, 'insert');
+}
+
+/**
+ * Implements hook_node_update().
+ *
+ * Invoke rules components when updating a node.
+ */
+function loop_notification_node_update($node) {
+  _loop_notification_notify_users($node, 'update');
+}
+
+/**
+ * Implements hook_comment_insert().
+ *
+ * Invoke rules components when creating a new comment.
+ */
+function loop_notification_comment_insert($comment) {
+  _loop_notification_notify_users(node_load($comment->nid), 'insert', $comment);
+}
+
+/**
+ * Implements hook_comment_update().
+ *
+ * Invoke rules components when updating a comment.
+ */
+function loop_notification_comment_update($comment) {
+  _loop_notification_notify_users(node_load($comment->nid), 'update', $comment);
+}
+
+/**
+ * Implements hook_loop_notification_message_recipient_alter().
+ *
+ * Modify the array of message recipients.
+ */
+function loop_notification_loop_notification_message_recipient_alter(&$users, $node) {
+  // Fetch users who flagged the node.
+  $query = db_select('flagging', 'f')
+    ->fields('f', array('uid'));
+  $query->innerJoin('flag', 'l', 'f.fid = l.fid', array());
+  $query->condition('f.entity_id', $node->nid,'=');
+  $query->condition('f.entity_type', 'node','=');
+
+  $result = $query->execute()->fetchCol();
+  $users = array_merge($result, $users);
+}
+
+/**
+ * Loop through recipients to send notification.
+ *
+ * @param $node
+ *   The node related to the message about to be created.
+ * @param $action
+ *   The action that triggered the notification, insert or update.
+ * @param null $comment
+ *   A comment if the action was triggered by a new or updated comment.
+ */
+function _loop_notification_notify_users($node, $action, $comment = NULL) {
+  if (_loop_notification_check_content_type($node)) {
+    // Fetch all recipients.
+    $users = _loop_notification_find_users($node);
+
+    // Only load the entity_author once.
+    $author = $comment ? user_load($comment->uid) : user_load($node->uid);
+
+    // Notify all subscribed users.
+    foreach ($users as $user) {
+      _loop_notification_notify_user($user, $node, $action, $author, $comment);
+    }
+  }
+}
+
+/**
+ * Provide the list of users to be notified.
+ *
+ * @param $node
+ *   The node related to the message about to be created.
+ * @return array
+ *   The list of user entities that should receive the notification.
+ */
+function _loop_notification_find_users($node) {
+  $user_ids = array();
+  // Allow other modules to modify the list of recipients
+  drupal_alter('loop_notification_message_recipient', $user_ids, $node);
+
+  // Remove recurring users.
+  $user_ids = array_unique($user_ids);
+
+  $users = array();
+  foreach ($user_ids as $id) {
+    // Load the user object.
+    $users[] = user_load($id);
+  }
+  return $users;
+}
+
+/**
+ * Invoke rules components depending on situation.
+ *
+ * @param $user
+ *   A user about to receive a notification.
+ * @param $node
+ *   The node related to the message about to be created.
+ * @param $action
+ *   The action that triggered the notification, insert or update.
+ * @param $author
+ *   The author of the entity that triggered the notification.
+ * @param null $comment
+ *   A comment if the action was triggered by a new or updated comment.
+ */
+function _loop_notification_notify_user($user, $node, $action, $author, $comment = NULL) {
+  // Create messages and mails related to comment actions.
+  if ($comment) {
+    if ($action == 'insert') {
+      // Insert comment notification.
+      rules_invoke_component('rules_create_notification', $user, $author, $comment);
+      rules_invoke_component('loop_notification_send_mail', $node, $user, $comment);
+    }
+    else {
+      // Update comment notification.
+      rules_invoke_component('loop_notification_create_notification_on_comment_edit', $user, $author, $comment);
+      rules_invoke_component('loop_notification_send_mail_to_subscribers_on_comment_edit', $node, $user, $comment);
+    }
+
+  }
+  // Create messages and mails related to node actions.
+  else {
+    if ($action == 'insert') {
+      // Insert node notification.
+      rules_invoke_component('loop_notification_create_notification_on_node_create', $user, $author, $node);
+      rules_invoke_component('loop_notification_send_mail_to_subscribers_on_node_create', $node, $user, $node);
+    }
+    else {
+      // Update node notification
+      rules_invoke_component('loop_notification_create_notification_on_node_edit', $user, $author, $node);
+      rules_invoke_component('loop_notification_send_mail_to_subscribers_on_node_edit', $node, $user, $node);
+    }
+  }
+}
+
+/**
+ * Check for content type.
+ *
+ * @param $node
+ *   The node related to the message about to be created.
+ * @return bool
+ *   Whether or not the configuration allows the content type to send
+ *   notifcations.
+ */
+function _loop_notification_check_content_type($node) {
+  $allowed_types = variable_get('loop_notification_content_types');
+  return !empty($allowed_types[$node->type]);
+}

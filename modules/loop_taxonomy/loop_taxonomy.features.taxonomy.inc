@@ -26,7 +26,7 @@ function loop_taxonomy_taxonomy_default_vocabularies() {
       'weight' => 0,
     ),
     'subject' => array(
-      'name' => 'Subject',
+      'name' => 'Subjects',
       'machine_name' => 'subject',
       'description' => '',
       'hierarchy' => 0,

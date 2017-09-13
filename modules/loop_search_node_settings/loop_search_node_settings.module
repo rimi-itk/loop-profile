@@ -5,3 +5,17 @@
  */
 
 include_once 'loop_search_node_settings.features.inc';
+
+/**
+ * Implements hook_search_node_page_configuration_alter().
+ *
+ * Add or between types in the type "filter".
+ */
+function loop_search_node_settings_search_node_page_configuration_alter(&$conf, $configuration) {
+  $conf['provider']['filters']['taxonomy'][] = array(
+    'field' => 'type',
+    'name' => 'Type',
+    'type' => 'or',
+    'terms' => array(),
+  );
+}

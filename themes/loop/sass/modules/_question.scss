@@ -94,11 +94,9 @@
 
 // Allow style settings to override these colors.
 a.question--term {
-  background-color: $red;/*! setting:term_background_color */
-
-  &:hover {
-    background-color: darken($red, 15%);/*! setting:term_hover_background_color */
-  }
+  background: $white;
+  border: 1px solid $gray;
+  color: inherit;
 }
 
 .question--links {

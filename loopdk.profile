@@ -477,3 +477,25 @@ function loopdk_load_handlebars() {
     }
   }
 }
+
+/**
+ * Implements hook_menu().
+ *
+ * Add a loop config administration page.
+ */
+function loopdk_menu() {
+  $items = array();
+
+  $items['admin/config/loop'] = array( //this creates a URL that will call this form at "examples/form-example"
+    'title' => 'Loop settings', //page title
+    'description' => 'Loop specific configuration.',
+    'page callback' => 'system_admin_menu_block_page',
+    'access arguments' => array('access administration pages'),
+    //'path' => drupal_get_path('module', 'system'),
+    //'file' => 'system.admin.inc',
+    'position' => 'left',
+    'weight' => '-15'
+  );
+
+  return $items;
+}

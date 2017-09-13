@@ -17,6 +17,7 @@ function loop_preprocess_page(&$variables) {
     }
     else if (module_exists('search_node_page')) {
       $variables['search'] = module_invoke('search_node_page', 'block_view', 'search_node_search_box');
+      $variables['search']['result'] = module_invoke('search_node_page', 'block_view', 'search_node_search_result');
     }
     else {
       $variables['search'] = module_invoke('search', 'block_view', 'form');
@@ -31,6 +32,10 @@ function loop_preprocess_page(&$variables) {
     else {
       if ($arg[2] != 'messages') {
         menu_set_active_item('user');
+
+        // Add notifications script.
+        $subscriptions_alter_flags = $GLOBALS['base_root'] . '/' . path_to_theme() . '/scripts/subscriptions-alter-flags.js';
+        drupal_add_js($subscriptions_alter_flags, 'file');
       }
     }
   }
@@ -589,112 +594,6 @@ function loop_form_user_login_alter(&$form) {
   $form['name']['#description'] = FALSE;
   $form['name']['#title'] = t('Username or e-mail');
   $form['pass']['#description'] = FALSE;
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function loop_form_views_form_loop_user_subscriptions_panel_pane_1_alter(&$form, &$form_state, $form_id) {
-  // Add form class.
-  $form['#attributes']['class'][] = 'vbo-views-form';
-
-  // Copy button from field group.
-  if (!empty($form['select'])) {
-    $form['rules_component::rules_remove_subscription'] = $form['select']['rules_component::rules_remove_subscription'];
-  }
-
-  // Add wrappers.
-  $form['rules_component::rules_remove_subscription']['#prefix'] = '<div class="js-user-profile-notification-actions user-profile--notification-actions"><div class="user-profile--notification-actions-inner">';
-  $form['rules_component::rules_remove_subscription']['#suffix'] = '</div></div>';
-
-  // Add warning class to button.
-  $form['rules_component::rules_remove_subscription']['#attributes']['class'][] = 'user-profile--notification-actions--button-remove button--warning';
-
-  // Add js class to checkboxes.
-  if (!empty($form['views_bulk_operations'])) {
-    foreach ($form['views_bulk_operations'] as $key => $value) {
-      if (is_array($value)) {
-        $form['views_bulk_operations'][$key]['#attributes']['class'][] = 'js-user-profile-notification-select';
-      }
-    }
-  }
-
-  // Remove stuff from form.
-  unset($form['#prefix']);
-  unset($form['#suffix']);
-  unset($form['select_all_markup']);
-
-  // Remove field group containing actions.
-  unset($form['select']);
-
-  // Add custom js.
-  $display_notification_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() . '/scripts/display-notification-actions.js';
-  drupal_add_js($display_notification_script_path, 'file');
-
-  // If on confirmation step.
-  if ($form_state['step'] == 'views_bulk_operations_confirm_form') {
-    $form['actions']['submit']['#attributes']['class'][] = 'user-profile--notification-actions--button--confirm button--warning';
-    $form['actions']['cancel']['#attributes']['class'][] = 'user-profile--notification-actions--button button--action';
-  }
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function loop_form_views_form_loop_user_taxonomy_subscriptions_panel_pane_1_alter(&$form, &$form_state, $form_id) {
-  // Add form class.
-  $form['#attributes']['class'][] = 'vbo-views-form';
-
-  // Copy button from field group.
-  if (!empty($form['select'])) {
-    $buttonKey = 'rules_component::loop_notification_remove_taxonomy_subscription';
-    if (array_key_exists($buttonKey, $form['select'])) {
-      $form['rules_component::rules_remove_subscription'] = $form['select'][$buttonKey];
-    } else {
-      // Fall back to hardcoded definition because Drupal
-      $form['rules_component::rules_remove_subscription'] = array(
-          '#type' => 'submit',
-          '#value' => t('Remove subscription'),
-          '#validate' => array('views_bulk_operations_form_validate'),
-          '#submit' => array('views_bulk_operations_form_submit'),
-          '#operation_id' => 'rules_component::loop_notification_remove_taxonomy_subscription'
-      );
-    }
-  }
-
-  // Add wrappers.
-  $form['rules_component::rules_remove_subscription']['#prefix'] = '<div class="js-user-profile-notification-actions user-profile--notification-actions"><div class="user-profile--notification-actions-inner">';
-  $form['rules_component::rules_remove_subscription']['#suffix'] = '</div></div>';
-
-  // Add warning class to button.
-  $form['rules_component::rules_remove_subscription']['#attributes']['class'][] = 'user-profile--notification-actions--button-remove button--warning';
-
-  // Add js class to checkboxes.
-  if (!empty($form['views_bulk_operations'])) {
-    foreach ($form['views_bulk_operations'] as $key => $value) {
-      if (is_array($value)) {
-        $form['views_bulk_operations'][$key]['#attributes']['class'][] = 'js-user-profile-notification-select';
-      }
-    }
-  }
-
-  // Remove stuff from form.
-  unset($form['#prefix']);
-  unset($form['#suffix']);
-  unset($form['select_all_markup']);
-
-  // Remove field group containing actions.
-  unset($form['select']);
-
-  // Add custom js.
-  $display_notification_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() . '/scripts/display-notification-actions.js';
-  drupal_add_js($display_notification_script_path, 'file');
-
-  // If on confirmation step.
-  if ($form_state['step'] == 'views_bulk_operations_confirm_form') {
-    $form['actions']['submit']['#attributes']['class'][] = 'user-profile--notification-actions--button--confirm button--warning';
-    $form['actions']['cancel']['#attributes']['class'][] = 'user-profile--notification-actions--button button--action';
-  }
 }
 
 /**

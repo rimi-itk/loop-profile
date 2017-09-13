@@ -10,7 +10,7 @@
   <h3><?php print $title; ?></h3>
 <?php endif; ?>
 <?php foreach ($rows as $id => $row): ?>
-  <div class="user-profile-module--field">
+  <div class="subscriptions--item">
     <?php print $row; ?>
   </div>
 <?php endforeach; ?>
