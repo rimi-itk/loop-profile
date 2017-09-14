@@ -67,9 +67,9 @@ function loop_permissions_menu_access() {
     return FALSE;
   }
 
-  // Check admin access for 'document author' and 'document collection editor'.
+  // Non "administrator" users must have explicit access to admin paths.
   $user_role_names = array_values($GLOBALS['user']->roles);
-  if (array_intersect($user_role_names, array('document author', 'document collection editor', 'external sources editor'))) {
+  if (!array_intersect($user_role_names, array('administrator'))) {
     if (!user_access('access path ' . $path)) {
       return FALSE;
     }
