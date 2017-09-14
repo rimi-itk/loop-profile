@@ -3687,7 +3687,8 @@ a.question--term {
 /* Search node results
    ========================================================================== */
 .search-node-result--item {
-  padding: 2em 0;
+  
+  padding: 20px 0;
   border-top: 1px solid #cccccc; }
   .search-node-result--item-content {
     display: flex;
@@ -3695,20 +3696,34 @@ a.question--term {
 
 .search-node-result--link {
   display: block;
-  margin-bottom: 1em; }
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 1em;
+  line-height: 1em; }
+  .search-node-result--link:hover {
+    color: #41ab51; }
 
 .search-node-result--data-wrapper {
   flex: 0 0 100%;
-  padding-right: 2em; }
+  padding-right: 36px; }
+
   @media only screen and (min-width: 43em) {
     .search-node-result--data-wrapper {
       flex: 0 0 auto; } }
 
+.search-node-result--data-wrapper-subject {
+  color: #b3b3b3;
+  flex: 0 0 100%;
+  padding-right: 36px;
+  font-size: .9em; }
+  @media only screen and (min-width: 43em) {
+    .search-node-result--data-wrapper-subject {
+      flex: 0 0 auto; } }
 .search-node-result--meta-data-date {
   color: #b3b3b3;
   font-size: .9em;
   flex: 0 0 100%;
-  margin-bottom: 1em;
   padding-right: 2em; }
   @media only screen and (min-width: 43em) {
     .search-node-result--meta-data-date {
@@ -3721,7 +3736,6 @@ a.question--term {
   /* setting:content_type_label_text_color_default */
   display: inline-block;
   font-size: .9em;
-  margin-bottom: 1em;
   padding: .1em .7em;
   -webkit-border-radius: 1em;
   -moz-border-radius: 1em;
@@ -3735,25 +3749,15 @@ a.question--term {
     /* setting:content_type_label_text_color_post */ }
 
 .search-node-result--subject {
-  background: #fff;
-  border: 1px solid #b3b3b3;
-  color: inherit;
+  color: #41ab51;
+  text-decoration: underline;
   cursor: pointer;
-  display: inline-block;
-  font-size: .9em;
-  margin-bottom: 1em;
-  padding: .1em .7em;
-  -webkit-border-radius: 0.4em;
-  -moz-border-radius: 0.4em;
-  -ms-border-radius: 0.4em;
-  -o-border-radius: 0.4em;
-  border-radius: 0.4em; }
+  display: inline-block; }
 
 .search-node-result--comments {
   color: #b3b3b3;
   display: block;
-  font-size: .9em;
-  margin-bottom: 1em; }
+  font-size: .9em; }
   .search-node-result--comments:link {
     color: #b3b3b3;
     text-decoration: none; }
