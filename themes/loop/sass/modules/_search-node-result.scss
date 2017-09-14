@@ -10,7 +10,7 @@
 .search-node-result {
 
   &--item {
-    padding: 2em 0;
+    padding: 20px 0;
     border-top: 1px solid $gray-light;
 
     &-content {
@@ -21,12 +21,31 @@
 
   &--link {
     display: block;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
     margin-bottom: 1em;
+    line-height: 1em;
+    
+    &:hover {
+      color: $green;
+    }
   }
 
   &--data-wrapper {
     flex: 0 0 100%;
-    padding-right: 2em;
+    padding-right: 36px;
+
+    @include breakpoint($breakpoint-4) {
+      flex: 0 0 auto;
+    }
+  }
+
+  &--data-wrapper-subject {
+    color: $gray;
+    flex: 0 0 100%;
+    padding-right: 36px;
+    font-size: .9em;
 
     @include breakpoint($breakpoint-4) {
       flex: 0 0 auto;
@@ -37,7 +56,6 @@
     color: $gray;
     font-size: .9em;
     flex: 0 0 100%;
-    margin-bottom: 1em;
     padding-right: 2em;
 
     @include breakpoint($breakpoint-4) {
@@ -50,7 +68,6 @@
     color: $document-type-color-text;/*! setting:content_type_label_text_color_default */
     display: inline-block;
     font-size: .9em;
-    margin-bottom: 1em;
     padding: .1em .7em;
 
     &.is-post {
@@ -62,23 +79,16 @@
   }
 
   &--subject {
-    background: $white;
-    border: 1px solid $gray;
-    color: inherit;
+    color: $green;
+    text-decoration: underline;
     cursor: pointer;
     display: inline-block;
-    font-size: .9em;
-    margin-bottom: 1em;
-    padding: .1em .7em;
-
-    @include border-radius($border-radius);
   }
 
   &--comments {
     color: $gray;
     display: block;
     font-size: .9em;
-    margin-bottom: 1em;
 
 
     &:before {

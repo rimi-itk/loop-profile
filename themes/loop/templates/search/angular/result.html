@@ -17,8 +17,10 @@
       <div class="search-node-result--meta-data-date">{{ hit.created*1000 | date : 'd. MMMM yyyy' }}</div>
       <div class="search-node-result--data-wrapper"><div class="search-node-result--meta-data-type is-{{ hit.type }}">{{ Drupal.t(hit.type, { }, { 'context': 'angular' }) }}</div></div>
       <div class="search-node-result--data-wrapper"><a href="{{ hit.url }}" class="search-node-result--comments">{{ hit.comment_count }} {{ Drupal.t('Reply', { }, { 'context': 'angular' }) }}</a></div>
+      <div class="search-node-result--data-wrapper-subject">{{ Drupal.t('Subject', { }, { 'context': 'angular' }) }}:
+        <div class="search-node-result--subject" data-ng-click="filterUpdate('field_subject', hit.field_subject['0'])">{{ hit.field_subject['0'] }}</div>
+      </div>
     </div>
-    <div class="search-node-result--subject" data-ng-click="filterUpdate('field_subject', hit.field_subject['0'])">{{ hit.field_subject['0'] }}</div>
   </div>
 
   <!-- No results -->
