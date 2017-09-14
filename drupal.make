@@ -17,4 +17,4 @@ projects[drupal][patch][] = "https://www.drupal.org/files/issues/optimize_scan-2
 projects[loopdk][type] = "profile"
 projects[loopdk][download][type] = "git"
 projects[loopdk][download][url] = "https://github.com/os2loop/profile.git"
-projects[loopdk][download][tag] = "1.3.2"
+projects[loopdk][download][tag] = "1.4.1"
