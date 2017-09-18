@@ -22,6 +22,39 @@ function loop_search_node_menu() {
 }
 
 /**
+ * Implements hook_comment_insert().
+ *
+ * Update search index based on comment changes.
+ */
+function loop_search_node_comment_insert($comment) {
+  if ($comment->nid) {
+    search_api_track_item_change('node', array($comment->nid));
+  }
+}
+
+/**
+ * Implements hook_comment_update().
+ *
+ * Update search index based on comment changes.
+ */
+function loop_search_node_comment_update($comment) {
+  if ($comment->nid) {
+    search_api_track_item_change('node', array($comment->nid));
+  }
+}
+
+/**
+ * Implements hook_comment_delete().
+ *
+ * Update search index based on comment changes.
+ */
+function loop_search_node_comment_delete($comment) {
+  if ($comment->nid) {
+    search_api_track_item_change('node', array($comment->nid));
+  }
+}
+
+/**
  * Menu callback that generates post node add form.
  *
  * @return string
@@ -133,7 +166,9 @@ function loop_search_node_js_alter(&$javascript) {
   }
 }
 
-
+/**
+ * Implements hook_local_rebuild_js_alter().
+ */
 function loop_search_node_local_rebuild_js_alter(&$translations, $language) {
   // Construct the array for JavaScript translations.
   // Only add strings with a translation to the translations array.
