@@ -16,6 +16,19 @@ function loop_search_node_settings_search_node_page_configuration_alter(&$conf, 
     'field' => 'type',
     'name' => 'Type',
     'type' => 'or',
-    'terms' => array(),
+    'terms' => array(
+      'external_sources' => array(
+        'value' => 'external_sources',
+      ),
+      'loop_documents_document' => array(
+        'value' => 'loop_documents_document',
+      ),
+      'loop_documents_collection' => array(
+        'value' => 'loop_documents_collection',
+      ),
+      'post' => array(
+        'value' => 'post',
+      ),
+    ),
   );
 }
