@@ -72,7 +72,6 @@ function loop_search_node_no_results() {
 
   // Get "post" node create form.
   $form = drupal_get_form('node_form', $node);
-  $form['additional_settings']['#access'] = FALSE;
 
   drupal_json_output(array(
     'settings' => $form['field_keyword']['und']['#attached']['js'],
