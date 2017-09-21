@@ -13,8 +13,8 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
     $scope.searchBtnText = 'Search';
     $scope.searching = false;
     $scope.selectedFilterCount = 0;
-    $scope.filterActive = 'docs';
-    $scope.sortActive = 'default';
+    $scope.filterActive = 'all';
+    $scope.sortActive = 'desc';
     $scope.showSort = false;
     $scope.newSubjects = false;
 
@@ -140,10 +140,8 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
       // Init the query object.
       $scope.query = {
         'text': '',
-        'filters': {
-          'taxonomy': {
-            'type': documentFilter
-          }
+        'sort': {
+          'created': $scope.sortActive
         }
       };
 
