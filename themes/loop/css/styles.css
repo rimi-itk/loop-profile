@@ -3458,6 +3458,8 @@ a.question--term {
     -ms-border-radius: 0;
     -o-border-radius: 0;
     border-radius: 0; }
+  .search-result--block .vertical-tabs-panes {
+    display: none; }
 
 .search-result--link {
   display: block;

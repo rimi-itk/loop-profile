@@ -116,6 +116,10 @@
   .layout-full-width {
     @include border-radius(0);
   }
+
+  .vertical-tabs-panes {
+    display: none;
+  }
 }
 
 .search-result--link {
