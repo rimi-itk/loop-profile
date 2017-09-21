@@ -471,30 +471,6 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
       $scope.searchClicked(false);
     };
 
-    /**
-     * Resets the current search to default.
-     */
-    $scope.reset = function reset() {
-      // Reset pager.
-      if (CONFIG.provider.hasOwnProperty('pager')) {
-        $scope.query.pager = angular.copy(CONFIG.provider.pager);
-      }
-
-      // Check if initial query exists.
-      if (CONFIG.hasOwnProperty('initialQueryText')) {
-        $scope.query.text = angular.copy(CONFIG.initialQueryText);
-
-        search(true);
-      }
-      else {
-        // No initial query.
-        $scope.query.text = '';
-
-        // Remove hits.
-        communicatorService.$emit('hits', {"hits" : {}});
-      }
-    };
-
     // Get the show on the road.
     init();
   }
