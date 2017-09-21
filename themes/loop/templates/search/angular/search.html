@@ -41,9 +41,9 @@
 
       <div class="search-filters">
         <div class="search-filters--type">
+          <span class="search-filters--label" data-ng-class="{'is-active': filterActive==='all'}" data-ng-click="filterType('all')">{{ Drupal.t('All', {}, { 'context': 'angular' }) }}</span>
           <span class="search-filters--label" data-ng-class="{'is-active': filterActive==='docs'}" data-ng-click="filterType('docs')">{{ Drupal.t('Documents', {}, { 'context': 'angular' }) }}</span>
           <span class="search-filters--label" data-ng-class="{'is-active': filterActive==='post'}" data-ng-click="filterType('post')">{{ Drupal.t('Posts', {}, { 'context': 'angular' }) }}</span>
-          <span class="search-filters--label" data-ng-class="{'is-active': filterActive==='all'}" data-ng-click="filterType('all')">{{ Drupal.t('All', {}, { 'context': 'angular' }) }}</span>
         </div>
 
         <span class="search-filters--subject-wrapper" data-ng-class="{'is-active': isFiltersShown}" data-ng-click="toggleFilter()">

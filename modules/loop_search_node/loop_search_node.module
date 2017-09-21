@@ -203,7 +203,7 @@ function _loop_search_node_box_settings() {
     'options' => array(
       'match_type' => 'best_fields',
       'match_operator' => 'and',
-      'cache_expire' => 300,
+      'cache_expire' => 0,
       'size' => 8,
       'initial_query_enable' => 0,
       'initial_query_text' => '',
