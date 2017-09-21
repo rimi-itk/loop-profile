@@ -3687,7 +3687,6 @@ a.question--term {
 /* Search node results
    ========================================================================== */
 .search-node-result--item {
-  
   padding: 20px 0;
   border-top: 1px solid #cccccc; }
   .search-node-result--item-content {
@@ -3697,7 +3696,6 @@ a.question--term {
 .search-node-result--link {
   display: block;
   font-size: 18px;
-  font-weight: bold;
   text-decoration: none;
   margin-bottom: 1em;
   line-height: 1em; }
@@ -3707,7 +3705,6 @@ a.question--term {
 .search-node-result--data-wrapper {
   flex: 0 0 100%;
   padding-right: 36px; }
-
   @media only screen and (min-width: 43em) {
     .search-node-result--data-wrapper {
       flex: 0 0 auto; } }
@@ -3720,6 +3717,7 @@ a.question--term {
   @media only screen and (min-width: 43em) {
     .search-node-result--data-wrapper-subject {
       flex: 0 0 auto; } }
+
 .search-node-result--meta-data-date {
   color: #b3b3b3;
   font-size: .9em;
