@@ -240,7 +240,20 @@ angular.module('searchBoxApp').controller('loopSearchBoxController', ['CONFIG', 
     function filterUpdated(data) {
       $scope.query.text = '';
 
-      delete $scope.query.filters['taxonomy'][data['filter']];
+      // Ensure that data structure exists in the search query before accessing
+      // it.
+      if (!$scope.query.hasOwnProperty('filters')) {
+        $scope.query.filters = {
+          'taxonomy': {}
+        }
+      }
+      if (!$scope.query.filters.hasOwnProperty('taxonomy')) {
+        $scope.query.filter.taxonomy = { }
+      }
+
+      if ($scope.query.filters.taxonomy.hasOwnProperty(data['filter'])) {
+        delete $scope.query.filters['taxonomy'][data['filter']];
+      }
       $scope.query.filters['taxonomy'][data['filter']] = {};
       $scope.query.filters['taxonomy'][data['filter']][data['selection']] = true;
 

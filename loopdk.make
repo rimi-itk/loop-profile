@@ -212,7 +212,7 @@ projects[search_api_search_node][type] = "module"
 projects[search_api_search_node][subdir] = "contrib"
 projects[search_api_search_node][download][type] = "git"
 projects[search_api_search_node][download][url] = "http://github.com/search-node/search_api_search_node.git"
-projects[search_api_search_node][download][tag] = "7.x-1.1.6"
+projects[search_api_search_node][download][tag] = "7.x-1.1.8"
 
 projects[search_node_page][type] = "module"
 projects[search_node_page][subdir] = "contrib"
