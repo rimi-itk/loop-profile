@@ -58,10 +58,10 @@
         <div class="search-filters--subjects-wrapper" data-ng-show="isFiltersShown" >
           <div class="search-filters--subjects">
             <div class="search-filters--arrow"><div class="search-filters--arrow-inner"></div></div>
-            <div class="search-filters--subjects-inner" data-ng-repeat="(id, filter) in filters['taxonomy']">
-              <div class="search-filters--subjects-item" data-ng-repeat="(key, item) in filter.items">
+            <div class="search-filters--subjects-inner">
+              <div class="search-filters--subjects-item" data-ng-repeat="(key, item) in filters['taxonomy']['field_subject'].items">
                 <span class="search-filters--subjects-item-inner">
-                  <input id="{{ key }}" type="checkbox" data-ng-model="query.filters['taxonomy'][id][key]" data-ng-click="filterNewSelection()">
+                  <input id="{{ key }}" type="checkbox" data-ng-model="query.filters['taxonomy']['field_subject'][key]" data-ng-click="filterNewSelection()">
                   <label for="{{ key }}">{{ item.value }}</label>
                 </span>
               </div>
