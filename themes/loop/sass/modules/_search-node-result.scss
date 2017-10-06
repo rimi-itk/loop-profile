@@ -27,7 +27,7 @@
     line-height: 1em;
 
     &:hover {
-      color: $green;
+      color: $green;/*! setting:header_color */
     }
   }
 
@@ -78,7 +78,7 @@
   }
 
   &--subject {
-    color: $green;
+    color: $green;/*! setting:header_color */
     text-decoration: underline;
     cursor: pointer;
     display: inline-block;
