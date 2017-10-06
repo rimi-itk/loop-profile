@@ -22,7 +22,7 @@ function loop_notification_filter_default_formats() {
         'weight' => -10,
         'status' => 1,
         'settings' => array(
-          'allowed_html' => '<h2> <p> <br>',
+          'allowed_html' => '<h2> <p> <br> <a>',
           'filter_html_help' => 0,
           'filter_html_nofollow' => 0,
         ),
