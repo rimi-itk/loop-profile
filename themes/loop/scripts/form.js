@@ -2,8 +2,8 @@
   $(function () {
     // Disable all submit buttons on submit to prevent multiple
     // submits.
-    $('form').on('submit', function() {
-      $(this).find('[type="submit"]').prop('disabled', true);
+    $('form.comment-form, form.node-post-form').on('submit', function() {
+      $(this).find(':submit').prop('disabled', true);
     });
   });
 })(jQuery);
