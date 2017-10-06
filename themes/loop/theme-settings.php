@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/template.php';
+
 /**
  * @file
  * Theme setting callbacks for the loop theme.
@@ -33,6 +35,29 @@ function loop_form_system_theme_settings_alter(&$form, &$form_state) {
     '#title' => t('Show regular log in button'),
     '#default_value' => theme_get_setting('show_login_for_regular_users', 'loop'),
     '#description' => t("Show log in button for regular users, i.e. username and password fields"),
+  );
+
+  $login_service_options = array('' => t('None'));
+  foreach (_loop_get_login_services() as $name => $service) {
+    if ($name !== 'loop-login') {
+      $login_service_options[$name] = $service['name'];
+    }
+  }
+
+  $form['login_settings']['default_login_service_name'] = array(
+    '#type' => 'select',
+    '#title' => t('Default login service name'),
+    '#options' => $login_service_options,
+    '#default_value' => theme_get_setting('default_login_service_name'),
+    '#description' => t("Default login service to redirect anonymous users to"),
+  );
+
+  $form['login_settings']['default_login_service_path'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Default login service path'),
+    '#default_value' => theme_get_setting('default_login_service_path') ? theme_get_setting('default_login_service_path') : 'user/login',
+    '#description' => t("Path on which to check for default login service"),
+    '#required' => TRUE,
   );
 
   $form['logout_settings'] = array(

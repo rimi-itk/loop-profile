@@ -743,6 +743,28 @@ function loop_theme($existing, $type, $theme, $path) {
  * Adds a list of active login services to the template variables.
  */
 function loop_preprocess_user_login(&$variables) {
+  $login_services = _loop_get_login_services();
+
+  $default_login_service_name = theme_get_setting('default_login_service_name');
+  $default_login_service_path = theme_get_setting('default_login_service_path');
+
+  if ($default_login_service_name
+      && isset($login_services[$default_login_service_name])
+      && current_path() === $default_login_service_path) {
+    header('Location: ' . $login_services[$default_login_service_name]['url']);
+    exit;
+  }
+
+  $variables['login_services'] = $login_services;
+}
+
+/**
+ * Get a list of registered login services.
+ *
+ * @return array
+ *   The list of login services.
+ */
+function _loop_get_login_services() {
   $login_services = array();
 
   $destination = drupal_get_destination();
@@ -778,7 +800,7 @@ function loop_preprocess_user_login(&$variables) {
     }
   }
 
-  $variables['login_services'] = $login_services;
+  return $login_services;
 }
 
 /**
