@@ -9,17 +9,19 @@
    ========================================================================== */
 %search-filters-label {
   background: $white;
-  border-top: 1px solid $green;
-  border-bottom: 1px solid $green;
-  border-right: 1px solid $green;
-  color: $green;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  border-color: $green; /*! setting:header_color */
+  color: $green;/*! setting:header_color */
   cursor: pointer;
   flex: 1 0 auto;
   padding: .5em;
   text-align: center;
 
   &:first-child {
-    border-left: 1px solid $green;
+    border-left: 1px solid;
+    border-color: $green;/*! setting:header_color */
 
     @include border-radius($border-radius 0 0 $border-radius);
   }
@@ -33,7 +35,7 @@
   }
 
   &.is-active {
-    background: $green;
+    background: $green;/*! setting:header_color */
     color: $white;
   }
 }
@@ -89,7 +91,6 @@
     @include border-radius($border-radius);
 
     &-inner {
-
       display: flex;
       flex-wrap: wrap;
     }
@@ -116,6 +117,12 @@
 
         input[type=checkbox] {
           @include checkbox();
+          border-color: $green;/*! setting:header_color */
+
+          &:checked {
+            border-color: $green;/*! setting:header_color */
+            background-color: $green;/*! setting:header_color */
+          }
         }
 
         input {
@@ -144,7 +151,7 @@
       border-bottom-color: $white;
     }
   }
-  
+
   &--icon-dropdown {
     position: absolute;
     top: .85em;
@@ -167,8 +174,16 @@
   &--action {
     @extend .button--action;
 
+    background-color: $green;/*! setting:header_color */
+    border-color: $green;/*! setting:header_color */
+
     padding:.4em 0 .5em;
     width: 100%;
+
+    &:hover {
+      background-color: $green;/*! setting:term_hover_background_color */
+      border-color: $green;/*! setting:term_hover_background_color */
+    }
   }
 
   // Sorting
