@@ -43,3 +43,39 @@ function loop_post_form_node_form_alter(&$form, &$form_state) {
     drupal_set_title(t("Create question"));
   }
 }
+
+/**
+ * Implements hook_form_alter().
+ *
+ * @see https://drupal.stackexchange.com/questions/22240/prevent-multiple-form-submissions-server-side#comment20957_22240
+ */
+function loop_post_form_alter(&$form, &$form_state, $form_id) {
+  $form['#validate'][] = 'loop_post_form_validate';
+}
+
+/**
+ * Implements hook_form_validate().
+ *
+ * Check that form has not already been submitted. Report error if form has
+ * already been submitted.
+ */
+function loop_post_form_validate(&$form, &$form_state) {
+  if (form_get_errors()) {
+    return;
+  }
+
+  $session_key = 'loop_post_form_validate_submitted';
+  if (!isset($_SESSION[$session_key])) {
+    $_SESSION[$session_key] = array();
+  }
+
+  $form_id = $form_state['values']['form_build_id'];
+  if (isset($_SESSION[$session_key][$form_id]) && $_SESSION[$session_key][$form_id] === TRUE) {
+    global $user;
+    watchdog('loop_post', 'Form !id already submitted (user: !user)', array('!id' => $form['#id'], '!user' => $user->name), WATCHDOG_INFO);
+    form_set_error('name]', t('This form has already been submitted. <a href="!url">OK</a>', array('!url' => current_path())));
+  }
+  else{
+    $_SESSION[$session_key][$form_id] = TRUE;
+  }
+}
