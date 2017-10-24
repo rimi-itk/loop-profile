@@ -16,7 +16,6 @@ scripts[] = scripts/modernizr.min.js
 scripts[] = scripts/chosen.jquery.js
 scripts[] = scripts/use-chosen.min.js
 scripts[] = scripts/toggle.js
-scripts[] = scripts/form.js
 
 ; Stylesheets
 stylesheets[all][] = css/styles.css
