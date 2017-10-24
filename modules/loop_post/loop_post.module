@@ -69,13 +69,14 @@ function loop_post_form_validate(&$form, &$form_state) {
     $_SESSION[$session_key] = array();
   }
 
-  $form_id = $form_state['values']['form_build_id'];
-  if (isset($_SESSION[$session_key][$form_id]) && $_SESSION[$session_key][$form_id] === TRUE) {
+  // "form_build_id" is a unique id for each form being built.
+  $form_build_id = $form_state['values']['form_build_id'];
+  if (isset($_SESSION[$session_key][$form_build_id]) && $_SESSION[$session_key][$form_build_id] === TRUE) {
     global $user;
     watchdog('loop_post', 'Form !id already submitted (user: !user)', array('!id' => $form['#id'], '!user' => $user->name), WATCHDOG_INFO);
     form_set_error('name]', t('This form has already been submitted. <a href="!url">OK</a>', array('!url' => current_path())));
   }
   else{
-    $_SESSION[$session_key][$form_id] = TRUE;
+    $_SESSION[$session_key][$form_build_id] = TRUE;
   }
 }
