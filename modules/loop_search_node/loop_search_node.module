@@ -141,27 +141,43 @@ function loop_search_node_js_alter(&$javascript) {
   $path .= '/templates/search/angular';
   $dir = DRUPAL_ROOT . '/' . $path;
 
+  // Find the files.
+  if (file_exists($dir)) {
+    _loop_search_node_scan_templates($path);
+  }
+  else {
+    // Fallback to modules template files.
+    $path = drupal_get_path('module', 'loop_search_node') . '/templates/angular';
+    _loop_search_node_scan_templates($path);
+  }
+}
+
+/**
+ * Scan angular templates file for translations.
+ *
+ * @param string $path
+ *   The path to scan.
+ */
+function _loop_search_node_scan_templates($path) {
+  $dir = DRUPAL_ROOT . '/' . $path;
   $new_files = FALSE;
   $parsed = variable_get('loop_search_node_templates_parsed', array());
 
-  // Find the files.
-  if (file_exists($dir)) {
-    $it = new RecursiveDirectoryIterator($dir);
-    foreach (new RecursiveIteratorIterator($it) as $file)  {
-      $file_abs = $path . str_replace($dir, '', $file);
-      if (!in_array($file_abs, $parsed)) {
-        $ext = pathinfo($file, PATHINFO_EXTENSION);
-        if (in_array($ext, [ 'html' ])) {
-          _locale_parse_js_file($file_abs);
-          $parsed[] = $file_abs;
-          $new_files = TRUE;
-        }
+  $it = new RecursiveDirectoryIterator($dir);
+  foreach (new RecursiveIteratorIterator($it) as $file)  {
+    $file_abs = $path . str_replace($dir, '', $file);
+    if (!in_array($file_abs, $parsed)) {
+      $ext = pathinfo($file, PATHINFO_EXTENSION);
+      if (in_array($ext, [ 'html' ])) {
+        _locale_parse_js_file($file_abs);
+        $parsed[] = $file_abs;
+        $new_files = TRUE;
       }
     }
+  }
 
-    if ($new_files) {
-      variable_set('loop_search_node_templates_parsed', $parsed);
-    }
+  if ($new_files) {
+    variable_set('loop_search_node_templates_parsed', $parsed);
   }
 }
 
@@ -183,7 +199,6 @@ function loop_search_node_local_rebuild_js_alter(&$translations, $language) {
     $translations[$data->context][$data->source] = $data->translation;
   }
 }
-
 
 /**
  * The current search box block configuration.
