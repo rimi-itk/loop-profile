@@ -1,0 +1,50 @@
+<!--
+  Default view for the search result application.
+
+  You should not change this but point to another custom template in the
+  configuration object.
+
+  // Translation hack. The lines need to be here.
+  {{ Drupal.t('post', { }, { 'context': 'angular' }) }}
+  {{ Drupal.t('external_sources', { }, { 'context': 'angular' }) }}
+  {{ Drupal.t('loop_documents_document', { }, { 'context': 'angular' }) }}
+  {{ Drupal.t('loop_documents_collection', { }, { 'context': 'angular' }) }}
+-->
+<h1 class="page-title">{{ Drupal.t('Search results', {}, { 'context': 'angular' }) }} <span data-ng-if="hits.hits > 0">({{ hits.hits }})</span></h1>
+
+<div class="search-node-result">
+  <div data-ng-repeat="hit in hits.results" class="search-node-result--item">
+    <a href="{{ hit.url }}" class="search-node-result--link" data-ng-bind-html="hit.title"></a>
+    <div class="search-node-result--item-content">
+      <div class="search-node-result--data-wrapper"><div class="search-node-result--meta-data-type is-{{ hit.type }}">{{ Drupal.t(hit.type, { }, { 'context': 'angular' }) }}</div></div>
+      <div class="search-node-result--data-wrapper-subject">{{ Drupal.t('Subject', { }, { 'context': 'angular' }) }}:
+        <div class="search-node-result--subject" data-ng-click="filterUpdate('field_subject', hit.field_subject['0'])">{{ hit.field_subject['0'] }}</div>
+      </div>
+      <div class="search-node-result--meta-data-date">{{ hit.created*1000 | date : 'd. MMMM yyyy' }}</div>
+      <div class="search-node-result--data-wrapper"><a href="{{ hit.url }}" class="search-node-result--comments">{{ hit.comment_count }} {{ Drupal.t('Reply', { }, { 'context': 'angular' }) }}</a></div>
+    </div>
+  </div>
+
+  <!-- No results -->
+  <span data-ng-if="!hits.hits && !searching">
+    <div class="search-result--lead">
+      <div class="messages warning">
+      {{ Drupal.t('No results found.', { }, { 'context': 'angular' }) }}
+      </div>
+    </div>
+    <p>{{ Drupal.t('If you think that your question is not asked before with different wording, you can create the question using the form below. You can also change your search and search again.', { }, { 'context': 'angular'}) }}</p>
+
+    <div class="layout--inner" id="ask-question">
+      <div class="layout-element-epsilon">
+        <h3 class="page-title">{{ Drupal.t('Create question', { }, { 'context': 'angular' }) }}</h3>
+        <span id="no_result_form"></span>
+      </div>
+    </div>
+  </span>
+
+</div>
+
+
+
+<!-- Search pager if the provider supports it -->
+<search-pager></search-pager>
