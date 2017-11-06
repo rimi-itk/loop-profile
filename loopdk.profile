@@ -180,7 +180,7 @@ function loopdk_import_translation() {
     '_loopdk_insert_translation',
     array(
       'default',
-      '/profiles/loopdk/translations/da.po',
+      '/profiles/loopdk/translations/default.da.po',
     ),
   );
 
@@ -189,7 +189,7 @@ function loopdk_import_translation() {
     '_loopdk_insert_translation',
     array(
       'field',
-      '/profiles/loopdk/translations/da_fields.po',
+      '/profiles/loopdk/translations/field.da.po',
     ),
   );
 
@@ -198,7 +198,7 @@ function loopdk_import_translation() {
     '_loopdk_insert_translation',
     array(
       'menu',
-      '/profiles/loopdk/translations/da_menu.po',
+      '/profiles/loopdk/translations/menu.da.po',
     ),
   );
 
@@ -207,7 +207,7 @@ function loopdk_import_translation() {
     '_loopdk_insert_translation',
     array(
       'panels',
-      '/profiles/loopdk/translations/da_panels.po',
+      '/profiles/loopdk/translations/panels.da.po',
     ),
   );
 
@@ -216,7 +216,7 @@ function loopdk_import_translation() {
     '_loopdk_insert_translation',
     array(
       'views',
-      '/profiles/loopdk/translations/da_views.po',
+      '/profiles/loopdk/translations/views.da.po',
     ),
   );
 
