@@ -32,3 +32,11 @@
   color: #b3b3b3;
   font-size: .85em;
 }
+
+a.question--term.taxonomy-keyword {
+  background-color: $keyword-background-color;
+
+  &:hover {
+    background-color: darken($keyword-background-color, 15%);
+  }
+}

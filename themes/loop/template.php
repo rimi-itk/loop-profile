@@ -1106,3 +1106,15 @@ function _loop_fetch_files($type, $entity) {
 
   return $files;
 }
+
+/**
+ * Override or insert variables into the html template.
+ */
+function loop_preprocess_html(&$vars) {
+  $skin = theme_get_setting('loop_skin');
+  if (!$skin) {
+    $skin = 'styles';
+  }
+
+  drupal_add_css(path_to_theme() . '/css/' . $skin . '.css', array('group' => CSS_THEME, 'weight' => 999, 'preprocess' => FALSE));
+}
