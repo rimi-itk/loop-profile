@@ -40388,7 +40388,7 @@ msgstr "Administrér Page Title"
 
 #: /admin/structure/features
 msgid "View all read notifications"
-msgstr "Se alle læste beskeder"
+msgstr "Vis alle læste beskeder"
 
 #: /admin/structure/features
 msgid "Remove subscription"
@@ -42310,7 +42310,7 @@ msgstr "Eksterne kilder"
 #: profiles/loopdk/themes/loop/templates/search/angular/result.html
 msgctxt "angular"
 msgid "Search results"
-msgstr "Søge resultater"
+msgstr "Søgeresultater"
 
 #: profiles/loopdk/themes/loop/templates/search/angular/result.html
 msgctxt "angular"
@@ -42610,7 +42610,7 @@ msgid "Page @page of @total_pages"
 msgstr "Side @page af @total_pages"
 
 msgid "Print collection"
-msgstr "Udskriv samling"
+msgstr "Udskriv dokument"
 
 msgid "Review date"
 msgstr "Revideringsdato"
@@ -42620,3 +42620,111 @@ msgstr "Gem samlingen for at oprette menu"
 
 msgid "wkhtmltopdf settings"
 msgstr "Indstillinger for wkhtmltopdf"
+
+#: profiles/loopdk/themes/loop/templates/search/angular/search.html
+msgctxt "angular"
+msgid "All"
+msgstr "Alt indhold"
+
+#: profiles/loopdk/themes/loop/templates/search/angular/search.html
+msgctxt "angular"
+msgid "Newest"
+msgstr "Nyeste først"
+
+#: profiles/loopdk/themes/loop/templates/search/angular/result.html
+msgctxt "angular"
+msgid "No results found."
+msgstr "Ingen resultater"
+
+#: profiles/loopdk/themes/loop/templates/search/angular/search.html
+msgctxt "angular"
+msgid "Alphabetical"
+msgstr "Alfabetisk"
+
+#: profiles/loopdk/themes/loop/templates/search/angular/search.html
+msgctxt "angular"
+msgid "Best match"
+msgstr "Bedste match"
+
+#: profiles/loopdk/themes/loop/templates/search/angular/result.html
+msgctxt "angular"
+msgid "Create question"
+msgstr "Opret spørgsmål"
+
+#: profiles/loopdk/themes/loop/templates/search/angular/search.html
+msgctxt "angular"
+msgid "Documents"
+msgstr "Dokumenter"
+
+#: /admin/index
+msgid "Documents and document collections"
+msgstr "Dokumenter og Dokumentsamlinger"
+
+#: profiles/loopdk/themes/loop/templates/search/angular/search.html
+msgctxt "angular"
+msgid "Documents collection"
+msgstr "Dokumentsamlinger"
+
+#: profiles/loopdk/modules/loop_search_node/js/loopResultController.js
+msgctxt "angular"
+msgid "Enter value."
+msgstr "Vælg faggruppe"
+
+#: profiles/loopdk/themes/loop/templates/search/angular/search.html
+msgctxt "angular"
+msgid "Filter on subjects"
+msgstr "Filtrer på emner"
+
+#: profiles/loopdk/themes/loop/templates/search/angular/search.html
+msgctxt "angular"
+msgid "Oldest"
+msgstr "Ældste først"
+
+#: profiles/loopdk/themes/loop/templates/search/angular/search.html
+msgctxt "angular"
+msgid "Posts"
+msgstr "Spørgsmål"
+
+#: profiles/loopdk/themes/loop/templates/search/angular/result.html
+msgctxt "angular"
+msgid ""
+"If you think that your question is not asked before with different "
+"wording, you can create the question using the form below. You can "
+"also change your search and search again."
+msgstr ""
+"Hvis du tror, at dit spørgsmål ikke stillet før med anden ordlyd, "
+"kan du oprette spørgsmålet ved hjælp af nedenstående skema. Du kan "
+"også ændre din søgning og søge igen."
+
+#: profiles/loopdk/themes/loop/templates/search/angular/result.html
+msgctxt "angular"
+msgid "Reply"
+msgstr "Svar"
+
+#: profiles/loopdk/themes/loop/templates/search/angular/search.html
+msgctxt "angular"
+msgid "Sort results"
+msgstr "Sortér resultat"
+
+#: /admin/modules/list/confirm
+msgid "Search results for search node."
+msgstr "Søgeresultater"
+
+#: profiles/loopdk/themes/loop/templates/search/angular/result.html
+msgctxt "angular"
+msgid "Subject"
+msgstr "Emne"
+
+#: /admin/structure/features
+msgid "View all notifications"
+msgstr "Vis alle beskeder"
+
+#: profiles/loopdk/themes/loop/templates/search/angular/result.html
+msgctxt "angular"
+msgid "loop_documents_collection"
+msgstr "Vejledning"
+
+#: profiles/loopdk/themes/loop/templates/search/angular/result.html
+msgctxt "angular"
+msgid "loop_documents_document"
+msgstr "Vejledning"
