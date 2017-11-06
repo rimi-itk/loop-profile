@@ -79,8 +79,7 @@
       }
     }
   };
-
-
+  
   $(document).ready(function($) {
     // Load the template for each entry.
     dashboardQuestions.template = Handlebars.compile(
@@ -103,9 +102,6 @@
           dashboardQuestions.unansweredCount++;
         }
       }
-
-      console.log(dashboardQuestions.unansweredCount);
-      console.log(dashboardQuestions.answeredCount);
 
       $(".dashboard--questions-count-unanswered").replaceWith('<span>' + dashboardQuestions.unansweredCount + '</span>');
       $(".dashboard--questions-count-answered").replaceWith('<span>' + dashboardQuestions.answeredCount + '</span>');
