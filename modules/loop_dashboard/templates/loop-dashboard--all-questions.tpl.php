@@ -41,10 +41,12 @@
         <a href="#" class="dashboard--filter-link js-questions-answer-filter js-questions-unanswered is-active">
           <span class="dashboard--show-only-link-short"><?php print t('Unanswered');?></span>
           <span class="dashboard--show-only-link-long"><?php print t('Unanswered questions');?></span>
+          <span class="dashboard--questions-count-wrapper">(<span class="dashboard--questions-count-unanswered"></span>)</span>
         </a>
         <a href="#" class="dashboard--filter-link js-questions-answer-filter js-questions-answered">
           <span class="dashboard--show-only-link-short"><?php print t('Answered');?></span>
           <span class="dashboard--show-only-link-long"><?php print t('Answered questions');?></span>
+          <span class="dashboard--questions-count-wrapper">(<span class="dashboard--questions-count-answered">0</span>)</span>
         </a>
       </div>
     </div>

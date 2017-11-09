@@ -70,6 +70,7 @@ function loop_admin_theme($existing, $type, $theme, $path) {
       'variables' => array(
         'post_count' => 0,
         'comment_count' => 0,
+        'unanswered_posts_count' => 0,
       ),
       'template' => 'templates/loop_admin_stats_post_count',
     ),
@@ -759,6 +760,7 @@ function _loop_admin_content_statistics_total_count_element(&$form, $filter = ar
     '#theme' => 'loop_admin_stats_post_count',
     '#post_count' => _loop_admin_content_statistics_post_count($filter),
     '#comment_count' => _loop_admin_content_statistics_comment_count($filter),
+    '#unanswered_posts_count' => _loop_admin_content_statistics_unanswered_posts_count($filter),
   );
 }
 
@@ -811,6 +813,48 @@ function _loop_admin_content_statistics_comment_count($filter = array()) {
 
   // Return the number of rows (the count).
   return $query->countQuery()->execute()->fetchField();
+}
+
+/**
+ * Count the number of posts in the database without a comment.
+ *
+ * @param array $filter
+ *   The different values to filter on.
+ *
+ * @return int
+ *   The number of uncommented nodes.
+ */
+function _loop_admin_content_statistics_unanswered_posts_count($filter = array()) {
+  // Use the comments table to get all comments.
+  $query = db_select('comment', 'c');
+  $query->fields('c', array('nid', 'cid'));
+
+  // Join node table to be able to filter on date.
+  $query->innerJoin('node', 'n', 'c.nid = n.nid');
+  $query->condition('n.type', LOOP_ADMIN_STATISTICS_NODE_TYPE, '=');
+
+  // Filter the query on date.
+  if (isset($filter['date'])) {
+    $query->condition('n.created', $filter['date']['start'], '>=')
+      ->condition('n.created', $filter['date']['end'], '<=');
+  }
+
+  // Count the number of commented nodes.
+  $commented_nodes = count($query->execute()->fetchAllAssoc('nid'));
+
+  // Use the node table to get node with type "post".
+  $query = db_select('node', 'n')
+    ->condition('n.type', LOOP_ADMIN_STATISTICS_NODE_TYPE, '=');
+
+  // Filter the query on date.
+  if (isset($filter['date'])) {
+    $query->condition('n.created', $filter['date']['start'], '>=')
+      ->condition('n.created', $filter['date']['end'], '<=');
+  }
+
+  // Return the number of rows (the count).
+  $node_count = $query->countQuery()->execute()->fetchField();
+  return($node_count - $commented_nodes);
 }
 
 /**
