@@ -5,7 +5,9 @@
 (function ($) {
   "use strict";
 
-  var dq = {
+  var dashboardQuestions = {
+    unansweredCount: 0,
+    answeredCount: 0,
     questions: [],
     display: [],
     template: '',
@@ -20,18 +22,18 @@
      * Defines the different filters.
      */
     sortByFilter: function(a, b) {
-      if (dq.filter.sorting === 'newest') {
+      if (dashboardQuestions.filter.sorting === 'newest') {
         return ((a.ts < b.ts) ? 1 : ((a.ts > b.ts) ? -1 : 0));
       }
-      else if (dq.filter.sorting === 'oldest') {
+      else if (dashboardQuestions.filter.sorting === 'oldest') {
         return ((a.ts < b.ts) ? -1 : ((a.ts > b.ts) ? 1 : 0));
       }
-      else if (dq.filter.sorting === 'alphabetic') {
+      else if (dashboardQuestions.filter.sorting === 'alphabetic') {
         a = a.title.toLowerCase();
         b = b.title.toLowerCase();
         return ((a < b) ? -1 : ((a > b) ? 1 : 0));
       }
-      else if (dq.filter.sorting === 'comments') {
+      else if (dashboardQuestions.filter.sorting === 'comments') {
         return ((a.coms < b.coms)) ? 1 : (a.coms > b.coms) ? -1 : 0;
       }
     },
@@ -40,28 +42,28 @@
      * Function to call every time the display list should be updated.
      */
     updateList: function() {
-      dq.display = [];
+      dashboardQuestions.display = [];
 
       // Sort according to filter.
-      dq.questions.sort(dq.sortByFilter);
+      dashboardQuestions.questions.sort(dashboardQuestions.sortByFilter);
 
       // Get 5 elements according to
-      $.each(dq.questions, function(index, obj) {
+      $.each(dashboardQuestions.questions, function(index, obj) {
         var gt_zero_comments = (obj.coms > 0) ? true : false;
 
-        if (obj.title.toLowerCase().indexOf(dq.filter.title.toLowerCase()) >= 0 &&
-            gt_zero_comments === dq.filter.answered) {
-          dq.display.push(obj);
+        if (obj.title.toLowerCase().indexOf(dashboardQuestions.filter.title.toLowerCase()) >= 0 &&
+            gt_zero_comments === dashboardQuestions.filter.answered) {
+          dashboardQuestions.display.push(obj);
         }
-        if (dq.display.length >= dq.filter.items) {
+        if (dashboardQuestions.display.length >= dashboardQuestions.filter.items) {
           // Break each.
           return false;
         }
       });
 
       $(".js-dashboard-questions").html("");
-      $.each(dq.display, function(index, obj) {
-        $(".js-dashboard-questions").append(dq.template(obj));
+      $.each(dashboardQuestions.display, function(index, obj) {
+        $(".js-dashboard-questions").append(dashboardQuestions.template(obj));
       });
     },
 
@@ -70,7 +72,7 @@
      * This depends on whether answered/unanswered questions should be displayed.
      */
     setFilterButtonSizes: function() {
-      if (!dq.filter.answered) {
+      if (!dashboardQuestions.filter.answered) {
         $('.js-questions-sort-filter').addClass('js-has-answers-removed');
         $('.js-questions-sort-comments').addClass('is-hidden');
         $('.js-questions-sort-alphabetic').addClass('is-last');
@@ -85,89 +87,106 @@
 
   $(document).ready(function($) {
     // Load the template for each entry.
-    dq.template = Handlebars.compile(
+    dashboardQuestions.template = Handlebars.compile(
       $("#js-list-item-template-questions").html()
     );
 
     // Load the data from the backend.
     $.get("/loop_dashboard_search_questions", function(data) {
-      dq.questions = data;
-      dq.updateList();
+      dashboardQuestions.questions = data;
+
+      dashboardQuestions.answeredCount = 0;
+      dashboardQuestions.unansweredCount = 0;
+
+      for (var question in dashboardQuestions.questions) {
+        question = dashboardQuestions.questions[question];
+        if (question.coms > 0) {
+          dashboardQuestions.answeredCount++;
+        }
+        else {
+          dashboardQuestions.unansweredCount++;
+        }
+      }
+
+      $(".dashboard--questions-count-unanswered").replaceWith('<span>' + dashboardQuestions.unansweredCount + '</span>');
+      $(".dashboard--questions-count-answered").replaceWith('<span>' + dashboardQuestions.answeredCount + '</span>');
+      
+      dashboardQuestions.updateList();
     });
 
     // Register event listeners for filters.
     $('.js-questions-unanswered').on('click', function(event) {
       event.preventDefault();
-      if (dq.filter.answered) {
+      if (dashboardQuestions.filter.answered) {
         $('.js-questions-answer-filter').removeClass('is-active');
         $('.js-questions-unanswered').addClass('is-active');
         $('.js-questions-sort-comments').addClass('is-hidden');
-        if (dq.filter.sorting === 'comments') {
-          dq.filter.sorting = 'newest';
+        if (dashboardQuestions.filter.sorting === 'comments') {
+          dashboardQuestions.filter.sorting = 'newest';
 
         }
 
-        dq.filter.answered = false;
-        dq.setFilterButtonSizes();
-        dq.updateList();
+        dashboardQuestions.filter.answered = false;
+        dashboardQuestions.setFilterButtonSizes();
+        dashboardQuestions.updateList();
       }
     });
     $('.js-questions-answered').on('click', function(event) {
       event.preventDefault();
-      if (!dq.filter.answered) {
+      if (!dashboardQuestions.filter.answered) {
         $('.js-questions-answer-filter').removeClass('is-active');
         $('.js-questions-answered').addClass('is-active');
 
-        dq.filter.answered = true;
-        dq.setFilterButtonSizes();
-        dq.updateList();
+        dashboardQuestions.filter.answered = true;
+        dashboardQuestions.setFilterButtonSizes();
+        dashboardQuestions.updateList();
       }
     });
     $('.js-questions-sort-newest').on('click', function(event) {
       event.preventDefault();
-      if (!dq.filter.sorting !== 'newest') {
+      if (!dashboardQuestions.filter.sorting !== 'newest') {
         $('.js-questions-sort-filter').removeClass('is-active');
         $('.js-questions-sort-newest').addClass('is-active');
 
-        dq.filter.sorting = 'newest';
-        dq.updateList();
+        dashboardQuestions.filter.sorting = 'newest';
+        dashboardQuestions.updateList();
       }
     });
     $('.js-questions-sort-oldest').on('click', function(event) {
       event.preventDefault();
-      if (dq.filter.sorting !== 'oldest') {
+      if (dashboardQuestions.filter.sorting !== 'oldest') {
         $('.js-questions-sort-filter').removeClass('is-active');
         $('.js-questions-sort-oldest').addClass('is-active');
 
-        dq.filter.sorting = 'oldest';
-        dq.updateList();
+        dashboardQuestions.filter.sorting = 'oldest';
+        dashboardQuestions.updateList();
       }
     });
     $('.js-questions-sort-alphabetic').on('click', function(event) {
       event.preventDefault();
-      if (!dq.filter.sorting !== 'alphabetic') {
+      if (!dashboardQuestions.filter.sorting !== 'alphabetic') {
         $('.js-questions-sort-filter').removeClass('is-active');
         $('.js-questions-sort-alphabetic').addClass('is-active');
 
-        dq.filter.sorting = 'alphabetic';
-        dq.updateList();
+        dashboardQuestions.filter.sorting = 'alphabetic';
+        dashboardQuestions.updateList();
       }
     });
     $('.js-questions-sort-comments').on('click', function(event) {
       event.preventDefault();
-      if (!dq.filter.sorting !== 'comments') {
+      if (!dashboardQuestions.filter.sorting !== 'comments') {
         $('.js-questions-sort-filter').removeClass('is-active');
         $('.js-questions-sort-comments').addClass('is-active');
 
-        dq.filter.sorting = 'comments';
-        dq.updateList();
+        dashboardQuestions.filter.sorting = 'comments';
+        dashboardQuestions.updateList();
       }
     });
 
     $('.js-questions-text-filter').on('keyup', function(event) {
       event.preventDefault();
-      dq.filter.title = $(this).val();
-      dq.updateList();
+      dashboardQuestions.filter.title = $(this).val();
+      dashboardQuestions.updateList();
     });
   });
 
