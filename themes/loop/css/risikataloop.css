@@ -1037,11 +1037,15 @@ label {
   content: '\e812'; }
 
 /* '' */
+.icon-arrow-filled-down:before {
+  content: '\e813'; }
+
+/* '' */
 /* Icon shadow classes
    ================================================================================================================== */
 .comment--flag.is-sticky:before, .messages.status:before, .comment--flag:before, .user-profile--answers-best-count:before, .at-term:after, .messages.error:before, .message--flag:before, .search-result--comments:before, .question--number-of-comments:before, .search-node-result--comments:before, .user-profile--answers-count:before, .messages.warning:before, .nav-mobile .nav--link:before, .nav-mobile .nav--wrapper .nav--frontpage-link:before, .nav--wrapper .nav-mobile .nav--frontpage-link:before, .nav-mobile .nav--logout:before,
 .nav-mobile .nav-dropdown--header:before,
-.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before, .loop-documents--collection-title a:before, .loop-documents--collection-title span:before, .loop-documents--collection-meta-title:after, .loop-documents--collection-navigation ul li a:before, .loop-documents--collection-meta-title.is-shown:after, .loop-documents--metadata.is-shown .loop-documents--collection-meta-title:after, .twitter-typeahead:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .comments--abuse a:before, .question--links a:before {
+.nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .guide--nav-list-item .active:before, .loop-documents--collection-title a:before, .loop-documents--collection-title span:before, .loop-documents--collection-meta-title:after, .loop-documents--collection-navigation ul li a:before, .loop-documents--collection-meta-title.is-shown:after, .loop-documents--metadata.is-shown .loop-documents--collection-meta-title:after, .nav-dropdown .nav-dropdown--header::after, .search-filters--subject-wrapper-label::after, .twitter-typeahead:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .comments--abuse a:before, .question--links a:before {
   display: inline-block;
   font-family: "loop-icons";
   line-height: 100%; }
@@ -1051,7 +1055,7 @@ label {
 .nav-mobile .nav-dropdown--link:before, .block-module--user-links-item a:before, .block-module--my-content-item a:before, .comments--abuse a:before, .comment--flag:before, .guide--nav-list-item .active:before, .question--links a:before, .search-result--comments:before, .question--number-of-comments:before, .search-node-result--comments:before, .user-profile--answers-count:before, .user-profile--answers-best-count:before, .dashboard-list--filter:before, .dashboard-list--icon:before, .dashboard-list--question-title:before, .loop-documents--collection-title a:before, .loop-documents--collection-title span:before, .loop-documents--collection-navigation ul li a:before, .messages.status:before, .messages.warning:before, .messages.error:before {
   margin-right: .35em; }
 
-.at-term:after {
+.nav-dropdown .nav-dropdown--header::after, .search-filters--subject-wrapper-label::after, .at-term:after {
   margin-left: .35em; }
 
 .comment--flag.is-sticky:before {
@@ -1083,6 +1087,9 @@ label {
 .loop-documents--collection-meta-title.is-shown:after, .loop-documents--metadata.is-shown .loop-documents--collection-meta-title:after {
   content: '\e802'; }
 
+.nav-dropdown .nav-dropdown--header::after, .search-filters--subject-wrapper-label::after {
+  content: '\e813'; }
+
 .twitter-typeahead:before {
   content: '\e803'; }
 
@@ -1097,6 +1104,13 @@ label {
 
 .comments--abuse a:before, .question--links a:before {
   content: '\e812'; }
+
+.nav-dropdown .nav-dropdown--header::after, .search-filters--subject-wrapper-label::after {
+  position: absolute;
+  line-height: 0;
+  top: 50%;
+  right: .75em;
+  font-size: 1.25em; }
 
 /**
  * Tabs
