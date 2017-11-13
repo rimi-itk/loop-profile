@@ -114,7 +114,7 @@ function loopdk_access_denied_page() {
 function loopdk_translation_update() {
   // Update build-in translation group.
   $file = new stdClass();
-  $file->uri = DRUPAL_ROOT . '/profiles/loopdk/translations/da.po';
+  $file->uri = DRUPAL_ROOT . '/profiles/loopdk/translations/default.da.po';
   $file->filename = basename($file->uri);
   _locale_import_po($file, 'da', LOCALE_IMPORT_KEEP, 'default');
 }
