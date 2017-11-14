@@ -22,6 +22,22 @@ function loop_form_system_theme_settings_alter(&$form, &$form_state) {
     '#default_value' => theme_get_setting('show_breadcrumbs', 'loop'),
     '#description' => t("Show breadcrumbs at the top each page."),
   );
+  $form['theme_settings']['loop_skin'] = array(
+    '#type'          => 'select',
+    '#title'         => t('Skin'),
+    '#options' => array(
+      '' => t('(default)'),
+      'red' => t('Red'),
+      'blue' => t('Blue'),
+      'green' => t('Green'),
+      'cura' => t('Cura'),
+      'buloop' => t('Børn og Unge'),
+      'risikataloop' => t('Risikataloop'),
+      'dokk1' => t('Dokk1'),
+    ),
+    '#default_value' => theme_get_setting('loop_skin'),
+    '#description'   => t('Choose a skin for the site.'),
+  );
 
   $form['login_settings'] = array(
     '#type' => 'fieldset',

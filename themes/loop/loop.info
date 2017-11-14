@@ -17,9 +17,6 @@ scripts[] = scripts/chosen.jquery.js
 scripts[] = scripts/use-chosen.min.js
 scripts[] = scripts/toggle.js
 
-; Stylesheets
-stylesheets[all][] = css/styles.css
-
 ; Disable stylesheets
 stylesheets[all][] = user.css
 stylesheets[all][] = views.css
@@ -34,7 +31,7 @@ stylesheets[all][] = image.css
 ; Panels layouts. You can place multiple layouts under the "layouts" folder.
 plugins[panels][layouts] = templates/panels/layouts
 
-dependencies[] = style_settings
+soft_dependencies[] = style_settings
 
 ; Defaults for the theme configuration
 settings[show_login_for_regular_users] = true

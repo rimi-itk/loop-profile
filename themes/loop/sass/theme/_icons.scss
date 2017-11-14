@@ -64,6 +64,7 @@
 .icon-alphabetical:before { content: '\e811'; } /* '' */
 .icon-help-circled:before { content: '\e80F'; } /* '' */
 .icon-flag-filled:before { content: '\e812'; } /* '' */
+.icon-arrow-filled-down:before { content: '\e813'; } /* '' */
 
 /* Icon shadow classes
    ================================================================================================================== */
@@ -137,6 +138,12 @@
   content: '\e802';
 }
 
+%icon-arrow-filled-down {
+  @extend %icon-base;
+
+  content: '\e813';
+}
+
 %icon-search {
   @extend %icon-base;
 
@@ -178,4 +185,16 @@
   @extend %icon-base;
 
   content: '\e812';
+}
+
+%arrow-down {
+  &::after {
+    @extend %icon-arrow-filled-down;
+    @extend %icon-after;
+    position: absolute;
+    line-height: 0;
+    top: 50%;
+    right: .75em;
+    font-size: 1.25em;
+  }
 }
