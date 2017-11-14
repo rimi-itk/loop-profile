@@ -162,6 +162,8 @@
 
   .nav-dropdown--header {
     padding-right: 2.5em;
+
+    @extend %arrow-down;
   }
 
   .nav-dropdown--icon-white,
@@ -368,4 +370,3 @@
     @extend .nav--link;
   }
 }
-

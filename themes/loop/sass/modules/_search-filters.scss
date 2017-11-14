@@ -169,6 +169,8 @@
     @extend %search-filters-label;
 
     @include border-radius($border-radius);
+
+    @extend %arrow-down;
   }
 
   &--action {

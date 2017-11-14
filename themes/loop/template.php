@@ -443,16 +443,7 @@ function loop_menu_link__menu_loop_primary_menu($variables) {
 
   // Sub item exist (Element is parent).
   if (!empty($variables['element']['#below'])) {
-    $img_white = array(
-      'path' => '/' . $theme_path . '/images/nav-arrow-down-icon-white.png',
-      'attributes' => array('class' => 'nav-dropdown--icon-white'),
-    );
-    $img_green = array(
-      'path' => '/' . $theme_path . '/images/nav-arrow-down-icon.png',
-      'attributes' => array('class' => 'nav-dropdown--icon-green'),
-    );
-    // Create the title with image icon.
-    $element['#title'] = theme_image($img_white) . theme_image($img_green) . '<span class="nav--text">' . $element['#title'] . '</span>';
+    $element['#title'] = '<span class="nav--text">' . $element['#title'] . '</span>';
 
     // Wrap the sub menu.
     $sub_menu = '<div class="nav-dropdown--item">' . drupal_render($element['#below']) . '</div>';
@@ -489,16 +480,7 @@ function loop_menu_link__management($variables) {
   $element = $variables['element'];
 
   if ($element['#href'] == 'admin') {
-    $img_white = array(
-      'path' => '/' . $theme_path . '/images/nav-arrow-down-icon-white.png',
-      'attributes' => array('class' => 'nav-dropdown--icon-white'),
-    );
-    $img_green = array(
-      'path' => '/' . $theme_path . '/images/nav-arrow-down-icon.png',
-      'attributes' => array('class' => 'nav-dropdown--icon-green'),
-    );
-    // Create the title with image icon.
-    $element['#title'] = theme_image($img_white) . theme_image($img_green) . '<span class="nav--text">' . $element['#title'] . '</span>';
+    $element['#title'] = '<span class="nav--text">' . $element['#title'] . '</span>';
 
     // Wrap the sub menu.
     $sub_menu = '<div class="nav-dropdown--item">' . drupal_render($element['#below']) . '</div>';
@@ -1105,4 +1087,16 @@ function _loop_fetch_files($type, $entity) {
   }
 
   return $files;
+}
+
+/**
+ * Override or insert variables into the html template.
+ */
+function loop_preprocess_html(&$vars) {
+  $skin = theme_get_setting('loop_skin');
+  if (!$skin) {
+    $skin = 'styles';
+  }
+
+  drupal_add_css(path_to_theme() . '/css/' . $skin . '.css', array('group' => CSS_THEME, 'weight' => 999, 'preprocess' => FALSE));
 }
