@@ -42,6 +42,10 @@ function loop_post_form_node_form_alter(&$form, &$form_state) {
     // Set page title.
     drupal_set_title(t("Create question"));
   }
+
+  // Reset form when user goes back in history.
+  // @see https://developer.mozilla.org/en-US/docs/Web/Security/Securing_your_site/Turning_off_form_autocompletion.
+  $form['#attributes']['autocomplete'] = 'off';
 }
 
 /**
