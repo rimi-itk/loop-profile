@@ -19,13 +19,19 @@ $border-radius:       .4em;
 
 
 
-$green:               #41ab51;
+$green:               #41ab51 !default;
 $green-dark:          lighten($green, 45%);
 $green-darker:        darken($green, 10%);
 $green-light:         lighten($green, 10%);
-$green-lighter:       #d6ff9a;
-$red:                 #ff6138;
-$yellow-light:        #fff98f;
+$green-lighter:       #d6ff9a !default;
+$red:                 #ff6138 !default;
+$yellow-light:        #fff98f !default;
+
+$keyword-background-color: #007700 !default;
+$post-type-color: #41658A !default;
+$post-type-color-text: $white !default;
+$document-type-color: #B05B63 !default;
+$document-type-color-text: $white !default;
 
 $gray-lightest:       lighten($black, 95%);
 $gray-lighter:        lighten($black, 90%);
@@ -35,14 +41,14 @@ $gray-dark:           lighten($black, 45%);
 $gray-darker:         lighten($black, 35%);
 $gray-darkest:        lighten($black, 25%);
 
-$gray-background:     #f2f2f2;
-$gray-color:          #999;
+$gray-background:     #f2f2f2 !default;
+$gray-color:          #999 !default;
 
 
 /* Link colors
    ================================================================================================================== */
 
-$link-color:          $green;
+$link-color:          $green !default;
 $link-color-hover:    darken($link-color, 10%);
 
 

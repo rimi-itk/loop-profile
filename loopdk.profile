@@ -180,7 +180,7 @@ function loopdk_import_translation() {
     '_loopdk_insert_translation',
     array(
       'default',
-      '/profiles/loopdk/translations/da.po',
+      '/profiles/loopdk/translations/default.da.po',
     ),
   );
 
@@ -189,7 +189,7 @@ function loopdk_import_translation() {
     '_loopdk_insert_translation',
     array(
       'field',
-      '/profiles/loopdk/translations/da_fields.po',
+      '/profiles/loopdk/translations/field.da.po',
     ),
   );
 
@@ -198,7 +198,7 @@ function loopdk_import_translation() {
     '_loopdk_insert_translation',
     array(
       'menu',
-      '/profiles/loopdk/translations/da_menu.po',
+      '/profiles/loopdk/translations/menu.da.po',
     ),
   );
 
@@ -207,7 +207,7 @@ function loopdk_import_translation() {
     '_loopdk_insert_translation',
     array(
       'panels',
-      '/profiles/loopdk/translations/da_panels.po',
+      '/profiles/loopdk/translations/panels.da.po',
     ),
   );
 
@@ -216,7 +216,7 @@ function loopdk_import_translation() {
     '_loopdk_insert_translation',
     array(
       'views',
-      '/profiles/loopdk/translations/da_views.po',
+      '/profiles/loopdk/translations/views.da.po',
     ),
   );
 
@@ -447,4 +447,55 @@ function loopdk_final_settings() {
   i18n_string_refresh_group('menu');
   i18n_string_refresh_group('panels');
   i18n_string_refresh_group('views');
+}
+
+/**
+ * Implements hook_libraries_info().
+ */
+function loopdk_libraries_info() {
+  return array(
+    'handlebars' => array(
+      'name' => 'Handlebars.js',
+      'vendor url' => 'http://handlebarsjs.com/',
+      'download url' => 'https://github.com/wycats/handlebars.js/releases',
+      'version' => '1.2.1',
+      'files' => array(
+        'js' => array('handlebars-v1.2.1.js'),
+      ),
+    ),
+  );
+}
+
+/**
+ * Load the Handlebars.js library.
+ */
+function loopdk_load_handlebars() {
+  $library = libraries_detect('handlebars');
+  if (!empty($library['installed'])) {
+    foreach ($library['files']['js'] as $file => $v) {
+      drupal_add_js($library['library path'] . '/' . $file);
+    }
+  }
+}
+
+/**
+ * Implements hook_menu().
+ *
+ * Add a loop config administration page.
+ */
+function loopdk_menu() {
+  $items = array();
+
+  $items['admin/config/loop'] = array( //this creates a URL that will call this form at "examples/form-example"
+    'title' => 'Loop settings', //page title
+    'description' => 'Loop specific configuration.',
+    'page callback' => 'system_admin_menu_block_page',
+    'access arguments' => array('access administration pages'),
+    //'path' => drupal_get_path('module', 'system'),
+    //'file' => 'system.admin.inc',
+    'position' => 'left',
+    'weight' => '-15'
+  );
+
+  return $items;
 }

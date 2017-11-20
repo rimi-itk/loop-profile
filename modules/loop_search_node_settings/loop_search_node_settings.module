@@ -1,0 +1,34 @@
+<?php
+/**
+ * @file
+ * Adds the javascript need to search the sites content.
+ */
+
+include_once 'loop_search_node_settings.features.inc';
+
+/**
+ * Implements hook_search_node_page_configuration_alter().
+ *
+ * Add or between types in the type "filter".
+ */
+function loop_search_node_settings_search_node_page_configuration_alter(&$conf, $configuration) {
+  $conf['provider']['filters']['taxonomy'][] = array(
+    'field' => 'type',
+    'name' => 'Type',
+    'type' => 'or',
+    'terms' => array(
+      'external_sources' => array(
+        'value' => 'external_sources',
+      ),
+      'loop_documents_document' => array(
+        'value' => 'loop_documents_document',
+      ),
+      'loop_documents_collection' => array(
+        'value' => 'loop_documents_collection',
+      ),
+      'post' => array(
+        'value' => 'post',
+      ),
+    ),
+  );
+}

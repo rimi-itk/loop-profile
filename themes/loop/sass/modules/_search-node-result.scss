@@ -1,0 +1,136 @@
+/**
+ *
+ * Search node results.
+ *
+ */
+
+/* Search node results
+   ========================================================================== */
+
+.search-node-result {
+
+  &--item {
+    padding: 20px 0;
+    border-top: 1px solid $gray-light;
+
+    &-content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &--link {
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 1em;
+    line-height: 1em;
+
+    &:hover {
+      color: $green;
+    }
+  }
+
+  &--data-wrapper {
+    flex: 0 0 100%;
+    padding-right: 36px;
+
+    @include breakpoint($breakpoint-4) {
+      flex: 0 0 auto;
+    }
+  }
+
+  &--data-wrapper-subject {
+    color: $gray;
+    flex: 0 0 100%;
+    padding-right: 36px;
+    font-size: .9em;
+
+    @include breakpoint($breakpoint-4) {
+      flex: 0 0 auto;
+    }
+  }
+
+  &--meta-data-date {
+    color: $gray;
+    font-size: .9em;
+    flex: 0 0 100%;
+    padding-right: 2em;
+
+    @include breakpoint($breakpoint-4) {
+      flex: 0 0 auto;
+    }
+  }
+
+  &--meta-data-type {
+    background: $document-type-color;/*! setting:content_type_label_color_default */
+    color: $document-type-color-text;/*! setting:content_type_label_text_color_default */
+    display: inline-block;
+    font-size: .9em;
+    padding: .1em .7em;
+
+    &.is-post {
+      background: $post-type-color;/*! setting:content_type_label_color_post */
+      color: $post-type-color-text;/*! setting:content_type_label_text_color_post */
+    }
+
+    @include border-radius(1em);
+  }
+
+  &--subject {
+    color: $green;
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  &--comments {
+    color: $gray;
+    display: block;
+    font-size: .9em;
+
+
+    &:before {
+      @extend %icon-comment;
+      @extend %icon-before;
+    }
+
+    &:link {
+      color: $gray;
+      text-decoration: none;
+    }
+
+    &:visited {
+      color: $gray;
+    }
+
+    &:hover {
+      color: $gray;
+    }
+
+    &:focus {
+      color: $gray;
+    }
+  }
+}
+
+.pager {
+  ul {
+    padding: 0;
+  }
+
+  li {
+    display: none;
+    @include breakpoint(1000px) {
+      display: inline;
+    }
+  }
+
+  li[title="Previous Page"] {
+    display: inline;
+  }
+
+  li[title="Next Page"] {
+    display: inline;
+  }
+}

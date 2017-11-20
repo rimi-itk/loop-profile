@@ -2,6 +2,7 @@ name = Loop dashboard
 description = Holds views and pages for the Loop dashboard
 core = 7.x
 package = Loop
+dependencies[] = libraries
 dependencies[] = loop_admin
 dependencies[] = loop_flag
 dependencies[] = loop_navigation

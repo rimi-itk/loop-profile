@@ -1,0 +1,38 @@
+.loop-documents--collection .loop-documents--document-title {
+  page-break-before: always; }
+
+.loop-documents--collection h1,
+.loop-documents--collection h2,
+.loop-documents--collection h3,
+.loop-documents--collection h4,
+.loop-documents--collection h5,
+.loop-documents--collection h6 {
+  line-height: normal; }
+
+.element-invisible {
+  display: none; }
+
+.loop-documents--document-content {
+  font-size: 10pt;
+  line-height: 13pt; }
+  .loop-documents--document-content h1 {
+    font-size: 18pt;
+    font-weight: bold; }
+  .loop-documents--document-content h2 {
+    font-size: 12pt;
+    margin-top: 13pt;
+    margin-bottom: 0;
+    font-weight: bold; }
+  .loop-documents--document-content h3 {
+    font-size: 10pt;
+    margin-top: 13pt;
+    margin-bottom: 0;
+    font-weight: bold; }
+  .loop-documents--document-content table {
+    font-size: inherit; }
+    .loop-documents--document-content table td {
+      vertical-align: top; }
+  .loop-documents--document-content p, .loop-documents--document-content ol, .loop-documents--document-content ul, .loop-documents--document-content table {
+    margin-bottom: 0; }
+    .loop-documents--document-content p + p, .loop-documents--document-content p + ol, .loop-documents--document-content p + ul, .loop-documents--document-content p + table, .loop-documents--document-content ol + p, .loop-documents--document-content ol + ol, .loop-documents--document-content ol + ul, .loop-documents--document-content ol + table, .loop-documents--document-content ul + p, .loop-documents--document-content ul + ol, .loop-documents--document-content ul + ul, .loop-documents--document-content ul + table, .loop-documents--document-content table + p, .loop-documents--document-content table + ol, .loop-documents--document-content table + ul, .loop-documents--document-content table + table {
+      margin-top: 13pt; }

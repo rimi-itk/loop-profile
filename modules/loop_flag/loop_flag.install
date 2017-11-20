@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * Alter term flag.
+ */
+function loop_flag_update_7001(&$sandbox){
+  $flag = flag_load('subscribe_term');
+
+  $flag->flag_message = 'You are now subscribed to this subject.';
+  $flag->unflag_message = 'You are no longer subscribed to this subject.';
+
+  $flag->save();
+}

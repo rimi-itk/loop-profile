@@ -1,0 +1,18 @@
+<?php
+/**
+ * @file
+ * Handles updates.
+ */
+
+/**
+ * Clear out old module ("loop_editor_pages" was renamed to "loop_dashboard").
+ */
+function loop_dashboard_update_7001() {
+  db_delete('system')
+    ->condition('name', 'loop_editor_pages', '=')
+    ->execute();
+
+  db_delete('block')
+    ->condition('module', 'loop_editor_pages', '=')
+    ->execute();
+}

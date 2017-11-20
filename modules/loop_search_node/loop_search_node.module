@@ -1,0 +1,373 @@
+<?php
+/**
+ * @file
+ * Adds the javascript need to search the sites content.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function loop_search_node_menu() {
+  $items = array();
+
+  $items['loop_search_node/not_found'] = array(
+    'title' => 'No search results',
+    'type' => MENU_CALLBACK,
+    'page callback' => 'loop_search_node_no_results',
+    'access callback' =>  'node_access',
+    'access arguments' => array('create', 'post')
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_comment_insert().
+ *
+ * Update search index based on comment changes.
+ */
+function loop_search_node_comment_insert($comment) {
+  if ($comment->nid) {
+    search_api_track_item_change('node', array($comment->nid));
+  }
+}
+
+/**
+ * Implements hook_comment_update().
+ *
+ * Update search index based on comment changes.
+ */
+function loop_search_node_comment_update($comment) {
+  if ($comment->nid) {
+    search_api_track_item_change('node', array($comment->nid));
+  }
+}
+
+/**
+ * Implements hook_comment_delete().
+ *
+ * Update search index based on comment changes.
+ */
+function loop_search_node_comment_delete($comment) {
+  if ($comment->nid) {
+    search_api_track_item_change('node', array($comment->nid));
+  }
+}
+
+/**
+ * Menu callback that generates post node add form.
+ *
+ * @return string
+ *   JSON encode string with the node create form.
+ */
+function loop_search_node_no_results() {
+  global $user;
+
+  module_load_include('inc', 'node', 'node.pages');
+  $node = new stdClass();
+  $node->type = 'post';
+  $node->langauge = LANGUAGE_NONE;
+  $node->uid = $user->uid;
+  $node->name = $user->name;
+
+  // Get "post" node create form.
+  $form = drupal_get_form('node_form', $node);
+
+  drupal_json_output(array(
+    'settings' => $form['field_keyword']['und']['#attached']['js'],
+    'form' => drupal_render($form),
+  ));
+}
+
+/**
+ * Implements hook_init().
+ *
+ * Ensure that auto-complete is available for usage with auto complete deluxe.
+ *
+ * It's used in the "no result" submit form.
+ */
+function loop_search_node_init() {
+  drupal_add_library('system', 'ui.autocomplete');
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Overrides/adds new Angular JS controller for the search field.
+ */
+function loop_search_node_preprocess_search_node_page_search_box(&$variables) {
+  $path = drupal_get_path('module', 'loop_search_node');
+
+  // Add the search controller.
+  drupal_add_js($path . '/js/loopSearchBoxController.js', array(
+    'type' => 'file',
+    'scope' => 'footer',
+    'weight' => 7,
+    'group' => JS_THEME,
+  ));
+
+  drupal_add_js($path . '/js/loopResultController.js', array(
+    'type' => 'file',
+    'scope' => 'footer',
+    'weight' => 7,
+    'group' => JS_THEME,
+  ));
+
+  drupal_add_js($path . '/js/angular-locale_da-dk.js', array(
+    'type' => 'file',
+    'scope' => 'footer',
+    'weight' => 30,
+    'group' => JS_THEME,
+  ));
+}
+
+/**
+ * Implements hook_flush_caches().
+ *
+ * Empty generated file parsed for translation list.
+ */
+function loop_search_node_flush_caches() {
+  variable_del('loop_search_node_templates_parsed');
+}
+
+/**
+ * Implements hook_js_alter().
+ *
+ * Search the angular application for drupal translations.
+ */
+function loop_search_node_js_alter(&$javascript) {
+  // Scan template files.
+  $path = path_to_theme();
+  $path .= '/templates/search/angular';
+  $dir = DRUPAL_ROOT . '/' . $path;
+
+  // Find the files.
+  if (file_exists($dir)) {
+    _loop_search_node_scan_templates($path);
+  }
+  else {
+    // Fallback to modules template files.
+    $path = drupal_get_path('module', 'loop_search_node') . '/templates/angular';
+    _loop_search_node_scan_templates($path);
+  }
+}
+
+/**
+ * Scan angular templates file for translations.
+ *
+ * @param string $path
+ *   The path to scan.
+ */
+function _loop_search_node_scan_templates($path) {
+  $dir = DRUPAL_ROOT . '/' . $path;
+  $new_files = FALSE;
+  $parsed = variable_get('loop_search_node_templates_parsed', array());
+
+  $it = new RecursiveDirectoryIterator($dir);
+  foreach (new RecursiveIteratorIterator($it) as $file)  {
+    $file_abs = $path . str_replace($dir, '', $file);
+    if (!in_array($file_abs, $parsed)) {
+      $ext = pathinfo($file, PATHINFO_EXTENSION);
+      if (in_array($ext, [ 'html' ])) {
+        _locale_parse_js_file($file_abs);
+        $parsed[] = $file_abs;
+        $new_files = TRUE;
+      }
+    }
+  }
+
+  if ($new_files) {
+    variable_set('loop_search_node_templates_parsed', $parsed);
+  }
+}
+
+/**
+ * Implements hook_local_rebuild_js_alter().
+ */
+function loop_search_node_local_rebuild_js_alter(&$translations, $language) {
+  // Construct the array for JavaScript translations.
+  // Only add strings with a translation to the translations array.
+  $result = db_query("SELECT s.lid, s.source, s.context, t.translation
+    FROM {locales_source} s
+    INNER JOIN {locales_target} t
+      ON s.lid = t.lid
+      AND t.language = :language WHERE (s.context = 'angular')
+      AND s.textgroup = :textgroup", array(':language' => $language, ':textgroup' => 'default'));
+
+  $translations = array();
+  foreach ($result as $data) {
+    $translations[$data->context][$data->source] = $data->translation;
+  }
+}
+
+/**
+ * The current search box block configuration.
+ *
+ * This is used by update and install hooks to provide easy update of
+ * configuration for the search block.
+ *
+ * @return array
+ *   The settings array for the block.
+ */
+function _loop_search_node_box_settings() {
+  return array(
+    'id' => 1460537555,
+    'server' => 'loop_search_node',
+    'index' => 'posts',
+    'options' => array(
+      'match_type' => 'best_fields',
+      'match_operator' => 'and',
+      'cache_expire' => 0,
+      'size' => 8,
+      'initial_query_enable' => 0,
+      'initial_query_text' => '',
+      'fields' => array(
+        'body:summary' => 'body:summary',
+        'body:value' => 'body:value',
+        'title' => 'title',
+        'changed' => 0,
+        'comment_count' => 0,
+        'comments' => 0,
+        'comments:comment_body:value' => 0,
+        'created' => 0,
+        'field_description:value' => 0,
+        'field_external_link:url' => 0,
+        'field_keyword:name' => 'field_keyword:name',
+        'field_profession:name' => 0,
+        'field_subject' => 0,
+        'field_subject:name' => 0,
+        'nid' => 0,
+        'search_api_language' => 0,
+        'status' => 0,
+        'type' => 0,
+        'url' => 0,
+      ),
+      'filters' => array(
+        'taxonomy' => array(
+          'field_subject' => 'field_subject',
+        ),
+        'boolean' => array(),
+      ),
+    ),
+    'filters' => array(
+      'type' => array(
+        'field_subject' => 'or',
+      ),
+    ),
+    'sorting' => array(
+      'field' => array(),
+      'order' => array(),
+    ),
+    'dates' => array(
+      'fields' => array(),
+    ),
+    'intervals' => array(
+      'fields' => array(
+        'body:summary' => 0,
+        'body:value' => 0,
+        'title' => 0,
+        'changed' => 0,
+        'comment_count' => 0,
+        'comments' => 0,
+        'comments:comment_body:value' => 0,
+        'created' => 0,
+        'field_description:value' => 0,
+        'field_external_link:url' => 0,
+        'field_keyword:name' => 0,
+        'field_profession:name' => 0,
+        'field_subject' => 0,
+        'field_subject:name' => 0,
+        'nid' => 0,
+        'search_api_language' => 0,
+        'status' => 0,
+        'type' => 0,
+        'url' => 0,
+      ),
+    ),
+    'forces' => array(
+      'field' => '_none_',
+      'selected' => array(),
+    ),
+    'highlight' => array(
+      'fields' => array(
+        'body:summary' => 0,
+        'body:value' => 0,
+        'title' => 'title',
+        'changed' => 0,
+        'comment_count' => 0,
+        'comments' => 0,
+        'comments:comment_body:value' => 0,
+        'created' => 0,
+        'field_description:value' => 0,
+        'field_external_link:url' => 0,
+        'field_keyword:name' => 0,
+        'field_profession:name' => 0,
+        'field_subject' => 0,
+        'field_subject:name' => 0,
+        'nid' => 0,
+        'search_api_language' => 0,
+        'status' => 0,
+        'type' => 0,
+        'url' => 0,
+      ),
+    ),
+    'templates' => array(
+      'box' => '/profiles/loopdk/themes/loop/templates/search/angular/search.html',
+      'result' => '/profiles/loopdk/themes/loop/templates/search/angular/result.html',
+      'pager' => '/profiles/loopdk/themes/loop/templates/search/angular/pager.html',
+    ),
+    'autocomplete' => array(
+      'index' => 'auto_complete',
+      'field' => 'title',
+      'minChars' => 2,
+      'size' => 10,
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_info_alter().
+ */
+function loop_search_node_block_info_alter(&$blocks, $theme, $code_blocks) {
+  if (isset($blocks['search_node_page']) && !isset($blocks['search_node_page']['search_node_search_box']['bid'])) {
+    $blocks['search_node_page']['search_node_search_box']['pages'] = "admin\r\nadmin/*\r\nuser/*/edit\r\nnode/*";
+    $blocks['search_node_page']['search_node_search_box']['region'] = BLOCK_REGION_NONE;
+    $blocks['search_node_page']['search_node_search_box']['status'] = 0;
+
+    // Only authenticated user should see the search block.
+    $res = db_select('block_role', 'br')
+      ->fields('br', array('rid'))
+      ->condition('module', 'search_node_page')
+      ->execute()
+      ->fetchField();
+
+    if (!$res) {
+      db_insert('block_role')
+        ->fields(_loop_search_node_search_block_roll_settings())
+        ->execute();
+    }
+  }
+}
+
+/**
+ * The search block configuration.
+ */
+function _loop_search_node_search_block_settings() {
+  return array(
+    'weight' => -17,
+    'region' => '-1',
+    'pages' => "admin\r\nadmin/*\r\nuser/*/edit",
+    'status' => 0
+  );
+}
+
+/**
+ * The search block configuration.
+ */
+function _loop_search_node_search_block_roll_settings() {
+  return array(
+    'module' => 'search_node_page',
+    'delta' => 'search_node_search_box',
+    'rid' => 2,
+  );
+}

@@ -63,6 +63,37 @@ function loop_configure_theme_form_system_theme_settings_alter(&$form, $form_sta
     '#description'   => t("Choose a color for the keyword background on hover"),
   );
 
+  $form['terms_keywords']['content_type_label_color_default'] = array(
+    '#type'          => 'style_settings_colorpicker',
+    '#title'         => t('Content type default label color'),
+    '#default_value' => theme_get_setting('content_type_label_color_default', 'loop'),
+    '#description'   => t("Choose a default color for the content type color label"),
+  );
+
+  $form['terms_keywords']['content_type_label_color_post'] = array(
+    '#type'          => 'style_settings_colorpicker',
+    '#title'         => t('Content type post label color'),
+    '#default_value' => theme_get_setting('content_type_label_color_post', 'loop'),
+    '#description'   => t("Choose a color for the post color label"),
+  );
+
+
+  $form['terms_keywords']['content_type_label_text_color_default'] = array(
+    '#type'          => 'style_settings_colorpicker',
+    '#title'         => t('Content type default label text color'),
+    '#default_value' => theme_get_setting('content_type_label_text_color_default', 'loop'),
+    '#description'   => t("Choose a default color for the content type color label text"),
+  );
+
+
+  $form['terms_keywords']['content_type_label_text_color_post'] = array(
+    '#type'          => 'style_settings_colorpicker',
+    '#title'         => t('Content type post label text color'),
+    '#default_value' => theme_get_setting('content_type_label_text_color_post', 'loop'),
+    '#description'   => t("Choose a color for the post color label text"),
+  );
+
+
   $form['#submit'][] = 'loop_configure_theme_flush';
 }
 

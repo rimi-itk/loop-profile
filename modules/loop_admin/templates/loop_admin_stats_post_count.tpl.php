@@ -8,5 +8,6 @@
   <div class="dashboard--content-overview-inner">
     <p class="dashboard--content-overview-text"><span><?php print $post_count; ?></span> <?php print t('new questions in the periode'); ?></p>
     <p class="dashboard--content-overview-text"><span><?php print $comment_count; ?></span> <?php print t('new answers in the periode'); ?></p>
+    <p class="dashboard--content-overview-text"><span><?php print $unanswered_posts_count; ?></span> <?php print t('new unanswered posts in the periode'); ?></p>
   </div>
 </div>

@@ -4,9 +4,102 @@
  *
  */
 
+/* Search block
+   ========================================================================== */
+.search-box-block {
+  @extend %set-max-width-and-center-element;
+
+  z-index: 1;
+  position: relative;
+
+  // Override Drupal's classes.
+  .form-item {
+    border: 0;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  @include breakpoint($layout-max-width) {
+    @include border-radius(0 0 $border-radius $border-radius);
+  }
+}
+
+.search-box-block--wrapper {
+  position: relative;
+
+ .typeahead {
+    margin-bottom: 1em;
+    padding-top: 1.25em;
+    padding-right: 1.25em;
+    padding-bottom: 1.25em;
+    padding-left: 3em;
+    height: 65px;
+
+    background-color: $white;
+
+    // Removing the browsers outline border when field is in focus
+    &:focus {
+      outline: none;
+    }
+
+    @include breakpoint($breakpoint-3) {
+      margin-bottom: 0;
+      padding-right: 6em;
+      width: 90%;
+
+      @include border-radius($border-radius 0 0 $border-radius);
+    }
+  }
+}
+
+.search-box-block--button {
+  @extend .button--action;
+
+  margin: 0;
+  height: 65px;
+  width: 100%;
+
+  &:last-child {
+    margin: 0 !important;
+  }
+
+  &:disabled {
+    @extend .button--deactivated;
+  }
+
+  &.is-search-node {
+    bottom: auto;
+    top: auto;
+    width: 90%;
+    margin: 1em auto;
+    display: block;
+
+    @include breakpoint($breakpoint-3) {
+      bottom: auto;
+      top: 56px;
+      right: 20px;
+      width:auto;
+      margin: 0;
+    }
+  }
+
+  @include breakpoint($breakpoint-3) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    padding-top: .5em;
+    padding-bottom: .65em;
+    width: auto;
+
+    font-size: 150%;
+
+    @include border-radius(0 $border-radius $border-radius 0);
+  }
+}
 
 
-/* Search result
+/* Search result styling.
    ========================================================================== */
 
 .search-result--item {
@@ -14,6 +107,18 @@
 
   &:last-child {
     @include reset-element-spacing();
+  }
+}
+
+.search-result--block {
+  margin-bottom: 1.5em;
+
+  .layout-full-width {
+    @include border-radius(0);
+  }
+
+  .vertical-tabs-panes {
+    display: none;
   }
 }
 
@@ -57,7 +162,6 @@
     @extend %icon-before;
   }
 }
-
 
 .search-result--meta-data {
   margin-bottom: $margin-bottom;

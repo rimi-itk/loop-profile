@@ -1,0 +1,22 @@
+<?php
+/**
+ * @file
+ * Handles updates.
+ */
+
+/**
+ * Set the pages on which the login block should not be visible.
+ */
+function loop_user_update_7001() {
+  _block_rehash('loop');
+
+  db_merge('block')
+    ->key(array(
+      'delta' => 'login',
+      'module' => 'user',
+    ))
+    ->fields(array(
+      'pages' => 'loop_saml_redirect' . PHP_EOL . 'page-not-found',
+    ))
+    ->execute();
+}

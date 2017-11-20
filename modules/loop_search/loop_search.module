@@ -130,7 +130,9 @@ function loop_search_init() {
 
   // Check if it's a registered user.
   if ($user->uid > 0) {
-    drupal_add_js(drupal_get_path('module', 'loop_search') . '/js/handlebars-v1.2.0.js');
+    if (function_exists('loopdk_load_handlebars')) {
+      loopdk_load_handlebars();
+    }
     drupal_add_js(drupal_get_path('module', 'loop_search') . '/js/typeahead.bundle.js');
     drupal_add_js(drupal_get_path('module', 'loop_search') . '/js/loop_search.js', array(
       'scoop' => 'header',

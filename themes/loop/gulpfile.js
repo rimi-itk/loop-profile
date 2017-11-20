@@ -33,7 +33,8 @@ gulp.task('sass', function () {
       outputStyle: 'nested',
       includePaths: [
         'node_modules/compass-mixins/lib',
-        'bower_components/zen-grids/stylesheets'
+        // Zen grids is downloaded as a library using drush make.
+        '../../libraries/zen-grids/stylesheets'
       ]
     }).on('error', sass.logError))
     .pipe(gulpif(devMode, sourcemaps.write()))

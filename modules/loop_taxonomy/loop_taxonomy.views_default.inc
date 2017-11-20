@@ -3,13 +3,11 @@
  * @file
  * loop_taxonomy.views_default.inc
  */
-
 /**
  * Implements hook_views_default_views().
  */
 function loop_taxonomy_views_default_views() {
   $export = array();
-
   $view = new view();
   $view->name = 'loop_taxonomy_term';
   $view->description = 'A view to emulate Drupal core\'s handling of taxonomy/term.';
@@ -19,7 +17,6 @@ function loop_taxonomy_views_default_views() {
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
-
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['use_more_always'] = FALSE;
@@ -112,7 +109,6 @@ function loop_taxonomy_views_default_views() {
   $handler->display->display_options['filters']['status_extra']['field'] = 'status_extra';
   $handler->display->display_options['filters']['status_extra']['group'] = 0;
   $handler->display->display_options['filters']['status_extra']['expose']['operator'] = FALSE;
-
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'loop_taxonomy_content_pane');
   $handler->display->display_options['allow']['use_pager'] = 0;
@@ -157,6 +153,5 @@ function loop_taxonomy_views_default_views() {
     t('View panes'),
   );
   $export['loop_taxonomy_term'] = $view;
-
   return $export;
 }

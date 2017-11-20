@@ -10,10 +10,14 @@
 function loop_preprocess_page(&$variables) {
   global $user;
   $arg = arg();
-  if ($user->uid > 0) {
+  if (user_is_logged_in()) {
     // Prepare system search block for page.tpl.
     if (module_exists('search_api_page')) {
       $variables['search'] = module_invoke('search_api_page', 'block_view', 'default');
+    }
+    else if (module_exists('search_node_page')) {
+      $variables['search'] = module_invoke('search_node_page', 'block_view', 'search_node_search_box');
+      $variables['search']['result'] = module_invoke('search_node_page', 'block_view', 'search_node_search_result');
     }
     else {
       $variables['search'] = module_invoke('search', 'block_view', 'form');
@@ -28,6 +32,10 @@ function loop_preprocess_page(&$variables) {
     else {
       if ($arg[2] != 'messages') {
         menu_set_active_item('user');
+
+        // Add notifications script.
+        $subscriptions_alter_flags = $GLOBALS['base_root'] . '/' . path_to_theme() . '/scripts/subscriptions-alter-flags.js';
+        drupal_add_js($subscriptions_alter_flags, 'file');
       }
     }
   }
@@ -435,16 +443,7 @@ function loop_menu_link__menu_loop_primary_menu($variables) {
 
   // Sub item exist (Element is parent).
   if (!empty($variables['element']['#below'])) {
-    $img_white = array(
-      'path' => '/' . $theme_path . '/images/nav-arrow-down-icon-white.png',
-      'attributes' => array('class' => 'nav-dropdown--icon-white'),
-    );
-    $img_green = array(
-      'path' => '/' . $theme_path . '/images/nav-arrow-down-icon.png',
-      'attributes' => array('class' => 'nav-dropdown--icon-green'),
-    );
-    // Create the title with image icon.
-    $element['#title'] = theme_image($img_white) . theme_image($img_green) . '<span class="nav--text">' . $element['#title'] . '</span>';
+    $element['#title'] = '<span class="nav--text">' . $element['#title'] . '</span>';
 
     // Wrap the sub menu.
     $sub_menu = '<div class="nav-dropdown--item">' . drupal_render($element['#below']) . '</div>';
@@ -481,16 +480,7 @@ function loop_menu_link__management($variables) {
   $element = $variables['element'];
 
   if ($element['#href'] == 'admin') {
-    $img_white = array(
-      'path' => '/' . $theme_path . '/images/nav-arrow-down-icon-white.png',
-      'attributes' => array('class' => 'nav-dropdown--icon-white'),
-    );
-    $img_green = array(
-      'path' => '/' . $theme_path . '/images/nav-arrow-down-icon.png',
-      'attributes' => array('class' => 'nav-dropdown--icon-green'),
-    );
-    // Create the title with image icon.
-    $element['#title'] = theme_image($img_white) . theme_image($img_green) . '<span class="nav--text">' . $element['#title'] . '</span>';
+    $element['#title'] = '<span class="nav--text">' . $element['#title'] . '</span>';
 
     // Wrap the sub menu.
     $sub_menu = '<div class="nav-dropdown--item">' . drupal_render($element['#below']) . '</div>';
@@ -578,117 +568,14 @@ function loop_panels_default_style_render_region($vars) {
  * Change html of user login.
  */
 function loop_form_user_login_alter(&$form) {
+  // Saml (and other) log in providers will be handled in the template.
+  unset($form['saml_sp_drupal_login_links']);
+
   $form['#prefix'] = '<h2>' . t('User login') . '</h2>';
   $form['pass']['#suffix'] = '<ul class="user-form--password-link"><li><a href="/user/password">' . t('Request new password') . '</a></li></ul>';
   $form['name']['#description'] = FALSE;
   $form['name']['#title'] = t('Username or e-mail');
   $form['pass']['#description'] = FALSE;
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function loop_form_views_form_loop_user_subscriptions_panel_pane_1_alter(&$form, &$form_state, $form_id) {
-  // Add form class.
-  $form['#attributes']['class'][] = 'vbo-views-form';
-
-  // Copy button from field group.
-  if (!empty($form['select'])) {
-    $form['rules_component::rules_remove_subscription'] = $form['select']['rules_component::rules_remove_subscription'];
-  }
-
-  // Add wrappers.
-  $form['rules_component::rules_remove_subscription']['#prefix'] = '<div class="js-user-profile-notification-actions user-profile--notification-actions"><div class="user-profile--notification-actions-inner">';
-  $form['rules_component::rules_remove_subscription']['#suffix'] = '</div></div>';
-
-  // Add warning class to button.
-  $form['rules_component::rules_remove_subscription']['#attributes']['class'][] = 'user-profile--notification-actions--button-remove button--warning';
-
-  // Add js class to checkboxes.
-  if (!empty($form['views_bulk_operations'])) {
-    foreach ($form['views_bulk_operations'] as $key => $value) {
-      if (is_array($value)) {
-        $form['views_bulk_operations'][$key]['#attributes']['class'][] = 'js-user-profile-notification-select';
-      }
-    }
-  }
-
-  // Remove stuff from form.
-  unset($form['#prefix']);
-  unset($form['#suffix']);
-  unset($form['select_all_markup']);
-
-  // Remove field group containing actions.
-  unset($form['select']);
-
-  // Add custom js.
-  $display_notification_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() . '/scripts/display-notification-actions.js';
-  drupal_add_js($display_notification_script_path, 'file');
-
-  // If on confirmation step.
-  if ($form_state['step'] == 'views_bulk_operations_confirm_form') {
-    $form['actions']['submit']['#attributes']['class'][] = 'user-profile--notification-actions--button--confirm button--warning';
-    $form['actions']['cancel']['#attributes']['class'][] = 'user-profile--notification-actions--button button--action';
-  }
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function loop_form_views_form_loop_user_taxonomy_subscriptions_panel_pane_1_alter(&$form, &$form_state, $form_id) {
-  // Add form class.
-  $form['#attributes']['class'][] = 'vbo-views-form';
-
-  // Copy button from field group.
-  if (!empty($form['select'])) {
-    $buttonKey = 'rules_component::loop_notification_remove_taxonomy_subscription';
-    if (array_key_exists($buttonKey, $form['select'])) {
-      $form['rules_component::rules_remove_subscription'] = $form['select'][$buttonKey];
-    } else {
-      // Fall back to hardcoded definition because Drupal
-      $form['rules_component::rules_remove_subscription'] = array(
-          '#type' => 'submit',
-          '#value' => t('Remove subscription'),
-          '#validate' => array('views_bulk_operations_form_validate'),
-          '#submit' => array('views_bulk_operations_form_submit'),
-          '#operation_id' => 'rules_component::loop_notification_remove_taxonomy_subscription'
-      );
-    }
-  }
-
-  // Add wrappers.
-  $form['rules_component::rules_remove_subscription']['#prefix'] = '<div class="js-user-profile-notification-actions user-profile--notification-actions"><div class="user-profile--notification-actions-inner">';
-  $form['rules_component::rules_remove_subscription']['#suffix'] = '</div></div>';
-
-  // Add warning class to button.
-  $form['rules_component::rules_remove_subscription']['#attributes']['class'][] = 'user-profile--notification-actions--button-remove button--warning';
-
-  // Add js class to checkboxes.
-  if (!empty($form['views_bulk_operations'])) {
-    foreach ($form['views_bulk_operations'] as $key => $value) {
-      if (is_array($value)) {
-        $form['views_bulk_operations'][$key]['#attributes']['class'][] = 'js-user-profile-notification-select';
-      }
-    }
-  }
-
-  // Remove stuff from form.
-  unset($form['#prefix']);
-  unset($form['#suffix']);
-  unset($form['select_all_markup']);
-
-  // Remove field group containing actions.
-  unset($form['select']);
-
-  // Add custom js.
-  $display_notification_script_path = $GLOBALS['base_root'] . '/' . path_to_theme() . '/scripts/display-notification-actions.js';
-  drupal_add_js($display_notification_script_path, 'file');
-
-  // If on confirmation step.
-  if ($form_state['step'] == 'views_bulk_operations_confirm_form') {
-    $form['actions']['submit']['#attributes']['class'][] = 'user-profile--notification-actions--button--confirm button--warning';
-    $form['actions']['cancel']['#attributes']['class'][] = 'user-profile--notification-actions--button button--action';
-  }
 }
 
 /**
@@ -821,7 +708,81 @@ function loop_theme($existing, $type, $theme, $path) {
       'path' => drupal_get_path('theme', 'loop') . '/templates/forms',
       'template' => 'comment-form-prefix',
     ),
+    'user_login' => array(
+      'render element' => 'form',
+      'path' => drupal_get_path('theme', 'loop') . '/templates/user',
+      'template' => 'user-login',
+      'preprocess functions' => array(
+        'loop_preprocess_user_login',
+      ),
+    ),
   );
+}
+
+/**
+ * User login form.
+ *
+ * Adds a list of active login services to the template variables.
+ */
+function loop_preprocess_user_login(&$variables) {
+  $login_services = _loop_get_login_services();
+
+  $default_login_service_name = theme_get_setting('default_login_service_name');
+  $default_login_service_path = theme_get_setting('default_login_service_path');
+
+  if ($default_login_service_name
+      && isset($login_services[$default_login_service_name])
+      && current_path() === $default_login_service_path) {
+    header('Location: ' . $login_services[$default_login_service_name]['url']);
+    exit;
+  }
+
+  $variables['login_services'] = $login_services;
+}
+
+/**
+ * Get a list of registered login services.
+ *
+ * @return array
+ *   The list of login services.
+ */
+function _loop_get_login_services() {
+  $login_services = array();
+
+  $destination = drupal_get_destination();
+  $returnTo = $destination['destination'];
+  $options = array('query' => array('returnTo' => $returnTo));
+
+  // Add Saml log in services.
+  if (function_exists('saml_sp__load_all_idps')) {
+    $idps = saml_sp__load_all_idps();
+    foreach ($idps as $idp) {
+      $login_services[$idp->machine_name] = array(
+        'name' => $idp->name,
+        'url' => url('saml/drupal_login', $options),
+      );
+    }
+  }
+
+  // Add UNI•Login service.
+  if (module_exists('unilogin')) {
+    $login_services['unilogin'] = array(
+      'name' => t('UNI•Login'),
+      'url' => url('unilogin', $options),
+    );
+  }
+
+  if (count($login_services) > 0) {
+    // Add "Regular user" login service.
+    if (theme_get_setting('show_login_for_regular_users')) {
+      $login_services['loop-login'] = array(
+        'name' => t('Loop login'),
+        'url' => request_uri() . '#loop-login',
+      );
+    }
+  }
+
+  return $login_services;
 }
 
 /**
@@ -1126,4 +1087,16 @@ function _loop_fetch_files($type, $entity) {
   }
 
   return $files;
+}
+
+/**
+ * Override or insert variables into the html template.
+ */
+function loop_preprocess_html(&$vars) {
+  $skin = theme_get_setting('loop_skin');
+  if (!$skin) {
+    $skin = 'styles';
+  }
+
+  drupal_add_css(path_to_theme() . '/css/' . $skin . '.css', array('group' => CSS_THEME, 'weight' => 999, 'preprocess' => FALSE));
 }

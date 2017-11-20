@@ -263,6 +263,12 @@
       "css": "flag-filled",
       "code": 59410,
       "src": "typicons"
+    },
+    {
+      "uid": "2d6150442079cbda7df64522dc24f482",
+      "css": "down-dir",
+      "code": 59411,
+      "src": "fontawesome"
     }
   ]
 }
