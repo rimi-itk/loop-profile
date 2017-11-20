@@ -3525,9 +3525,7 @@ a.question--term {
   border-bottom: 1px solid;
   border-right: 1px solid;
   border-color: #003764;
-  /* setting:header_color */
   color: #003764;
-  /* setting:header_color */
   cursor: pointer;
   flex: 1 0 auto;
   padding: .5em;
@@ -3535,7 +3533,6 @@ a.question--term {
   .search-filters--label:first-child, .search-filters--subject-wrapper-label:first-child {
     border-left: 1px solid;
     border-color: #003764;
-    /* setting:header_color */
     -webkit-border-radius: 0.4em 0 0 0.4em;
     -moz-border-radius: 0.4em 0 0 0.4em;
     -ms-border-radius: 0.4em 0 0 0.4em;
@@ -3555,7 +3552,6 @@ a.question--term {
     border-radius: 0.4em; }
   .is-active.search-filters--label, .is-active.search-filters--subject-wrapper-label {
     background: #003764;
-    /* setting:header_color */
     color: #fff; }
 
 /* Search filters
@@ -3636,8 +3632,7 @@ a.question--term {
           margin-right: .5em;
           border: 1px solid #003764;
           border-radius: .3em;
-          border-color: #003764;
-          /* setting:header_color */ }
+          border-color: #003764; }
           .search-filters--subjects-item-inner input[type=checkbox]:focus {
             border-color: #003764; }
           .search-filters--subjects-item-inner input[type=checkbox]:checked {
@@ -3651,9 +3646,7 @@ a.question--term {
             outline: none; }
           .search-filters--subjects-item-inner input[type=checkbox]:checked {
             border-color: #003764;
-            /* setting:header_color */
-            background-color: #003764;
-            /* setting:header_color */ }
+            background-color: #003764; }
         .search-filters--subjects-item-inner input {
           margin-left: -21px; }
   .search-filters--arrow {
@@ -3684,9 +3677,7 @@ a.question--term {
     border-radius: 0.4em; }
   .search-filters--action {
     background-color: #003764;
-    /* setting:header_color */
     border-color: #003764;
-    /* setting:header_color */
     padding: .4em 0 .5em;
     width: 100%; }
     .search-filters--action:hover {
@@ -3738,8 +3729,7 @@ a.question--term {
   margin-bottom: 1em;
   line-height: 1em; }
   .search-node-result--link:hover {
-    color: #003764;
-    /* setting:header_color */ }
+    color: #003764; }
 
 .search-node-result--data-wrapper {
   flex: 0 0 100%;
@@ -3787,7 +3777,6 @@ a.question--term {
 
 .search-node-result--subject {
   color: #003764;
-  /* setting:header_color */
   text-decoration: underline;
   cursor: pointer;
   display: inline-block; }

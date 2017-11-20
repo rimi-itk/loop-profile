@@ -12,8 +12,8 @@
   border-top: 1px solid;
   border-bottom: 1px solid;
   border-right: 1px solid;
-  border-color: $green; /*! setting:header_color */
-  color: $green;/*! setting:header_color */
+  border-color: $green;
+  color: $green;
   cursor: pointer;
   flex: 1 0 auto;
   padding: .5em;
@@ -21,7 +21,7 @@
 
   &:first-child {
     border-left: 1px solid;
-    border-color: $green;/*! setting:header_color */
+    border-color: $green;
 
     @include border-radius($border-radius 0 0 $border-radius);
   }
@@ -35,7 +35,7 @@
   }
 
   &.is-active {
-    background: $green;/*! setting:header_color */
+    background: $green;
     color: $white;
   }
 }
@@ -117,11 +117,11 @@
 
         input[type=checkbox] {
           @include checkbox();
-          border-color: $green;/*! setting:header_color */
+          border-color: $green;
 
           &:checked {
-            border-color: $green;/*! setting:header_color */
-            background-color: $green;/*! setting:header_color */
+            border-color: $green;
+            background-color: $green;
           }
         }
 
@@ -176,8 +176,8 @@
   &--action {
     @extend .button--action;
 
-    background-color: $green;/*! setting:header_color */
-    border-color: $green;/*! setting:header_color */
+    background-color: $green;
+    border-color: $green;
 
     padding:.4em 0 .5em;
     width: 100%;
