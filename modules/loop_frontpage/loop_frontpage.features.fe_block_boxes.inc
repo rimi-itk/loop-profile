@@ -12,9 +12,9 @@ function loop_frontpage_default_fe_block_boxes() {
 
   $fe_block_boxes = new stdClass();
   $fe_block_boxes->info = 'Velkomst til sitet';
-  $fe_block_boxes->format = 'html';
+  $fe_block_boxes->format = 'editor';
   $fe_block_boxes->machine_name = 'welcome';
-  $fe_block_boxes->body = 'Velkommen til Loop';
+  $fe_block_boxes->body = '<p>Velkommen til Loop</p>';
 
   $export['welcome'] = $fe_block_boxes;
 
