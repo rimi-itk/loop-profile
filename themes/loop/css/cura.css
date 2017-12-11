@@ -3837,9 +3837,11 @@ a.question--term {
   font-size: .85em; }
 
 a.question--term.taxonomy-keyword {
-  background-color: #44c8f5; }
+  background-color: #44c8f5;
+  /* setting:keyword_background_color */ }
   a.question--term.taxonomy-keyword:hover {
-    background-color: #0caae0; }
+    background-color: #0caae0;
+    /* setting:keyword_hover_background_color */ }
 
 /**
  * Twitter typeahead
