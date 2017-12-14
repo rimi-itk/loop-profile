@@ -48,6 +48,169 @@ function loop_notification_config_form($form) {
     '#description' => t('Select the content types where you want notifications enabled.')
   );
 
+  $form['loop_notification_email_wrapper'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Loop e-mail templates'),
+    '#collapsible' => TRUE,
+    '#collapsed' => FALSE,
+    '#description' => t('Loop e-mail templates. See below for a list of available tokens.'),
+  );
+
+  $form['loop_notification_email_wrapper']['stuff'] = array(
+    '#markup' => t('Sender name and e-mail are set in <a href="@url">Mime Mail settings</a>.', array('@url' => url('admin/config/system/mimemail'))),
+    '#prefix' => '<p><em>',
+    '#suffix' => '</em></p>',
+  );
+
+	$form['loop_notification_email_wrapper']['templates'] = array(
+		'#type' => 'vertical_tabs',
+	);
+
+	$form['loop_notification_email_wrapper']['templates']['loop_notification_send_mail'] = array(
+		'#type' => 'fieldset',
+		'#title' => t('Send mail to subscribers'),
+
+		'loop_notification_send_mail_subject' => array(
+			'#type' => 'textfield',
+			'#default_value' => variable_get('loop_notification_send_mail_subject'),
+			'#title' => t('Subject'),
+			'#description' => t(''),
+		),
+
+		'loop_notification_send_mail_body' => array(
+			'#type' => 'textarea',
+			'#default_value' => variable_get('loop_notification_send_mail_body'),
+			'#title' => t('Body'),
+			'#description' => t(''),
+		),
+	);
+
+	$form['loop_notification_email_wrapper']['templates']['loop_notification_send_mail_to_subscribers_on_comment_edit'] = array(
+		'#type' => 'fieldset',
+		'#title' => t('Send mail to subscribers on comment edit'),
+
+		'loop_notification_send_mail_to_subscribers_on_comment_edit_subject' => array(
+			'#type' => 'textfield',
+			'#default_value' => variable_get('loop_notification_send_mail_to_subscribers_on_comment_edit_subject'),
+			'#title' => t('Subject'),
+			'#description' => t(''),
+		),
+
+		'loop_notification_send_mail_to_subscribers_on_comment_edit_body' => array(
+			'#type' => 'textarea',
+			'#default_value' => variable_get('loop_notification_send_mail_to_subscribers_on_comment_edit_body'),
+			'#title' => t('Body'),
+			'#description' => t(''),
+		),
+	);
+
+	$form['loop_notification_email_wrapper']['templates']['loop_notification_send_mail_to_subscribers_on_node_create'] = array(
+		'#type' => 'fieldset',
+		'#title' => t('Send mail to subscribers on node create'),
+
+		'loop_notification_send_mail_to_subscribers_on_node_create_subject' => array(
+			'#type' => 'textfield',
+			'#default_value' => variable_get('loop_notification_send_mail_to_subscribers_on_node_create_subject'),
+			'#title' => t('Subject'),
+			'#description' => t(''),
+		),
+
+		'loop_notification_send_mail_to_subscribers_on_node_create_body' => array(
+			'#type' => 'textarea',
+			'#default_value' => variable_get('loop_notification_send_mail_to_subscribers_on_node_create_body'),
+			'#title' => t('Body'),
+			'#description' => t(''),
+		),
+	);
+
+	$form['loop_notification_email_wrapper']['templates']['loop_notification_send_mail_to_subscribers_on_node_edit'] = array(
+		'#type' => 'fieldset',
+		'#title' => t('Send mail to subscribers on node edit'),
+
+		'loop_notification_send_mail_to_subscribers_on_node_edit_subject' => array(
+			'#type' => 'textfield',
+			'#default_value' => variable_get('loop_notification_send_mail_to_subscribers_on_node_edit_subject'),
+			'#title' => t('Subject'),
+			'#description' => t(''),
+		),
+
+		'loop_notification_send_mail_to_subscribers_on_node_edit_body' => array(
+			'#type' => 'textarea',
+			'#default_value' => variable_get('loop_notification_send_mail_to_subscribers_on_node_edit_body'),
+			'#title' => t('Body'),
+			'#description' => t(''),
+		),
+	);
+
+  // Show replacement patterns from rules module.
+  $form['loop_notification_email_wrapper']['tokens'] = array(
+    '#type' => 'fieldset',
+    '#title' => 'Replacement patterns',
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#description' => t('Note that token replacements containing chained objects – such as [node:author:uid] – are not listed here, but are still available. See <a href="@url">the online documentation</a> for more information about complex replacement patterns.',
+												array('@url' => rules_external_help('chained-tokens'))),
+  );
+
+  require_once drupal_get_path('module', 'rules') . '/modules/system.eval.inc';
+  $var_info = array(
+    'site' =>
+        array(
+          'type' => 'site',
+          'label' => 'Site information',
+          'description' => 'Site-wide settings and other global information.',
+          'property info alter' =>
+            array(
+              0 => 'RulesData',
+              1 => 'addSiteMetadata',
+            ),
+          'property info' =>
+            array(),
+          'optional' => TRUE,
+        ),
+    'node' =>
+        array(
+          'label' => 'node',
+          'type' => 'node',
+        ),
+    'user' =>
+        array(
+          'label' => 'user',
+          'type' => 'user',
+        ),
+    'comment' =>
+  array(
+    'label' => 'comment',
+    'type' => 'comment',
+  ),
+  );
+
+  $token_info = token_info();
+  foreach ($var_info as $name => $info) {
+    $token_types[$name] = _rules_system_token_map_type($info['type']);
+  }
+
+  $render = array();
+  foreach ($token_types as $name => $token_type) {
+    if (isset($token_info['types'][$token_type])) {
+      $render[$name] = array(
+        '#theme' => 'table',
+        '#header' => array(t('Token'), t('Label'), t('Description')),
+        '#prefix' => '<h3>' . t('Replacement patterns for %label', array('%label' => $var_info[$name]['label'])) . '</h3>',
+      );
+      foreach ($token_info['tokens'][$token_type] as $token => $info) {
+        $token = '[' . str_replace('_', '-', $name) . ':' . $token . ']';
+        $render[$name]['#rows'][$token] = array(
+          check_plain($token),
+          check_plain($info['name']),
+          check_plain($info['description']),
+        );
+      }
+    }
+  }
+
+  $form['loop_notification_email_wrapper']['tokens']['tokens'] = $render;
+
   return system_settings_form($form);
 }
 

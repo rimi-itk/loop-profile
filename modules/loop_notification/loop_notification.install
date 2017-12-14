@@ -20,3 +20,69 @@ function loop_notification_update_7001() {
 
   variable_set('loop_notification_content_types', $value);
 }
+
+/**
+ * Set default e-mail templates in configuration.
+ */
+function loop_notification_update_7002() {
+  features_revert(array('loop_notification' => array('rules_config')));
+
+  $defaults = array(
+		'loop_notification_send_mail_subject' => 'Nyt svar til spørgsmålet [node:title]',
+    'loop_notification_send_mail_body' => '<h2>Nyt svar til spørgsmålet [node:title]</h2>
+<p>Kære [user:field-first-name] [user:field-last-name]</p>
+<p>Der er kommet nyt svar til spørgsmålet <a href="/node/[node:nid]">[node:title]</a></p>
+<p>Med venlig hilsen<br/>
+[site:name]</p>
+<br />
+<br />
+Dette er en automatisk meddelelse fra Loop, og kan ikke besvares.<br />
+Du kan styre dine abonnementer fra din brugerprofil<br />
+HUSK! Du ikke kan få adgang via linket i mailen, hvis det er mere end 21 dage siden du har logget ind i Loop.<br />
+Du kan altid hurtigt logge ind i Loop via knappen i bogmærke-baren i Internet Explorer, eller via linket på portalen: <a href="http://www.sundhedogomsorg.dk/da/Vaerktoejer/LOOP.aspx">http://www.sundhedogomsorg.dk/da/Vaerktoejer/LOOP.aspx</a>',
+
+		'loop_notification_send_mail_to_subscribers_on_comment_edit_subject' => 'Et svar til spørgsmålet [node:title] er blevet ændret',
+		'loop_notification_send_mail_to_subscribers_on_comment_edit_body' => '<h2>Et svar til spørgsmålet [node:title] er blevet ændret</h2>
+<p>Kære [user:field-first-name] [user:field-last-name]</p>
+<p>Et svar til spørgsmålet <a href="/node/[node:nid]">[node:title]</a> er blevet ændret.</p>
+<p>Nyt svar: [comment:body]</p>
+<p>Med venlig hilsen<br/>
+[site:name]</p>
+<br />
+<br />
+Dette er en automatisk meddelelse fra Loop, og kan ikke besvares.<br />
+Du kan styre dine abonnementer fra din brugerprofil<br />
+HUSK! Du ikke kan få adgang via linket i mailen, hvis det er mere end 21 dage siden du har logget ind i Loop.<br />
+Du kan altid hurtigt logge ind i Loop via knappen i bogmærke-baren i Internet Explorer, eller via linket på portalen: <a href="http://www.sundhedogomsorg.dk/da/Vaerktoejer/LOOP.aspx">http://www.sundhedogomsorg.dk/da/Vaerktoejer/LOOP.aspx</a>',
+
+		'loop_notification_send_mail_to_subscribers_on_node_create_subject' => 'Nyt spørgsmål indenfor et emne du følger',
+		'loop_notification_send_mail_to_subscribers_on_node_create_body' => '<h2>Nyt spørgsmål oprettet [node:title] indenfor et emne du følger</h2>
+<p>Kære [user:field-first-name] [user:field-last-name]</p>
+<p>Der er kommet et nyt spørgsmål indenfor et emne du følger: <a href="/node/[node:nid]">[node:title]</a></p>
+<p>Med venlig hilsen<br/>
+[site:name]</p>
+<br />
+<br />
+Dette er en automatisk meddelelse fra Loop, og kan ikke besvares.<br />
+Du kan styre dine abonnementer fra din brugerprofil<br />
+HUSK! Du ikke kan få adgang via linket i mailen, hvis det er mere end 21 dage siden du har logget ind i Loop.<br />
+Du kan altid hurtigt logge ind i Loop via knappen i bogmærke-baren i Internet Explorer, eller via linket på portalen: <a href="http://www.sundhedogomsorg.dk/da/Vaerktoejer/LOOP.aspx">http://www.sundhedogomsorg.dk/da/Vaerktoejer/LOOP.aspx</a>',
+
+		'loop_notification_send_mail_to_subscribers_on_node_edit_subject' => 'Nyt svar til spørgsmålet [node:title]',
+		'loop_notification_send_mail_to_subscribers_on_node_edit_body' => '<h2>Et spørgsmål er blevet ændret: [node:title]</h2>
+<p>Kære [user:field-first-name] [user:field-last-name]</p>
+<p>Et spørgsmål du følger er blevet ændret <a href="/node/[node:nid]">[node:title]</a></p>
+<p>Med venlig hilsen<br/>
+[site:name]</p>
+<br />
+<br />
+Dette er en automatisk meddelelse fra Loop, og kan ikke besvares.<br />
+Du kan styre dine abonnementer fra din brugerprofil<br>
+HUSK! Du ikke kan få adgang via linket i mailen, hvis det er mere end 21 dage siden du har logget ind i Loop.<br />
+Du kan altid hurtigt logge ind i Loop via knappen i bogmærke-baren i Internet Explorer, eller via linket på portalen: <a href="http://www.sundhedogomsorg.dk/da/Vaerktoejer/LOOP.aspx">http://www.sundhedogomsorg.dk/da/Vaerktoejer/LOOP.aspx</a>',
+  );
+
+  foreach ($defaults as $key => $value) {
+    variable_set($key, $value);
+  }
+}

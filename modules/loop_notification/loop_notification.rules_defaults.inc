@@ -167,8 +167,8 @@ function loop_notification_default_rules_configuration() {
               "key" : "Mail on message creation",
               "to" : "[user:mail]",
               "from_mail" : "[site:mail]",
-              "subject" : "Nyt svar til sp\\u00f8rgsm\\u00e5let [node:title]",
-              "body" : "\\u003Ch2\\u003ENyt svar til sp\\u00f8rgsm\\u00e5let [node:title]\\u003C\\/h2\\u003E\\r\\n\\u003Cp\\u003EK\\u00e6re [user:field-first-name] [user:field-last-name]\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EDer er kommet nyt svar til sp\\u00f8rgsm\\u00e5let \\u003Ca href=\\u0022\\/node\\/[node:nid]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EMed venlig hilsen\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003E[site:name]\\u003C\\/p\\u003E\\r\\n\\u003Cbr \\/\\u003E\\r\\n\\u003Cbr \\/\\u003E\\r\\nDette er en automatisk meddelelse fra Loop, og kan ikke besvares.\\u003Cbr \\/\\u003E\\r\\nDu kan styre dine abonnementer fra din brugerprofil\\u003Cbr \\/\\u003E\\r\\nHUSK! Du ikke kan f\\u00e5 adgang via linket i mailen, hvis det er mere end 21 dage siden du har logget ind i Loop.\\u003Cbr \\/\\u003E\\r\\nDu kan altid hurtigt logge ind i Loop via knappen i bogm\\u00e6rke-baren i Internet Explorer, eller via linket p\\u00e5 portalen: \\u003Ca href=\\u0022http:\\/\\/www.sundhedogomsorg.dk\\/da\\/Vaerktoejer\\/LOOP.aspx\\u0022\\u003Ehttp:\\/\\/www.sundhedogomsorg.dk\\/da\\/Vaerktoejer\\/LOOP.aspx\\u003C\\/a\\u003E\\r\\n",
+              "subject" : "[loop:loop_notification_send_mail_subject]",
+              "body" : "[loop:loop_notification_send_mail_body]",
               "attachments" : [ "" ],
               "language" : [ "" ]
             },
@@ -197,8 +197,8 @@ function loop_notification_default_rules_configuration() {
               "key" : "Mail on message creation",
               "to" : "[user:mail]",
               "from_mail" : "[site:mail]",
-              "subject" : "Et svar til sp\\u00f8rgsm\\u00e5let [node:title] er blevet \\u00e6ndret",
-              "body" : "\\u003Ch2\\u003EEt svar til sp\\u00f8rgsm\\u00e5let [node:title] er blevet \\u00e6ndret\\u003C\\/h2\\u003E\\r\\n\\u003Cp\\u003EK\\u00e6re [user:field-first-name] [user:field-last-name]\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EEt svar til sp\\u00f8rgsm\\u00e5let \\u003Ca href=\\u0022\\/node\\/[node:nid]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E er blevet \\u00e6ndret.\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003ENyt svar: [comment:body]\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EMed venlig hilsen\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003E[site:name]\\u003C\\/p\\u003E\\r\\n\\u003Cbr \\/\\u003E\\r\\n\\u003Cbr \\/\\u003E\\r\\nDette er en automatisk meddelelse fra Loop, og kan ikke besvares.\\u003Cbr \\/\\u003E\\r\\nDu kan styre dine abonnementer fra din brugerprofil\\u003Cbr \\/\\u003E\\r\\nHUSK! Du ikke kan f\\u00e5 adgang via linket i mailen, hvis det er mere end 21 dage siden du har logget ind i Loop.\\u003Cbr \\/\\u003E\\r\\nDu kan altid hurtigt logge ind i Loop via knappen i bogm\\u00e6rke-baren i Internet Explorer, eller via linket p\\u00e5 portalen: \\u003Ca href=\\u0022http:\\/\\/www.sundhedogomsorg.dk\\/da\\/Vaerktoejer\\/LOOP.aspx\\u0022\\u003Ehttp:\\/\\/www.sundhedogomsorg.dk\\/da\\/Vaerktoejer\\/LOOP.aspx\\u003C\\/a\\u003E\\r\\n",
+              "subject" : "[loop:loop_notification_send_mail_to_subscribers_on_comment_edit_subject]",
+              "body" : "[loop:loop_notification_send_mail_to_subscribers_on_comment_edit_body]",
               "attachments" : [ "" ],
               "language" : [ "" ]
             },
@@ -227,8 +227,8 @@ function loop_notification_default_rules_configuration() {
               "key" : "Mail on message creation",
               "to" : "[user:mail]",
               "from_mail" : "[site:mail]",
-              "subject" : "Nyt sp\\u00f8rgsm\\u00e5l indenfor et emne du f\\u00f8lger.",
-              "body" : "\\u003Ch2\\u003ENyt sp\\u00f8rgsm\\u00e5l oprettet [node:title] indenfor et emne du f\\u00f8lger\\u003C\\/h2\\u003E\\r\\n\\u003Cp\\u003EK\\u00e6re [user:field-first-name] [user:field-last-name]\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EDer er kommet et nyt sp\\u00f8rgsm\\u00e5l indenfor et emne du f\\u00f8lger: \\u003Ca href=\\u0022\\/node\\/[node:nid]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EMed venlig hilsen\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003E[site:name]\\u003C\\/p\\u003E\\r\\n\\u003Cbr \\/\\u003E\\r\\n\\u003Cbr \\/\\u003E\\r\\nDette er en automatisk meddelelse fra Loop, og kan ikke besvares.\\u003Cbr \\/\\u003E\\r\\nDu kan styre dine abonnementer fra din brugerprofil\\u003Cbr \\/\\u003E\\r\\nHUSK! Du ikke kan f\\u00e5 adgang via linket i mailen, hvis det er mere end 21 dage siden du har logget ind i Loop.\\u003Cbr \\/\\u003E\\r\\nDu kan altid hurtigt logge ind i Loop via knappen i bogm\\u00e6rke-baren i Internet Explorer, eller via linket p\\u00e5 portalen: \\u003Ca href=\\u0022http:\\/\\/www.sundhedogomsorg.dk\\/da\\/Vaerktoejer\\/LOOP.aspx\\u0022\\u003Ehttp:\\/\\/www.sundhedogomsorg.dk\\/da\\/Vaerktoejer\\/LOOP.aspx\\u003C\\/a\\u003E",
+              "subject" : "[loop:loop_notification_send_mail_to_subscribers_on_node_create_subject]",
+              "body" : "[loop:loop_notification_send_mail_to_subscribers_on_node_create_body]",
               "attachments" : [ "" ],
               "language" : [ "" ]
             },
@@ -257,8 +257,8 @@ function loop_notification_default_rules_configuration() {
               "key" : "Mail on message creation",
               "to" : "[user:mail]",
               "from_mail" : "[site:mail]",
-              "subject" : "Nyt svar til sp\\u00f8rgsm\\u00e5let [node:title]",
-              "body" : "\\u003Ch2\\u003EEt sp\\u00f8rgsm\\u00e5l er blevet \\u00e6ndret: [node:title]\\u003C\\/h2\\u003E\\r\\n\\u003Cp\\u003EK\\u00e6re [user:field-first-name] [user:field-last-name]\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EEt sp\\u00f8rgsm\\u00e5l du f\\u00f8lger er blevet \\u00e6ndret \\u003Ca href=\\u0022\\/node\\/[node:nid]\\u0022\\u003E[node:title]\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003EMed venlig hilsen\\u003C\\/p\\u003E\\r\\n\\u003Cp\\u003E[site:name]\\u003C\\/p\\u003E\\r\\n\\u003Cbr \\/\\u003E\\r\\n\\u003Cbr \\/\\u003E\\r\\nDette er en automatisk meddelelse fra Loop, og kan ikke besvares.\\u003Cbr \\/\\u003E\\r\\nDu kan styre dine abonnementer fra din brugerprofil\\u003Cbr\\u003E\\r\\nHUSK! Du ikke kan f\\u00e5 adgang via linket i mailen, hvis det er mere end 21 dage siden du har logget ind i Loop.\\u003Cbr \\/\\u003E\\r\\nDu kan altid hurtigt logge ind i Loop via knappen i bogm\\u00e6rke-baren i Internet Explorer, eller via linket p\\u00e5 portalen: \\u003Ca href=\\u0022http:\\/\\/www.sundhedogomsorg.dk\\/da\\/Vaerktoejer\\/LOOP.aspx\\u0022\\u003Ehttp:\\/\\/www.sundhedogomsorg.dk\\/da\\/Vaerktoejer\\/LOOP.aspx\\u003C\\/a\\u003E\\r\\n\\r\\n",
+              "subject" : "[loop:loop_notification_send_mail_to_subscribers_on_node_edit_subject]",
+              "body" : "[loop:loop_notification_send_mail_to_subscribers_on_node_edit_body]",
               "attachments" : [ "" ],
               "language" : [ "" ]
             },
