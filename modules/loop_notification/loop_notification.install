@@ -37,9 +37,7 @@ function loop_notification_update_7002() {
 <br />
 <br />
 Dette er en automatisk meddelelse fra Loop, og kan ikke besvares.<br />
-Du kan styre dine abonnementer fra din brugerprofil<br />
-HUSK! Du ikke kan få adgang via linket i mailen, hvis det er mere end 21 dage siden du har logget ind i Loop.<br />
-Du kan altid hurtigt logge ind i Loop via knappen i bogmærke-baren i Internet Explorer, eller via linket på portalen: <a href="http://www.sundhedogomsorg.dk/da/Vaerktoejer/LOOP.aspx">http://www.sundhedogomsorg.dk/da/Vaerktoejer/LOOP.aspx</a>',
+Du kan styre dine abonnementer fra din brugerprofil',
 
 		'loop_notification_send_mail_to_subscribers_on_comment_edit_subject' => 'Et svar til spørgsmålet [node:title] er blevet ændret',
 		'loop_notification_send_mail_to_subscribers_on_comment_edit_body' => '<h2>Et svar til spørgsmålet [node:title] er blevet ændret</h2>
@@ -51,9 +49,7 @@ Du kan altid hurtigt logge ind i Loop via knappen i bogmærke-baren i Internet E
 <br />
 <br />
 Dette er en automatisk meddelelse fra Loop, og kan ikke besvares.<br />
-Du kan styre dine abonnementer fra din brugerprofil<br />
-HUSK! Du ikke kan få adgang via linket i mailen, hvis det er mere end 21 dage siden du har logget ind i Loop.<br />
-Du kan altid hurtigt logge ind i Loop via knappen i bogmærke-baren i Internet Explorer, eller via linket på portalen: <a href="http://www.sundhedogomsorg.dk/da/Vaerktoejer/LOOP.aspx">http://www.sundhedogomsorg.dk/da/Vaerktoejer/LOOP.aspx</a>',
+Du kan styre dine abonnementer fra din brugerprofil',
 
 		'loop_notification_send_mail_to_subscribers_on_node_create_subject' => 'Nyt spørgsmål indenfor et emne du følger',
 		'loop_notification_send_mail_to_subscribers_on_node_create_body' => '<h2>Nyt spørgsmål oprettet [node:title] indenfor et emne du følger</h2>
@@ -64,9 +60,7 @@ Du kan altid hurtigt logge ind i Loop via knappen i bogmærke-baren i Internet E
 <br />
 <br />
 Dette er en automatisk meddelelse fra Loop, og kan ikke besvares.<br />
-Du kan styre dine abonnementer fra din brugerprofil<br />
-HUSK! Du ikke kan få adgang via linket i mailen, hvis det er mere end 21 dage siden du har logget ind i Loop.<br />
-Du kan altid hurtigt logge ind i Loop via knappen i bogmærke-baren i Internet Explorer, eller via linket på portalen: <a href="http://www.sundhedogomsorg.dk/da/Vaerktoejer/LOOP.aspx">http://www.sundhedogomsorg.dk/da/Vaerktoejer/LOOP.aspx</a>',
+Du kan styre dine abonnementer fra din brugerprofil',
 
 		'loop_notification_send_mail_to_subscribers_on_node_edit_subject' => 'Nyt svar til spørgsmålet [node:title]',
 		'loop_notification_send_mail_to_subscribers_on_node_edit_body' => '<h2>Et spørgsmål er blevet ændret: [node:title]</h2>
@@ -77,9 +71,7 @@ Du kan altid hurtigt logge ind i Loop via knappen i bogmærke-baren i Internet E
 <br />
 <br />
 Dette er en automatisk meddelelse fra Loop, og kan ikke besvares.<br />
-Du kan styre dine abonnementer fra din brugerprofil<br>
-HUSK! Du ikke kan få adgang via linket i mailen, hvis det er mere end 21 dage siden du har logget ind i Loop.<br />
-Du kan altid hurtigt logge ind i Loop via knappen i bogmærke-baren i Internet Explorer, eller via linket på portalen: <a href="http://www.sundhedogomsorg.dk/da/Vaerktoejer/LOOP.aspx">http://www.sundhedogomsorg.dk/da/Vaerktoejer/LOOP.aspx</a>',
+Du kan styre dine abonnementer fra din brugerprofil',
   );
 
   foreach ($defaults as $key => $value) {
