@@ -23,6 +23,8 @@ function loop_permissions_permission() {
   $paths = array(
     'admin',
     'admin/content',
+    'admin/content/abuse',
+    'admin/content/abuse/*',
   );
 
   foreach ($paths as $path) {
@@ -71,6 +73,13 @@ function loop_permissions_menu_access() {
   $user_role_names = array_values($GLOBALS['user']->roles);
   if (!array_intersect($user_role_names, array('administrator'))) {
     if (!user_access('access path ' . $path)) {
+      // Check path to see if any wild card permission matches.
+      while ($path = preg_replace('@/?[^/]+$@', '', $path)) {
+        if (user_access('access path ' . $path . '/*')) {
+          return TRUE;
+        }
+      }
+
       return FALSE;
     }
   }
@@ -298,6 +307,8 @@ function loop_permissions_secure_permissions($role) {
       'access user profiles',
       'Administer abuse reports',
       'Administer all abuse reports',
+      'access path admin/content/abuse',
+      'access path admin/content/abuse/*',
       'administer comments',
       'administer complaints',
       'administer nodes',
@@ -310,6 +321,7 @@ function loop_permissions_secure_permissions($role) {
       'revert revisions',
       'use text format editor',
       'view revisions',
+      'view the administration theme',
     ),
     'manager' => array(
       'access administration pages',
@@ -317,6 +329,8 @@ function loop_permissions_secure_permissions($role) {
       'access user profiles',
       'Administer abuse reports',
       'Administer all abuse reports',
+      'access path admin/content/abuse',
+      'access path admin/content/abuse/*',
       'administer taxonomy',
       'administer comments',
       'administer complaints',
