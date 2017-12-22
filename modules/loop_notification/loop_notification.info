@@ -71,4 +71,3 @@ features[variable][] = mimemail_name
 features[variable][] = mimemail_simple_address
 features[variable][] = mimemail_sitestyle
 features[variable][] = mimemail_textonly
-files[] = loop_notification.rules.inc
