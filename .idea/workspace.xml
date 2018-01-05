@@ -1,0 +1,928 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="bde9ca89-cba5-48b0-95bc-13ca334d4f56" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/loop_permissions/loop_permissions.module" afterPath="$PROJECT_DIR$/modules/loop_permissions/loop_permissions.module" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/loop_post/loop_post.module" afterPath="$PROJECT_DIR$/modules/loop_post/loop_post.module" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DrupalConfiguration" enabled="true" version="7">
+    <drupalPath>$PROJECT_DIR$/../..</drupalPath>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="theme-settings.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/loop/theme-settings.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="960">
+              <caret line="60" column="3" lean-forward="false" selection-start-line="60" selection-start-column="3" selection-end-line="60" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/loop/template.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loop_post.module" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/loop_post/loop_post.module">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="672">
+              <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+              <folding>
+                <marker date="1513287956000" expanded="true" signature="2745:3019" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loop_permissions.module" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/loop_permissions/loop_permissions.module">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1264">
+              <caret line="82" column="5" lean-forward="false" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+              <folding>
+                <marker date="1513584635000" expanded="true" signature="384:466" ph="..." />
+                <marker date="1513584635000" expanded="true" signature="429:466" ph="..." />
+                <marker date="1513584635000" expanded="true" signature="9090:9438" ph="..." />
+                <marker date="1513584635000" expanded="true" signature="9090:11593" ph="..." />
+                <marker date="1513584635000" expanded="true" signature="9090:11668" ph="..." />
+                <marker date="1513584635000" expanded="true" signature="9464:11109" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.module" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../modules/user/user.module">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="13168">
+              <caret line="826" column="0" lean-forward="false" selection-start-line="826" selection-start-column="0" selection-end-line="826" selection-end-column="0" />
+              <folding>
+                <marker date="1513241076000" expanded="true" signature="11280:11332" ph="SELECT uid F... authmap" />
+                <marker date="1513241076000" expanded="true" signature="13558:13670" ph="SELECT r.rid... role" />
+                <marker date="1513241076000" expanded="true" signature="23512:23540" ph="SELECT MAX(u... users" />
+                <marker date="1513241076000" expanded="true" signature="24516:24562" ph="SELECT rid F... users_roles" />
+                <marker date="1513241076000" expanded="true" signature="30371:30438" ph="SELECT rid, role_permission" />
+                <marker date="1513241076000" expanded="true" signature="54628:54713" ph="SELECT uid, users" />
+                <marker date="1513241076000" expanded="true" signature="55343:55435" ph="SELECT COUNT... sessions" />
+                <marker date="1513241076000" expanded="true" signature="55848:56055" ph="SELECT u.uid... users" />
+                <marker date="1513241076000" expanded="true" signature="75520:75585" ph="SELECT modul... " />
+                <marker date="1513241076000" expanded="true" signature="79950:80005" ph="SELECT * FRO... users" />
+                <marker date="1513241076000" expanded="true" signature="90145:90222" ph="SELECT uid F... users" />
+                <marker date="1513241076000" expanded="true" signature="117726:117766" ph="SELECT name role" />
+                <marker date="1513241076000" expanded="true" signature="130988:131053" ph="SELECT uid, users" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loop_notification.module" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/loop_notification/loop_notification.module">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5936">
+              <caret line="374" column="0" lean-forward="false" selection-start-line="374" selection-start-column="0" selection-end-line="374" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loop_notification.install" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/loop_notification/loop_notification.install">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="528">
+              <caret line="36" column="4" lean-forward="false" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+              <folding>
+                <marker date="1513588247000" expanded="true" signature="412:416" ph=" Copy e-mail body templates from rule actions to variables. ..." />
+                <marker date="1513588247000" expanded="true" signature="509:3005" ph="..." />
+                <marker date="1513588247000" expanded="true" signature="603:2923" ph="..." />
+                <marker date="1513588247000" expanded="true" signature="2968:3003" ph="..." />
+                <marker date="1513588247000" expanded="true" signature="3003:3005" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loop_notification.rules.inc" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modules/loop_notification/loop_notification.rules.inc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <folding>
+                <marker date="1513585631000" expanded="true" signature="10:14" ph=" Implements hook_rules_evaluator_info(). ..." />
+                <marker date="1513585631000" expanded="true" signature="954:955" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rules.processor.inc" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/contrib/rules/includes/rules.processor.inc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1296">
+              <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="loop_post.info" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/modules/loop_post/loop_post.info">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>die</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/modules/loop_admin/loop_admin.module" />
+        <option value="$PROJECT_DIR$/themes/loop/theme-settings.php" />
+        <option value="$PROJECT_DIR$/themes/loop/template.php" />
+        <option value="$PROJECT_DIR$/modules/loop_post/loop_post.module" />
+        <option value="$PROJECT_DIR$/../../modules/user/user.module" />
+        <option value="$PROJECT_DIR$/modules/loop_notification/loop_notification.module" />
+        <option value="$PROJECT_DIR$/modules/loop_notification/loop_notification.install" />
+        <option value="$PROJECT_DIR$/modules/loop_notification/loop_notification.rules.inc" />
+      </list>
+    </option>
+  </component>
+  <component name="JoomlaConfiguration">
+    <joomlaConfigPath />
+    <joomlaPath />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/themes/loop/node_modules" />
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true">
+    <include_path>
+      <path value="$PROJECT_DIR$/../../includes" />
+      <path value="$PROJECT_DIR$/../../modules" />
+      <path value="$PROJECT_DIR$/../../sites/all/modules" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1920" />
+    <option name="height" value="1200" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>PHP</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AngularJS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource ProjectPane="true" />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loopdk" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loopdk" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loopdk" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="contrib" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loopdk" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="contrib" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="features" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loopdk" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="contrib" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="rules" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loopdk" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="contrib" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="rules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="includes" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loopdk" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="loop_admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loopdk" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="loop_notification" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loopdk" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="loop_permissions" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loopdk" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="loop_post" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loopdk" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loopdk" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="loop" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loopdk" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="themes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="loop" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="images" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
+              <item name="PHP" type="5114b859:PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
+            </path>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
+              <item name="PHP" type="5114b859:PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
+              <item name="includes" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
+              <item name="PHP" type="5114b859:PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
+              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
+              <item name="PHP" type="5114b859:PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
+              <item name="modules" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="user" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
+              <item name="PHP Runtime" type="20ee2d1f:SyntheticLibraryElementNode" />
+            </path>
+            <path>
+              <item name="loopdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
+              <item name="PHP Runtime" type="20ee2d1f:SyntheticLibraryElementNode" />
+              <item name="standard" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bde9ca89-cba5-48b0-95bc-13ca334d4f56" name="Default" comment="" />
+      <created>1504164084043</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1504164084043</updated>
+      <workItem from="1504164085376" duration="1813000" />
+      <workItem from="1504169010112" duration="21000" />
+      <workItem from="1507275595236" duration="3337000" />
+      <workItem from="1508830883583" duration="1061000" />
+      <workItem from="1512134865601" duration="492000" />
+      <workItem from="1513243761901" duration="5630000" />
+      <workItem from="1513625823768" duration="17000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="12371000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26517573" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="WordPressConfiguration">
+    <wordpressPath />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/themes/loop/theme-settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="60" column="3" lean-forward="false" selection-start-line="60" selection-start-column="3" selection-end-line="60" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/loop/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_post/loop_post.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <marker date="1513287956000" expanded="true" signature="2745:3019" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_permissions/loop_permissions.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1136">
+          <caret line="74" column="5" lean-forward="false" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+          <folding>
+            <marker date="1513584635000" expanded="true" signature="384:466" ph="..." />
+            <marker date="1513584635000" expanded="true" signature="429:466" ph="..." />
+            <marker date="1513584635000" expanded="true" signature="9090:9438" ph="..." />
+            <marker date="1513584635000" expanded="true" signature="9090:11593" ph="..." />
+            <marker date="1513584635000" expanded="true" signature="9090:11668" ph="..." />
+            <marker date="1513584635000" expanded="true" signature="9464:11109" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../modules/user/user.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13168">
+          <caret line="826" column="0" lean-forward="false" selection-start-line="826" selection-start-column="0" selection-end-line="826" selection-end-column="0" />
+          <folding>
+            <marker date="1513241076000" expanded="true" signature="11280:11332" ph="SELECT uid F... authmap" />
+            <marker date="1513241076000" expanded="true" signature="13558:13670" ph="SELECT r.rid... role" />
+            <marker date="1513241076000" expanded="true" signature="23512:23540" ph="SELECT MAX(u... users" />
+            <marker date="1513241076000" expanded="true" signature="24516:24562" ph="SELECT rid F... users_roles" />
+            <marker date="1513241076000" expanded="true" signature="30371:30438" ph="SELECT rid, role_permission" />
+            <marker date="1513241076000" expanded="true" signature="54628:54713" ph="SELECT uid, users" />
+            <marker date="1513241076000" expanded="true" signature="55343:55435" ph="SELECT COUNT... sessions" />
+            <marker date="1513241076000" expanded="true" signature="55848:56055" ph="SELECT u.uid... users" />
+            <marker date="1513241076000" expanded="true" signature="75520:75585" ph="SELECT modul... " />
+            <marker date="1513241076000" expanded="true" signature="79950:80005" ph="SELECT * FRO... users" />
+            <marker date="1513241076000" expanded="true" signature="90145:90222" ph="SELECT uid F... users" />
+            <marker date="1513241076000" expanded="true" signature="117726:117766" ph="SELECT name role" />
+            <marker date="1513241076000" expanded="true" signature="130988:131053" ph="SELECT uid, users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_notification/loop_notification.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5936">
+          <caret line="374" column="0" lean-forward="false" selection-start-line="374" selection-start-column="0" selection-end-line="374" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_notification/loop_notification.install">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="36" column="4" lean-forward="false" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+          <folding>
+            <marker date="1513588247000" expanded="true" signature="412:416" ph=" Copy e-mail body templates from rule actions to variables. ..." />
+            <marker date="1513588247000" expanded="true" signature="509:3005" ph="..." />
+            <marker date="1513588247000" expanded="true" signature="603:2923" ph="..." />
+            <marker date="1513588247000" expanded="true" signature="2968:3003" ph="..." />
+            <marker date="1513588247000" expanded="true" signature="3003:3005" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/contrib/rules/includes/rules.processor.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1296">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_post/loop_post.info">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_notification/loop_notification.rules.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="43" column="3" lean-forward="true" selection-start-line="43" selection-start-column="3" selection-end-line="43" selection-end-column="3" />
+          <folding>
+            <marker date="1513585631000" expanded="true" signature="10:14" ph=" Implements hook_rules_evaluator_info(). ..." />
+            <marker date="1513585631000" expanded="true" signature="954:955" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_admin/loop_admin.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/loop/theme-settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="60" column="3" lean-forward="false" selection-start-line="60" selection-start-column="3" selection-end-line="60" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/loop/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_post/loop_post.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <marker date="1513287956000" expanded="true" signature="2745:3019" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_permissions/loop_permissions.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1136">
+          <caret line="74" column="5" lean-forward="true" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+          <folding>
+            <marker date="1513584635000" expanded="true" signature="384:466" ph="..." />
+            <marker date="1513584635000" expanded="true" signature="429:466" ph="..." />
+            <marker date="1513584635000" expanded="true" signature="9090:9438" ph="..." />
+            <marker date="1513584635000" expanded="true" signature="9090:11593" ph="..." />
+            <marker date="1513584635000" expanded="true" signature="9090:11668" ph="..." />
+            <marker date="1513584635000" expanded="true" signature="9464:11109" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_post/loop_post.info">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../modules/user/user.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13168">
+          <caret line="826" column="2" lean-forward="false" selection-start-line="826" selection-start-column="2" selection-end-line="826" selection-end-column="2" />
+          <folding>
+            <marker date="1513241076000" expanded="true" signature="11280:11332" ph="SELECT uid F... authmap" />
+            <marker date="1513241076000" expanded="true" signature="13558:13670" ph="SELECT r.rid... role" />
+            <marker date="1513241076000" expanded="true" signature="23512:23540" ph="SELECT MAX(u... users" />
+            <marker date="1513241076000" expanded="true" signature="24516:24562" ph="SELECT rid F... users_roles" />
+            <marker date="1513241076000" expanded="true" signature="30371:30438" ph="SELECT rid, role_permission" />
+            <marker date="1513241076000" expanded="true" signature="54628:54713" ph="SELECT uid, users" />
+            <marker date="1513241076000" expanded="true" signature="55343:55435" ph="SELECT COUNT... sessions" />
+            <marker date="1513241076000" expanded="true" signature="55848:56055" ph="SELECT u.uid... users" />
+            <marker date="1513241076000" expanded="true" signature="75520:75585" ph="SELECT modul... " />
+            <marker date="1513241076000" expanded="true" signature="79950:80005" ph="SELECT * FRO... users" />
+            <marker date="1513241076000" expanded="true" signature="90145:90222" ph="SELECT uid F... users" />
+            <marker date="1513241076000" expanded="true" signature="117726:117766" ph="SELECT name role" />
+            <marker date="1513241076000" expanded="true" signature="130988:131053" ph="SELECT uid, users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/loop/theme-settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="60" column="3" lean-forward="true" selection-start-line="60" selection-start-column="3" selection-end-line="60" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_admin/loop_admin.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/loop/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_post/loop_post.info">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_post/loop_post.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <marker date="1513287956000" expanded="true" signature="2745:3019" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_admin/loop_admin.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/loop/theme-settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="60" column="4" lean-forward="false" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/loop/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_post/loop_post.info">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_post/loop_post.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="928">
+          <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding>
+            <marker date="1513287956000" expanded="true" signature="2745:3019" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_admin/loop_admin.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_admin/loop_admin.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/loop/theme-settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="60" column="3" lean-forward="false" selection-start-line="60" selection-start-column="3" selection-end-line="60" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/loop/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_3.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="964" column="9" lean-forward="false" selection-start-line="964" selection-start-column="9" selection-end-line="964" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../includes/form.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="1675" column="9" lean-forward="false" selection-start-line="1675" selection-start-column="9" selection-end-line="1675" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_post/loop_post.info">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/idea.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_post/loop_post.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding>
+            <marker date="1513287956000" expanded="true" signature="2745:3019" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_permissions/loop_permissions.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1264">
+          <caret line="82" column="5" lean-forward="false" selection-start-line="82" selection-start-column="5" selection-end-line="82" selection-end-column="5" />
+          <folding>
+            <marker date="1513584635000" expanded="true" signature="384:466" ph="..." />
+            <marker date="1513584635000" expanded="true" signature="429:466" ph="..." />
+            <marker date="1513584635000" expanded="true" signature="9090:9438" ph="..." />
+            <marker date="1513584635000" expanded="true" signature="9090:11593" ph="..." />
+            <marker date="1513584635000" expanded="true" signature="9090:11668" ph="..." />
+            <marker date="1513584635000" expanded="true" signature="9464:11109" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../modules/user/user.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13168">
+          <caret line="826" column="0" lean-forward="false" selection-start-line="826" selection-start-column="0" selection-end-line="826" selection-end-column="0" />
+          <folding>
+            <marker date="1513241076000" expanded="true" signature="11280:11332" ph="SELECT uid F... authmap" />
+            <marker date="1513241076000" expanded="true" signature="13558:13670" ph="SELECT r.rid... role" />
+            <marker date="1513241076000" expanded="true" signature="23512:23540" ph="SELECT MAX(u... users" />
+            <marker date="1513241076000" expanded="true" signature="24516:24562" ph="SELECT rid F... users_roles" />
+            <marker date="1513241076000" expanded="true" signature="30371:30438" ph="SELECT rid, role_permission" />
+            <marker date="1513241076000" expanded="true" signature="54628:54713" ph="SELECT uid, users" />
+            <marker date="1513241076000" expanded="true" signature="55343:55435" ph="SELECT COUNT... sessions" />
+            <marker date="1513241076000" expanded="true" signature="55848:56055" ph="SELECT u.uid... users" />
+            <marker date="1513241076000" expanded="true" signature="75520:75585" ph="SELECT modul... " />
+            <marker date="1513241076000" expanded="true" signature="79950:80005" ph="SELECT * FRO... users" />
+            <marker date="1513241076000" expanded="true" signature="90145:90222" ph="SELECT uid F... users" />
+            <marker date="1513241076000" expanded="true" signature="117726:117766" ph="SELECT name role" />
+            <marker date="1513241076000" expanded="true" signature="130988:131053" ph="SELECT uid, users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/contrib/rules/rules.api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/contrib/rules/includes/rules.plugins.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="871">
+          <caret line="190" column="18" lean-forward="false" selection-start-line="190" selection-start-column="18" selection-end-line="190" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/contrib/rules/rules.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="872" column="9" lean-forward="false" selection-start-line="872" selection-start-column="9" selection-end-line="872" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/loop/images/loader-in-active.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/contrib/features/features.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="930" column="9" lean-forward="false" selection-start-line="930" selection-start-column="9" selection-end-line="930" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_notification/loop_notification.module">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5936">
+          <caret line="374" column="0" lean-forward="false" selection-start-line="374" selection-start-column="0" selection-end-line="374" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../includes/bootstrap.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="1241" column="9" lean-forward="false" selection-start-line="1241" selection-start-column="9" selection-end-line="1241" selection-end-column="9" />
+          <folding>
+            <marker date="1498069218000" expanded="true" signature="29160:29225" ph="SELECT filen... system" />
+            <marker date="1498069218000" expanded="true" signature="41707:41741" ph="SELECT name,... variable" />
+            <marker date="1498069218000" expanded="true" signature="77381:77423" ph="SELECT 1 FRO... blocked_ips" />
+            <marker date="1498069218000" expanded="true" signature="106820:106875" ph="SELECT * FRO... languages" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_notification/loop_notification.install">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="36" column="4" lean-forward="false" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="4" />
+          <folding>
+            <marker date="1513588247000" expanded="true" signature="412:416" ph=" Copy e-mail body templates from rule actions to variables. ..." />
+            <marker date="1513588247000" expanded="true" signature="509:3005" ph="..." />
+            <marker date="1513588247000" expanded="true" signature="603:2923" ph="..." />
+            <marker date="1513588247000" expanded="true" signature="2968:3003" ph="..." />
+            <marker date="1513588247000" expanded="true" signature="3003:3005" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/contrib/rules/includes/rules.processor.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1296">
+          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/loop_notification/loop_notification.rules.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <marker date="1513585631000" expanded="true" signature="10:14" ph=" Implements hook_rules_evaluator_info(). ..." />
+            <marker date="1513585631000" expanded="true" signature="954:955" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
