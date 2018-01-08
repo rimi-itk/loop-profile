@@ -75,7 +75,7 @@ projects[globalredirect][subdir] = "contrib"
 projects[globalredirect][version] = "1.5"
 
 projects[google_analytics][subdir] = "contrib"
-projects[google_analytics][version] = "2.x-dev"
+projects[google_analytics][version] = "2.4"
 
 projects[google_analytics_counter][subdir] = "contrib"
 projects[google_analytics_counter][version] = "3.3"
@@ -188,11 +188,8 @@ projects[role_delegation][version] = "1.1"
 projects[rules][subdir] = "contrib"
 projects[rules][version] = "2.10"
 
-projects[saml_sp][type] = "module"
 projects[saml_sp][subdir] = "contrib"
-projects[saml_sp][download][type] = "git"
-projects[saml_sp][download][url] = "http://git.drupal.org/project/saml_sp.git"
-projects[saml_sp][download][branch] = "7.x-2.x"
+projects[saml_sp][version] = "2.2"
 ; Custom SAML SP hooks
 projects[saml_sp][patch][] = "https://raw.githubusercontent.com/os2loop/profile/master/patches/saml_sp_drupal_login-alter_user_hooks.patch"
 
@@ -280,7 +277,7 @@ projects[views_flag_refresh][subdir] = "contrib"
 projects[views_flag_refresh][version] = "1.3"
 
 projects[wysiwyg][subdir] = "contrib"
-projects[wysiwyg][version] = "2.x-dev"
+projects[wysiwyg][version] = "2.4"
 
 ; Libraries
 libraries[angular][download][type] = "get"
@@ -300,6 +297,7 @@ libraries[respondjs][destination] = "libraries"
 
 libraries[php-saml][download][type] = "git"
 libraries[php-saml][download][url] = "https://github.com/onelogin/php-saml.git"
+libraries[php-saml][download][tag] = "v2.12.0"
 libraries[php-saml][directory_name] = "php-saml"
 libraries[php-saml][destination] = "libraries"
 
