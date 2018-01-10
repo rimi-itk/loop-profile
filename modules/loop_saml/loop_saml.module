@@ -101,9 +101,16 @@ function loop_saml_form_user_profile_form_alter(&$form, &$form_state) {
  *   SAML attributes.
  */
 function _loop_saml_setup_account($account, array $attributes) {
-  $fullename = $attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/displayname'][0];
-
-  $names = preg_split("/\s+(?=\S*+$)/", $fullename);
+  if (isset($attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname'][0],
+            $attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname'][0])) {
+    $names = array(
+      $attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname'][0],
+      $attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname'][0],
+    );
+  } else {
+    $fullename = $attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/displayname'][0];
+    $names = preg_split("/\s+(?=\S*+$)/", $fullename);
+  }
 
   $wrapper = entity_metadata_wrapper('user', $account);
   $wrapper->field_first_name->set($names[0]);

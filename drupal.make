@@ -18,4 +18,4 @@ projects[drupal][patch][] = "https://raw.githubusercontent.com/os2loop/profile/m
 projects[loopdk][type] = "profile"
 projects[loopdk][download][type] = "git"
 projects[loopdk][download][url] = "https://github.com/os2loop/profile.git"
-projects[loopdk][download][tag] = "1.7.0"
+projects[loopdk][download][tag] = "1.7.1"

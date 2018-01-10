@@ -1,13 +1,44 @@
-diff --git a/includes/saml_sp.AuthnRequest.inc b/includes/saml_sp.AuthnRequest.inc
-index 8918bdc..29544ee 100644
---- a/includes/saml_sp.AuthnRequest.inc
-+++ b/includes/saml_sp.AuthnRequest.inc
-@@ -73,8 +73,6 @@ PROVIDERNAME;
-     <samlp:NameIDPolicy
-         Format="{$nameIDPolicyFormat}"
-         AllowCreate="true" />
--    <samlp:RequestedAuthnContext Comparison="exact">{$authncontext}
--    </samlp:RequestedAuthnContext>
- </samlp:AuthnRequest>
- AUTHNREQUEST;
- 
+diff --git a/saml_sp.admin.inc b/saml_sp.admin.inc
+index bcce35f..f670964 100644
+--- a/saml_sp.admin.inc
++++ b/saml_sp.admin.inc
+@@ -216,13 +216,19 @@ function saml_sp__configure_idp_form($form, &$form_state, $saml_idp = NULL) {
+     $authn_context_default[$value['id']] = array_search($value['id'], $selected_contexts) !== FALSE ? $value['id'] : 0;
+   }
+
++  $form['idp']['authn_context_class_ref_message'] = array(
++    '#markup' => 'Aarhus municipality does not support "Authentication Method (Context)".',
++    '#prefix' => '<div class="messages warning">',
++    '#suffix' => '</div>',
++  );
++
+   $form['idp']['authn_context_class_ref'] = array(
+     '#type'           => 'checkboxes',
+     '#title'          => t('Authentication Method (Context)'),
+     '#description'    => t('What authentication method(s) would you like to use with this IdP?'),
+     '#default_value'  => $authn_context_default,
+     '#options'        => $authn_context_class_ref_options,
+-    '#required'       => TRUE,
++    '#disabled'       => TRUE,
+   );
+
+   $form['submit'] = array(
+diff --git a/saml_sp.module b/saml_sp.module
+old mode 100755
+new mode 100644
+index 809104a..2bdae6d
+--- a/saml_sp.module
++++ b/saml_sp.module
+@@ -426,10 +426,8 @@ function saml_sp__get_settings($idp) {
+     'wantAssertionsSigned'  => (bool) $security['wantAssertionsSigned'],
+     'wantNameIdEncrypted'   => (bool) $security['wantNameIdEncrypted'],
+   );
+-  // The authentication method we want to use with the IdP
+-  if ($idp->authn_context_class_ref) {
+-    $settings['security']['requestedAuthnContext'] = saml_sp_authn_context_settings($idp->authn_context_class_ref);
+-  }
++  // Aarhus municipality does not support RequestedAuthnContext.
++  $settings['security']['requestedAuthnContext'] = false;
+
+   $cert_location = variable_get('saml_sp__cert_location', '');
+   if ($cert_location && file_exists($cert_location)) {
