@@ -119,6 +119,12 @@ function loopdk_translation_update() {
   _locale_import_po($file, 'da', LOCALE_IMPORT_KEEP, 'default');
 }
 
+/**
+ * Update our own translations.
+ */
+function loopdk_update_7001() {
+  loopdk_translation_update();
+}
 
 /**
  * Delete nodes and content types for leaf, tree and index.
