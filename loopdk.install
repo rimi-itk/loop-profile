@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Install, update and uninstall functions for the Loop installation profile.
@@ -12,7 +13,7 @@
  * Setup "Page not found" and "Access denied" pages.
  *
  * @see system_install()
-*/
+ */
 function loopdk_install() {
   // Set default variables.
   $default_theme = 'loop';
@@ -133,10 +134,10 @@ function loopdk_update_7002() {
   $types = array(
     'leaf',
     'index',
-    'tree'
+    'tree',
   );
-  foreach($types as $type) {
-    // First, delete nodes
+  foreach ($types as $type) {
+    // First, delete nodes.
     $results = db_select('node', 'n')
       ->fields('n', array('nid'))
       ->condition('type', $type)
@@ -148,7 +149,7 @@ function loopdk_update_7002() {
       node_delete_multiple($nids);
       drupal_set_message(t('%count nodes has been deleted.', array('%count' => count($nids))));
     }
-    // Then, delete content type
+    // Then, delete content type.
     if (node_type_load($type)) {
       node_type_delete($type);
       variable_del('node_preview_' . $type);
@@ -163,7 +164,4 @@ function loopdk_update_7002() {
     module_disable(array('loop_external_data'));
     drupal_uninstall_modules(array('loop_external_data'));
   }
-
-  // CLeanup deleted fields
-  drupal_cron_run();
 }
