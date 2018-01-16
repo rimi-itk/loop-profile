@@ -333,18 +333,3 @@ function _loop_notification_check_content_type($node) {
   $allowed_types = variable_get('loop_notification_content_types');
   return !empty($allowed_types[$node->type]);
 }
-
-/**
- * Implements hook_tokens().
- */
-function loop_notification_tokens($type, $tokens, array $data = array(), array $options = array()) {
-  $replacements = array();
-  if ($type === 'loop') {
-    // Replace [loop:variable_name] with value of variable "variable_name".
-    foreach ($tokens as $key => $token) {
-      $replacements[$token] = variable_get($key, '');
-    }
-  }
-
-  return $replacements;
-}
