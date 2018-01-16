@@ -40,7 +40,6 @@ function loop_search_default_search_api_index() {
             "default" : "0",
             "bundles" : {
               "external_sources" : "external_sources",
-              "leaf" : "leaf",
               "post" : "post",
               "instruction" : "instruction"
             }
