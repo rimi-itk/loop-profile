@@ -21,7 +21,6 @@ function loop_search_node_settings_default_search_api_index() {
           "loop_documents_collection",
           "external_sources",
           "instruction",
-          "leaf",
           "post"
         ]
       },
@@ -127,7 +126,6 @@ function loop_search_node_settings_default_search_api_index() {
           "loop_documents_collection",
           "external_sources",
           "instruction",
-          "leaf",
           "post"
         ]
       },
