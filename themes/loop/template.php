@@ -935,7 +935,6 @@ function _loop_print_notification_tab() {
   // since it should display on all pages.
   if (module_exists('loop_notification') && $GLOBALS['user']->uid > 0) {
     $new_message_count = _loop_fetch_user_new_notifications();
-
     // If new messages exist.
     if ($new_message_count > 0) {
       $new_messages = '<span class="notification js-notification-tab-count">' . $new_message_count . '</span>';
@@ -950,9 +949,16 @@ function _loop_print_notification_tab() {
       'attributes' => array('class' => 'nav--icon'),
     );
 
-    $title = theme_image($img) . '<span class="nav--text">' . t('Notifications') . '</span>' . $new_messages;
+    // Since it's all quite hackish we need to set the active trail manually
+    // for our link. @todo rewrite messages count on menu item.
+    $active = '';
+    if (arg(0) == 'user' && arg(2) == 'messages') {
+      $active = 'active';
+    }
 
-    $menutab = l($title, 'user/' . $GLOBALS['user']->uid . '/messages', array('attributes' => array('class' => array('nav--link')), 'html' => 'TRUE'));
+    $title = theme_image($img) . '<span class="nav--text">' . t('My account') . '</span>' . $new_messages;
+
+    $menutab = l($title, 'user', array('attributes' => array('class' => array('nav--link', $active)), 'html' => 'TRUE'));
   }
   else {
     $menutab = FALSE;
