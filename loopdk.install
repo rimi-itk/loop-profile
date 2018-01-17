@@ -125,11 +125,3 @@ function loopdk_translation_update() {
 function loopdk_update_7001() {
   loopdk_translation_update();
 }
-
-/**
- * Set Siteimprove vars defaults using Aarhus key and excluding admin pages.
- */
-function loopdk_update_7002() {
-  variable_set('itk_siteimprove_exclude_patterns', '/^\/admin(.)*/');
-  variable_set('itk_siteimprove_exclude_admin', 1);
-}
