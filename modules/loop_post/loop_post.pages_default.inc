@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * loop_post.pages_default.inc

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the Loop Post feature.
@@ -84,7 +85,7 @@ function loop_post_form_validate(&$form, &$form_state) {
     watchdog('loop_post', 'Form !id already submitted (user: !user)', array('!id' => $form['#id'], '!user' => $user->name), WATCHDOG_INFO);
     form_set_error('name]', t('This form has already been submitted. <a href="!url">OK</a>', array('!url' => current_path())));
   }
-  else{
+  else {
     $_SESSION[$session_key][$form_build_id] = TRUE;
   }
 }
