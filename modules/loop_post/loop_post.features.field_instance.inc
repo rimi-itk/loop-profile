@@ -10,7 +10,7 @@
 function loop_post_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'comment-comment_node_post-comment_body'
+  // Exported field_instance: 'comment-comment_node_post-comment_body'.
   $field_instances['comment-comment_node_post-comment_body'] = array(
     'bundle' => 'comment_node_post',
     'default_value' => NULL,
@@ -66,7 +66,8 @@ function loop_post_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'comment-comment_node_post-field_file_upload_comment'
+  // Exported field_instance:
+  // 'comment-comment_node_post-field_file_upload_comment'.
   $field_instances['comment-comment_node_post-field_file_upload_comment'] = array(
     'bundle' => 'comment_node_post',
     'deleted' => 0,
@@ -102,7 +103,7 @@ function loop_post_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-post-field_description'
+  // Exported field_instance: 'node-post-field_description'.
   $field_instances['node-post-field_description'] = array(
     'bundle' => 'post',
     'default_value' => NULL,
@@ -170,7 +171,7 @@ function loop_post_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-post-field_file_upload'
+  // Exported field_instance: 'node-post-field_file_upload'.
   $field_instances['node-post-field_file_upload'] = array(
     'bundle' => 'post',
     'deleted' => 0,
@@ -212,7 +213,7 @@ function loop_post_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-post-field_keyword'
+  // Exported field_instance: 'node-post-field_keyword'.
   $field_instances['node-post-field_keyword'] = array(
     'bundle' => 'post',
     'default_value' => NULL,
@@ -260,7 +261,7 @@ function loop_post_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-post-field_profession'
+  // Exported field_instance: 'node-post-field_profession'.
   $field_instances['node-post-field_profession'] = array(
     'bundle' => 'post',
     'default_value' => NULL,
@@ -303,7 +304,7 @@ function loop_post_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-post-field_subject'
+  // Exported field_instance: 'node-post-field_subject'.
   $field_instances['node-post-field_subject'] = array(
     'bundle' => 'post',
     'default_value' => NULL,
