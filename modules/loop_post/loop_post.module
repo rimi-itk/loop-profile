@@ -41,6 +41,10 @@ function loop_post_form_node_form_alter(&$form, &$form_state) {
 
     // Set page title.
     drupal_set_title(t("Create question"));
+
+    if (user_access('set revision date for post content')) {
+      $form['field_revision_date']['#access'] = FALSE;
+    }
   }
 
   // Reset form when user goes back in history.
@@ -83,4 +87,19 @@ function loop_post_form_validate(&$form, &$form_state) {
   else{
     $_SESSION[$session_key][$form_build_id] = TRUE;
   }
+}
+
+/**
+ * Add revision permission.
+ *
+ * @return array
+ *   An array defining a permission.
+ */
+function loop_post_permission() {
+  return array(
+    'set revision date for post content' => array(
+      'title' => t('Set revision date for post content'),
+      'description' => t('Set revision date for post content.'),
+    ),
+  );
 }

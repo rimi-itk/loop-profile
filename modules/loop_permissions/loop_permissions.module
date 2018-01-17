@@ -274,6 +274,7 @@ function loop_permissions_secure_permissions($role) {
       'select account cancellation method',
       'send arbitrary files',
       'set page title',
+      'set revision date for post content',
       'show format selection for comment',
       'show format selection for flagging',
       'show format selection for message',
@@ -319,6 +320,7 @@ function loop_permissions_secure_permissions($role) {
       'edit any post content',
       'edit terms in 1',
       'revert revisions',
+      'set revision date for post content',
       'use text format editor',
       'view revisions',
       'view the administration theme',
@@ -369,6 +371,7 @@ function loop_permissions_secure_permissions($role) {
       'edit terms in 3',
       'Enter custom URLs',
       'manage Shorten URLs API keys',
+      'set revision date for post content',
       'translate admin strings',
       'translate interface',
       'translate user-defined strings',
@@ -396,3 +399,4 @@ function loop_permissions_secure_permissions($role) {
     return $permissions[$role];
   }
 }
+x
