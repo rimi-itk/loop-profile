@@ -41,7 +41,7 @@ function loop_notification_default_page_manager_pages() {
     'parent' => array(
       'type' => 'none',
       'title' => 'Messages',
-      'name' => 'main-menu',
+      'name' => 'user-menu',
       'weight' => '0',
     ),
   );
