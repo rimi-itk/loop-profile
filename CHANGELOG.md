@@ -1,5 +1,16 @@
 # Loop Changelog
 
+## Loop 1.8.0
+* Rebooted changelog
+* LOOP-519: Grouped menu items
+* LOOP-504: Uninstall loop external data and cleanup
+* LOOP-511: Added search on field subject
+* Add "Toggle Proofread" toolbar button to document editor
+* LOOP-525: Added ITK Siteimprove
+
+## Loop v1.2.1 - 1.7.3
+* Alot of stuff happened here that was never logged.
+
 ## Loop v1.2.0
 
 * Code clean-up and upgrade of Drupal and contrib modules
