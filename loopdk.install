@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Install, update and uninstall functions for the Loop installation profile.
@@ -12,7 +13,7 @@
  * Setup "Page not found" and "Access denied" pages.
  *
  * @see system_install()
-*/
+ */
 function loopdk_install() {
   // Set default variables.
   $default_theme = 'loop';
@@ -124,4 +125,43 @@ function loopdk_translation_update() {
  */
 function loopdk_update_7001() {
   loopdk_translation_update();
+}
+
+/**
+ * Delete nodes and content types for leaf, tree and index.
+ */
+function loopdk_update_7002() {
+  $types = array(
+    'leaf',
+    'index',
+    'tree',
+  );
+  foreach ($types as $type) {
+    // First, delete nodes.
+    $results = db_select('node', 'n')
+      ->fields('n', array('nid'))
+      ->condition('type', $type)
+      ->execute();
+    foreach ($results as $result) {
+      $nids[] = $result->nid;
+    }
+    if (!empty($nids)) {
+      node_delete_multiple($nids);
+      drupal_set_message(t('%count nodes has been deleted.', array('%count' => count($nids))));
+    }
+    // Then, delete content type.
+    if (node_type_load($type)) {
+      node_type_delete($type);
+      variable_del('node_preview_' . $type);
+      drupal_set_message(t('%type content type has been deleted.', array('%type' => $type)));
+    }
+  }
+  node_types_rebuild();
+  menu_rebuild();
+
+  // Uninstall module.
+  if (module_exists('loop_external_data')) {
+    module_disable(array('loop_external_data'));
+    drupal_uninstall_modules(array('loop_external_data'));
+  }
 }
