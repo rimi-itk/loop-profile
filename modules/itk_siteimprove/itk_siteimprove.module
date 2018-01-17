@@ -49,9 +49,9 @@ function itk_siteimprove_permission() {
  *   The complete form.
  */
 function itk_siteimprove_form(array $form, array &$form_state) {
+  $form = [];
   $form['tabs'] = [
     '#type' => 'vertical_tabs',
-    '#weight' => 99,
   ];
   $form['general'] = [
     '#type' => 'details',
@@ -62,24 +62,15 @@ function itk_siteimprove_form(array $form, array &$form_state) {
     '#type' => 'textfield',
     '#title' => t('Siteimprove key'),
     '#required' => TRUE,
-    '#default_value' => variable_get('itk_siteimprove_key'),
-  ];
-  $form['general']['itk_siteimprove_exclude_admin'] = [
-    '#type' => 'checkbox',
-    '#title' => t('Exclude admin pages'),
-    '#required' => FALSE,
-    '#default_value' => variable_get('itk_siteimprove_exclude_admin'),
+    '#default_value' => variable_get('itk_siteimprove_key', ''),
   ];
   $form['general']['itk_siteimprove_excludes'] = [
     '#type' => 'textarea',
     '#title' => t('Path excludes'),
-    '#description' => t(
-      'Regular expressions of paths to exclude. One per line. For example (to exclude admin pages): /^\/admin(.)*/'),
+    '#description' => t('For example admin/*'),
     '#required' => FALSE,
-    '#default_value' => variable_get('itk_siteimprove_excludes'),
+    '#default_value' => variable_get('itk_siteimprove_excludes', 'admin/*'),
   ];
-
-  $form['#submit'] = array('_merge_exclude_admin_submit');
 
   return system_settings_form($form);
 }
@@ -90,7 +81,7 @@ function itk_siteimprove_form(array $form, array &$form_state) {
  * Add script if all conditions pass.
  */
 function itk_siteimprove_preprocess_page(&$variables) {
-  $key = variable_get('itk_siteimprove_key');
+  $key = variable_get('itk_siteimprove_key', '');
 
   // Ignore if key is not set.
   if (!$key) {
@@ -98,15 +89,14 @@ function itk_siteimprove_preprocess_page(&$variables) {
   }
 
   // Check for excludes.
-  $excludes = variable_get('itk_siteimprove_exclude_patterns');
-  $excludePatterns = $excludes ? $excludes : [];
+  $excludePatterns = explode("\r\n", variable_get('itk_siteimprove_excludes', []));
 
   $trackPath = TRUE;
-  $currentPath = '/' . current_path();
+  $currentPath = current_path();
 
   // Check each exclude pattern.
   foreach ($excludePatterns as $pattern) {
-    if (preg_match($pattern, $currentPath)) {
+    if (drupal_match_path($currentPath, $pattern)) {
       $trackPath = FALSE;
       break;
     }
@@ -121,27 +111,4 @@ function itk_siteimprove_preprocess_page(&$variables) {
       ),
     ), 'setting');
   }
-}
-
-/**
- * Custom submit handler for merging exclude admin into excludes.
- *
- * @param array $form
- *   Custom siteimprove settings form.
- * @param array $form_state
- *   The form state of the siteimprove settings form.
- */
-function _merge_exclude_admin_submit(array $form, array &$form_state) {
-  $formStateExcludes = variable_get('itk_siteimprove_excludes');
-  $excludePatterns = $formStateExcludes ? explode("\r\n",
-    $formStateExcludes) : [];
-
-  // Check for admin path checkbox.
-  if ($form_state['values']['itk_siteimprove_exclude_admin'] == 1 &&
-    !in_array('/^\/admin(.)*/', $excludePatterns)
-  ) {
-    $excludePatterns[] = '/^\/admin(.)*/';
-  }
-  // Create new variable holding all excludes.
-  variable_set('itk_siteimprove_exclude_patterns', $excludePatterns);
 }
