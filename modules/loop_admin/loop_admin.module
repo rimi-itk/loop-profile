@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Alter paths and build statistics for users.
@@ -669,7 +670,6 @@ function _loop_admin_content_statistics_thumbs_up_count($filter = array()) {
   return $query->execute();
 }
 
-
 /**
  * Wrapper function to add top list of answers in posts to the form.
  *
@@ -877,4 +877,42 @@ function _loop_admin_generate_full_name($account) {
   }
 
   return $name;
+}
+
+/**
+ * Add action for revisioning view.
+ */
+function loop_admin_action_info() {
+  $actions = array();
+
+  $actions['_loop_admin_increase_six_months'] = array(
+    'type' => 'node',
+    'label' => t('Extend revisioning date for 6 months'),
+    'configurable' => FALSE,
+    'triggers' => array('any'),
+    'behavior' => array('changes_property'),
+    'vbo_configurable' => FALSE,
+    'pass rows' => TRUE,
+  );
+
+  return $actions;
+}
+
+/**
+ * Custom action for extending revisioning dates.
+ *
+ * @param $entity
+ *   The node to act on.
+ */
+function _loop_admin_increase_six_months($entity) {
+  $wrapper = entity_metadata_wrapper('node', $entity);
+  $value = $wrapper->field_revision_date->value();
+  $six_months = 15724800;
+  if ($value) {
+    $wrapper->field_revision_date = $value + $six_months;
+  }
+  else {
+    $wrapper->field_revision_date = time() + $six_months;
+  }
+  $wrapper->save();
 }

@@ -43,7 +43,7 @@ function loop_post_form_node_form_alter(&$form, &$form_state) {
     // Set page title.
     drupal_set_title(t("Create question"));
 
-    if (user_access('set revision date for post content')) {
+    if (!user_access('set revision date for post content')) {
       $form['field_revision_date']['#access'] = FALSE;
     }
   }

@@ -399,4 +399,3 @@ function loop_permissions_secure_permissions($role) {
     return $permissions[$role];
   }
 }
-x
