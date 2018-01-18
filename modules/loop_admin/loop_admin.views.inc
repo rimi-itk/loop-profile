@@ -2,6 +2,7 @@
 
 /**
  * @file
+ * Views modifications for loop admin module.
  */
 
 /**

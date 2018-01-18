@@ -80,8 +80,16 @@ function loop_admin_theme($existing, $type, $theme, $path) {
 
 /**
  * Menu callback that generates the table.
+ *
+ * @param array $form
+ *   The form to act on.
+ * @param array $form_state
+ *   The state of the form.
+ *
+ * @return mixed
+ *   The full form.
  */
-function _loop_admin_user_statistics_form($form, &$form_state) {
+function _loop_admin_user_statistics_form(array $form, array &$form_state) {
   // Check for filter values.
   $filter = array();
   if (isset($form_state['input']['filter']['start_date']['date'])) {
@@ -204,17 +212,33 @@ function _loop_admin_user_statistics_form($form, &$form_state) {
 }
 
 /**
- * Ajax callback for the filter form.
+ * Ajax callback to display statistics.
+ *
+ * @param array $form
+ *   The form to act on.
+ * @param array $form_state
+ *   The state of the form.
+ *
+ * @return mixed
+ *   The full statistics form.
  */
-function _loop_admin_user_statistics_ajax_callback($form, $form_state) {
+function _loop_admin_user_statistics_ajax_callback(array $form, array &$form_state) {
   $form = _loop_admin_user_statistics_form($form, $form_state);
   return $form['stats'];
 }
 
 /**
- * Ajax callback for the reset filter button.
+ * Ajax reset form callback.
+ *
+ * @param array $form
+ *   The form to act on.
+ * @param array $form_state
+ *   The state of the form.
+ *
+ * @return mixed
+ *   Statistics form.
  */
-function _loop_admin_user_statistics_reset_ajax_callback($form, $form_state) {
+function _loop_admin_user_statistics_reset_ajax_callback(array $form, array &$form_state) {
   // Remove values form form state.
   unset($form_state['input']['filter']);
 
@@ -230,7 +254,7 @@ function _loop_admin_user_statistics_reset_ajax_callback($form, $form_state) {
  * @param array $filter
  *   The different values to filter on.
  */
-function _loop_admin_users_statistics_thumbs_up_element(&$form, $filter = array()) {
+function _loop_admin_users_statistics_thumbs_up_element(array &$form, array $filter = array()) {
   // Get statistics.
   $result = _loop_admin_users_statistics_thumbs_up($filter);
 
@@ -270,7 +294,7 @@ function _loop_admin_users_statistics_thumbs_up_element(&$form, $filter = array(
  * @return DatabaseStatementInterface|null
  *   The database results or NULL if no results.
  */
-function _loop_admin_users_statistics_thumbs_up($filter = array()) {
+function _loop_admin_users_statistics_thumbs_up(array $filter = array()) {
   // Start by select all comments.
   $query = db_select('comment', 'c')
     ->fields('c', array('uid'));
@@ -319,7 +343,7 @@ function _loop_admin_users_statistics_thumbs_up($filter = array()) {
  * @param array $filter
  *   The different values to filter on.
  */
-function _loop_admin_users_statistics_accepted_answers_element(&$form, $filter = array()) {
+function _loop_admin_users_statistics_accepted_answers_element(array &$form, array $filter = array()) {
   // Get statistics.
   $result = _loop_admin_users_statistics_accepted_answers($filter);
 
@@ -359,7 +383,7 @@ function _loop_admin_users_statistics_accepted_answers_element(&$form, $filter =
  * @return DatabaseStatementInterface|null
  *   The database results or NULL if no results.
  */
-function _loop_admin_users_statistics_accepted_answers($filter = array()) {
+function _loop_admin_users_statistics_accepted_answers(array $filter = array()) {
   // Start by build sub-query based on nodes.
   $subquery = db_select('node', 'n')
     ->condition('n.type', LOOP_ADMIN_STATISTICS_NODE_TYPE, '=');
@@ -425,7 +449,7 @@ function _loop_admin_users_statistics_accepted_answers($filter = array()) {
  * @param array $filter
  *   The different values to filter on.
  */
-function _loop_admin_users_statistics_post_count_element(&$form, $filter = array()) {
+function _loop_admin_users_statistics_post_count_element(array &$form, array $filter = array()) {
   // Get statistics.
   $result = _loop_admin_users_statistics_post_count($filter);
 
@@ -465,7 +489,7 @@ function _loop_admin_users_statistics_post_count_element(&$form, $filter = array
  * @return DatabaseStatementInterface|null
  *   The database results or NULL if no results.
  */
-function _loop_admin_users_statistics_post_count($filter = array()) {
+function _loop_admin_users_statistics_post_count(array $filter = array()) {
   // Start by selection all post nodes.
   $query = db_select('node', 'n')
     ->fields('n', array('uid'))
@@ -509,7 +533,7 @@ function _loop_admin_users_statistics_post_count($filter = array()) {
  * @param array $filter
  *   The different values to filter on.
  */
-function _loop_admin_users_statistics_answers_count_element(&$form, $filter = array()) {
+function _loop_admin_users_statistics_answers_count_element(array &$form, array $filter = array()) {
   // Get statistics.
   $result = _loop_admin_users_statistics_answers_count($filter);
 
@@ -549,7 +573,7 @@ function _loop_admin_users_statistics_answers_count_element(&$form, $filter = ar
  * @return DatabaseStatementInterface|null
  *   The database results or NULL if no results.
  */
-function _loop_admin_users_statistics_answers_count($filter = array()) {
+function _loop_admin_users_statistics_answers_count(array $filter = array()) {
   // Start by selection all node of type post.
   $query = db_select('node', 'n')
     ->condition('n.type', LOOP_ADMIN_STATISTICS_NODE_TYPE, '=');
@@ -596,7 +620,7 @@ function _loop_admin_users_statistics_answers_count($filter = array()) {
  * @param array $filter
  *   The different values to filter on.
  */
-function _loop_admin_content_statistics_thumbs_up_count_element(&$form, $filter = array()) {
+function _loop_admin_content_statistics_thumbs_up_count_element(array &$form, array $filter = array()) {
   // Get statistics.
   $result = _loop_admin_content_statistics_thumbs_up_count($filter);
 
@@ -636,7 +660,7 @@ function _loop_admin_content_statistics_thumbs_up_count_element(&$form, $filter 
  * @return DatabaseStatementInterface|null
  *   The database results or NULL if no results.
  */
-function _loop_admin_content_statistics_thumbs_up_count($filter = array()) {
+function _loop_admin_content_statistics_thumbs_up_count(array $filter = array()) {
   // Select all flag counters and select count.
   $query = db_select('flagging', 'fl');
 
@@ -678,7 +702,7 @@ function _loop_admin_content_statistics_thumbs_up_count($filter = array()) {
  * @param array $filter
  *   The different values to filter on.
  */
-function _loop_admin_content_statistics_answers_count_element(&$form, $filter = array()) {
+function _loop_admin_content_statistics_answers_count_element(array &$form, array $filter = array()) {
   // Get statistics.
   $result = _loop_admin_content_statistics_answers_count($filter);
 
@@ -718,7 +742,7 @@ function _loop_admin_content_statistics_answers_count_element(&$form, $filter = 
  * @return DatabaseStatementInterface|null
  *   The database results or NULL if no results.
  */
-function _loop_admin_content_statistics_answers_count($filter = array()) {
+function _loop_admin_content_statistics_answers_count(array $filter = array()) {
   // Select all "post" nodes.
   $query = db_select('node', 'n')
     ->fields('n', array('nid', 'title'))
@@ -755,7 +779,7 @@ function _loop_admin_content_statistics_answers_count($filter = array()) {
  * @param array $filter
  *   The different values to filter on.
  */
-function _loop_admin_content_statistics_total_count_element(&$form, $filter = array()) {
+function _loop_admin_content_statistics_total_count_element(array &$form, array $filter = array()) {
   $form['stats']['content']['post_count'] = array(
     '#theme' => 'loop_admin_stats_post_count',
     '#post_count' => _loop_admin_content_statistics_post_count($filter),
@@ -773,7 +797,7 @@ function _loop_admin_content_statistics_total_count_element(&$form, $filter = ar
  * @return int
  *   The number of posts.
  */
-function _loop_admin_content_statistics_post_count($filter = array()) {
+function _loop_admin_content_statistics_post_count(array $filter = array()) {
   // Use the node table to get node with type "post".
   $query = db_select('node', 'n')
     ->condition('n.type', LOOP_ADMIN_STATISTICS_NODE_TYPE, '=');
@@ -797,7 +821,7 @@ function _loop_admin_content_statistics_post_count($filter = array()) {
  * @return int
  *   The number of comments.
  */
-function _loop_admin_content_statistics_comment_count($filter = array()) {
+function _loop_admin_content_statistics_comment_count(array $filter = array()) {
   // Use the node table to get node with type "post".
   $query = db_select('node', 'n')
     ->condition('n.type', LOOP_ADMIN_STATISTICS_NODE_TYPE, '=');
@@ -824,7 +848,7 @@ function _loop_admin_content_statistics_comment_count($filter = array()) {
  * @return int
  *   The number of uncommented nodes.
  */
-function _loop_admin_content_statistics_unanswered_posts_count($filter = array()) {
+function _loop_admin_content_statistics_unanswered_posts_count(array $filter = array()) {
   // Use the comments table to get all comments.
   $query = db_select('comment', 'c');
   $query->fields('c', array('nid', 'cid'));
@@ -866,7 +890,7 @@ function _loop_admin_content_statistics_unanswered_posts_count($filter = array()
  * @return string
  *   The users full name.
  */
-function _loop_admin_generate_full_name($account) {
+function _loop_admin_generate_full_name(StdClass $account) {
   $name = '';
   if (isset($account->field_first_name['und'][0]['safe_value'])) {
     $name = '' . $account->field_first_name['und'][0]['safe_value'];
@@ -901,10 +925,10 @@ function loop_admin_action_info() {
 /**
  * Custom action for extending revisioning dates.
  *
- * @param $entity
+ * @param StdClass $entity
  *   The node to act on.
  */
-function _loop_admin_increase_six_months($entity) {
+function _loop_admin_increase_six_months(StdClass $entity) {
   $wrapper = entity_metadata_wrapper('node', $entity);
   $value = $wrapper->field_revision_date->value();
   $six_months = 15724800;
