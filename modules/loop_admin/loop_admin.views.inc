@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Views modifications for loop admin module.
+ */
+
+/**
  * Implements hook_views_query_alter().
  *
  * Removes leaf and tree content from admin/content.
@@ -11,9 +16,9 @@ function loop_admin_views_query_alter(&$view, &$query) {
       'field' => "node.type",
       'value' => array(
         'leaf',
-        'tree'
+        'tree',
       ),
-      'operator' => 'not in'
+      'operator' => 'not in',
     );
   }
 }

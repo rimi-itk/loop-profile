@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * loop_post.features.inc
@@ -37,5 +38,6 @@ function loop_post_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

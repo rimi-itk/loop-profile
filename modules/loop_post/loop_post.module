@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the Loop Post feature.
@@ -41,6 +42,10 @@ function loop_post_form_node_form_alter(&$form, &$form_state) {
 
     // Set page title.
     drupal_set_title(t("Create question"));
+
+    if (!user_access('set revision date for post content')) {
+      $form['field_revision_date']['#access'] = FALSE;
+    }
   }
 
   // Reset form when user goes back in history.
@@ -80,7 +85,22 @@ function loop_post_form_validate(&$form, &$form_state) {
     watchdog('loop_post', 'Form !id already submitted (user: !user)', array('!id' => $form['#id'], '!user' => $user->name), WATCHDOG_INFO);
     form_set_error('name]', t('This form has already been submitted. <a href="!url">OK</a>', array('!url' => current_path())));
   }
-  else{
+  else {
     $_SESSION[$session_key][$form_build_id] = TRUE;
   }
+}
+
+/**
+ * Add revision permission.
+ *
+ * @return array
+ *   An array defining a permission.
+ */
+function loop_post_permission() {
+  return array(
+    'set revision date for post content' => array(
+      'title' => t('Set revision date for post content'),
+      'description' => t('Set revision date for post content.'),
+    ),
+  );
 }
