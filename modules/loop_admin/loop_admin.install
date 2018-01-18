@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ */
+
+/**
+ * Add menu item under control panel.
+ */
+function loop_admin_update_7100() {
+  $mlid = array();
+  $path = 'editor/dashboard';
+  $name = 'menu-loop-primary-menu';
+  $menu_info = db_select('menu_links', 'ml')
+    ->condition('ml.link_path', $path)
+    ->condition('ml.menu_name', $name)
+    ->fields('ml', array('mlid', 'plid'))
+    ->execute()
+    ->fetchAll();
+
+  foreach ($menu_info as $key => $value) {
+    $mlid[] = $menu_info[$key]->mlid;
+  }
+
+  $values = array(
+    'menu_name' => $name,
+    'weight' => 10,
+    'link_title' => 'Revisioning list',
+    'link_path' => 'editor/loop-content-revisioning-date',
+    'mlid' => 0,
+    'plid' => $mlid[0],
+  );
+
+  menu_link_save($values);
+}
