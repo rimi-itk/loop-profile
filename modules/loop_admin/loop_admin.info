@@ -24,3 +24,4 @@ features[variable][] = date_format_short
 features[variable][] = node_admin_theme
 features[variable][] = views_defaults
 features[views_view][] = administration_users_custom
+features[views_view][] = loop_content_revisioning_date
