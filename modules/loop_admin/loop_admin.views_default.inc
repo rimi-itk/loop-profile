@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * loop_admin.views_default.inc
@@ -119,15 +120,15 @@ function loop_admin_views_default_views() {
   );
   $handler->display->display_options['style_options']['sticky'] = TRUE;
   $handler->display->display_options['style_options']['empty_table'] = TRUE;
-  /* Opførsel ved ingen resultater: Global: Ufiltreret tekst */
+  /* No results behavior: Global: Unfiltered text */
   $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area_text_custom']['content'] = 'No users available.';
-  /* Felt: Masse-handlinger: Bruger */
+  $handler->display->display_options['empty']['area_text_custom']['content'] = 'Ingen brugere tilgængelige.';
+  /* Field: Bulk operations: User */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
-  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'users';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_user';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
   $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
@@ -137,77 +138,6 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
-    'action::user_block_user_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 1,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::views_bulk_operations_user_cancel_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::role_delegation_delegate_roles_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::views_bulk_operations_delete_revision' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::views_bulk_operations_user_roles_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 1,
-      'label' => 'Change user roles',
-    ),
-    'action::views_bulk_operations_modify_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 1,
-      'override_label' => 1,
-      'label' => 'Change value',
-      'settings' => array(
-        'show_all_tokens' => 1,
-        'display_values' => array(
-          '_all_' => '_all_',
-        ),
-      ),
-    ),
-    'action::pathauto_user_update_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::views_bulk_operations_argument_selector_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'settings' => array(
-        'url' => '',
-      ),
-    ),
-    'action::system_send_email_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 1,
-      'label' => 'Send e-mail',
-    ),
     'action::views_bulk_operations_delete_item' => array(
       'selected' => 1,
       'postpone_processing' => 0,
@@ -215,78 +145,57 @@ function loop_admin_views_default_views() {
       'override_label' => 1,
       'label' => 'Delete',
     ),
-    'action::flag_user_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::views_bulk_operations_script_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::auto_entitylabel_entity_update_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
   );
-  /* Felt: Bruger: Navn */
+  /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
-  /* Felt: Bruger: E-mail */
+  /* Field: User: E-mail */
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
   $handler->display->display_options['fields']['mail']['label'] = '';
   $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['mail']['link_to_user'] = '0';
-  /* Felt: Bruger: Aktiv */
+  /* Field: User: Active */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'users';
   $handler->display->display_options['fields']['status']['field'] = 'status';
   $handler->display->display_options['fields']['status']['not'] = 0;
-  /* Felt: Bruger: Roller */
+  /* Field: User: Roles */
   $handler->display->display_options['fields']['rid']['id'] = 'rid';
   $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
   $handler->display->display_options['fields']['rid']['field'] = 'rid';
   $handler->display->display_options['fields']['rid']['type'] = 'ul';
-  /* Felt: Bruger: Oprettelsesdato */
+  /* Field: User: Created date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'users';
   $handler->display->display_options['fields']['created']['field'] = 'created';
-  $handler->display->display_options['fields']['created']['label'] = 'Member for';
+  $handler->display->display_options['fields']['created']['label'] = 'Medlem i';
   $handler->display->display_options['fields']['created']['date_format'] = 'raw time ago';
-  /* Felt: Bruger: Seneste tilgang */
+  /* Field: User: Last access */
   $handler->display->display_options['fields']['access']['id'] = 'access';
   $handler->display->display_options['fields']['access']['table'] = 'users';
   $handler->display->display_options['fields']['access']['field'] = 'access';
   $handler->display->display_options['fields']['access']['date_format'] = 'time ago';
-  /* Felt: Bruger: Redigér-link */
+  /* Field: User: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'users';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
-  $handler->display->display_options['fields']['edit_node']['label'] = 'Operations';
-  /* Felt: Bruger: Annullér-link */
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Handlinger';
+  /* Field: User: Cancel link */
   $handler->display->display_options['fields']['cancel_node']['id'] = 'cancel_node';
   $handler->display->display_options['fields']['cancel_node']['table'] = 'users';
   $handler->display->display_options['fields']['cancel_node']['field'] = 'cancel_node';
   $handler->display->display_options['fields']['cancel_node']['label'] = '';
   $handler->display->display_options['fields']['cancel_node']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['cancel_node']['hide_alter_empty'] = FALSE;
-  /* Sorteringskriterie: Bruger: Oprettelsesdato */
+  /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filterkriterie: Bruger: Navn */
+  /* Filter criterion: User: Name */
   $handler->display->display_options['filters']['uid']['id'] = 'uid';
   $handler->display->display_options['filters']['uid']['table'] = 'users';
   $handler->display->display_options['filters']['uid']['field'] = 'uid';
@@ -295,7 +204,7 @@ function loop_admin_views_default_views() {
     0 => 0,
   );
   $handler->display->display_options['filters']['uid']['group'] = 1;
-  /* Filterkriterie: Bruger: Navn (rå data) */
+  /* Filter criterion: User: Name (raw) */
   $handler->display->display_options['filters']['name']['id'] = 'name';
   $handler->display->display_options['filters']['name']['table'] = 'users';
   $handler->display->display_options['filters']['name']['field'] = 'name';
@@ -303,11 +212,11 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['filters']['name']['group'] = 1;
   $handler->display->display_options['filters']['name']['exposed'] = TRUE;
   $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
-  $handler->display->display_options['filters']['name']['expose']['label'] = 'Username';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'Brugernavn';
   $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
   $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
   $handler->display->display_options['filters']['name']['expose']['remember'] = TRUE;
-  /* Filterkriterie: Bruger: E-mail */
+  /* Filter criterion: User: E-mail */
   $handler->display->display_options['filters']['mail']['id'] = 'mail';
   $handler->display->display_options['filters']['mail']['table'] = 'users';
   $handler->display->display_options['filters']['mail']['field'] = 'mail';
@@ -319,7 +228,7 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['filters']['mail']['expose']['operator'] = 'mail_op';
   $handler->display->display_options['filters']['mail']['expose']['identifier'] = 'mail';
   $handler->display->display_options['filters']['mail']['expose']['remember'] = TRUE;
-  /* Filterkriterie: Bruger: Aktiv */
+  /* Filter criterion: User: Active */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -327,18 +236,18 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['exposed'] = TRUE;
   $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
-  $handler->display->display_options['filters']['status']['expose']['label'] = 'Active';
+  $handler->display->display_options['filters']['status']['expose']['label'] = 'Aktiv';
   $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
   $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
   $handler->display->display_options['filters']['status']['expose']['remember'] = TRUE;
-  /* Filterkriterie: Bruger: Roller */
+  /* Filter criterion: User: Roles */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
   $handler->display->display_options['filters']['rid']['group'] = 1;
   $handler->display->display_options['filters']['rid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['rid']['expose']['operator_id'] = 'rid_op';
-  $handler->display->display_options['filters']['rid']['expose']['label'] = 'Role';
+  $handler->display->display_options['filters']['rid']['expose']['label'] = 'Rolle';
   $handler->display->display_options['filters']['rid']['expose']['operator'] = 'rid_op';
   $handler->display->display_options['filters']['rid']['expose']['identifier'] = 'rid';
   $handler->display->display_options['filters']['rid']['expose']['remember'] = TRUE;
@@ -350,6 +259,171 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['defaults']['access'] = FALSE;
   $handler->display->display_options['path'] = 'admin/people';
   $export['administration_users_custom'] = $view;
+
+  $view = new view();
+  $view->name = 'loop_content_revisioning_date';
+  $view->description = 'List of posts ordered by next revisioning date';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Loop content revisioning date';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Loop content revisioning date';
+  $handler->display->display_options['css_class'] = 'editing--revision-date';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'set revision date for post content';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '30';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Antal elementer';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
+  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« første';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ forrige';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'næste ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'sidste »';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'title' => 'title',
+    'field_revision_date' => 'field_revision_date',
+    'edit_node' => 'edit_node',
+  );
+  $handler->display->display_options['style_options']['default'] = 'field_revision_date';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_revision_date' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Field: Bulk operations: Content */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = 'Indhold';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::_loop_admin_increase_six_months' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'skip_permission_check' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Titel';
+  $handler->display->display_options['fields']['title']['alter']['max_length'] = '200';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
+  /* Field: Content: Revision date */
+  $handler->display->display_options['fields']['field_revision_date']['id'] = 'field_revision_date';
+  $handler->display->display_options['fields']['field_revision_date']['table'] = 'field_data_field_revision_date';
+  $handler->display->display_options['fields']['field_revision_date']['field'] = 'field_revision_date';
+  $handler->display->display_options['fields']['field_revision_date']['settings'] = array(
+    'format_type' => 'long',
+    'custom_date_format' => '',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+  );
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Redigér-link';
+  /* Sort criterion: Content: Revision date (field_revision_date) */
+  $handler->display->display_options['sorts']['field_revision_date_value']['id'] = 'field_revision_date_value';
+  $handler->display->display_options['sorts']['field_revision_date_value']['table'] = 'field_data_field_revision_date';
+  $handler->display->display_options['sorts']['field_revision_date_value']['field'] = 'field_revision_date_value';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'post' => 'post',
+  );
+  /* Filter criterion: Content: Revision date (field_revision_date) */
+  $handler->display->display_options['filters']['field_revision_date_value']['id'] = 'field_revision_date_value';
+  $handler->display->display_options['filters']['field_revision_date_value']['table'] = 'field_data_field_revision_date';
+  $handler->display->display_options['filters']['field_revision_date_value']['field'] = 'field_revision_date_value';
+  $handler->display->display_options['filters']['field_revision_date_value']['operator'] = 'between';
+  $handler->display->display_options['filters']['field_revision_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_revision_date_value']['expose']['operator_id'] = 'field_revision_date_value_op';
+  $handler->display->display_options['filters']['field_revision_date_value']['expose']['label'] = 'Revision date';
+  $handler->display->display_options['filters']['field_revision_date_value']['expose']['description'] = 'Select an interval to filter the list';
+  $handler->display->display_options['filters']['field_revision_date_value']['expose']['operator'] = 'field_revision_date_value_op';
+  $handler->display->display_options['filters']['field_revision_date_value']['expose']['identifier'] = 'field_revision_date_value';
+  $handler->display->display_options['filters']['field_revision_date_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    14 => 0,
+    15 => 0,
+  );
+  $handler->display->display_options['filters']['field_revision_date_value']['group_info']['label'] = 'Revision date (field_revision_date)';
+  $handler->display->display_options['filters']['field_revision_date_value']['group_info']['identifier'] = 'field_revision_date_value';
+  $handler->display->display_options['filters']['field_revision_date_value']['group_info']['remember'] = FALSE;
+  $handler->display->display_options['filters']['field_revision_date_value']['group_info']['group_items'] = array(
+    1 => array(),
+    2 => array(),
+    3 => array(),
+  );
+  $handler->display->display_options['filters']['field_revision_date_value']['form_type'] = 'date_popup';
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'editor/loop-content-revisioning-date';
+  $handler->display->display_options['menu']['title'] = 'Test';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $export['loop_content_revisioning_date'] = $view;
 
   return $export;
 }

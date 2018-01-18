@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * loop_post.features.field_instance.inc
@@ -10,7 +11,7 @@
 function loop_post_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'comment-comment_node_post-comment_body'
+  // Exported field_instance: 'comment-comment_node_post-comment_body'.
   $field_instances['comment-comment_node_post-comment_body'] = array(
     'bundle' => 'comment_node_post',
     'default_value' => NULL,
@@ -66,7 +67,8 @@ function loop_post_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'comment-comment_node_post-field_file_upload_comment'
+  // Exported field_instance:
+  // 'comment-comment_node_post-field_file_upload_comment'.
   $field_instances['comment-comment_node_post-field_file_upload_comment'] = array(
     'bundle' => 'comment_node_post',
     'deleted' => 0,
@@ -102,7 +104,7 @@ function loop_post_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-post-field_description'
+  // Exported field_instance: 'node-post-field_description'.
   $field_instances['node-post-field_description'] = array(
     'bundle' => 'post',
     'default_value' => NULL,
@@ -170,7 +172,7 @@ function loop_post_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-post-field_file_upload'
+  // Exported field_instance: 'node-post-field_file_upload'.
   $field_instances['node-post-field_file_upload'] = array(
     'bundle' => 'post',
     'deleted' => 0,
@@ -212,7 +214,7 @@ function loop_post_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-post-field_keyword'
+  // Exported field_instance: 'node-post-field_keyword'.
   $field_instances['node-post-field_keyword'] = array(
     'bundle' => 'post',
     'default_value' => NULL,
@@ -260,7 +262,7 @@ function loop_post_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-post-field_profession'
+  // Exported field_instance: 'node-post-field_profession'.
   $field_instances['node-post-field_profession'] = array(
     'bundle' => 'post',
     'default_value' => NULL,
@@ -303,7 +305,62 @@ function loop_post_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-post-field_subject'
+  // Exported field_instance: 'node-post-field_revision_date'.
+  $field_instances['node-post-field_revision_date'] = array(
+    'bundle' => 'post',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_revision_date',
+    'label' => 'Revision date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'site-wide',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => 0,
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-post-field_subject'.
   $field_instances['node-post-field_subject'] = array(
     'bundle' => 'post',
     'default_value' => NULL,
@@ -354,6 +411,7 @@ function loop_post_field_default_field_instances() {
   t('Keyword');
   t('Post');
   t('Profession');
+  t('Revision date');
   t('Select a subject.');
   t('Subject');
   t('Type in keyword(s).');

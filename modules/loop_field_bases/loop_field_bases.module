@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Loop field bases feature.
  */
+
+include_once 'loop_field_bases.features.inc';

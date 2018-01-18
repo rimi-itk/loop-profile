@@ -24,3 +24,32 @@
   font-size: 0.8em;
   float: right;
 }
+
+.editing--revision-date {
+  .view-filters {
+    clear: both;
+    float: left;
+    width: 100%;
+    padding-bottom: 1em;
+  }
+
+  .views-exposed-form {
+    label {
+      display: none;
+    }
+
+    .views-widget > div {
+      float: left;
+    }
+
+    .description {
+      clear: left;
+      color: $gray;
+      float: left;
+    }
+  }
+
+  .views-field-field-revision-date {
+    min-width: 9em;
+  }
+}
