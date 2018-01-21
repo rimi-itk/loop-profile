@@ -1,6 +1,8 @@
 # Loop post wysiwyg
 
-This module makes it posible for users to create and edit posts and comments using a [WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG) editor.
+This module makes it posible for users to create and edit posts and
+comments using a [WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG)
+editor.
 
 
 ## Post-installation configuration
