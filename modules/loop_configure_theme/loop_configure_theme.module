@@ -2,6 +2,7 @@
 
 /**
  * @file
+ * Missing short description in doc comment.
  */
 
 /**
@@ -99,7 +100,7 @@ function loop_configure_theme_form_system_theme_settings_alter(&$form, $form_sta
 }
 
 /**
- *
+ * Doc comment is empty.
  */
 function loop_configure_theme_flush() {
   _drupal_flush_css_js();
