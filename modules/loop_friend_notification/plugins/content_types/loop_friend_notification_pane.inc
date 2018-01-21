@@ -2,6 +2,7 @@
 
 /**
  * @file
+ * Missing comment.
  */
 
 $plugin = array(
@@ -17,7 +18,8 @@ $plugin = array(
   'edit form' => 'loop_friend_notification_pane_custom_pane_edit_form',
 // A function that will return the renderable content.
   'render callback' => 'loop_friend_notification_pane_custom_pane_render',
-// A function that will return the information displayed on the admin screen (optional).
+// A function that will return the information displayed on the admin screen
+// (optional).
   'admin info' => 'loop_friend_notification_pane_custom_pane_admin_info',
 // Array of defaults for the settings form.
   'defaults' => array(
