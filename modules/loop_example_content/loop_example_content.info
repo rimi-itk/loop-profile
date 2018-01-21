@@ -2,7 +2,6 @@ name = Loop example content
 description = Danish example content
 core = 7.x
 package = Loop
-version = 7.x-1.3
 project = loop_example_content
 dependencies[] = autocomplete_deluxe
 dependencies[] = ctools

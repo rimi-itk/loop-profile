@@ -6,17 +6,6 @@
  */
 
 include_once 'loop_example_content.features.inc';
-/**
- * @file
- */
-
-/**
- * Implements hook_install().
- */
-function loop_example_content_install() {
-  // Create example users.
-  loop_example_content_create_example_users();
-}
 
 /**
  * Create example users. 5 of its cind.
