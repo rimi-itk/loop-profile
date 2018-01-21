@@ -15,7 +15,7 @@
  * @param array $context
  *   The context of the batch job.
  */
-function _loopdk_enable_module($module, $module_name, &$context) {
+function _loopdk_enable_module($module, $module_name, array &$context) {
   module_enable(array($module));
   $context['message'] = st('Installed %module module.', array('%module' => $module_name));
 }
@@ -30,7 +30,7 @@ function _loopdk_enable_module($module, $module_name, &$context) {
  * @param array $context
  *   The context of the batch job.
  */
-function _loopdk_insert_translation($type, $translation_file, &$context) {
+function _loopdk_insert_translation($type, $translation_file, array &$context) {
   $file = new stdClass();
   $file->uri = DRUPAL_ROOT . $translation_file;
   $file->filename = basename($file->uri);
