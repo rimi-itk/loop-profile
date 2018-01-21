@@ -163,8 +163,9 @@ function loop_user_form_user_profile_form_alter(&$form, &$form_state, $form_id) 
 /**
  * Validation function for the user account.
  *
- * This is a copy of the Drupal user validate function, with the check for validate user name modified. As the "\" char
- * is in the username if the user is logged in via SAML.
+ * This is a copy of the Drupal user validate function, with the check for
+ * validate user name modified. As the "\" char is in the username if the user
+ * is logged in via SAML.
  */
 function loop_user_account_form_validate($form, &$form_state) {
   if ($form['#user_category'] == 'account' || $form['#user_category'] == 'register') {
@@ -185,7 +186,8 @@ function loop_user_account_form_validate($form, &$form_state) {
     $mail = trim($form_state['values']['mail']);
     form_set_value($form['account']['mail'], $mail, $form_state);
 
-    // Validate the e-mail address, and check if it is taken by an existing user.
+    // Validate the e-mail address, and check if it is taken by an existing
+    // user.
     if ($error = user_validate_mail($form_state['values']['mail'])) {
       form_set_error('mail', $error);
     }
@@ -218,8 +220,8 @@ function loop_user_account_form_validate($form, &$form_state) {
 /**
  * Verify the syntax of the given name.
  *
- * This is a copy from Drupal core function added the char "\" to allow SAML users to change their information in the
- * profile.
+ * This is a copy from Drupal core function added the char "\" to allow SAML
+ * users to change their information in the profile.
  */
 function loop_user_validate_name($name) {
   if (!$name) {

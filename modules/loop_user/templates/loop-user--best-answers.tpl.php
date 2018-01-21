@@ -1,7 +1,9 @@
 <?php
 
 /**
- * @file Loop-user-best-answers.tpl.php
+ * @file
+ * Loop-user-best-answers.tpl.php.
+ *
  * Best answers block for user account.
  *
  * Available variables:

@@ -1,7 +1,9 @@
 <?php
 
 /**
- * @file Loop-user-my-content.tpl.php
+ * @file
+ * Loop-user-my-content.tpl.php.
+ *
  * My content block for user account.
  *
  * Available variables:
