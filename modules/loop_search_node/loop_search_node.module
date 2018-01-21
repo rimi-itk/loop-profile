@@ -57,9 +57,6 @@ function loop_search_node_comment_delete($comment) {
 
 /**
  * Menu callback that generates post node add form.
- *
- * @return string
- *   JSON encode string with the node create form.
  */
 function loop_search_node_no_results() {
   global $user;
