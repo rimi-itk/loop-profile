@@ -8,14 +8,15 @@
 /**
  * Return the SAML attribute to map to a given user profile field.
  *
- * @param $field_name
+ * @param string $field_name
+ *   The field name.
  *
  * @return string
+ *   The attribute name.
  */
 function loop_simplesamlphp_get_attribute_for_field($field_name) {
   $default_attribute_mapping = loop_simplesamlphp_get_default_mapping();
-  return variable_get('loop_simplesamlphp_' . $field_name,
-    $default_attribute_mapping[$field_name]);
+  return variable_get('loop_simplesamlphp_' . $field_name, $default_attribute_mapping[$field_name]);
 }
 
 /**
@@ -25,7 +26,8 @@ function loop_simplesamlphp_get_attribute_for_field($field_name) {
  *   Optionally, the field name to retrieve the
  *   default mapping for.
  *
- * @return array
+ * @return string|array
+ *   The attribute name or all attribute names.
  */
 function loop_simplesamlphp_get_default_mapping($field_name = NULL) {
   $defaults = array(
