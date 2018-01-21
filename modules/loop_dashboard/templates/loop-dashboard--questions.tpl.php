@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file loop-dashboard--questions.tpl.php
+ * @file Loop-dashboard--questions.tpl.php
  * Displays questions list for dashboard.
  */
 ?>

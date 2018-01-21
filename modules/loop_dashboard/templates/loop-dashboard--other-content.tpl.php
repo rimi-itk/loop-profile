@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file loop-dashboard--other-content.tpl.php
+ * @file Loop-dashboard--other-content.tpl.php
  * Displays other content list for dashboard.
  */
 ?>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the Loop Notification feature.
@@ -19,7 +20,7 @@ function loop_notification_menu() {
     'description' => t('Settings related to the notification module.'),
     'page callback' => 'drupal_get_form',
     'page arguments' => array('loop_notification_config_form'),
-    'access arguments' => array('access administration pages')
+    'access arguments' => array('access administration pages'),
   );
 
   return $items;
@@ -45,7 +46,7 @@ function loop_notification_config_form($form) {
     '#options' => $checkboxes,
     '#default_value' => variable_get('loop_notification_content_types'),
     '#title' => 'Select content types',
-    '#description' => t('Select the content types where you want notifications enabled.')
+    '#description' => t('Select the content types where you want notifications enabled.'),
   );
 
   $form['loop_notification_email_wrapper'] = array(
@@ -220,8 +221,8 @@ function loop_notification_loop_notification_message_recipient_alter(&$users, $n
   $query = db_select('flagging', 'f')
     ->fields('f', array('uid'));
   $query->innerJoin('flag', 'l', 'f.fid = l.fid', array());
-  $query->condition('f.entity_id', $node->nid,'=');
-  $query->condition('f.entity_type', 'node','=');
+  $query->condition('f.entity_id', $node->nid, '=');
+  $query->condition('f.entity_type', 'node', '=');
 
   $result = $query->execute()->fetchCol();
   $users = array_merge($result, $users);
@@ -257,12 +258,13 @@ function _loop_notification_notify_users($node, $action, $comment = NULL) {
  *
  * @param $node
  *   The node related to the message about to be created.
+ *
  * @return array
  *   The list of user entities that should receive the notification.
  */
 function _loop_notification_find_users($node) {
   $user_ids = array();
-  // Allow other modules to modify the list of recipients
+  // Allow other modules to modify the list of recipients.
   drupal_alter('loop_notification_message_recipient', $user_ids, $node);
 
   // Remove recurring users.
@@ -313,7 +315,7 @@ function _loop_notification_notify_user($user, $node, $action, $author, $comment
       rules_invoke_component('loop_notification_send_mail_to_subscribers_on_node_create', $node, $user, $node);
     }
     else {
-      // Update node notification
+      // Update node notification.
       rules_invoke_component('loop_notification_create_notification_on_node_edit', $user, $author, $node);
       rules_invoke_component('loop_notification_send_mail_to_subscribers_on_node_edit', $node, $user, $node);
     }
@@ -325,6 +327,7 @@ function _loop_notification_notify_user($user, $node, $action, $author, $comment
  *
  * @param $node
  *   The node related to the message about to be created.
+ *
  * @return bool
  *   Whether or not the configuration allows the content type to send
  *   notifcations.

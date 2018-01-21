@@ -1,12 +1,12 @@
 <?php
+
 /**
- * @file loop-user-best-answers.tpl.php
- * Best answers block for user account
+ * @file Loop-user-best-answers.tpl.php
+ * Best answers block for user account.
  *
  * Available variables:
  * - $answers_count
- * - $best_answers_count
- *
+ * - $best_answers_count.
  */
 ?>
 <div class="user-profile--user-answers">

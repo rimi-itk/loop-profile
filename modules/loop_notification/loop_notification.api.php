@@ -1,10 +1,11 @@
 <?php
+
 /**
  * @file
  * Hooks provided by the Notification module.
-* /
-
-/**
+ * /.
+ *
+ * /**
  * @addtogroup hooks
  * @{
  */

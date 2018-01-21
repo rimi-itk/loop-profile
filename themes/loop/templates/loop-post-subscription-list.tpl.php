@@ -1,3 +1,9 @@
+<?php
+
+/**
+ * @file
+ */
+?>
 <aside class="<?php print $current_type_css; ?>">
   <div class="block-module--inner">
     <h2 class="block-module--header"><?php print t('Follow question'); ?></h2>

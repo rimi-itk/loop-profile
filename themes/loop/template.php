@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Preprocess and Process Functions.
@@ -15,7 +16,7 @@ function loop_preprocess_page(&$variables) {
     if (module_exists('search_api_page')) {
       $variables['search'] = module_invoke('search_api_page', 'block_view', 'default');
     }
-    else if (module_exists('search_node_page')) {
+    elseif (module_exists('search_node_page')) {
       $variables['search'] = module_invoke('search_node_page', 'block_view', 'search_node_search_box');
       $variables['search']['result'] = module_invoke('search_node_page', 'block_view', 'search_node_search_result');
     }
@@ -90,7 +91,8 @@ function loop_preprocess_page(&$variables) {
 
   if (array_key_exists('logged_in_via_saml', $variables) && $variables['logged_in_via_saml']) {
     $show_logout = theme_get_setting('show_logout_for_saml_users');
-  } else {
+  }
+  else {
     $show_logout = theme_get_setting('show_logout_for_regular_users');
   }
 
@@ -344,13 +346,13 @@ function loop_menu_tree__main_menu($variables) {
   // due to the notification tab being added to start of menu.
   global $base_root;
   $variables['tree'] = l(t('Frontpage'), $base_root, array(
-      'attributes' => array(
-        'class' => array(
-          'nav--frontpage-link',
-        ),
+    'attributes' => array(
+      'class' => array(
+        'nav--frontpage-link',
       ),
-      'html' => 'TRUE',
-    )) . $variables['tree'];
+    ),
+    'html' => 'TRUE',
+  )) . $variables['tree'];
 
   // If loop navigation exists add a mobile drop down navigation.
   if (module_exists('loop_navigation')) {
@@ -975,7 +977,7 @@ function _loop_print_notification_tab() {
  * @return string
  *   Name based on user fields.
  */
-function _loop_fetch_full_name ($user) {
+function _loop_fetch_full_name($user) {
   $name = '';
 
   // Make sure we are dealing with an object.

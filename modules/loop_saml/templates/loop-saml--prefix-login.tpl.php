@@ -1,10 +1,11 @@
 <?php
+
 /**
  * @file
  * My content block for user account.
  *
  * Available variables:
- * - $link
+ * - $link.
  */
 ?>
 <div class="user-profile--login-text">

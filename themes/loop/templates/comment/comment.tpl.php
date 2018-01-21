@@ -69,7 +69,8 @@
     <?php if (isset($node->name) && isset($node->uid)): ?>
       <span class="meta-data--author-link"><?php print l($comment_author_name, 'user/' . $comment->account->uid); ?></span>
     <?php endif ?>
-    <span class="meta-data--author-title"><?php print render($job_title); ?><?php if (isset($place)): ?>, <?php print render($place); ?><?php endif ?></span>
+    <span class="meta-data--author-title"><?php print render($job_title); ?><?php if (isset($place)): ?>, <?php print render($place); ?><?php
+   endif ?></span>
   </div>
 </div>
 <?php if (!empty($files)): ?>

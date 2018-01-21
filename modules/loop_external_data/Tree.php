@@ -1,11 +1,12 @@
 <?php
+
 /**
  * @file
  * A part of the loop_external_data module.
  */
 
 /**
- * Class Tree
+ * Class Tree.
  *
  * Represents a tree in external data.
  */
@@ -34,4 +35,5 @@ class Tree extends LoopNode {
   public function getChildren() {
     return $this->children;
   }
+
 }

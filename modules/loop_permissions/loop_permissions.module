@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file loop_permissions.module.
+ * @file Loop_permissions.module.
  * Module file for secure role/permissions in code.
  */
 
@@ -86,7 +86,6 @@ function loop_permissions_menu_access() {
 
   return TRUE;
 }
-
 
 /**
  * Define site roles in code.

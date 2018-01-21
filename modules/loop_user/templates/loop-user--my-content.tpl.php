@@ -1,13 +1,12 @@
 <?php
 
 /**
- * @file loop-user-my-content.tpl.php
- * My content block for user account
+ * @file Loop-user-my-content.tpl.php
+ * My content block for user account.
  *
  * Available variables:
  * - $user
- * - $profile
- *
+ * - $profile.
  */
 ?>
 <?php if (!empty($profile)) : ?>

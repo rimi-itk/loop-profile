@@ -1,4 +1,11 @@
-<?php if (!empty($variables['login_services'])): ?>
+<?php
+
+/**
+ * @file
+ */
+
+
+if (!empty($variables['login_services'])): ?>
 <div class="user-profile-wrapper">
   <h2 class="user-profile-header"><?php print t('Use login service'); ?></h2>
   <div class="user-profile--login-text">

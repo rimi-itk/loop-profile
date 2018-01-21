@@ -1,7 +1,8 @@
 <?php
+
 /**
  * @file
- * Default theme implementation for PCP block
+ * Default theme implementation for PCP block.
  *
  * Available variables:
  *  $uid: Current user ID.

@@ -1,3 +1,9 @@
+<?php
+
+/**
+ * @file
+ */
+?>
 <ul>
   <li>
     <?php print $title; ?>

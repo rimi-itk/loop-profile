@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Default theme implementation to display a single Drupal page.
@@ -146,7 +147,7 @@ if (isset($primary_menu_block['content'])): ?>
 <?php endif; ?>
 
 <?php if (isset($search['result'])): ?>
-	<?php print render($search['result']); ?>
+    <?php print render($search['result']); ?>
 <?php endif; ?>
 
 <?php if ($breadcrumb): ?>
@@ -186,7 +187,8 @@ if (isset($primary_menu_block['content'])): ?>
         </div>
       <div class="layout-element-beta">
         <h1><?php print t('User edit'); ?></h1>
-        <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+        <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php
+        endif; ?>
         <?php print render($page['content']); ?>
       </div>
       <?php else: ?>

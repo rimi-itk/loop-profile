@@ -1,3 +1,9 @@
+<?php
+
+/**
+ * @file
+ */
+?>
 <li class="guide--nav-list-item has-sublist">
   <h4 class="guide--nav-list-title"><?php print $title; ?></h4>
   <ul class="guide--nav-list-sublist">

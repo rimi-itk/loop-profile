@@ -1,3 +1,9 @@
+<?php
+
+/**
+ * @file
+ */
+?>
 <ul>
   <?php foreach ($forest['#childs'] as $tree): ?>
     <li>

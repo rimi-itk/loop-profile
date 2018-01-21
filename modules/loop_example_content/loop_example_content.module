@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the Loop example content feature.
@@ -26,7 +27,7 @@ function loop_example_content_create_example_users() {
   $users = array(
     'coordinator' => array(
       'roles' => array(
-        4 => 'documentation coordinator'
+        4 => 'documentation coordinator',
       ),
       'mail' => 'rfrey@aarhus.dk',
       'field_job_title' => array('und' => array(array('value' => 'Title'))),
@@ -36,7 +37,7 @@ function loop_example_content_create_example_users() {
     ),
     'manager' => array(
       'roles' => array(
-        5 => 'manager'
+        5 => 'manager',
       ),
       'mail' => 'brstj@aarhus.dk',
       'field_job_title' => array('und' => array(array('value' => 'Title'))),

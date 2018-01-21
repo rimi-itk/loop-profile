@@ -1,6 +1,10 @@
 <?php
 
 /**
+ * @file
+ */
+
+/**
  * Implements hook_disable().
  */
 function loop_navigation_disable() {

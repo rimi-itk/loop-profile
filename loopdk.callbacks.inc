@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Batch job callbacks used in the installation profile.
