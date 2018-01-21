@@ -1,7 +1,9 @@
 <?php
 
 /**
- * @file Loop-dashboard--comments.tpl.php
+ * @file
+ * Loop-dashboard--comments.tpl.php.
+ *
  * Displays comments list for dashboard.
  */
 ?>
