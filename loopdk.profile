@@ -6,7 +6,7 @@
  */
 
 /**
- * Implement hook_install_tasks_alter().
+ * Implements hook_install_tasks_alter().
  *
  * Redirect language selection to our own function.
  */
@@ -55,8 +55,8 @@ function loopdk_module_selection_form($form, &$form_state) {
   );
 
   $all_modules = system_rebuild_module_data();
-  // Additional Loop modules to suggest installing
-  //   module name => install (default checkbox value)
+  // Additional Loop modules to suggest installing:
+  // module name => install (default checkbox value)
   $loop_modules = array(
     'loop_configure_theme' => FALSE,
     'loop_post_wysiwyg' => FALSE,
@@ -368,7 +368,7 @@ function loopdk_setup_filter_and_wysiwyg() {
       'status' => 1,
       'settings' => array(
         'shortener_url_behavior' => 'strict',
-        'shortener_url_length" => "72',
+        'shortener_url_length' => '72',
       ),
     ),
   );
