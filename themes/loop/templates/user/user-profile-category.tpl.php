@@ -2,6 +2,8 @@
 
 /**
  * @file
+ * Doc comment short description must be on the first line. @FIXME.
+ *
  * Default theme implementation to present profile categories (groups of
  * profile items).
  *

@@ -2,6 +2,7 @@
 
 /**
  * @file
+ * Missing short description in doc comment.
  */
 ?>
 <aside class="<?php print $current_type_css; ?>">

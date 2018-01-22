@@ -638,8 +638,12 @@ function loop_form_comment_form_alter(&$form) {
 
   $form['#prefix'] = theme('comment_form_prefix', $variables);
   $form['#prefix'] .= '<div class="form-module">';
-  // Let modules set a global variable to influence the use of wysiwyg comments, but default to FALSE.
-  $form['comment_body'][LANGUAGE_NONE][0]['#wysiwyg'] = array_key_exists('use_wysiwyg_comments', $GLOBALS) ? $GLOBALS['use_wysiwyg_comments'] : FALSE;
+  // Let modules set a global variable to influence the use of wysiwyg
+  // comments, but default to FALSE.
+  $form['comment_body'][LANGUAGE_NONE][0]['#wysiwyg']
+    = array_key_exists('use_wysiwyg_comments', $GLOBALS)
+    ? $GLOBALS['use_wysiwyg_comments']
+    : FALSE;
   $form['#suffix'] = '</div>';
 
   hide($form['author']);
@@ -835,7 +839,12 @@ function loop_preprocess_comment(&$variables) {
  * Preprocesss function for displaying subscribe/un-subscribe on nodes.
  */
 function loop_preprocess_loop_post_subscription_list(&$vars) {
-  $vars['custom_link'] = l($vars['link']['#text'], $vars['link']['#path'], array('attributes' => array('class' => array('block-module--link')), 'html' => 'TRUE', 'query' => array($vars['link']['#query'])));
+  $vars['custom_link'] = l($vars['link']['#text'], $vars['link']['#path'],
+                           array(
+                             'attributes' => array('class' => array('block-module--link')),
+                             'html' => 'TRUE',
+                             'query' => array($vars['link']['#query']),
+                           ));
 
   if ($vars['link']['#text'] == 'Subscribe') {
     $vars['current_type_css'] = 'block-follow-question';
@@ -958,7 +967,10 @@ function _loop_print_notification_tab() {
     }
     $title = theme_image($img) . '<span class="nav--text">' . t('My account') . '</span>' . $new_messages;
 
-    $menutab = l($title, 'user', array('attributes' => array('class' => array('nav--link', $active)), 'html' => 'TRUE'));
+    $menutab = l($title, 'user', array(
+      'attributes' => array('class' => array('nav--link', $active)),
+      'html' => 'TRUE',
+    ));
   }
   else {
     $menutab = FALSE;
@@ -971,7 +983,7 @@ function _loop_print_notification_tab() {
  *
  * If both first name and last name is set.
  *
- * @param StdClass $user
+ * @param object $user
  *   Drupal user object.
  *
  * @return string
@@ -1026,7 +1038,7 @@ function _loop_fetch_user_new_notifications() {
 /**
  * Fetches an image based on author.
  *
- * @param StdClass $author
+ * @param object $author
  *   Drupal user object.
  *
  * @return string
@@ -1054,7 +1066,7 @@ function _loop_fetch_author_image($author) {
 /**
  * Fetches body of comment.
  *
- * @param StdClass $comment
+ * @param object $comment
  *   Comment object.
  *
  * @return string
@@ -1073,7 +1085,7 @@ function _loop_fetch_comment_body($comment) {
  *
  * @param string $type
  *   The entity type.
- * @param StdClass $entity
+ * @param object $entity
  *   Entity object.
  *
  * @return mixed
@@ -1104,5 +1116,9 @@ function loop_preprocess_html(&$vars) {
     $skin = 'styles';
   }
 
-  drupal_add_css(path_to_theme() . '/css/' . $skin . '.css', array('group' => CSS_THEME, 'weight' => 999, 'preprocess' => FALSE));
+  drupal_add_css(path_to_theme() . '/css/' . $skin . '.css', array(
+    'group' => CSS_THEME,
+    'weight' => 999,
+    'preprocess' => FALSE,
+  ));
 }

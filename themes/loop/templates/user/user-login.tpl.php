@@ -2,8 +2,8 @@
 
 /**
  * @file
+ * Missing short description in doc comment.
  */
-
 
 if (!empty($variables['login_services'])): ?>
 <div class="user-profile-wrapper">
