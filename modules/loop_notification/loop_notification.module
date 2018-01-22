@@ -16,8 +16,8 @@ function loop_notification_menu() {
   $items = array();
 
   $items['admin/config/loop/notifications'] = array(
-    'title' => t('Loop notification settings'),
-    'description' => t('Settings related to the notification module.'),
+    'title' => 'Loop notification settings',
+    'description' => 'Settings related to the notification module.',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('loop_notification_config_form'),
     'access arguments' => array('access administration pages'),
@@ -231,11 +231,11 @@ function loop_notification_loop_notification_message_recipient_alter(&$users, $n
 /**
  * Loop through recipients to send notification.
  *
- * @param $node
+ * @param object $node
  *   The node related to the message about to be created.
- * @param $action
+ * @param string $action
  *   The action that triggered the notification, insert or update.
- * @param null $comment
+ * @param object|null $comment
  *   A comment if the action was triggered by a new or updated comment.
  */
 function _loop_notification_notify_users($node, $action, $comment = NULL) {
@@ -256,7 +256,7 @@ function _loop_notification_notify_users($node, $action, $comment = NULL) {
 /**
  * Provide the list of users to be notified.
  *
- * @param $node
+ * @param object $node
  *   The node related to the message about to be created.
  *
  * @return array
@@ -281,15 +281,15 @@ function _loop_notification_find_users($node) {
 /**
  * Invoke rules components depending on situation.
  *
- * @param $user
+ * @param object $user
  *   A user about to receive a notification.
- * @param $node
+ * @param object $node
  *   The node related to the message about to be created.
- * @param $action
+ * @param string $action
  *   The action that triggered the notification, insert or update.
- * @param $author
+ * @param object $author
  *   The author of the entity that triggered the notification.
- * @param null $comment
+ * @param object|null $comment
  *   A comment if the action was triggered by a new or updated comment.
  */
 function _loop_notification_notify_user($user, $node, $action, $author, $comment = NULL) {
@@ -325,7 +325,7 @@ function _loop_notification_notify_user($user, $node, $action, $author, $comment
 /**
  * Check for content type.
  *
- * @param $node
+ * @param object $node
  *   The node related to the message about to be created.
  *
  * @return bool
