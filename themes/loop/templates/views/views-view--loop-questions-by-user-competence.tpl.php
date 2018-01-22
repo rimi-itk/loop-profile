@@ -66,7 +66,7 @@ global $user;
         <div class="block-questions--header-wrapper">
           <h3 class="block-questions--header"><?php print t('You are the expert! Can you help?'); ?></h3>
           <h4 class="block-questions--sub-header">
-            <?php print t('Questions about') . ': '; ?>
+            <?php print t('Questions about'); ?>:
             <em>
               <?php if (isset($user_area_of_expertise) && (is_array($user_area_of_expertise))): ?>
                 <?php print implode(', ', $user_area_of_expertise); ?>

@@ -496,6 +496,7 @@ function loop_menu_link__management($variables) {
   }
   else {
     $element['#localized_options']['attributes']['class'][] = 'nav-dropdown--link';
+    // @codingStandardsIgnoreLine
     $output = l(t($element['#title']), $element['#href'], $element['#localized_options']);
   }
 

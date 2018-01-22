@@ -61,7 +61,7 @@
         <div class="block-questions--header-wrapper">
           <h3 class="block-questions--header"><?php print t('Help a colleague'); ?></h3>
           <h4 class="block-questions--sub-header">
-            <?php print t('Questions about') . ': '; ?>
+            <?php print t('Questions about'); ?>:
             <?php if (isset($user_profession)): ?>
               <em>
                 <?php if (isset($user_profession) && (is_array($user_profession))): ?>

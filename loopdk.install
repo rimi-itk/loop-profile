@@ -126,3 +126,10 @@ function loopdk_translation_update() {
 function loopdk_update_7001() {
   loopdk_translation_update();
 }
+
+/**
+ * Update our own translations.
+ */
+function loopdk_update_7002() {
+  loopdk_translation_update();
+}
