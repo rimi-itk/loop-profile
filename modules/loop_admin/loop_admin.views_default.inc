@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * loop_admin.views_default.inc
@@ -354,6 +353,10 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['max_length'] = '200';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
   /* Field: Content: Revision date */
   $handler->display->display_options['fields']['field_revision_date']['id'] = 'field_revision_date';
   $handler->display->display_options['fields']['field_revision_date']['table'] = 'field_data_field_revision_date';
@@ -381,6 +384,7 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
+    'loop_documents_collection' => 'loop_documents_collection',
     'post' => 'post',
   );
   /* Filter criterion: Content: Revision date (field_revision_date) */
@@ -417,7 +421,7 @@ function loop_admin_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['path'] = 'editor/loop-content-revisioning-date';
+  $handler->display->display_options['path'] = 'editor/dashboard/loop-content-revisioning-date';
   $handler->display->display_options['menu']['title'] = 'Test';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'main-menu';

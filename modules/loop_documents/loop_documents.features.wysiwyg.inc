@@ -59,10 +59,10 @@ function loop_documents_wysiwyg_default_profiles() {
       'pasteFromWordRemoveStyles' => 1,
     ),
     'preferences' => array(
-      'default' => 1,
-      'user_choose' => 0,
-      'show_toggle' => 0,
       'add_to_summaries' => 1,
+      'default' => 1,
+      'show_toggle' => 0,
+      'user_choose' => 0,
       'version' => '4.5.3.6c70c82',
     ),
     'name' => 'formatloop_documents',
