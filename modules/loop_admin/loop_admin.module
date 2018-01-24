@@ -932,6 +932,7 @@ function _loop_admin_increase_six_months(StdClass $entity) {
   $wrapper = entity_metadata_wrapper('node', $entity);
   $value = $wrapper->field_revision_date->value();
   $six_months = 15724800;
+  // If a revision date was already set
   if ($value) {
     $wrapper->field_revision_date = $value + $six_months;
   }
@@ -939,4 +940,20 @@ function _loop_admin_increase_six_months(StdClass $entity) {
     $wrapper->field_revision_date = time() + $six_months;
   }
   $wrapper->save();
+}
+
+
+/**
+ * Add revision permission.
+ *
+ * @return array
+ *   An array defining a permission.
+ */
+function loop_admin_permission() {
+  return array(
+    'set revision date for content' => array(
+      'title' => t('Set revision date for content'),
+      'description' => t('Set revision date for content.'),
+    ),
+  );
 }

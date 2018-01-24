@@ -87,6 +87,8 @@ function loop_documents_form_node_form_alter(&$form, &$form_state, $form_id) {
       $form['field_loop_documents_contents']['#type'] = 'hidden';
       $menu = menu_load(loop_documents_get_menu_name($node));
 
+      $form['field_loop_documents_review_date']['#access'] = FALSE;
+
       $form['field_loop_documents_menu_display'] = array(
         '#type' => 'fieldset',
         '#attributes' => array('class' => array('loop-documents-collection-content')),

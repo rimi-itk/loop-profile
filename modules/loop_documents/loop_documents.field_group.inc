@@ -23,11 +23,12 @@ function loop_documents_field_group_info() {
     'label' => 'Metadata',
     'weight' => '5',
     'children' => array(
-      0 => 'field_loop_documents_owner',
-      1 => 'field_loop_documents_version',
-      2 => 'field_loop_documents_approver',
-      3 => 'field_loop_documents_approv_date',
-      4 => 'field_loop_documents_review_date',
+      0 => 'field_loop_documents_approv_date',
+      1 => 'field_loop_documents_approver',
+      2 => 'field_loop_documents_owner',
+      3 => 'field_loop_documents_review_date',
+      4 => 'field_loop_documents_version',
+      5 => 'field_revision_date',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

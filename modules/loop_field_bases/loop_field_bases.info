@@ -21,7 +21,6 @@ features[field_base][] = field_area_of_expertise
 features[field_base][] = field_biography
 features[field_base][] = field_description
 features[field_base][] = field_external_link
-features[field_base][] = field_file
 features[field_base][] = field_file_upload
 features[field_base][] = field_file_upload_comment
 features[field_base][] = field_first_name
