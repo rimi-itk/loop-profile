@@ -506,6 +506,62 @@ function loop_documents_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'node-loop_documents_collection-field_revision_date'.
+  $field_instances['node-loop_documents_collection-field_revision_date'] = array(
+    'bundle' => 'loop_documents_collection',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_revision_date',
+    'label' => 'Revision date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'site-wide',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => 0,
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'node-loop_documents_collection-field_subject'.
   $field_instances['node-loop_documents_collection-field_subject'] = array(
     'bundle' => 'loop_documents_collection',
@@ -780,6 +836,7 @@ function loop_documents_field_default_field_instances() {
   t('Keyword');
   t('Owner');
   t('Review date');
+  t('Revision date');
   t('Subject');
   t('Version');
 

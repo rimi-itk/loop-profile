@@ -47,7 +47,7 @@ function _loopdk_insert_translation($type, $translation_file, &$context) {
  */
 function _loopdk_features_revert($feature) {
   // Load the feature.
-  if (($feature = features_load_feature($feature, TRUE)) && module_exists($feature)) {
+  if (module_exists($feature) && ($feature = features_load_feature($feature, TRUE))) {
     // Get all components of the feature.
     foreach (array_keys($feature->info['features']) as $component) {
       if (features_hook($component, 'features_revert')) {

@@ -180,18 +180,18 @@
 }
 
 
-.dashboard-list--submit {
+.dashboard-list--filter .dashboard-list--submit {
   float: right;
   visibility: hidden;
   height: 0;
   width: 0;
+}
 
-  &#edit-submit-loop-node-statistics{
-    float: none;
-    visibility: visible;
-    height: auto;
-    width: auto;
-  }
+.dashboard-list--submit#edit-submit-loop-node-statistics{
+  float: none;
+  visibility: visible;
+  height: auto;
+  width: auto;
 }
 
 
