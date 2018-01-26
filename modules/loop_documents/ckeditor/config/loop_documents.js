@@ -145,7 +145,8 @@ CKEDITOR.editorConfig = function (config) {
         [ 'Link', 'Unlink' ],
         [ 'media', 'mediaBrowser', 'drupal_path' ],
         [ 'Templates' ],
-        [ 'Source' ]
+        [ 'Source' ],
+        [ 'Proofread' ]
     ];
 
     config.linkShowAdvancedTab = false;

@@ -17,3 +17,33 @@ table.loop-documents-table {
 		}
 	}
 }
+
+$proofreading-background-color: #ffaaaa !default;
+$proofreading-color: #ffffff !default;
+$proofreading-message: 'Skal korrekturlæses' !default;
+
+.workflow-needs-proofreading {
+  background-color: $proofreading-background-color;
+}
+
+.cke_editable {
+  .workflow-needs-proofreading {
+    border: solid 1px $proofreading-background-color;
+    background-color: lighten($proofreading-background-color, 0%);
+    margin-top: 2rem;
+    min-height: 2em;
+    position: relative;
+
+    &::before {
+      content: $proofreading-message;
+      display: block;
+      position: absolute;
+      top: -2rem;
+      right: 0;
+      line-height: 1.5;
+      padding: .25rem;
+      background-color: $proofreading-background-color;
+      color: $proofreading-color;
+    }
+  }
+}
