@@ -121,6 +121,10 @@ if (isset($primary_menu_block['content'])): ?>
         <nav class="nav-dropdown">
           <?php print render($management_menu_block['content']); ?>
         </nav>
+      <?php elseif(!empty($loop_documents_admin_menu_block['content']) && user_access('view document admin menu')) : ?>
+        <nav class="nav-dropdown">
+          <?php print render($loop_documents_admin_menu_block['content']); ?>
+        </nav>
       <?php endif; ?>
       <?php if (!empty($logout_link)) : ?>
         <?php print $logout_link;?>

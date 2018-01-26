@@ -1,33 +1,40 @@
-@charset "UTF-8";
-table.loop-documents-table {
-  width: 100%; }
-  table.loop-documents-table th {
-    background: #ccc;
-    text-align: center; }
-  table.loop-documents-table th, table.loop-documents-table td {
-    vertical-align: top; }
-  table.loop-documents-table-steps td:first-child {
-    width: 10%;
-    text-align: center; }
+@charset "UTF-8"; table.loop-documents-table {
+  width: 100%;
+}
+table.loop-documents-table th {
+  background: #ccc;
+  text-align: center;
+}
+table.loop-documents-table th,
+table.loop-documents-table td {
+  vertical-align: top;
+}
+table.loop-documents-table-steps td:first-child {
+  width: 10%;
+  text-align: center;
+}
 
 .workflow-needs-proofreading {
-  background-color: #ffaaaa; }
+  background-color: #ffaaaa;
+}
 
 .cke_editable .workflow-needs-proofreading {
   border: solid 1px #ffaaaa;
   background-color: #ffaaaa;
   margin-top: 2rem;
   min-height: 2em;
-  position: relative; }
-  .cke_editable .workflow-needs-proofreading::before {
-    content: "Skal korrekturlæses";
-    display: block;
-    position: absolute;
-    top: -2rem;
-    right: 0;
-    line-height: 1.5;
-    padding: .25rem;
-    background-color: #ffaaaa;
-    color: #ffffff; }
+  position: relative;
+}
+.cke_editable .workflow-needs-proofreading::before {
+  content: "Skal korrekturlæses";
+  display: block;
+  position: absolute;
+  top: -2rem;
+  right: 0;
+  line-height: 1.5;
+  padding: .25rem;
+  background-color: #ffaaaa;
+  color: #ffffff;
+}
 
 /*# sourceMappingURL=loop_documents.css.map */

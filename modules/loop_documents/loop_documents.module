@@ -328,22 +328,22 @@ function loop_documents_node_update($node) {
   if ($node->type === 'loop_documents_collection') {
     loop_documents_create_collection_menu($node);
   }
-  else if ($node->type === 'loop_documents_document') {
+  elseif ($node->type === 'loop_documents_document') {
     // Fetch entries that qualify for being the menu item.
     $result = db_select('menu_links', 'm')
-    ->fields('m', array('link_path', 'router_path', 'mlid'))
-    ->condition('router_path', 'node/%','=')
-    ->execute()
-    ->fetchAll();
+      ->fields('m', array('link_path', 'router_path', 'mlid'))
+      ->condition('router_path', 'node/%', '=')
+      ->execute()
+      ->fetchAll();
 
     // Look for the actual menu item. Alter the menu item.
     foreach ($result as $value) {
       $link_path_arr = explode("/", $value->link_path);
-      if($node->nid == $link_path_arr[1]) {
+      if ($node->nid == $link_path_arr[1]) {
         $menu_link = menu_link_load($value->mlid);
 
         // Use menu link title if one is provided, else use node title.
-        if(empty($node->menu['link_title'])) {
+        if (empty($node->menu['link_title'])) {
           $menu_link['link_title'] = $node->title;
         }
         else {
@@ -476,7 +476,8 @@ function loop_documents_add_collection_data($node, array &$variables) {
                 $item['#localized_options'] = array();
               }
               // We want to generate menu links with fragments ids only.
-              // This is done by emptying '#href' and marking the link as being 'external'.
+              // This is done by emptying '#href' and marking the link as
+              // being 'external'.
               $item['#localized_options'] += array(
                 'fragment' => $item['#href'],
                 'external' => TRUE,
