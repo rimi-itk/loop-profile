@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * loop_post.features.field_instance.inc
@@ -348,7 +347,7 @@ function loop_post_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'site-wide',
+        'input_format' => 'd/m/Y - g:i:sa',
         'input_format_custom' => '',
         'label_position' => 'above',
         'no_fieldset' => 0,
