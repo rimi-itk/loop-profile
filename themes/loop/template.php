@@ -591,6 +591,17 @@ function loop_form_user_register_form_alter(&$form) {
  * Implements hook_form_FORM_alter().
  */
 function loop_form_views_exposed_form_alter(&$form) {
+  // Change the format of date popup fields.
+  foreach ($form as $element => $item) {
+    if (isset($item['min']) || isset($item['max'])) {
+      foreach ($item as $part => $value) {
+        if (isset($value['#type']) && $value['#type'] == 'date_popup'){
+          $form[$element][$part]['#date_format'] = 'd/m/Y';
+        }
+      }
+    }
+  }
+
   if (arg(1) == 'dashboard') {
     if ($form['#id'] == 'views-exposed-form-loop-editor-users-panel-pane-1') {
       $form['combine']['#attributes']['placeholder'] = t('Type name, username, email or profession to filter the list');

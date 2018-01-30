@@ -295,6 +295,7 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['style_options']['columns'] = array(
     'views_bulk_operations' => 'views_bulk_operations',
     'title' => 'title',
+    'type' => 'type',
     'field_revision_date' => 'field_revision_date',
     'edit_node' => 'edit_node',
   );
@@ -306,7 +307,14 @@ function loop_admin_views_default_views() {
       'empty_column' => 0,
     ),
     'title' => array(
-      'sortable' => 0,
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'type' => array(
+      'sortable' => 1,
       'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
@@ -336,6 +344,22 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::_loop_admin_increase_one_month' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'skip_permission_check' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::_loop_admin_increase_three_months' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'skip_permission_check' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
     'action::_loop_admin_increase_six_months' => array(
       'selected' => 1,
       'postpone_processing' => 0,
