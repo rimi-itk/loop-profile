@@ -87,7 +87,14 @@ function loop_documents_form_node_form_alter(&$form, &$form_state, $form_id) {
       $form['field_loop_documents_contents']['#type'] = 'hidden';
       $menu = menu_load(loop_documents_get_menu_name($node));
 
+      // @todo delete this after release 2.8.0 And remove the field from the db.
+      // Migration has been done as part of 2.8.0.
       $form['field_loop_documents_review_date']['#access'] = FALSE;
+
+      // The new revision date to use.
+      if (!user_access('set revision date for content')) {
+        $form['field_revision_date']['#access'] = FALSE;
+      }
 
       $form['field_loop_documents_menu_display'] = array(
         '#type' => 'fieldset',
