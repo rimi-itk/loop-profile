@@ -275,7 +275,7 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['css_class'] = 'editing--revision-date';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['access']['perm'] = 'set revision date for content';
+  $handler->display->display_options['access']['perm'] = 'set revision date for post content';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -409,6 +409,7 @@ function loop_admin_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'loop_documents_collection' => 'loop_documents_collection',
+    'external_sources' => 'external_sources',
     'post' => 'post',
   );
   /* Filter criterion: Content: Revision date (field_revision_date) */
