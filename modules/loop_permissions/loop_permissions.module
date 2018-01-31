@@ -102,6 +102,7 @@ function loop_permissions_secure_permissions($role) {
       'administer google analytics',
       'administer google analytics counter',
       'administer image styles',
+      'administer itk siteimprove',
       'administer languages',
       'administer mailsystem',
       'administer menu',
