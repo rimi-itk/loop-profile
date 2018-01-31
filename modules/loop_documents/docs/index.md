@@ -22,5 +22,5 @@ whole words.
 ### Unmarking text
 
 To unmark text for proofreading, i.e. remove the marking, place the
-cursor in the marked text (do not select anything) and click on the
-![proofread-icon](../ckeditor/plugins/proofread/icons/proofread.png).
+cursor in the marked text (do not select anything) and click on ![the
+proofread icon](../ckeditor/plugins/proofread/icons/proofread.png).
