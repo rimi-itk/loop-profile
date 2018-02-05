@@ -6,6 +6,52 @@
  */
 
 /**
+ * Add admin menu for document authors and documentation editors.
+ */
+function loop_documents_install() {
+  // Make sure the menu exists.
+  module_load_include('inc', 'loopdk', 'loopdk.callbacks');
+  _loopdk_features_revert('loop_documents');
+
+  $name = 'menu-document-author-management';
+
+  // Create parent menu item.
+  $parent_item = array(
+    'menu_name' => $name,
+    'link_title' => 'Administration',
+    'link_path' => 'admin/content',
+    'mlid' => 0,
+    'expanded' => TRUE,
+  );
+
+  $parent_item_id = menu_link_save($parent_item);
+
+  $menu_items = array(
+    'node_add' => array(
+      'menu_name' => $name,
+      'link_title' => 'Add content',
+      'link_path' => 'node/add',
+      'mlid' => 0,
+      'plid' => $parent_item_id,
+      'weight' => 1,
+    ),
+    'node_list' => array(
+      'menu_name' => $name,
+      'link_title' => 'Content list',
+      'link_path' => 'admin/content',
+      'mlid' => 0,
+      'plid' => $parent_item_id,
+      'weight' => 2,
+    ),
+  );
+
+  foreach ($menu_items as $item) {
+    menu_link_save($item);
+  }
+}
+
+
+/**
  * Implements hook_enable().
  */
 function loop_documents_enable() {
@@ -37,5 +83,50 @@ function loop_documents_update_7100() {
     $wrapper->field_revision_date = $wrapper->field_loop_documents_review_date->value();
     // And save it.
     $wrapper->save();
+  }
+}
+
+/**
+ * Add admin menu for document authors and documentation editors.
+ */
+function loop_documents_update_7101() {
+  // Make sure the menu exists.
+  module_load_include('inc', 'loopdk', 'loopdk.callbacks');
+  _loopdk_features_revert('loop_documents');
+
+  $name = 'menu-document-author-management';
+
+  // Create parent menu item.
+  $parent_item = array(
+    'menu_name' => $name,
+    'link_title' => 'Administration',
+    'link_path' => 'admin/content',
+    'mlid' => 0,
+    'expanded' => TRUE,
+  );
+
+  $parent_item_id = menu_link_save($parent_item);
+
+  $menu_items = array(
+    'node_add' => array(
+      'menu_name' => $name,
+      'link_title' => 'Add content',
+      'link_path' => 'node/add',
+      'mlid' => 0,
+      'plid' => $parent_item_id,
+      'weight' => 1,
+    ),
+    'node_list' => array(
+      'menu_name' => $name,
+      'link_title' => 'Content list',
+      'link_path' => 'admin/content',
+      'mlid' => 0,
+      'plid' => $parent_item_id,
+      'weight' => 2,
+    ),
+  );
+
+  foreach ($menu_items as $item) {
+    menu_link_save($item);
   }
 }
