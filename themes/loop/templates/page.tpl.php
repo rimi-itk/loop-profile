@@ -133,7 +133,7 @@ if (isset($primary_menu_block['content'])): ?>
 
 <?php if (!empty($page['pagetop'])): ?>
   <div class="section">
-    <div class="layout-frontpage">
+    <div class="layout-frontpage block-module">
         <?php print render($page['pagetop']); ?>
     </div>
   </div>
