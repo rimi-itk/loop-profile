@@ -41,14 +41,8 @@ function loop_documents_secure_permissions($role) {
       'view files',
     ),
     'document author' => array(
-      'access administration pages',
-      // Allow access to some admin paths.
-      'access path admin',
-      'access path admin/content',
-
       'access content overview',
       'view the administration theme',
-
       'access media browser',
       'access ckeditor link',
       'create files',
@@ -57,6 +51,7 @@ function loop_documents_secure_permissions($role) {
       'download any image files',
       'use media wysiwyg',
       'use text format loop_documents',
+      'view admin path'
     ),
   );
 
@@ -67,7 +62,6 @@ function loop_documents_secure_permissions($role) {
       'unpublish any loop_documents_collection content',
       'publish any loop_documents_document content',
       'unpublish any loop_documents_document content',
-
       'administer menu',
       'create loop_documents_collection content',
       'edit any loop_documents_collection content',
@@ -79,6 +73,7 @@ function loop_documents_secure_permissions($role) {
       'delete any loop_documents_document content',
       'edit any image files',
       'menu view unpublished',
+      'set revision date for content',
     ));
 
   $permissions['administrator'] = array_merge(

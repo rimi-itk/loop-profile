@@ -63,6 +63,27 @@ function loop_admin_menu() {
 }
 
 /**
+ * Implements hook_menu_alter().
+ */
+function loop_admin_menu_alter(&$items) {
+  $items['admin']['access callback'] = '_loop_admin_admin_path_permission';
+}
+
+/**
+ * Allow users with either "view admin path" or "access administration pages"
+ * permission to access /admin.
+ *
+ * @return bool
+ *   Whether the user has access to the /admin path or not.
+ */
+function _loop_admin_admin_path_permission() {
+  if (user_access('view admin path') || user_access('access administration pages')) {
+    return TRUE;
+  }
+  return FALSE;
+}
+
+/**
  * Implements hook_theme().
  */
 function loop_admin_theme($existing, $type, $theme, $path) {
@@ -994,7 +1015,7 @@ function _loop_admin_revision_extend($increase, stdClass $entity) {
 
 
 /**
- * Add revision permission.
+ * Add revision permission and view /admin path permission.
  *
  * @return array
  *   An array defining a permission.
@@ -1004,6 +1025,10 @@ function loop_admin_permission() {
     'set revision date for content' => array(
       'title' => t('Set revision date for content'),
       'description' => t('Set revision date for content.'),
+    ),
+    'view admin path' => array(
+      'title' => t('View /admin path'),
+      'description' => t('View /admin path but not any sub paths.'),
     ),
   );
 }

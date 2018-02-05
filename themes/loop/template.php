@@ -438,7 +438,6 @@ function loop_menu_link__main_menu($variables) {
  * Implements theme_menu_link().
  */
 function loop_menu_link__menu_loop_primary_menu($variables) {
-  $theme_path = drupal_get_path('theme', 'loop');
   $element = $variables['element'];
 
   // Sub item exist (Element is parent).
@@ -476,7 +475,6 @@ function loop_menu_link__menu_loop_primary_menu($variables) {
  * Implements theme_menu_link().
  */
 function loop_menu_link__management($variables) {
-  $theme_path = drupal_get_path('theme', 'loop');
   $element = $variables['element'];
 
   if ($element['#href'] == 'admin') {
