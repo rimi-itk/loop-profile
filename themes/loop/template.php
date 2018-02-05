@@ -76,6 +76,11 @@ function loop_preprocess_page(&$variables) {
     $variables['user_public_block'] = module_invoke('loop_user', 'block_view', 'loop_user_my_content');
   }
 
+  // Load documents admin menu.
+  if (module_exists('loop_documents')) {
+    $variables['loop_documents_admin_menu_block'] = module_invoke('menu', 'block_view', 'menu-document-author-management');
+  }
+
   // Check if we are using a panel page to define layout.
   $panel = panels_get_current_page_display();
   if (empty($panel)) {
@@ -387,12 +392,22 @@ function loop_menu_tree__menu_loop_primary_menu($variables) {
 }
 
 /**
- * Implements theme_menu_tree__menu_loop_primary_menu().
+ * Implements theme_menu_tree__management().
  *
  * User generated link.
  * Forms the header menu together with main menu.
  */
 function loop_menu_tree__management($variables) {
+  return $variables['tree'];
+}
+
+/**
+ * Implements theme_menu_tree__menu_document_author_management().
+ *
+ * User generated link.
+ * Forms the header menu together with main menu.
+ */
+function loop_menu_tree__menu_document_author_management($variables) {
   return $variables['tree'];
 }
 
@@ -478,6 +493,33 @@ function loop_menu_link__management($variables) {
   $element = $variables['element'];
 
   if ($element['#href'] == 'admin') {
+    $element['#title'] = '<span class="nav--text">' . $element['#title'] . '</span>';
+
+    // Wrap the sub menu.
+    $sub_menu = '<div class="nav-dropdown--item">' . drupal_render($element['#below']) . '</div>';
+
+    $element['#localized_options']['attributes']['class'][] = 'nav-dropdown--header';
+
+    // Allow images in the links.
+    $element['#localized_options']['html'][] = TRUE;
+
+    $output = '<div class="nav-dropdown--wrapper">' . l($element['#title'], $element['#href'], $element['#localized_options']) . $sub_menu . '</div>';
+  }
+  else {
+    $element['#localized_options']['attributes']['class'][] = 'nav-dropdown--link';
+    $output = l(t($element['#title']), $element['#href'], $element['#localized_options']);
+  }
+
+  return $output . "\n";
+}
+
+/**
+ * Implements theme_menu_link().
+ */
+function loop_menu_link__menu_document_author_management($variables) {
+  $element = $variables['element'];
+
+  if ($element['#href'] == 'admin/content' && !empty($element['#below'])) {
     $element['#title'] = '<span class="nav--text">' . $element['#title'] . '</span>';
 
     // Wrap the sub menu.

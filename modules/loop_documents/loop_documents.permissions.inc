@@ -26,6 +26,10 @@ function loop_documents_permission() {
       'title' => t('Administer Loop documents settings'),
       'description' => t('Administer Loop documents settings'),
     ),
+    'view document admin menu' => array(
+      'title' => t('View document admin menu'),
+      'description' => t('Menu displaying links to specific backend pages related to document providers'),
+    ),
   );
 
   return $permissions;
@@ -58,6 +62,7 @@ function loop_documents_secure_permissions($role) {
   $permissions['document collection editor'] = array_merge(
     $permissions['document author'],
     array(
+      'view document admin menu',
       'publish any loop_documents_collection content',
       'unpublish any loop_documents_collection content',
       'publish any loop_documents_document content',

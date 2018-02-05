@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file loop_permissions.module.
+ * @file
  * Module file for secure role/permissions in code.
  */
 
@@ -13,7 +13,7 @@ include_once 'loop_permissions.features.inc';
  * Create a secure_permissions_data module directory and place this function
  * in secure_permissions_data.module.
  *
- * @return
+ * @return array
  *   An array defining all the roles for the site.
  */
 function loop_permissions_secure_permissions_roles() {
@@ -34,10 +34,10 @@ function loop_permissions_secure_permissions_roles() {
  * Create a secure_permissions_data module directory and place this function
  * in secure_permissions_data.module.
  *
- * @param $role
+ * @param string $role
  *   The role for which the permissions are being requested.
  *
- * @return
+ * @return array
  *   An array defining all the permissions for the site.
  */
 function loop_permissions_secure_permissions($role) {
@@ -46,7 +46,6 @@ function loop_permissions_secure_permissions($role) {
       'access comments',
       'access content',
       'access search_api_page',
-      'access statistics',
       'access user profiles',
       'create messages',
       'create post content',
