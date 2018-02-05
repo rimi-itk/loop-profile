@@ -227,6 +227,7 @@ function loop_permissions_secure_permissions($role) {
       'set revision date for content',
       'use text format editor',
       'view revisions',
+      'view admin path',
       'view the administration theme',
     ),
     'manager' => array(
@@ -282,10 +283,11 @@ function loop_permissions_secure_permissions($role) {
       'use Shorten URLs page',
       'use text format editor',
       'View own URL stats',
+      'view admin path',
       'view the administration theme',
     ),
     'external sources editor' => array(
-      'access administration pages',
+      'view admin path',
       'access content overview',
       'view the administration theme',
       'create external_sources content',

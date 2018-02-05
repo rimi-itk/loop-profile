@@ -45,7 +45,6 @@ function loop_documents_secure_permissions($role) {
       'view files',
     ),
     'document author' => array(
-      'view document admin menu',
       'access content overview',
       'view the administration theme',
       'access media browser',
@@ -56,6 +55,7 @@ function loop_documents_secure_permissions($role) {
       'download any image files',
       'use media wysiwyg',
       'use text format loop_documents',
+      'view admin path'
     ),
   );
 
@@ -78,6 +78,7 @@ function loop_documents_secure_permissions($role) {
       'delete any loop_documents_document content',
       'edit any image files',
       'menu view unpublished',
+      'set revision date for content',
     ));
 
   $permissions['administrator'] = array_merge(
