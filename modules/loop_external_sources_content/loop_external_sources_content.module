@@ -84,7 +84,7 @@ function loop_external_sources_content_documents($scope) {
 /**
  * Implements hook_form_BASE_FORM_ID_alter().
  */
-function loop_external_sources_form_node_form_alter(&$form, &$form_state, $form_id) {
+function loop_external_sources_content_form_node_form_alter(&$form, &$form_state, $form_id) {
   if (isset($form['#node'])) {
     $node = $form['#node'];
     if ($node->type === 'external_sources') {
