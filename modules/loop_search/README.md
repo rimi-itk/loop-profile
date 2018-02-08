@@ -10,4 +10,3 @@ The search only searches in
 * external links
 
 We recommend solr search at the moment, but it is configurable.
-

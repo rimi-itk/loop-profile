@@ -55,7 +55,7 @@ function loop_documents_secure_permissions($role) {
       'download any image files',
       'use media wysiwyg',
       'use text format loop_documents',
-      'view admin path'
+      'view admin path',
     ),
   );
 

@@ -1,11 +1,12 @@
 <?php
+
 /**
  * @file
  * A part of the loop_external_data module.
  */
 
 /**
- * Class Leaf
+ * Class Leaf.
  */
 class Leaf extends LoopNode {
   protected $body;
@@ -78,4 +79,5 @@ class Leaf extends LoopNode {
   public function setDrupalNID($drupal_nid) {
     $this->drupalNID = $drupal_nid;
   }
-} 
+
+}

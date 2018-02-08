@@ -2,7 +2,6 @@ name = Loop taxonomy
 description = Basic taxonomy
 core = 7.x
 package = Loop
-version = 7.x-1.2
 project = loop_taxonomy
 dependencies[] = entity
 dependencies[] = features

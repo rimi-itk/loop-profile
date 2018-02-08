@@ -1,7 +1,9 @@
 <?php
 
 /**
- * @file loop-dashboard--all-content.tpl.php
+ * @file
+ * Loop-dashboard--all-content.tpl.php.
+ *
  * Displays all other content page for dashboard.
  */
 ?>

@@ -70,8 +70,7 @@ function loop_admin_menu_alter(&$items) {
 }
 
 /**
- * Allow users with either "view admin path" or "access administration pages"
- * permission to access /admin.
+ * Give some users permission to access /admin.
  *
  * @return bool
  *   Whether the user has access to the /admin path or not.
@@ -964,10 +963,10 @@ function loop_admin_action_info() {
 /**
  * Custom action for extending revisioning dates 1 month.
  *
- * @param stdClass $entity
+ * @param StdClass $entity
  *   The node to act on.
  */
-function _loop_admin_increase_one_month(stdClass $entity) {
+function _loop_admin_increase_one_month(StdClass $entity) {
   _loop_admin_revision_extend(2592000, $entity);
 }
 
@@ -977,7 +976,7 @@ function _loop_admin_increase_one_month(stdClass $entity) {
  * @param StdClass $entity
  *   The node to act on.
  */
-function _loop_admin_increase_three_months(stdClass $entity) {
+function _loop_admin_increase_three_months(StdClass $entity) {
   _loop_admin_revision_extend(7862400, $entity);
 }
 
@@ -987,20 +986,19 @@ function _loop_admin_increase_three_months(stdClass $entity) {
  * @param StdClass $entity
  *   The node to act on.
  */
-function _loop_admin_increase_six_months(stdClass $entity) {
+function _loop_admin_increase_six_months(StdClass $entity) {
   _loop_admin_revision_extend(15724800, $entity);
 }
 
 /**
  * Custom action for extending revisioning dates 3 months.
  *
- * @param integer $increase
+ * @param int $increase
  *   A number of seconds.
- *
  * @param StdClass $entity
  *   The node to act on.
  */
-function _loop_admin_revision_extend($increase, stdClass $entity) {
+function _loop_admin_revision_extend($increase, StdClass $entity) {
   $wrapper = entity_metadata_wrapper('node', $entity);
   $value = $wrapper->field_revision_date->value();
   $increase = $increase;
@@ -1012,7 +1010,6 @@ function _loop_admin_revision_extend($increase, stdClass $entity) {
   }
   $wrapper->save();
 }
-
 
 /**
  * Add revision permission and view /admin path permission.

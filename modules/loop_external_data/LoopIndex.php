@@ -1,9 +1,13 @@
 <?php
+
 /**
  * @file
  * A part of the loop_external_data module.
  */
 
+/**
+ *
+ */
 class LoopIndex {
   protected $children;
   protected $references;
@@ -40,4 +44,5 @@ class LoopIndex {
   public function getReferences() {
     return $this->references;
   }
+
 }

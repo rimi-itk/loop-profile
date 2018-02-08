@@ -2,7 +2,6 @@ name = Loop content
 description = Textformats and editor settings
 core = 7.x
 package = Loop
-version = 7.x-1.2
 project = loop_content
 dependencies[] = abuse
 dependencies[] = ctools

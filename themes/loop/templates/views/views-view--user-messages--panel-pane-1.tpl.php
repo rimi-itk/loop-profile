@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Main view template.
@@ -21,7 +22,7 @@
  * - $pager: The pager next/prev links to display, if any
  * - $exposed: Exposed widget form/info to display
  * - $feed_icon: Feed icon to display, if any
- * - $more: A link to view more, if any
+ * - $more: A link to view more, if any.
  *
  * @ingroup views_templates
  */
@@ -56,9 +57,7 @@
     </div>
   <?php else : ?>
     <h4 class="notification--empty">
-      <?php print t('You have '); ?>
-      <span class="notification--inline">0</span>
-      <?php print t(' notifications'); ?>
+      <?php print t('You have !count notifications', array('!count' => '<span class="notification--inline">0</span>')); ?>
     </h4>
   <?php endif; ?>
 

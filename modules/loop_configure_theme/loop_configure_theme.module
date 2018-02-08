@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * @file
+ * Missing short description in doc comment.
+ */
+
 /**
  * Implements hook_FORM_ID_alter().
  *
@@ -33,7 +39,6 @@ function loop_configure_theme_form_system_theme_settings_alter(&$form, $form_sta
     '#collapsible' => FALSE,
     '#description' => t("Settings for the term/keyword buttons"),
   );
-
 
   $form['terms_keywords']['term_background_color'] = array(
     '#type'          => 'style_settings_colorpicker',
@@ -77,14 +82,12 @@ function loop_configure_theme_form_system_theme_settings_alter(&$form, $form_sta
     '#description'   => t("Choose a color for the post color label"),
   );
 
-
   $form['terms_keywords']['content_type_label_text_color_default'] = array(
     '#type'          => 'style_settings_colorpicker',
     '#title'         => t('Content type default label text color'),
     '#default_value' => theme_get_setting('content_type_label_text_color_default', 'loop'),
     '#description'   => t("Choose a default color for the content type color label text"),
   );
-
 
   $form['terms_keywords']['content_type_label_text_color_post'] = array(
     '#type'          => 'style_settings_colorpicker',
@@ -93,10 +96,12 @@ function loop_configure_theme_form_system_theme_settings_alter(&$form, $form_sta
     '#description'   => t("Choose a color for the post color label text"),
   );
 
-
   $form['#submit'][] = 'loop_configure_theme_flush';
 }
 
+/**
+ * Doc comment is empty.
+ */
 function loop_configure_theme_flush() {
   _drupal_flush_css_js();
   cache_clear_all('style_settings_', 'cache', TRUE);

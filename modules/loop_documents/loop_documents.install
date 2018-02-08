@@ -50,7 +50,6 @@ function loop_documents_install() {
   }
 }
 
-
 /**
  * Implements hook_enable().
  */

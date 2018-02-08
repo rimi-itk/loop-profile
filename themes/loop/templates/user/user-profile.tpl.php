@@ -48,16 +48,16 @@
   <legend class="fieldset-legend"><?php print t('Personal information'); ?></legend>
   <div class="user-profile-module--personal-info-text">
     <div class="user-profile-module--field-personal-info">
-      <span class="user-profile-module--field-label"><?php print t('First name') . ':'; ?></span><span class="user-profile-module--field-value"><?php print render($elements['field_first_name']);?></span>
+      <span class="user-profile-module--field-label"><?php print t('First name'); ?>:</span><span class="user-profile-module--field-value"><?php print render($elements['field_first_name']);?></span>
     </div>
     <div class="user-profile-module--field-personal-info">
-      <span class="user-profile-module--field-label"><?php print t('Surname') . ':'; ?></span><span class="user-profile-module--field-value"><?php print render($elements['field_last_name']);?></span>
+      <span class="user-profile-module--field-label"><?php print t('Surname'); ?>:</span><span class="user-profile-module--field-value"><?php print render($elements['field_last_name']);?></span>
     </div>
     <div class="user-profile-module--field-personal-info">
-      <span class="user-profile-module--field-label"><?php print t('E-mail') . ':'; ?></span><span class="user-profile-module--field-value"><?php print ' ' . render($elements['#account']->mail);?></span>
+      <span class="user-profile-module--field-label"><?php print t('E-mail'); ?>:</span><span class="user-profile-module--field-value"><?php print ' ' . render($elements['#account']->mail);?></span>
     </div>
     <div class="user-profile-module--field-personal-info">
-      <span class="user-profile-module--field-label"><?php print t('Phone') . ':'; ?></span><span class="user-profile-module--field-value"><?php print render($elements['field_phone_number']);?></span>
+      <span class="user-profile-module--field-label"><?php print t('Phone'); ?>:</span><span class="user-profile-module--field-value"><?php print render($elements['field_phone_number']);?></span>
     </div>
   </div>
   <div class="user-profile-module--personal-info-image">

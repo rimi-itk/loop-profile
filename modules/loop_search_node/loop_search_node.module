@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Adds the javascript need to search the sites content.
@@ -14,8 +15,8 @@ function loop_search_node_menu() {
     'title' => 'No search results',
     'type' => MENU_CALLBACK,
     'page callback' => 'loop_search_node_no_results',
-    'access callback' =>  'node_access',
-    'access arguments' => array('create', 'post')
+    'access callback' => 'node_access',
+    'access arguments' => array('create', 'post'),
   );
 
   return $items;
@@ -56,9 +57,6 @@ function loop_search_node_comment_delete($comment) {
 
 /**
  * Menu callback that generates post node add form.
- *
- * @return string
- *   JSON encode string with the node create form.
  */
 function loop_search_node_no_results() {
   global $user;
@@ -164,11 +162,11 @@ function _loop_search_node_scan_templates($path) {
   $parsed = variable_get('loop_search_node_templates_parsed', array());
 
   $it = new RecursiveDirectoryIterator($dir);
-  foreach (new RecursiveIteratorIterator($it) as $file)  {
+  foreach (new RecursiveIteratorIterator($it) as $file) {
     $file_abs = $path . str_replace($dir, '', $file);
     if (!in_array($file_abs, $parsed)) {
       $ext = pathinfo($file, PATHINFO_EXTENSION);
-      if (in_array($ext, [ 'html' ])) {
+      if (in_array($ext, ['html'])) {
         _locale_parse_js_file($file_abs);
         $parsed[] = $file_abs;
         $new_files = TRUE;
@@ -357,7 +355,7 @@ function _loop_search_node_search_block_settings() {
     'weight' => -17,
     'region' => '-1',
     'pages' => "admin\r\nadmin/*\r\nuser/*/edit",
-    'status' => 0
+    'status' => 0,
   );
 }
 

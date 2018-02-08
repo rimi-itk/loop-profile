@@ -2,6 +2,8 @@
 
 /**
  * @file
+ * Loop_permissions.module.
+ *
  * Module file for secure role/permissions in code.
  */
 

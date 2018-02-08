@@ -1,7 +1,9 @@
 <?php
 
 /**
- * @file field--user.tpl.php
+ * @file
+ * Field--user.tpl.php.
+ *
  * Fields used on the user profile display.
  *
  * This file is not used and is here as a starting point for customization only.

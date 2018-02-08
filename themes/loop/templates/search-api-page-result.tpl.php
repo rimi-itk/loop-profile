@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Default theme implementation for displaying a single search result.
@@ -53,7 +54,10 @@
         <?php elseif ($item->type == 'post') : ?>
           <?php print t('Question'); ?>
         <?php else : ?>
-          <?php print t($item->type); ?>
+          <?php
+            // @codingStandardsIgnoreLine
+            print t($item->type);
+          ?>
         <?php endif;?>
       </div>
     </div>

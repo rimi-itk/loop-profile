@@ -1,15 +1,17 @@
 <?php
+
 /**
  * @file
  * A part of the loop_external_data module.
  */
 
 /**
- * Interface iParser
+ * Interface iParser.
  *
  * Specifies the functions a Parser must contain.
  */
 interface ParserInterface {
+
   /**
    * Identifies whether a directory matches the format of the parser.
    *
@@ -30,4 +32,5 @@ interface ParserInterface {
    *   The nid of the Index node in Drupal.
    */
   public function process($path_to_directory, $index_node_id);
+
 }

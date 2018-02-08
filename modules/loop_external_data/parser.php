@@ -1,20 +1,22 @@
 <?php
+
 /**
  * @file
  * A part of the loop_external_data module.
  */
 
 /**
- * Class NoParserFoundException
+ * Class NoParserFoundException.
  */
 class NoParserFoundException extends Exception {}
 
 /**
- * Class Parser
+ * Class Parser.
  *
  * Standard parser class. Selects relevant parser when calling parse().
  */
 class Parser {
+
   /**
    * Parses a zip file.
    *
@@ -110,7 +112,7 @@ class Parser {
    * @param string $path_to_directory
    *   Path to extracted files.
    *
-   * @return parser|NULL
+   * @return parser|null
    *   The matching parser or NULL if no parser found.
    */
   protected function search($path_to_directory) {
@@ -137,4 +139,5 @@ class Parser {
     }
     return $parser;
   }
+
 }

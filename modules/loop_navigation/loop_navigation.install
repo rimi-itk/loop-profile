@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Missing short description in doc comment.
+ */
+
+/**
  * Implements hook_disable().
  */
 function loop_navigation_disable() {
