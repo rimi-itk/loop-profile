@@ -1,6 +1,11 @@
 <?php
 
 /**
+ * @file
+ * Install hooks for Loop permissions.
+ */
+
+/**
  * Implements hook_install().
  */
 function loop_permissions_install() {
@@ -9,14 +14,14 @@ function loop_permissions_install() {
       'lid' => 1,
       'nlimit' => 0,
       'title' => 'Disable read only role content creation',
-      'weight' => 0
+      'weight' => 0,
     ))
     ->execute();
 
   db_insert('node_limit_role')
     ->fields(array(
       'lid' => 1,
-      'rid' => 6
+      'rid' => 6,
     ))
     ->execute();
 }

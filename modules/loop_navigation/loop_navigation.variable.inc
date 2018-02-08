@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * loop_navigation.variable.inc

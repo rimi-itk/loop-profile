@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Main view template.
@@ -21,7 +22,7 @@
  * - $pager: The pager next/prev links to display, if any
  * - $exposed: Exposed widget form/info to display
  * - $feed_icon: Feed icon to display, if any
- * - $more: A link to view more, if any
+ * - $more: A link to view more, if any.
  *
  * @ingroup views_templates
  */
@@ -65,7 +66,7 @@ global $user;
         <div class="block-questions--header-wrapper">
           <h3 class="block-questions--header"><?php print t('You are the expert! Can you help?'); ?></h3>
           <h4 class="block-questions--sub-header">
-            <?php print t('Questions about') . ': '; ?>
+            <?php print t('Questions about'); ?>:
             <em>
               <?php if (isset($user_area_of_expertise) && (is_array($user_area_of_expertise))): ?>
                 <?php print implode(', ', $user_area_of_expertise); ?>

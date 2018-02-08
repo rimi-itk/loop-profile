@@ -5,4 +5,3 @@ package = Loop
 dependencies[] = search_api
 dependencies[] = search_api_search_node
 dependencies[] = search_node_page
-

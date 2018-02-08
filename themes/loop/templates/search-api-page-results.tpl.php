@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Default theme implementation for displaying search results.
@@ -33,7 +34,6 @@
  *
  * @see template_preprocess_search_api_page_results()
  */
-
 ?>
 
 <?php if ($result_count) : ?>

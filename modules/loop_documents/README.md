@@ -19,7 +19,8 @@ Rebuild secure permissions:
 drush secure-permissions-rebuild
 ```
 
-*Note*: This may fail if the default site language is not English (en). To work around this do something like this:
+*Note*: This may fail if the default site language is not English
+(en). To work around this do something like this:
 
 ```
 drush --yes pm-download drush_language
@@ -38,5 +39,6 @@ drush php-eval 'node_access_rebuild();'
 
 # Settings
 
-A few setting are available on the configuration page *Administration » Configuration » Content authoring »
+A few setting are available on the configuration page
+*Administration » Configuration » Content authoring »
 Loop documents settings* (/admin/config/content/loop_documents)

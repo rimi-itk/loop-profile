@@ -40515,6 +40515,12 @@ msgstr "Du har"
 msgid "You have "
 msgstr "Du har "
 
+msgid "You have !count notifications"
+msgstr "Du har !count notifikationer"
+
+msgid "You have 1 notification"
+msgstr "Du har 1 notifikation"
+
 msgid "You have a @type @raptor named \"@name\"."
 msgstr "Du har en @type-rovfugl kaldet \"@name\"."
 
@@ -42728,4 +42734,3 @@ msgstr "‹‹"
 
 msgid "››"
 msgstr "››"
-

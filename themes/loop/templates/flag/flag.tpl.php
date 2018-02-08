@@ -2,6 +2,8 @@
 
 /**
  * @file
+ * Doc comment short description must be on the first line. @FIXME.
+ *
  * Default theme implementation to display a flag link, and a message after the
  * action is carried out.
  *

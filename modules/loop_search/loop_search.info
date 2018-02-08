@@ -2,7 +2,6 @@ name = Loop search
 description = Autosuggest from Apache Solr
 core = 7.x
 package = Loop
-version = 7.x-1.2
 project = loop_search
 dependencies[] = entity
 dependencies[] = jquery_update

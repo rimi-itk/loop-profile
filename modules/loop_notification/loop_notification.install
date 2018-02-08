@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Update and install hooks related to notifications.

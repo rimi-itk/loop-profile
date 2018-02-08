@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Ensures that form comments are prefixes correctly.

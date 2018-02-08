@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Handle search node configuration settings.
@@ -27,7 +28,7 @@ function loop_search_node_requirements($phase) {
  * Implements hook_install().
  */
 function loop_search_node_install() {
-  // Set block configuration
+  // Set block configuration.
   variable_set('search_node_page_search_box', _loop_search_node_box_settings());
 }
 

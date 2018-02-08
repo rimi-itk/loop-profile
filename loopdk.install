@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Install, update and uninstall functions for the Loop installation profile.
@@ -12,7 +13,7 @@
  * Setup "Page not found" and "Access denied" pages.
  *
  * @see system_install()
-*/
+ */
 function loopdk_install() {
   // Set default variables.
   $default_theme = 'loop';
@@ -123,5 +124,12 @@ function loopdk_translation_update() {
  * Update our own translations.
  */
 function loopdk_update_7001() {
+  loopdk_translation_update();
+}
+
+/**
+ * Update our own translations.
+ */
+function loopdk_update_7002() {
   loopdk_translation_update();
 }

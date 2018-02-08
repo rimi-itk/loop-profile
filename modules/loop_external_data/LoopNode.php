@@ -1,11 +1,12 @@
 <?php
+
 /**
  * @file
  * A part of the loop_external_data module.
  */
 
 /**
- * Class LoopNode
+ * Class LoopNode.
  *
  * Represents a node of external data.
  */
@@ -31,4 +32,5 @@ class LoopNode {
   public function getTitle() {
     return $this->title;
   }
+
 }

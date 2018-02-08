@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Install hooks for Loop example content.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function loop_example_content_install() {
+  // Create example users.
+  loop_example_content_create_example_users();
+}
