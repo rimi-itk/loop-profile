@@ -1,3 +1,9 @@
+<?php
+
+/**
+ * @file
+ */
+?>
 <div class="guide--nav-wrapper">
   <h2><?php print $forest['index_title']; ?></h2>
   <div class="guide--nav-wrapper-inner">

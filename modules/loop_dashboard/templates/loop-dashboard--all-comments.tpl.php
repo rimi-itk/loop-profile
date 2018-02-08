@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Displays all comments page for dashboard.

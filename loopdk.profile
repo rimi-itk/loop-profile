@@ -1,11 +1,12 @@
 <?php
+
 /**
  * @file
  * The installation profile.
  */
 
 /**
- * Implement hook_install_tasks_alter().
+ * Implements hook_install_tasks_alter().
  *
  * Redirect language selection to our own function.
  */
@@ -14,7 +15,9 @@ function loopdk_install_tasks_alter(&$tasks, $install_state) {
   $tasks['install_select_locale']['function'] = 'loopdk_locale_selection';
 }
 
-// Set default language to english.
+/**
+ * Set default language to english.
+ */
 function loopdk_locale_selection(&$install_state) {
   $install_state['parameters']['locale'] = 'en';
 }
@@ -52,8 +55,8 @@ function loopdk_module_selection_form($form, &$form_state) {
   );
 
   $all_modules = system_rebuild_module_data();
-  // Additional Loop modules to suggest installing
-  //   module name => install (default checkbox value)
+  // Additional Loop modules to suggest installing:
+  // module name => install (default checkbox value)
   $loop_modules = array(
     'loop_configure_theme' => FALSE,
     'loop_post_wysiwyg' => FALSE,
@@ -146,7 +149,7 @@ function loopdk_install_tasks(&$install_state) {
       'display_name' => st('Setup filter and WYSIWYG'),
       'display' => TRUE,
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
-      'type' => 'batch'
+      'type' => 'batch',
     ),
     // Round up installation.
     'loopdk_final_settings' => array(
@@ -154,7 +157,7 @@ function loopdk_install_tasks(&$install_state) {
       'display' => TRUE,
       'run' => INSTALL_TASK_RUN_IF_NOT_COMPLETED,
       'type' => 'normal',
-    )
+    ),
   );
 
   return $ret;
@@ -164,7 +167,7 @@ function loopdk_install_tasks(&$install_state) {
  * Translation callback.
  *
  * Add danish language and import for every module.
-
+ *
  * @return array
  *   List of batches.
  */
@@ -281,9 +284,9 @@ function loopdk_setup_filter_and_wysiwyg() {
       'status' => 1,
       'settings' => array(
         'shortener_url_behavior' => 'strict',
-        'shortener_url_length' => '72'
-      )
-    )
+        'shortener_url_length' => '72',
+      ),
+    ),
   );
 
   filter_format_save($format);
@@ -365,9 +368,9 @@ function loopdk_setup_filter_and_wysiwyg() {
       'status' => 1,
       'settings' => array(
         'shortener_url_behavior' => 'strict',
-        'shortener_url_length" => "72'
-      )
-    )
+        'shortener_url_length' => '72',
+      ),
+    ),
   );
 
   filter_format_save($format);
@@ -486,15 +489,17 @@ function loopdk_load_handlebars() {
 function loopdk_menu() {
   $items = array();
 
-  $items['admin/config/loop'] = array( //this creates a URL that will call this form at "examples/form-example"
-    'title' => 'Loop settings', //page title
+  // This creates a URL that will call this form at "examples/form-example".
+  $items['admin/config/loop'] = array(
+  // Page title.
+    'title' => 'Loop settings',
     'description' => 'Loop specific configuration.',
     'page callback' => 'system_admin_menu_block_page',
     'access arguments' => array('access administration pages'),
-    //'path' => drupal_get_path('module', 'system'),
-    //'file' => 'system.admin.inc',
+    // 'path' => drupal_get_path('module', 'system'),
+    // 'file' => 'system.admin.inc',.
     'position' => 'left',
-    'weight' => '-15'
+    'weight' => '-15',
   );
 
   return $items;

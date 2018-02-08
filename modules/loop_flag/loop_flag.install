@@ -1,9 +1,14 @@
 <?php
 
 /**
+ * @file
+ * Missing short description in doc comment.
+ */
+
+/**
  * Alter term flag.
  */
-function loop_flag_update_7001(&$sandbox){
+function loop_flag_update_7001(&$sandbox) {
   $flag = flag_load('subscribe_term');
 
   $flag->flag_message = 'You are now subscribed to this subject.';

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Template for a 3 column panel layout.

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Main panel pane template.

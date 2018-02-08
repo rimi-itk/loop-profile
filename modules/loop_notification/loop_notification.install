@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Update and install hooks related to notifications.
@@ -86,16 +87,16 @@ function loop_notification_update_7003() {
   $mlid = array();
   $path = 'user';
   $name = 'main-menu';
-  $menu_info = db_select('menu_links' , 'ml')
-    ->condition('ml.link_path' , $path)
-    ->condition('ml.menu_name' , $name)
+  $menu_info = db_select('menu_links', 'ml')
+    ->condition('ml.link_path', $path)
+    ->condition('ml.menu_name', $name)
     ->fields('ml', array('mlid', 'plid'))
     ->execute()
     ->fetchAll();
 
-  foreach($menu_info as $key => $value) {
+  foreach ($menu_info as $key => $value) {
     $mlid[] = $menu_info[$key]->mlid;
-    foreach($mlid as $mlid_value) {
+    foreach ($mlid as $mlid_value) {
       menu_link_delete($mlid_value);
     }
   }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Adds support for SAML integration via SimpleSAMLphp.
@@ -6,20 +7,27 @@
 
 /**
  * Return the SAML attribute to map to a given user profile field.
- * @param $field_name
+ *
+ * @param string $field_name
+ *   The field name.
+ *
  * @return string
+ *   The attribute name.
  */
 function loop_simplesamlphp_get_attribute_for_field($field_name) {
   $default_attribute_mapping = loop_simplesamlphp_get_default_mapping();
-  return variable_get('loop_simplesamlphp_' . $field_name,
-    $default_attribute_mapping[$field_name]);
+  return variable_get('loop_simplesamlphp_' . $field_name, $default_attribute_mapping[$field_name]);
 }
 
 /**
  * Return the default mapping between profile fields and SAML attributes.
- * @param string $field_name Optionally, the field name to retrieve the
- * default mapping for.
- * @return array
+ *
+ * @param string $field_name
+ *   Optionally, the field name to retrieve the
+ *   default mapping for.
+ *
+ * @return string|array
+ *   The attribute name or all attribute names.
  */
 function loop_simplesamlphp_get_default_mapping($field_name = NULL) {
   $defaults = array(
@@ -52,105 +60,104 @@ function loop_simplesamlphp_form_simplesamlphp_auth_settings_alter(&$form, &$for
     '#type' => 'fieldset',
     '#title' => t('Loop User Attribute Mapping'),
     '#collapsible' => TRUE,
-    '#collapsed' => FALSE
+    '#collapsed' => FALSE,
   );
 
   $loop_fieldset['loop_simplesamlphp_field_first_name'] = array(
     '#type' => 'textfield',
     '#title' => t('Which attribute from simpleSAMLphp should be used as user first name'),
     '#default_value' =>
-      loop_simplesamlphp_get_attribute_for_field('field_first_name'),
+    loop_simplesamlphp_get_attribute_for_field('field_first_name'),
     '#description' => t('Example: <i>@example</i><br />If the user attribute is multivalued, the first
  value will be used.', array(
-      '@example' =>
-        loop_simplesamlphp_get_default_mapping('field_first_name')
-    )),
+   '@example' =>
+   loop_simplesamlphp_get_default_mapping('field_first_name'),
+ )),
   );
 
   $loop_fieldset['loop_simplesamlphp_field_last_name'] = array(
     '#type' => 'textfield',
     '#title' => t('Which attribute from simpleSAMLphp should be used as user last name'),
     '#default_value' =>
-      loop_simplesamlphp_get_attribute_for_field('field_last_name'),
+    loop_simplesamlphp_get_attribute_for_field('field_last_name'),
     '#description' => t('Example: <i>@example</i><br />If the user attribute is multivalued, the first
  value will be used.', array(
-      '@example' =>
-        loop_simplesamlphp_get_default_mapping('field_last_name')
-    )),
+   '@example' =>
+   loop_simplesamlphp_get_default_mapping('field_last_name'),
+ )),
   );
 
   $loop_fieldset['loop_simplesamlphp_field_phone_number'] = array(
     '#type' => 'textfield',
     '#title' => t('Which attribute from simpleSAMLphp should be used as user phone number'),
     '#default_value' =>
-      loop_simplesamlphp_get_attribute_for_field('field_phone_number'),
+    loop_simplesamlphp_get_attribute_for_field('field_phone_number'),
     '#description' => t('Example: <i>@example</i><br />If the user attribute is multivalued, the first
  value will be used.', array(
-      '@example' =>
-        loop_simplesamlphp_get_default_mapping('field_phone_number')
-    )),
+   '@example' =>
+   loop_simplesamlphp_get_default_mapping('field_phone_number'),
+ )),
   );
 
   $loop_fieldset['loop_simplesamlphp_field_job_title'] = array(
     '#type' => 'textfield',
     '#title' => t('Which attribute from simpleSAMLphp should be used as user job title'),
     '#default_value' =>
-      loop_simplesamlphp_get_attribute_for_field('field_job_title'),
+    loop_simplesamlphp_get_attribute_for_field('field_job_title'),
     '#description' => t('Example: <i>@example</i><br />If the user attribute is multivalued, the first
  value will be used.', array(
-      '@example' =>
-        loop_simplesamlphp_get_default_mapping('field_job_title')
-    )),
+   '@example' =>
+   loop_simplesamlphp_get_default_mapping('field_job_title'),
+ )),
   );
 
   $loop_fieldset['loop_simplesamlphp_field_location_place'] = array(
     '#type' => 'textfield',
     '#title' => t('Which attribute from simpleSAMLphp should be used as user location'),
     '#default_value' =>
-      loop_simplesamlphp_get_attribute_for_field('field_location_place'),
+    loop_simplesamlphp_get_attribute_for_field('field_location_place'),
     '#description' => t('Example: <i>@example</i><br />If the user attribute is multivalued, the first
  value will be used.', array(
-      '@example' =>
-        loop_simplesamlphp_get_default_mapping('field_location_place')
-    )),
+   '@example' =>
+   loop_simplesamlphp_get_default_mapping('field_location_place'),
+ )),
   );
 
   $loop_fieldset['loop_simplesamlphp_field_location_address'] = array(
     '#type' => 'textfield',
     '#title' => t('Which attribute from simpleSAMLphp should be used as user address'),
     '#default_value' =>
-      loop_simplesamlphp_get_attribute_for_field('field_location_address'),
+    loop_simplesamlphp_get_attribute_for_field('field_location_address'),
     '#description' => t('Example: <i>@example</i><br />If the user attribute is multivalued, the first
  value will be used.', array(
-      '@example' =>
-        loop_simplesamlphp_get_default_mapping('field_location_address')
-    )),
+   '@example' =>
+   loop_simplesamlphp_get_default_mapping('field_location_address'),
+ )),
   );
 
   $loop_fieldset['loop_simplesamlphp_field_location_postal_code'] = array(
     '#type' => 'textfield',
     '#title' => t('Which attribute from simpleSAMLphp should be used as user postal code'),
     '#default_value' =>
-      loop_simplesamlphp_get_attribute_for_field('field_location_postal_code'),
+    loop_simplesamlphp_get_attribute_for_field('field_location_postal_code'),
     '#description' => t('Example: <i>@example</i><br />If the user attribute is multivalued, the first
  value will be used.', array(
-      '@example' =>
-        loop_simplesamlphp_get_default_mapping('field_location_postal_code')
-    )),
+   '@example' =>
+   loop_simplesamlphp_get_default_mapping('field_location_postal_code'),
+ )),
   );
 
   $loop_fieldset['loop_simplesamlphp_field_location_city'] = array(
     '#type' => 'textfield',
     '#title' => t('Which attribute from simpleSAMLphp should be used as user city'),
     '#default_value' =>
-      loop_simplesamlphp_get_attribute_for_field('field_location_city'),
+    loop_simplesamlphp_get_attribute_for_field('field_location_city'),
     '#description' => t('Example: <i>@example</i><br />If the user attribute is multivalued, the first
  value will be used.', array(
-      '@example' =>
-        loop_simplesamlphp_get_default_mapping('field_location_city')
-    )),
+   '@example' =>
+   loop_simplesamlphp_get_default_mapping('field_location_city'),
+ )),
   );
-
 
   $form['loop_simplesamlphp_user_attribute_mapping'] = $loop_fieldset;
 }
@@ -164,18 +171,18 @@ function loop_simplesamlphp_user_login(&$edit, $account) {
   $attributes = simplesamlphp_auth_get_attributes();
   if (!empty($attributes)) {
     $default_attribute_mapping = loop_simplesamlphp_get_default_mapping();
-    // Loop through each attribute that we are trying to map
+    // Loop through each attribute that we are trying to map.
     foreach (array_keys($default_attribute_mapping) as $field_name) {
-      // Get the attribute name to map to this field
+      // Get the attribute name to map to this field.
       $attribute = loop_simplesamlphp_get_attribute_for_field($field_name);
-      // Get the value of the SAML attribute
+      // Get the value of the SAML attribute.
       $value = simplesamlphp_auth_get_attributes($attribute);
       if ($value !== NULL && isset($value[0])) {
-        // Set the value on the user profile field
+        // Set the value on the user profile field.
         $edit[$field_name][LANGUAGE_NONE][0]['value'] = $value[0];
       }
     }
-    // Save the changes to the user profile
+    // Save the changes to the user profile.
     user_save($account, $edit);
   }
 }
@@ -187,12 +194,12 @@ function loop_simplesamlphp_init() {
   // Do not run this from CLI.
   if (php_sapi_name() != 'cli') {
     if (user_is_anonymous() && !in_array($_GET['q'], array(
-        'saml_login',
-        'user/logout',
-        'user/login'
-      ))
+      'saml_login',
+      'user/logout',
+      'user/login',
+    ))
     ) {
-      // Redirect anonymous users to the saml login page
+      // Redirect anonymous users to the saml login page.
       drupal_goto('saml_login', array('query' => array('ReturnTo' => url($_GET['q'], array('absolute' => TRUE)))));
     }
   }

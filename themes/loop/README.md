@@ -3,7 +3,8 @@ Loop theme
 
 This repository is the default theme for the Loop web application.
 
-Sass is based on ITK Designs boilerplate found here, https://github.com/aakb/frontend-boilerplate
+Sass is based on ITK Designs boilerplate found here,
+https://github.com/aakb/frontend-boilerplate
 
 
 Building the stylesheet
@@ -21,13 +22,15 @@ Then build the stylesheet by running this command
 gulp sass
 ```
 
-To continuosly update the stylesheet when editing the source scss files you can run
+To continuosly update the stylesheet when editing the source scss
+files you can run
 
 ```
 gulp watch sass
 ```
 
-Add `--env=dev` to the command to include source maps in the generated stylesheet:
+Add `--env=dev` to the command to include source maps in the generated
+stylesheet:
 
 ```
 gulp watch sass --env=dev
@@ -42,7 +45,8 @@ gulp build
 Building the icon font
 ----------------------
 
-A custom font is used for icons on the site. The font is built using [Fontello](http://fontello.com/).
+A custom font is used for icons on the site. The font is built using
+[Fontello](http://fontello.com/).
 
 Perform these steps to update the font:
 

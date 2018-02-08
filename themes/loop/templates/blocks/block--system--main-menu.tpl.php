@@ -3,6 +3,7 @@
 /**
  * @file
  * Theme implementation to display system main menu block.
+ *
  * Overrides system default block.tpl.php from block module.
  *
  * Available variables:

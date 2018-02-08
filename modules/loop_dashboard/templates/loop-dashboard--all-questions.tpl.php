@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Displays all questions page dashboard.

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Implementation of hook_panels_layouts().

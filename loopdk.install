@@ -165,3 +165,10 @@ function loopdk_update_7002() {
     drupal_uninstall_modules(array('loop_external_data'));
   }
 }
+
+/**
+ * Updated translations.
+ */
+function loopdk_update_7003() {
+  loopdk_translation_update();
+}

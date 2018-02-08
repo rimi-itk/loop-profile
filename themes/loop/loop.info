@@ -1,6 +1,5 @@
 name = Loop
 description = Default theme for the Loop web application.
-version = VERSION
 core = 7.x
 
 ; Regions

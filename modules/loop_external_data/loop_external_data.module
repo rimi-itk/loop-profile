@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Code for the Loop External data functionality.
@@ -54,7 +55,6 @@ function loop_external_data_init() {
     drupal_add_js(drupal_get_path('module', 'loop_external_data') . '/js/search.js', array('weight' => 2));
   }
 }
-
 
 /**
  * Implements hook_form_alter().
@@ -469,7 +469,7 @@ function loop_external_data_node_update($node) {
   }
   else {
     if (time() < $_SESSION['loop_external_data_node_update']) {
-      unset ($_SESSION['loop_external_data_node_update']);
+      unset($_SESSION['loop_external_data_node_update']);
     }
   }
 }
