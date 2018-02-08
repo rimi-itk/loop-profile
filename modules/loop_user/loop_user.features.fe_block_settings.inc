@@ -18,7 +18,8 @@ function loop_user_default_fe_block_settings() {
     'delta' => 'login',
     'module' => 'user',
     'node_types' => array(),
-    'pages' => 'loop_saml_redirect' . PHP_EOL . 'page-not-found',
+    'pages' => 'loop_saml_redirect
+page-not-found',
     'roles' => array(),
     'themes' => array(
       'bartik' => array(
