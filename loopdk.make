@@ -39,7 +39,7 @@ projects[elements][subdir] = "contrib"
 projects[elements][version] = "1.4"
 
 projects[entity][subdir] = "contrib"
-projects[entity][version] = "1.8"
+projects[entity][version] = "1.9"
 
 projects[entity_print][subdir] = "contrib"
 projects[entity_print][version] = "1.5"
