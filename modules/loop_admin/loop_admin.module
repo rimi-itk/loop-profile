@@ -63,6 +63,26 @@ function loop_admin_menu() {
 }
 
 /**
+ * Implements hook_menu_alter().
+ */
+function loop_admin_menu_alter(&$items) {
+  $items['admin']['access callback'] = '_loop_admin_admin_path_permission';
+}
+
+/**
+ * Give some users permission to access /admin.
+ *
+ * @return bool
+ *   Whether the user has access to the /admin path or not.
+ */
+function _loop_admin_admin_path_permission() {
+  if (user_access('view admin path') || user_access('access administration pages')) {
+    return TRUE;
+  }
+  return FALSE;
+}
+
+/**
  * Implements hook_theme().
  */
 function loop_admin_theme($existing, $type, $theme, $path) {
@@ -909,6 +929,24 @@ function _loop_admin_generate_full_name(StdClass $account) {
 function loop_admin_action_info() {
   $actions = array();
 
+  $actions['_loop_admin_increase_one_month'] = array(
+    'type' => 'node',
+    'label' => t('Extend revisioning date for 1 month'),
+    'configurable' => FALSE,
+    'triggers' => array('any'),
+    'behavior' => array('changes_property'),
+    'vbo_configurable' => FALSE,
+    'pass rows' => TRUE,
+  );
+  $actions['_loop_admin_increase_three_months'] = array(
+    'type' => 'node',
+    'label' => t('Extend revisioning date for 3 months'),
+    'configurable' => FALSE,
+    'triggers' => array('any'),
+    'behavior' => array('changes_property'),
+    'vbo_configurable' => FALSE,
+    'pass rows' => TRUE,
+  );
   $actions['_loop_admin_increase_six_months'] = array(
     'type' => 'node',
     'label' => t('Extend revisioning date for 6 months'),
@@ -923,20 +961,71 @@ function loop_admin_action_info() {
 }
 
 /**
- * Custom action for extending revisioning dates.
+ * Custom action for extending revisioning dates 1 month.
+ *
+ * @param StdClass $entity
+ *   The node to act on.
+ */
+function _loop_admin_increase_one_month(StdClass $entity) {
+  _loop_admin_revision_extend(2592000, $entity);
+}
+
+/**
+ * Custom action for extending revisioning dates 3 months.
+ *
+ * @param StdClass $entity
+ *   The node to act on.
+ */
+function _loop_admin_increase_three_months(StdClass $entity) {
+  _loop_admin_revision_extend(7862400, $entity);
+}
+
+/**
+ * Custom action for extending revisioning dates 6 months.
  *
  * @param StdClass $entity
  *   The node to act on.
  */
 function _loop_admin_increase_six_months(StdClass $entity) {
+  _loop_admin_revision_extend(15724800, $entity);
+}
+
+/**
+ * Custom action for extending revisioning dates 3 months.
+ *
+ * @param int $increase
+ *   A number of seconds.
+ * @param StdClass $entity
+ *   The node to act on.
+ */
+function _loop_admin_revision_extend($increase, StdClass $entity) {
   $wrapper = entity_metadata_wrapper('node', $entity);
   $value = $wrapper->field_revision_date->value();
-  $six_months = 15724800;
+  $increase = $increase;
   if ($value) {
-    $wrapper->field_revision_date = $value + $six_months;
+    $wrapper->field_revision_date = $value + $increase;
   }
   else {
-    $wrapper->field_revision_date = time() + $six_months;
+    $wrapper->field_revision_date = time() + $increase;
   }
   $wrapper->save();
+}
+
+/**
+ * Add revision permission and view /admin path permission.
+ *
+ * @return array
+ *   An array defining a permission.
+ */
+function loop_admin_permission() {
+  return array(
+    'set revision date for content' => array(
+      'title' => t('Set revision date for content'),
+      'description' => t('Set revision date for content.'),
+    ),
+    'view admin path' => array(
+      'title' => t('View /admin path'),
+      'description' => t('View /admin path but not any sub paths.'),
+    ),
+  );
 }

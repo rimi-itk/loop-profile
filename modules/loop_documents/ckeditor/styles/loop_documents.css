@@ -14,4 +14,56 @@ table.loop-documents-table-steps td:first-child {
   text-align: center;
 }
 
-/*# sourceMappingURL=loop_documents.css.map */
+.workflow-needs-proofreading {
+  background-color: #ffaaaa;
+}
+.workflow-needs-proofreading .workflow-needs-proofreading {
+  background-color: #ff5e5e;
+}
+
+.cke_editable blockquote.workflow-needs-proofreading,
+.cke_editable dd.workflow-needs-proofreading,
+.cke_editable div.workflow-needs-proofreading,
+.cke_editable dl.workflow-needs-proofreading,
+.cke_editable dt.workflow-needs-proofreading,
+.cke_editable h1.workflow-needs-proofreading,
+.cke_editable h2.workflow-needs-proofreading,
+.cke_editable h3.workflow-needs-proofreading,
+.cke_editable h4.workflow-needs-proofreading,
+.cke_editable h5.workflow-needs-proofreading,
+.cke_editable h6.workflow-needs-proofreading,
+.cke_editable li.workflow-needs-proofreading,
+.cke_editable ol.workflow-needs-proofreading,
+.cke_editable p.workflow-needs-proofreading,
+.cke_editable table.workflow-needs-proofreading,
+.cke_editable ul.workflow-needs-proofreading {
+  margin-top: 2rem;
+  min-height: 2em;
+  position: relative;
+}
+.cke_editable blockquote.workflow-needs-proofreading::before,
+.cke_editable dd.workflow-needs-proofreading::before,
+.cke_editable div.workflow-needs-proofreading::before,
+.cke_editable dl.workflow-needs-proofreading::before,
+.cke_editable dt.workflow-needs-proofreading::before,
+.cke_editable h1.workflow-needs-proofreading::before,
+.cke_editable h2.workflow-needs-proofreading::before,
+.cke_editable h3.workflow-needs-proofreading::before,
+.cke_editable h4.workflow-needs-proofreading::before,
+.cke_editable h5.workflow-needs-proofreading::before,
+.cke_editable h6.workflow-needs-proofreading::before,
+.cke_editable li.workflow-needs-proofreading::before,
+.cke_editable ol.workflow-needs-proofreading::before,
+.cke_editable p.workflow-needs-proofreading::before,
+.cke_editable table.workflow-needs-proofreading::before,
+.cke_editable ul.workflow-needs-proofreading::before {
+  content: "OBS";
+  display: block;
+  position: absolute;
+  top: -2rem;
+  right: 0;
+  line-height: 1.5;
+  padding: .25rem;
+  background-color: #ffaaaa;
+  color: #ffffff;
+}

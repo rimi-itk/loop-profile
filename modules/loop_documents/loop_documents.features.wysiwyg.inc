@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * loop_documents.features.wysiwyg.inc
@@ -10,17 +11,11 @@
 function loop_documents_wysiwyg_default_profiles() {
   $profiles = array();
 
-  // Exported profile: loop_documents
+  // Exported profile: loop_documents.
   $profiles['loop_documents'] = array(
     'format' => 'loop_documents',
     'editor' => 'ckeditor',
     'settings' => array(
-      'default' => 1,
-      'user_choose' => 0,
-      'show_toggle' => 0,
-      'add_to_summaries' => 1,
-      'theme' => '',
-      'language' => 'en',
       'buttons' => array(
         'default' => array(
           'Bold' => 1,
@@ -35,8 +30,8 @@ function loop_documents_wysiwyg_default_profiles() {
           'PasteFromWord' => 1,
           'Templates' => 1,
         ),
-        'mediaBrowser' => array(
-          'mediaBrowser' => 1,
+        'drupal_proofread' => array(
+          'Proofread' => 1,
         ),
         'drupal_path' => array(
           'Link' => 1,
@@ -45,6 +40,8 @@ function loop_documents_wysiwyg_default_profiles() {
           'media' => 1,
         ),
       ),
+      'theme' => '',
+      'language' => 'en',
       'toolbarLocation' => 'top',
       'resize_enabled' => 1,
       'default_toolbar_grouping' => 0,
@@ -56,13 +53,20 @@ function loop_documents_wysiwyg_default_profiles() {
       'css_path' => '',
       'stylesSet' => '',
       'block_formats' => 'p,h2,h3',
-      'advanced__active_tab' => 'edit-basic',
       'forcePasteAsPlainText' => 0,
       'pasteFromWordNumberedHeadingToList' => 0,
       'pasteFromWordPromptCleanup' => 0,
       'pasteFromWordRemoveFontStyles' => 1,
       'pasteFromWordRemoveStyles' => 1,
     ),
+    'preferences' => array(
+      'add_to_summaries' => 1,
+      'default' => 1,
+      'show_toggle' => 0,
+      'user_choose' => 0,
+      'version' => '4.5.3.6c70c82',
+    ),
+    'name' => 'formatloop_documents',
   );
 
   return $profiles;

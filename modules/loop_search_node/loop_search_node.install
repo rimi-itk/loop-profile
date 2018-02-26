@@ -69,3 +69,10 @@ function loop_search_node_update_7003(&$sandbox) {
 function loop_search_node_update_7004(&$sandbox) {
   variable_set('search_node_page_search_box', _loop_search_node_box_settings());
 }
+
+/**
+ * Update search node block with search on field_subject.
+ */
+function loop_search_node_update_7005(&$sandbox) {
+  variable_set('search_node_page_search_box', _loop_search_node_box_settings());
+}

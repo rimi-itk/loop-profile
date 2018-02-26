@@ -77,6 +77,11 @@ function loop_preprocess_page(&$variables) {
     $variables['user_public_block'] = module_invoke('loop_user', 'block_view', 'loop_user_my_content');
   }
 
+  // Load documents admin menu.
+  if (module_exists('loop_documents')) {
+    $variables['loop_documents_admin_menu_block'] = module_invoke('menu', 'block_view', 'menu-document-author-management');
+  }
+
   // Check if we are using a panel page to define layout.
   $panel = panels_get_current_page_display();
   if (empty($panel)) {
@@ -389,12 +394,22 @@ function loop_menu_tree__menu_loop_primary_menu($variables) {
 }
 
 /**
- * Implements theme_menu_tree__menu_loop_primary_menu().
+ * Implements theme_menu_tree__management().
  *
  * User generated link.
  * Forms the header menu together with main menu.
  */
 function loop_menu_tree__management($variables) {
+  return $variables['tree'];
+}
+
+/**
+ * Implements theme_menu_tree__menu_document_author_management().
+ *
+ * User generated link.
+ * Forms the header menu together with main menu.
+ */
+function loop_menu_tree__menu_document_author_management($variables) {
   return $variables['tree'];
 }
 
@@ -440,7 +455,6 @@ function loop_menu_link__main_menu($variables) {
  * Implements theme_menu_link().
  */
 function loop_menu_link__menu_loop_primary_menu($variables) {
-  $theme_path = drupal_get_path('theme', 'loop');
   $element = $variables['element'];
 
   // Sub item exist (Element is parent).
@@ -478,7 +492,6 @@ function loop_menu_link__menu_loop_primary_menu($variables) {
  * Implements theme_menu_link().
  */
 function loop_menu_link__management($variables) {
-  $theme_path = drupal_get_path('theme', 'loop');
   $element = $variables['element'];
 
   if ($element['#href'] == 'admin') {
@@ -498,6 +511,33 @@ function loop_menu_link__management($variables) {
     $element['#localized_options']['attributes']['class'][] = 'nav-dropdown--link';
     // @codingStandardsIgnoreLine
     $output = l(t($element['#title']), $element['#href'], $element['#localized_options']);
+  }
+
+  return $output . "\n";
+}
+
+/**
+ * Implements theme_menu_link().
+ */
+function loop_menu_link__menu_document_author_management($variables) {
+  $element = $variables['element'];
+
+  if ($element['#href'] == 'admin/content' && !empty($element['#below'])) {
+    $element['#title'] = '<span class="nav--text">' . $element['#title'] . '</span>';
+
+    // Wrap the sub menu.
+    $sub_menu = '<div class="nav-dropdown--item">' . drupal_render($element['#below']) . '</div>';
+
+    $element['#localized_options']['attributes']['class'][] = 'nav-dropdown--header';
+
+    // Allow images in the links.
+    $element['#localized_options']['html'][] = TRUE;
+
+    $output = '<div class="nav-dropdown--wrapper">' . l($element['#title'], $element['#href'], $element['#localized_options']) . $sub_menu . '</div>';
+  }
+  else {
+    $element['#localized_options']['attributes']['class'][] = 'nav-dropdown--link';
+    $output = l(($element['#title']), $element['#href'], $element['#localized_options']);
   }
 
   return $output . "\n";
@@ -594,6 +634,17 @@ function loop_form_user_register_form_alter(&$form) {
  * Implements hook_form_FORM_alter().
  */
 function loop_form_views_exposed_form_alter(&$form) {
+  // Change the format of date popup fields.
+  foreach ($form as $element => $item) {
+    if (isset($item['min']) || isset($item['max'])) {
+      foreach ($item as $part => $value) {
+        if (isset($value['#type']) && $value['#type'] == 'date_popup') {
+          $form[$element][$part]['#date_format'] = 'd/m/Y';
+        }
+      }
+    }
+  }
+
   if (arg(1) == 'dashboard') {
     if ($form['#id'] == 'views-exposed-form-loop-editor-users-panel-pane-1') {
       $form['combine']['#attributes']['placeholder'] = t('Type name, username, email or profession to filter the list');

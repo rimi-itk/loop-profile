@@ -17,3 +17,40 @@ table.loop-documents-table {
 		}
 	}
 }
+
+$proofreading-background-color: #ffaaaa !default;
+$proofreading-color: #ffffff !default;
+$proofreading-message: 'OBS' !default;
+
+.workflow-needs-proofreading {
+  background-color: $proofreading-background-color;
+
+  .workflow-needs-proofreading {
+    background-color: darken($proofreading-background-color, 15%);
+  }
+}
+
+.cke_editable {
+  $html-block-elements: address, article, aside, blockquote, canvas, dd, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, li, main, nav, noscript, ol, output, p, pre, section, table, tfoot, ul, video;
+
+  // Add obvious marker on block level elements that are marked for proofreading.
+  blockquote, dd, div, dl, dt, h1, h2, h3, h4, h5, h6, li, ol, p, table, ul {
+    &.workflow-needs-proofreading {
+      margin-top: 2rem;
+      min-height: 2em;
+      position: relative;
+
+      &::before {
+        content: $proofreading-message;
+        display: block;
+        position: absolute;
+        top: -2rem;
+        right: 0;
+        line-height: 1.5;
+        padding: .25rem;
+        background-color: $proofreading-background-color;
+        color: $proofreading-color;
+      }
+    }
+  }
+}

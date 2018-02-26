@@ -87,6 +87,15 @@ function loop_documents_form_node_form_alter(&$form, &$form_state, $form_id) {
       $form['field_loop_documents_contents']['#type'] = 'hidden';
       $menu = menu_load(loop_documents_get_menu_name($node));
 
+      // @todo delete this after release 2.8.0 And remove the field from the db.
+      // Migration has been done as part of 2.8.0.
+      $form['field_loop_documents_review_date']['#access'] = FALSE;
+
+      // The new revision date to use.
+      if (!user_access('set revision date for content')) {
+        $form['field_revision_date']['#access'] = FALSE;
+      }
+
       $form['field_loop_documents_menu_display'] = array(
         '#type' => 'fieldset',
         '#attributes' => array('class' => array('loop-documents-collection-content')),
@@ -816,4 +825,35 @@ function loop_documents_block_view($delta = '') {
   }
 
   return $block;
+}
+
+/**
+ * Implements hook_page_alter().
+ */
+function loop_documents_page_alter(&$page) {
+  global $language;
+  // Add current language to the JS settings.
+  drupal_add_js(
+    array(
+      'loop_documents' => array(
+        'language' => $language->language,
+      ),
+    ),
+    array('type' => 'setting')
+  );
+}
+
+/**
+ * Implements hook_wysiwyg_plugin().
+ */
+function loop_documents_wysiwyg_plugin($editor, $version) {
+  if ($editor === 'ckeditor') {
+    return array(
+      'drupal_proofread' => array(
+        'path' => drupal_get_path('module', 'loop_documents') . '/ckeditor/plugins/proofread/',
+        'load' => TRUE,
+        'extensions' => array('Proofread' => t('Proofread')),
+      ),
+    );
+  }
 }

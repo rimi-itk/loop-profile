@@ -27,7 +27,7 @@ function loop_admin_update_7100() {
     'menu_name' => $name,
     'weight' => 10,
     'link_title' => 'Revisioning list',
-    'link_path' => 'editor/loop-content-revisioning-date',
+    'link_path' => 'editor/dashboard/loop-content-revisioning-date',
     'mlid' => 0,
     'plid' => $mlid[0],
   );

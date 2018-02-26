@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * loop_documents.features.inc
@@ -25,19 +26,19 @@ function loop_documents_ctools_plugin_api($module = NULL, $api = NULL) {
 function loop_documents_node_info() {
   $items = array(
     'loop_documents_collection' => array(
-      'name' => t('Document collection'),
+      'name' => t('Dokumentsamling'),
       'base' => 'node_content',
-      'description' => t('A collection of documents'),
+      'description' => t('En samling af dokumenter'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
     'loop_documents_document' => array(
-      'name' => t('Document'),
+      'name' => t('Dokument'),
       'base' => 'node_content',
-      'description' => t('A document that can be put into a document collection'),
+      'description' => t('Et dokument der kan puttes i en samling'),
       'has_title' => '1',
-      'title_label' => t('Title'),
+      'title_label' => t('Titel'),
       'help' => '',
     ),
   );

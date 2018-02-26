@@ -10,7 +10,7 @@
 function loop_external_sources_content_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-external_sources-field_external_link'
+  // Exported field_instance: 'node-external_sources-field_external_link'.
   $field_instances['node-external_sources-field_external_link'] = array(
     'bundle' => 'external_sources',
     'default_value' => NULL,
@@ -66,7 +66,7 @@ function loop_external_sources_content_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-external_sources-field_keyword'
+  // Exported field_instance: 'node-external_sources-field_keyword'.
   $field_instances['node-external_sources-field_keyword'] = array(
     'bundle' => 'external_sources',
     'default_value' => NULL,
@@ -109,7 +109,62 @@ function loop_external_sources_content_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-external_sources-field_subject'
+  // Exported field_instance: 'node-external_sources-field_revision_date'.
+  $field_instances['node-external_sources-field_revision_date'] = array(
+    'bundle' => 'external_sources',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_revision_date',
+    'label' => 'Revision date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'd/m/Y - g:i:sa',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => 0,
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 49,
+    ),
+  );
+
+  // Exported field_instance: 'node-external_sources-field_subject'.
   $field_instances['node-external_sources-field_subject'] = array(
     'bundle' => 'external_sources',
     'default_value' => NULL,
@@ -150,6 +205,7 @@ function loop_external_sources_content_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('External link');
   t('Keyword');
+  t('Revision date');
   t('Select a subject.');
   t('Subject');
   t('Type in keyword(s).');

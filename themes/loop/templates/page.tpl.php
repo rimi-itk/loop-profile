@@ -90,12 +90,10 @@ if (isset($primary_menu_block['content'])): ?>
           <?php print $logout_link;?>
         <?php endif;?>
       </div>
-      <?php if (user_access('access administration pages')) : ?>
-        <div class="nav-mobile--administration-links">
-          <h2 class="nav-mobile--links-header"><?php print t('Administration links');?></h2>
-          <?php print render($management_menu_block['content']); ?>
-        </div>
-      <?php endif;?>
+      <div class="nav-mobile--administration-links">
+        <h2 class="nav-mobile--links-header"><?php print t('Administration links');?></h2>
+        <?php print render($management_menu_block['content']); ?>
+      </div>
     <?php endif;?>
   </nav>
 <?php endif;?>
@@ -118,9 +116,13 @@ if (isset($primary_menu_block['content'])): ?>
           <?php print render($primary_menu_block['content']); ?>
         </nav>
       <?php endif; ?>
-      <?php if (!empty($management_menu_block['content']) && user_access('access administration pages')) : ?>
+      <?php if (!empty($management_menu_block['content'])) : ?>
         <nav class="nav-dropdown">
           <?php print render($management_menu_block['content']); ?>
+        </nav>
+      <?php elseif(!empty($loop_documents_admin_menu_block['content']) && user_access('view document admin menu')) : ?>
+        <nav class="nav-dropdown">
+          <?php print render($loop_documents_admin_menu_block['content']); ?>
         </nav>
       <?php endif; ?>
       <?php if (!empty($logout_link)) : ?>
@@ -132,7 +134,7 @@ if (isset($primary_menu_block['content'])): ?>
 
 <?php if (!empty($page['pagetop'])): ?>
   <div class="section">
-    <div class="layout-frontpage">
+    <div class="layout-frontpage block-module">
         <?php print render($page['pagetop']); ?>
     </div>
   </div>

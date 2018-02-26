@@ -23,6 +23,7 @@
   <exclude-pattern>themes/loop/scripts/chosen/</exclude-pattern>
   <exclude-pattern>themes/loop/scripts/chosen\..*</exclude-pattern>
   <exclude-pattern>*/node_modules/*</exclude-pattern>
+  <exclude-pattern>modules/loop_external_data</exclude-pattern>
 
   <exclude-pattern>README.md</exclude-pattern>
 

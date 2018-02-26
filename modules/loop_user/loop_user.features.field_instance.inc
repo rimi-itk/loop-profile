@@ -10,7 +10,7 @@
 function loop_user_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'user-user-field_area_of_expertise'
+  // Exported field_instance: 'user-user-field_area_of_expertise'.
   $field_instances['user-user-field_area_of_expertise'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -41,7 +41,7 @@ function loop_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_biography'
+  // Exported field_instance: 'user-user-field_biography'.
   $field_instances['user-user-field_biography'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -82,7 +82,7 @@ function loop_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_first_name'
+  // Exported field_instance: 'user-user-field_first_name'.
   $field_instances['user-user-field_first_name'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -123,7 +123,7 @@ function loop_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_job_title'
+  // Exported field_instance: 'user-user-field_job_title'.
   $field_instances['user-user-field_job_title'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -164,7 +164,7 @@ function loop_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_last_name'
+  // Exported field_instance: 'user-user-field_last_name'.
   $field_instances['user-user-field_last_name'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -205,7 +205,7 @@ function loop_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_location_address'
+  // Exported field_instance: 'user-user-field_location_address'.
   $field_instances['user-user-field_location_address'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -239,7 +239,7 @@ function loop_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_location_city'
+  // Exported field_instance: 'user-user-field_location_city'.
   $field_instances['user-user-field_location_city'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -273,7 +273,7 @@ function loop_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_location_place'
+  // Exported field_instance: 'user-user-field_location_place'.
   $field_instances['user-user-field_location_place'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -333,7 +333,7 @@ function loop_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_location_postal_code'
+  // Exported field_instance: 'user-user-field_location_postal_code'.
   $field_instances['user-user-field_location_postal_code'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -367,7 +367,7 @@ function loop_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_phone_number'
+  // Exported field_instance: 'user-user-field_phone_number'.
   $field_instances['user-user-field_phone_number'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -425,7 +425,7 @@ function loop_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_profession'
+  // Exported field_instance: 'user-user-field_profession'.
   $field_instances['user-user-field_profession'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -450,7 +450,7 @@ function loop_user_field_default_field_instances() {
     'entity_type' => 'user',
     'field_name' => 'field_profession',
     'label' => 'Profession',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => 1,
     ),
@@ -463,7 +463,7 @@ function loop_user_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_user_image'
+  // Exported field_instance: 'user-user-field_user_image'.
   $field_instances['user-user-field_user_image'] = array(
     'bundle' => 'user',
     'deleted' => 0,
