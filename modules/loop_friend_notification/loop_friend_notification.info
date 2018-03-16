@@ -16,5 +16,4 @@ features[field_instance][] = message-user_sharing_node_reference-field_node
 features[field_instance][] = message-user_sharing_node_reference-field_sender
 features[message_type][] = user_sharing_node_reference
 features[variable][] = field_bundle_settings_message__user_sharing_node_reference
-mtime = 1432044949
 project path = profiles/loop/modules
