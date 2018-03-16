@@ -31,7 +31,6 @@ function loop_user_page_views_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Perform';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Restore';
-  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sort by';
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Ascending';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Descending';
   $handler->display->display_options['pager']['type'] = 'full';
@@ -39,10 +38,6 @@ function loop_user_page_views_views_default_views() {
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'No. elements';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
   $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Forskydning';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« first';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ previous';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'next ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'last »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'comments--user-page-comments-element';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
@@ -132,7 +127,6 @@ function loop_user_page_views_views_default_views() {
   $handler->display->display_options['arguments']['uid']['table'] = 'comment';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
   $handler->display->display_options['arguments']['uid']['default_action'] = 'empty';
-  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'All';
   $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
@@ -176,33 +170,6 @@ function loop_user_page_views_views_default_views() {
       'label' => 'Kommentar: Forfatter uid',
     ),
   );
-  $translatables['loop_user_comments'] = array(
-    t('Master'),
-    t('User comments'),
-    t('mere'),
-    t('Perform'),
-    t('Restore'),
-    t('Sort by'),
-    t('Ascending'),
-    t('Descending'),
-    t('No. elements'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('Latest 10 comments'),
-    t('No comments'),
-    t('Content'),
-    t('.'),
-    t('Created'),
-    t('Question'),
-    t(' new'),
-    t('All'),
-    t('more'),
-    t('View panes'),
-  );
   $export['loop_user_comments'] = $view;
 
   $view = new view();
@@ -226,18 +193,11 @@ function loop_user_page_views_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Perform';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Restore';
-  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sort by';
   $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Ascending';
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Descending';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'No. elements';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- All -';
-  $handler->display->display_options['pager']['options']['expose']['offset_label'] = 'Offset';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« first';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ previous';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'next ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'last »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'question--user-page-nodes-element';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
@@ -324,7 +284,6 @@ function loop_user_page_views_views_default_views() {
   $handler->display->display_options['arguments']['uid']['table'] = 'node';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
   $handler->display->display_options['arguments']['uid']['default_action'] = 'access denied';
-  $handler->display->display_options['arguments']['uid']['exception']['title'] = 'All';
   $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
@@ -366,32 +325,6 @@ function loop_user_page_views_views_default_views() {
       'fixed' => '',
       'label' => 'Indhold: Forfatter uid',
     ),
-  );
-  $translatables['loop_user_nodes'] = array(
-    t('Master'),
-    t('User nodes'),
-    t('more'),
-    t('Perform'),
-    t('Restore'),
-    t('Sort by'),
-    t('Ascending'),
-    t('Descending'),
-    t('No. elements'),
-    t('- All -'),
-    t('Forskydning'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
-    t('Lastest 10 questions'),
-    t('No content'),
-    t('Created'),
-    t('.'),
-    t(' replies'),
-    t(' new'),
-    t('All'),
-    t('more'),
-    t('View panes'),
   );
   $export['loop_user_nodes'] = $view;
 
