@@ -32,9 +32,10 @@ function loop_post_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
-          'editor' => 0,
+          'editor' => 'editor',
+          'html' => 0,
           'plain_text' => 0,
-          'simple' => 'simple',
+          'simple' => 0,
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
@@ -42,6 +43,9 @@ function loop_post_field_default_field_instances() {
           'formats' => array(
             'editor' => array(
               'weight' => -9,
+            ),
+            'html' => array(
+              'weight' => -10,
             ),
             'plain_text' => array(
               'weight' => -8,
@@ -96,6 +100,16 @@ function loop_post_field_default_field_instances() {
       'active' => 1,
       'module' => 'file',
       'settings' => array(
+        'insert' => 0,
+        'insert_absolute' => FALSE,
+        'insert_class' => '',
+        'insert_default' => array(
+          0 => 'auto',
+        ),
+        'insert_styles' => array(
+          0 => 'auto',
+        ),
+        'insert_width' => '',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
@@ -137,9 +151,10 @@ function loop_post_field_default_field_instances() {
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
-          'editor' => 0,
+          'editor' => 'editor',
+          'html' => 0,
           'plain_text' => 0,
-          'simple' => 'simple',
+          'simple' => 0,
         ),
         'allowed_formats_toggle' => 1,
         'default_order_toggle' => 0,
@@ -147,6 +162,9 @@ function loop_post_field_default_field_instances() {
           'formats' => array(
             'editor' => array(
               'weight' => -9,
+            ),
+            'html' => array(
+              'weight' => -10,
             ),
             'plain_text' => array(
               'weight' => -8,
@@ -206,6 +224,16 @@ function loop_post_field_default_field_instances() {
       'active' => 1,
       'module' => 'file',
       'settings' => array(
+        'insert' => 0,
+        'insert_absolute' => FALSE,
+        'insert_class' => '',
+        'insert_default' => array(
+          0 => 'auto',
+        ),
+        'insert_styles' => array(
+          0 => 'auto',
+        ),
+        'insert_width' => '',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
