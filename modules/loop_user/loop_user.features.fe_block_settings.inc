@@ -22,12 +22,6 @@ function loop_user_default_fe_block_settings() {
 page-not-found',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
       'loop' => array(
         'region' => 'content',
         'status' => 1,
