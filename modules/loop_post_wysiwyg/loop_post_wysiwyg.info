@@ -40,4 +40,3 @@ features[features_overrides][] = views_view.loop_node_comments.display|default|d
 features[features_overrides][] = views_view.loop_node_comments.display|default|display_options|pager|options|expose
 features[features_overrides][] = views_view.loop_node_comments.display|default|display_options|pager|options|tags
 features[features_overrides][] = views_view.loop_node_comments.display|default|display_options|title
-mtime = 1441873405

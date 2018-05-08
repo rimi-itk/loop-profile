@@ -12,7 +12,6 @@ function loop_profession_optional_features_override_default_overrides() {
   $overrides = array();
 
   // Exported overrides for: field_instance
-  $overrides["field_instance.user-user-field_profession.required"] = 0;
 
  return $overrides;
 }

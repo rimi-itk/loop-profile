@@ -16,6 +16,8 @@ function loop_taxonomy_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 1,
     ),
     'profession' => array(
       'name' => 'Profession',
@@ -24,6 +26,8 @@ function loop_taxonomy_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 1,
     ),
     'subject' => array(
       'name' => 'Subjects',
@@ -32,6 +36,8 @@ function loop_taxonomy_taxonomy_default_vocabularies() {
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
+      'language' => 'und',
+      'i18n_mode' => 1,
     ),
   );
 }

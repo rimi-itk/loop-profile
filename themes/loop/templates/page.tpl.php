@@ -159,6 +159,11 @@ if (isset($primary_menu_block['content'])): ?>
 <?php if (user_is_anonymous()): ?>
   <div class="layout-no-wrapper">
     <div class="layout--inner">
+      <h1>
+        <?php if ($title): ?>
+          <?php print $title; ?>
+        <?php endif; ?>
+      </h1>
       <?php if ($messages): ?>
         <?php print $messages; ?>
       <?php endif; ?>
