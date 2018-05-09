@@ -17,7 +17,6 @@ dependencies[] = variable_realm
 features[ctools][] = path_breadcrumbs:path_breadcrumbs:1
 features[ctools][] = strongarm:strongarm:1
 features[features_api][] = api:2
-features[menu_custom][] = management
 features[menu_custom][] = menu-loop-primary-menu
 features[menu_links][] = management_administration:admin
 features[menu_links][] = management_overview:admin/index

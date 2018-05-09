@@ -626,9 +626,17 @@ function loop_form_user_login_alter(&$form) {
  */
 function loop_form_user_register_form_alter(&$form) {
   // Add js chosen class to profession field.
+  $field_expertise_lang = $form['field_area_of_expertise']['#language'];
+  $form['field_area_of_expertise'][$field_expertise_lang]['#attributes']['class'][] = 'js-chosen-select-area-of-expertise';
   $field_profession_lang = $form['field_profession']['#language'];
   $form['field_profession'][$field_profession_lang]['#attributes']['class'][] = 'js-chosen-select-profession';
+
+
+  // Set page title.
+  //drupal_set_title(t("Create user"));
 }
+
+
 
 /**
  * Implements hook_form_FORM_alter().

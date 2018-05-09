@@ -442,7 +442,6 @@ function loop_admin_views_default_views() {
     2 => array(),
     3 => array(),
   );
-  $handler->display->display_options['filters']['field_revision_date_value']['form_type'] = 'date_popup';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');

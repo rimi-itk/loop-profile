@@ -13,7 +13,7 @@ function loop_notification_default_rules_configuration() {
       "LABEL" : "Autosubscribe node comment author",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "flag", "rules", "comment" ],
+      "REQUIRES" : [ "flag", "loop_notification", "rules", "comment" ],
       "ON" : { "comment_insert" : [] },
       "DO" : [
         { "flag_flagnode" : {
@@ -35,7 +35,7 @@ function loop_notification_default_rules_configuration() {
       "LABEL" : "Create notification on comment edit",
       "PLUGIN" : "rule set",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules" ],
+      "REQUIRES" : [ "loop_notification", "rules" ],
       "USES VARIABLES" : {
         "active_user_object" : { "label" : "Active user objject", "type" : "user" },
         "comment_author" : { "label" : "comment_author", "type" : "user" },
@@ -74,7 +74,7 @@ function loop_notification_default_rules_configuration() {
       "LABEL" : "Create notification on node create",
       "PLUGIN" : "rule set",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules" ],
+      "REQUIRES" : [ "loop_notification", "rules" ],
       "USES VARIABLES" : {
         "active_user_object" : { "label" : "Active user objject", "type" : "user" },
         "node_author" : { "label" : "node_author", "type" : "user" },
@@ -113,7 +113,7 @@ function loop_notification_default_rules_configuration() {
       "LABEL" : "Create notification on node edit",
       "PLUGIN" : "rule set",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules" ],
+      "REQUIRES" : [ "loop_notification", "rules" ],
       "USES VARIABLES" : {
         "active_user_object" : { "label" : "Active user objject", "type" : "user" },
         "node_author" : { "label" : "node_author", "type" : "user" },
@@ -152,7 +152,7 @@ function loop_notification_default_rules_configuration() {
       "LABEL" : "Send mail to subscribers",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "mimemail" ],
+      "REQUIRES" : [ "loop_notification", "rules", "mimemail" ],
       "USES VARIABLES" : {
         "node" : { "label" : "node", "type" : "node" },
         "user" : { "label" : "user", "type" : "user" },
@@ -182,7 +182,7 @@ function loop_notification_default_rules_configuration() {
       "LABEL" : "Send mail to subscribers on comment edit",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "mimemail" ],
+      "REQUIRES" : [ "loop_notification", "rules", "mimemail" ],
       "USES VARIABLES" : {
         "node" : { "label" : "node", "type" : "node" },
         "user" : { "label" : "user", "type" : "user" },
@@ -212,7 +212,7 @@ function loop_notification_default_rules_configuration() {
       "LABEL" : "Send mail to subscribers on node create",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "mimemail" ],
+      "REQUIRES" : [ "loop_notification", "rules", "mimemail" ],
       "USES VARIABLES" : {
         "node" : { "label" : "node", "type" : "node" },
         "user" : { "label" : "user", "type" : "user" },
@@ -242,7 +242,7 @@ function loop_notification_default_rules_configuration() {
       "LABEL" : "Send mail to subscribers on node edit",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "mimemail" ],
+      "REQUIRES" : [ "loop_notification", "rules", "mimemail" ],
       "USES VARIABLES" : {
         "node" : { "label" : "node", "type" : "node" },
         "user" : { "label" : "user", "type" : "user" },
@@ -289,7 +289,7 @@ function loop_notification_default_rules_configuration() {
       "LABEL" : "Create notification on comment create",
       "PLUGIN" : "rule set",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules" ],
+      "REQUIRES" : [ "loop_notification", "rules" ],
       "USES VARIABLES" : {
         "active_user_object" : { "label" : "Active user objject", "type" : "user" },
         "comment_author" : { "label" : "comment_author", "type" : "user" },

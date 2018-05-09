@@ -23,12 +23,6 @@ function loop_frontend_default_fe_block_settings() {
       'authenticated user' => 2,
     ),
     'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
       'loop' => array(
         'region' => '',
         'status' => 0,
