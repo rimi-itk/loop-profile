@@ -125,6 +125,9 @@ if (isset($primary_menu_block['content'])): ?>
           <?php print render($loop_documents_admin_menu_block['content']); ?>
         </nav>
       <?php endif; ?>
+      <?php if (!empty($login_link)) : ?>
+        <?php print $login_link;?>
+      <?php endif;?>
       <?php if (!empty($logout_link)) : ?>
         <?php print $logout_link;?>
       <?php endif;?>

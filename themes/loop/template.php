@@ -101,6 +101,11 @@ function loop_preprocess_page(&$variables) {
     $show_logout = theme_get_setting('show_logout_for_regular_users');
   }
 
+  // Add login link for anonymous users.
+  if ($arg[0] !== 'user' && user_is_anonymous() && loopdk_allow_anonymous()) {
+    $variables['login_link'] = l(t('Login'), 'user/login', array('attributes' => array('class' => array('nav--logout'))));
+  }
+
   // We add logout link here to be able to always print it last. (Hence not part
   // of any menu).
   if ($user->uid > 0 && $show_logout) {
